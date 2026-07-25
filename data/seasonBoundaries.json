@@ -1,0 +1,30 @@
+[
+  {
+    "season": 1,
+    "start": "2023-06-02",
+    "end": "2024-05-22",
+    "confirmed": true,
+    "note": "Launch"
+  },
+  {
+    "season": 2,
+    "start": "2024-05-22",
+    "end": "2025-06-03",
+    "confirmed": true,
+    "note": "Akuma"
+  },
+  {
+    "season": 3,
+    "start": "2025-06-03",
+    "end": "2026-08-03",
+    "confirmed": true,
+    "note": "Elena"
+  },
+  {
+    "season": 4,
+    "start": "2026-08-03",
+    "end": null,
+    "confirmed": false,
+    "note": "Yasmine"
+  }
+]

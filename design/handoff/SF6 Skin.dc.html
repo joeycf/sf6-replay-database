@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&amp;family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Sedgwick+Ave+Display&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #141009; }
+  a { color: #FF7D00; text-decoration: none; }
+  a:hover { color: #FF9526; text-decoration: underline; }
+  ::selection { background: #FF7D00; color: #1A130A; }
+</style>
+</helmet>
+<div style="min-height:100vh;background:#141009;color:#F4EEE1;font-family:'Public Sans',sans-serif;padding:64px 48px 96px">
+<div style="--p: {{ primary }}; --ph: {{ primaryHover }}; --s: {{ secondary }}">
+
+<section data-screen-label="Masthead" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:22px">REPLAY DATABASE · SKIN №3 · TOKENS ONLY · SAME ANATOMY</div>
+  <sc-if value="{{ isBlock }}" hint-placeholder-val="{{ true }}">
+    <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:118px;line-height:0.95;letter-spacing:0.01em"><span style="color:var(--p,#FF7D00)">SF6</span><span style="color:var(--s,#9BE64A)">/</span><span style="color:#F4EEE1">REPLAY</span></div>
+  </sc-if>
+  <sc-if value="{{ isGraffiti }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:118px;line-height:0.95;color:var(--p,#FF7D00)">SF6<span style="color:var(--s,#9BE64A)">/</span></span><span style="font-family:'Sedgwick Ave Display',cursive;font-size:84px;line-height:1;color:var(--s,#9BE64A);display:inline-block;transform:rotate(-2deg)">REPLAY</span></div>
+  </sc-if>
+  <div style="max-width:760px;margin-top:22px;font-size:16px;line-height:1.55;color:#CBC1AC">Asphalt &amp; Drive Paint. Safety-orange primary, Drive-gauge green counter, warm concrete surfaces, collegiate display type. Every layout, radius, and motion curve is the platform's — only the tokens changed.</div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px">
+    <div style="display:flex;align-items:center;gap:9px;padding:9px 16px;border:1px solid #2A2417;border-radius:999px;background:#1D1810"><span style="width:12px;height:12px;border-radius:50%;background:#FF2E88"></span><span style="width:12px;height:12px;border-radius:50%;background:#38CFFF"></span><span style="font-size:12.5px;font-weight:600">2XKO</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">Chakra Petch · Barlow</span></div>
+    <div style="display:flex;align-items:center;gap:9px;padding:9px 16px;border:1px solid #2A2417;border-radius:999px;background:#1D1810"><span style="width:12px;height:12px;border-radius:50%;background:#E13048"></span><span style="width:12px;height:12px;border-radius:50%;background:#9D5CFF"></span><span style="font-size:12.5px;font-weight:600">TEKKEN 8</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">Rajdhani · Archivo</span></div>
+    <div style="display:flex;align-items:center;gap:9px;padding:9px 16px;border:1px solid #2A2417;border-radius:999px;background:#1D1810"><span style="width:12px;height:12px;border-radius:50%;background:#2FC7B4"></span><span style="width:12px;height:12px;border-radius:50%;background:#E7B84E"></span><span style="font-size:12.5px;font-weight:600">HUB</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">Space Grotesk</span></div>
+    <div style="display:flex;align-items:center;gap:9px;padding:9px 16px;border:1px solid #3D3424;border-radius:999px;background:#1D1810"><span style="width:12px;height:12px;border-radius:50%;background:var(--p,#FF7D00)"></span><span style="width:12px;height:12px;border-radius:50%;background:var(--s,#9BE64A)"></span><span style="font-size:12.5px;font-weight:600">SF6</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">Big Shoulders · Public Sans</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;color:var(--s,#9BE64A)">NEW</span></div>
+  </div>
+</section>
+
+<section data-screen-label="Core tokens" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">01 · CORE TOKENS</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:6px">Asphalt, chalk, orange, paint</div>
+  <div style="font-size:13.5px;color:#A3987F;margin-bottom:28px">All ratios computed programmatically. Contrast is fixed in the token, never per-component. Paste-ready: <a href="tokens.css">tokens.css</a></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+    <div style="flex:1;min-width:170px;height:96px;background:#0C0906;border:1px solid #2A2417;border-radius:12px;padding:12px 14px"><div style="font-size:12.5px;font-weight:600">surface-sunken</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#A3987F">#0C0906 · inputs, wells, tracks</div></div>
+    <div style="flex:1;min-width:170px;height:96px;background:#141009;border:1px solid #2A2417;border-radius:12px;padding:12px 14px"><div style="font-size:12.5px;font-weight:600">bg</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#A3987F">#141009 · asphalt field</div></div>
+    <div style="flex:1;min-width:170px;height:96px;background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:12px 14px"><div style="font-size:12.5px;font-weight:600">surface</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#A3987F">#1D1810 · cards, panels</div></div>
+    <div style="flex:1;min-width:170px;height:96px;background:#282017;border:1px solid #2A2417;border-radius:12px;padding:12px 14px"><div style="font-size:12.5px;font-weight:600">surface-raised</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#A3987F">#282017 · hover, chips</div></div>
+    <div style="flex:1;min-width:170px;height:96px;background:#1D1810;border:2px solid #3D3424;border-radius:12px;padding:12px 14px"><div style="font-size:12.5px;font-weight:600">border</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#A3987F">#3D3424 · strong seam</div></div>
+    <div style="flex:1;min-width:170px;height:96px;background:#1D1810;border:2px solid #2A2417;border-radius:12px;padding:12px 14px"><div style="font-size:12.5px;font-weight:600">border-subtle</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#A3987F">#2A2417 · hairline seam</div></div>
+  </div>
+  <div style="font-size:12px;color:#756A54;margin-bottom:28px">Warm brown-cast charcoal throughout — held deliberately against Tekken's cool carbon #0B0B0D.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:22px 24px;display:flex;flex-direction:column;gap:14px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">TEXT ON SURFACE — CHALK &amp; PAPER</div>
+      <sc-for list="{{ textTiers }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="flex:1;font-size:15px;font-weight:500;color:{{ t.hex }}">Punk def. MenaRD — Grand Final, Capcom Cup 12</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">{{ t.token }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#756A54">{{ t.hex }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:3px 8px;border-radius:6px;background:#282017;color:{{ t.badgeColor }}">{{ t.badge }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:22px 24px;display:flex;gap:24px;align-items:center">
+        <div style="flex:1">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F;margin-bottom:10px">PRIMARY — SF6 SAFETY ORANGE</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:88px;height:56px;border-radius:8px;background:var(--p,#FF7D00)"></div>
+            <div style="width:56px;height:56px;border-radius:8px;background:var(--ph,#FF9526)"></div>
+            <div style="width:56px;height:56px;border-radius:8px;background:#1A130A;border:1px solid #2A2417"></div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54;margin-top:8px">#FF7D00 · hover +10%L · ink 7.17:1 on primary</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+          <span style="display:inline-block;background:var(--p,#FF7D00);color:#1A130A;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:8px" style-hover="background:var(--ph,#FF9526)">Watch replay</span>
+          <span style="font-size:11.5px;color:#756A54">sampled: streetfighter.com/6 chrome</span>
+        </div>
+      </div>
+      <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:22px 24px;display:flex;gap:24px;align-items:center">
+        <div style="flex:1">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F;margin-bottom:10px">SECONDARY + FOCUS — DRIVE-GAUGE PAINT</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:88px;height:56px;border-radius:8px;background:var(--s,#9BE64A)"></div>
+            <div style="height:56px;flex:1;border-radius:8px;background:#0C0906;border:1px solid #2A2417;box-shadow:0 0 0 2px var(--s,#9BE64A);display:flex;align-items:center;padding:0 14px"><span style="font-size:12.5px;color:#756A54">focused input</span></div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54;margin-top:8px">#9BE64A · zone #8BE04A–#A6E85C, locked mid · 11.60:1 on surface</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:14px">
+    <div style="flex:1;background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:12px"><span style="width:14px;height:14px;border-radius:50%;background:#F5455C"></span><span style="font-size:13px;font-weight:600">danger</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#756A54">#F5455C · 4.95:1</span></div>
+    <div style="flex:1.6;background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:12px"><span style="width:14px;height:14px;border-radius:50%;background:#FFC72E"></span><span style="font-size:13px;font-weight:600">warning</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#756A54">#FFC72E · 11.31:1</span><span style="font-size:12px;color:#A3987F">pushed to clear amber — can never read as the orange primary</span></div>
+    <div style="flex:1.6;background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:12px"><span style="width:14px;height:14px;border-radius:50%;background:#3DD68C"></span><span style="font-size:13px;font-weight:600">success</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#756A54">#3DD68C · 9.41:1</span><span style="font-size:12px;color:#A3987F">cooler emerald, kept apart from Drive green</span></div>
+  </div>
+</section>
+
+<section data-screen-label="Typography" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">02 · TYPOGRAPHY</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:28px">Collegiate block, utilitarian grotesque</div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:26px 28px;display:flex;gap:32px;align-items:center">
+      <div style="flex:1"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:56px;line-height:1;text-transform:uppercase">Drive impact on every screen</div></div>
+      <div style="width:320px;display:flex;flex-direction:column;gap:7px"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--p,#FF7D00)">--font-display</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#CBC1AC">@fontsource/big-shoulders-display · 600 700 800</span><span style="font-size:12.5px;color:#A3987F;line-height:1.5">Collegiate-condensed block — evokes "SF6 College" without imitating it. Distinct from Chakra Petch and Rajdhani.</span></div>
+    </div>
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:26px 28px;display:flex;gap:32px;align-items:center">
+      <div style="flex:1"><div style="font-size:21px;font-weight:500;line-height:1.45">Browse 21,532 replays. Filter by character, matchup, player, patch, and source.</div><div style="font-size:13px;color:#CBC1AC;margin-top:8px">Weights 400–700 cover body, labels, and emphasis without a second family.</div></div>
+      <div style="width:320px;display:flex;flex-direction:column;gap:7px"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--p,#FF7D00)">--font-ui</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#CBC1AC">@fontsource/public-sans · 400 500 600 700</span><span style="font-size:12.5px;color:#A3987F;line-height:1.5">Utilitarian grotesque with US-signage DNA — clearly apart from Barlow, Archivo, and Space Grotesk.</span></div>
+    </div>
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:26px 28px;display:flex;gap:32px;align-items:center">
+      <div style="flex:1"><div style="font-family:'JetBrains Mono',monospace;font-size:18px;color:#F4EEE1">3–2 · 27:41 · v4.0 · n=4,442 · 53.1%</div></div>
+      <div style="width:320px;display:flex;flex-direction:column;gap:7px"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--p,#FF7D00)">--font-mono</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#CBC1AC">@fontsource/jetbrains-mono · 400 500 700</span><span style="font-size:12.5px;color:#A3987F;line-height:1.5">Platform habit, kept. Scores, timestamps, patches, sample sizes.</span></div>
+    </div>
+    <div style="background:#1D1810;border:1px dashed #3D3424;border-radius:12px;padding:26px 28px;display:flex;gap:32px;align-items:center">
+      <div style="flex:1"><span style="font-family:'Sedgwick Ave Display',cursive;font-size:44px;color:var(--s,#9BE64A);display:inline-block;transform:rotate(-2deg)">REPLAY</span></div>
+      <div style="width:320px;display:flex;flex-direction:column;gap:7px"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#A3987F">graffiti accent — not tokenized</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#CBC1AC">@fontsource/sedgwick-ave-display · 400</span><span style="font-size:12.5px;color:#A3987F;line-height:1.5">Wordmark layer only, and only at wordmark sizes. Never UI text, labels, or data — left out of tokens so it cannot leak.</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Wordmark" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">03 · WORDMARK</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:6px">SF6 / Replay</div>
+  <div style="font-size:13.5px;color:#A3987F;margin-bottom:28px">A type treatment only — no hexagon mark, no official logo, no official art. Street register via typeface and color.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">NAV SCALE · 19PX</span>
+      <div style="height:60px;display:flex;align-items:center;padding:0 18px;background:#141009;border:1px solid #2A2417;border-radius:10px"><span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:19px;letter-spacing:0.03em"><span style="color:var(--p,#FF7D00)">SF6</span><span style="color:var(--s,#9BE64A)">/</span><span style="color:#F4EEE1">REPLAY</span></span></div>
+      <span style="font-size:12px;color:#756A54">Always the block cut in chrome. Big Shoulders 800, tracking +0.03em.</span>
+    </div>
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">HERO SCALE — BLOCK</span>
+      <div style="flex:1;display:flex;align-items:center;padding:18px;background:#141009;border:1px solid #2A2417;border-radius:10px"><span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:1"><span style="color:var(--p,#FF7D00)">SF6</span><span style="color:var(--s,#9BE64A)">/</span><span style="color:#F4EEE1">REPLAY</span></span></div>
+      <span style="font-size:12px;color:#756A54">Slash carries the Drive green — the one paint stroke in the lockup.</span>
+    </div>
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">HERO SCALE — GRAFFITI (OPTIONAL)</span>
+      <div style="flex:1;display:flex;align-items:center;gap:12px;padding:18px;background:#141009;border:1px solid #2A2417;border-radius:10px"><span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:1;color:var(--p,#FF7D00)">SF6<span style="color:var(--s,#9BE64A)">/</span></span><span style="font-family:'Sedgwick Ave Display',cursive;font-size:46px;line-height:1;color:var(--s,#9BE64A);display:inline-block;transform:rotate(-2deg)">REPLAY</span></div>
+      <span style="font-size:12px;color:#756A54">Permitted only here, only at hero size. Toggle it in Tweaks to compare mastheads.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Mock — Browse" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">04 · MOCK — BROWSE GRID</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:28px">/sf6 — Browse</div>
+  <div style="border:1px solid #2A2417;border-radius:14px;overflow:hidden;background:#141009;box-shadow:0 24px 64px rgba(0,0,0,0.45)">
+    <div style="display:flex;align-items:center;gap:26px;height:60px;padding:0 24px;border-bottom:1px solid #2A2417">
+      <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:19px;letter-spacing:0.03em"><span style="color:var(--p,#FF7D00)">SF6</span><span style="color:var(--s,#9BE64A)">/</span><span style="color:#F4EEE1">REPLAY</span></span>
+      <div style="display:flex;align-items:stretch;gap:4px;height:60px">
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid var(--p,#FF7D00);color:#F4EEE1;font-weight:600;font-size:13.5px">Browse</span>
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid transparent;color:#A3987F;font-size:13.5px">Stats</span>
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid transparent;color:#A3987F;font-size:13.5px">Characters</span>
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid transparent;color:#A3987F;font-size:13.5px">Players</span>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;width:240px;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px"><span style="color:#756A54;font-size:12.5px">Search players, events…</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#756A54;border:1px solid #2A2417;border-radius:4px;padding:1px 5px">/</span></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;padding:20px 24px 0">
+      <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase">Browse</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#A3987F">21,532 replays · updated Jul 24, 2026</span>
+      <div style="flex:1"></div>
+      <span style="display:flex;align-items:center;gap:8px;height:34px;padding:0 12px;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Sort: Newest <span style="color:#756A54">▾</span></span>
+    </div>
+    <div style="display:flex;gap:20px;padding:18px 24px 24px">
+      <div style="width:250px;flex-shrink:0;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F">CHARACTER</span><div style="display:flex;align-items:center;justify-content:space-between;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Any character <span style="color:#756A54">▾</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F">MATCHUP</span><div style="display:flex;align-items:center;justify-content:space-between;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Any matchup <span style="color:#756A54">▾</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F">PLAYER</span><div style="display:flex;align-items:center;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#756A54">e.g. Punk</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F">PATCH</span><div style="display:flex;align-items:center;justify-content:space-between;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">v4.0 — current <span style="color:#756A54">▾</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F">SOURCE</span>
+          <div style="display:flex;align-items:center;gap:9px"><span style="display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;background:var(--s,#9BE64A);color:#1A130A;font-size:10px;font-weight:700">✓</span><span style="font-size:12.5px;color:#CBC1AC">YouTube</span></div>
+          <div style="display:flex;align-items:center;gap:9px"><span style="display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;background:var(--s,#9BE64A);color:#1A130A;font-size:10px;font-weight:700">✓</span><span style="font-size:12.5px;color:#CBC1AC">CFN</span></div>
+          <div style="display:flex;align-items:center;gap:9px"><span style="width:15px;height:15px;border-radius:4px;border:1px solid #3D3424"></span><span style="font-size:12.5px;color:#A3987F">Twitch</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F">RANK</span><div style="display:flex;align-items:center;justify-content:space-between;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Master + <span style="color:#756A54">▾</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+          <span style="text-align:center;background:var(--p,#FF7D00);color:#1A130A;font-weight:700;font-size:13px;padding:9px 0;border-radius:8px" style-hover="background:var(--ph,#FF9526)">Apply filters</span>
+          <span style="text-align:center;border:1px solid #3D3424;color:#CBC1AC;font-weight:500;font-size:13px;padding:8px 0;border-radius:8px">Reset</span>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="display:flex;align-items:center;gap:7px;padding:5px 12px;background:#282017;border:1px solid #3D3424;border-radius:999px;font-size:12px;color:#CBC1AC">Patch: v4.0 <span style="color:#756A54">×</span></span>
+          <span style="display:flex;align-items:center;gap:7px;padding:5px 12px;background:#282017;border:1px solid #3D3424;border-radius:999px;font-size:12px;color:#CBC1AC">Rank: Master+ <span style="color:#756A54">×</span></span>
+          <span style="font-size:12px;color:var(--s,#9BE64A)">Clear all</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <sc-for list="{{ replays }}" as="r" hint-placeholder-count="4">
+            <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px" style-hover="border-color:#3D3424;background:#221B12">
+              <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px">
+                <div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.06em;padding:3px 7px;border-radius:6px;background:{{ r.c1bg }};border:1px solid {{ r.c1bd }};color:{{ r.a1 }}">{{ r.c1 }}</span><span style="font-size:14px;font-weight:600;color:{{ r.p1col }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.p1 }}</span></div>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700">{{ r.score }}</span>
+                <div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:0"><span style="font-size:14px;font-weight:600;color:{{ r.p2col }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.p2 }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.06em;padding:3px 7px;border-radius:6px;background:{{ r.c2bg }};border:1px solid {{ r.c2bd }};color:{{ r.a2 }}">{{ r.c2 }}</span></div>
+              </div>
+              <div style="font-size:12.5px;color:#CBC1AC">{{ r.event }} <span style="color:#756A54">·</span> {{ r.round }}</div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:2px 7px;border:1px solid #3D3424;border-radius:6px;color:#CBC1AC">{{ r.patch }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:2px 7px;border:1px solid #2A2417;border-radius:6px;color:#A3987F">{{ r.src }}</span>
+                <div style="flex:1"></div>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">{{ r.date }} · {{ r.dur }}</span>
+                <span style="font-size:12.5px;font-weight:600;color:var(--p,#FF7D00)">Watch →</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;padding-top:6px">
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--p,#FF7D00);color:#1A130A;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700">1</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;border:1px solid #2A2417;color:#CBC1AC;font-family:'JetBrains Mono',monospace;font-size:12px">2</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;border:1px solid #2A2417;color:#CBC1AC;font-family:'JetBrains Mono',monospace;font-size:12px">3</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#756A54">…</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:44px;height:30px;border-radius:8px;border:1px solid #2A2417;color:#CBC1AC;font-family:'JetBrains Mono',monospace;font-size:12px">898</span>
+          <span style="display:flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;border:1px solid #2A2417;color:#CBC1AC;font-size:12.5px">Next →</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #2A2417;padding:14px;text-align:center"><span style="font-size:12.5px;color:var(--p,#FF7D00)">Help support the site</span></div>
+  </div>
+</section>
+
+<section data-screen-label="Mock — Replay card" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">05 · MOCK — ONE REPLAY CARD</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:28px">Card anatomy, re-tokened</div>
+  <div style="display:flex;gap:36px;align-items:flex-start">
+    <div style="width:620px;flex-shrink:0;background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:11px" style-hover="border-color:#3D3424;background:#221B12">
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px">
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.06em;padding:3px 8px;border-radius:6px;background:rgba(255,176,61,0.16);border:1px solid rgba(255,176,61,0.35);color:#FFB03D">KEN</span><span style="font-size:15px;font-weight:600;color:#F4EEE1">Punk</span></div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700">3–2</span>
+        <div style="display:flex;align-items:center;justify-content:flex-end;gap:8px"><span style="font-size:15px;font-weight:600;color:#A3987F">MenaRD</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.06em;padding:3px 8px;border-radius:6px;background:rgba(143,224,54,0.16);border:1px solid rgba(143,224,54,0.35);color:#8FE036">BLK</span></div>
+      </div>
+      <div style="font-size:13px;color:#CBC1AC">Capcom Cup 12 <span style="color:#756A54">·</span> Grand Final</div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:2px 7px;border:1px solid #3D3424;border-radius:6px;color:#CBC1AC">v4.0</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:2px 7px;border:1px solid #2A2417;border-radius:6px;color:#A3987F">YouTube</span>
+        <div style="flex:1"></div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">Mar 15, 2026 · 31:07</span>
+        <span style="font-size:13px;font-weight:600;color:var(--p,#FF7D00)">Watch →</span>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:11px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:#1D1810;border:1px solid #3D3424"></span><span style="font-size:13px;color:#CBC1AC;flex:1">Card face</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">--color-surface · hairline --color-border-subtle</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:#221B12;border:1px solid #3D3424"></span><span style="font-size:13px;color:#CBC1AC;flex:1">Hover</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">lift to --color-border · warm tint toward raised</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:#F4EEE1"></span><span style="font-size:13px;color:#CBC1AC;flex:1">Winner / score</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">--color-text + --font-mono · loser --color-text-muted</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:rgba(255,176,61,0.4)"></span><span style="font-size:13px;color:#CBC1AC;flex:1">Character chips</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">--char-* text · 16% fill · 35% ring</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:#282017;border:1px solid #3D3424"></span><span style="font-size:13px;color:#CBC1AC;flex:1">Patch / source tags</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">--color-text-secondary on seam borders</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:var(--p,#FF7D00)"></span><span style="font-size:13px;color:#CBC1AC;flex:1">The one loud thing</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F">Watch → in --color-primary; everything else stays asphalt</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Mock — Stats" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">06 · MOCK — STATS PAGE</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:28px">/sf6/stats — accents at work</div>
+  <div style="border:1px solid #2A2417;border-radius:14px;overflow:hidden;background:#141009;box-shadow:0 24px 64px rgba(0,0,0,0.45)">
+    <div style="display:flex;align-items:center;gap:26px;height:60px;padding:0 24px;border-bottom:1px solid #2A2417">
+      <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:19px;letter-spacing:0.03em"><span style="color:var(--p,#FF7D00)">SF6</span><span style="color:var(--s,#9BE64A)">/</span><span style="color:#F4EEE1">REPLAY</span></span>
+      <div style="display:flex;align-items:stretch;gap:4px;height:60px">
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid transparent;color:#A3987F;font-size:13.5px">Browse</span>
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid var(--p,#FF7D00);color:#F4EEE1;font-weight:600;font-size:13.5px">Stats</span>
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid transparent;color:#A3987F;font-size:13.5px">Characters</span>
+        <span style="display:flex;align-items:center;padding:0 12px;border-bottom:2px solid transparent;color:#A3987F;font-size:13.5px">Players</span>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;width:240px;height:34px;padding:0 12px;background:#0C0906;border:1px solid #2A2417;border-radius:8px"><span style="color:#756A54;font-size:12.5px">Search players, events…</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#756A54;border:1px solid #2A2417;border-radius:4px;padding:1px 5px">/</span></div>
+    </div>
+    <div style="padding:20px 24px 24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase">Stats</span>
+        <div style="flex:1"></div>
+        <span style="display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Master + <span style="color:#756A54">▾</span></span>
+        <span style="display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Patch v4.0 <span style="color:#756A54">▾</span></span>
+        <span style="display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid #2A2417;border-radius:8px;font-size:12.5px;color:#CBC1AC">Last 90 days <span style="color:#756A54">▾</span></span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+        <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;line-height:1">21,532</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F;margin-top:6px">REPLAYS</div></div>
+        <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;line-height:1">3,914</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F;margin-top:6px">PLAYERS TRACKED</div></div>
+        <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;line-height:1">30</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F;margin-top:6px">CHARACTERS</div></div>
+        <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:16px 18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;line-height:1;color:var(--s,#9BE64A)">v4.0</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#A3987F;margin-top:6px">CURRENT PATCH</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:14px">
+        <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">CHARACTER USAGE — TOP 10</span><div style="flex:1"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">share of 21,532 replays</span></div>
+          <sc-for list="{{ statsRows }}" as="s" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#756A54;width:18px">{{ s.rank }}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.06em;padding:3px 7px;border-radius:6px;background:{{ s.bg }};border:1px solid {{ s.bd }};color:{{ s.hex }};width:34px;text-align:center">{{ s.code }}</span>
+              <span style="font-size:13.5px;font-weight:600;width:120px">{{ s.name }}</span>
+              <div style="flex:1;height:10px;border-radius:5px;background:#0C0906;overflow:hidden"><div style="height:100%;border-radius:5px;background:{{ s.hex }};width:{{ s.w }}"></div></div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#CBC1AC;width:52px;text-align:right">{{ s.pct }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:13px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">HIGHEST WIN RATE</span>
+          <sc-for list="{{ winRows }}" as="w" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.06em;padding:3px 7px;border-radius:6px;background:{{ w.bg }};border:1px solid {{ w.bd }};color:{{ w.hex }};width:34px;text-align:center">{{ w.code }}</span>
+              <span style="font-size:13.5px;font-weight:600;flex:1">{{ w.name }}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">{{ w.pct }}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">{{ w.n }}</span>
+            </div>
+          </sc-for>
+          <span style="font-size:11.5px;color:#756A54;margin-top:2px">Bo3+ sets · min 1,000 games</span>
+        </div>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#756A54">Master replays · patch v4.0 · window May 1 – Jul 24, 2026</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Character accents" style="width:1440px;margin:0 auto 96px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">07 · PER-CHARACTER ACCENTS — ALL 30</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:6px">One accent per fighter</div>
+  <div style="font-size:13.5px;color:#A3987F;margin-bottom:28px">Anchored on canonical costume/effect colors, normalized for dark surfaces. Every ratio below is against --color-surface; all clear 4.5:1.</div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px">
+    <sc-for list="{{ roster }}" as="c" hint-placeholder-count="10">
+      <div style="background:#1D1810;border:1px solid #2A2417;border-radius:10px;padding:12px 13px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:34px;height:34px;border-radius:8px;background:{{ c.hex }};flex-shrink:0"></span>
+          <div style="flex:1;min-width:0"><div style="font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.name }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:{{ c.hex }}">{{ c.code }} <span style="color:#756A54">· {{ c.yr }}</span></div></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 6px;border-radius:5px;background:#282017;color:#CBC1AC">{{ c.ratio }}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#756A54">{{ c.hexUp }}</span><span style="font-size:10.5px;color:#A3987F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.anchor }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 420px;gap:14px">
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:22px 24px;display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:var(--s,#9BE64A)">THE METHOD — HOW YEAR 4 STAYS CONSISTENT</span>
+      <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--p,#FF7D00);width:84px;flex-shrink:0">1 ANCHOR</span><span style="font-size:13px;color:#CBC1AC;line-height:1.5">Sample the canonical costume or signature-effect color (Ryu's gi, Kimberly's spray, Ingrid's sun).</span></div>
+      <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--p,#FF7D00);width:84px;flex-shrink:0">2 NORMALIZE</span><span style="font-size:13px;color:#CBC1AC;line-height:1.5">Move it into OKLCH L 0.65–0.93, C 0.09–0.19 — the vivid-pastel band that survives 12px chips on asphalt.</span></div>
+      <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--p,#FF7D00);width:84px;flex-shrink:0">3 SLOT</span><span style="font-size:13px;color:#CBC1AC;line-height:1.5">Keep hue ≥8–12° from roster neighbors; crowded canon families (four golds, three reds) separate by lightness steps instead.</span></div>
+      <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--p,#FF7D00);width:84px;flex-shrink:0">4 VERIFY</span><span style="font-size:13px;color:#CBC1AC;line-height:1.5">Programmatic check ≥4.5:1 on --color-surface; lift toward white until passing. Zangief, Akuma, and Bison were lifted this way.</span></div>
+      <span style="font-size:12.5px;color:#A3987F;margin-top:4px">Next test case: Yasmine (Year 4, Aug 3) — anchor her reveal-art dominant, normalize, slot, verify, ship <span style="font-family:'JetBrains Mono',monospace;font-size:11px">--char-yasmine</span>.</span>
+    </div>
+    <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:22px 24px;display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">PROOF AT SMALLEST REAL USE</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(255,176,61,0.16);border:1px solid rgba(255,176,61,0.35);color:#FFB03D">KEN</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(193,101,126,0.16);border:1px solid rgba(193,101,126,0.35);color:#C1657E">AKU</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(185,86,226,0.16);border:1px solid rgba(185,86,226,0.35);color:#B956E2">BIS</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(255,233,163,0.16);border:1px solid rgba(255,233,163,0.35);color:#FFE9A3">ING</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(168,216,255,0.16);border:1px solid rgba(168,216,255,0.35);color:#A8D8FF">VIP</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;background:rgba(232,223,200,0.16);border:1px solid rgba(232,223,200,0.35);color:#E8DFC8">RYU</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#A3987F;width:52px">Ken</span><div style="flex:1;height:8px;border-radius:4px;background:#0C0906;overflow:hidden"><div style="height:100%;background:#FFB03D;width:82%"></div></div></div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#A3987F;width:52px">Akuma</span><div style="flex:1;height:8px;border-radius:4px;background:#0C0906;overflow:hidden"><div style="height:100%;background:#C1657E;width:70%"></div></div></div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#A3987F;width:52px">Ingrid</span><div style="flex:1;height:8px;border-radius:4px;background:#0C0906;overflow:hidden"><div style="height:100%;background:#FFE9A3;width:44%"></div></div></div>
+      </div>
+      <span style="font-size:11.5px;color:#756A54">Chips, badges, and stat bars — the three places accents appear. No accent is ever body text.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="OG + favicon" style="width:1440px;margin:0 auto">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--s,#9BE64A);margin-bottom:10px">08 · EXPORT MARKS</div>
+  <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:28px">OG card &amp; favicon motif</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:13.5px;color:#CBC1AC;line-height:1.6"><span style="color:var(--s,#9BE64A);font-weight:600">Direction (1200×630):</span> asphalt field; one Drive-green paint sweep entering low-left behind the type; oversized SF6/REPLAY wordmark with SF6 in orange; mono meta line beneath; skeleton identical to the 2XKO and Tekken cards.</div>
+      <div style="position:relative;width:600px;height:315px;background:#141009;border:1px solid #2A2417;border-radius:12px;overflow:hidden">
+        <div style="position:absolute;left:-64px;top:-50px;width:140px;height:440px;background:var(--s,#9BE64A);opacity:0.9;transform:rotate(18deg)"></div>
+        <div style="position:absolute;left:-20px;bottom:-70px;width:230px;height:230px;border-radius:50%;background:var(--s,#9BE64A);opacity:0.25;filter:blur(42px)"></div>
+        <div style="position:absolute;left:150px;top:104px">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:62px;line-height:1"><span style="color:var(--p,#FF7D00)">SF6</span><span style="color:var(--s,#9BE64A)">/</span><span style="color:#F4EEE1">REPLAY</span></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#A3987F;margin-top:12px">21,532 replays · usage · matchups · meta over time</div>
+        </div>
+        <div style="position:absolute;right:16px;bottom:12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#756A54">replaydatabase.com/sf6</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:13.5px;color:#CBC1AC;line-height:1.6"><span style="color:var(--s,#9BE64A);font-weight:600">Favicon motif:</span> corner-cut spray-notch tile — primary-orange square, 45° cut at bottom-right, one Drive-green dot riding the notch. Geometric kin to the other games' tiles; reads at 16px.</div>
+      <div style="display:flex;align-items:flex-end;gap:32px;padding:24px;background:#0C0906;border:1px solid #2A2417;border-radius:12px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="position:relative;width:64px;height:64px"><div style="position:absolute;inset:0;background:var(--p,#FF7D00);border-radius:12px;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%)"></div><div style="position:absolute;right:3px;bottom:3px;width:15px;height:15px;border-radius:50%;background:var(--s,#9BE64A)"></div></div><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#756A54">64</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="position:relative;width:32px;height:32px"><div style="position:absolute;inset:0;background:var(--p,#FF7D00);border-radius:7px;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%)"></div><div style="position:absolute;right:1px;bottom:1px;width:9px;height:9px;border-radius:50%;background:var(--s,#9BE64A)"></div></div><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#756A54">32</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="position:relative;width:16px;height:16px"><div style="position:absolute;inset:0;background:var(--p,#FF7D00);border-radius:4px;clip-path:polygon(0 0,100% 0,100% 58%,58% 100%,0 100%)"></div><div style="position:absolute;right:0;bottom:0;width:6px;height:6px;border-radius:50%;background:var(--s,#9BE64A)"></div></div><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#756A54">16</span></div>
+        <div style="flex:1"></div>
+        <span style="font-size:11.5px;color:#756A54;max-width:200px">On the tab bar the notch dot is the tell — no other game in the family carries green.</span>
+      </div>
+      <div style="background:#1D1810;border:1px solid #2A2417;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;color:#A3987F">HAND-OFF</span>
+        <span style="font-size:13px;color:#CBC1AC">Paste-ready tokens: <a href="tokens.css">tokens.css</a></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A3987F;line-height:1.7">@fontsource/big-shoulders-display 600 700 800<br>@fontsource/public-sans 400 500 600 700<br>@fontsource/jetbrains-mono 400 500 700<br>@fontsource/sedgwick-ave-display 400 — wordmark only</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;primary&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FF7D00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FF7D00&quot;,&quot;#FF7900&quot;,&quot;#FF9E1B&quot;],&quot;section&quot;:&quot;Lock the sample&quot;},&quot;secondary&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9BE64A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#8BE04A&quot;,&quot;#9BE64A&quot;,&quot;#A6E85C&quot;],&quot;section&quot;:&quot;Lock the sample&quot;},&quot;wordmarkStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;block&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;block&quot;,&quot;graffiti&quot;],&quot;section&quot;:&quot;Wordmark&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const P = this.props || {};
+    const primary = P.primary ?? '#FF7D00';
+    const secondary = P.secondary ?? '#9BE64A';
+    const wordmarkStyle = P.wordmarkStyle ?? 'block';
+    const mix = (hex, t) => {
+      const h = hex.replace('#', '');
+      const c = [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16)).map(v => Math.round(v + (255 - v) * t));
+      return '#' + c.map(v => v.toString(16).padStart(2, '0')).join('');
+    };
+    const A = (hex, a) => {
+      const h = hex.replace('#', '');
+      return 'rgba(' + parseInt(h.substr(0, 2), 16) + ',' + parseInt(h.substr(2, 2), 16) + ',' + parseInt(h.substr(4, 2), 16) + ',' + a + ')';
+    };
+    const textTiers = [
+      { token: '--color-text', hex: '#F4EEE1', badge: '15.26:1 AAA', badgeColor: secondary },
+      { token: '--color-text-secondary', hex: '#CBC1AC', badge: '9.88:1 AAA', badgeColor: secondary },
+      { token: '--color-text-muted', hex: '#A3987F', badge: '6.18:1 AA', badgeColor: secondary },
+      { token: '--color-text-faint', hex: '#756A54', badge: '3.31:1 DECOR', badgeColor: '#A3987F' }
+    ];
+    const rawReplays = [
+      { p1: 'Punk', c1: 'KEN', a1: '#FFB03D', p2: 'MenaRD', c2: 'BLK', a2: '#8FE036', score: '3–2', w: 1, event: 'Capcom Cup 12', round: 'Grand Final', patch: 'v4.0', date: 'Mar 15, 2026', dur: '31:07', src: 'YouTube' },
+      { p1: 'Kakeru', c1: 'JP', a1: '#46B7A8', p2: 'Tokido', c2: 'AKU', a2: '#C1657E', score: '3–1', w: 1, event: 'CEO 2026', round: 'Winners Final', patch: 'v4.0', date: 'Jun 21, 2026', dur: '18:44', src: 'YouTube' },
+      { p1: 'EndingWalker', c1: 'ED', a1: '#B4A4F5', p2: 'Blaz', c2: 'AKI', a2: '#C06BF2', score: '3–2', w: 1, event: 'Combo Breaker 2026', round: 'Top 8', patch: 'v4.0', date: 'May 24, 2026', dur: '22:03', src: 'Twitch' },
+      { p1: 'iDom', c1: 'MAN', a1: '#F2AECB', p2: 'NuckleDu', c2: 'GUI', a2: '#A9B93F', score: '3–0', w: 1, event: 'Frosty Faustings 2026', round: 'Winners Semi', patch: 'v3.5', date: 'Jan 31, 2026', dur: '12:26', src: 'YouTube' },
+      { p1: 'Xiaohai', c1: 'TER', a1: '#FF5748', p2: 'Zhen', c2: 'MAI', a2: '#FF7E8C', score: '3–2', w: 1, event: 'CPT Online Premier', round: 'Grand Final', patch: 'v4.0', date: 'Jul 12, 2026', dur: '26:58', src: 'CFN' },
+      { p1: 'Big Bird', c1: 'RAS', a1: '#3ED69E', p2: 'Mister Crimson', c2: 'DHA', a2: '#E39A3B', score: '3–1', w: 1, event: 'EVO 2025', round: 'Top 16', patch: 'v3.0', date: 'Aug 3, 2025', dur: '15:12', src: 'YouTube' },
+      { p1: 'Problem X', c1: 'BIS', a1: '#B956E2', p2: 'Phenom', c2: 'LUK', a2: '#58AAFF', score: '3–1', w: 1, event: 'UFA 2025', round: 'Top 8', patch: 'v3.5', date: 'Nov 2, 2025', dur: '17:39', src: 'Twitch' },
+      { p1: 'Daigo', c1: 'RYU', a1: '#E8DFC8', p2: 'Itabashi Zangief', c2: 'ZAN', a2: '#E34E54', score: '2–3', w: 2, event: 'Topanga League 8', round: 'Round Robin', patch: 'v4.0', date: 'Apr 9, 2026', dur: '24:15', src: 'CFN' }
+    ];
+    const replays = rawReplays.map(r => Object.assign({}, r, {
+      c1bg: A(r.a1, 0.16), c1bd: A(r.a1, 0.35), c2bg: A(r.a2, 0.16), c2bd: A(r.a2, 0.35),
+      p1col: r.w === 1 ? '#F4EEE1' : '#A3987F', p2col: r.w === 2 ? '#F4EEE1' : '#A3987F'
+    }));
+    const rawStats = [
+      { code: 'KEN', name: 'Ken', hex: '#FFB03D', pct: 8.2 },
+      { code: 'AKU', name: 'Akuma', hex: '#C1657E', pct: 7.6 },
+      { code: 'CAM', name: 'Cammy', hex: '#7CE3C3', pct: 6.9 },
+      { code: 'BIS', name: 'M. Bison', hex: '#B956E2', pct: 6.1 },
+      { code: 'RYU', name: 'Ryu', hex: '#E8DFC8', pct: 5.8 },
+      { code: 'JUR', name: 'Juri', hex: '#B77DFF', pct: 5.4 },
+      { code: 'SAG', name: 'Sagat', hex: '#E5C05C', pct: 5.1 },
+      { code: 'TER', name: 'Terry', hex: '#FF5748', pct: 4.7 },
+      { code: 'ING', name: 'Ingrid', hex: '#FFE9A3', pct: 4.5 },
+      { code: 'CHU', name: 'Chun-Li', hex: '#7B93FF', pct: 4.2 }
+    ];
+    const statsRows = rawStats.map((s, i) => Object.assign({}, s, {
+      rank: String(i + 1), bg: A(s.hex, 0.16), bd: A(s.hex, 0.35),
+      w: Math.round(s.pct / 8.2 * 100) + '%', pct: s.pct.toFixed(1) + '%'
+    }));
+    const rawWin = [
+      { code: 'ING', name: 'Ingrid', hex: '#FFE9A3', pct: '53.1%', n: 'n=1,204' },
+      { code: 'BIS', name: 'M. Bison', hex: '#B956E2', pct: '52.4%', n: 'n=2,918' },
+      { code: 'KEN', name: 'Ken', hex: '#FFB03D', pct: '51.8%', n: 'n=4,442' },
+      { code: 'MAR', name: 'Marisa', hex: '#D68F55', pct: '51.2%', n: 'n=1,675' },
+      { code: 'JP', name: 'JP', hex: '#46B7A8', pct: '50.9%', n: 'n=1,377' }
+    ];
+    const winRows = rawWin.map(w => Object.assign({}, w, { bg: A(w.hex, 0.16), bd: A(w.hex, 0.35) }));
+    const rawRoster = [
+      ['ryu', 'RYU', 'Ryu', '#E8DFC8', 'gi chalk-white — the one white chip', '13.3:1', 'L'],
+      ['luke', 'LUK', 'Luke', '#58AAFF', 'arts azure', '7.2:1', 'L'],
+      ['jamie', 'JAM', 'Jamie', '#4FCB7D', 'drink jade', '8.5:1', 'L'],
+      ['chunli', 'CHU', 'Chun-Li', '#7B93FF', 'qipao blue', '6.3:1', 'L'],
+      ['guile', 'GUI', 'Guile', '#A9B93F', 'fatigue olive', '8.2:1', 'L'],
+      ['kimberly', 'KIM', 'Kimberly', '#FF5FB8', 'spray-can magenta', '6.4:1', 'L'],
+      ['juri', 'JUR', 'Juri', '#B77DFF', 'feng-shui violet', '6.2:1', 'L'],
+      ['ken', 'KEN', 'Ken', '#FFB03D', 'flame amber', '9.7:1', 'L'],
+      ['blanka', 'BLK', 'Blanka', '#8FE036', 'voltage green', '10.8:1', 'L'],
+      ['dhalsim', 'DHA', 'Dhalsim', '#E39A3B', 'saffron', '7.5:1', 'L'],
+      ['honda', 'HON', 'E. Honda', '#928DF6', 'yukata indigo', '6.2:1', 'L'],
+      ['deejay', 'DJ', 'Dee Jay', '#F2DC50', 'MAXIMUM yellow', '12.7:1', 'L'],
+      ['manon', 'MAN', 'Manon', '#F2AECB', 'ballet rose', '9.8:1', 'L'],
+      ['marisa', 'MAR', 'Marisa', '#D68F55', 'gladiator bronze', '6.7:1', 'L'],
+      ['jp', 'JP', 'JP', '#46B7A8', 'coat viridian', '7.2:1', 'L'],
+      ['zangief', 'ZAN', 'Zangief', '#E34E54', 'trunk scarlet · lifted', '4.6:1', 'L'],
+      ['lily', 'LIL', 'Lily', '#4EC9E6', 'wind turquoise', '9.1:1', 'L'],
+      ['cammy', 'CAM', 'Cammy', '#7CE3C3', 'leotard mint', '11.5:1', 'L'],
+      ['rashid', 'RAS', 'Rashid', '#3ED69E', 'wind emerald', '9.5:1', 'Y1'],
+      ['aki', 'AKI', 'A.K.I.', '#C06BF2', 'poison orchid', '5.6:1', 'Y1'],
+      ['ed', 'ED', 'Ed', '#B4A4F5', 'psycho lilac', '8.0:1', 'Y1'],
+      ['akuma', 'AKU', 'Akuma', '#C1657E', 'oni wine · lifted', '4.6:1', 'Y1'],
+      ['bison', 'BIS', 'M. Bison', '#B956E2', 'Psycho magenta · lifted', '4.6:1', 'Y2'],
+      ['terry', 'TER', 'Terry', '#FF5748', 'cap red', '5.6:1', 'Y2'],
+      ['mai', 'MAI', 'Mai', '#FF7E8C', 'kunoichi coral', '7.2:1', 'Y2'],
+      ['elena', 'ELE', 'Elena', '#E08CE8', 'capoeira orchid-pink', '7.6:1', 'Y2'],
+      ['sagat', 'SAG', 'Sagat', '#E5C05C', 'tiger gold', '10.1:1', 'Y3'],
+      ['viper', 'VIP', 'C. Viper', '#A8D8FF', 'Thunder Knuckle spark', '11.7:1', 'Y3'],
+      ['alex', 'ALX', 'Alex', '#6FBF44', 'overall green', '7.7:1', 'Y3'],
+      ['ingrid', 'ING', 'Ingrid', '#FFE9A3', 'solar pale gold', '14.7:1', 'Y3']
+    ];
+    const roster = rawRoster.map(r => ({ id: r[0], code: r[1], name: r[2], hex: r[3], hexUp: r[3], anchor: r[4], ratio: r[5], yr: r[6] }));
+    return {
+      primary, secondary, primaryHover: mix(primary, 0.15),
+      isBlock: wordmarkStyle === 'block', isGraffiti: wordmarkStyle === 'graffiti',
+      textTiers, replays, statsRows, winRows, roster
+    };
+  }
+}
+</script>
+</body>
+</html>

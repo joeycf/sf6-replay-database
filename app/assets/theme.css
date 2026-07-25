@@ -1,0 +1,93 @@
+/* =============================================================================
+   SF6 THEME — "Asphalt & Drive Paint" (design/handoff/tokens.css is the design
+   source of truth; this file transcribes it onto the engine's semantic
+   variables).
+
+   Loads AFTER the engine layer's CSS, so these values SHADOW the umbrella
+   defaults (teal/gold, Space Grotesk) — removing this file drops the site to
+   the neutral ReplayDB look, which is the override-contract proof. Values are
+   declared in full (not just the deltas) so the SF6 skin never drifts with an
+   engine default change.
+
+   Identity vs the platform's other skins: warm asphalt surfaces (brown-cast
+   charcoals, verified warmer than Tekken's cool carbon #0B0B0D) with the
+   safety-orange primary and Drive-gauge green secondary — not 2XKO's neon
+   pink/cyan, not Tekken's crimson/violet. Structural tokens (spacing, radii,
+   corner cuts, shadow geometry, motion, type scale) are engine-fixed and
+   deliberately NOT declared here.
+   ========================================================================== */
+
+/* ---- Self-hosted faces via @fontsource (Vite-processed, hashed, base-path-
+   safe — never public/ url()s). Big Shoulders Display = the collegiate-
+   condensed display block (evokes "SF6 College" without imitating it);
+   Public Sans = the utilitarian grotesque UI face, deliberately distinct from
+   Barlow / Archivo / Space Grotesk; JetBrains Mono = data/mono, the platform
+   habit. font-display: swap ships inside the fontsource CSS.
+
+   NOT imported: @fontsource/sedgwick-ave-display. The handoff loads it as a
+   "wordmark layer only" face and deliberately does not tokenize it, but the
+   engine owns BrandWordmark and styles it from --font-display — with no token
+   and no component override there is nothing to apply it to, so importing it
+   would ship an unused font.
+
+   Specifiers are EXTENSIONLESS on purpose. @fontsource packages are not
+   uniform: public-sans and jetbrains-mono declare both "./*" and "./*.css"
+   export patterns, but big-shoulders-display declares only "./*" (→ "./*.css"),
+   so "…/600.css" resolves to "600.css.css" and the build dies with "no valid
+   target file was found". "…/600" resolves correctly in all three. ---------- */
+@import '@fontsource/big-shoulders-display/600';
+@import '@fontsource/big-shoulders-display/700';
+@import '@fontsource/big-shoulders-display/800';
+@import '@fontsource/public-sans/400';
+@import '@fontsource/public-sans/500';
+@import '@fontsource/public-sans/600';
+@import '@fontsource/public-sans/700';
+@import '@fontsource/jetbrains-mono/400';
+@import '@fontsource/jetbrains-mono/500';
+@import '@fontsource/jetbrains-mono/700';
+
+/* :root, NOT @theme — deliberately. This file is a plain app stylesheet: it
+   never enters the engine's Tailwind root compile, so an `@theme` block here
+   ships to the browser as a raw unknown at-rule and is silently dropped in the
+   PRODUCTION bundle (the dev server compiles per-file and masks it — found in
+   the Phase-4 audit, where the live 2XKO build exhibited exactly this). Plain
+   `:root` custom properties are the README contract's other documented form:
+   they need no compilation, and being UNLAYERED they win over the engine's
+   `@layer theme` defaults in every build mode. Engine utilities reference
+   var(--color-*) at use time, so overrides flow through.
+
+   Per-character accents are NOT here — the engine injects --accent-<id> from
+   GameConfig.accents (app/plugins/accents.ts), sourced from the same
+   design/handoff/tokens.css --char-* block scripts/characters.ts reads. */
+:root {
+  /* ---- Surfaces — asphalt & concrete (warm cast) -------------------------- */
+  --color-bg: #141009;
+  --color-surface: #1d1810;
+  --color-surface-raised: #282017;
+  --color-surface-sunken: #0c0906;
+  --color-border: #3d3424;
+  --color-border-subtle: #2a2417;
+
+  /* ---- Text — chalk & paper whites ---------------------------------------- */
+  --color-text: #f4eee1;
+  --color-text-secondary: #cbc1ac;
+  --color-text-muted: #a3987f;
+  --color-text-faint: #756a54;
+
+  /* ---- Brand — SF6 orange + Drive-paint green ----------------------------- */
+  --color-primary: #ff7d00;
+  --color-primary-hover: #ff9526;
+  --color-primary-contrast: #1a130a;
+  --color-secondary: #9be64a;
+  --color-focus: #9be64a;
+
+  /* ---- Status — kept clear of the brand pair ------------------------------ */
+  --color-danger: #f5455c;
+  --color-warning: #ffc72e;
+  --color-success: #3dd68c;
+
+  /* ---- Font families (scale stays structural) ----------------------------- */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', ui-sans-serif, sans-serif;
+  --font-ui: 'Public Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}

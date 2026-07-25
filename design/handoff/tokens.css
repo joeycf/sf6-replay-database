@@ -1,0 +1,112 @@
+/* ============================================================
+   REPLAY DATABASE — SF6 SKIN · tokens.css
+   Skin №3 · "Asphalt & Drive Paint"
+   ------------------------------------------------------------
+   Tokens only: same anatomy, spacing, radii, and motion as
+   /2xko and /tekken. Scope selector is the platform's call
+   (e.g. [data-game="sf6"]) — declared on :root here for paste.
+
+   Sampling notes
+   · Primary locked at #FF7D00 — the streetfighter.com/6 chrome
+     family (brief start #FF7900; the site's UI orange sits a
+     touch hotter). High-visibility safety orange.
+   · Secondary locked at #9BE64A — Drive-gauge paint green,
+     mid of the candidate zone #8BE04A–#A6E85C. Clearly apart
+     from 2XKO cyan #38CFFF and Tekken violet #9D5CFF.
+   · Surfaces are asphalt: warm brown-cast charcoals, verified
+     warmer than Tekken's cool carbon #0B0B0D.
+   · All ratios below computed programmatically (WCAG 2.x).
+   ============================================================ */
+
+:root {
+  /* ---- Surfaces — asphalt & concrete (warm cast) ---------- */
+  --color-bg:              #141009; /* asphalt field */
+  --color-surface:         #1D1810; /* card / panel */
+  --color-surface-raised:  #282017; /* hover, popovers, chips */
+  --color-surface-sunken:  #0C0906; /* inputs, wells, tracks */
+  --color-border:          #3D3424; /* concrete seam — strong */
+  --color-border-subtle:   #2A2417; /* concrete seam — hairline */
+
+  /* ---- Text — chalk & paper whites ------------------------ */
+  --color-text:            #F4EEE1; /* chalk · 15.26:1 on surface (AAA) */
+  --color-text-secondary:  #CBC1AC; /* paper · 9.88:1 (AAA) */
+  --color-text-muted:      #A3987F; /* dust  · 6.18:1 (AA, fixed in-token) */
+  --color-text-faint:      #756A54; /* soot  · 3.31:1 — decorative only, never copy */
+
+  /* ---- Brand — SF6 orange + Drive-paint green -------------- */
+  --color-primary:          #FF7D00; /* safety orange · 6.88:1 on surface */
+  --color-primary-hover:    #FF9526; /* +~10% lightness lift */
+  --color-primary-contrast: #1A130A; /* asphalt ink · 7.17:1 on primary, 8.39:1 on hover */
+  --color-secondary:        #9BE64A; /* Drive-gauge green · 11.60:1 on surface */
+  --color-focus:            #9BE64A; /* the paint IS the interaction language */
+
+  /* ---- Status — kept clear of the brand pair --------------- */
+  --color-danger:  #F5455C; /* 4.95:1 on surface */
+  --color-warning: #FFC72E; /* pushed to clear amber-yellow — never reads as primary orange · 11.31:1 */
+  --color-success: #3DD68C; /* cooler emerald, distinct from Drive green · 9.41:1 */
+
+  /* ---- Type ------------------------------------------------ */
+  /* Display: collegiate-condensed block — evokes "SF6 College"
+     without imitating it. UI: utilitarian grotesque, distinct
+     from Barlow / Archivo / Space Grotesk. Mono: platform habit. */
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-ui:      "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  /* Graffiti accent (wordmark layer ONLY, never UI/labels/data):
+     "Sedgwick Ave Display" — loaded but deliberately not tokenized,
+     so it cannot leak into component styles. */
+
+  /* ---- Per-character accents (30) ---------------------------
+     Method (also how Year-4 gets added — e.g. Yasmine, Aug 3):
+     1. ANCHOR  on the canonical costume/effect color.
+     2. NORMALIZE in OKLCH to L 0.65–0.93, C 0.09–0.19 —
+        vivid-pastel band that survives 12px chips on dark.
+     3. SLOT    the hue ≥8–12° from roster neighbors; crowded
+        canon families (reds, golds) separate by lightness steps.
+     4. VERIFY  ≥4.5:1 on --color-surface; lift toward white
+        until passing (zangief, akuma, bison were lifted).
+     Ratios below are on --color-surface.                       */
+
+  /* Launch roster */
+  --char-ryu:      #E8DFC8; /* gi chalk-white — the one white chip · 13.29 */
+  --char-luke:     #58AAFF; /* arts azure · 7.23 */
+  --char-jamie:    #4FCB7D; /* drink jade · 8.54 */
+  --char-chunli:   #7B93FF; /* qipao blue · 6.27 */
+  --char-guile:    #A9B93F; /* fatigue olive · 8.15 */
+  --char-kimberly: #FF5FB8; /* spray-can magenta · 6.37 */
+  --char-juri:     #B77DFF; /* feng-shui violet · 6.21 */
+  --char-ken:      #FFB03D; /* flame amber · 9.69 */
+  --char-blanka:   #8FE036; /* voltage green · 10.82 */
+  --char-dhalsim:  #E39A3B; /* saffron · 7.52 */
+  --char-honda:    #928DF6; /* yukata indigo · 6.19 */
+  --char-deejay:   #F2DC50; /* MAXIMUM yellow · 12.71 */
+  --char-manon:    #F2AECB; /* ballet rose · 9.82 */
+  --char-marisa:   #D68F55; /* gladiator bronze · 6.65 */
+  --char-jp:       #46B7A8; /* coat viridian · 7.22 */
+  --char-zangief:  #E34E54; /* trunk scarlet (lifted) · 4.61 */
+  --char-lily:     #4EC9E6; /* wind turquoise · 9.09 */
+  --char-cammy:    #7CE3C3; /* leotard mint · 11.45 */
+  /* Year 1 */
+  --char-rashid:   #3ED69E; /* wind emerald · 9.51 */
+  --char-aki:      #C06BF2; /* poison orchid · 5.57 */
+  --char-ed:       #B4A4F5; /* psycho lilac · 8.04 */
+  --char-akuma:    #C1657E; /* oni wine (lifted) · 4.56 */
+  /* Year 2 */
+  --char-bison:    #B956E2; /* Psycho magenta (lifted) · 4.61 */
+  --char-terry:    #FF5748; /* cap red · 5.64 */
+  --char-mai:      #FF7E8C; /* kunoichi coral · 7.24 */
+  --char-elena:    #E08CE8; /* capoeira orchid-pink · 7.63 */
+  /* Year 3 */
+  --char-sagat:    #E5C05C; /* tiger gold · 10.10 */
+  --char-viper:    #A8D8FF; /* Thunder Knuckle spark · 11.70 */
+  --char-alex:     #6FBF44; /* overall green · 7.74 */
+  --char-ingrid:   #FFE9A3; /* solar pale gold · 14.65 */
+}
+
+/* ------------------------------------------------------------
+   Fonts — @fontsource (self-hosted at build)
+   @fontsource/big-shoulders-display   600, 700, 800
+   @fontsource/public-sans             400, 500, 600, 700
+   @fontsource/jetbrains-mono          400, 500, 700
+   @fontsource/sedgwick-ave-display    400  (wordmark layer only)
+   ------------------------------------------------------------ */

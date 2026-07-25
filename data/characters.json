@@ -1,0 +1,447 @@
+[
+  {
+    "id": "aki",
+    "name": "A.K.I.",
+    "imgPortrait": "/img/characters/aki-portrait.webp",
+    "imgSplash": "/img/characters/aki-splash.webp",
+    "accent": "#C06BF2",
+    "extra": {
+      "aliases": [
+        "a.k.i.",
+        "a.k.i",
+        "aki"
+      ],
+      "full name": "A.K.I.",
+      "japanese": "A.K.I."
+    }
+  },
+  {
+    "id": "akuma",
+    "name": "Akuma",
+    "imgPortrait": "/img/characters/akuma-portrait.webp",
+    "imgSplash": "/img/characters/akuma-splash.webp",
+    "accent": "#C1657E",
+    "extra": {
+      "aliases": [
+        "akuma",
+        "gouki"
+      ],
+      "full name": "AKUMA",
+      "japanese": "豪鬼"
+    }
+  },
+  {
+    "id": "alex",
+    "name": "Alex",
+    "imgPortrait": "/img/characters/alex-portrait.webp",
+    "imgSplash": "/img/characters/alex-splash.webp",
+    "accent": "#6FBF44",
+    "extra": {
+      "aliases": [
+        "alex"
+      ],
+      "full name": "Alex",
+      "japanese": "アレックス"
+    }
+  },
+  {
+    "id": "bison",
+    "name": "M. Bison",
+    "imgPortrait": "/img/characters/bison-portrait.webp",
+    "imgSplash": "/img/characters/bison-splash.webp",
+    "accent": "#B956E2",
+    "extra": {
+      "aliases": [
+        "m. bison",
+        "m.bison",
+        "mbison",
+        "bison"
+      ],
+      "full name": "M. Bison",
+      "japanese": "ベガ"
+    }
+  },
+  {
+    "id": "blanka",
+    "name": "Blanka",
+    "imgPortrait": "/img/characters/blanka-portrait.webp",
+    "imgSplash": "/img/characters/blanka-splash.webp",
+    "accent": "#8FE036",
+    "extra": {
+      "aliases": [
+        "blanka"
+      ],
+      "full name": "BLANKA",
+      "japanese": "ブランカ"
+    }
+  },
+  {
+    "id": "cammy",
+    "name": "Cammy",
+    "imgPortrait": "/img/characters/cammy-portrait.webp",
+    "imgSplash": "/img/characters/cammy-splash.webp",
+    "accent": "#7CE3C3",
+    "extra": {
+      "aliases": [
+        "cammy",
+        "cammy white"
+      ],
+      "full name": "CAMMY",
+      "japanese": "キャミィ"
+    }
+  },
+  {
+    "id": "chunli",
+    "name": "Chun-Li",
+    "imgPortrait": "/img/characters/chunli-portrait.webp",
+    "imgSplash": "/img/characters/chunli-splash.webp",
+    "accent": "#7B93FF",
+    "extra": {
+      "aliases": [
+        "chun-li",
+        "chun li",
+        "chunli"
+      ],
+      "full name": "CHUN-LI",
+      "japanese": "春麗"
+    }
+  },
+  {
+    "id": "deejay",
+    "name": "Dee Jay",
+    "imgPortrait": "/img/characters/deejay-portrait.webp",
+    "imgSplash": "/img/characters/deejay-splash.webp",
+    "accent": "#F2DC50",
+    "extra": {
+      "aliases": [
+        "dee jay",
+        "dee-jay",
+        "deejay",
+        "d.jay"
+      ],
+      "full name": "DEE JAY",
+      "japanese": "ディージェイ"
+    }
+  },
+  {
+    "id": "dhalsim",
+    "name": "Dhalsim",
+    "imgPortrait": "/img/characters/dhalsim-portrait.webp",
+    "imgSplash": "/img/characters/dhalsim-splash.webp",
+    "accent": "#E39A3B",
+    "extra": {
+      "aliases": [
+        "dhalsim"
+      ],
+      "full name": "DHALSIM",
+      "japanese": "ダルシム"
+    }
+  },
+  {
+    "id": "ed",
+    "name": "Ed",
+    "imgPortrait": "/img/characters/ed-portrait.webp",
+    "imgSplash": "/img/characters/ed-splash.webp",
+    "accent": "#B4A4F5",
+    "extra": {
+      "aliases": [
+        "ed"
+      ],
+      "full name": "ED",
+      "japanese": "ED"
+    }
+  },
+  {
+    "id": "elena",
+    "name": "Elena",
+    "imgPortrait": "/img/characters/elena-portrait.webp",
+    "imgSplash": "/img/characters/elena-splash.webp",
+    "accent": "#E08CE8",
+    "extra": {
+      "aliases": [
+        "elena"
+      ],
+      "full name": "Elena",
+      "japanese": "エレナ"
+    }
+  },
+  {
+    "id": "guile",
+    "name": "Guile",
+    "imgPortrait": "/img/characters/guile-portrait.webp",
+    "imgSplash": "/img/characters/guile-splash.webp",
+    "accent": "#A9B93F",
+    "extra": {
+      "aliases": [
+        "guile"
+      ],
+      "full name": "GUILE",
+      "japanese": "ガイル"
+    }
+  },
+  {
+    "id": "honda",
+    "name": "E. Honda",
+    "imgPortrait": "/img/characters/honda-portrait.webp",
+    "imgSplash": "/img/characters/honda-splash.webp",
+    "accent": "#928DF6",
+    "extra": {
+      "aliases": [
+        "e. honda",
+        "e.honda",
+        "ehonda",
+        "honda",
+        "edmond honda"
+      ],
+      "full name": "E.HONDA",
+      "japanese": "エドモンド本田"
+    }
+  },
+  {
+    "id": "ingrid",
+    "name": "Ingrid",
+    "imgPortrait": "/img/characters/ingrid-portrait.webp",
+    "imgSplash": "/img/characters/ingrid-splash.webp",
+    "accent": "#FFE9A3",
+    "extra": {
+      "aliases": [
+        "ingrid"
+      ],
+      "full name": "Ingrid",
+      "japanese": "イングリッド"
+    }
+  },
+  {
+    "id": "jamie",
+    "name": "Jamie",
+    "imgPortrait": "/img/characters/jamie-portrait.webp",
+    "imgSplash": "/img/characters/jamie-splash.webp",
+    "accent": "#4FCB7D",
+    "extra": {
+      "aliases": [
+        "jamie"
+      ],
+      "full name": "JAMIE",
+      "japanese": "ジェイミー"
+    }
+  },
+  {
+    "id": "jp",
+    "name": "JP",
+    "imgPortrait": "/img/characters/jp-portrait.webp",
+    "imgSplash": "/img/characters/jp-splash.webp",
+    "accent": "#46B7A8",
+    "extra": {
+      "aliases": [
+        "jp"
+      ],
+      "full name": "JP",
+      "japanese": "JP"
+    }
+  },
+  {
+    "id": "juri",
+    "name": "Juri",
+    "imgPortrait": "/img/characters/juri-portrait.webp",
+    "imgSplash": "/img/characters/juri-splash.webp",
+    "accent": "#B77DFF",
+    "extra": {
+      "aliases": [
+        "juri"
+      ],
+      "full name": "JURI",
+      "japanese": "ジュリ"
+    }
+  },
+  {
+    "id": "ken",
+    "name": "Ken",
+    "imgPortrait": "/img/characters/ken-portrait.webp",
+    "imgSplash": "/img/characters/ken-splash.webp",
+    "accent": "#FFB03D",
+    "extra": {
+      "aliases": [
+        "ken",
+        "ken masters"
+      ],
+      "full name": "KEN",
+      "japanese": "ケン"
+    }
+  },
+  {
+    "id": "kimberly",
+    "name": "Kimberly",
+    "imgPortrait": "/img/characters/kimberly-portrait.webp",
+    "imgSplash": "/img/characters/kimberly-splash.webp",
+    "accent": "#FF5FB8",
+    "extra": {
+      "aliases": [
+        "kimberly"
+      ],
+      "full name": "KIMBERLY",
+      "japanese": "キンバリー"
+    }
+  },
+  {
+    "id": "lily",
+    "name": "Lily",
+    "imgPortrait": "/img/characters/lily-portrait.webp",
+    "imgSplash": "/img/characters/lily-splash.webp",
+    "accent": "#4EC9E6",
+    "extra": {
+      "aliases": [
+        "lily"
+      ],
+      "full name": "LILY",
+      "japanese": "リリー"
+    }
+  },
+  {
+    "id": "luke",
+    "name": "Luke",
+    "imgPortrait": "/img/characters/luke-portrait.webp",
+    "imgSplash": "/img/characters/luke-splash.webp",
+    "accent": "#58AAFF",
+    "extra": {
+      "aliases": [
+        "luke"
+      ],
+      "full name": "LUKE",
+      "japanese": "ルーク"
+    }
+  },
+  {
+    "id": "mai",
+    "name": "Mai",
+    "imgPortrait": "/img/characters/mai-portrait.webp",
+    "imgSplash": "/img/characters/mai-splash.webp",
+    "accent": "#FF7E8C",
+    "extra": {
+      "aliases": [
+        "mai",
+        "mai shiranui",
+        "shiranui"
+      ],
+      "full name": "Mai",
+      "japanese": "舞"
+    }
+  },
+  {
+    "id": "manon",
+    "name": "Manon",
+    "imgPortrait": "/img/characters/manon-portrait.webp",
+    "imgSplash": "/img/characters/manon-splash.webp",
+    "accent": "#F2AECB",
+    "extra": {
+      "aliases": [
+        "manon"
+      ],
+      "full name": "MANON",
+      "japanese": "マノン"
+    }
+  },
+  {
+    "id": "marisa",
+    "name": "Marisa",
+    "imgPortrait": "/img/characters/marisa-portrait.webp",
+    "imgSplash": "/img/characters/marisa-splash.webp",
+    "accent": "#D68F55",
+    "extra": {
+      "aliases": [
+        "marisa"
+      ],
+      "full name": "MARISA",
+      "japanese": "マリーザ"
+    }
+  },
+  {
+    "id": "rashid",
+    "name": "Rashid",
+    "imgPortrait": "/img/characters/rashid-portrait.webp",
+    "imgSplash": "/img/characters/rashid-splash.webp",
+    "accent": "#3ED69E",
+    "extra": {
+      "aliases": [
+        "rashid"
+      ],
+      "full name": "RASHID",
+      "japanese": "ラシード"
+    }
+  },
+  {
+    "id": "ryu",
+    "name": "Ryu",
+    "imgPortrait": "/img/characters/ryu-portrait.webp",
+    "imgSplash": "/img/characters/ryu-splash.webp",
+    "accent": "#E8DFC8",
+    "extra": {
+      "aliases": [
+        "ryu"
+      ],
+      "full name": "RYU",
+      "japanese": "リュウ"
+    }
+  },
+  {
+    "id": "sagat",
+    "name": "Sagat",
+    "imgPortrait": "/img/characters/sagat-portrait.webp",
+    "imgSplash": "/img/characters/sagat-splash.webp",
+    "accent": "#E5C05C",
+    "extra": {
+      "aliases": [
+        "sagat"
+      ],
+      "full name": "Sagat",
+      "japanese": "サガット"
+    }
+  },
+  {
+    "id": "terry",
+    "name": "Terry",
+    "imgPortrait": "/img/characters/terry-portrait.webp",
+    "imgSplash": "/img/characters/terry-splash.webp",
+    "accent": "#FF5748",
+    "extra": {
+      "aliases": [
+        "terry",
+        "terry bogard"
+      ],
+      "full name": "Terry",
+      "japanese": "テリー"
+    }
+  },
+  {
+    "id": "viper",
+    "name": "C. Viper",
+    "imgPortrait": "/img/characters/viper-portrait.webp",
+    "imgSplash": "/img/characters/viper-splash.webp",
+    "accent": "#A8D8FF",
+    "extra": {
+      "aliases": [
+        "c. viper",
+        "c.viper",
+        "cviper",
+        "crimson viper",
+        "viper"
+      ],
+      "full name": "C. Viper",
+      "japanese": "C.ヴァイパー"
+    }
+  },
+  {
+    "id": "zangief",
+    "name": "Zangief",
+    "imgPortrait": "/img/characters/zangief-portrait.webp",
+    "imgSplash": "/img/characters/zangief-splash.webp",
+    "accent": "#E34E54",
+    "extra": {
+      "aliases": [
+        "zangief",
+        "gief"
+      ],
+      "full name": "ZANGIEF",
+      "japanese": "ザンギエフ"
+    }
+  }
+]

@@ -1,0 +1,6072 @@
+{
+  "totals": {
+    "replays": 19495,
+    "characters": 30,
+    "players": 1650,
+    "byPatch": {
+      "S1": 5025,
+      "S2": 7088,
+      "S3": 7382
+    }
+  },
+  "characterUsage": {
+    "aki": 1114,
+    "akuma": 3304,
+    "alex": 597,
+    "bison": 1701,
+    "blanka": 946,
+    "cammy": 1269,
+    "chunli": 1241,
+    "deejay": 948,
+    "dhalsim": 1333,
+    "ed": 1453,
+    "elena": 521,
+    "guile": 1449,
+    "honda": 854,
+    "ingrid": 308,
+    "jamie": 785,
+    "jp": 1428,
+    "juri": 1036,
+    "ken": 2946,
+    "kimberly": 466,
+    "lily": 551,
+    "luke": 1454,
+    "mai": 1345,
+    "manon": 903,
+    "marisa": 1057,
+    "rashid": 1113,
+    "ryu": 2226,
+    "sagat": 1277,
+    "terry": 1128,
+    "viper": 552,
+    "zangief": 3685
+  },
+  "byPatchUsage": {
+    "S1": {
+      "aki": 405,
+      "blanka": 392,
+      "cammy": 445,
+      "chunli": 443,
+      "deejay": 397,
+      "dhalsim": 391,
+      "ed": 341,
+      "guile": 422,
+      "honda": 221,
+      "jamie": 219,
+      "jp": 543,
+      "juri": 409,
+      "ken": 1469,
+      "kimberly": 148,
+      "lily": 253,
+      "luke": 720,
+      "manon": 313,
+      "marisa": 530,
+      "rashid": 517,
+      "ryu": 387,
+      "zangief": 1085
+    },
+    "S2": {
+      "aki": 397,
+      "akuma": 2220,
+      "bison": 1200,
+      "blanka": 284,
+      "cammy": 487,
+      "chunli": 352,
+      "deejay": 281,
+      "dhalsim": 451,
+      "ed": 636,
+      "guile": 534,
+      "honda": 292,
+      "jamie": 238,
+      "jp": 359,
+      "juri": 336,
+      "ken": 969,
+      "kimberly": 135,
+      "lily": 156,
+      "luke": 360,
+      "mai": 682,
+      "manon": 299,
+      "marisa": 215,
+      "rashid": 367,
+      "ryu": 831,
+      "terry": 595,
+      "zangief": 1500
+    },
+    "S3": {
+      "aki": 312,
+      "akuma": 1084,
+      "alex": 597,
+      "bison": 501,
+      "blanka": 270,
+      "cammy": 337,
+      "chunli": 446,
+      "deejay": 270,
+      "dhalsim": 491,
+      "ed": 476,
+      "elena": 521,
+      "guile": 493,
+      "honda": 341,
+      "ingrid": 308,
+      "jamie": 328,
+      "jp": 526,
+      "juri": 291,
+      "ken": 508,
+      "kimberly": 183,
+      "lily": 142,
+      "luke": 374,
+      "mai": 663,
+      "manon": 291,
+      "marisa": 312,
+      "rashid": 229,
+      "ryu": 1008,
+      "sagat": 1277,
+      "terry": 533,
+      "viper": 552,
+      "zangief": 1100
+    }
+  },
+  "playerCharacters": {
+    "555": {
+      "jp": 1
+    },
+    "2006": {
+      "jp": 1
+    },
+    "1-lp-rank-amydarc": {
+      "luke": 1
+    },
+    "1strank": {
+      "lily": 1
+    },
+    "2bassa": {
+      "cammy": 4,
+      "juri": 46,
+      "mai": 6,
+      "ryu": 1
+    },
+    "2koma-devil": {
+      "jamie": 1
+    },
+    "32rev": {
+      "zangief": 1
+    },
+    "3dolla": {
+      "bison": 1,
+      "ed": 1,
+      "kimberly": 1,
+      "mai": 3
+    },
+    "4th-best-lily": {
+      "lily": 1
+    },
+    "5050handa": {
+      "zangief": 1
+    },
+    "7days": {
+      "jamie": 1
+    },
+    "801-strider": {
+      "alex": 9,
+      "bison": 32,
+      "luke": 1,
+      "manon": 2,
+      "marisa": 20
+    },
+    "801poppacap": {
+      "bison": 1
+    },
+    "a-kei": {
+      "honda": 2
+    },
+    "a0k1aki0": {
+      "honda": 1
+    },
+    "a2": {
+      "honda": 4
+    },
+    "aaaaa": {
+      "zangief": 1
+    },
+    "abao": {
+      "guile": 3
+    },
+    "abe": {
+      "ryu": 1
+    },
+    "abood-bboy": {
+      "akuma": 2,
+      "luke": 6
+    },
+    "ace": {
+      "deejay": 1
+    },
+    "acqua": {
+      "bison": 1,
+      "blanka": 11,
+      "jp": 19,
+      "mai": 2
+    },
+    "actionjack": {
+      "ryu": 1
+    },
+    "adeli": {
+      "ed": 1
+    },
+    "adelie": {
+      "alex": 5,
+      "ed": 10
+    },
+    "adelii": {
+      "alex": 1,
+      "deejay": 1,
+      "ed": 8
+    },
+    "adoiken": {
+      "deejay": 1
+    },
+    "adrian": {
+      "ryu": 1,
+      "sagat": 1
+    },
+    "ae": {
+      "chunli": 1
+    },
+    "aegis": {
+      "ken": 1
+    },
+    "aerosmith": {
+      "marisa": 2
+    },
+    "afg-peace": {
+      "sagat": 2
+    },
+    "ageo-eleking": {
+      "bison": 1
+    },
+    "agoaniki": {
+      "marisa": 1
+    },
+    "ahosei": {
+      "juri": 2
+    },
+    "aiai": {
+      "aki": 1,
+      "juri": 67
+    },
+    "aigoo": {
+      "jamie": 3
+    },
+    "airjordan": {
+      "blanka": 2
+    },
+    "airjordon43": {
+      "blanka": 1
+    },
+    "akainu": {
+      "alex": 1,
+      "deejay": 1,
+      "guile": 91
+    },
+    "akakuro": {
+      "marisa": 3
+    },
+    "akaraien": {
+      "cammy": 5
+    },
+    "akgrandmasterb": {
+      "dhalsim": 1
+    },
+    "akira": {
+      "cammy": 97
+    },
+    "akiramezzo": {
+      "marisa": 1
+    },
+    "akiresu": {
+      "guile": 3
+    },
+    "akki": {
+      "deejay": 3
+    },
+    "akuken": {
+      "akuma": 1
+    },
+    "akuru": {
+      "kimberly": 1
+    },
+    "akutagawa": {
+      "akuma": 1,
+      "cammy": 3,
+      "ken": 2,
+      "mai": 4,
+      "manon": 356,
+      "terry": 42
+    },
+    "aladdin": {
+      "ken": 1
+    },
+    "albla": {
+      "honda": 1
+    },
+    "aldesine": {
+      "marisa": 2
+    },
+    "alex-myers": {
+      "chunli": 4
+    },
+    "alex-valle": {
+      "blanka": 2,
+      "rashid": 2,
+      "ryu": 3,
+      "terry": 2
+    },
+    "alexa": {
+      "jp": 1
+    },
+    "alexrd": {
+      "ken": 1
+    },
+    "alisa": {
+      "akuma": 1,
+      "luke": 3
+    },
+    "all-might": {
+      "terry": 2
+    },
+    "alphen": {
+      "cammy": 2,
+      "mai": 1
+    },
+    "alywgpd": {
+      "zangief": 1
+    },
+    "amayui": {
+      "akuma": 2
+    },
+    "amayui-moka": {
+      "akuma": 19,
+      "sagat": 1
+    },
+    "amkidd": {
+      "akuma": 1
+    },
+    "amydarc": {
+      "akuma": 2,
+      "luke": 2
+    },
+    "andoruph": {
+      "zangief": 1
+    },
+    "andrew": {
+      "terry": 1
+    },
+    "angrybird": {
+      "akuma": 184,
+      "cammy": 8,
+      "ken": 220,
+      "marisa": 1,
+      "rashid": 17,
+      "ryu": 17,
+      "terry": 1,
+      "viper": 1
+    },
+    "anna": {
+      "juri": 5
+    },
+    "ansa-li": {
+      "zangief": 1
+    },
+    "anzunyan": {
+      "ryu": 1
+    },
+    "aoiman": {
+      "jamie": 1
+    },
+    "aoki": {
+      "sagat": 4
+    },
+    "aokiakio": {
+      "honda": 2
+    },
+    "aomino": {
+      "dhalsim": 1
+    },
+    "apex": {
+      "guile": 1
+    },
+    "arcaderat": {
+      "jp": 2
+    },
+    "arcalux": {
+      "juri": 1
+    },
+    "ardesine": {
+      "marisa": 1
+    },
+    "ares": {
+      "chunli": 3
+    },
+    "arikui": {
+      "honda": 1
+    },
+    "arismania": {
+      "chunli": 1
+    },
+    "aristal": {
+      "jp": 1
+    },
+    "arita": {
+      "marisa": 1
+    },
+    "arleichi": {
+      "honda": 2
+    },
+    "armperor": {
+      "akuma": 2,
+      "bison": 2,
+      "ed": 1,
+      "ken": 50,
+      "luke": 10,
+      "rashid": 2,
+      "ryu": 7,
+      "terry": 1
+    },
+    "arthuro-ray": {
+      "mai": 1
+    },
+    "arubaranka": {
+      "blanka": 1
+    },
+    "asase": {
+      "zangief": 165
+    },
+    "asase-kobayan": {
+      "zangief": 1
+    },
+    "asaya": {
+      "cammy": 1
+    },
+    "asterix": {
+      "ingrid": 1
+    },
+    "atau-smashltoh": {
+      "jp": 1
+    },
+    "augbair": {
+      "honda": 1
+    },
+    "augbir": {
+      "honda": 2
+    },
+    "automattock": {
+      "marisa": 2
+    },
+    "axela": {
+      "jp": 5
+    },
+    "ayasaka": {
+      "aki": 9
+    },
+    "ayayan": {
+      "ken": 1
+    },
+    "azan": {
+      "jamie": 1
+    },
+    "b-100": {
+      "blanka": 2
+    },
+    "b-rakko": {
+      "marisa": 1
+    },
+    "b-station": {
+      "blanka": 3,
+      "deejay": 1,
+      "dhalsim": 1
+    },
+    "b3llz": {
+      "lily": 1
+    },
+    "babaaaa": {
+      "luke": 7,
+      "manon": 70
+    },
+    "babaaaaa": {
+      "luke": 1,
+      "manon": 68
+    },
+    "back-ally": {
+      "aki": 1
+    },
+    "baitorida": {
+      "juri": 1
+    },
+    "bananaken": {
+      "jp": 11
+    },
+    "bananauyuu": {
+      "kimberly": 4
+    },
+    "bankai": {
+      "akuma": 1
+    },
+    "banseog": {
+      "honda": 6
+    },
+    "batou": {
+      "marisa": 2
+    },
+    "bauhaus": {
+      "akuma": 1,
+      "viper": 1
+    },
+    "bbq7": {
+      "akuma": 1,
+      "blanka": 1
+    },
+    "bcchoi": {
+      "dhalsim": 1
+    },
+    "bctachikawa": {
+      "luke": 1
+    },
+    "bctachikawan": {
+      "luke": 1
+    },
+    "beans": {
+      "zangief": 1
+    },
+    "beefspecial": {
+      "deejay": 1
+    },
+    "bens": {
+      "chunli": 3,
+      "ed": 1
+    },
+    "berzerker": {
+      "akuma": 1
+    },
+    "beslem": {
+      "luke": 1
+    },
+    "besulemu": {
+      "akuma": 1
+    },
+    "betty": {
+      "juri": 85
+    },
+    "bg-gavinji": {
+      "ed": 1
+    },
+    "big-bird": {
+      "akuma": 5,
+      "bison": 11,
+      "ed": 4,
+      "marisa": 101,
+      "rashid": 131,
+      "ryu": 10,
+      "sagat": 11,
+      "terry": 9,
+      "viper": 12
+    },
+    "big-mo": {
+      "blanka": 1
+    },
+    "bigbear": {
+      "honda": 1
+    },
+    "bigmommydamage": {
+      "marisa": 1
+    },
+    "bilibili": {
+      "cammy": 1
+    },
+    "bird": {
+      "dhalsim": 1
+    },
+    "bitfrost9": {
+      "aki": 1
+    },
+    "bivi": {
+      "blanka": 1
+    },
+    "bkwaison": {
+      "akuma": 1,
+      "terry": 1
+    },
+    "black-heart": {
+      "guile": 1
+    },
+    "blackboomer": {
+      "cammy": 1
+    },
+    "blackwheaton": {
+      "guile": 1
+    },
+    "blanca-chan": {
+      "chunli": 1
+    },
+    "blaz": {
+      "akuma": 35,
+      "alex": 2,
+      "blanka": 7,
+      "ed": 9,
+      "jamie": 58,
+      "ken": 3,
+      "kimberly": 3,
+      "mai": 2,
+      "ryu": 135,
+      "sagat": 129,
+      "terry": 25
+    },
+    "blazedeathblade": {
+      "aki": 3
+    },
+    "blkwolverine": {
+      "jp": 2
+    },
+    "bloo": {
+      "deejay": 5
+    },
+    "bloodsong": {
+      "jp": 1
+    },
+    "boardwalk": {
+      "guile": 1
+    },
+    "bob": {
+      "kimberly": 1
+    },
+    "boing-boing": {
+      "zangief": 1
+    },
+    "bokocho": {
+      "deejay": 1
+    },
+    "bolado": {
+      "zangief": 15
+    },
+    "boltsrike": {
+      "jamie": 1
+    },
+    "boltstrike": {
+      "jamie": 30,
+      "jp": 1
+    },
+    "bonchan": {
+      "akuma": 329,
+      "jamie": 2,
+      "luke": 185,
+      "sagat": 469
+    },
+    "bongi": {
+      "blanka": 7
+    },
+    "booce": {
+      "jamie": 1,
+      "ken": 13,
+      "terry": 9
+    },
+    "booce-lee": {
+      "ken": 2,
+      "terry": 31,
+      "viper": 1
+    },
+    "boppa": {
+      "lily": 1
+    },
+    "boxiii": {
+      "terry": 1
+    },
+    "brandon": {
+      "akuma": 5
+    },
+    "brandongouki": {
+      "akuma": 1
+    },
+    "bravery": {
+      "cammy": 12
+    },
+    "brayan-job": {
+      "alex": 2,
+      "deejay": 10,
+      "sagat": 2
+    },
+    "breeze": {
+      "guile": 1
+    },
+    "brian-f": {
+      "ed": 2,
+      "jp": 6,
+      "sagat": 1,
+      "terry": 1
+    },
+    "brito": {
+      "zangief": 1
+    },
+    "broadwalk": {
+      "guile": 1
+    },
+    "broly": {
+      "jamie": 1
+    },
+    "brolynho": {
+      "jamie": 1,
+      "mai": 2
+    },
+    "broski": {
+      "aki": 191,
+      "alex": 6,
+      "bison": 2,
+      "dhalsim": 2,
+      "elena": 2,
+      "honda": 1,
+      "ingrid": 8,
+      "jp": 29,
+      "rashid": 2,
+      "terry": 2,
+      "viper": 1
+    },
+    "brutits": {
+      "zangief": 1
+    },
+    "brutus": {
+      "zangief": 1
+    },
+    "bryan": {
+      "deejay": 1
+    },
+    "bryan-d": {
+      "deejay": 6,
+      "guile": 1,
+      "honda": 1
+    },
+    "bryan-job": {
+      "alex": 1,
+      "deejay": 3
+    },
+    "bryzee": {
+      "ryu": 1
+    },
+    "bsida": {
+      "ken": 1
+    },
+    "buddha": {
+      "honda": 1
+    },
+    "buff-death": {
+      "marisa": 1
+    },
+    "buggy": {
+      "mai": 1
+    },
+    "bullcat": {
+      "marisa": 1
+    },
+    "bussan": {
+      "deejay": 1
+    },
+    "caba": {
+      "akuma": 1,
+      "guile": 95,
+      "juri": 2,
+      "kimberly": 1,
+      "ryu": 1,
+      "sagat": 11
+    },
+    "cafe": {
+      "jamie": 2
+    },
+    "caggo1": {
+      "akuma": 1,
+      "bison": 1,
+      "cammy": 1,
+      "chunli": 5,
+      "mai": 2
+    },
+    "cajard": {
+      "zangief": 1
+    },
+    "campaine": {
+      "viper": 1
+    },
+    "canontree": {
+      "zangief": 6
+    },
+    "canvas": {
+      "jamie": 1
+    },
+    "captainy": {
+      "akuma": 1
+    },
+    "carbon": {
+      "cammy": 1,
+      "marisa": 1
+    },
+    "careka": {
+      "honda": 9
+    },
+    "carlos": {
+      "ryu": 1
+    },
+    "caru": {
+      "zangief": 5
+    },
+    "cash-eye": {
+      "juri": 1
+    },
+    "casulamatch": {
+      "ryu": 1
+    },
+    "catwolf": {
+      "jp": 1
+    },
+    "cbk": {
+      "honda": 1
+    },
+    "cebonvieuporing": {
+      "honda": 1
+    },
+    "celi": {
+      "akuma": 1
+    },
+    "ceroblast": {
+      "ken": 16,
+      "marisa": 1,
+      "terry": 2
+    },
+    "ceros": {
+      "jp": 3
+    },
+    "chaeyoungbias": {
+      "manon": 1
+    },
+    "chakki": {
+      "lily": 1
+    },
+    "chaminsky": {
+      "zangief": 4
+    },
+    "chanryo": {
+      "chunli": 1
+    },
+    "chaoyue": {
+      "luke": 1
+    },
+    "cheems-jr": {
+      "manon": 3
+    },
+    "chelsea": {
+      "zangief": 1
+    },
+    "cheryu": {
+      "lily": 1
+    },
+    "chez": {
+      "zangief": 1
+    },
+    "chico": {
+      "ken": 1,
+      "sagat": 1,
+      "terry": 1
+    },
+    "chihiro": {
+      "cammy": 1
+    },
+    "chiikawa": {
+      "terry": 1
+    },
+    "chikuden": {
+      "ken": 1
+    },
+    "choppa": {
+      "zangief": 1
+    },
+    "chris-cch": {
+      "ed": 11,
+      "ken": 7,
+      "luke": 6,
+      "terry": 4
+    },
+    "chris-tatarian": {
+      "cammy": 1,
+      "jp": 1,
+      "ken": 148,
+      "luke": 1,
+      "mai": 1,
+      "ryu": 4
+    },
+    "chris-tattarian": {
+      "ken": 1
+    },
+    "chris-wong": {
+      "aki": 2,
+      "akuma": 58,
+      "alex": 1,
+      "ed": 2,
+      "elena": 2,
+      "ingrid": 3,
+      "jamie": 6,
+      "luke": 421,
+      "mai": 47,
+      "sagat": 5,
+      "terry": 60,
+      "viper": 8
+    },
+    "chrisg": {
+      "akuma": 2,
+      "chunli": 8,
+      "ken": 1,
+      "luke": 1,
+      "mai": 7,
+      "rashid": 3,
+      "ryu": 4,
+      "sagat": 1,
+      "terry": 2
+    },
+    "christatatian": {
+      "ken": 1
+    },
+    "chrome": {
+      "zangief": 2
+    },
+    "chrysalis": {
+      "ken": 3
+    },
+    "chuchuzera": {
+      "chunli": 1
+    },
+    "chungshida": {
+      "bison": 1
+    },
+    "cientifikof": {
+      "marisa": 1
+    },
+    "cinnamonsun": {
+      "zangief": 1
+    },
+    "ckymousee": {
+      "blanka": 1
+    },
+    "cleansheet": {
+      "marisa": 1
+    },
+    "clint": {
+      "manon": 1
+    },
+    "cmon": {
+      "ken": 1
+    },
+    "cn": {
+      "jp": 1
+    },
+    "codex": {
+      "jp": 1
+    },
+    "cola": {
+      "sagat": 1
+    },
+    "cola321": {
+      "ingrid": 1
+    },
+    "colorfultulum": {
+      "ken": 1
+    },
+    "colts": {
+      "deejay": 1
+    },
+    "combo-kash": {
+      "chunli": 1
+    },
+    "comfyningen": {
+      "chunli": 1
+    },
+    "commander": {
+      "dhalsim": 1
+    },
+    "commieduck": {
+      "dhalsim": 1
+    },
+    "conan": {
+      "bison": 1
+    },
+    "cosa": {
+      "akuma": 6,
+      "ken": 30,
+      "ryu": 27,
+      "terry": 2
+    },
+    "cosazeku": {
+      "ken": 7,
+      "manon": 2,
+      "ryu": 8
+    },
+    "cosco": {
+      "blanka": 10,
+      "deejay": 2,
+      "jp": 1
+    },
+    "cosmic-mama": {
+      "bison": 2
+    },
+    "coup0n": {
+      "zangief": 3
+    },
+    "coupon": {
+      "zangief": 1
+    },
+    "cpu-level": {
+      "chunli": 1
+    },
+    "cpu-level-3-ranked": {
+      "chunli": 1
+    },
+    "cpu-level-5": {
+      "chunli": 40
+    },
+    "cpu-level-5-ochi": {
+      "chunli": 1
+    },
+    "cqbz": {
+      "cammy": 1
+    },
+    "craime": {
+      "akuma": 3,
+      "alex": 1,
+      "bison": 10,
+      "blanka": 3,
+      "jp": 1,
+      "ryu": 26
+    },
+    "crank": {
+      "mai": 1
+    },
+    "cream": {
+      "zangief": 2
+    },
+    "creed": {
+      "honda": 1
+    },
+    "crescent": {
+      "jamie": 1
+    },
+    "crimson": {
+      "dhalsim": 1
+    },
+    "crosoverrd": {
+      "deejay": 2
+    },
+    "crossover": {
+      "cammy": 1,
+      "ken": 1
+    },
+    "crossoverrd": {
+      "bison": 1,
+      "deejay": 2,
+      "ken": 1,
+      "mai": 1,
+      "sagat": 2
+    },
+    "crossoverrrd": {
+      "deejay": 1
+    },
+    "crouchmediumcup": {
+      "akuma": 1
+    },
+    "crybaby": {
+      "guile": 2
+    },
+    "cuffs": {
+      "ken": 1
+    },
+    "cuongster": {
+      "jp": 2
+    },
+    "curemarine": {
+      "jamie": 1
+    },
+    "currayman": {
+      "honda": 2
+    },
+    "curryman": {
+      "honda": 128
+    },
+    "d-u-s-k": {
+      "jp": 1
+    },
+    "dad": {
+      "ed": 1
+    },
+    "dafeetlee": {
+      "jamie": 1
+    },
+    "dahurt": {
+      "ryu": 1,
+      "zangief": 7
+    },
+    "daigo": {
+      "akuma": 1018,
+      "guile": 1,
+      "honda": 1,
+      "jamie": 15,
+      "ken": 647,
+      "mai": 3,
+      "ryu": 19,
+      "zangief": 9
+    },
+    "daigo-umehara": {
+      "ken": 1
+    },
+    "daigothebeast": {
+      "akuma": 114,
+      "jp": 1,
+      "ken": 1
+    },
+    "daigothebeastv": {
+      "ken": 1
+    },
+    "daikoku": {
+      "guile": 13,
+      "sagat": 4
+    },
+    "daikokugod": {
+      "guile": 2
+    },
+    "dainippon": {
+      "honda": 1
+    },
+    "dakcorgi": {
+      "viper": 19
+    },
+    "dakou": {
+      "deejay": 4
+    },
+    "dankadillas": {
+      "dhalsim": 4
+    },
+    "dankaidayo": {
+      "luke": 1
+    },
+    "dannypham": {
+      "zangief": 6
+    },
+    "danyang": {
+      "marisa": 1
+    },
+    "dark817": {
+      "bison": 1,
+      "jp": 1
+    },
+    "darkrai": {
+      "marisa": 1
+    },
+    "darlin": {
+      "ryu": 74
+    },
+    "darling": {
+      "ryu": 1
+    },
+    "darukawa": {
+      "dhalsim": 1
+    },
+    "dary": {
+      "kimberly": 1
+    },
+    "datcorgi": {
+      "viper": 1
+    },
+    "dawaker": {
+      "zangief": 1
+    },
+    "dcq": {
+      "bison": 87,
+      "jp": 31,
+      "ryu": 2,
+      "sagat": 9,
+      "terry": 1
+    },
+    "ddt-zunda": {
+      "luke": 1
+    },
+    "debb": {
+      "jp": 1
+    },
+    "deebonez": {
+      "guile": 1,
+      "zangief": 2
+    },
+    "densetsu": {
+      "juri": 2
+    },
+    "densetsusp": {
+      "juri": 11
+    },
+    "despairking": {
+      "juri": 4,
+      "mai": 3
+    },
+    "diaphone": {
+      "aki": 1,
+      "kimberly": 4
+    },
+    "dible": {
+      "ed": 8,
+      "elena": 3,
+      "jamie": 1,
+      "viper": 3
+    },
+    "didimokof": {
+      "aki": 1
+    },
+    "die": {
+      "manon": 1
+    },
+    "dillonr": {
+      "ed": 1,
+      "marisa": 3
+    },
+    "dingchinqiu": {
+      "jp": 1
+    },
+    "dingchunqiu": {
+      "bison": 18,
+      "cammy": 1,
+      "jp": 19,
+      "ryu": 1,
+      "sagat": 5
+    },
+    "dino": {
+      "bison": 1
+    },
+    "dizzy": {
+      "luke": 1
+    },
+    "djconrizzle": {
+      "jp": 1
+    },
+    "djstriderhanzo": {
+      "honda": 1
+    },
+    "dodogama": {
+      "chunli": 2
+    },
+    "dodogamaru": {
+      "chunli": 13
+    },
+    "dogura": {
+      "aki": 2,
+      "akuma": 1,
+      "alex": 21,
+      "bison": 174,
+      "blanka": 13,
+      "deejay": 88,
+      "ed": 39,
+      "elena": 178,
+      "ingrid": 16,
+      "jamie": 5,
+      "manon": 2,
+      "rashid": 4,
+      "ryu": 1
+    },
+    "doma": {
+      "kimberly": 1
+    },
+    "domaxd": {
+      "akuma": 2,
+      "deejay": 2,
+      "elena": 6,
+      "kimberly": 2,
+      "luke": 2
+    },
+    "dookie": {
+      "ed": 1
+    },
+    "dosuko": {
+      "honda": 1
+    },
+    "dosukoesports": {
+      "honda": 1
+    },
+    "dou-know-kimchi": {
+      "honda": 8
+    },
+    "doura": {
+      "elena": 1
+    },
+    "douyin": {
+      "zangief": 1
+    },
+    "doyanbo": {
+      "elena": 1
+    },
+    "dragon-legend": {
+      "rashid": 1
+    },
+    "drdannypham": {
+      "zangief": 37
+    },
+    "drdannyphan": {
+      "zangief": 1
+    },
+    "dreadxdragon": {
+      "aki": 1
+    },
+    "dresscode": {
+      "luke": 3
+    },
+    "dretok": {
+      "zangief": 1
+    },
+    "drewcelee": {
+      "aki": 1,
+      "jp": 1
+    },
+    "drinku": {
+      "jamie": 3
+    },
+    "driverushmore": {
+      "akuma": 1
+    },
+    "droker": {
+      "akuma": 1,
+      "juri": 1,
+      "sagat": 1
+    },
+    "drx": {
+      "chunli": 1
+    },
+    "dtaro": {
+      "luke": 1,
+      "terry": 4
+    },
+    "dtn-noneed": {
+      "honda": 1
+    },
+    "dual-kevin": {
+      "dhalsim": 1,
+      "jp": 1,
+      "luke": 3,
+      "rashid": 64
+    },
+    "duckrobin": {
+      "terry": 1
+    },
+    "dudesickle": {
+      "ken": 1,
+      "ryu": 1
+    },
+    "dynamite": {
+      "zangief": 8
+    },
+    "e-monda": {
+      "honda": 1
+    },
+    "ebihara": {
+      "akuma": 1,
+      "cammy": 5,
+      "ed": 72,
+      "elena": 1,
+      "jp": 1,
+      "luke": 18
+    },
+    "ebingo": {
+      "sagat": 1
+    },
+    "eccentric-prince": {
+      "kimberly": 1
+    },
+    "edamakoto": {
+      "chunli": 3,
+      "honda": 1
+    },
+    "edgon": {
+      "ryu": 1
+    },
+    "edomondmomma": {
+      "honda": 1
+    },
+    "effendix": {
+      "guile": 1
+    },
+    "ego-kosei": {
+      "ed": 1
+    },
+    "eguto": {
+      "ingrid": 8,
+      "mai": 12
+    },
+    "eitino": {
+      "dhalsim": 1
+    },
+    "elchakotay": {
+      "lily": 18
+    },
+    "elder-tong": {
+      "bison": 1
+    },
+    "eldergoose": {
+      "elena": 1,
+      "ingrid": 1,
+      "sagat": 1
+    },
+    "elfuerteenjoyer": {
+      "bison": 1
+    },
+    "elodenkun": {
+      "kimberly": 1
+    },
+    "elseco": {
+      "ed": 1
+    },
+    "elumon": {
+      "elena": 1
+    },
+    "emnoeep": {
+      "manon": 1
+    },
+    "emon": {
+      "jamie": 1
+    },
+    "emperor-cow": {
+      "kimberly": 1
+    },
+    "emuemu": {
+      "zangief": 2
+    },
+    "emuke": {
+      "manon": 1
+    },
+    "end-mame": {
+      "cammy": 1
+    },
+    "ending-walker": {
+      "akuma": 4,
+      "bison": 1,
+      "deejay": 9,
+      "ed": 322,
+      "guile": 1,
+      "honda": 12,
+      "ingrid": 1,
+      "jp": 1,
+      "ken": 10,
+      "luke": 3,
+      "marisa": 1,
+      "ryu": 242,
+      "sagat": 2,
+      "terry": 5,
+      "zangief": 12
+    },
+    "ending-walker-xuses": {
+      "ken": 1
+    },
+    "engraving": {
+      "bison": 1
+    },
+    "enigma": {
+      "honda": 18
+    },
+    "enzo": {
+      "bison": 3,
+      "sagat": 27
+    },
+    "enzo-the-hokage": {
+      "ken": 1,
+      "sagat": 8
+    },
+    "ermac": {
+      "jp": 1
+    },
+    "espy": {
+      "sagat": 1
+    },
+    "et": {
+      "manon": 1
+    },
+    "eureka": {
+      "kimberly": 1
+    },
+    "evil-yoshi": {
+      "alex": 1,
+      "cammy": 1
+    },
+    "eyoko": {
+      "zangief": 1
+    },
+    "ezaboy": {
+      "guile": 1
+    },
+    "face": {
+      "cammy": 1
+    },
+    "fachizzle": {
+      "guile": 1
+    },
+    "fair": {
+      "honda": 1
+    },
+    "fanao": {
+      "ken": 1
+    },
+    "farby": {
+      "jamie": 1
+    },
+    "fchamp": {
+      "dhalsim": 18,
+      "honda": 6
+    },
+    "fchampryan": {
+      "dhalsim": 11,
+      "honda": 2
+    },
+    "felthi": {
+      "luke": 3
+    },
+    "feneritti": {
+      "blanka": 1,
+      "jp": 1
+    },
+    "fenritti": {
+      "aki": 1,
+      "bison": 2,
+      "blanka": 2,
+      "ed": 3,
+      "jp": 38,
+      "rashid": 2
+    },
+    "ferps": {
+      "terry": 1
+    },
+    "ferreas": {
+      "cammy": 1
+    },
+    "ferreras": {
+      "cammy": 4
+    },
+    "ff16": {
+      "deejay": 2
+    },
+    "fgclatif": {
+      "bison": 2
+    },
+    "fiachan": {
+      "chunli": 15
+    },
+    "fighting-phoenix": {
+      "chunli": 1,
+      "viper": 1
+    },
+    "filipino-champ": {
+      "dhalsim": 35,
+      "ed": 3,
+      "honda": 2
+    },
+    "filipinoman": {
+      "chunli": 1
+    },
+    "final-atsushi": {
+      "bison": 1
+    },
+    "finteclown": {
+      "honda": 2
+    },
+    "fish-head": {
+      "luke": 1
+    },
+    "fishbelly": {
+      "deejay": 1
+    },
+    "flaquito": {
+      "deejay": 1,
+      "jamie": 1
+    },
+    "flash-metroid": {
+      "blanka": 1
+    },
+    "fluxwavez": {
+      "aki": 9,
+      "jp": 2
+    },
+    "fluzii": {
+      "dhalsim": 1
+    },
+    "flyingdyldo": {
+      "honda": 1
+    },
+    "foxrain": {
+      "juri": 6,
+      "terry": 1
+    },
+    "foxy-grampa": {
+      "chunli": 1
+    },
+    "franksoa": {
+      "ken": 1
+    },
+    "freebee-honey": {
+      "rashid": 1
+    },
+    "freeseff": {
+      "jamie": 1
+    },
+    "freshcyborg": {
+      "jamie": 1
+    },
+    "frlin": {
+      "zangief": 1
+    },
+    "frozen": {
+      "kimberly": 4
+    },
+    "fuanao": {
+      "ken": 1
+    },
+    "fubarduck": {
+      "kimberly": 1
+    },
+    "fuddo": {
+      "ed": 1
+    },
+    "fujii": {
+      "ryu": 1
+    },
+    "fujimaru": {
+      "honda": 1
+    },
+    "fujimon": {
+      "deejay": 3
+    },
+    "fujimura": {
+      "akuma": 25,
+      "cammy": 3,
+      "chunli": 1,
+      "juri": 1,
+      "ken": 5,
+      "mai": 6,
+      "viper": 2
+    },
+    "fumi": {
+      "cammy": 1
+    },
+    "fumi39dc": {
+      "bison": 1
+    },
+    "funtao": {
+      "ed": 2
+    },
+    "futago": {
+      "ken": 1
+    },
+    "fuudo": {
+      "deejay": 137,
+      "dhalsim": 18,
+      "ed": 251
+    },
+    "gachikun": {
+      "manon": 21,
+      "rashid": 295
+    },
+    "gagachan": {
+      "deejay": 1
+    },
+    "gain": {
+      "jp": 1
+    },
+    "gakusei": {
+      "alex": 1
+    },
+    "galtu": {
+      "lily": 3
+    },
+    "gama": {
+      "jp": 1
+    },
+    "gamein": {
+      "akuma": 5,
+      "luke": 1
+    },
+    "gamein99": {
+      "akuma": 1
+    },
+    "gamerbee": {
+      "akuma": 2,
+      "cammy": 3,
+      "ed": 7,
+      "elena": 1,
+      "guile": 1,
+      "honda": 4,
+      "luke": 4
+    },
+    "gamino": {
+      "terry": 1
+    },
+    "ganaken": {
+      "manon": 2
+    },
+    "garden": {
+      "jp": 1
+    },
+    "garnet": {
+      "dhalsim": 11,
+      "ingrid": 1
+    },
+    "gasman": {
+      "luke": 1
+    },
+    "gataimax": {
+      "marisa": 1
+    },
+    "gbribeiro": {
+      "dhalsim": 1
+    },
+    "gbribiro": {
+      "dhalsim": 1
+    },
+    "gjijiig": {
+      "marisa": 4
+    },
+    "gjijjig": {
+      "marisa": 1
+    },
+    "go1": {
+      "akuma": 2,
+      "bison": 1,
+      "cammy": 14,
+      "chunli": 134,
+      "honda": 8,
+      "lily": 2,
+      "luke": 11,
+      "mai": 28,
+      "rashid": 1,
+      "terry": 1
+    },
+    "goal": {
+      "ken": 1
+    },
+    "godofjimmy": {
+      "dhalsim": 1
+    },
+    "godofnoantiair": {
+      "bison": 1
+    },
+    "goldbanks": {
+      "marisa": 2
+    },
+    "gona": {
+      "deejay": 1
+    },
+    "gootecks": {
+      "deejay": 1
+    },
+    "gorou": {
+      "ed": 1
+    },
+    "goto": {
+      "akuma": 1,
+      "juri": 1,
+      "ken": 51,
+      "mai": 16,
+      "ryu": 28
+    },
+    "gotoh": {
+      "ken": 2,
+      "ryu": 6
+    },
+    "goukishi": {
+      "honda": 1
+    },
+    "gout-fighter": {
+      "rashid": 1
+    },
+    "gr-pc": {
+      "rashid": 1
+    },
+    "gran-todakai": {
+      "jp": 2
+    },
+    "grape-juice": {
+      "sagat": 1
+    },
+    "great-white-gun": {
+      "cammy": 1
+    },
+    "grossrd": {
+      "ryu": 1
+    },
+    "gtflames": {
+      "juri": 1
+    },
+    "gtr": {
+      "ed": 2,
+      "ryu": 6,
+      "sagat": 1
+    },
+    "gun-slinga": {
+      "deejay": 3
+    },
+    "gunfight": {
+      "ed": 4,
+      "jp": 3,
+      "ken": 1,
+      "manon": 4,
+      "rashid": 18
+    },
+    "gust": {
+      "honda": 1
+    },
+    "gustc": {
+      "honda": 2
+    },
+    "gutsboom": {
+      "jp": 2
+    },
+    "guttermagic": {
+      "marisa": 1
+    },
+    "gyguyan": {
+      "marisa": 1
+    },
+    "gyoza": {
+      "manon": 1
+    },
+    "h1ghscor3": {
+      "sagat": 3
+    },
+    "h1scor3": {
+      "sagat": 3
+    },
+    "haar-ryu": {
+      "ryu": 3
+    },
+    "hadoofsa75ui": {
+      "honda": 1
+    },
+    "haitani": {
+      "blanka": 2,
+      "chunli": 248,
+      "juri": 1,
+      "ken": 1,
+      "kimberly": 1,
+      "mai": 11,
+      "marisa": 1,
+      "zangief": 2
+    },
+    "haitei-raoyue": {
+      "zangief": 1
+    },
+    "halloumi": {
+      "honda": 1
+    },
+    "hallowhavyn": {
+      "cammy": 1
+    },
+    "halola": {
+      "zangief": 1
+    },
+    "hamad": {
+      "honda": 80,
+      "ryu": 2,
+      "sagat": 2
+    },
+    "hameko": {
+      "marisa": 1
+    },
+    "hameto": {
+      "marisa": 1
+    },
+    "hamood": {
+      "akuma": 1,
+      "chunli": 9,
+      "elena": 1,
+      "luke": 2,
+      "mai": 4,
+      "ryu": 2,
+      "terry": 1
+    },
+    "hand-me-downs": {
+      "akuma": 1,
+      "ken": 6,
+      "mai": 1,
+      "sagat": 43
+    },
+    "haneyama": {
+      "chunli": 1
+    },
+    "hanni": {
+      "lily": 1
+    },
+    "happy-tiger": {
+      "chunli": 1
+    },
+    "harani": {
+      "kimberly": 1
+    },
+    "hardymj": {
+      "rashid": 1
+    },
+    "haribote": {
+      "luke": 1
+    },
+    "harimaron": {
+      "akuma": 1
+    },
+    "harouto": {
+      "akuma": 1,
+      "ryu": 1
+    },
+    "harumaki": {
+      "zangief": 1
+    },
+    "harumi": {
+      "dhalsim": 30
+    },
+    "harumy": {
+      "dhalsim": 1
+    },
+    "hasumy": {
+      "dhalsim": 1
+    },
+    "hato": {
+      "viper": 1
+    },
+    "hauko": {
+      "jp": 1
+    },
+    "hawk": {
+      "luke": 2
+    },
+    "haya880": {
+      "zangief": 1
+    },
+    "hayanasa": {
+      "jamie": 1
+    },
+    "hazen": {
+      "guile": 1
+    },
+    "healthy-vegetables": {
+      "jamie": 1
+    },
+    "heaveng": {
+      "honda": 1
+    },
+    "hei-yu": {
+      "honda": 1
+    },
+    "heimeiling": {
+      "cammy": 2
+    },
+    "heipon": {
+      "guile": 2
+    },
+    "hekaton": {
+      "blanka": 2
+    },
+    "hell-knee": {
+      "chunli": 2
+    },
+    "heroedelsur": {
+      "deejay": 1
+    },
+    "hershel": {
+      "bison": 4
+    },
+    "hetui": {
+      "zangief": 1
+    },
+    "heyypepito": {
+      "akuma": 1,
+      "luke": 1,
+      "ryu": 1,
+      "terry": 1
+    },
+    "hhhh": {
+      "jp": 1
+    },
+    "hibiki": {
+      "alex": 15,
+      "kimberly": 1,
+      "lily": 376,
+      "mai": 8,
+      "terry": 3
+    },
+    "hibikithebeast": {
+      "lily": 4
+    },
+    "hide0": {
+      "ken": 1
+    },
+    "hide0815": {
+      "ken": 2,
+      "sagat": 1
+    },
+    "higg": {
+      "guile": 2
+    },
+    "highscor": {
+      "elena": 1
+    },
+    "highscor3": {
+      "elena": 1
+    },
+    "higuchi": {
+      "guile": 545,
+      "ingrid": 3,
+      "mai": 3,
+      "sagat": 2,
+      "terry": 5
+    },
+    "higuchi-kazunoko": {
+      "sagat": 1
+    },
+    "hikari": {
+      "aki": 1
+    },
+    "hikaru": {
+      "aki": 514,
+      "blanka": 21,
+      "ed": 1,
+      "elena": 6,
+      "honda": 21,
+      "ingrid": 1,
+      "mai": 9,
+      "manon": 10,
+      "viper": 2
+    },
+    "hikaru-shiftne": {
+      "aki": 74,
+      "ed": 1,
+      "jamie": 1,
+      "manon": 3
+    },
+    "hikibi": {
+      "lily": 1
+    },
+    "himsh": {
+      "zangief": 2
+    },
+    "hinao": {
+      "akuma": 29,
+      "ingrid": 49,
+      "ken": 1,
+      "luke": 123,
+      "ryu": 93,
+      "sagat": 46,
+      "terry": 10
+    },
+    "hint": {
+      "ken": 1
+    },
+    "hiramasa": {
+      "bison": 1
+    },
+    "hirokami": {
+      "ryu": 4
+    },
+    "hisa4": {
+      "terry": 1
+    },
+    "hisakin": {
+      "ryu": 1
+    },
+    "hishamsonlatif": {
+      "ryu": 1
+    },
+    "hishow": {
+      "honda": 1
+    },
+    "hk-dible": {
+      "ed": 1
+    },
+    "hkdash": {
+      "bison": 1
+    },
+    "holaq": {
+      "zangief": 1
+    },
+    "honda": {
+      "kimberly": 3
+    },
+    "hoochoo": {
+      "jamie": 8
+    },
+    "hoom": {
+      "deejay": 1,
+      "lily": 1,
+      "zangief": 1
+    },
+    "hope": {
+      "ingrid": 1
+    },
+    "horakyrd": {
+      "sagat": 2
+    },
+    "horse": {
+      "chunli": 1
+    },
+    "horuspaulin": {
+      "ed": 1
+    },
+    "hotashi": {
+      "marisa": 1
+    },
+    "hotdog": {
+      "aki": 4,
+      "alex": 32,
+      "bison": 124,
+      "deejay": 63,
+      "ed": 20,
+      "ingrid": 7,
+      "sagat": 8,
+      "viper": 2
+    },
+    "hotdog29": {
+      "alex": 38,
+      "bison": 128,
+      "deejay": 20,
+      "ed": 8,
+      "ingrid": 6,
+      "mai": 1,
+      "sagat": 4,
+      "terry": 1,
+      "viper": 1
+    },
+    "houka": {
+      "juri": 1
+    },
+    "hourspualin": {
+      "jamie": 1
+    },
+    "humanaheatbox": {
+      "blanka": 1
+    },
+    "humanbomb": {
+      "alex": 1,
+      "blanka": 1,
+      "chunli": 2,
+      "ken": 1,
+      "manon": 1
+    },
+    "humanheatbox": {
+      "blanka": 1
+    },
+    "hungbee": {
+      "lily": 1
+    },
+    "hungmule": {
+      "lily": 1
+    },
+    "hurricane": {
+      "cammy": 98,
+      "guile": 2,
+      "terry": 8
+    },
+    "hyottoko": {
+      "jp": 1
+    },
+    "i-am-the-boshy": {
+      "bison": 1
+    },
+    "i-remember": {
+      "akuma": 1
+    },
+    "i-yo": {
+      "dhalsim": 1
+    },
+    "iambadplshelp": {
+      "lily": 1
+    },
+    "iamchuan": {
+      "chunli": 3,
+      "guile": 2,
+      "lily": 1
+    },
+    "ian": {
+      "deejay": 1
+    },
+    "ibsg-kakeru": {
+      "akuma": 2,
+      "jp": 3
+    },
+    "ibsg-sasamo": {
+      "ed": 1
+    },
+    "ibushigin": {
+      "jp": 2
+    },
+    "iceman": {
+      "kimberly": 1
+    },
+    "ichi": {
+      "elena": 1
+    },
+    "icytail": {
+      "mai": 1
+    },
+    "idom": {
+      "jamie": 1,
+      "luke": 1,
+      "manon": 152,
+      "viper": 6
+    },
+    "ihelani": {
+      "dhalsim": 2
+    },
+    "ikahara": {
+      "zangief": 1
+    },
+    "ikoma-devil": {
+      "deejay": 3
+    },
+    "imamatization": {
+      "manon": 1
+    },
+    "imo": {
+      "zangief": 1
+    },
+    "imspaceboy": {
+      "bison": 1,
+      "terry": 2
+    },
+    "imstilldadaddy": {
+      "ed": 1,
+      "guile": 16,
+      "rashid": 2,
+      "sagat": 1
+    },
+    "imstmail": {
+      "kimberly": 1
+    },
+    "inaba": {
+      "alex": 5,
+      "bison": 7,
+      "deejay": 3,
+      "dhalsim": 4,
+      "ed": 1,
+      "mai": 1,
+      "marisa": 1,
+      "sagat": 1,
+      "viper": 5,
+      "zangief": 1
+    },
+    "inabird": {
+      "mai": 1
+    },
+    "infexious": {
+      "marisa": 4,
+      "ryu": 2
+    },
+    "infimum": {
+      "cammy": 8
+    },
+    "infimum00": {
+      "cammy": 2
+    },
+    "infinite": {
+      "marisa": 1
+    },
+    "inshognito": {
+      "blanka": 1
+    },
+    "intronaut": {
+      "honda": 1
+    },
+    "invicible-bruce": {
+      "zangief": 1
+    },
+    "invincible": {
+      "zangief": 1
+    },
+    "invincible-bruce": {
+      "zangief": 6
+    },
+    "invincibleburce": {
+      "zangief": 1
+    },
+    "iperu": {
+      "lily": 15
+    },
+    "isasaka": {
+      "aki": 1
+    },
+    "itabashi": {
+      "zangief": 30
+    },
+    "itachislegacy": {
+      "blanka": 1
+    },
+    "itagaki": {
+      "lily": 3
+    },
+    "itamaru": {
+      "marisa": 1
+    },
+    "itazan": {
+      "alex": 7,
+      "bison": 1,
+      "honda": 1,
+      "marisa": 258,
+      "zangief": 904
+    },
+    "itazan-kichipa": {
+      "zangief": 1
+    },
+    "itazan-kobayan": {
+      "zangief": 1
+    },
+    "itazan-kobayan-asase": {
+      "zangief": 1
+    },
+    "itazan-world-no-1": {
+      "zangief": 3
+    },
+    "itsodacan": {
+      "rashid": 2
+    },
+    "itsodarkoutside": {
+      "ken": 1
+    },
+    "itsuki": {
+      "dhalsim": 3
+    },
+    "itsukick": {
+      "dhalsim": 26
+    },
+    "itsukick-john-dee": {
+      "dhalsim": 1
+    },
+    "itsumo-taisen-arigato": {
+      "luke": 1
+    },
+    "itzspur": {
+      "blanka": 1
+    },
+    "ivy": {
+      "bison": 1
+    },
+    "iwasi": {
+      "dhalsim": 1
+    },
+    "ixian": {
+      "deejay": 1
+    },
+    "iyun": {
+      "jamie": 4
+    },
+    "j-takeuchi": {
+      "rashid": 1
+    },
+    "jabby": {
+      "manon": 1
+    },
+    "jaccy": {
+      "alex": 6,
+      "jp": 8,
+      "kimberly": 43
+    },
+    "jack": {
+      "rashid": 1
+    },
+    "jack-doll": {
+      "juri": 5
+    },
+    "jackie-zhu": {
+      "dhalsim": 3
+    },
+    "jackpot": {
+      "rashid": 1
+    },
+    "jak": {
+      "juri": 13,
+      "mai": 1
+    },
+    "jakk": {
+      "juri": 2
+    },
+    "jasshi": {
+      "kimberly": 8
+    },
+    "jassy": {
+      "ingrid": 1,
+      "jp": 1
+    },
+    "jaybee": {
+      "jamie": 1
+    },
+    "jazzy": {
+      "akuma": 1,
+      "luke": 18
+    },
+    "jazzzy": {
+      "akuma": 2,
+      "luke": 1
+    },
+    "jazzzzy": {
+      "akuma": 5
+    },
+    "jb": {
+      "rashid": 126
+    },
+    "jbjb": {
+      "rashid": 2
+    },
+    "jeondding": {
+      "kimberly": 1
+    },
+    "jeonghu": {
+      "honda": 1
+    },
+    "jewelman": {
+      "honda": 2
+    },
+    "jhontakeuchi": {
+      "jamie": 1
+    },
+    "jieba": {
+      "cammy": 8
+    },
+    "jiewa": {
+      "ken": 4,
+      "mai": 10
+    },
+    "jigsaw": {
+      "bison": 1
+    },
+    "jimmy": {
+      "ken": 1,
+      "marisa": 2
+    },
+    "jimmy1": {
+      "dhalsim": 2,
+      "jamie": 2
+    },
+    "jjnj": {
+      "marisa": 2
+    },
+    "jns": {
+      "dhalsim": 2
+    },
+    "joe-umerogan": {
+      "luke": 1
+    },
+    "joefgc": {
+      "manon": 1
+    },
+    "joey": {
+      "manon": 15
+    },
+    "joeyangho": {
+      "chunli": 2
+    },
+    "joeyfgc": {
+      "manon": 11
+    },
+    "john-doe": {
+      "dhalsim": 2
+    },
+    "john-takeuchi": {
+      "jamie": 165,
+      "mai": 4,
+      "rashid": 224
+    },
+    "johnny": {
+      "manon": 5,
+      "marisa": 14
+    },
+    "johny": {
+      "manon": 1,
+      "marisa": 1
+    },
+    "joi-haisai": {
+      "honda": 1
+    },
+    "jojotaro": {
+      "akuma": 13,
+      "sagat": 2
+    },
+    "joka": {
+      "jp": 1
+    },
+    "jokerjokez": {
+      "cammy": 2
+    },
+    "jon": {
+      "jamie": 1,
+      "rashid": 1
+    },
+    "jon-b": {
+      "rashid": 3
+    },
+    "jon-jb": {
+      "jamie": 1,
+      "rashid": 13
+    },
+    "jonathan-saitoh": {
+      "rashid": 1
+    },
+    "joshua-graham": {
+      "terry": 1
+    },
+    "joxero": {
+      "jp": 1
+    },
+    "jp": {
+      "jp": 1
+    },
+    "jpking": {
+      "jp": 1
+    },
+    "judy": {
+      "ken": 2
+    },
+    "juicyjoe": {
+      "jp": 26
+    },
+    "jumbo-turbo-mongee-sr": {
+      "marisa": 1
+    },
+    "jumboturbo": {
+      "marisa": 1
+    },
+    "junia": {
+      "zangief": 6
+    },
+    "juninho": {
+      "luke": 1
+    },
+    "juninho-ras": {
+      "luke": 15,
+      "ryu": 2
+    },
+    "junior": {
+      "alex": 5,
+      "marisa": 1,
+      "sagat": 1,
+      "zangief": 270
+    },
+    "just-a-casual": {
+      "ken": 1
+    },
+    "justakid": {
+      "deejay": 1,
+      "juri": 10
+    },
+    "justfog": {
+      "marisa": 1,
+      "ryu": 23
+    },
+    "justice": {
+      "terry": 1
+    },
+    "justin-wong": {
+      "aki": 1,
+      "akuma": 2,
+      "cammy": 4,
+      "chunli": 1,
+      "ed": 1,
+      "jamie": 1,
+      "ken": 1,
+      "mai": 2,
+      "manon": 2,
+      "ryu": 1,
+      "sagat": 1,
+      "terry": 2,
+      "zangief": 2
+    },
+    "justoneluckboy": {
+      "luke": 1
+    },
+    "k4ll3pro": {
+      "zangief": 1
+    },
+    "k7-showoff": {
+      "rashid": 1
+    },
+    "kabezeku": {
+      "cammy": 2
+    },
+    "kaitei": {
+      "zangief": 1
+    },
+    "kakeru": {
+      "aki": 10,
+      "akuma": 73,
+      "bison": 75,
+      "blanka": 4,
+      "cammy": 1,
+      "chunli": 1,
+      "ed": 9,
+      "elena": 6,
+      "guile": 2,
+      "honda": 1,
+      "ingrid": 32,
+      "jamie": 9,
+      "jp": 433,
+      "ken": 4,
+      "kimberly": 3,
+      "mai": 41,
+      "manon": 1,
+      "ryu": 21,
+      "sagat": 29,
+      "terry": 3,
+      "viper": 13
+    },
+    "kakeru-tokido": {
+      "jp": 1
+    },
+    "kakokyu": {
+      "aki": 1
+    },
+    "kakutasu3": {
+      "blanka": 1
+    },
+    "kamiki": {
+      "jp": 1
+    },
+    "kamikura": {
+      "terry": 2
+    },
+    "kamitsuki": {
+      "marisa": 1
+    },
+    "kamome": {
+      "ed": 1
+    },
+    "kamonegi": {
+      "aki": 1
+    },
+    "kangalphon": {
+      "jp": 1
+    },
+    "kaou056": {
+      "zangief": 1
+    },
+    "kapibara-san": {
+      "jamie": 2
+    },
+    "kappi": {
+      "cammy": 1
+    },
+    "kappy": {
+      "cammy": 1
+    },
+    "kappy-games": {
+      "cammy": 1
+    },
+    "karen": {
+      "jp": 1
+    },
+    "karoshi": {
+      "jamie": 1
+    },
+    "karura": {
+      "marisa": 58
+    },
+    "karyu": {
+      "deejay": 1
+    },
+    "kasiski": {
+      "bison": 1
+    },
+    "katakana": {
+      "honda": 1
+    },
+    "kawan": {
+      "marisa": 1
+    },
+    "kawano": {
+      "akuma": 111,
+      "ingrid": 18,
+      "jamie": 1,
+      "luke": 25,
+      "manon": 1,
+      "ryu": 12,
+      "viper": 7
+    },
+    "kawona": {
+      "akuma": 1
+    },
+    "kazekorp": {
+      "kimberly": 1
+    },
+    "kazu": {
+      "bison": 2,
+      "marisa": 10
+    },
+    "kazunoko": {
+      "aki": 5,
+      "akuma": 19,
+      "alex": 15,
+      "bison": 1,
+      "cammy": 323,
+      "dhalsim": 1,
+      "ed": 27,
+      "elena": 4,
+      "ingrid": 12,
+      "jamie": 82,
+      "kimberly": 2,
+      "mai": 70,
+      "rashid": 2,
+      "ryu": 17,
+      "sagat": 20,
+      "terry": 2,
+      "viper": 237,
+      "zangief": 2
+    },
+    "kbutsu": {
+      "blanka": 1
+    },
+    "kchan": {
+      "honda": 1
+    },
+    "kdb": {
+      "terry": 2
+    },
+    "kdl": {
+      "deejay": 1
+    },
+    "kei-b": {
+      "alex": 1,
+      "bison": 29,
+      "elena": 40,
+      "jp": 4,
+      "mai": 55,
+      "sagat": 2,
+      "zangief": 1
+    },
+    "kei-b-jp": {
+      "jp": 1
+    },
+    "kenpi": {
+      "ken": 15,
+      "ryu": 7
+    },
+    "kensaba": {
+      "sagat": 1
+    },
+    "kenta": {
+      "aki": 1
+    },
+    "kerplunk": {
+      "alex": 1
+    },
+    "keshigomumagic": {
+      "deejay": 1
+    },
+    "key": {
+      "bison": 4,
+      "blanka": 3,
+      "honda": 22,
+      "kimberly": 1
+    },
+    "kharsonist": {
+      "aki": 7
+    },
+    "kichiap": {
+      "zangief": 1
+    },
+    "kichipa": {
+      "alex": 7,
+      "lily": 7,
+      "zangief": 211
+    },
+    "kido": {
+      "alex": 37,
+      "ingrid": 2
+    },
+    "kidosan": {
+      "ryu": 1
+    },
+    "killakam": {
+      "terry": 1
+    },
+    "killingmesoftly": {
+      "ken": 1
+    },
+    "kilzyou": {
+      "blanka": 1,
+      "cammy": 4,
+      "juri": 10,
+      "kimberly": 1,
+      "mai": 55
+    },
+    "kim23": {
+      "manon": 1
+    },
+    "kimchi": {
+      "honda": 5
+    },
+    "kimchi-slapper": {
+      "ed": 1
+    },
+    "kimochi": {
+      "terry": 1
+    },
+    "kinako": {
+      "bison": 1
+    },
+    "kincho": {
+      "sagat": 1,
+      "terry": 95,
+      "viper": 11
+    },
+    "kinchoru": {
+      "ken": 11,
+      "ryu": 1,
+      "terry": 26
+    },
+    "kings-vega": {
+      "blanka": 30
+    },
+    "kingsubega": {
+      "blanka": 16,
+      "ken": 1
+    },
+    "kintyo": {
+      "terry": 1
+    },
+    "kintyo-ru": {
+      "elena": 2,
+      "ken": 4,
+      "mai": 28,
+      "terry": 298,
+      "viper": 3
+    },
+    "kirunyc": {
+      "jp": 1
+    },
+    "kiske": {
+      "jamie": 2,
+      "juri": 2,
+      "kimberly": 2
+    },
+    "kissa": {
+      "luke": 1
+    },
+    "kiwibeta": {
+      "marisa": 2
+    },
+    "kizzie-kay": {
+      "deejay": 3
+    },
+    "kjmasta": {
+      "dhalsim": 1
+    },
+    "kkkccc": {
+      "honda": 1
+    },
+    "klauis": {
+      "jp": 1
+    },
+    "klem": {
+      "sagat": 7
+    },
+    "knee-khan": {
+      "rashid": 1
+    },
+    "knicks": {
+      "zangief": 1
+    },
+    "knock": {
+      "jamie": 1
+    },
+    "kobayan": {
+      "zangief": 1128
+    },
+    "kog": {
+      "lily": 2
+    },
+    "kogi": {
+      "ryu": 2
+    },
+    "koichinko": {
+      "blanka": 1
+    },
+    "kojikog": {
+      "lily": 13
+    },
+    "kokec": {
+      "honda": 17
+    },
+    "kokeshi": {
+      "blanka": 1
+    },
+    "kokko-club": {
+      "jamie": 1
+    },
+    "kon-nvedtest": {
+      "blanka": 1
+    },
+    "kona": {
+      "dhalsim": 9
+    },
+    "konabe": {
+      "cammy": 1
+    },
+    "konatsu": {
+      "dhalsim": 8
+    },
+    "konuiro": {
+      "marisa": 5
+    },
+    "kookoo": {
+      "jp": 1
+    },
+    "korekara": {
+      "ken": 2
+    },
+    "kortazang": {
+      "zangief": 3
+    },
+    "kosaku": {
+      "cammy": 5,
+      "elena": 65
+    },
+    "kotaro": {
+      "rashid": 1
+    },
+    "kou": {
+      "juri": 1
+    },
+    "kpophwani": {
+      "kimberly": 1
+    },
+    "kr-wrestling": {
+      "marisa": 1
+    },
+    "kr-wrestlingman": {
+      "rashid": 1
+    },
+    "kristensen": {
+      "manon": 1
+    },
+    "kubo": {
+      "marisa": 1
+    },
+    "kudo": {
+      "bison": 1,
+      "chunli": 1
+    },
+    "kuga": {
+      "ed": 1
+    },
+    "kujou": {
+      "lily": 3
+    },
+    "kung-fu-master": {
+      "honda": 36,
+      "ingrid": 4
+    },
+    "kurapop": {
+      "ingrid": 3
+    },
+    "kurita-oyakata": {
+      "manon": 1
+    },
+    "kuro": {
+      "chunli": 1
+    },
+    "kuroasing": {
+      "jp": 5
+    },
+    "kurobuchi": {
+      "marisa": 48
+    },
+    "kurobuta": {
+      "cammy": 1,
+      "rashid": 1
+    },
+    "kuroko": {
+      "manon": 1
+    },
+    "kuromame": {
+      "luke": 23
+    },
+    "kuropuchi": {
+      "jp": 1
+    },
+    "kusanagi": {
+      "akuma": 5,
+      "ken": 1,
+      "luke": 5,
+      "mai": 1,
+      "ryu": 44,
+      "terry": 2
+    },
+    "kushina": {
+      "ingrid": 1,
+      "sagat": 24
+    },
+    "kyo-anton": {
+      "jp": 1
+    },
+    "kyoka5d": {
+      "viper": 1
+    },
+    "kyon-kun": {
+      "dhalsim": 1
+    },
+    "kyon-tyagama": {
+      "manon": 1
+    },
+    "kyonho-jonryo": {
+      "ryu": 1
+    },
+    "kyoso": {
+      "honda": 1
+    },
+    "kyuki": {
+      "ingrid": 3,
+      "juri": 1
+    },
+    "kzo": {
+      "elena": 1
+    },
+    "l-iz-zh-d-n": {
+      "bison": 1
+    },
+    "lacid": {
+      "guile": 1
+    },
+    "laggia": {
+      "ed": 6,
+      "luke": 1
+    },
+    "lapcheng": {
+      "cammy": 1
+    },
+    "laplace-kichipa": {
+      "zangief": 2
+    },
+    "latif": {
+      "bison": 11,
+      "viper": 39
+    },
+    "lattice": {
+      "blanka": 1
+    },
+    "lazyboredom": {
+      "marisa": 13
+    },
+    "leith": {
+      "chunli": 1,
+      "ed": 1
+    },
+    "lemochin": {
+      "bison": 1
+    },
+    "leo-ig": {
+      "luke": 2
+    },
+    "leord": {
+      "bison": 1
+    },
+    "leshar": {
+      "akuma": 147,
+      "alex": 35,
+      "chunli": 41,
+      "ed": 283,
+      "elena": 17,
+      "juri": 1,
+      "luke": 18,
+      "mai": 54,
+      "ryu": 1,
+      "terry": 134
+    },
+    "lesher": {
+      "cammy": 1
+    },
+    "letgodawg": {
+      "dhalsim": 1
+    },
+    "letsgodawg": {
+      "dhalsim": 2
+    },
+    "levihakai": {
+      "elena": 7
+    },
+    "lexx": {
+      "bison": 5,
+      "guile": 83
+    },
+    "li-nyc": {
+      "honda": 1
+    },
+    "liangliang": {
+      "blanka": 4
+    },
+    "like-the-sea": {
+      "alex": 5
+    },
+    "lil-majin": {
+      "zangief": 1
+    },
+    "lilo24k": {
+      "deejay": 1
+    },
+    "linkealo": {
+      "ed": 1
+    },
+    "linkexelo": {
+      "elena": 1
+    },
+    "linusme": {
+      "lily": 1
+    },
+    "linz": {
+      "guile": 2
+    },
+    "lion": {
+      "blanka": 1
+    },
+    "lionheart": {
+      "cammy": 3
+    },
+    "liquid": {
+      "dhalsim": 2
+    },
+    "little": {
+      "deejay": 1
+    },
+    "liumang": {
+      "marisa": 1
+    },
+    "lobistasf": {
+      "jamie": 1
+    },
+    "loco03": {
+      "jamie": 1
+    },
+    "lonelyboy": {
+      "rashid": 1
+    },
+    "longzhu": {
+      "jamie": 1,
+      "juri": 49,
+      "mai": 1
+    },
+    "lord-venom": {
+      "jp": 1
+    },
+    "low-trunks": {
+      "juri": 1
+    },
+    "luchesco": {
+      "zangief": 1
+    },
+    "lucky": {
+      "ken": 1
+    },
+    "luckyboy": {
+      "dhalsim": 9
+    },
+    "luckyboy-yhc": {
+      "dhalsim": 1
+    },
+    "luffy": {
+      "aki": 1,
+      "manon": 32
+    },
+    "luiman": {
+      "dhalsim": 2
+    },
+    "luiman20": {
+      "bison": 1,
+      "blanka": 1,
+      "dhalsim": 6,
+      "ingrid": 1
+    },
+    "luis": {
+      "guile": 1
+    },
+    "lunch": {
+      "blanka": 1
+    },
+    "luo-xiaohu": {
+      "chunli": 1,
+      "mai": 1
+    },
+    "luxima": {
+      "ed": 1
+    },
+    "lyo": {
+      "dhalsim": 2
+    },
+    "m-yoohoo": {
+      "rashid": 1
+    },
+    "m1ng": {
+      "ingrid": 1
+    },
+    "m1ogz": {
+      "honda": 1
+    },
+    "machabo": {
+      "akuma": 17,
+      "alex": 2,
+      "ed": 1,
+      "ken": 4,
+      "ryu": 9,
+      "terry": 2
+    },
+    "macssama": {
+      "marisa": 3
+    },
+    "madhawk": {
+      "lily": 20
+    },
+    "madkof": {
+      "jp": 3
+    },
+    "maeda": {
+      "terry": 4
+    },
+    "maeushiro": {
+      "bison": 1
+    },
+    "magbuddy": {
+      "bison": 1
+    },
+    "mage": {
+      "marisa": 1,
+      "ryu": 1
+    },
+    "mago": {
+      "akuma": 3,
+      "bison": 2,
+      "cammy": 40,
+      "honda": 1,
+      "juri": 345,
+      "luke": 1,
+      "mai": 30,
+      "ryu": 16,
+      "sagat": 6,
+      "terry": 20
+    },
+    "mago2dgod": {
+      "bison": 1,
+      "juri": 13,
+      "terry": 4
+    },
+    "maka-bou": {
+      "dhalsim": 2
+    },
+    "makinouchi": {
+      "marisa": 1
+    },
+    "makiyakun": {
+      "chunli": 1
+    },
+    "makoto": {
+      "cammy": 1
+    },
+    "makumo": {
+      "akuma": 1
+    },
+    "makzilla": {
+      "mai": 1
+    },
+    "mamobelty": {
+      "marisa": 1
+    },
+    "manba": {
+      "marisa": 1
+    },
+    "manningfirework": {
+      "ken": 1
+    },
+    "maris": {
+      "aki": 1
+    },
+    "mariwogold": {
+      "elena": 1
+    },
+    "marmori": {
+      "deejay": 1
+    },
+    "marn": {
+      "viper": 2
+    },
+    "marnorz": {
+      "marisa": 1
+    },
+    "marvelplayer": {
+      "manon": 1
+    },
+    "marvisto": {
+      "honda": 3
+    },
+    "marxd": {
+      "bison": 1
+    },
+    "mascano": {
+      "ken": 1
+    },
+    "mastermike": {
+      "terry": 1
+    },
+    "masua": {
+      "marisa": 1
+    },
+    "masuton": {
+      "ken": 1
+    },
+    "masuyama": {
+      "kimberly": 5
+    },
+    "matoaja": {
+      "honda": 1
+    },
+    "matsu": {
+      "juri": 1,
+      "kimberly": 22
+    },
+    "matsu56": {
+      "kimberly": 4
+    },
+    "matsuri": {
+      "jp": 1
+    },
+    "mattypie": {
+      "chunli": 1
+    },
+    "mbr402": {
+      "akuma": 1
+    },
+    "mdz-jimmy": {
+      "ryu": 34
+    },
+    "meg5": {
+      "juri": 7
+    },
+    "mega": {
+      "ryu": 4
+    },
+    "megaraz": {
+      "deejay": 1
+    },
+    "meikyo": {
+      "akuma": 15,
+      "ed": 1,
+      "ken": 5
+    },
+    "melito": {
+      "kimberly": 1
+    },
+    "melo": {
+      "manon": 1
+    },
+    "memehotep": {
+      "jp": 1
+    },
+    "mementomorimori": {
+      "ken": 1
+    },
+    "menard": {
+      "akuma": 23,
+      "alex": 24,
+      "bison": 33,
+      "blanka": 131,
+      "deejay": 1,
+      "jp": 8,
+      "lily": 1,
+      "luke": 43,
+      "mai": 1,
+      "marisa": 1,
+      "ryu": 16,
+      "sagat": 5,
+      "zangief": 81
+    },
+    "mentako": {
+      "zangief": 7
+    },
+    "mentarako": {
+      "zangief": 2
+    },
+    "metal": {
+      "manon": 1
+    },
+    "mew": {
+      "chunli": 2
+    },
+    "mew2king": {
+      "guile": 1
+    },
+    "mgtarkus": {
+      "lily": 1
+    },
+    "mhike2stonk": {
+      "zangief": 1
+    },
+    "mhike2stronk": {
+      "zangief": 3
+    },
+    "michael": {
+      "elena": 1
+    },
+    "michael-becker": {
+      "sagat": 4,
+      "terry": 1
+    },
+    "michael-jackson": {
+      "cammy": 1
+    },
+    "micheal": {
+      "elena": 1
+    },
+    "michiamovalerio": {
+      "deejay": 2
+    },
+    "micky": {
+      "cammy": 22,
+      "luke": 1,
+      "mai": 15
+    },
+    "mid9poppy": {
+      "cammy": 2,
+      "honda": 1
+    },
+    "midori": {
+      "alex": 2,
+      "marisa": 58,
+      "sagat": 1
+    },
+    "mikesy": {
+      "akuma": 1,
+      "ingrid": 1,
+      "ken": 1
+    },
+    "mikex": {
+      "ken": 3,
+      "sagat": 3
+    },
+    "miliq": {
+      "aki": 2
+    },
+    "milky": {
+      "mai": 2
+    },
+    "mimam": {
+      "dhalsim": 1
+    },
+    "mimic": {
+      "viper": 1
+    },
+    "minagi": {
+      "ed": 1,
+      "lily": 4
+    },
+    "mindrpg": {
+      "jp": 1
+    },
+    "minney": {
+      "zangief": 3
+    },
+    "minutemaid": {
+      "elena": 1
+    },
+    "miriru": {
+      "marisa": 1
+    },
+    "mishie-oishi": {
+      "lily": 1
+    },
+    "mister-cimson": {
+      "dhalsim": 2
+    },
+    "mister-crimson": {
+      "akuma": 3,
+      "blanka": 1,
+      "chunli": 1,
+      "dhalsim": 85,
+      "viper": 23
+    },
+    "mister-crimson-3-ranked": {
+      "viper": 1
+    },
+    "mistmail": {
+      "kimberly": 10
+    },
+    "mita": {
+      "jp": 1
+    },
+    "mita-jp": {
+      "jp": 7
+    },
+    "mitsubo": {
+      "honda": 1
+    },
+    "miyabi": {
+      "deejay": 1
+    },
+    "miyazawa": {
+      "aki": 29
+    },
+    "miyazawa-kiryu": {
+      "aki": 29
+    },
+    "miysuha": {
+      "sagat": 1
+    },
+    "mizen": {
+      "juri": 1
+    },
+    "mizuha": {
+      "bison": 1,
+      "cammy": 67,
+      "mai": 8,
+      "sagat": 2
+    },
+    "mm2022": {
+      "jamie": 1
+    },
+    "mocchan": {
+      "aki": 3
+    },
+    "mocchi": {
+      "akuma": 6
+    },
+    "mochihowa": {
+      "cammy": 1
+    },
+    "modern-atemivich": {
+      "jp": 1
+    },
+    "mogewo": {
+      "jamie": 2,
+      "terry": 1
+    },
+    "mohi": {
+      "bison": 1
+    },
+    "mojiang": {
+      "blanka": 2
+    },
+    "moke": {
+      "cammy": 4,
+      "chunli": 319,
+      "mai": 104
+    },
+    "momi": {
+      "cammy": 1
+    },
+    "momochi": {
+      "akuma": 2,
+      "bison": 4,
+      "cammy": 1,
+      "deejay": 1,
+      "ed": 77,
+      "ingrid": 2,
+      "jamie": 1,
+      "jp": 1,
+      "ken": 6,
+      "luke": 3,
+      "mai": 11,
+      "rashid": 2,
+      "ryu": 1,
+      "terry": 2,
+      "viper": 9
+    },
+    "momoi": {
+      "terry": 1
+    },
+    "monacat": {
+      "zangief": 1
+    },
+    "monaka": {
+      "marisa": 1
+    },
+    "monster": {
+      "blanka": 1
+    },
+    "monster-hunter": {
+      "honda": 1
+    },
+    "monsterju": {
+      "dhalsim": 1
+    },
+    "monsterjujuju": {
+      "dhalsim": 19
+    },
+    "mordesai": {
+      "zangief": 3
+    },
+    "moruto": {
+      "guile": 1,
+      "juri": 1,
+      "luke": 2,
+      "ryu": 1
+    },
+    "moss-hd": {
+      "cammy": 1
+    },
+    "mosterjujuju": {
+      "dhalsim": 1
+    },
+    "motchan": {
+      "aki": 1
+    },
+    "mothman": {
+      "cammy": 1
+    },
+    "mr-aru": {
+      "akuma": 1
+    },
+    "mr-excuse-man": {
+      "sagat": 1
+    },
+    "mr-wolf": {
+      "jamie": 1
+    },
+    "mrp-slime": {
+      "akuma": 1
+    },
+    "mucmaster": {
+      "blanka": 2
+    },
+    "munezo": {
+      "deejay": 5
+    },
+    "muramasa": {
+      "manon": 1,
+      "rashid": 1
+    },
+    "murasaki": {
+      "jp": 2,
+      "luke": 1
+    },
+    "musashiboshi": {
+      "honda": 1
+    },
+    "muscle": {
+      "honda": 1
+    },
+    "musclenoob": {
+      "akuma": 1,
+      "ken": 22
+    },
+    "myonomae": {
+      "alex": 1
+    },
+    "mystic": {
+      "bison": 1,
+      "ingrid": 2
+    },
+    "mystic-smash": {
+      "elena": 2,
+      "ingrid": 5
+    },
+    "n": {
+      "juri": 1
+    },
+    "nabi": {
+      "chunli": 2
+    },
+    "nabil": {
+      "chunli": 3
+    },
+    "nafutaren": {
+      "guile": 25
+    },
+    "nameless": {
+      "jp": 1
+    },
+    "nao": {
+      "luke": 1
+    },
+    "nao999q": {
+      "luke": 1
+    },
+    "naon": {
+      "luke": 3
+    },
+    "naoonn": {
+      "ryu": 1
+    },
+    "naooon": {
+      "ryu": 1
+    },
+    "naooonn": {
+      "akuma": 79,
+      "deejay": 1,
+      "ken": 2,
+      "luke": 20,
+      "ryu": 21,
+      "sagat": 1,
+      "terry": 1
+    },
+    "napur": {
+      "ken": 1
+    },
+    "napuru": {
+      "ingrid": 2,
+      "ken": 1,
+      "sagat": 9
+    },
+    "naraku": {
+      "cammy": 2
+    },
+    "nari-kun-pro": {
+      "kimberly": 1
+    },
+    "narikun": {
+      "bison": 1,
+      "kimberly": 32
+    },
+    "narou": {
+      "jamie": 1
+    },
+    "naruo": {
+      "akuma": 2,
+      "alex": 13,
+      "bison": 2,
+      "elena": 6,
+      "jamie": 297,
+      "luke": 4,
+      "mai": 5,
+      "ryu": 67,
+      "sagat": 84,
+      "terry": 97,
+      "viper": 3
+    },
+    "nashi": {
+      "juri": 48,
+      "viper": 2
+    },
+    "nassim-claw": {
+      "aki": 2,
+      "bison": 1,
+      "honda": 66
+    },
+    "nasty": {
+      "marisa": 1
+    },
+    "nasty-nas": {
+      "marisa": 9
+    },
+    "natapan": {
+      "honda": 1
+    },
+    "nathan": {
+      "guile": 1
+    },
+    "nattsu": {
+      "terry": 1
+    },
+    "naufatren": {
+      "guile": 1
+    },
+    "nauman": {
+      "ed": 2,
+      "ken": 12,
+      "mai": 6,
+      "terry": 2
+    },
+    "naumanzoh": {
+      "ken": 10,
+      "mai": 2,
+      "terry": 1
+    },
+    "naumanzu": {
+      "ken": 2
+    },
+    "nbnhmr": {
+      "guile": 2
+    },
+    "needoffline": {
+      "cammy": 1
+    },
+    "needonttv": {
+      "luke": 1
+    },
+    "neko": {
+      "aki": 42,
+      "elena": 1
+    },
+    "nekopunch": {
+      "chunli": 1
+    },
+    "nelson": {
+      "blanka": 2
+    },
+    "nemo": {
+      "aki": 28,
+      "akuma": 3,
+      "alex": 33,
+      "bison": 162,
+      "blanka": 61,
+      "ed": 1,
+      "elena": 1,
+      "ingrid": 3,
+      "jp": 122,
+      "mai": 4,
+      "terry": 1,
+      "viper": 1
+    },
+    "nemosu": {
+      "kimberly": 1
+    },
+    "nemosu-junichi-jr": {
+      "kimberly": 1
+    },
+    "nephew": {
+      "akuma": 4,
+      "bison": 2,
+      "cammy": 3,
+      "chunli": 5,
+      "ed": 7,
+      "ingrid": 25,
+      "jp": 6,
+      "juri": 128,
+      "luke": 1,
+      "mai": 38,
+      "rashid": 1,
+      "sagat": 4,
+      "terry": 6
+    },
+    "nephren": {
+      "cammy": 2
+    },
+    "nepuri-samurai": {
+      "zangief": 1
+    },
+    "nezu": {
+      "manon": 1
+    },
+    "niel-bolado": {
+      "akuma": 2
+    },
+    "nightmareeffect": {
+      "deejay": 1
+    },
+    "nikumaki": {
+      "jp": 1
+    },
+    "nimbus": {
+      "ed": 2,
+      "ken": 1,
+      "ryu": 1
+    },
+    "ninjastar": {
+      "kimberly": 1
+    },
+    "niruhiru": {
+      "guile": 1
+    },
+    "nishikin": {
+      "blanka": 312
+    },
+    "njoymentenjoyer": {
+      "marisa": 1
+    },
+    "nksoul": {
+      "kimberly": 1
+    },
+    "nl": {
+      "akuma": 126,
+      "bison": 1,
+      "cammy": 14,
+      "ken": 11,
+      "luke": 115,
+      "ryu": 9,
+      "sagat": 29
+    },
+    "nl-tm": {
+      "akuma": 1
+    },
+    "nlnl": {
+      "akuma": 12,
+      "luke": 1
+    },
+    "nlnl-shuto": {
+      "akuma": 1
+    },
+    "noah": {
+      "bison": 4,
+      "luke": 52
+    },
+    "noahtheprodigy": {
+      "bison": 27,
+      "cammy": 7,
+      "guile": 1,
+      "luke": 100,
+      "ryu": 1
+    },
+    "noahthprodigy": {
+      "bison": 1
+    },
+    "noakc": {
+      "luke": 1
+    },
+    "noatheprodigy": {
+      "bison": 1
+    },
+    "noble": {
+      "akuma": 32,
+      "jp": 1,
+      "luke": 55,
+      "terry": 1
+    },
+    "nohiro": {
+      "honda": 1
+    },
+    "nojo": {
+      "juri": 1
+    },
+    "nokawaii": {
+      "sagat": 1
+    },
+    "noma": {
+      "rashid": 1
+    },
+    "nona-yuki": {
+      "lily": 1
+    },
+    "nonhell": {
+      "manon": 1
+    },
+    "norespect": {
+      "bison": 1
+    },
+    "nosuke": {
+      "marisa": 1
+    },
+    "notgoldbanks": {
+      "marisa": 1
+    },
+    "notpedro": {
+      "akuma": 1,
+      "ken": 18,
+      "ryu": 1,
+      "sagat": 5
+    },
+    "nouhiro": {
+      "honda": 2
+    },
+    "noveto": {
+      "dhalsim": 3
+    },
+    "nowar": {
+      "alex": 66,
+      "ed": 7,
+      "elena": 3,
+      "ingrid": 5,
+      "viper": 4
+    },
+    "nowar0o0": {
+      "ed": 1
+    },
+    "nox": {
+      "jp": 1
+    },
+    "nox2": {
+      "jp": 8,
+      "terry": 1
+    },
+    "nuamanzoh": {
+      "mai": 1
+    },
+    "nuckeldu": {
+      "guile": 1
+    },
+    "nuckleblue": {
+      "guile": 1
+    },
+    "nuckledu": {
+      "akuma": 4,
+      "cammy": 28,
+      "deejay": 72,
+      "guile": 248,
+      "luke": 2,
+      "mai": 63
+    },
+    "numanzoh": {
+      "ken": 2
+    },
+    "nutaro": {
+      "guile": 1
+    },
+    "nvedtest": {
+      "blanka": 2,
+      "juri": 3
+    },
+    "ny-mando": {
+      "zangief": 1
+    },
+    "nyan": {
+      "marisa": 1
+    },
+    "nyangiri": {
+      "marisa": 1
+    },
+    "nyanpi": {
+      "aki": 10
+    },
+    "nychrisg": {
+      "akuma": 1,
+      "mai": 2,
+      "terry": 2
+    },
+    "nyowabla": {
+      "lily": 1
+    },
+    "o-i": {
+      "ryu": 1
+    },
+    "obiheart": {
+      "bison": 13,
+      "jp": 17
+    },
+    "octopus": {
+      "ed": 2
+    },
+    "octopus-scum": {
+      "ed": 1
+    },
+    "ohiyaumasi": {
+      "kimberly": 1
+    },
+    "oil-king": {
+      "chunli": 7,
+      "ed": 2,
+      "elena": 1,
+      "ken": 6,
+      "lily": 1,
+      "luke": 1,
+      "manon": 16,
+      "rashid": 67,
+      "terry": 27
+    },
+    "older-brother": {
+      "jp": 1
+    },
+    "omochimugi": {
+      "ken": 1
+    },
+    "oneline": {
+      "kimberly": 1
+    },
+    "oniki": {
+      "bison": 1,
+      "ingrid": 2,
+      "kimberly": 2
+    },
+    "onikidayo": {
+      "bison": 4,
+      "jp": 2,
+      "kimberly": 4
+    },
+    "onitsu": {
+      "blanka": 4
+    },
+    "onsns": {
+      "lily": 9
+    },
+    "onsu": {
+      "marisa": 1
+    },
+    "ooib": {
+      "deejay": 1
+    },
+    "ooitajun": {
+      "chunli": 5
+    },
+    "orain1": {
+      "ken": 1
+    },
+    "orarin": {
+      "akuma": 2,
+      "bison": 1,
+      "ed": 1,
+      "ingrid": 3,
+      "ken": 172,
+      "mai": 56
+    },
+    "orarin1": {
+      "ken": 23,
+      "mai": 12
+    },
+    "osaku": {
+      "guile": 1
+    },
+    "osayu": {
+      "cammy": 3
+    },
+    "oshinko": {
+      "marisa": 1
+    },
+    "osugi": {
+      "cammy": 4
+    },
+    "osugi-bent": {
+      "cammy": 9
+    },
+    "otaku": {
+      "rashid": 1
+    },
+    "otaku-cn": {
+      "rashid": 2
+    },
+    "otani": {
+      "akuma": 5,
+      "alex": 3,
+      "ken": 37,
+      "luke": 15,
+      "ryu": 5,
+      "terry": 2
+    },
+    "otanibc": {
+      "mai": 1
+    },
+    "overlordz1": {
+      "blanka": 1
+    },
+    "overs": {
+      "ryu": 1
+    },
+    "owaechan": {
+      "chunli": 44,
+      "guile": 1
+    },
+    "oweachan": {
+      "zangief": 1
+    },
+    "ozu": {
+      "rashid": 1
+    },
+    "pachi": {
+      "jp": 1
+    },
+    "pachii": {
+      "bison": 1
+    },
+    "paladin": {
+      "akuma": 3,
+      "ryu": 71
+    },
+    "paladin850": {
+      "ryu": 3
+    },
+    "paladin850-yt": {
+      "ryu": 1
+    },
+    "palworld": {
+      "juri": 1
+    },
+    "pamelo": {
+      "dhalsim": 1
+    },
+    "pan-glocks": {
+      "zangief": 1
+    },
+    "panashi": {
+      "kimberly": 1
+    },
+    "panda-saku": {
+      "juri": 1
+    },
+    "pandalong": {
+      "ed": 1,
+      "jamie": 2,
+      "ken": 1
+    },
+    "panyu": {
+      "honda": 1
+    },
+    "papin": {
+      "luke": 1
+    },
+    "papinfgc": {
+      "luke": 1
+    },
+    "pastafiend": {
+      "honda": 1
+    },
+    "patada-veloz": {
+      "cammy": 1
+    },
+    "pc6akira": {
+      "cammy": 24,
+      "ken": 1
+    },
+    "pc6kira": {
+      "cammy": 1
+    },
+    "peace": {
+      "sagat": 1
+    },
+    "pepito": {
+      "ryu": 2
+    },
+    "pepsiraid": {
+      "marisa": 1
+    },
+    "perchin": {
+      "ryu": 1
+    },
+    "perfect-legend": {
+      "dhalsim": 1
+    },
+    "persona": {
+      "cammy": 1
+    },
+    "pertusi": {
+      "terry": 1
+    },
+    "pesan": {
+      "luke": 1
+    },
+    "peterspecial": {
+      "ryu": 1
+    },
+    "pexmoveman": {
+      "jamie": 3
+    },
+    "phenom": {
+      "akuma": 1,
+      "bison": 2,
+      "cammy": 34,
+      "ken": 39,
+      "luke": 4,
+      "mai": 2,
+      "ryu": 2,
+      "sagat": 3
+    },
+    "phenomthemoose": {
+      "cammy": 1,
+      "ken": 1
+    },
+    "pieces": {
+      "honda": 1
+    },
+    "pierrot": {
+      "honda": 1
+    },
+    "pingu": {
+      "dhalsim": 1
+    },
+    "pipokun": {
+      "kimberly": 12
+    },
+    "pippin": {
+      "dhalsim": 1
+    },
+    "plaguemaskman": {
+      "honda": 3
+    },
+    "plenam": {
+      "guile": 1,
+      "manon": 1
+    },
+    "plusisnotreal": {
+      "honda": 1
+    },
+    "pnetosman": {
+      "zangief": 1
+    },
+    "pochoclo": {
+      "elena": 2,
+      "ingrid": 1
+    },
+    "pongief": {
+      "zangief": 27
+    },
+    "ponichi": {
+      "blanka": 2
+    },
+    "pontio": {
+      "honda": 2
+    },
+    "poongko": {
+      "akuma": 1,
+      "ryu": 15
+    },
+    "popolinlin": {
+      "marisa": 6
+    },
+    "power": {
+      "cammy": 1
+    },
+    "pr-balrog": {
+      "blanka": 6,
+      "juri": 11
+    },
+    "pro7otype": {
+      "honda": 27
+    },
+    "problem-x": {
+      "alex": 123,
+      "bison": 238,
+      "blanka": 97,
+      "elena": 7,
+      "guile": 8,
+      "honda": 14,
+      "ingrid": 12,
+      "jp": 2,
+      "kimberly": 1,
+      "lily": 35,
+      "mai": 7,
+      "manon": 3,
+      "marisa": 39,
+      "rashid": 6,
+      "sagat": 44,
+      "viper": 11,
+      "zangief": 8
+    },
+    "problem-x-zhen": {
+      "bison": 1
+    },
+    "prodigal-son": {
+      "ken": 1
+    },
+    "profen": {
+      "honda": 1,
+      "terry": 1
+    },
+    "professor-squall": {
+      "alex": 3
+    },
+    "prophet": {
+      "elena": 1
+    },
+    "prowler": {
+      "ingrid": 1
+    },
+    "psycho": {
+      "kimberly": 17
+    },
+    "pugera": {
+      "alex": 11,
+      "bison": 9,
+      "ed": 4,
+      "ingrid": 5,
+      "juri": 14,
+      "sagat": 33,
+      "terry": 1,
+      "viper": 10
+    },
+    "punk": {
+      "aki": 1,
+      "akuma": 45,
+      "alex": 15,
+      "bison": 5,
+      "cammy": 175,
+      "chunli": 1,
+      "deejay": 1,
+      "dhalsim": 3,
+      "ed": 17,
+      "elena": 5,
+      "guile": 2,
+      "honda": 2,
+      "ingrid": 30,
+      "jamie": 5,
+      "juri": 2,
+      "ken": 1,
+      "kimberly": 11,
+      "luke": 3,
+      "mai": 10,
+      "marisa": 1,
+      "ryu": 16,
+      "sagat": 28,
+      "terry": 16,
+      "viper": 41
+    },
+    "punkdagod": {
+      "aki": 1,
+      "akuma": 30,
+      "bison": 8,
+      "cammy": 51,
+      "dhalsim": 1,
+      "ed": 3,
+      "elena": 1,
+      "honda": 4,
+      "jamie": 1,
+      "ken": 1,
+      "kimberly": 1,
+      "mai": 4,
+      "terry": 14,
+      "viper": 1
+    },
+    "purefootsies": {
+      "ken": 1
+    },
+    "purido": {
+      "ken": 1
+    },
+    "putoo": {
+      "mai": 1
+    },
+    "qiuqiu": {
+      "deejay": 2,
+      "honda": 3
+    },
+    "queenjak": {
+      "juri": 2
+    },
+    "quercetin-g": {
+      "ed": 1
+    },
+    "quiggy": {
+      "zangief": 11
+    },
+    "quiqui": {
+      "deejay": 1
+    },
+    "ragingdud": {
+      "marisa": 1
+    },
+    "railgun": {
+      "cammy": 2
+    },
+    "rain": {
+      "kimberly": 6,
+      "zangief": 1
+    },
+    "rainpro": {
+      "bison": 8,
+      "guile": 73,
+      "luke": 1
+    },
+    "ralnpro": {
+      "guile": 2
+    },
+    "rami": {
+      "rashid": 1
+    },
+    "ramsey": {
+      "honda": 1,
+      "zangief": 2
+    },
+    "ramune": {
+      "lily": 1
+    },
+    "rana": {
+      "guile": 19
+    },
+    "ranapower": {
+      "guile": 4
+    },
+    "ranatower": {
+      "guile": 3
+    },
+    "randei": {
+      "manon": 1
+    },
+    "randumb": {
+      "manon": 61
+    },
+    "rangasamy": {
+      "honda": 79
+    },
+    "rangsamy": {
+      "honda": 1
+    },
+    "ranndo": {
+      "kimberly": 3
+    },
+    "raoyam": {
+      "bison": 1
+    },
+    "raoyamuyamu": {
+      "bison": 1
+    },
+    "rapid": {
+      "jp": 1
+    },
+    "rawdaddylam": {
+      "ryu": 1
+    },
+    "realforce": {
+      "deejay": 4
+    },
+    "reizu": {
+      "ken": 1
+    },
+    "ren": {
+      "kimberly": 2
+    },
+    "rena-chan": {
+      "zangief": 1
+    },
+    "rengoku": {
+      "honda": 1
+    },
+    "revilo": {
+      "jamie": 1
+    },
+    "rh": {
+      "honda": 19
+    },
+    "ribeiro": {
+      "sagat": 1
+    },
+    "ricky-ortiz": {
+      "chunli": 1
+    },
+    "riddles": {
+      "terry": 18
+    },
+    "riddlesmk": {
+      "luke": 1,
+      "terry": 22
+    },
+    "rikemansbarnet": {
+      "honda": 15
+    },
+    "rillo": {
+      "elena": 1,
+      "jamie": 1
+    },
+    "rina": {
+      "cammy": 1
+    },
+    "rising-fang": {
+      "terry": 1
+    },
+    "ritorai": {
+      "zangief": 1
+    },
+    "robinho": {
+      "kimberly": 1
+    },
+    "rockshooter": {
+      "ed": 1
+    },
+    "rogness": {
+      "honda": 1
+    },
+    "ronaldinho": {
+      "blanka": 2
+    },
+    "ronin": {
+      "guile": 1
+    },
+    "rookie": {
+      "luke": 2
+    },
+    "rounded-n": {
+      "juri": 3
+    },
+    "rudolf-k": {
+      "zangief": 1
+    },
+    "rufianmx": {
+      "blanka": 3
+    },
+    "ruga": {
+      "juri": 1
+    },
+    "ryan-hart": {
+      "ken": 2
+    },
+    "ryo": {
+      "alex": 1
+    },
+    "ryukichi": {
+      "akuma": 5,
+      "cammy": 4,
+      "ed": 15,
+      "guile": 2,
+      "ken": 201,
+      "mai": 97,
+      "ryu": 4,
+      "sagat": 6,
+      "terry": 3
+    },
+    "ryupoyo": {
+      "zangief": 1
+    },
+    "ryusei": {
+      "bison": 6,
+      "jp": 74
+    },
+    "ryuutya": {
+      "jp": 18
+    },
+    "s-a-j": {
+      "blanka": 1
+    },
+    "sabanoritchi": {
+      "chunli": 1
+    },
+    "sagawa": {
+      "luke": 1
+    },
+    "sahara": {
+      "akuma": 7,
+      "ed": 52,
+      "ken": 1,
+      "sagat": 16
+    },
+    "sahuayac": {
+      "zangief": 1
+    },
+    "saikawa": {
+      "ken": 1
+    },
+    "saikyoalex": {
+      "lily": 1
+    },
+    "saikyoalexkun": {
+      "lily": 1
+    },
+    "saimin-ochi": {
+      "honda": 1
+    },
+    "sake": {
+      "bison": 1
+    },
+    "sakeru": {
+      "juri": 1
+    },
+    "sakimori": {
+      "guile": 1
+    },
+    "sako": {
+      "aki": 12,
+      "akuma": 29,
+      "chunli": 70,
+      "ed": 1,
+      "elena": 29,
+      "ingrid": 8,
+      "jp": 1,
+      "rashid": 4,
+      "terry": 2,
+      "viper": 5
+    },
+    "sakonoko": {
+      "aki": 3
+    },
+    "sakuyama": {
+      "kimberly": 1
+    },
+    "salvatore": {
+      "cammy": 14,
+      "mai": 4
+    },
+    "samaro": {
+      "chunli": 1
+    },
+    "samoel": {
+      "rashid": 1
+    },
+    "samurai": {
+      "akuma": 10,
+      "luke": 3
+    },
+    "samyuwen": {
+      "blanka": 1
+    },
+    "sanagi": {
+      "ken": 1
+    },
+    "sandbag": {
+      "ken": 2,
+      "ryu": 1
+    },
+    "sandori": {
+      "lily": 1
+    },
+    "sands": {
+      "jp": 1
+    },
+    "sanefox": {
+      "akuma": 3,
+      "cammy": 1,
+      "elena": 1,
+      "ingrid": 1
+    },
+    "santaro": {
+      "akuma": 2
+    },
+    "santarou": {
+      "akuma": 1,
+      "chunli": 17
+    },
+    "sanwa-m": {
+      "ken": 1
+    },
+    "saruma": {
+      "cammy": 1
+    },
+    "sasa": {
+      "mai": 1,
+      "manon": 2,
+      "rashid": 1
+    },
+    "sasamo": {
+      "ed": 35,
+      "guile": 1
+    },
+    "sasori": {
+      "ken": 2,
+      "ryu": 3
+    },
+    "satako": {
+      "deejay": 1
+    },
+    "satoru": {
+      "ed": 2,
+      "marisa": 1,
+      "rashid": 60,
+      "terry": 1
+    },
+    "satoshi": {
+      "marisa": 1
+    },
+    "satousan": {
+      "blanka": 4
+    },
+    "satsuki": {
+      "mai": 7
+    },
+    "sauce-pwa": {
+      "zangief": 1
+    },
+    "sautamu": {
+      "cammy": 2
+    },
+    "sayff": {
+      "ken": 3,
+      "ryu": 3
+    },
+    "scor": {
+      "elena": 1
+    },
+    "score": {
+      "kimberly": 3
+    },
+    "score-kimberly-iwai-banpi": {
+      "cammy": 1
+    },
+    "scrawtv": {
+      "ingrid": 1
+    },
+    "scream": {
+      "ingrid": 1
+    },
+    "scrubby-sim": {
+      "dhalsim": 2
+    },
+    "scubby-sim": {
+      "dhalsim": 1
+    },
+    "scvmtier": {
+      "elena": 1
+    },
+    "sdog": {
+      "honda": 1
+    },
+    "seageeroop": {
+      "manon": 1
+    },
+    "seaperson": {
+      "honda": 4
+    },
+    "sehuwa": {
+      "ingrid": 1
+    },
+    "seichi": {
+      "elena": 23
+    },
+    "seichi-p": {
+      "elena": 2
+    },
+    "seiya": {
+      "chunli": 60
+    },
+    "sekiganryu": {
+      "ryu": 57
+    },
+    "sekingaryu": {
+      "ryu": 2
+    },
+    "sekkyo": {
+      "mai": 1
+    },
+    "semij": {
+      "chunli": 1
+    },
+    "semy28": {
+      "ryu": 5
+    },
+    "senor-power": {
+      "mai": 1,
+      "ryu": 1
+    },
+    "sevelei": {
+      "cammy": 3
+    },
+    "shadowmark": {
+      "jamie": 1
+    },
+    "shady": {
+      "deejay": 1
+    },
+    "shagakopa": {
+      "marisa": 1
+    },
+    "shaka": {
+      "dhalsim": 27
+    },
+    "shakure12": {
+      "jp": 1
+    },
+    "shakz": {
+      "cammy": 2,
+      "luke": 1
+    },
+    "shamangod": {
+      "bison": 1
+    },
+    "shanksfgc": {
+      "cammy": 1
+    },
+    "shaq": {
+      "zangief": 1
+    },
+    "shaszy": {
+      "bison": 2,
+      "guile": 2,
+      "rashid": 9,
+      "terry": 2
+    },
+    "shazy": {
+      "guile": 1,
+      "rashid": 1
+    },
+    "shell-the-no-limit": {
+      "aki": 1
+    },
+    "shenlee": {
+      "honda": 1
+    },
+    "shiftne": {
+      "aki": 3,
+      "manon": 1
+    },
+    "shigematsu": {
+      "blanka": 1
+    },
+    "shihan": {
+      "honda": 1
+    },
+    "shin": {
+      "bison": 1
+    },
+    "shine": {
+      "chunli": 4,
+      "ed": 4,
+      "kimberly": 37,
+      "mai": 8
+    },
+    "shinjuku": {
+      "elena": 7
+    },
+    "shinomiya": {
+      "bison": 1
+    },
+    "shinto": {
+      "alex": 4
+    },
+    "shinya": {
+      "marisa": 1
+    },
+    "shinya-ttv": {
+      "marisa": 1
+    },
+    "shion": {
+      "ken": 22
+    },
+    "shiranui": {
+      "mai": 1
+    },
+    "shiro": {
+      "ryu": 2
+    },
+    "shivs": {
+      "ingrid": 1,
+      "manon": 1,
+      "ryu": 1
+    },
+    "shohei": {
+      "juri": 1
+    },
+    "shokuba": {
+      "lily": 1
+    },
+    "shooting": {
+      "guile": 1
+    },
+    "shota-imai": {
+      "elena": 17
+    },
+    "shote": {
+      "jp": 1
+    },
+    "showhey": {
+      "lily": 2
+    },
+    "shozan": {
+      "marisa": 1
+    },
+    "shun": {
+      "guile": 2
+    },
+    "shuto": {
+      "akuma": 279,
+      "bison": 16,
+      "blanka": 7,
+      "ed": 1,
+      "guile": 1,
+      "jamie": 2,
+      "jp": 1,
+      "ken": 3,
+      "luke": 1,
+      "mai": 4,
+      "marisa": 107,
+      "ryu": 171,
+      "zangief": 2
+    },
+    "shuu": {
+      "blanka": 1
+    },
+    "shuzo": {
+      "deejay": 4
+    },
+    "sifu": {
+      "marisa": 1
+    },
+    "silentaccent": {
+      "elena": 1
+    },
+    "silty": {
+      "cammy": 1
+    },
+    "simple-tricks": {
+      "zangief": 4
+    },
+    "sinnerswrath": {
+      "marisa": 1
+    },
+    "siva-kaeru": {
+      "lily": 2
+    },
+    "sixbit": {
+      "honda": 11
+    },
+    "sixpit": {
+      "honda": 1
+    },
+    "skz": {
+      "cammy": 2
+    },
+    "skz-sg": {
+      "cammy": 4
+    },
+    "slamtown": {
+      "lily": 1
+    },
+    "sledge": {
+      "akuma": 1
+    },
+    "sleepz": {
+      "honda": 1
+    },
+    "slime": {
+      "honda": 2
+    },
+    "smoib": {
+      "honda": 1
+    },
+    "smoktimb": {
+      "bison": 1
+    },
+    "snaildogssbm": {
+      "jp": 2
+    },
+    "snake-eyez": {
+      "aki": 3,
+      "akuma": 22,
+      "alex": 2,
+      "bison": 3,
+      "blanka": 1,
+      "honda": 1,
+      "ingrid": 5,
+      "jp": 2,
+      "mai": 12,
+      "marisa": 4,
+      "ryu": 13,
+      "sagat": 3,
+      "terry": 4,
+      "viper": 11,
+      "zangief": 450
+    },
+    "snapp-ex": {
+      "guile": 2
+    },
+    "snb-fujimura": {
+      "akuma": 5
+    },
+    "snb-johnny": {
+      "manon": 1,
+      "marisa": 44
+    },
+    "sochan": {
+      "deejay": 1
+    },
+    "sodaman": {
+      "luke": 1
+    },
+    "sohaib": {
+      "marisa": 1
+    },
+    "sokenbicha": {
+      "marisa": 1
+    },
+    "sole": {
+      "aki": 2
+    },
+    "solidjin": {
+      "jamie": 5
+    },
+    "solidxpanda": {
+      "honda": 1
+    },
+    "sonic-sol": {
+      "cammy": 4
+    },
+    "sonicboom": {
+      "guile": 16
+    },
+    "sonicfox": {
+      "jp": 13
+    },
+    "soony": {
+      "manon": 1
+    },
+    "soualiho": {
+      "ken": 1
+    },
+    "space-boy": {
+      "luke": 1,
+      "mai": 5
+    },
+    "spacemom": {
+      "bison": 5
+    },
+    "spao": {
+      "bison": 1
+    },
+    "speechboy": {
+      "marisa": 1
+    },
+    "speedkicks": {
+      "juri": 2
+    },
+    "spiderdan707": {
+      "dhalsim": 1
+    },
+    "stare-master": {
+      "mai": 1
+    },
+    "starplatinum": {
+      "blanka": 1
+    },
+    "starplatinumkb": {
+      "deejay": 1
+    },
+    "starrk": {
+      "blanka": 1
+    },
+    "stealthtx": {
+      "jp": 2
+    },
+    "steroman": {
+      "honda": 1
+    },
+    "stetik": {
+      "terry": 1
+    },
+    "stormkubo": {
+      "honda": 36,
+      "manon": 2,
+      "rashid": 4,
+      "ryu": 1,
+      "sagat": 2
+    },
+    "strom-kubo": {
+      "honda": 1
+    },
+    "strongestjp": {
+      "jp": 1
+    },
+    "stubborn": {
+      "zangief": 1
+    },
+    "sugi": {
+      "kimberly": 1
+    },
+    "suleymon": {
+      "kimberly": 2
+    },
+    "suminao": {
+      "luke": 1
+    },
+    "sumo": {
+      "honda": 23
+    },
+    "sunhui": {
+      "manon": 6
+    },
+    "sunny": {
+      "guile": 8
+    },
+    "sunsun": {
+      "kimberly": 5
+    },
+    "supa": {
+      "deejay": 1
+    },
+    "superarsjet": {
+      "blanka": 1
+    },
+    "supikun": {
+      "mai": 2
+    },
+    "surini": {
+      "kimberly": 50
+    },
+    "surplus": {
+      "viper": 1
+    },
+    "susa": {
+      "blanka": 1
+    },
+    "sushi-heaven": {
+      "jp": 1
+    },
+    "sweetheart": {
+      "manon": 1
+    },
+    "swift": {
+      "jp": 1
+    },
+    "swkentaro": {
+      "ken": 1
+    },
+    "syg-jhin": {
+      "zangief": 1
+    },
+    "synphony": {
+      "cammy": 1
+    },
+    "syuji": {
+      "bison": 2,
+      "guile": 117,
+      "mai": 1,
+      "sagat": 1
+    },
+    "syumai": {
+      "elena": 1
+    },
+    "syuzaarku": {
+      "kimberly": 1
+    },
+    "t-e-m": {
+      "zangief": 1
+    },
+    "tachikawa": {
+      "akuma": 1,
+      "alex": 3,
+      "dhalsim": 1,
+      "ed": 20,
+      "luke": 1,
+      "mai": 6,
+      "manon": 12,
+      "terry": 3,
+      "viper": 25
+    },
+    "taiji": {
+      "jp": 1
+    },
+    "taisei": {
+      "ed": 8
+    },
+    "taizen": {
+      "deejay": 15
+    },
+    "tak": {
+      "bison": 1,
+      "viper": 4
+    },
+    "takadango": {
+      "mai": 3
+    },
+    "takagi": {
+      "blanka": 23
+    },
+    "takamura": {
+      "akuma": 4,
+      "ken": 15
+    },
+    "takashi": {
+      "ryu": 2
+    },
+    "takatake-piano": {
+      "jp": 1
+    },
+    "takatanko": {
+      "mai": 1
+    },
+    "takatsu": {
+      "aki": 1
+    },
+    "takeiwa": {
+      "blanka": 1
+    },
+    "takemi": {
+      "guile": 1
+    },
+    "takenaka": {
+      "cammy": 2
+    },
+    "takepi": {
+      "jp": 13
+    },
+    "takepiano": {
+      "jp": 1
+    },
+    "takera": {
+      "deejay": 1
+    },
+    "takesato": {
+      "ken": 1
+    },
+    "taketake-piano": {
+      "guile": 1,
+      "jp": 114
+    },
+    "tako": {
+      "kimberly": 70
+    },
+    "tako956402": {
+      "jp": 1
+    },
+    "takumin": {
+      "akuma": 1
+    },
+    "tamanegitaberu": {
+      "luke": 1
+    },
+    "tananegitaberu": {
+      "luke": 1
+    },
+    "tantan-men": {
+      "jamie": 7
+    },
+    "tasei": {
+      "ed": 3
+    },
+    "taso": {
+      "ken": 1
+    },
+    "tatanmen": {
+      "jamie": 1
+    },
+    "tayu": {
+      "marisa": 1
+    },
+    "tayutayu": {
+      "marisa": 63
+    },
+    "tdino": {
+      "guile": 2
+    },
+    "tech": {
+      "jp": 1
+    },
+    "teiemu": {
+      "alex": 1,
+      "marisa": 1,
+      "ryu": 1
+    },
+    "teiga": {
+      "ryu": 1
+    },
+    "tekoku": {
+      "chunli": 1
+    },
+    "tempmystic": {
+      "manon": 1
+    },
+    "tengu": {
+      "jp": 1
+    },
+    "tenka-sangen": {
+      "cammy": 1
+    },
+    "tetsu": {
+      "marisa": 1
+    },
+    "thai-ming": {
+      "jp": 1
+    },
+    "the-big-footise": {
+      "honda": 1
+    },
+    "the-cool-kid": {
+      "honda": 1,
+      "rashid": 1
+    },
+    "the-fgc-place": {
+      "rashid": 1
+    },
+    "the-general": {
+      "guile": 1
+    },
+    "the-shinjuku": {
+      "elena": 4
+    },
+    "the-youns": {
+      "rashid": 1
+    },
+    "the4philzz": {
+      "aki": 2,
+      "jp": 8
+    },
+    "thecoachwxlf": {
+      "dhalsim": 1
+    },
+    "thefatmanatee": {
+      "zangief": 1
+    },
+    "thehilokid": {
+      "deejay": 1,
+      "jp": 1
+    },
+    "thelexnard": {
+      "ryu": 1
+    },
+    "theshimane": {
+      "ken": 1
+    },
+    "thesticky": {
+      "zangief": 1
+    },
+    "thug": {
+      "ed": 1
+    },
+    "tiger": {
+      "chunli": 12
+    },
+    "tigger": {
+      "ryu": 2
+    },
+    "tjommi": {
+      "ryu": 2
+    },
+    "tm": {
+      "akuma": 8,
+      "alex": 2,
+      "ingrid": 1,
+      "ryu": 4,
+      "sagat": 6
+    },
+    "tokai-teio": {
+      "ed": 1
+    },
+    "tokida": {
+      "ken": 1
+    },
+    "tokido": {
+      "akuma": 47,
+      "blanka": 1,
+      "deejay": 1,
+      "dhalsim": 1,
+      "ed": 8,
+      "jp": 200,
+      "ken": 892,
+      "luke": 29,
+      "ryu": 1,
+      "zangief": 3
+    },
+    "tokido-naumanzoh": {
+      "ken": 1
+    },
+    "tomachop": {
+      "ken": 1
+    },
+    "tomoecunha": {
+      "jp": 1
+    },
+    "tomorock": {
+      "deejay": 136
+    },
+    "tomorock21": {
+      "deejay": 23
+    },
+    "tonbo": {
+      "marisa": 1
+    },
+    "tontoro": {
+      "luke": 1
+    },
+    "tony": {
+      "jp": 1,
+      "mai": 6
+    },
+    "tooky": {
+      "jp": 1
+    },
+    "torachin0630": {
+      "cammy": 1
+    },
+    "torimeshi": {
+      "dhalsim": 424,
+      "honda": 4
+    },
+    "torimesi": {
+      "dhalsim": 57
+    },
+    "torimshi": {
+      "dhalsim": 1
+    },
+    "total-lion": {
+      "blanka": 15
+    },
+    "toto": {
+      "elena": 2
+    },
+    "tourniquet": {
+      "marisa": 5
+    },
+    "touwa": {
+      "akuma": 3
+    },
+    "toya-koyo": {
+      "jp": 1
+    },
+    "trashbox": {
+      "bison": 1,
+      "jp": 1,
+      "marisa": 19
+    },
+    "travo": {
+      "bison": 3
+    },
+    "ts": {
+      "akuma": 136,
+      "elena": 1,
+      "ken": 29,
+      "mai": 1,
+      "marisa": 1
+    },
+    "tsukino": {
+      "bison": 1
+    },
+    "tsumugiz": {
+      "jamie": 6
+    },
+    "tsuoka": {
+      "guile": 1
+    },
+    "tsupako": {
+      "marisa": 2
+    },
+    "tucker-ducker": {
+      "marisa": 9
+    },
+    "turkiabc": {
+      "ed": 2,
+      "juri": 2,
+      "mai": 1
+    },
+    "twin-brother": {
+      "jp": 2
+    },
+    "tyorobuu": {
+      "honda": 2
+    },
+    "udon": {
+      "akuma": 1
+    },
+    "uemura": {
+      "blanka": 2
+    },
+    "ugang": {
+      "bison": 2,
+      "luke": 12
+    },
+    "ugnag": {
+      "luke": 1
+    },
+    "ugokase": {
+      "elena": 2
+    },
+    "uma": {
+      "ingrid": 1,
+      "juri": 16,
+      "mai": 1,
+      "terry": 3,
+      "viper": 1
+    },
+    "uma-kagami": {
+      "ingrid": 1,
+      "sagat": 1
+    },
+    "uma327": {
+      "juri": 8
+    },
+    "umemyon": {
+      "marisa": 2
+    },
+    "uncle": {
+      "zangief": 2
+    },
+    "uncle-zangi": {
+      "zangief": 38
+    },
+    "unknown": {
+      "guile": 1
+    },
+    "unsung": {
+      "ed": 1,
+      "rashid": 3
+    },
+    "uosuke": {
+      "deejay": 1
+    },
+    "urashima": {
+      "kimberly": 11
+    },
+    "uri": {
+      "jp": 1
+    },
+    "uribo": {
+      "jp": 1
+    },
+    "uriel-velorio": {
+      "ken": 9,
+      "terry": 5
+    },
+    "uriuri": {
+      "marisa": 6,
+      "terry": 1
+    },
+    "uroncha": {
+      "zangief": 1
+    },
+    "uryo": {
+      "jamie": 3,
+      "viper": 4
+    },
+    "usatan": {
+      "marisa": 1
+    },
+    "user": {
+      "alex": 1
+    },
+    "vagabond": {
+      "luke": 5
+    },
+    "vaio": {
+      "akuma": 1,
+      "ken": 8
+    },
+    "valak-egolatra": {
+      "bison": 1
+    },
+    "valmaster": {
+      "blanka": 3,
+      "chunli": 86,
+      "elena": 35,
+      "ingrid": 3,
+      "jp": 1,
+      "kimberly": 21,
+      "viper": 2
+    },
+    "vanao": {
+      "blanka": 41,
+      "ed": 1
+    },
+    "vanilllalolipop": {
+      "honda": 1
+    },
+    "vanmezian": {
+      "kimberly": 1
+    },
+    "vega": {
+      "honda": 4
+    },
+    "vega007": {
+      "honda": 2
+    },
+    "vegeta": {
+      "akuma": 1
+    },
+    "veggey": {
+      "zangief": 2
+    },
+    "veggy": {
+      "zangief": 1
+    },
+    "vicinal-corgi": {
+      "cammy": 2,
+      "luke": 2,
+      "mai": 1,
+      "viper": 2
+    },
+    "victorgoldch": {
+      "honda": 1
+    },
+    "viva-riam": {
+      "mai": 1
+    },
+    "vsr-enoch": {
+      "kimberly": 1
+    },
+    "vwind": {
+      "jp": 1
+    },
+    "vwsym": {
+      "akuma": 2,
+      "ryu": 2
+    },
+    "vxbao": {
+      "bison": 10,
+      "blanka": 2,
+      "ed": 15,
+      "elena": 1,
+      "honda": 1,
+      "jp": 1,
+      "mai": 10,
+      "terry": 4,
+      "viper": 2
+    },
+    "wabiichi": {
+      "ryu": 21,
+      "sagat": 5,
+      "terry": 11,
+      "zangief": 1
+    },
+    "walker": {
+      "ed": 1
+    },
+    "wan": {
+      "deejay": 8
+    },
+    "want-millions": {
+      "cammy": 1
+    },
+    "wayakama": {
+      "alex": 1
+    },
+    "weegeplus1": {
+      "rashid": 1
+    },
+    "weeping-cherry": {
+      "manon": 1
+    },
+    "wessdance": {
+      "marisa": 2
+    },
+    "whitebl4ck": {
+      "akuma": 1
+    },
+    "whos-next": {
+      "blanka": 1
+    },
+    "wing": {
+      "aki": 1
+    },
+    "wktkac4": {
+      "zangief": 1
+    },
+    "wolfgang": {
+      "blanka": 23
+    },
+    "word": {
+      "aki": 66,
+      "jamie": 10
+    },
+    "wowee-zowee": {
+      "ken": 1
+    },
+    "wrestlingman": {
+      "juri": 3,
+      "rashid": 2
+    },
+    "xabien": {
+      "chunli": 1
+    },
+    "xampson": {
+      "alex": 1
+    },
+    "xerna": {
+      "elena": 2
+    },
+    "xerodgx": {
+      "akuma": 2
+    },
+    "xian": {
+      "aki": 5,
+      "alex": 1,
+      "bison": 7,
+      "deejay": 146,
+      "kimberly": 10,
+      "marisa": 2,
+      "rashid": 3,
+      "sagat": 2
+    },
+    "xiao-ming": {
+      "chunli": 1
+    },
+    "xiaohai": {
+      "akuma": 33,
+      "bison": 186,
+      "cammy": 25,
+      "ed": 5,
+      "elena": 6,
+      "jp": 19,
+      "juri": 35,
+      "ken": 39,
+      "luke": 5,
+      "mai": 246,
+      "rashid": 1,
+      "ryu": 5,
+      "sagat": 44,
+      "terry": 3
+    },
+    "xiaohei": {
+      "ken": 1
+    },
+    "xiaohi": {
+      "bison": 1
+    },
+    "xiaokou": {
+      "bison": 3,
+      "deejay": 1,
+      "jp": 3
+    },
+    "xiaolu": {
+      "lily": 1
+    },
+    "xiaoluo": {
+      "ed": 2
+    },
+    "xiaoxu": {
+      "deejay": 11
+    },
+    "xiaozhai": {
+      "cammy": 11
+    },
+    "xing": {
+      "terry": 5
+    },
+    "xioahai": {
+      "bison": 1
+    },
+    "xioahei": {
+      "ken": 1
+    },
+    "xombat": {
+      "luke": 1
+    },
+    "xull": {
+      "ryu": 1
+    },
+    "xx-curryman-xx": {
+      "honda": 2
+    },
+    "xyli": {
+      "chunli": 10
+    },
+    "yagami": {
+      "kimberly": 4
+    },
+    "yagami77": {
+      "ken": 1
+    },
+    "yagmian": {
+      "terry": 1
+    },
+    "yajai": {
+      "guile": 2
+    },
+    "yajizan": {
+      "zangief": 1
+    },
+    "yamada": {
+      "rashid": 1
+    },
+    "yamaguchi": {
+      "mai": 4,
+      "viper": 1
+    },
+    "yamasaki": {
+      "dhalsim": 1
+    },
+    "yanai": {
+      "bison": 71,
+      "lily": 3,
+      "marisa": 38,
+      "sagat": 15
+    },
+    "yanaikai": {
+      "marisa": 3
+    },
+    "yanaiyanaikai": {
+      "marisa": 1
+    },
+    "yanbaru": {
+      "zangief": 1
+    },
+    "yangmian": {
+      "luke": 2,
+      "terry": 6
+    },
+    "yanoob": {
+      "manon": 1
+    },
+    "yaruoda": {
+      "jp": 1
+    },
+    "yas": {
+      "ken": 1,
+      "ryu": 737
+    },
+    "yasha": {
+      "terry": 2
+    },
+    "yashi": {
+      "bison": 2,
+      "honda": 15
+    },
+    "yasungo": {
+      "kimberly": 1
+    },
+    "yasuyo": {
+      "lily": 1
+    },
+    "yayano": {
+      "zangief": 1
+    },
+    "yeiloud": {
+      "lily": 1
+    },
+    "yhc": {
+      "dhalsim": 4
+    },
+    "yhc-mochi": {
+      "dhalsim": 444
+    },
+    "yhcmochi-torimesi": {
+      "dhalsim": 1
+    },
+    "yofierce": {
+      "kimberly": 3
+    },
+    "yoga-kinoko": {
+      "dhalsim": 1
+    },
+    "yogagale": {
+      "dhalsim": 2
+    },
+    "yokohama": {
+      "chunli": 2
+    },
+    "yokohama-taro": {
+      "bison": 1,
+      "chunli": 2
+    },
+    "yomiazenon": {
+      "honda": 1
+    },
+    "yomura": {
+      "mai": 3
+    },
+    "yonangel": {
+      "jp": 2
+    },
+    "yoofierce": {
+      "kimberly": 2
+    },
+    "yoro": {
+      "bison": 1
+    },
+    "yosan": {
+      "juri": 3
+    },
+    "yoshi": {
+      "cammy": 2,
+      "ken": 1
+    },
+    "yoshikibi": {
+      "cammy": 3
+    },
+    "yoske": {
+      "viper": 4
+    },
+    "yossan": {
+      "juri": 44
+    },
+    "you": {
+      "bison": 1
+    },
+    "youdau": {
+      "chunli": 10,
+      "juri": 3,
+      "mai": 1
+    },
+    "young-brother": {
+      "ken": 2
+    },
+    "young-gouki": {
+      "kimberly": 1,
+      "lily": 1
+    },
+    "youngdrfate": {
+      "jp": 1
+    },
+    "youshikibi": {
+      "cammy": 22
+    },
+    "yoyotai": {
+      "manon": 5,
+      "rashid": 1
+    },
+    "yoyozaemon": {
+      "chunli": 2
+    },
+    "ysf-b": {
+      "honda": 2
+    },
+    "yu-sama": {
+      "deejay": 1
+    },
+    "yuba": {
+      "rashid": 1
+    },
+    "yujiro": {
+      "jp": 29,
+      "marisa": 2
+    },
+    "yukari": {
+      "blanka": 9
+    },
+    "yukarisandesuyo": {
+      "blanka": 4
+    },
+    "yukiya-omichi": {
+      "zangief": 2
+    },
+    "yuri": {
+      "guile": 4,
+      "sagat": 1
+    },
+    "yutao": {
+      "akuma": 4,
+      "sagat": 2
+    },
+    "yuto": {
+      "cammy": 3,
+      "jp": 1,
+      "mai": 14
+    },
+    "yuza": {
+      "alex": 19
+    },
+    "yuzuponzu": {
+      "bison": 1
+    },
+    "z009en": {
+      "rashid": 1
+    },
+    "zabeth": {
+      "aki": 2
+    },
+    "zabuton": {
+      "deejay": 10
+    },
+    "zabutonn": {
+      "deejay": 54
+    },
+    "zacfry3d": {
+      "viper": 1
+    },
+    "zach": {
+      "guile": 1
+    },
+    "zackbozz": {
+      "chunli": 5
+    },
+    "zaferino": {
+      "dhalsim": 4,
+      "jamie": 1
+    },
+    "zaidi": {
+      "rashid": 1
+    },
+    "zailis": {
+      "aki": 7
+    },
+    "zangief-bolado": {
+      "alex": 1,
+      "zangief": 100
+    },
+    "zangioji": {
+      "zangief": 2
+    },
+    "zangya": {
+      "zangief": 1
+    },
+    "zani": {
+      "cammy": 1
+    },
+    "zealum": {
+      "mai": 1
+    },
+    "zengo": {
+      "bison": 1
+    },
+    "zeno": {
+      "blanka": 4,
+      "marisa": 2
+    },
+    "zensei": {
+      "viper": 1
+    },
+    "zhai": {
+      "cammy": 1
+    },
+    "zhen": {
+      "akuma": 1,
+      "bison": 56,
+      "deejay": 35,
+      "ed": 4,
+      "mai": 1
+    },
+    "zimbambo": {
+      "chunli": 1
+    },
+    "zjz": {
+      "aki": 12,
+      "jp": 4,
+      "mai": 1
+    },
+    "zngief-bolado": {
+      "zangief": 1
+    },
+    "zoo": {
+      "bison": 1,
+      "deejay": 1,
+      "honda": 27
+    },
+    "zundamon": {
+      "terry": 1
+    },
+    "zundaneko": {
+      "alex": 2
+    }
+  }
+}

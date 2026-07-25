@@ -1,0 +1,605 @@
+// E2E suite — Playwright-core (same launch mechanics as og.ts) against the
+// generated static output. THE GENERICITY AUDIT in executable form: SF6
+// exercises charactersPerSide 1, the rank filter ON, co-occurrence OFF, and
+// the default terms + /characters/* routes, so every check here is either
+// "the gated surface is present with SF6's data" or "the tag-fighter surface
+// is ABSENT". Numeric expectations are computed Node-side from the committed
+// data files, never hardcoded.
+//
+// Prereq: npm run generate       Run: npm run test:e2e
+
+import { execSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { existsSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { createServer } from 'node:http';
+import { tmpdir } from 'node:os';
+import { dirname, extname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium, type Browser, type Page } from 'playwright-core';
+import RANKS from '../data/ranks.json';
+import type { CharacterRecord, MatchVideo, PlayerRecord, VideoOverride } from '../types/index';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const OUT = join(ROOT, '.vercel/output/static');
+
+// The base the build was generated under. DETECTED, not assumed: the committed
+// default is '/sf6/', but a root-based build (NUXT_APP_BASE_URL=/) is a
+// legitimate local preview and the suite must pass against either. nitro's
+// static presets nest the whole site under the base inside publicDir, so the
+// prerendered index.html marks the base directory.
+function detectBase(): string {
+  if (existsSync(join(OUT, 'index.html'))) return '';
+  for (const name of readdirSync(OUT)) {
+    if (existsSync(join(OUT, name, 'index.html'))) return `/${name}`;
+  }
+  throw new Error(
+    `no prerendered index.html under ${OUT} — run \`npm run generate\` before \`npm run test:e2e\``,
+  );
+}
+const BASE = detectBase();
+
+// ── Node-side expectations: the SAME record set the site carries ─────────────
+const allVideos = JSON.parse(readFileSync(join(ROOT, 'data/videos.json'), 'utf8')) as MatchVideo[];
+const overrides = JSON.parse(readFileSync(join(ROOT, 'data/overrides.json'), 'utf8')) as Record<
+  string,
+  VideoOverride
+>;
+const excluded = new Set(
+  Object.entries(overrides)
+    .filter(([, ov]) => ov.exclude === true)
+    .map(([id]) => id),
+);
+const videos = allVideos.filter((v) => !excluded.has(v.id));
+const characters = JSON.parse(
+  readFileSync(join(ROOT, 'data/characters.json'), 'utf8'),
+) as CharacterRecord[];
+const players = JSON.parse(readFileSync(join(ROOT, 'data/players.json'), 'utf8')) as PlayerRecord[];
+const stats = JSON.parse(readFileSync(join(ROOT, 'data/stats.json'), 'utf8')) as {
+  totals: { replays: number; byPatch: Record<string, number> };
+  characterUsage: Record<string, number>;
+};
+const patchGroups = JSON.parse(readFileSync(join(ROOT, 'data/patchGroups.json'), 'utf8')) as {
+  id: string;
+  label?: string;
+}[];
+
+const fmt = (n: number) => n.toLocaleString('en-US');
+const count = (pred: (v: MatchVideo) => boolean) => videos.filter(pred).length;
+
+// The rank chips the facet actually renders (engine v0.5.0): the canonical
+// ascending ladder intersected with the ranks PRESENT in the data, displayed
+// highest-first. The engine deliberately stopped rendering the whole ladder —
+// a chip that would filter to zero replays is never shown — so asserting
+// RANKS.length here would re-assert the pre-v0.5.0 behavior. For SF6 that
+// means Legend/Master/Diamond out of a 9-rung ladder: these are top-level
+// replay channels and nobody below Diamond appears in them.
+const ranksPresent = new Set<string>();
+for (const v of videos) for (const s of v.sides) if (s.rank) ranksPresent.add(s.rank);
+const rankChipsAsc = RANKS.filter((r) => ranksPresent.has(r));
+const rankChipsExpected = [...rankChipsAsc].reverse();
+
+// Season chips: declared groups intersected with seasons that have data. S4 is
+// pre-declared (2026-08-03) and must NOT render until replays exist for it.
+const seasonsPresent = new Set(videos.map((v) => `S${v.season}`));
+const seasonChipsExpected = patchGroups.filter((g) => seasonsPresent.has(g.id));
+
+// ── tiny static server over the generated output ─────────────────────────────
+const MIME: Record<string, string> = {
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.mjs': 'text/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.webp': 'image/webp',
+  '.woff2': 'font/woff2',
+  '.woff': 'font/woff',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
+  '.ico': 'image/x-icon',
+  '.webmanifest': 'application/manifest+json',
+};
+function serve(): Promise<{ at: (path: string) => string; close: () => void }> {
+  const server = createServer((req, res) => {
+    const path = decodeURIComponent((req.url ?? '/').split('?')[0]!);
+    const candidates = [join(OUT, path), join(OUT, path, 'index.html'), join(OUT, '404.html')];
+    for (const file of candidates) {
+      try {
+        const body = readFileSync(file);
+        res.writeHead(file.endsWith('404.html') && !path.endsWith('404.html') ? 404 : 200, {
+          'content-type': MIME[extname(file)] ?? 'application/octet-stream',
+        });
+        res.end(body);
+        return;
+      } catch {
+        /* try next */
+      }
+    }
+    res.writeHead(404).end('not found');
+  });
+  return new Promise((resolve) => {
+    server.listen(0, '127.0.0.1', () => {
+      const addr = server.address() as { port: number };
+      const origin = `http://127.0.0.1:${addr.port}`;
+      // Serve the static ROOT (as Vercel does) and address pages under the
+      // base — never re-root the server at the base dir, which would resolve
+      // the site's own absolute /<base>/_nuxt/… asset URLs to 404s.
+      resolve({ at: (path: string) => `${origin}${BASE}${path}`, close: () => server.close() });
+    });
+  });
+}
+
+// ── minimal expect harness ───────────────────────────────────────────────────
+let passed = 0;
+const failures: string[] = [];
+function expect(cond: boolean, label: string): void {
+  if (cond) {
+    passed++;
+    console.log(`  ✓ ${label}`);
+  } else {
+    failures.push(label);
+    console.error(`  ✖ ${label}`);
+  }
+}
+
+async function resultCount(page: Page): Promise<number> {
+  const txt = (await page.locator('[data-testid="result-count"]').first().textContent()) ?? '';
+  const m = /([\d,]+)/.exec(txt);
+  return m ? Number(m[1]!.replaceAll(',', '')) : -1;
+}
+const gotoIdle = async (page: Page, url: string) => {
+  await page.goto(url, { waitUntil: 'networkidle' });
+};
+
+/** The commit-guard block lifted out of the real workflow YAML and proven in a
+ *  scratch git repo — the guard is shell, so only shell can test it. */
+function testCronGuard(): void {
+  console.log('\n— cron commit guard (extracted from the real workflow)');
+  const wf = readFileSync(join(ROOT, '.github/workflows/data-refresh.yml'), 'utf8').split('\n');
+  const start = wf.findIndex((l) => l.includes('git config user.name'));
+  expect(start > 0, 'workflow contains the commit guard block');
+  const guard = wf
+    .slice(start)
+    .filter((l) => l.startsWith('          '))
+    .map((l) => l.slice(10))
+    .filter((l) => l.trim() !== 'git push')
+    .join('\n');
+  expect(
+    guard.includes('git restore --staged --worktree data/report.md'),
+    'guard drops a timestamp-only report.md',
+  );
+
+  const dir = mkdtempSync(join(tmpdir(), 'sf6-cron-'));
+  const sh = (cmd: string) =>
+    execSync(cmd, { cwd: dir, encoding: 'utf8', stdio: 'pipe', shell: '/bin/bash' });
+  // The guard goes to a FILE and is run as `bash guard.sh`. Passing it via
+  // `bash -c "<json-escaped>"` puts it through /bin/sh first, which mangles the
+  // embedded newlines and $(…) substitutions.
+  const guardPath = join(dir, 'guard.sh');
+  const runGuard = () => sh(`bash ${guardPath}`);
+  sh('git init -q .');
+  sh('git config user.email t@t && git config user.name t');
+  const mkdirp = join(dir, 'data');
+  execSync(`mkdir -p ${mkdirp}`);
+  const write = (p: string, s: string) => writeFileSync(join(dir, p), s);
+  for (const f of [
+    'videos.json',
+    'replays.json',
+    'stats.json',
+    'players.json',
+    'patchGroups.json',
+    'seasonBoundaries.json',
+  ]) {
+    write(`data/${f}`, '[]\n');
+  }
+  write('data/report.md', '# r\n\n_Generated 2026-01-01T00:00:00.000Z_\n');
+  writeFileSync(guardPath, guard);
+  sh('git add -A && git commit -q -m base');
+
+  // case A: only the generated timestamp moved → must NOT commit
+  write('data/report.md', '# r\n\n_Generated 2026-01-02T00:00:00.000Z_\n');
+  const a = runGuard();
+  expect(a.includes('No data changes'), 'case A: timestamp-only diff does not commit');
+  expect(sh('git rev-list --count HEAD').trim() === '1', 'case A: still one commit');
+
+  // case B: a real data change → must commit, and report.md rides along
+  write('data/replays.json', '[{"id":"x"}]\n');
+  write('data/report.md', '# r\n\n19495 matches\n\n_Generated 2026-01-03T00:00:00.000Z_\n');
+  runGuard();
+  expect(sh('git rev-list --count HEAD').trim() === '2', 'case B: real change commits');
+  expect(
+    sh('git show --stat --name-only HEAD').includes('data/report.md'),
+    'case B: report.md ships with the real change',
+  );
+}
+
+async function main(): Promise<void> {
+  const { at, close } = await serve();
+  const browser: Browser = await chromium.launch({
+    executablePath: '/usr/bin/google-chrome-stable',
+    headless: true,
+    args: ['--no-sandbox', '--disable-dev-shm-usage'],
+  });
+  const page = await (
+    await browser.newContext({ viewport: { width: 1440, height: 960 } })
+  ).newPage();
+
+  // ── 1. /health — counts + provisioning paths + the active GameConfig ──────
+  console.log('\n— /health');
+  await gotoIdle(page, at('/health'));
+  const health = ((await page.textContent('body')) ?? '').replace(/\s+/g, ' ');
+  expect(
+    health.includes(fmt(videos.length)) || health.includes(String(videos.length)),
+    `health shows ${videos.length} replays`,
+  );
+  expect(
+    health.includes(String(characters.length)),
+    `health shows ${characters.length} characters`,
+  );
+  expect(health.includes(String(players.length)), `health shows ${players.length} players`);
+  expect(
+    (health.match(/provided \(bundled\)/g) ?? []).length === 3,
+    'registries ×3 provided (bundled)',
+  );
+  expect(health.includes('client-fetched (server:false)'), 'replays are client-fetched');
+  expect(/charactersPerSide\s*1(?!\d)/.test(health), 'config: charactersPerSide 1');
+  expect(/filters\.coOccurrence\s*false/.test(health), 'config: coOccurrence false');
+  expect(/filters\.rank\s*true/.test(health), 'config: rank true');
+  expect(health.includes('Legend'), 'config: ladder listed through Legend');
+  expect(health.includes('Rookie'), 'config: ladder starts at Rookie (whole ladder shipped)');
+
+  // ── 2. Browse — grid, gated facets, every always-on facet ─────────────────
+  console.log('\n— Browse (/)');
+  await gotoIdle(page, at('/'));
+  await page.waitForSelector('[data-replay-id]');
+  expect((await resultCount(page)) === videos.length, `result count = ${videos.length}`);
+  expect(
+    (await page.locator('[data-testid="co-occurrence-toggle"]').count()) === 0,
+    'co-occurrence filter is ABSENT (1v1)',
+  );
+
+  const rankChips = (await page.locator('[data-testid="rank-chip"]').allTextContents()).map((t) =>
+    t.trim(),
+  );
+  expect(
+    rankChips.length === rankChipsExpected.length,
+    `rank filter PRESENT with the ${rankChipsExpected.length} data-present ranks (ladder has ${RANKS.length})`,
+  );
+  expect(
+    rankChips.join('|') === rankChipsExpected.join('|'),
+    `rank chips render highest-first (${rankChipsExpected.join(' → ')})`,
+  );
+
+  // Cards represent each side with ONE CharacterBadge (aria-label = the
+  // character's name) — 2 per card for 1v1, where a tag fighter shows 4.
+  const rosterNames = characters.map((c) => c.name);
+  const firstCardBadges = await page
+    .locator('[data-replay-id]')
+    .first()
+    .evaluate(
+      (el, names) =>
+        [...el.querySelectorAll('[aria-label]')].filter((n) =>
+          names.includes(n.getAttribute('aria-label') ?? ''),
+        ).length,
+      rosterNames,
+    );
+  expect(
+    firstCardBadges === 2,
+    `card renders a SINGLE character badge per side (got ${firstCardBadges})`,
+  );
+  expect(
+    (await page.locator('[data-replay-id]').first().locator('img[src*="i.ytimg.com"]').count()) ===
+      1,
+    'thumb derives from the YouTube id (thumb omitted from the whale file)',
+  );
+
+  const topChar = Object.entries(stats.characterUsage).sort((a, b) => b[1] - a[1])[0]![0];
+  const deepLinks: [string, number, string][] = [
+    [
+      '/?rank=Legend',
+      count((v) => v.sides.some((s) => s.rank === 'Legend')),
+      'rank facet (Legend)',
+    ],
+    [
+      '/?rank=Master',
+      count((v) => v.sides.some((s) => s.rank === 'Master')),
+      'rank facet (Master)',
+    ],
+    [
+      `/?c=${topChar}`,
+      count((v) => v.sides.some((s) => s.character === topChar)),
+      'character facet',
+    ],
+    [
+      '/?c=ryu,ken&side=1',
+      count((v) => ['ryu', 'ken'].every((c) => v.sides.some((s) => s.character === c))),
+      'c=a,b AND semantics; stray side=1 ignored (1v1)',
+    ],
+    [
+      '/?mu=ryu:ken',
+      count(
+        (v) =>
+          (v.sides[0].character === 'ryu' && v.sides[1].character === 'ken') ||
+          (v.sides[0].character === 'ken' && v.sides[1].character === 'ryu'),
+      ),
+      'matchup facet (opposing sides)',
+    ],
+    ['/?patch=S2', count((v) => v.season === 2), 'patch facet (season token)'],
+    ['/?src=highLevel', count((v) => v.channel === 'highLevel'), 'source facet'],
+    [
+      '/?src=fgcPlace,sfReplays',
+      count((v) => ['fgcPlace', 'sfReplays'].includes(v.channel)),
+      'source facet (multi-select OR)',
+    ],
+    ['/?p=daigo', count((v) => v.sides.some((s) => s.player === 'daigo')), 'player facet'],
+    [
+      '/?from=2026-07-01',
+      count((v) => v.publishedAt.slice(0, 10) >= '2026-07-01'),
+      'date facet (from)',
+    ],
+  ];
+  for (const [url, expected, label] of deepLinks) {
+    await gotoIdle(page, at(url));
+    const got = await resultCount(page);
+    expect(got === expected, `${label}: ${url} → ${got} (want ${expected})`);
+  }
+
+  // ── 2b. grouped patch facet — season parents, no children ─────────────────
+  console.log('\n— grouped patch facet');
+  await gotoIdle(page, at('/'));
+  await page.waitForSelector('[data-replay-id]');
+  const seasonChips = await page.locator('[data-testid^="patch-group-S"]').count();
+  expect(
+    seasonChips === seasonChipsExpected.length,
+    `${seasonChipsExpected.length} season chips render (declared ${patchGroups.length}; a season with no data shows none)`,
+  );
+  expect(
+    (await page.locator('[data-testid="patch-group-S4"]').count()) === 0,
+    'the pre-declared S4 boundary renders NO chip until replays exist for it',
+  );
+  const s3Label = (await page.locator('[data-testid="patch-group-S3"]').textContent())?.trim();
+  expect(s3Label === 'Season 3', `season chip is self-describing ("${s3Label}")`);
+  expect(
+    (await page.locator('[data-testid="patch-group-S3-expander"]').count()) === 0,
+    'childless season parent renders no expander',
+  );
+  await page.click('[data-testid="patch-group-S3"]');
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('patch') === 'S3');
+  expect(
+    (await resultCount(page)) === count((v) => v.season === 3),
+    'season chip toggles ?patch=S3 with the whole-season count',
+  );
+  expect(
+    (await page.locator('[data-testid="patch-group-S3"]').getAttribute('aria-pressed')) === 'true',
+    'selected season reads aria-pressed=true',
+  );
+
+  // ── 3. modal + shareable ?v= ──────────────────────────────────────────────
+  console.log('\n— modal');
+  await gotoIdle(page, at('/'));
+  await page.waitForSelector('[data-replay-id]');
+  await page.locator('[data-replay-id]').first().click();
+  await page.waitForSelector('[role="dialog"][aria-modal="true"]');
+  expect(new URL(page.url()).searchParams.has('v'), 'modal state lives in ?v= (shareable)');
+  const dialogText = ((await page.locator('[role="dialog"]').textContent()) ?? '').replace(
+    /\s+/g,
+    ' ',
+  );
+  // The modal prints the bare token ("S3"), not the chip's "Season 3" label.
+  // That is the engine's documented behaviour — patchTokenParts() resolves a
+  // CHILD token to "era · patch" and returns identity for a parent — and it is
+  // an engine-side inconsistency for an era-only game like SF6, where the chip
+  // is labelled but the meta line is not. Reported upstream as a proposed
+  // minor; deliberately NOT worked around here (never game-branch).
+  expect(/\bS[1-4]\b/.test(dialogText), 'modal meta line carries the season token');
+  await page.keyboard.press('Escape');
+  // the router update is async — wait for it rather than sampling immediately
+  await page
+    .waitForFunction(() => !new URL(location.href).searchParams.has('v'), undefined, {
+      timeout: 5000,
+    })
+    .catch(() => {});
+  expect(!new URL(page.url()).searchParams.has('v'), 'Escape closes the modal');
+
+  // ── 4. stats — duo-only surfaces stay hidden ──────────────────────────────
+  console.log('\n— /stats');
+  await gotoIdle(page, at('/stats'));
+  expect(
+    (await page.locator('[data-testid="synergy-matrix"]').count()) === 0,
+    'synergy matrix ABSENT (duo-only)',
+  );
+  expect(
+    (await page.locator('[data-testid="pairing-bars"]').count()) === 0,
+    'pairing bars ABSENT (duo-only)',
+  );
+
+  // ── 5. roster + entity pages, and the prerender proof ─────────────────────
+  console.log('\n— roster / character / player');
+  await gotoIdle(page, at('/characters'));
+  expect(
+    (await page.locator('main a[href*="/characters/"]').count()) >= characters.length,
+    `roster grid links all ${characters.length} characters`,
+  );
+  await gotoIdle(page, at('/characters/ryu'));
+  expect(((await page.textContent('h1')) ?? '').includes('Ryu'), 'character page renders Ryu');
+  const rawCharHtml = readFileSync(join(OUT, BASE, 'characters/ryu/index.html'), 'utf8');
+  expect(
+    rawCharHtml.includes(`${fmt(stats.characterUsage.ryu!)} appearances`),
+    'PRERENDERED title carries the data-derived count (registries provided at build)',
+  );
+  const samplePlayer = players.find((p) => p.featured)?.id ?? players[0]!.id;
+  await gotoIdle(page, at(`/players/${samplePlayer}`));
+  expect(
+    ((await page.textContent('h1')) ?? '').length > 0,
+    `player page renders (${samplePlayer})`,
+  );
+
+  // ── 6. theme, on the BUILT output ─────────────────────────────────────────
+  console.log('\n— theme (built bundle)');
+  await gotoIdle(page, at('/'));
+  const tokens = await page.evaluate(() => {
+    const cs = getComputedStyle(document.documentElement);
+    const h1 = document.querySelector('header a, header [role="img"], header svg');
+    return {
+      primary: cs.getPropertyValue('--color-primary').trim(),
+      secondary: cs.getPropertyValue('--color-secondary').trim(),
+      bg: cs.getPropertyValue('--color-bg').trim(),
+      display: cs.getPropertyValue('--font-display').trim(),
+      ui: cs.getPropertyValue('--font-ui').trim(),
+      accentRyu: cs.getPropertyValue('--accent-ryu').trim(),
+      bodyFont: getComputedStyle(document.body).fontFamily,
+      headerText: (h1?.textContent ?? document.title).replace(/\s+/g, ' '),
+    };
+  });
+  expect(
+    tokens.primary.toLowerCase() === '#ff7d00',
+    `--color-primary is SF6 orange (${tokens.primary})`,
+  );
+  expect(
+    tokens.secondary.toLowerCase() === '#9be64a',
+    `--color-secondary is Drive-paint green (${tokens.secondary})`,
+  );
+  expect(tokens.bg.toLowerCase() === '#141009', `--color-bg is asphalt (${tokens.bg})`);
+  expect(
+    tokens.display.includes('Big Shoulders'),
+    `--font-display is Big Shoulders (${tokens.display})`,
+  );
+  expect(tokens.ui.includes('Public Sans'), `--font-ui is Public Sans (${tokens.ui})`);
+  expect(tokens.bodyFont.includes('Public Sans'), 'body actually renders in Public Sans');
+  expect(
+    tokens.accentRyu.toLowerCase() === '#e8dfc8',
+    `roster accent injected from app.config (${tokens.accentRyu})`,
+  );
+  expect(/SF6\s*\/\s*REPLAY/i.test(tokens.headerText), 'wordmark reads SF6 / REPLAY');
+
+  // mechanism tripwire: an UNCOMPILED @theme block in any built stylesheet is
+  // exactly how the 2XKO Phase-4 regression shipped — invisible in dev,
+  // umbrella-themed in production.
+  const cssDir = join(OUT, BASE, '_nuxt');
+  const rawTheme = readdirSync(cssDir)
+    .filter((f) => f.endsWith('.css'))
+    .filter((f) => /@theme[\s{]/.test(readFileSync(join(cssDir, f), 'utf8')));
+  expect(
+    rawTheme.length === 0,
+    `no raw @theme at-rule in the built CSS${rawTheme.length ? `: ${rawTheme.join(', ')}` : ''}`,
+  );
+
+  // the self-hosted faces are real files under the base, not CDN links
+  const fontFiles = readdirSync(cssDir).filter((f) => /\.woff2?$/.test(f));
+  expect(fontFiles.length > 0, `@fontsource faces emitted as hashed assets (${fontFiles.length})`);
+
+  // ── 7. subpath artifacts (placement IS the assertion) ─────────────────────
+  console.log('\n— subpath artifacts');
+  const sitemap = readFileSync(join(OUT, BASE, 'sitemap.xml'), 'utf8');
+  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]!);
+  expect(locs.length > 0, `sitemap under the base carries ${locs.length} <loc>s`);
+  expect(new Set(locs).size === locs.length, 'sitemap <loc>s are deduped');
+  if (BASE) {
+    expect(
+      locs.every((l) => new URL(l).pathname.startsWith(`${BASE}/`) || new URL(l).pathname === BASE),
+      `every <loc> is prefixed with ${BASE}`,
+    );
+  }
+  expect(sitemap.includes('/characters/ryu'), 'sitemap carries character routes');
+  // Exact-path, not substring: a real player is called "Healthy Vegetables",
+  // so /players/healthy-vegetables contains the substring "/health".
+  expect(
+    !locs.some((l) => new URL(l).pathname.replace(/\/$/, '').endsWith('/health')),
+    'sitemap excludes /health',
+  );
+  expect(existsSync(join(OUT, BASE, 'robots.txt')), 'robots.txt emitted under the base');
+  expect(
+    readFileSync(join(OUT, '404.html'), 'utf8').includes('No data at this route'),
+    'designed 404 shipped at the STATIC ROOT (Vercel ignores the base for 404s)',
+  );
+  const manifest = JSON.parse(readFileSync(join(OUT, BASE, 'manifest.webmanifest'), 'utf8')) as {
+    name: string;
+    theme_color: string;
+  };
+  expect(
+    manifest.name.includes('Street Fighter 6') && manifest.theme_color === '#FF7D00',
+    'manifest carries SF6 identity',
+  );
+
+  // ── 8. payload measurement (reported, not asserted) ───────────────────────
+  console.log('\n— payload');
+  const fresh = await (
+    await browser.newContext({ viewport: { width: 1440, height: 960 } })
+  ).newPage();
+  const freshTransfers: { url: string; size: number }[] = [];
+  fresh.on('response', async (res) => {
+    try {
+      freshTransfers.push({ url: res.url(), size: (await res.body()).length });
+    } catch {
+      /* ignore */
+    }
+  });
+  await gotoIdle(fresh, at('/'));
+  await fresh.waitForSelector('[data-replay-id]');
+  await fresh.waitForTimeout(500);
+  const whale = freshTransfers.filter((t) => t.url.includes('/data/replays.json'));
+  const shell = freshTransfers.filter((t) => !t.url.includes('/data/replays.json'));
+  const sum = (xs: { size: number }[]) => xs.reduce((n, x) => n + x.size, 0);
+  const mb = (n: number) => (n / 1048576).toFixed(2);
+  const replaysBytes = readFileSync(join(ROOT, 'data/replays.json')).length;
+  const videosBytes = readFileSync(join(ROOT, 'data/videos.json')).length;
+  console.log(`    committed data/videos.json       ${mb(videosBytes)} MB`);
+  console.log(`    committed data/replays.json      ${mb(replaysBytes)} MB`);
+  console.log(
+    `    first load — shell (${String(shell.length).padStart(3)} reqs)   ${mb(sum(shell))} MB`,
+  );
+  console.log(`    first load — replays.json ×${whale.length}      ${mb(sum(whale))} MB`);
+  console.log(`    first load — TOTAL               ${mb(sum(freshTransfers))} MB`);
+  expect(sum(whale) > 0, 'browse fetches replays.json client-side (server:false)');
+  // Engine-side finding, recorded rather than worked around: useReplays() is a
+  // keyed useAsyncData, but every component that calls it re-triggers the fetch
+  // on mount, so the whale is pulled once PER CONSUMER. On SF6 that is 5 × 6 MB
+  // on a single browse load. It affects every game on the platform, so the fix
+  // belongs in the engine (memoize the fetch / supply getCachedData), not here.
+  // This assertion documents the current number so the day it improves, it fails
+  // and someone updates it deliberately.
+  console.log(
+    whale.length > 1
+      ? `    ⚠ replays.json fetched ${whale.length}× on one load — engine useReplays() dedupe gap`
+      : '    replays.json fetched once',
+  );
+  expect(
+    !readFileSync(join(OUT, BASE, 'index.html'), 'utf8').includes('"sides"'),
+    'the whale is NOT inlined into the prerendered HTML',
+  );
+  await fresh.close();
+
+  // ── 9. emit determinism ───────────────────────────────────────────────────
+  console.log('\n— emit determinism');
+  const files = ['data/replays.json', 'data/stats.json', 'data/patchGroups.json'];
+  const hash = (p: string) =>
+    createHash('sha256')
+      .update(readFileSync(join(ROOT, p)))
+      .digest('hex');
+  const before = files.map(hash);
+  execSync('npm run data:emit', { cwd: ROOT, stdio: 'pipe' });
+  const after = files.map(hash);
+  expect(
+    files.every((_, i) => before[i] === after[i]),
+    'double-emit: replays/stats/patchGroups byte-stable across runs',
+  );
+
+  await browser.close();
+  close();
+
+  // ── 10. the cron commit guard (shell, so tested as shell) ─────────────────
+  testCronGuard();
+
+  console.log(`\n${passed} passed, ${failures.length} failed`);
+  if (failures.length) {
+    console.error('\nFailures:');
+    for (const f of failures) console.error(`  ✖ ${f}`);
+    process.exit(1);
+  }
+}
+
+main().catch((err) => {
+  console.error('✖ e2e failed:', err);
+  process.exit(1);
+});

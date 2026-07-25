@@ -1,0 +1,22 @@
+[
+  {
+    "id": "S1",
+    "label": "Season 1",
+    "note": "Launch"
+  },
+  {
+    "id": "S2",
+    "label": "Season 2",
+    "note": "Akuma"
+  },
+  {
+    "id": "S3",
+    "label": "Season 3",
+    "note": "Elena"
+  },
+  {
+    "id": "S4",
+    "label": "Season 4",
+    "note": "Yasmine"
+  }
+]
