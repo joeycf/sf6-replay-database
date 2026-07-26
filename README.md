@@ -10,15 +10,15 @@ this repo supplies **data**, **config**, and **a skin**.
 
 ## The genericity knobs, deliberately
 
-| knob | SF6 | why |
-| --- | --- | --- |
-| `charactersPerSide` | `1` | one fighter per side; every duo/synergy panel self-hides |
-| `filters.coOccurrence` | `false` | "same side" is a tag-fighter concept |
-| `filters.rank` | `true` + a 9-rung ladder | SF6 has a League ladder, and the descriptions state it |
-| `terms` | **unset** | SF6 genuinely says "characters" — the engine defaults are correct |
-| `characterRouteSegment` | **unset** | the roster lives at `/characters/*` |
-| `sourceGroups` | **unset** | only three channels; nothing to consolidate |
-| `patchGroups` | season parents, no children | see "Seasons, not Years" below |
+| knob                    | SF6                         | why                                                               |
+| ----------------------- | --------------------------- | ----------------------------------------------------------------- |
+| `charactersPerSide`     | `1`                         | one fighter per side; every duo/synergy panel self-hides          |
+| `filters.coOccurrence`  | `false`                     | "same side" is a tag-fighter concept                              |
+| `filters.rank`          | `true` + a 9-rung ladder    | SF6 has a League ladder, and the descriptions state it            |
+| `terms`                 | **unset**                   | SF6 genuinely says "characters" — the engine defaults are correct |
+| `characterRouteSegment` | **unset**                   | the roster lives at `/characters/*`                               |
+| `sourceGroups`          | **unset**                   | only three channels; nothing to consolidate                       |
+| `patchGroups`           | season parents, no children | see "Seasons, not Years" below                                    |
 
 > Platform: [replaydatabase.com](https://replaydatabase.com) ·
 > [engine](https://github.com/joeycf/replay-engine) ·
@@ -37,7 +37,7 @@ scripts/parse.ts            ──→ data/videos.json             (substrate, c
    ├ scripts/roster.ts         (alias matcher + rank extraction)
    ├ scripts/seasons.ts        (the boundary authority)
    ├ scripts/expiries.ts       (the self-expiring gates)
-   └ scripts/emit.ts (tail)    ──→ data/replays.json, stats.json, patchGroups.json
+   └ scripts/emit.ts (tail)    ──→ data/replays.json, stats.json, patchGroups.json, summary.json
                                ──→ data/players.json, seasonBoundaries.json, report.md
 
 scripts/characters.ts       ──→ public/img/characters/*.webp, data/characters.json
@@ -50,9 +50,9 @@ learned (intake channel, handles, per-side rank, season). `data/replays.json`
 carries only what the engine's types declare. The engine never learns anything
 SF6-shaped.
 
-**Two-tier loading.** `characters`/`players`/`stats` are *provided* to the engine
+**Two-tier loading.** `characters`/`players`/`stats` are _provided_ to the engine
 at build time (`app/plugins/registries.ts`), so prerendered HTML carries real
-counts. `replays.json` is *fetched client-side* so the 6 MB whale never enters
+counts. `replays.json` is _fetched client-side_ so the 6 MB whale never enters
 the prerendered payload.
 
 ## Setup
@@ -71,16 +71,16 @@ committed `/sf6/` base — but the committed default **is** production truth.
 
 ## Scripts
 
-| script | what |
-| --- | --- |
-| `npm run data:fetch` | every upload from the 3 tracked channels → `raw/` |
-| `npm run data:parse` | parse → substrate + registry + report, then emit |
-| `npm run data:build` | fetch + parse |
-| `npm run data:emit` | re-derive the generic artifacts from the committed substrate (no network) |
-| `npm run data:characters` | rescrape the roster + art (`--force` re-downloads) |
-| `npm run data:expiries` | `--check` the self-expiring gates; exits 1 when something is due |
-| `npm run test:e2e` | the full audit suite against `.vercel/output/static` |
-| `npm run typecheck` | app track (`vue-tsc`) + pipeline track (`tsc`) |
+| script                    | what                                                                      |
+| ------------------------- | ------------------------------------------------------------------------- |
+| `npm run data:fetch`      | every upload from the 3 tracked channels → `raw/`                         |
+| `npm run data:parse`      | parse → substrate + registry + report, then emit                          |
+| `npm run data:build`      | fetch + parse                                                             |
+| `npm run data:emit`       | re-derive the generic artifacts from the committed substrate (no network) |
+| `npm run data:characters` | rescrape the roster + art (`--force` re-downloads)                        |
+| `npm run data:expiries`   | `--check` the self-expiring gates; exits 1 when something is due          |
+| `npm run test:e2e`        | the full audit suite against `.vercel/output/static`                      |
+| `npm run typecheck`       | app track (`vue-tsc`) + pipeline track (`tsc`)                            |
 
 ## Seasons, not Years
 
@@ -91,7 +91,7 @@ offset by about two months — the Year 3 pass opens with Sagat on 2025-08-05,
 two months after Season 3 started. Anchoring on the balance overhaul is what a
 meta database wants; calling it a Season is what the audience already calls it.
 
-Boundaries live in `scripts/seasons.ts` and are the *only* input to
+Boundaries live in `scripts/seasons.ts` and are the _only_ input to
 `Replay.patch`. They anchor on the annual overhaul, never on the internal
 version number — "major = season" is a trap here, since the 1.x line spans
 Seasons 1–2 and 2.x begins mid-Season-3.
@@ -107,17 +107,17 @@ Two things this repo knows will come due, both on **2026-08-03**: Yasmine
 becomes playable, and Season 4 starts. Rather than relying on anyone to
 remember, `scripts/expiries.ts` makes the data say so.
 
-| where | when something is due |
-| --- | --- |
-| `scripts/characters.ts` (manual roster run) | **`exit 1`** — blocks roster work, which is exactly the work that is due |
-| `scripts/parse.ts` (daily cron path) | **never exits** — prints a FAILURE banner and writes `## ⚠ ACTION REQUIRED` at the top of `data/report.md` |
-| `.github/workflows/data-refresh.yml` | a **final step, after commit and push**, that exits 1 so the run goes red |
+| where                                       | when something is due                                                                                      |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `scripts/characters.ts` (manual roster run) | **`exit 1`** — blocks roster work, which is exactly the work that is due                                   |
+| `scripts/parse.ts` (daily cron path)        | **never exits** — prints a FAILURE banner and writes `## ⚠ ACTION REQUIRED` at the top of `data/report.md` |
+| `.github/workflows/data-refresh.yml`        | a **final step, after commit and push**, that exits 1 so the run goes red                                  |
 
 **A hard exit in `parse.ts` would stop the daily refresh entirely**, which is
 strictly worse than the misfiling it warns about: the data stays overwhelmingly
 correct, only the newest replays risk landing in the wrong season, and halting
 ingestion fixes nothing while losing everything. So the daily path stays soft
-and the *workflow* goes red **after** the data is safely pushed.
+and the _workflow_ goes red **after** the data is safely pushed.
 
 > **The red workflow and the `exit 1` are the design, not a bug.** Clear them by
 > doing the work below — never by deleting the check.
@@ -151,7 +151,7 @@ Fires when a season's `start` date arrives while it is still `confirmed: false`.
 2. If it did: set `confirmed: true` on the row in `scripts/seasons.ts`.
 3. If Capcom slipped it: correct `start` **and** the previous season's `end`
    (the validator enforces contiguous windows), then `npm run data:emit`.
-4. When a *new* season is announced, append a row with `confirmed: false` and
+4. When a _new_ season is announced, append a row with `confirmed: false` and
    its announced date, and set the previous season's `end` to match.
 
 Nothing else cross-checks these dates — the channels carry no season labels — so
@@ -161,7 +161,7 @@ the gate stays hot until a human asserts the fact.
 
 **Sources.** Three channels (`scripts/channels.ts`), each its own
 `Replay.source`. Unlike Tekken, no source aggregates several channels:
-tournament footage here is published *inside* the same channels rather than on
+tournament footage here is published _inside_ the same channels rather than on
 a dedicated event-organizer channel.
 
 **Is-SF6.** Two of the three carry a Street Fighter V back-catalogue, so every
@@ -173,7 +173,7 @@ Tags are SEO soup on these channels and name both games; they are not a signal.
 a leaderboard position (`#3 Ranked Guile`) — that is a per-character world
 ranking, **not** a ladder rank; it is stripped before matching.
 
-**Ranks** come from the *descriptions*, which write `<League> rank <Character>`.
+**Ranks** come from the _descriptions_, which write `<League> rank <Character>`.
 Never scan a title for ladder words: this corpus contains handles like
 "KUNG FU MASTER" and "Oil King", and a loose scan would invent ranks.
 Divisions collapse to their league; Master sub-tiers and MR values collapse to
@@ -185,23 +185,23 @@ parseable title, not one known org (FLY, PXG, RB, MOUZ, FALCONS, ZETA, …)
 appears in handle position, and the frequent leading tokens are integral parts
 of names ("Oil King", "Big Bird", "Problem X", "YHC Mochi", "801 Strider").
 Tekken's `stripOrgPrefix` is therefore deliberately absent — porting it would
-*fragment* real players. What genuinely fragments this corpus is spacing:
+_fragment_ real players. What genuinely fragments this corpus is spacing:
 "Ending Walker" and "EndingWalker", "Problem X" and "ProblemX", "MenaRD" and
 "Mena RD". Those collapse to one page, and the public id keeps the readable
 hyphenated form of whichever spelling the sources use most.
 
-**`data/overrides.json`** is honored last, by parse *and* by standalone emit
-*and* by the e2e expectations, so a correction never means editing
+**`data/overrides.json`** is honored last, by parse _and_ by standalone emit
+_and_ by the e2e expectations, so a correction never means editing
 `videos.json` in place — the next refresh would erase it.
 
 ## Vercel
 
-| setting | value |
-| --- | --- |
-| Build command | `npm run generate` (from `vercel.json`) |
-| Output | `.vercel/output/static` |
+| setting                | value                                               |
+| ---------------------- | --------------------------------------------------- |
+| Build command          | `npm run generate` (from `vercel.json`)             |
+| Output                 | `.vercel/output/static`                             |
 | `NUXT_PUBLIC_SITE_URL` | `https://replaydatabase.com` (Production + Preview) |
-| `NUXT_APP_BASE_URL` | `/sf6/` (Production + Preview) |
+| `NUXT_APP_BASE_URL`    | `/sf6/` (Production + Preview)                      |
 
 The production alias must stay **publicly reachable** — the shell's rewrite
 depends on it. **Never add host-based redirects on this project**: the shell

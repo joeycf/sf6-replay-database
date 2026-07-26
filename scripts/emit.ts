@@ -6,6 +6,10 @@
 // replays.json carries only what the engine's types declare. The engine never
 // learns anything SF6-shaped.
 //
+// Alongside those, data/summary.json — the apex selector's card payload
+// (Phase 6). Committed like the rest, and copied into public/data/ by the
+// build's build:before hook.
+//
 // Run standalone: npm run data:emit   (re-derives from the committed substrate
 // with no YouTube access — which is what makes the e2e's double-emit
 // byte-identity gate possible).
@@ -21,6 +25,14 @@ import { buildStats, sort1, sort2 } from './stats';
 import type { CharacterRecord, MatchVideo, PlayerRecord, VideoOverride } from '../types/index';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+/** The game's identity as it appears in data/summary.json — the shell selector
+ *  keys its cards on it. Restated here for the same reason the generic shapes
+ *  below are: the pipeline can't resolve the Nuxt `@engine`/app.config graph.
+ *  app/app.config.ts is the authority; the shell's verify:cutover asserts these
+ *  two values against its own GAMES table, so a drift fails at the apex. */
+const GAME_ID = 'sf6';
+const GAME_NAME = 'Street Fighter 6';
 
 // ── the engine contract, restated locally ────────────────────────────────────
 // The pipeline can't resolve the Nuxt `@engine` alias, so the emitted shapes
@@ -184,6 +196,44 @@ export async function emitGeneric(
     );
   }
 
+  // ── the shell selector's payload (Phase 6) ───────────────────────────────
+  // Tiny, and fetched same-origin by the apex selector through its /sf6
+  // rewrite — so it has to be COMMITTED (Vercel never runs the pipeline);
+  // data/summary.json is the committed artifact and the build's build:before
+  // hook copies it into public/data/ alongside the whale.
+  //
+  // `updated` is the newest replay's DATE, never build time. A build timestamp
+  // would rewrite this file on a zero-new-video day and defeat the cron's
+  // commit guard, turning every no-op day into a commit and a deploy.
+  const newest = records.reduce((max, v) => (v.publishedAt > max ? v.publishedAt : max), '');
+  // The counts are READ FROM the stats artifact rather than re-derived, so the
+  // selector and the site's own stats page cannot disagree by construction.
+  // (Re-deriving them here and asserting equality would compare `players.length`
+  // with `players.length` — a throw that can never fire is not a gate.) What
+  // follows are the two comparisons that CAN fire; `updated` gets its real teeth
+  // in scripts/e2e.ts, which recomputes it from the substrate independently.
+  const summary = {
+    game: GAME_ID,
+    name: GAME_NAME,
+    replays: genericStats.totals.replays,
+    players: genericStats.totals.players,
+    characters: genericStats.totals.characters,
+    updated: newest.slice(0, 10),
+  };
+  if (summary.replays !== replays.length) {
+    throw new Error(
+      `emit: summary.replays ${summary.replays} !== emitted replay count ${replays.length}`,
+    );
+  }
+  if (summary.players < 1 || summary.characters < 1) {
+    throw new Error(
+      `emit: summary has an empty registry (players ${summary.players}, characters ${summary.characters})`,
+    );
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(summary.updated)) {
+    throw new Error(`emit: summary.updated is not a replay date ("${summary.updated}")`);
+  }
+
   const dataDir = join(ROOT, 'data');
   const publicDataDir = join(ROOT, 'public', 'data');
   await mkdir(publicDataDir, { recursive: true });
@@ -191,6 +241,9 @@ export async function emitGeneric(
   // no indent on the whale — it is fetched by every visitor
   await writeFile(join(dataDir, 'replays.json'), JSON.stringify(replays) + '\n', 'utf8');
   await writeFile(join(publicDataDir, 'replays.json'), JSON.stringify(replays) + '\n', 'utf8');
+  const summaryJson = JSON.stringify(summary, null, 2) + '\n';
+  await writeFile(join(dataDir, 'summary.json'), summaryJson, 'utf8');
+  await writeFile(join(publicDataDir, 'summary.json'), summaryJson, 'utf8');
   await writeFile(
     join(dataDir, 'stats.json'),
     JSON.stringify(genericStats, null, 2) + '\n',
@@ -210,6 +263,7 @@ export async function emitGeneric(
       .map(([k, n]) => `${k}=${n}`)
       .join(' ')}`,
   );
+  console.log(`  summary.json → ${summary.replays} replays, newest ${summary.updated}`);
 }
 
 // ── standalone entry ─────────────────────────────────────────────────────────

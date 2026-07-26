@@ -57,14 +57,18 @@ export default defineNuxtConfig({
   ],
 
   hooks: {
-    // The whale file: data/replays.json (committed, pipeline-emitted) →
-    // public/data/ (gitignored) for the engine's client fetch. Lives in the
-    // BUILD because Vercel never runs the pipeline.
+    // The client-fetched files: data/*.json (committed, pipeline-emitted) →
+    // public/data/ (gitignored). Lives in the BUILD because Vercel never runs
+    // the pipeline. replays.json is the engine's whale; summary.json is the
+    // apex selector's card payload, fetched same-origin through the shell's
+    // /sf6 rewrite (Phase 6).
     'build:before'() {
       const dataDir = join(rootDir, 'public/data');
       mkdirSync(dataDir, { recursive: true });
-      cpSync(join(rootDir, 'data/replays.json'), join(dataDir, 'replays.json'));
-      console.log('✓ copied data/replays.json → public/data/replays.json');
+      for (const f of ['replays.json', 'summary.json']) {
+        cpSync(join(rootDir, `data/${f}`), join(dataDir, f));
+        console.log(`✓ copied data/${f} → public/data/${f}`);
+      }
     },
   },
 
