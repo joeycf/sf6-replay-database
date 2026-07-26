@@ -1,12 +1,12 @@
 {
   "totals": {
-    "replays": 19509,
+    "replays": 19510,
     "characters": 30,
     "players": 1653,
     "byPatch": {
       "S1": 5025,
       "S2": 7088,
-      "S3": 7396
+      "S3": 7397
     }
   },
   "characterUsage": {
@@ -16,7 +16,7 @@
     "bison": 1701,
     "blanka": 947,
     "cammy": 1270,
-    "chunli": 1244,
+    "chunli": 1245,
     "deejay": 948,
     "dhalsim": 1334,
     "ed": 1454,
@@ -38,7 +38,7 @@
     "ryu": 2227,
     "sagat": 1277,
     "terry": 1129,
-    "viper": 553,
+    "viper": 554,
     "zangief": 3688
   },
   "byPatchUsage": {
@@ -99,7 +99,7 @@
       "bison": 501,
       "blanka": 271,
       "cammy": 338,
-      "chunli": 449,
+      "chunli": 450,
       "deejay": 270,
       "dhalsim": 492,
       "ed": 477,
@@ -121,7 +121,7 @@
       "ryu": 1009,
       "sagat": 1277,
       "terry": 534,
-      "viper": 553,
+      "viper": 554,
       "zangief": 1103
     }
   },
@@ -1843,7 +1843,7 @@
     },
     "haitani": {
       "blanka": 2,
-      "chunli": 250,
+      "chunli": 251,
       "juri": 1,
       "ken": 1,
       "kimberly": 1,
@@ -5204,7 +5204,7 @@
     },
     "tak": {
       "bison": 1,
-      "viper": 5
+      "viper": 6
     },
     "takadango": {
       "mai": 3
