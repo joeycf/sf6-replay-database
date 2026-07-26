@@ -3846,6 +3846,10 @@
     "handle": "Monaka"
   },
   {
+    "id": "monorp",
+    "handle": "MONORP"
+  },
+  {
     "id": "monster",
     "handle": "Monster"
   },
@@ -4806,6 +4810,10 @@
   {
     "id": "rengoku",
     "handle": "Rengoku"
+  },
+  {
+    "id": "rerin",
+    "handle": "RERIN"
   },
   {
     "id": "revilo",
@@ -5910,6 +5918,10 @@
   {
     "id": "torimshi",
     "handle": "Torimshi"
+  },
+  {
+    "id": "tosu",
+    "handle": "Tosu"
   },
   {
     "id": "total-lion",
