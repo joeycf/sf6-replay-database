@@ -44,6 +44,14 @@ export default defineAppConfig({
     rightsHolder: 'Capcom',
     baseURL: '/sf6', // behind the shell at replaydatabase.com/sf6
     siteUrl: 'https://replaydatabase.com',
+    // Web Analytics beacons go to THIS project instead of pooling into the
+    // shell. Paired 1:1 with the shell vercel.json rewrite
+    //   /sf6-insights/:path* → https://sf6-replay-database.vercel.app/_vercel/insights/:path*
+    // — the two ship together or every beacon 404s. Same-origin on purpose:
+    // the child's endpoints send no CORS headers, so an absolute URL here
+    // would die at preflight. speedInsights is deliberately left at the engine
+    // default (single-project on Hobby — it must reach the enabled project).
+    observability: { insights: '/sf6-insights' },
     charactersPerSide: 1,
     filters: {
       coOccurrence: false, // tag-fighter filter — not an SF6 concept
