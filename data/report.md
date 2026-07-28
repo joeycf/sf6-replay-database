@@ -1,17 +1,17 @@
 
 # SF6 pipeline report
 
-**19525 matches** parsed from 22242 uploads across 3 channels · 1653 players · ranked sides 20663/39050 (52.9%)
+**19539 matches** parsed from 22256 uploads across 3 channels · 1653 players · ranked sides 20679/39078 (52.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5711 | 5711 | 5696 | 99.7% | 10990 |
-| fgcPlace | fgcPlace | 9662 | 8670 | 8500 | 98.0% | 9673 |
-| sfReplays | sfReplays | 6869 | 5871 | 5329 | 90.8% | 0 |
+| highLevel | highLevel | 5714 | 5714 | 5699 | 99.7% | 10996 |
+| fgcPlace | fgcPlace | 9668 | 8676 | 8506 | 98.0% | 9683 |
+| sfReplays | sfReplays | 6874 | 5876 | 5334 | 90.8% | 0 |
 
-Seasons: S1 5025 · S2 7088 · S3 7412
+Seasons: S1 5025 · S2 7088 · S3 7426
 
-Rank distribution (side appearances): Legend 18291 · Master 2358 · Diamond 14
+Rank distribution (side appearances): Legend 18303 · Master 2362 · Diamond 14
 
 Misses by reason: not-sf6 1990 · no-vs-title 513 · char-unresolved 117 · pre-launch 70 · bad-handle 27
 
@@ -48,4 +48,4 @@ Misses by reason: not-sf6 1990 · no-vs-title 513 · char-unresolved 117 · pre-
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-07-27T10:54:42.483Z_
+_Generated 2026-07-28T09:53:01.797Z_
