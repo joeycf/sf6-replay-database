@@ -61,7 +61,14 @@ const stats = JSON.parse(readFileSync(join(ROOT, 'data/stats.json'), 'utf8')) as
 const patchGroups = JSON.parse(readFileSync(join(ROOT, 'data/patchGroups.json'), 'utf8')) as {
   id: string;
   label?: string;
+  children?: { id: string; note?: string }[];
 }[];
+// The patch table as committed. Read as DATA and re-walked below rather than
+// imported from scripts/seasons.ts, so the expectations are derived
+// independently of the module that produced the artifact under test.
+const patchBoundaries = JSON.parse(
+  readFileSync(join(ROOT, 'data/patchBoundaries.json'), 'utf8'),
+) as { version: string; start: string }[];
 
 const fmt = (n: number) => n.toLocaleString('en-US');
 const count = (pred: (v: MatchVideo) => boolean) => videos.filter(pred).length;
@@ -80,8 +87,35 @@ const rankChipsExpected = [...rankChipsAsc].reverse();
 
 // Season chips: declared groups intersected with seasons that have data. S4 is
 // pre-declared (2026-08-03) and must NOT render until replays exist for it.
+// Still derived from the SEASON number, which stays correct once patches are
+// children: every record of season N carries either `SN` or a child of `SN`,
+// so the season-derived present-set equals the engine's visible-parent set.
 const seasonsPresent = new Set(videos.map((v) => `S${v.season}`));
 const seasonChipsExpected = patchGroups.filter((g) => seasonsPresent.has(g.id));
+
+// ── per-patch expectations, re-derived from the committed boundary table ─────
+// The windows are walked here rather than read from an emitted artifact: each
+// patch runs until the next one starts, so a video's patch is the last row
+// whose start it is on or after. That is the whole derivation, independently
+// restated — if scripts/seasons.ts and this disagree, one of them is wrong.
+const patchStarts = [...patchBoundaries].sort((a, b) => a.start.localeCompare(b.start));
+function patchOf(v: MatchVideo): string {
+  let token = `S${v.season}`;
+  for (const p of patchStarts) {
+    if (v.publishedAt.slice(0, 10) >= p.start) token = p.version;
+    else break;
+  }
+  // an era whose window has closed on a video that a later era owns (or a
+  // season override) falls back to the era token, exactly as emit does
+  const parent = patchGroups.find((g) => g.children?.some((c) => c.id === token));
+  return parent && parent.id === `S${v.season}` ? token : `S${v.season}`;
+}
+const patchCounts = new Map<string, number>();
+for (const v of videos) patchCounts.set(patchOf(v), (patchCounts.get(patchOf(v)) ?? 0) + 1);
+/** child tokens that actually have replays, in declared order */
+const childChipsExpected = patchGroups
+  .flatMap((g) => g.children ?? [])
+  .filter((c) => (patchCounts.get(c.id) ?? 0) > 0);
 
 // ── tiny static server over the generated output ─────────────────────────────
 const MIME: Record<string, string> = {
@@ -189,6 +223,7 @@ function testCronGuard(): void {
     'stats.json',
     'players.json',
     'patchGroups.json',
+    'patchBoundaries.json',
     'seasonBoundaries.json',
     // the guard's `git add` names it, so the fixture must carry it too
     'summary.json',
@@ -327,7 +362,16 @@ async function main(): Promise<void> {
       ),
       'matchup facet (opposing sides)',
     ],
+    // the era token still selects the whole era — the engine expands a parent
+    // to itself plus its children, so pre-migration links keep exact counts
     ['/?patch=S2', count((v) => v.season === 2), 'patch facet (season token)'],
+    ['/?patch=2.02', patchCounts.get('2.02') ?? 0, 'patch facet (fine token)'],
+    ['/?patch=2.0111', patchCounts.get('2.0111') ?? 0, 'patch facet (4-digit token, unfolded)'],
+    [
+      '/?patch=S1,2.02',
+      count((v) => v.season === 1) + (patchCounts.get('2.02') ?? 0),
+      'patch facet (era + foreign child, disjoint union)',
+    ],
     ['/?src=highLevel', count((v) => v.channel === 'highLevel'), 'source facet'],
     [
       '/?src=fgcPlace,sfReplays',
@@ -347,25 +391,44 @@ async function main(): Promise<void> {
     expect(got === expected, `${label}: ${url} → ${got} (want ${expected})`);
   }
 
-  // ── 2b. grouped patch facet — season parents, no children ─────────────────
+  // ── 2b. grouped patch facet — season parents WITH patch children ──────────
   console.log('\n— grouped patch facet');
   await gotoIdle(page, at('/'));
   await page.waitForSelector('[data-replay-id]');
-  const seasonChips = await page.locator('[data-testid^="patch-group-S"]').count();
+  // exact match, not a prefix: `patch-group-S3-expander` shares the prefix
+  const seasonChips = await page
+    .locator('[data-testid^="patch-group-S"]')
+    .evaluateAll(
+      (els) =>
+        els.filter((e) => /^patch-group-S\d+$/.test(e.getAttribute('data-testid') ?? '')).length,
+    );
   expect(
     seasonChips === seasonChipsExpected.length,
-    `${seasonChipsExpected.length} season chips render (declared ${patchGroups.length}; a season with no data shows none)`,
+    `${seasonChips} season chips render, want ${seasonChipsExpected.length} (declared ${patchGroups.length}; a season with no data shows none)`,
   );
+  // Data-gated, not hardcoded: S4 opens 2026-08-03 and the day its first replay
+  // lands this flips on its own instead of going stale.
+  const s4Expected = seasonChipsExpected.some((g) => g.id === 'S4') ? 1 : 0;
   expect(
-    (await page.locator('[data-testid="patch-group-S4"]').count()) === 0,
-    'the pre-declared S4 boundary renders NO chip until replays exist for it',
+    (await page.locator('[data-testid="patch-group-S4"]').count()) === s4Expected,
+    `S4 renders ${s4Expected} chip(s) — it has ${patchCounts.get('S4') ?? 0} replays`,
   );
   const s3Label = (await page.locator('[data-testid="patch-group-S3"]').textContent())?.trim();
-  expect(s3Label === 'Season 3', `season chip is self-describing ("${s3Label}")`);
   expect(
-    (await page.locator('[data-testid="patch-group-S3-expander"]').count()) === 0,
-    'childless season parent renders no expander',
+    s3Label?.startsWith('Season 3') === true,
+    `season chip is self-describing ("${s3Label}") — parents carry a label, children do not`,
   );
+
+  // every era with children gets an expander; a childless one must not
+  for (const g of seasonChipsExpected) {
+    const hasKids = (g.children ?? []).some((c) => (patchCounts.get(c.id) ?? 0) > 0);
+    const expanders = await page.locator(`[data-testid="patch-group-${g.id}-expander"]`).count();
+    expect(
+      expanders === (hasKids ? 1 : 0),
+      `${g.id} renders ${expanders} expander(s) (${hasKids ? 'has' : 'no'} data-present children)`,
+    );
+  }
+
   await page.click('[data-testid="patch-group-S3"]');
   await page.waitForFunction(() => new URL(location.href).searchParams.get('patch') === 'S3');
   expect(
@@ -375,6 +438,94 @@ async function main(): Promise<void> {
   expect(
     (await page.locator('[data-testid="patch-group-S3"]').getAttribute('aria-pressed')) === 'true',
     'selected season reads aria-pressed=true',
+  );
+  // a parent's count IS the sum of its children — the hierarchy's core promise
+  const s3Children = (patchGroups.find((g) => g.id === 'S3')?.children ?? []).map((c) => c.id);
+  const s3ChildSum = s3Children.reduce((n, id) => n + (patchCounts.get(id) ?? 0), 0);
+  expect(
+    s3ChildSum === count((v) => v.season === 3),
+    `S3's ${s3Children.length} children sum to ${fmt(s3ChildSum)} = the whole-season count`,
+  );
+
+  // ── the child dropdown: chips, counts, tri-state, deep links ──────────────
+  await page.click('[data-testid="patch-group-S3-expander"]');
+  await page.waitForSelector('[data-testid="patch-group-menu"]');
+  const renderedChildren = await page
+    .locator('[data-testid^="patch-child-"]')
+    .evaluateAll((els) =>
+      els.map((e) => e.getAttribute('data-testid')!.replace('patch-child-', '')),
+    );
+  const s3Present = childChipsExpected.filter((c) => s3Children.includes(c.id)).map((c) => c.id);
+  expect(
+    renderedChildren.join(',') === s3Present.join(','),
+    `child chips are exactly the data-present patches in declared order (${renderedChildren.join(' ')})`,
+  );
+
+  // uncheck one child → parent goes mixed, URL drops the parent token
+  const dropped = s3Present[s3Present.length - 1]!;
+  await page.click(`[data-testid="patch-child-${dropped}"]`);
+  // wait on a condition that is FALSE before the click: the URL was the bare
+  // parent token, and a partial selection lists the remaining children instead
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('patch') !== 'S3');
+  const mixed = await page.locator('[data-testid="patch-group-S3"]').getAttribute('aria-pressed');
+  expect(mixed === 'mixed', `a partially selected era reads aria-pressed=mixed (got "${mixed}")`);
+  const partial = await resultCount(page);
+  expect(
+    partial === s3ChildSum - (patchCounts.get(dropped) ?? 0),
+    `unchecking ${dropped} drops exactly its ${fmt(patchCounts.get(dropped) ?? 0)} replays (${fmt(partial)})`,
+  );
+  // re-check it → the URL collapses back to the bare parent token
+  await page.click(`[data-testid="patch-child-${dropped}"]`);
+  await page.waitForFunction(() => new URL(location.href).searchParams.get('patch') === 'S3');
+  expect(
+    (await resultCount(page)) === count((v) => v.season === 3),
+    're-checking every child collapses the URL back to ?patch=S3',
+  );
+  expect(
+    (await page.locator('[data-testid="patch-group-S3"]').getAttribute('aria-pressed')) === 'true',
+    'a fully selected era reads aria-pressed=true again',
+  );
+
+  // stats stay ERA-keyed even though replays now carry fine tokens
+  expect(
+    Object.keys(stats.totals.byPatch).every((k) => /^S\d+$/.test(k)),
+    `stats byPatch stays era-keyed (${Object.keys(stats.totals.byPatch).join(',')})`,
+  );
+
+  // every emitted token is declared by the hierarchy — no orphan chips
+  const declared = new Set(
+    patchGroups.flatMap((g) => [g.id, ...(g.children ?? []).map((c) => c.id)]),
+  );
+  const emitted = new Set(
+    (JSON.parse(readFileSync(join(ROOT, 'data/replays.json'), 'utf8')) as { patch?: string }[]).map(
+      (r) => r.patch!,
+    ),
+  );
+  expect(
+    [...emitted].every((t) => declared.has(t)),
+    `every emitted patch token is declared in patchGroups (${emitted.size} distinct)`,
+  );
+  // ids unique across parents AND children — the engine documents this as a
+  // MUST and validates nothing
+  const allIds = patchGroups.flatMap((g) => [g.id, ...(g.children ?? []).map((c) => c.id)]);
+  expect(
+    new Set(allIds).size === allIds.length,
+    `patchGroups ids are unique across parents and children (${allIds.length})`,
+  );
+
+  // date→patch is derived from the DATE, never the version prefix: SF6's 1.x
+  // line spans S1 and S2, and 2.00 lands mid-S3
+  const midS3 = videos.filter((v) => v.publishedAt >= '2025-08-05' && v.publishedAt < '2025-10-15');
+  expect(
+    midS3.length > 0 && midS3.every((v) => v.season === 3 && patchOf(v) === '2.00'),
+    `all ${fmt(midS3.length)} replays in 2.00's window are season 3 (2.x began mid-season)`,
+  );
+  const lateS1 = videos.filter(
+    (v) => v.publishedAt >= '2024-02-27' && v.publishedAt < '2024-05-22',
+  );
+  expect(
+    lateS1.length > 0 && lateS1.every((v) => v.season === 1 && patchOf(v) === '1.04'),
+    `all ${fmt(lateS1.length)} replays in 1.04's window are season 1 (1.x spans S1–S2)`,
   );
 
   // ── 3. modal + shareable ?v= ──────────────────────────────────────────────
@@ -388,13 +539,15 @@ async function main(): Promise<void> {
     /\s+/g,
     ' ',
   );
-  // The modal prints the bare token ("S3"), not the chip's "Season 3" label.
-  // That is the engine's documented behaviour — patchTokenParts() resolves a
-  // CHILD token to "era · patch" and returns identity for a parent — and it is
-  // an engine-side inconsistency for an era-only game like SF6, where the chip
-  // is labelled but the meta line is not. Reported upstream as a proposed
-  // minor; deliberately NOT worked around here (never game-branch).
-  expect(/\bS[1-4]\b/.test(dialogText), 'modal meta line carries the season token');
+  // Now that patches are children, patchTokenParts() resolves a replay's token
+  // to "era · patch" and the meta line reads e.g. "S3 · 2.0301". It prints the
+  // era's raw ID, never the chip's "Season 3" label — patchTokenParts() looks
+  // up ids only. That is an engine limitation, not an SF6 one, and it is
+  // deliberately NOT worked around here (never game-branch).
+  expect(
+    /\bS[1-4] · \d+\.\d{2,4}\b/.test(dialogText),
+    `modal meta line reads "era · patch" for a fine token`,
+  );
   await page.keyboard.press('Escape');
   // the router update is async — wait for it rather than sampling immediately
   await page
@@ -615,6 +768,7 @@ async function main(): Promise<void> {
     'data/replays.json',
     'data/stats.json',
     'data/patchGroups.json',
+    'data/patchBoundaries.json',
     // content-derived, so it must NOT move between runs — a build timestamp
     // here would commit (and deploy) on every zero-new-video day
     'data/summary.json',
@@ -628,7 +782,7 @@ async function main(): Promise<void> {
   const after = files.map(hash);
   expect(
     files.every((_, i) => before[i] === after[i]),
-    'double-emit: replays/stats/patchGroups/summary byte-stable across runs',
+    'double-emit: replays/stats/patchGroups/patchBoundaries/summary byte-stable',
   );
 
   await browser.close();

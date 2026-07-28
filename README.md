@@ -10,15 +10,15 @@ this repo supplies **data**, **config**, and **a skin**.
 
 ## The genericity knobs, deliberately
 
-| knob                    | SF6                         | why                                                               |
-| ----------------------- | --------------------------- | ----------------------------------------------------------------- |
-| `charactersPerSide`     | `1`                         | one fighter per side; every duo/synergy panel self-hides          |
-| `filters.coOccurrence`  | `false`                     | "same side" is a tag-fighter concept                              |
-| `filters.rank`          | `true` + a 9-rung ladder    | SF6 has a League ladder, and the descriptions state it            |
-| `terms`                 | **unset**                   | SF6 genuinely says "characters" — the engine defaults are correct |
-| `characterRouteSegment` | **unset**                   | the roster lives at `/characters/*`                               |
-| `sourceGroups`          | **unset**                   | only three channels; nothing to consolidate                       |
-| `patchGroups`           | season parents, no children | see "Seasons, not Years" below                                    |
+| knob                    | SF6                                | why                                                               |
+| ----------------------- | ---------------------------------- | ----------------------------------------------------------------- |
+| `charactersPerSide`     | `1`                                | one fighter per side; every duo/synergy panel self-hides          |
+| `filters.coOccurrence`  | `false`                            | "same side" is a tag-fighter concept                              |
+| `filters.rank`          | `true` + a 9-rung ladder           | SF6 has a League ladder, and the descriptions state it            |
+| `terms`                 | **unset**                          | SF6 genuinely says "characters" — the engine defaults are correct |
+| `characterRouteSegment` | **unset**                          | the roster lives at `/characters/*`                               |
+| `sourceGroups`          | **unset**                          | only three channels; nothing to consolidate                       |
+| `patchGroups`           | season parents + 17 patch children | see "Seasons, not Years" below                                    |
 
 > Platform: [replaydatabase.com](https://replaydatabase.com) ·
 > [engine](https://github.com/joeycf/replay-engine) ·
@@ -35,13 +35,15 @@ YouTube Data API v3
 scripts/parse.ts            ──→ data/videos.json             (substrate, committed)
    ├ scripts/channels.ts       (intake config)
    ├ scripts/roster.ts         (alias matcher + rank extraction)
-   ├ scripts/seasons.ts        (the boundary authority)
+   ├ scripts/seasons.ts        (the season + patch boundary authority)
    ├ scripts/expiries.ts       (the self-expiring gates)
    └ scripts/emit.ts (tail)    ──→ data/replays.json, stats.json, patchGroups.json, summary.json
+                               ──→ data/patchBoundaries.json
                                ──→ data/players.json, seasonBoundaries.json, report.md
 
 scripts/characters.ts       ──→ public/img/characters/*.webp, data/characters.json
 scripts/og.ts               ──→ public/og-default.png
+scripts/versions.ts         wiki cross-check for the patch table
 scripts/e2e.ts              the audit suite
 ```
 
@@ -66,7 +68,7 @@ npm run generate            # → .vercel/output/static/sf6
 
 `ENGINE_PATH=../replay-engine` in `.env` develops against a local engine
 checkout; leave it unset (as every deploy does) to resolve the pinned
-`github:joeycf/replay-engine#v0.6.0` tag. `NUXT_APP_BASE_URL` overrides the
+`github:joeycf/replay-engine#v0.6.2` tag. `NUXT_APP_BASE_URL` overrides the
 committed `/sf6/` base — but the committed default **is** production truth.
 
 ## Scripts
@@ -79,8 +81,9 @@ committed `/sf6/` base — but the committed default **is** production truth.
 | `npm run data:emit`       | re-derive the generic artifacts from the committed substrate (no network) |
 | `npm run data:characters` | rescrape the roster + art (`--force` re-downloads)                        |
 | `npm run data:expiries`   | `--check` the self-expiring gates; exits 1 when something is due          |
+| `npm run data:versions`   | cross-check the patch table against the SuperCombo wiki (network)         |
 | `npm run test:e2e`        | the full audit suite against `.vercel/output/static`                      |
-| `npm run typecheck`       | app track (`vue-tsc`) + pipeline track (`tsc`)                            |
+| `npm run typecheck`       | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators |
 
 ## Seasons, not Years
 
@@ -94,18 +97,49 @@ meta database wants; calling it a Season is what the audience already calls it.
 Boundaries live in `scripts/seasons.ts` and are the _only_ input to
 `Replay.patch`. They anchor on the annual overhaul, never on the internal
 version number — "major = season" is a trap here, since the 1.x line spans
-Seasons 1–2 and 2.x begins mid-Season-3.
+Seasons 1–2 and 2.x begins mid-Season-3. An all-character balance pass does not
+imply a new season either: 1.08 and 2.02 are both roster-wide and both
+mid-season. The table is an explicit hardcoded list for exactly that reason.
 
 There is **no label-grace window and no conflict counter** (Tekken has both).
 The build recon read all 22,212 uploads across the three channels: not one
 labels a season or a year, anywhere. A grace window would be dead code that can
 only ever read zero. `confirmed` replaces it as the cross-check — see below.
 
+## Patches under seasons
+
+`Replay.patch` carries the **patch** token (`2.0301`), not the era token. The
+season is its parent in the grouped facet, so a chip toggles the whole era, the
+dropdown filters one patch, and `?patch=S3` still returns every S3 replay —
+the engine expands a parent selection to itself plus its children, so links
+that predate the patch layer keep their exact counts.
+
+`PATCHES` sits beside `SEASONS` in `scripts/seasons.ts` because the two tables
+are not independent: **an era opens ON a patch**, so `SEASONS[n].start` must
+equal the date of the first patch nested under it, and a validator that cannot
+see both tables cannot enforce that. `npm run typecheck` runs both validators.
+
+Version ids are the SuperCombo wiki's `gameversion` strings **verbatim** — the
+PC/Steam ids. Capcom's full form is `X.YYZZ.RRR`; the dot falls after `ZZ`, so
+`2.01` (2.0100.000) and `2.0111` (2.0111.000) are one field at two values —
+siblings, not parent and child. **Do not fold them the way Tekken folds its
+`X.YY.ZZ` hotfixes**: that would merge two separately dated balance patches and
+mint `2.03` for the Ingrid update, a token that denotes a build which never
+shipped. Never invent a version to fill a sequence gap.
+
+What does fold: builds Capcom ships that the wiki does not page. Two exist
+(`2.0201.000`, and the 2026-07-02 battle change that got no version id at all);
+both are recorded in the owning row's `includes` so they are declared rather
+than silently absorbed. `npm run data:versions` diffs the table against the
+wiki's Cargo API and is the only check that can catch an invented-but-
+well-formed token — the offline validators cannot.
+
 ## The self-expiring gates
 
-Two things this repo knows will come due, both on **2026-08-03**: Yasmine
-becomes playable, and Season 4 starts. Rather than relying on anyone to
-remember, `scripts/expiries.ts` makes the data say so.
+Three jobs this repo knows will come due, all on **2026-08-03**: Yasmine
+becomes playable, Season 4 starts, and Season 4's opening patch must join the
+table. Rather than relying on anyone to remember, `scripts/expiries.ts` makes
+the data say so.
 
 | where                                       | when something is due                                                                                      |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -148,14 +182,35 @@ Fires when `data:characters` or the daily workflow starts complaining.
 Fires when a season's `start` date arrives while it is still `confirmed: false`.
 
 1. Verify the balance patch actually landed that day.
-2. If it did: set `confirmed: true` on the row in `scripts/seasons.ts`.
+2. If it did: set `confirmed: true` on the `SEASONS` row in `scripts/seasons.ts`.
 3. If Capcom slipped it: correct `start` **and** the previous season's `end`
-   (the validator enforces contiguous windows), then `npm run data:emit`.
-4. When a _new_ season is announced, append a row with `confirmed: false` and
-   its announced date, and set the previous season's `end` to match.
+   (the validator enforces contiguous windows).
+4. Add the opening patch to `PATCHES` — `npm run data:versions` names it and
+   its date. Use the wiki's version id verbatim; its `start` must **equal** the
+   season start, which `npm run typecheck` enforces. Until that row exists the
+   new season's replays carry the bare era token: correct, but coarser than
+   every other season, and nothing else would ever complain about it.
+5. `npm run data:emit`.
+6. When a _new_ season is announced, append a `SEASONS` row with
+   `confirmed: false` and its announced date, and set the previous season's
+   `end` to match.
 
 Nothing else cross-checks these dates — the channels carry no season labels — so
 the gate stays hot until a human asserts the fact.
+
+## Patch-table runbook
+
+Fires when `npm run data:versions` reports drift, or when a patch ships.
+
+1. Add the row to `PATCHES` in `scripts/seasons.ts`, in release order, with the
+   wiki's `gameversion` verbatim and a short `note` (the DLC character or the
+   headline change; a pure maintenance patch legitimately has none).
+2. If Capcom shipped a build the wiki does not page, add it to the owning row's
+   `includes` instead of giving it a row of its own — it has no token to use.
+3. `npm run data:emit`, then check the `patches:` line in its output.
+
+The window is never authored: each patch runs until the next one starts, then
+to the era boundary.
 
 ## The parser
 

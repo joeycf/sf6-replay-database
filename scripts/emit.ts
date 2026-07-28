@@ -20,7 +20,16 @@ import { fileURLToPath } from 'node:url';
 
 import { CHANNELS } from './channels';
 import { RANK_SET } from './roster';
-import { SEASONS, buildPatchGroups, seasonToken, validateSeasons } from './seasons';
+import {
+  PATCHES,
+  SEASONS,
+  buildPatchGroups,
+  patchForDate,
+  patchWindows,
+  seasonToken,
+  validatePatches,
+  validateSeasons,
+} from './seasons';
 import { buildStats, sort1, sort2 } from './stats';
 import type { CharacterRecord, MatchVideo, PlayerRecord, VideoOverride } from '../types/index';
 
@@ -54,6 +63,24 @@ export interface GenericReplay {
 }
 
 /**
+ * The fine patch token for a capture date, with the era token as the
+ * documented "era known, patch unknown" fallback (engine v0.6.0: the grouped
+ * facet expands a parent selection to itself PLUS its children, so an
+ * era-token replay still matches `?patch=S3`).
+ *
+ * Two ways to land on the fallback, and both are live states rather than
+ * defensive padding: a date after the newest patch but inside an era that has
+ * opened (S4 from 2026-08-03 until Capcom ships and the wiki pages Yasmine's
+ * version), and an override that moves a replay's season away from the one its
+ * date-derived patch belongs to. The second is what Tekken and 2XKO call the
+ * normalize step; here it is the same rule, evaluated where the token is made.
+ */
+function patchToken(v: MatchVideo, windows = patchWindows()): string {
+  const w = patchForDate(v.publishedAt, windows);
+  return w && w.season === v.season ? w.version : seasonToken(v.season);
+}
+
+/**
  * `thumb` is deliberately NEVER emitted. Replay.id is a YouTube id and the
  * engine derives https://i.ytimg.com/vi/<id>/hqdefault.jpg at render time
  * (BrowseCard/VideoModal). Emitting it would add ~1 MB to the whale file for
@@ -61,7 +88,7 @@ export interface GenericReplay {
  * maxres→hq fallback lands — until then, omission is the correct choice and
  * the e2e asserts the derived URL is what ships.
  */
-function toReplay(v: MatchVideo): GenericReplay {
+function toReplay(v: MatchVideo, windows = patchWindows()): GenericReplay {
   return {
     id: v.id,
     sides: v.sides.map((s) => ({
@@ -70,7 +97,7 @@ function toReplay(v: MatchVideo): GenericReplay {
       ...(s.rank ? { rank: s.rank } : {}),
     })) as [GenericSide, GenericSide],
     date: v.publishedAt,
-    patch: seasonToken(v.season),
+    patch: patchToken(v, windows),
     source: v.channel,
     title: v.title,
     ...(v.viewCount !== undefined ? { views: v.viewCount } : {}),
@@ -115,8 +142,10 @@ export async function emitGeneric(
   players: PlayerRecord[],
 ): Promise<void> {
   validateSeasons();
+  validatePatches();
 
-  const replays = records.map(toReplay);
+  const windows = patchWindows();
+  const replays = records.map((v) => toReplay(v, windows));
   const pipelineStats = buildStats(records);
 
   // ── contract assertions: every one a throw. A silent schema drift here
@@ -129,6 +158,7 @@ export async function emitGeneric(
   const playerIds = new Set(players.map((p) => p.id));
   const sourceIds = new Set<string>(CHANNELS.map((c) => c.source));
   const seasonTokens = new Set(SEASONS.map((s) => seasonToken(s.season)));
+  const patchTokens = new Set(PATCHES.map((p) => p.version));
 
   for (const r of replays) {
     if (r.sides.length !== 2) throw new Error(`emit: ${r.id} lost its two-sides invariant`);
@@ -149,18 +179,44 @@ export async function emitGeneric(
     if (!sourceIds.has(r.source)) {
       throw new Error(`emit: ${r.id} references untracked source '${r.source}'`);
     }
-    if (!r.patch || !seasonTokens.has(r.patch)) {
-      throw new Error(`emit: ${r.id} carries unknown season token '${r.patch}'`);
+    if (!r.patch || !(patchTokens.has(r.patch) || seasonTokens.has(r.patch))) {
+      throw new Error(`emit: ${r.id} carries unknown patch token '${r.patch}'`);
     }
   }
 
-  // index-aligned: the emitted token must agree with the substrate's season
+  // index-aligned: the emitted token must agree with the substrate's season —
+  // an era token IS that season, a fine token must nest under it
+  const seasonOfPatch = new Map(windows.map((w) => [w.version, w.season]));
   for (let i = 0; i < replays.length; i++) {
-    if (replays[i]!.patch !== seasonToken(records[i]!.season)) {
+    const token = replays[i]!.patch!;
+    const season = records[i]!.season;
+    const parent = seasonTokens.has(token) ? Number(token.slice(1)) : seasonOfPatch.get(token);
+    if (parent !== season) {
       throw new Error(
-        `emit: ${replays[i]!.id} patch ${replays[i]!.patch} contradicts season ${records[i]!.season}`,
+        `emit: ${replays[i]!.id} patch ${token} contradicts season ${season} (parent ${parent})`,
       );
     }
+  }
+
+  // ── the grouped patch facet: the hierarchy must ACCOUNT FOR the tokens ────
+  // The engine is forgiving here — a token no group declares falls through to
+  // ungroupedPatchTokens() and renders as a loose trailing chip — so a drift
+  // between the table and the emitted data would ship a working-looking site
+  // with an orphan chip. These two throws are what make that impossible.
+  const groups = buildPatchGroups();
+  const groupIds: string[] = [];
+  for (const g of groups) {
+    groupIds.push(g.id);
+    for (const c of g.children ?? []) groupIds.push(c.id);
+  }
+  const dupe = groupIds.find((id, i) => groupIds.indexOf(id) !== i);
+  if (dupe !== undefined) {
+    throw new Error(`emit: patchGroups id '${dupe}' appears twice (ids must be unique)`);
+  }
+  const grouped = new Set(groupIds);
+  const ungrouped = [...new Set(replays.map((r) => r.patch!))].filter((t) => !grouped.has(t));
+  if (ungrouped.length > 0) {
+    throw new Error(`emit: patch token(s) no group accounts for: ${ungrouped.join(', ')}`);
   }
 
   // ── the engine's KnownStats shape (season keys become era tokens) ─────────
@@ -251,9 +307,23 @@ export async function emitGeneric(
   );
   await writeFile(
     join(dataDir, 'patchGroups.json'),
-    JSON.stringify(buildPatchGroups(), null, 2) + '\n',
+    JSON.stringify(groups, null, 2) + '\n',
     'utf8',
   );
+  // The patch table mirrored to data/, the way parse.ts mirrors SEASONS to
+  // seasonBoundaries.json — so the e2e can derive its expected per-patch counts
+  // from a committed artifact by walking the windows itself, instead of
+  // importing the module it is meant to be testing.
+  await writeFile(
+    join(dataDir, 'patchBoundaries.json'),
+    JSON.stringify(PATCHES, null, 2) + '\n',
+    'utf8',
+  );
+
+  const byToken = replays.reduce<Record<string, number>>((acc, r) => {
+    acc[r.patch!] = (acc[r.patch!] ?? 0) + 1;
+    return acc;
+  }, {});
 
   console.log(
     `✔ emitted ${replays.length} replays, ${characters.length} characters, ${players.length} players`,
@@ -262,6 +332,9 @@ export async function emitGeneric(
     `  seasons: ${Object.entries(byPatch)
       .map(([k, n]) => `${k}=${n}`)
       .join(' ')}`,
+  );
+  console.log(
+    `  patches: ${PATCHES.map((p) => `${p.version}=${byToken[p.version] ?? 0}`).join(' ')}`,
   );
   console.log(`  summary.json → ${summary.replays} replays, newest ${summary.updated}`);
 }

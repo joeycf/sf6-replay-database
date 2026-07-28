@@ -115,9 +115,13 @@ export default defineAppConfig({
     // PIPELINE-EMITTED (scripts/emit.ts → data/patchGroups.json) from the same
     // boundary authority that derives every replay's patch token, so the UI
     // hierarchy and the data can never drift. Parents are the season tokens
-    // (S1..S4) carrying self-describing "Season N" labels; there are no
-    // children yet, so the facet is a flat row of season chips that reads
-    // correctly under the engine's default "Patch" heading.
+    // (S1..S4) carrying self-describing "Season N" labels — the engine's
+    // default facet heading is "Patch", so unlabelled "S1" chips would read
+    // wrong. The siblings differ: 2XKO renames the heading via `terms` instead
+    // of labelling, and Tekken does neither and lives with bare "S1" chips
+    // under "Patch". Children are Capcom's version ids exactly as the SuperCombo
+    // wiki spells them, and carry no label because the token IS the display
+    // string. S4 has no children until its opening patch ships.
     patchGroups,
     fonts: {
       display: 'Big Shoulders Display',

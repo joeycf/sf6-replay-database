@@ -69,15 +69,18 @@ export interface MatchVideo {
   durationSec: number;
   viewCount?: number;
   /** SF6 balance season, resolved purely from the date boundaries
-   *  (data/seasonBoundaries.json). Emitted as Replay.patch = `S${season}`.
+   *  (data/seasonBoundaries.json). The season is the PARENT of the emitted
+   *  `Replay.patch` token, and the token itself when no patch window claims
+   *  the date (see scripts/emit.ts).
    *
-   *  There is deliberately no fine `patchVersion` field: SF6's within-season
-   *  patches are not named in any tracked channel's titles or descriptions,
-   *  and the grouped patch facet reads correctly with season parents alone.
-   *  Adding children later means adding the field and a patch boundary table —
-   *  it does not require migrating anything already emitted, because the era
-   *  token is the engine's documented fallback for "season known, patch
-   *  unknown". */
+   *  There is deliberately no stored `patchVersion` field. Tekken and 2XKO
+   *  store one because their parsers ARBITRATE: a season label read out of a
+   *  title can contradict the date, and the substrate has to record which won.
+   *  SF6 has nothing to arbitrate — not one of the 22,212 tracked uploads
+   *  names a season or a patch — so the fine token is a pure function of
+   *  `publishedAt` against the patch table, derived at emit time. Storing it
+   *  would be a second copy of a date lookup that can never disagree with the
+   *  first, and `data/videos.json` would have to be rebuilt to change it. */
   season: number;
   sides: [MatchSide, MatchSide];
 }
@@ -125,6 +128,36 @@ export interface SeasonBoundary {
   confirmed: boolean;
   /** short community-facing hint (the DLC character the patch shipped with) */
   note?: string;
+}
+
+/** One released SF6 patch (scripts/seasons.ts holds the table; emit.ts mirrors
+ *  it to data/patchBoundaries.json).
+ *
+ *  `version` is the SuperCombo wiki's `gameversion` string VERBATIM — the
+ *  PC/Steam version id, which is what `Replay.patch` carries and what
+ *  `?patch=` puts in the URL. Never re-spell it, never fold it, never invent
+ *  one to fill a gap. See the VERSION SCHEME note in scripts/seasons.ts. */
+export interface PatchBoundary {
+  /** e.g. '1.10', '2.0111' — unique, and never an era token */
+  version: string;
+  /** ISO release day, inclusive. The window's end is computed, never authored. */
+  start: string;
+  /** Builds Capcom shipped inside this patch's window that the wiki does not
+   *  page separately, recorded so they are declared rather than silently
+   *  absorbed. Free-form (2XKO's carries "Nov 4 hotfix"), documentation-only —
+   *  read by the validator, never by the derivation. */
+  includes?: string[];
+  /** short community-facing hint (DLC character or headline change), surfaced
+   *  as muted text beside the child in the patch dropdown */
+  note?: string;
+}
+
+/** A patch plus its computed window and resolved era. */
+export interface PatchWindow extends PatchBoundary {
+  /** exclusive end: the next patch's start within the era, else the era's end,
+   *  else null (open). Computed by scripts/seasons.ts, never authored. */
+  end: string | null;
+  season: number;
 }
 
 /** A time-bomb that has gone off: something the data can tell us is due,

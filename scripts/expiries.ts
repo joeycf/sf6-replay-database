@@ -1,9 +1,15 @@
 // Self-expiring gates: the things this repo knows will come due on a date, so
 // the data tells you rather than you having to remember.
 //
-// Two time-bombs today, and they happen to share a date (2026-08-03):
+// Three jobs come due on one date (2026-08-03), and they are one event:
 //   1. Yasmine becomes playable — she must join the roster.
 //   2. Season 4 starts — its boundary must be confirmed (or corrected).
+//   3. Season 4's opening PATCH must be added to the table in seasons.ts.
+//
+// The third exists because S4 is the only era with no children: replays fall
+// back to the bare `S4` token until Capcom ships the patch and the wiki pages
+// its version. That fallback is correct and invisible, which is exactly why it
+// needs a gate — nothing else would ever complain about it.
 //
 // ─── THE SEVERITY DESIGN — READ BEFORE "FIXING" ANYTHING HERE ────────────────
 //
@@ -78,11 +84,17 @@ export function dueExpiries(asOf: string = today()): Expiry[] {
         date: s.start,
         action:
           `Season ${s.season} was scheduled for ${s.start} and is still unconfirmed. ` +
-          `Verify the balance patch actually landed that day: if it did, set ` +
-          `confirmed: true on the row in scripts/seasons.ts; if Capcom slipped it, ` +
-          `correct \`start\` (and the previous season's \`end\`) and re-run ` +
-          `\`npm run data:emit\`. Nothing else cross-checks this date — the tracked ` +
-          `channels carry no season labels.`,
+          `THREE jobs, all in scripts/seasons.ts: (1) verify the balance patch ` +
+          `actually landed that day — if it did, set confirmed: true on the SEASONS ` +
+          `row; if Capcom slipped it, correct \`start\` (and the previous season's ` +
+          `\`end\`). (2) Add the opening patch to PATCHES with the version id the ` +
+          `SuperCombo wiki gives it — verbatim, never folded or invented; ` +
+          `\`npm run data:versions\` will name it. Its \`start\` must EQUAL the season ` +
+          `start, which \`npm run typecheck\` enforces. (3) Re-run ` +
+          `\`npm run data:emit\`. Until the patch row exists, S${s.season} replays ` +
+          `carry the bare era token — correct, but coarser than every other season. ` +
+          `Nothing else cross-checks the boundary date; the tracked channels carry ` +
+          `no season labels.`,
       });
     }
   }

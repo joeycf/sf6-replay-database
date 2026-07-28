@@ -10,7 +10,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "typecheck": "nuxt prepare && nuxt typecheck && tsc --noEmit -p tsconfig.pipeline.json",
+    "typecheck": "nuxt prepare && nuxt typecheck && tsc --noEmit -p tsconfig.pipeline.json && tsx scripts/seasons.ts --check",
     "lint": "nuxt prepare && eslint .",
     "lint:fix": "nuxt prepare && eslint . --fix",
     "format": "prettier --write .",
@@ -21,6 +21,7 @@
     "data:emit": "tsx scripts/emit.ts",
     "data:characters": "tsx scripts/characters.ts",
     "data:expiries": "tsx scripts/expiries.ts --check",
+    "data:versions": "tsx scripts/versions.ts",
     "test:e2e": "tsx scripts/e2e.ts"
   },
   "devDependencies": {

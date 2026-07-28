@@ -2,17 +2,91 @@
   {
     "id": "S1",
     "label": "Season 1",
-    "note": "Launch"
+    "note": "Launch",
+    "children": [
+      {
+        "id": "1.00",
+        "note": "Launch"
+      },
+      {
+        "id": "1.01",
+        "note": "Rashid"
+      },
+      {
+        "id": "1.02",
+        "note": "A.K.I."
+      },
+      {
+        "id": "1.03",
+        "note": "Costume 3"
+      },
+      {
+        "id": "1.04",
+        "note": "Ed"
+      }
+    ]
   },
   {
     "id": "S2",
     "label": "Season 2",
-    "note": "Akuma"
+    "note": "Akuma",
+    "children": [
+      {
+        "id": "1.05",
+        "note": "Akuma — all-character balance"
+      },
+      {
+        "id": "1.06",
+        "note": "M. Bison"
+      },
+      {
+        "id": "1.07",
+        "note": "Terry"
+      },
+      {
+        "id": "1.08",
+        "note": "all-character balance"
+      },
+      {
+        "id": "1.09",
+        "note": "Mai"
+      }
+    ]
   },
   {
     "id": "S3",
     "label": "Season 3",
-    "note": "Elena"
+    "note": "Elena",
+    "children": [
+      {
+        "id": "1.10",
+        "note": "Elena — all-character balance"
+      },
+      {
+        "id": "2.00",
+        "note": "Sagat"
+      },
+      {
+        "id": "2.01",
+        "note": "C. Viper"
+      },
+      {
+        "id": "2.0111",
+        "note": "Elena / Mai / Sagat fixes"
+      },
+      {
+        "id": "2.02",
+        "note": "Alex — all-character balance"
+      },
+      {
+        "id": "2.0202",
+        "note": "JP / M. Bison fixes"
+      },
+      {
+        "id": "2.0301",
+        "note": "Ingrid"
+      }
+    ]
   },
   {
     "id": "S4",
