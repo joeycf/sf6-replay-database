@@ -21,6 +21,7 @@
     "data:emit": "tsx scripts/emit.ts",
     "data:characters": "tsx scripts/characters.ts",
     "data:expiries": "tsx scripts/expiries.ts --check",
+    "data:replay-dupes": "tsx scripts/replay-dupes.ts",
     "data:versions": "tsx scripts/versions.ts",
     "test:e2e": "tsx scripts/e2e.ts"
   },

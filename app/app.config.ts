@@ -103,21 +103,39 @@ export default defineAppConfig({
     },
     // Order matters: SourceBadge styles by index (0 = filled primary,
     // 1 = secondary outline, 2+ = warning outline). Ids mirror
-    // scripts/channels.ts `source` — the pipeline's Replay.source contract.
-    // Ordered by corpus quality as measured in the build recon: highLevel is
-    // 100% SF6 / 100% parseable / 99.7% ranked, fgcPlace 99.1% / 54%,
-    // sfReplays 92.5% / 0.2%. APPEND only — inserting would recolour the
-    // existing badges.
-    //
-    // No sourceGroups: Tekken collapses 4 channels into 2 chips, but with 3
-    // channels and no separate tournament source there is nothing to
-    // consolidate. Tournament footage is mixed INSIDE these channels rather
-    // than living on its own, so an Online/Tournament split would need a
-    // title-keyword classifier rather than a channel grouping.
+    // scripts/channels.ts `source`/`eventSource` — the pipeline's
+    // Replay.source contract. The original three keep their indices (APPEND
+    // only — inserting would recolour shipped badges); the tournament-era
+    // tokens (2026-07-31 intake) all land at index ≥3 and share the warning
+    // outline, which the labels disambiguate (2XKO precedent). kingArena is
+    // ONE YouTube channel emitting under TWO tokens — parse.ts classifies its
+    // videos into online sets vs event footage by title signals — hence two
+    // entries whose labels only differ by "Events".
     sourceChannels: [
       { id: 'highLevel', name: 'High Level' },
       { id: 'fgcPlace', name: 'The FGC Place' },
       { id: 'sfReplays', name: 'SF Replays' },
+      { id: 'kingArenaOnline', name: 'King Arena' },
+      { id: 'capcomFighters', name: 'Capcom Fighters' },
+      { id: 'kingArenaTournament', name: 'King Arena Events' },
+      { id: 'superFighters', name: 'Super Fighters' },
+    ],
+    // Filter chips consolidate to two groups (engine v0.5.5; the per-video
+    // SourceBadge keeps the real channel name from sourceChannels above).
+    // Toggling a group writes its member ids to the same ?src= CSV, so the
+    // per-channel deep links — including the three pre-existing tokens —
+    // resolve exactly as before. Group ids never appear in URLs or data.
+    sourceGroups: [
+      {
+        id: 'online',
+        name: 'Online',
+        sources: ['highLevel', 'fgcPlace', 'sfReplays', 'kingArenaOnline'],
+      },
+      {
+        id: 'tournament',
+        name: 'Tournament',
+        sources: ['capcomFighters', 'kingArenaTournament', 'superFighters'],
+      },
     ],
     // Season→patch hierarchy for the grouped patch facet (engine v0.6.0).
     // PIPELINE-EMITTED (scripts/emit.ts → data/patchGroups.json) from the same

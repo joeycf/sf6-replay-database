@@ -17,7 +17,7 @@ this repo supplies **data**, **config**, and **a skin**.
 | `filters.rank`          | `true` + a 9-rung ladder           | SF6 has a League ladder, and the descriptions state it            |
 | `terms`                 | **unset**                          | SF6 genuinely says "characters" — the engine defaults are correct |
 | `characterRouteSegment` | **unset**                          | the roster lives at `/characters/*`                               |
-| `sourceGroups`          | **unset**                          | only three channels; nothing to consolidate                       |
+| `sourceGroups`          | Online / Tournament                | 7 tokens from 6 channels; kingArena splits per-video (classifier) |
 | `patchGroups`           | season parents + 17 patch children | see "Seasons, not Years" below                                    |
 
 > Platform: [replaydatabase.com](https://replaydatabase.com) ·
@@ -68,22 +68,23 @@ npm run generate            # → .vercel/output/static/sf6
 
 `ENGINE_PATH=../replay-engine` in `.env` develops against a local engine
 checkout; leave it unset (as every deploy does) to resolve the pinned
-`github:joeycf/replay-engine#v0.6.2` tag. `NUXT_APP_BASE_URL` overrides the
+`github:joeycf/replay-engine#v0.6.3` tag. `NUXT_APP_BASE_URL` overrides the
 committed `/sf6/` base — but the committed default **is** production truth.
 
 ## Scripts
 
-| script                    | what                                                                      |
-| ------------------------- | ------------------------------------------------------------------------- |
-| `npm run data:fetch`      | every upload from the 3 tracked channels → `raw/`                         |
-| `npm run data:parse`      | parse → substrate + registry + report, then emit                          |
-| `npm run data:build`      | fetch + parse                                                             |
-| `npm run data:emit`       | re-derive the generic artifacts from the committed substrate (no network) |
-| `npm run data:characters` | rescrape the roster + art (`--force` re-downloads)                        |
-| `npm run data:expiries`   | `--check` the self-expiring gates; exits 1 when something is due          |
-| `npm run data:versions`   | cross-check the patch table against the SuperCombo wiki (network)         |
-| `npm run test:e2e`        | the full audit suite against `.vercel/output/static`                      |
-| `npm run typecheck`       | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators |
+| script                      | what                                                                      |
+| --------------------------- | ------------------------------------------------------------------------- |
+| `npm run data:fetch`        | every upload from the 6 tracked channels → `raw/`                         |
+| `npm run data:parse`        | parse → substrate + registry + report, then emit                          |
+| `npm run data:build`        | fetch + parse                                                             |
+| `npm run data:emit`         | re-derive the generic artifacts from the committed substrate (no network) |
+| `npm run data:characters`   | rescrape the roster + art (`--force` re-downloads)                        |
+| `npm run data:expiries`     | `--check` the self-expiring gates; exits 1 when something is due          |
+| `npm run data:versions`     | cross-check the patch table against the SuperCombo wiki (network)         |
+| `npm run data:replay-dupes` | audit duplicate matches → paste-ready `overrides.json` fragment           |
+| `npm run test:e2e`          | the full audit suite against `.vercel/output/static`                      |
+| `npm run typecheck`         | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators |
 
 ## Seasons, not Years
 
@@ -214,14 +215,40 @@ to the era boundary.
 
 ## The parser
 
-**Sources.** Three channels (`scripts/channels.ts`), each its own
-`Replay.source`. Unlike Tekken, no source aggregates several channels:
-tournament footage here is published _inside_ the same channels rather than on
-a dedicated event-organizer channel.
+**Sources.** Six channels (`scripts/channels.ts`) emitting seven
+`Replay.source` tokens, consolidated to **Online / Tournament** filter chips
+via `sourceGroups` (engine v0.5.5 — the per-video badge keeps the real channel,
+and every per-channel `?src=` deep link still works). The original three plus
+`kingArenaOnline` are Online; `capcomFighters`, `kingArenaTournament` and
+`superFighters` are Tournament. @TheKingArena is one physical channel emitting
+under **two** tokens: `parse.ts` classifies each video by title signals
+("High-Level" or no event signal → online; an event signal → tournament), and a
+title carrying **both** signals goes to `data/review-queue.json` — pending
+items never reach the site — until a human verdict lands in `overrides.json`
+via the dev-only `/dev/source-review` page (`nuxt dev` only; 404 in builds).
+Tournament sides carry no ladder ranks, so overall rank coverage is lower than
+the Online corpus — honest nulls, `rank` is optional per side. @EvoEvents was
+evaluated and deliberately NOT tracked (characters exist only in the footage
+HUD; see the note in `scripts/channels.ts`).
 
-**Is-SF6.** Two of the three carry a Street Fighter V back-catalogue, so every
-record passes a title-marker test (`SF6` / `STREET FIGHTER 6` / `スト6`) first.
-Tags are SEO soup on these channels and name both games; they are not a signal.
+**Duplicates.** Tournament footage overlaps — the same match gets captured by
+an online channel and uploaded by event channels, and @TheKingArena re-posts
+its own videos wholesale. `npm run data:replay-dupes` audits the corpus
+(players+characters signature, duration-exactness tiers) and prints a
+paste-ready `overrides.json` fragment; a human applies it. Kept records are
+chosen by channel priority (the `CHANNELS` order — shipped incumbents first,
+then CapcomFighters > KingArena > SuperFighters). Legacy duplicate pairs
+entirely inside the pre-tournament corpus are report-only. The e2e fails on
+any unresolved tier-A pair involving a tournament-era record.
+
+**Is-SF6.** Two of the original three carry a Street Fighter V back-catalogue,
+so every record passes a title-marker test (`SF6` / `STREET FIGHTER 6` /
+`スト6`) first. Tags are SEO soup on these channels and name both games; they
+are not a signal. The tournament-era channels put the marker in the
+_description_ (1,025/1,025 CapcomFighters match uploads, 0 in titles), so
+`ChannelConfig.sf6Signal` widens the gate to `titleOrDescription` per channel —
+safe there because those channels post-date SF6 or lose their pre-SF6 history
+to the launch-date gate.
 
 **Characters** are matched longest-alias-first with overlap suppression, so
 "Dee Jay" beats "Ed" and "M. Bison" beats "Bison". The paren frequently carries

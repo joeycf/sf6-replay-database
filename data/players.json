@@ -4,6 +4,14 @@
     "handle": "#1 Lp Rank AmyDARC"
   },
   {
+    "id": "1-ranked-kinchoru",
+    "handle": "#1 RANKED KINCHORU"
+  },
+  {
+    "id": "1-ranked-yas",
+    "handle": "#1 Ranked: YAS"
+  },
+  {
     "id": "1strank",
     "handle": "1strank"
   },
@@ -18,6 +26,10 @@
   {
     "id": "2koma-devil",
     "handle": "2Koma Devil"
+  },
+  {
+    "id": "2sk-princegr",
+    "handle": "2SK-PrinceGR"
   },
   {
     "id": "32rev",
@@ -68,12 +80,24 @@
     "handle": "AAAAA"
   },
   {
+    "id": "aaron",
+    "handle": "AARON"
+  },
+  {
     "id": "abao",
     "handle": "Abao"
   },
   {
+    "id": "abbood-bboy",
+    "handle": "ABBOOD-BBOY"
+  },
+  {
     "id": "abe",
     "handle": "abe"
+  },
+  {
+    "id": "abi",
+    "handle": "ABI"
   },
   {
     "id": "abood-bboy",
@@ -156,6 +180,10 @@
     "handle": "Airjordon43"
   },
   {
+    "id": "ajax-fidelity",
+    "handle": "Ajax Fidelity"
+  },
+  {
     "id": "akainu",
     "handle": "Akainu"
   },
@@ -200,6 +228,10 @@
     "handle": "Akutagawa"
   },
   {
+    "id": "akutakawa",
+    "handle": "AKUTAKAWA"
+  },
+  {
     "id": "aladdin",
     "handle": "ALADDIN"
   },
@@ -224,8 +256,12 @@
     "handle": "Alexa"
   },
   {
+    "id": "alexis-pinto",
+    "handle": "Alexis Pinto"
+  },
+  {
     "id": "alexrd",
-    "handle": "ALEXRD"
+    "handle": "AlexRD"
   },
   {
     "id": "alisa",
@@ -252,6 +288,10 @@
     "handle": "Amayui Moka"
   },
   {
+    "id": "amigopool",
+    "handle": "Amigopool"
+  },
+  {
     "id": "amkidd",
     "handle": "AMKIDD"
   },
@@ -268,6 +308,10 @@
     "handle": "ANDREW"
   },
   {
+    "id": "angribird",
+    "handle": "ANGRIBIRD"
+  },
+  {
     "id": "angrybird",
     "handle": "Angrybird",
     "featured": true
@@ -279,6 +323,10 @@
   {
     "id": "ansa-li",
     "handle": "Ansa Li"
+  },
+  {
+    "id": "anunnaki",
+    "handle": "Anunnaki"
   },
   {
     "id": "anzunyan",
@@ -341,6 +389,10 @@
     "handle": "Arleichi"
   },
   {
+    "id": "arma",
+    "handle": "Arma"
+  },
+  {
     "id": "armperor",
     "handle": "Armperor"
   },
@@ -373,6 +425,10 @@
     "handle": "atau smashltoh"
   },
   {
+    "id": "atma",
+    "handle": "ATMA"
+  },
+  {
     "id": "augbair",
     "handle": "AUGBAIR"
   },
@@ -381,8 +437,16 @@
     "handle": "Augbir"
   },
   {
+    "id": "aura",
+    "handle": "AURA"
+  },
+  {
     "id": "automattock",
     "handle": "AutoMattock"
+  },
+  {
+    "id": "awildllama",
+    "handle": "AwildLLAMA"
   },
   {
     "id": "axela",
@@ -413,8 +477,16 @@
     "handle": "B Station"
   },
   {
+    "id": "b3ilz",
+    "handle": "B3ilz"
+  },
+  {
     "id": "b3llz",
     "handle": "b3lLz"
+  },
+  {
+    "id": "baadshah-miya",
+    "handle": "Baadshah Miya"
   },
   {
     "id": "babaaaa",
@@ -439,6 +511,14 @@
   {
     "id": "bananauyuu",
     "handle": "BananaUyuu"
+  },
+  {
+    "id": "bandits-menard",
+    "handle": "Bandits MenaRD"
+  },
+  {
+    "id": "banja",
+    "handle": "Banja"
   },
   {
     "id": "bankai",
@@ -475,6 +555,10 @@
   {
     "id": "beans",
     "handle": "Beans"
+  },
+  {
+    "id": "beast-fuudo",
+    "handle": "BEAST Fuudo"
   },
   {
     "id": "beefspecial",
@@ -563,8 +647,16 @@
     "featured": true
   },
   {
+    "id": "blaz11",
+    "handle": "Blaz11"
+  },
+  {
     "id": "blazedeathblade",
     "handle": "BlazeDeathBlade"
+  },
+  {
+    "id": "blg-vxbao",
+    "handle": "BLG VXBao"
   },
   {
     "id": "blkwolverine",
@@ -572,7 +664,7 @@
   },
   {
     "id": "bloo",
-    "handle": "BLOO"
+    "handle": "Bloo"
   },
   {
     "id": "bloodsong",
@@ -628,6 +720,10 @@
     "handle": "Boppa"
   },
   {
+    "id": "bow",
+    "handle": "BOW"
+  },
+  {
     "id": "boxiii",
     "handle": "BOXIII"
   },
@@ -645,7 +741,7 @@
   },
   {
     "id": "brayan-job",
-    "handle": "Brayan Job"
+    "handle": "Brayan_Job"
   },
   {
     "id": "breeze",
@@ -675,6 +771,10 @@
     "id": "broski",
     "handle": "Broski",
     "featured": true
+  },
+  {
+    "id": "brothermen",
+    "handle": "BROTHERMEN"
   },
   {
     "id": "brutits",
@@ -725,8 +825,16 @@
     "handle": "Bussan"
   },
   {
+    "id": "c-ya",
+    "handle": "C.YA"
+  },
+  {
     "id": "caba",
     "handle": "Caba"
+  },
+  {
+    "id": "cabroweno",
+    "handle": "Cabroweno"
   },
   {
     "id": "cafe",
@@ -745,12 +853,20 @@
     "handle": "CAMPAINE"
   },
   {
+    "id": "canan",
+    "handle": "CANAN"
+  },
+  {
     "id": "canontree",
     "handle": "CanonTree"
   },
   {
     "id": "canvas",
     "handle": "CANVAS"
+  },
+  {
+    "id": "capcom-cup-11-2025-top-16-sf6-kakeru",
+    "handle": "CAPCOM CUP 11 2025 TOP 16 SF6 KAKERU"
   },
   {
     "id": "captainy",
@@ -773,6 +889,10 @@
     "handle": "caru"
   },
   {
+    "id": "cas",
+    "handle": "CAS"
+  },
+  {
     "id": "cash-eye",
     "handle": "CASH EYE"
   },
@@ -789,12 +909,24 @@
     "handle": "CBK"
   },
   {
+    "id": "ccs",
+    "handle": "CCS"
+  },
+  {
     "id": "cebonvieuporing",
     "handle": "Cebonvieuporing"
   },
   {
+    "id": "celfcool",
+    "handle": "Celfcool"
+  },
+  {
     "id": "celi",
     "handle": "Celi"
+  },
+  {
+    "id": "cell",
+    "handle": "CELL"
   },
   {
     "id": "ceroblast",
@@ -817,12 +949,20 @@
     "handle": "Chaminsky"
   },
   {
+    "id": "chanchezee",
+    "handle": "CHANCHEZEE"
+  },
+  {
     "id": "chanryo",
     "handle": "Chanryo"
   },
   {
     "id": "chaoyue",
     "handle": "Chaoyue"
+  },
+  {
+    "id": "chato",
+    "handle": "CHATO"
   },
   {
     "id": "cheems-jr",
@@ -857,12 +997,20 @@
     "handle": "CHIKUDEN"
   },
   {
+    "id": "chinesef",
+    "handle": "CHINESEF"
+  },
+  {
+    "id": "chis-wong",
+    "handle": "CHIS WONG"
+  },
+  {
     "id": "choppa",
     "handle": "Choppa"
   },
   {
-    "id": "chris-cch",
-    "handle": "Chris Cch"
+    "id": "chris-t",
+    "handle": "Chris T"
   },
   {
     "id": "chris-tatarian",
@@ -873,9 +1021,17 @@
     "handle": "CHRIS TATTARIAN"
   },
   {
+    "id": "chris-tt",
+    "handle": "CHRIS.TT"
+  },
+  {
     "id": "chris-wong",
     "handle": "Chris Wong",
     "featured": true
+  },
+  {
+    "id": "chriscch",
+    "handle": "ChrisCCH"
   },
   {
     "id": "chrisg",
@@ -902,12 +1058,20 @@
     "handle": "CHUNGSHIDA"
   },
   {
+    "id": "chux",
+    "handle": "CHUX"
+  },
+  {
     "id": "cientifikof",
     "handle": "CientifiKOF"
   },
   {
     "id": "cinnamonsun",
     "handle": "Cinnamonsun"
+  },
+  {
+    "id": "cipher",
+    "handle": "CIPHER"
   },
   {
     "id": "ckymousee",
@@ -920,6 +1084,10 @@
   {
     "id": "clint",
     "handle": "CLINT"
+  },
+  {
+    "id": "cloud",
+    "handle": "CLOUD"
   },
   {
     "id": "cmon",
@@ -1014,6 +1182,10 @@
     "handle": "cqbz"
   },
   {
+    "id": "cr-shuto",
+    "handle": "CR Shuto"
+  },
+  {
     "id": "craime",
     "handle": "Craime"
   },
@@ -1034,8 +1206,20 @@
     "handle": "CRESCENT"
   },
   {
+    "id": "crhis-wong",
+    "handle": "CRHIS WONG"
+  },
+  {
     "id": "crimson",
     "handle": "CRIMSON"
+  },
+  {
+    "id": "cris-wong",
+    "handle": "CRIS WONG"
+  },
+  {
+    "id": "critical",
+    "handle": "CRITICAL"
   },
   {
     "id": "crosoverrd",
@@ -1060,6 +1244,10 @@
   {
     "id": "crybaby",
     "handle": "Crybaby"
+  },
+  {
+    "id": "cuddlefiend",
+    "handle": "Cuddlefiend"
   },
   {
     "id": "cuffs",
@@ -1119,6 +1307,10 @@
     "handle": "Daikoku"
   },
   {
+    "id": "daikoku-x",
+    "handle": "DAIKOKU X"
+  },
+  {
     "id": "daikokugod",
     "handle": "daikokugod"
   },
@@ -1152,7 +1344,7 @@
   },
   {
     "id": "dark817",
-    "handle": "DARK817"
+    "handle": "Dark817"
   },
   {
     "id": "darkrai",
@@ -1165,6 +1357,10 @@
   {
     "id": "darling",
     "handle": "Darling"
+  },
+  {
+    "id": "darlyn",
+    "handle": "DARLYN"
   },
   {
     "id": "darukawa",
@@ -1199,6 +1395,10 @@
     "handle": "DEEBONEZ"
   },
   {
+    "id": "deiver",
+    "handle": "Deiver"
+  },
+  {
     "id": "densetsu",
     "handle": "Densetsu"
   },
@@ -1209,6 +1409,18 @@
   {
     "id": "despairking",
     "handle": "Despairking"
+  },
+  {
+    "id": "destroygodz",
+    "handle": "DestroyGodz"
+  },
+  {
+    "id": "dfm-nauman",
+    "handle": "DFM Nauman"
+  },
+  {
+    "id": "diago",
+    "handle": "DIAGO"
   },
   {
     "id": "diaphone",
@@ -1277,7 +1489,7 @@
   },
   {
     "id": "dookie",
-    "handle": "DOOKIE"
+    "handle": "Dookie"
   },
   {
     "id": "dosuko",
@@ -1348,6 +1560,10 @@
     "handle": "DRX"
   },
   {
+    "id": "drx-leshar",
+    "handle": "DRX Leshar"
+  },
+  {
     "id": "dtaro",
     "handle": "Dtaro"
   },
@@ -1392,6 +1608,10 @@
     "handle": "Edamakoto"
   },
   {
+    "id": "edderlymd",
+    "handle": "EDDERLYMD"
+  },
+  {
     "id": "edgon",
     "handle": "EDGON"
   },
@@ -1412,8 +1632,20 @@
     "handle": "Eguto"
   },
   {
+    "id": "ehai",
+    "handle": "Ehai"
+  },
+  {
     "id": "eitino",
     "handle": "Eitino"
+  },
+  {
+    "id": "el-1-ranked-match-kakeru",
+    "handle": "EL#1 Ranked Match: KAKERU"
+  },
+  {
+    "id": "elchacotay",
+    "handle": "ELCHACOTAY"
   },
   {
     "id": "elchakotay",
@@ -1442,6 +1674,14 @@
   {
     "id": "elumon",
     "handle": "ELumon"
+  },
+  {
+    "id": "emdingwalker",
+    "handle": "EMDINGWALKER"
+  },
+  {
+    "id": "emex",
+    "handle": "EMEX"
   },
   {
     "id": "emnoeep",
@@ -1509,8 +1749,28 @@
     "handle": "Eureka"
   },
   {
+    "id": "evan",
+    "handle": "EVAN"
+  },
+  {
     "id": "evil-yoshi",
     "handle": "Evil Yoshi"
+  },
+  {
+    "id": "evilshadow",
+    "handle": "EVILSHADOW"
+  },
+  {
+    "id": "evo-japon-punk",
+    "handle": "EVO JAPON-PUNK"
+  },
+  {
+    "id": "evo-japon-zangief-bolado",
+    "handle": "EVO JAPON-ZANGIEF BOLADO"
+  },
+  {
+    "id": "exe",
+    "handle": "EXE"
   },
   {
     "id": "eyoko",
@@ -1519,6 +1779,10 @@
   {
     "id": "ezaboy",
     "handle": "ezaboy"
+  },
+  {
+    "id": "f-c-q",
+    "handle": "F.C.Q"
   },
   {
     "id": "face",
@@ -1533,8 +1797,20 @@
     "handle": "FAIR"
   },
   {
+    "id": "falcons-dcq",
+    "handle": "Falcons DCQ"
+  },
+  {
+    "id": "falcons-valmaster",
+    "handle": "Falcons Valmaster"
+  },
+  {
     "id": "fanao",
     "handle": "FANAO"
+  },
+  {
+    "id": "fandroid",
+    "handle": "Fandroid"
   },
   {
     "id": "farby",
@@ -1617,8 +1893,12 @@
     "handle": "Flaquito"
   },
   {
-    "id": "flash-metroid",
-    "handle": "FLASH METROID"
+    "id": "flashmetroid",
+    "handle": "FlashMetroid"
+  },
+  {
+    "id": "flashnoa",
+    "handle": "FLASHNOA"
   },
   {
     "id": "fluxwavez",
@@ -1653,6 +1933,10 @@
     "handle": "Freeseff"
   },
   {
+    "id": "freeser",
+    "handle": "Freeser"
+  },
+  {
     "id": "freshcyborg",
     "handle": "FreshCyborg"
   },
@@ -1663,6 +1947,14 @@
   {
     "id": "frozen",
     "handle": "Frozen"
+  },
+  {
+    "id": "fruit",
+    "handle": "Fruit"
+  },
+  {
+    "id": "ft5-itabashi",
+    "handle": "FT5 ITABASHI"
   },
   {
     "id": "fuanao",
@@ -1714,6 +2006,10 @@
     "featured": true
   },
   {
+    "id": "g8s-gachikun",
+    "handle": "G8S gachikun"
+  },
+  {
     "id": "gachikun",
     "handle": "Gachikun",
     "featured": true
@@ -1747,6 +2043,10 @@
     "handle": "GameIn99"
   },
   {
+    "id": "gameln",
+    "handle": "GAMELN"
+  },
+  {
     "id": "gamerbee",
     "handle": "Gamerbee"
   },
@@ -1757,6 +2057,10 @@
   {
     "id": "ganaken",
     "handle": "Ganaken"
+  },
+  {
+    "id": "gangryong",
+    "handle": "Gangryong"
   },
   {
     "id": "garden",
@@ -1783,6 +2087,18 @@
     "handle": "GBRibiro"
   },
   {
+    "id": "gghalibel",
+    "handle": "GGhalibel"
+  },
+  {
+    "id": "ghostchips",
+    "handle": "GhostChips"
+  },
+  {
+    "id": "gilky",
+    "handle": "GILKY"
+  },
+  {
     "id": "gjijiig",
     "handle": "Gjijiig"
   },
@@ -1806,6 +2122,10 @@
   {
     "id": "godofnoantiair",
     "handle": "Godofnoantiair"
+  },
+  {
+    "id": "goichi",
+    "handle": "GOICHI"
   },
   {
     "id": "goldbanks",
@@ -1844,8 +2164,20 @@
     "handle": "GR_PC"
   },
   {
-    "id": "gran-todakai",
-    "handle": "GRAN TODAKAI"
+    "id": "grand-final-kakeru",
+    "handle": "GRAND FINAL: KAKERU"
+  },
+  {
+    "id": "grand-final-menard",
+    "handle": "GRAND FINAL: MenaRD"
+  },
+  {
+    "id": "grand-final-momochi",
+    "handle": "Grand Final: Momochi"
+  },
+  {
+    "id": "grantodakai",
+    "handle": "GranTODAKAI"
   },
   {
     "id": "grape-juice",
@@ -1856,8 +2188,16 @@
     "handle": "GREAT WHITE GUN"
   },
   {
+    "id": "groovy",
+    "handle": "GROOVY"
+  },
+  {
     "id": "grossrd",
     "handle": "GROSSRD"
+  },
+  {
+    "id": "groy",
+    "handle": "GROY"
   },
   {
     "id": "gtflames",
@@ -1866,6 +2206,10 @@
   {
     "id": "gtr",
     "handle": "Gtr"
+  },
+  {
+    "id": "gumius",
+    "handle": "Gumius"
   },
   {
     "id": "gun-slinga",
@@ -1892,8 +2236,16 @@
     "handle": "GutterMagic"
   },
   {
+    "id": "guyguy",
+    "handle": "GUYGUY"
+  },
+  {
     "id": "gyguyan",
     "handle": "GYGUYAN"
+  },
+  {
+    "id": "gyogun-moke",
+    "handle": "Gyogun Moke"
   },
   {
     "id": "gyoza",
@@ -1916,13 +2268,25 @@
     "handle": "HADOofSA75UI"
   },
   {
+    "id": "hahuki",
+    "handle": "HAHUKI"
+  },
+  {
     "id": "haitani",
     "handle": "Haitani",
     "featured": true
   },
   {
+    "id": "haitei",
+    "handle": "HAITEI"
+  },
+  {
     "id": "haitei-raoyue",
     "handle": "HAITEI RAOYUE"
+  },
+  {
+    "id": "hali",
+    "handle": "HALI"
   },
   {
     "id": "halloumi",
@@ -1931,6 +2295,10 @@
   {
     "id": "hallowhavyn",
     "handle": "Hallowhavyn"
+  },
+  {
+    "id": "halo",
+    "handle": "HALO"
   },
   {
     "id": "halola",
@@ -2057,6 +2425,14 @@
     "handle": "HELL KNEE"
   },
   {
+    "id": "herculeshulk",
+    "handle": "HerculesHulk"
+  },
+  {
+    "id": "heretohavefunn",
+    "handle": "HERETOHAVEFUNN"
+  },
+  {
     "id": "heroedelsur",
     "handle": "Heroedelsur"
   },
@@ -2083,6 +2459,10 @@
   {
     "id": "hibikithebeast",
     "handle": "HibikiTheBeast"
+  },
+  {
+    "id": "hicaru",
+    "handle": "HICARU"
   },
   {
     "id": "hide0",
@@ -2112,6 +2492,10 @@
   {
     "id": "higuchi-kazunoko",
     "handle": "HIGUCHI & KAZUNOKO"
+  },
+  {
+    "id": "hihao",
+    "handle": "HIHAO"
   },
   {
     "id": "hikari",
@@ -2166,16 +2550,24 @@
     "handle": "hishow"
   },
   {
+    "id": "hitbox-kawano",
+    "handle": "HitBox Kawano"
+  },
+  {
     "id": "hk-dible",
     "handle": "hk dible"
   },
   {
     "id": "hkdash",
-    "handle": "HKDASH"
+    "handle": "HKDash"
   },
   {
     "id": "holaq",
     "handle": "Holaq"
+  },
+  {
+    "id": "hollywaood-robtv",
+    "handle": "HOLLYWAOOD ROBTV"
   },
   {
     "id": "honda",
@@ -2191,7 +2583,7 @@
   },
   {
     "id": "hope",
-    "handle": "HOPE"
+    "handle": "Hope"
   },
   {
     "id": "horakyrd",
@@ -2291,6 +2683,10 @@
     "handle": "Ibushigin"
   },
   {
+    "id": "ibushigin-kakeru",
+    "handle": "IBUSHIGIN Kakeru"
+  },
+  {
     "id": "iceman",
     "handle": "ICEMAN"
   },
@@ -2349,7 +2745,7 @@
   },
   {
     "id": "infexious",
-    "handle": "infexious"
+    "handle": "Infexious"
   },
   {
     "id": "infimum",
@@ -2358,6 +2754,10 @@
   {
     "id": "infimum00",
     "handle": "Infimum00"
+  },
+  {
+    "id": "infin1te",
+    "handle": "Infin1te"
   },
   {
     "id": "infinite",
@@ -2396,8 +2796,16 @@
     "handle": "Isasaka"
   },
   {
+    "id": "it-g-ma-yo",
+    "handle": "IT_G_MA_YO"
+  },
+  {
     "id": "itabashi",
     "handle": "Itabashi"
+  },
+  {
+    "id": "itabashi-zangief",
+    "handle": "Itabashi Zangief"
   },
   {
     "id": "itachislegacy",
@@ -2485,6 +2893,14 @@
     "handle": "Jabby"
   },
   {
+    "id": "jabhim",
+    "handle": "JabhiM"
+  },
+  {
+    "id": "jac",
+    "handle": "JAC"
+  },
+  {
     "id": "jaccy",
     "handle": "Jaccy"
   },
@@ -2505,12 +2921,20 @@
     "handle": "jackpot"
   },
   {
+    "id": "jaeger94",
+    "handle": "Jaeger94"
+  },
+  {
     "id": "jak",
     "handle": "JAK"
   },
   {
     "id": "jakk",
     "handle": "Jakk"
+  },
+  {
+    "id": "jamikeca",
+    "handle": "JAMIKECA"
   },
   {
     "id": "jasshi",
@@ -2545,6 +2969,10 @@
     "handle": "JBJB"
   },
   {
+    "id": "jenix",
+    "handle": "JENIX"
+  },
+  {
     "id": "jeondding",
     "handle": "Jeondding"
   },
@@ -2557,8 +2985,8 @@
     "handle": "Jewelman"
   },
   {
-    "id": "jhontakeuchi",
-    "handle": "jhontakeuchi"
+    "id": "jhon-takeuchi",
+    "handle": "JHON TAKEUCHI"
   },
   {
     "id": "jieba",
@@ -2567,6 +2995,10 @@
   {
     "id": "jiewa",
     "handle": "Jiewa"
+  },
+  {
+    "id": "jig-kishiri",
+    "handle": "JIG Kishiri"
   },
   {
     "id": "jigsaw",
@@ -2607,6 +3039,10 @@
   {
     "id": "joeyfgc",
     "handle": "JoeyFGC"
+  },
+  {
+    "id": "joeyfgc-bolado",
+    "handle": "JOEYFGC BOLADO"
   },
   {
     "id": "john-doe",
@@ -2657,6 +3093,10 @@
     "handle": "Jonathan Saitoh"
   },
   {
+    "id": "jonhntakeuchi",
+    "handle": "JONHNTAKEUCHI"
+  },
+  {
     "id": "joshua-graham",
     "handle": "Joshua Graham"
   },
@@ -2673,12 +3113,20 @@
     "handle": "JPKING"
   },
   {
+    "id": "jr",
+    "handle": "Jr"
+  },
+  {
     "id": "judy",
     "handle": "Judy"
   },
   {
     "id": "juicyjoe",
     "handle": "Juicyjoe"
+  },
+  {
+    "id": "julio-fuentes",
+    "handle": "Julio Fuentes"
   },
   {
     "id": "jumbo-turbo-mongee-sr",
@@ -2729,8 +3177,12 @@
     "handle": "JustOneLuckBoy"
   },
   {
+    "id": "jwong",
+    "handle": "JWong"
+  },
+  {
     "id": "k4ll3pro",
-    "handle": "K4LL3PRO"
+    "handle": "K4ll3pro"
   },
   {
     "id": "k7-showoff",
@@ -2739,6 +3191,10 @@
   {
     "id": "kabezeku",
     "handle": "KabeZeku"
+  },
+  {
+    "id": "kai-k",
+    "handle": "KAI K"
   },
   {
     "id": "kaitei",
@@ -2762,6 +3218,14 @@
     "handle": "Kakutasu3"
   },
   {
+    "id": "kamaitachi",
+    "handle": "KAMAITACHI"
+  },
+  {
+    "id": "kami",
+    "handle": "Kami"
+  },
+  {
     "id": "kamiki",
     "handle": "KAMIKI"
   },
@@ -2782,8 +3246,16 @@
     "handle": "Kamonegi"
   },
   {
+    "id": "kamy",
+    "handle": "Kamy"
+  },
+  {
     "id": "kangalphon",
     "handle": "Kangalphon"
+  },
+  {
+    "id": "kanjingyu",
+    "handle": "KANJINGYU"
   },
   {
     "id": "kaou056",
@@ -2843,12 +3315,20 @@
     "handle": "KAWONA"
   },
   {
+    "id": "kayne",
+    "handle": "Kayne"
+  },
+  {
     "id": "kazekorp",
     "handle": "KazeKorp"
   },
   {
     "id": "kazu",
     "handle": "Kazu"
+  },
+  {
+    "id": "kazunok0",
+    "handle": "KAZUNOK0"
   },
   {
     "id": "kazunoko",
@@ -2880,6 +3360,10 @@
     "handle": "KEI.B JP"
   },
   {
+    "id": "ken-with",
+    "handle": "KEN WITH"
+  },
+  {
     "id": "kenpi",
     "handle": "Kenpi"
   },
@@ -2890,6 +3374,10 @@
   {
     "id": "kenta",
     "handle": "Kenta"
+  },
+  {
+    "id": "keoma",
+    "handle": "Keoma"
   },
   {
     "id": "kerplunk",
@@ -2964,12 +3452,12 @@
     "handle": "Kinchoru"
   },
   {
-    "id": "kings-vega",
-    "handle": "KINGS VEGA"
-  },
-  {
     "id": "kingsubega",
     "handle": "Kingsubega"
+  },
+  {
+    "id": "kingsvega",
+    "handle": "KingsVega"
   },
   {
     "id": "kintyo",
@@ -2994,6 +3482,10 @@
   {
     "id": "kiwibeta",
     "handle": "KiwiBeta"
+  },
+  {
+    "id": "kiyoutaka",
+    "handle": "KIYOUTAKA"
   },
   {
     "id": "kizzie-kay",
@@ -3061,6 +3553,10 @@
     "handle": "KOKKO CLUB"
   },
   {
+    "id": "kolibri",
+    "handle": "Kolibri"
+  },
+  {
     "id": "kon-nvedtest",
     "handle": "KON/nvedtest"
   },
@@ -3121,6 +3617,10 @@
     "handle": "Kristensen"
   },
   {
+    "id": "krown",
+    "handle": "Krown"
+  },
+  {
     "id": "kubo",
     "handle": "kubo"
   },
@@ -3169,6 +3669,10 @@
     "handle": "Kuroko"
   },
   {
+    "id": "kuroma",
+    "handle": "KUROMA"
+  },
+  {
     "id": "kuromame",
     "handle": "Kuromame"
   },
@@ -3179,6 +3683,10 @@
   {
     "id": "kusanagi",
     "handle": "Kusanagi"
+  },
+  {
+    "id": "kusanagui",
+    "handle": "KUSANAGUI"
   },
   {
     "id": "kushina",
@@ -3210,7 +3718,7 @@
   },
   {
     "id": "kyuki",
-    "handle": "KYUKI"
+    "handle": "Kyuki"
   },
   {
     "id": "kzo",
@@ -3229,6 +3737,10 @@
     "handle": "Laggia"
   },
   {
+    "id": "lagia",
+    "handle": "LAGIA"
+  },
+  {
     "id": "lapcheng",
     "handle": "Lapcheng"
   },
@@ -3243,6 +3755,10 @@
   {
     "id": "lattice",
     "handle": "Lattice"
+  },
+  {
+    "id": "lavision",
+    "handle": "LAVISION"
   },
   {
     "id": "lazyboredom",
@@ -3283,7 +3799,7 @@
   },
   {
     "id": "levihakai",
-    "handle": "LEVIHAKAI"
+    "handle": "Levihakai"
   },
   {
     "id": "lexx",
@@ -3308,6 +3824,10 @@
   {
     "id": "lilo24k",
     "handle": "LILO24K"
+  },
+  {
+    "id": "limestone",
+    "handle": "LIMESTONE"
   },
   {
     "id": "linkealo",
@@ -3338,6 +3858,14 @@
     "handle": "Liquid"
   },
   {
+    "id": "liquid-nephew",
+    "handle": "Liquid Nephew"
+  },
+  {
+    "id": "liquid-o",
+    "handle": "Liquid_o"
+  },
+  {
     "id": "little",
     "handle": "LITTLE"
   },
@@ -3362,8 +3890,16 @@
     "handle": "Longzhu"
   },
   {
+    "id": "lord-vemon",
+    "handle": "Lord Vemon"
+  },
+  {
     "id": "lord-venom",
     "handle": "Lord Venom"
+  },
+  {
+    "id": "losers-final-leshar",
+    "handle": "LOSERS FINAL: LESHAR"
   },
   {
     "id": "low-trunks",
@@ -3390,12 +3926,16 @@
     "handle": "Luffy"
   },
   {
+    "id": "lugabo",
+    "handle": "Lugabo"
+  },
+  {
     "id": "luiman",
     "handle": "Luiman"
   },
   {
     "id": "luiman20",
-    "handle": "LuiMan20"
+    "handle": "Luiman20"
   },
   {
     "id": "luis",
@@ -3408,6 +3948,10 @@
   {
     "id": "luo-xiaohu",
     "handle": "Luo Xiaohu"
+  },
+  {
+    "id": "lushid",
+    "handle": "Lushid"
   },
   {
     "id": "luxima",
@@ -3467,12 +4011,20 @@
     "featured": true
   },
   {
+    "id": "mago-and-jiewa",
+    "handle": "MAGO AND JIEWA"
+  },
+  {
     "id": "mago2dgod",
     "handle": "Mago2dgod"
   },
   {
     "id": "maka-bou",
     "handle": "Maka Bou"
+  },
+  {
+    "id": "makeni",
+    "handle": "MAKENI"
   },
   {
     "id": "makinouchi",
@@ -3503,6 +4055,10 @@
     "handle": "Manba"
   },
   {
+    "id": "mangoman",
+    "handle": "MANGOMAN"
+  },
+  {
     "id": "manningfirework",
     "handle": "ManningFirework"
   },
@@ -3513,6 +4069,14 @@
   {
     "id": "mariwogold",
     "handle": "Mariwogold"
+  },
+  {
+    "id": "marktheshark",
+    "handle": "MarkTheShark"
+  },
+  {
+    "id": "marktheshark9200",
+    "handle": "MarkTheShark9200"
   },
   {
     "id": "marmori",
@@ -3579,6 +4143,10 @@
     "handle": "Mattypie"
   },
   {
+    "id": "maxmemberlength",
+    "handle": "MAXMEMBERLENGTH"
+  },
+  {
     "id": "mbr402",
     "handle": "MBR402"
   },
@@ -3593,6 +4161,10 @@
   {
     "id": "mega",
     "handle": "Mega"
+  },
+  {
+    "id": "megamarth",
+    "handle": "MEGAMARTH"
   },
   {
     "id": "megaraz",
@@ -3728,6 +4300,10 @@
     "handle": "MINUTEMAID"
   },
   {
+    "id": "minutemaidorange",
+    "handle": "MinuteMaidOrange"
+  },
+  {
     "id": "miriru",
     "handle": "MIRIRU"
   },
@@ -3740,6 +4316,10 @@
     "handle": "MISTER CIMSON"
   },
   {
+    "id": "mister-crimsom",
+    "handle": "MISTER CRIMSOM"
+  },
+  {
     "id": "mister-crimson",
     "handle": "Mister Crimson",
     "featured": true
@@ -3747,6 +4327,10 @@
   {
     "id": "mister-crimson-3-ranked",
     "handle": "MISTER CRIMSON (#3 Ranked"
+  },
+  {
+    "id": "mister-crismon",
+    "handle": "Mister Crismon"
   },
   {
     "id": "mistmail",
@@ -3801,6 +4385,10 @@
     "handle": "Mocchi"
   },
   {
+    "id": "mochi",
+    "handle": "MOCHI"
+  },
+  {
     "id": "mochihowa",
     "handle": "Mochihowa"
   },
@@ -3826,6 +4414,10 @@
     "featured": true
   },
   {
+    "id": "molina",
+    "handle": "MOLINA"
+  },
+  {
     "id": "momi",
     "handle": "Momi"
   },
@@ -3844,6 +4436,14 @@
   {
     "id": "monaka",
     "handle": "Monaka"
+  },
+  {
+    "id": "mono",
+    "handle": "Mono"
+  },
+  {
+    "id": "monopr",
+    "handle": "MONOPR"
   },
   {
     "id": "monorp",
@@ -3870,6 +4470,10 @@
     "handle": "Mordesai"
   },
   {
+    "id": "morg",
+    "handle": "MORG"
+  },
+  {
     "id": "moruto",
     "handle": "Moruto"
   },
@@ -3890,12 +4494,32 @@
     "handle": "Mothman"
   },
   {
+    "id": "mouz-endingwalker",
+    "handle": "MOUZ EndingWalker"
+  },
+  {
+    "id": "mov",
+    "handle": "MOV"
+  },
+  {
+    "id": "mperor",
+    "handle": "MPEROR"
+  },
+  {
     "id": "mr-aru",
     "handle": "Mr.Aru"
   },
   {
+    "id": "mr-crimson",
+    "handle": "Mr CRIMSON"
+  },
+  {
     "id": "mr-excuse-man",
     "handle": "Mr. Excuse Man"
+  },
+  {
+    "id": "mr-rookie",
+    "handle": "MR.ROOKIE"
   },
   {
     "id": "mr-wolf",
@@ -3934,6 +4558,10 @@
     "handle": "Musclenoob"
   },
   {
+    "id": "music4friends",
+    "handle": "Music4Friends"
+  },
+  {
     "id": "myonomae",
     "handle": "MYONOMAE"
   },
@@ -3942,8 +4570,8 @@
     "handle": "Mystic"
   },
   {
-    "id": "mystic-smash",
-    "handle": "Mystic Smash"
+    "id": "mysticsmash",
+    "handle": "MysticSmash"
   },
   {
     "id": "n",
@@ -3962,8 +4590,24 @@
     "handle": "Nafutaren"
   },
   {
+    "id": "nain-jr",
+    "handle": "Nain Jr."
+  },
+  {
+    "id": "naji",
+    "handle": "Naji"
+  },
+  {
     "id": "nameless",
     "handle": "NAMELESS"
+  },
+  {
+    "id": "namikaze",
+    "handle": "Namikaze"
+  },
+  {
+    "id": "namikazeextm",
+    "handle": "NamikazeExTM"
   },
   {
     "id": "nao",
@@ -3976,6 +4620,10 @@
   {
     "id": "naon",
     "handle": "Naon"
+  },
+  {
+    "id": "naoon",
+    "handle": "NAOON"
   },
   {
     "id": "naoonn",
@@ -4112,8 +4760,16 @@
     "handle": "Nepuri Samurai"
   },
   {
+    "id": "nerotheboxer",
+    "handle": "NEROTHEBOXER"
+  },
+  {
     "id": "nezu",
     "handle": "Nezu"
+  },
+  {
+    "id": "nicolas",
+    "handle": "NICOLAS"
   },
   {
     "id": "niel-bolado",
@@ -4144,6 +4800,10 @@
     "handle": "Nishikin"
   },
   {
+    "id": "nishinn",
+    "handle": "NISHINN"
+  },
+  {
     "id": "njoymentenjoyer",
     "handle": "NjoymentEnjoyer"
   },
@@ -4168,8 +4828,16 @@
     "handle": "NLNL & SHUTO"
   },
   {
+    "id": "nnl",
+    "handle": "NNL"
+  },
+  {
     "id": "noah",
     "handle": "Noah"
+  },
+  {
+    "id": "noahthepridy",
+    "handle": "NOAHTHEPRIDY"
   },
   {
     "id": "noahtheprodigy",
@@ -4301,6 +4969,10 @@
     "handle": "Nyanpi"
   },
   {
+    "id": "nyapi",
+    "handle": "NYAPI"
+  },
+  {
     "id": "nychrisg",
     "handle": "NYChrisG"
   },
@@ -4384,6 +5056,14 @@
   {
     "id": "orarin1",
     "handle": "Orarin1"
+  },
+  {
+    "id": "orarinn",
+    "handle": "Orarinn"
+  },
+  {
+    "id": "ortega",
+    "handle": "Ortega"
   },
   {
     "id": "osaku",
@@ -4498,12 +5178,16 @@
     "handle": "PAPINFGC"
   },
   {
+    "id": "park-dad",
+    "handle": "PARK DAD"
+  },
+  {
     "id": "pastafiend",
     "handle": "Pastafiend"
   },
   {
     "id": "patada-veloz",
-    "handle": "PATADA VELOZ"
+    "handle": "Patada Veloz"
   },
   {
     "id": "pc6akira",
@@ -4516,6 +5200,10 @@
   {
     "id": "peace",
     "handle": "PEACE"
+  },
+  {
+    "id": "pegera",
+    "handle": "PEGERA"
   },
   {
     "id": "pepito",
@@ -4586,6 +5274,10 @@
     "handle": "PLAGUEMASKMAN"
   },
   {
+    "id": "platinum",
+    "handle": "PLATINUM"
+  },
+  {
     "id": "plenam",
     "handle": "Plenam"
   },
@@ -4602,6 +5294,10 @@
     "handle": "Pochoclo"
   },
   {
+    "id": "pondscum",
+    "handle": "PONDSCUM"
+  },
+  {
     "id": "pongief",
     "handle": "Pongief"
   },
@@ -4614,8 +5310,28 @@
     "handle": "Pontio"
   },
   {
+    "id": "pools-angrybird",
+    "handle": "Pools: AngryBird"
+  },
+  {
+    "id": "pools-daigo",
+    "handle": "Pools: Daigo"
+  },
+  {
+    "id": "pools-mono",
+    "handle": "Pools: Mono"
+  },
+  {
     "id": "poongko",
     "handle": "Poongko"
+  },
+  {
+    "id": "popi",
+    "handle": "Popi"
+  },
+  {
+    "id": "popibluebeast",
+    "handle": "PopiBlueBeast"
   },
   {
     "id": "popolinlin",
@@ -4659,8 +5375,20 @@
     "handle": "Prophet"
   },
   {
+    "id": "protagonist",
+    "handle": "Protagonist"
+  },
+  {
+    "id": "provboker",
+    "handle": "PROVBOKER"
+  },
+  {
     "id": "prowler",
     "handle": "PROWLER"
+  },
+  {
+    "id": "pshuuu",
+    "handle": "Pshuuu"
   },
   {
     "id": "psycho",
@@ -4669,6 +5397,10 @@
   {
     "id": "pugera",
     "handle": "Pugera"
+  },
+  {
+    "id": "pulgaa",
+    "handle": "PULGAA"
   },
   {
     "id": "punk",
@@ -4696,6 +5428,10 @@
     "handle": "Qiuqiu"
   },
   {
+    "id": "qu1rky",
+    "handle": "QU1RKY"
+  },
+  {
     "id": "queenjak",
     "handle": "QueenJAK"
   },
@@ -4716,6 +5452,10 @@
     "handle": "RagingDud"
   },
   {
+    "id": "raihan",
+    "handle": "Raihan"
+  },
+  {
     "id": "railgun",
     "handle": "RAILGUN"
   },
@@ -4734,6 +5474,10 @@
   {
     "id": "rami",
     "handle": "Rami"
+  },
+  {
+    "id": "ramos",
+    "handle": "Ramos"
   },
   {
     "id": "ramsey",
@@ -4788,16 +5532,48 @@
     "handle": "Rapid"
   },
   {
+    "id": "rass",
+    "handle": "Rass"
+  },
+  {
     "id": "rawdaddylam",
     "handle": "RawDaddyLam"
+  },
+  {
+    "id": "ray",
+    "handle": "RAY"
+  },
+  {
+    "id": "rb-gachikun",
+    "handle": "RB Gachikun"
   },
   {
     "id": "realforce",
     "handle": "RealForce"
   },
   {
+    "id": "realmf",
+    "handle": "RealMF"
+  },
+  {
+    "id": "rebecca",
+    "handle": "REBECCA"
+  },
+  {
+    "id": "redbull-gachikun",
+    "handle": "Redbull Gachikun"
+  },
+  {
     "id": "reizu",
     "handle": "Reizu"
+  },
+  {
+    "id": "reksnip",
+    "handle": "REKSNIP"
+  },
+  {
+    "id": "rematch-blaz",
+    "handle": "REMATCH BLAZ"
   },
   {
     "id": "ren",
@@ -4820,6 +5596,10 @@
     "handle": "Revilo"
   },
   {
+    "id": "reynald",
+    "handle": "Reynald"
+  },
+  {
     "id": "rh",
     "handle": "Rh"
   },
@@ -4832,12 +5612,20 @@
     "handle": "Ricky Ortiz"
   },
   {
+    "id": "riddle",
+    "handle": "Riddle"
+  },
+  {
     "id": "riddles",
     "handle": "Riddles"
   },
   {
     "id": "riddlesmk",
     "handle": "RiddlesMk"
+  },
+  {
+    "id": "rigama",
+    "handle": "Rigama"
   },
   {
     "id": "rikemansbarnet",
@@ -4852,6 +5640,10 @@
     "handle": "RINA"
   },
   {
+    "id": "rioshys",
+    "handle": "RIOSHYS"
+  },
+  {
     "id": "rising-fang",
     "handle": "Rising Fang"
   },
@@ -4860,12 +5652,28 @@
     "handle": "Ritorai"
   },
   {
+    "id": "rmk-fast",
+    "handle": "RMK Fast"
+  },
+  {
     "id": "robinho",
     "handle": "Robinho"
   },
   {
+    "id": "robtv",
+    "handle": "ROBTV"
+  },
+  {
     "id": "rockshooter",
     "handle": "RockShooter"
+  },
+  {
+    "id": "rof",
+    "handle": "ROF"
+  },
+  {
+    "id": "rogerfgc",
+    "handle": "RogerFGC"
   },
   {
     "id": "rogness",
@@ -4876,6 +5684,10 @@
     "handle": "Ronaldinho"
   },
   {
+    "id": "ronaldinhobr",
+    "handle": "RonaldinhoBR"
+  },
+  {
     "id": "ronin",
     "handle": "RONIN"
   },
@@ -4884,8 +5696,24 @@
     "handle": "ROOKIE"
   },
   {
+    "id": "round-3-pools-caba",
+    "handle": "Round 3 Pools: Caba"
+  },
+  {
+    "id": "round-3-pools-nuckledu",
+    "handle": "Round 3 Pools: NuckleDu"
+  },
+  {
     "id": "rounded-n",
     "handle": "Rounded N+"
+  },
+  {
+    "id": "rox3-narikun",
+    "handle": "Rox3 Narikun"
+  },
+  {
+    "id": "roxas32",
+    "handle": "Roxas32"
   },
   {
     "id": "rudolf-k",
@@ -4900,12 +5728,24 @@
     "handle": "RUGA"
   },
   {
+    "id": "ruysei",
+    "handle": "RUYSEI"
+  },
+  {
     "id": "ryan-hart",
     "handle": "Ryan Hart"
   },
   {
     "id": "ryo",
     "handle": "RYO"
+  },
+  {
+    "id": "ryu",
+    "handle": "Ryu"
+  },
+  {
+    "id": "ryuki",
+    "handle": "RYUKI"
   },
   {
     "id": "ryukichi",
@@ -4926,6 +5766,10 @@
   {
     "id": "s-a-j",
     "handle": "S A J"
+  },
+  {
+    "id": "s4ltykid",
+    "handle": "S4ltykid"
   },
   {
     "id": "sabanoritchi",
@@ -4985,6 +5829,10 @@
     "handle": "Sakuyama"
   },
   {
+    "id": "saltykid",
+    "handle": "SALTYKID"
+  },
+  {
     "id": "salvatore",
     "handle": "Salvatore"
   },
@@ -4994,7 +5842,7 @@
   },
   {
     "id": "samoel",
-    "handle": "SAMOEL"
+    "handle": "Samoel"
   },
   {
     "id": "samurai",
@@ -5085,6 +5933,10 @@
     "handle": "Sayff"
   },
   {
+    "id": "scarlet",
+    "handle": "Scarlet"
+  },
+  {
     "id": "scor",
     "handle": "SCOR"
   },
@@ -5095,6 +5947,10 @@
   {
     "id": "score-kimberly-iwai-banpi",
     "handle": "Score (Kimberly) Iwai banpi"
+  },
+  {
+    "id": "scorpionprocs",
+    "handle": "SCORPIONPROCS"
   },
   {
     "id": "scrawtv",
@@ -5157,6 +6013,10 @@
     "handle": "Sekkyo"
   },
   {
+    "id": "semiij",
+    "handle": "Semiij"
+  },
+  {
     "id": "semij",
     "handle": "Semij"
   },
@@ -5169,8 +6029,20 @@
     "handle": "Senor Power"
   },
   {
+    "id": "seo",
+    "handle": "Seo"
+  },
+  {
     "id": "sevelei",
     "handle": "Sevelei"
+  },
+  {
+    "id": "sevens",
+    "handle": "Sevens"
+  },
+  {
+    "id": "sf6-esports-spotlight-infexious",
+    "handle": "SF6 Esports Spotlight: Infexious"
   },
   {
     "id": "shadowmark",
@@ -5181,12 +6053,20 @@
     "handle": "SHADY"
   },
   {
+    "id": "shadyimposter",
+    "handle": "ShadyImposter"
+  },
+  {
     "id": "shagakopa",
     "handle": "Shagakopa"
   },
   {
     "id": "shaka",
     "handle": "Shaka"
+  },
+  {
+    "id": "shaka22",
+    "handle": "Shaka22"
   },
   {
     "id": "shakure12",
@@ -5199,6 +6079,10 @@
   {
     "id": "shamangod",
     "handle": "Shamangod"
+  },
+  {
+    "id": "shanks",
+    "handle": "Shanks"
   },
   {
     "id": "shanksfgc",
@@ -5309,6 +6193,10 @@
     "handle": "SHOZAN"
   },
   {
+    "id": "shrasec",
+    "handle": "Shrasec"
+  },
+  {
     "id": "shun",
     "handle": "SHUN"
   },
@@ -5322,8 +6210,16 @@
     "handle": "Shuu"
   },
   {
+    "id": "shuuji",
+    "handle": "SHUUJI"
+  },
+  {
     "id": "shuzo",
     "handle": "Shuzo"
+  },
+  {
+    "id": "si-anik",
+    "handle": "Si Anik"
   },
   {
     "id": "sifu",
@@ -5439,6 +6335,14 @@
     "handle": "solidxpanda"
   },
   {
+    "id": "solvng",
+    "handle": "SolVNG"
+  },
+  {
+    "id": "somniac",
+    "handle": "Somniac"
+  },
+  {
     "id": "sonic-sol",
     "handle": "Sonic Sol"
   },
@@ -5483,6 +6387,10 @@
     "handle": "SpiderDan707"
   },
   {
+    "id": "ss-higuchi",
+    "handle": "SS熊本 Higuchi"
+  },
+  {
     "id": "stare-master",
     "handle": "STARE MASTER"
   },
@@ -5497,6 +6405,10 @@
   {
     "id": "starrk",
     "handle": "Starrk"
+  },
+  {
+    "id": "stealth",
+    "handle": "Stealth"
   },
   {
     "id": "stealthtx",
@@ -5515,6 +6427,14 @@
     "handle": "Stormkubo"
   },
   {
+    "id": "street-fighter-6-kakeru",
+    "handle": "STREET FIGHTER 6: KAKERU"
+  },
+  {
+    "id": "strider",
+    "handle": "STRIDER"
+  },
+  {
     "id": "strom-kubo",
     "handle": "Strom Kubo"
   },
@@ -5525,6 +6445,10 @@
   {
     "id": "stubborn",
     "handle": "stubborn"
+  },
+  {
+    "id": "sturnz",
+    "handle": "STURNZ"
   },
   {
     "id": "sugi",
@@ -5581,6 +6505,14 @@
   {
     "id": "sushi-heaven",
     "handle": "Sushi Heaven"
+  },
+  {
+    "id": "susuoka",
+    "handle": "SUSUOKA"
+  },
+  {
+    "id": "suyji",
+    "handle": "SUYJI"
   },
   {
     "id": "sweetheart",
@@ -5711,8 +6643,16 @@
     "handle": "TAKUMIN"
   },
   {
+    "id": "talon-hotdog29",
+    "handle": "Talon Hotdog29"
+  },
+  {
     "id": "tamanegitaberu",
     "handle": "Tamanegitaberu"
+  },
+  {
+    "id": "tampa-bison",
+    "handle": "Tampa Bison"
   },
   {
     "id": "tananegitaberu",
@@ -5743,12 +6683,24 @@
     "handle": "Tayutayu"
   },
   {
+    "id": "tb",
+    "handle": "TB"
+  },
+  {
     "id": "tdino",
     "handle": "TDino"
   },
   {
+    "id": "team-ixa-acqua",
+    "handle": "Team IXA Acqua"
+  },
+  {
     "id": "tech",
     "handle": "TECH"
+  },
+  {
+    "id": "teekeero",
+    "handle": "TEEKEERO"
   },
   {
     "id": "teiemu",
@@ -5773,6 +6725,10 @@
   {
     "id": "tenka-sangen",
     "handle": "TENKA SANGEN"
+  },
+  {
+    "id": "tenshifallen",
+    "handle": "Tenshifallen"
   },
   {
     "id": "tetsu",
@@ -5808,7 +6764,7 @@
   },
   {
     "id": "the4philzz",
-    "handle": "The4philzz"
+    "handle": "The4Philzz"
   },
   {
     "id": "thecoachwxlf",
@@ -5839,12 +6795,20 @@
     "handle": "THUG"
   },
   {
+    "id": "thunderdelangis",
+    "handle": "THUNDERDELANGIS"
+  },
+  {
     "id": "tiger",
     "handle": "Tiger"
   },
   {
     "id": "tigger",
     "handle": "Tigger"
+  },
+  {
+    "id": "tingcos",
+    "handle": "Tingcos"
   },
   {
     "id": "tjommi",
@@ -5872,16 +6836,24 @@
     "handle": "Tokido/Naumanzoh"
   },
   {
+    "id": "tokiodo",
+    "handle": "TOKIODO"
+  },
+  {
     "id": "tomachop",
     "handle": "Tomachop"
   },
   {
     "id": "tomoecunha",
-    "handle": "TOMOECUNHA"
+    "handle": "Tomoecunha"
   },
   {
     "id": "tomorock",
     "handle": "Tomorock"
+  },
+  {
+    "id": "tomorock-1ranked",
+    "handle": "TOMOROCK #1RANKED"
   },
   {
     "id": "tomorock21",
@@ -5900,8 +6872,40 @@
     "handle": "Tony"
   },
   {
+    "id": "tony-shuai",
+    "handle": "TONY_SHUAI"
+  },
+  {
     "id": "tooky",
     "handle": "Tooky"
+  },
+  {
+    "id": "top-16-noahtheprodigy",
+    "handle": "TOP 16- NOAHTHEPRODIGY"
+  },
+  {
+    "id": "top-8-blaz",
+    "handle": "TOP 8: BLAZ"
+  },
+  {
+    "id": "top-8-brandon",
+    "handle": "Top 8: BRANDON"
+  },
+  {
+    "id": "top-8-final-angrybird",
+    "handle": "TOP 8 FINAL: ANGRYBIRD"
+  },
+  {
+    "id": "top-8-final-kakeru",
+    "handle": "TOP 8 FINAL: KAKERU"
+  },
+  {
+    "id": "top-8-final-leshar",
+    "handle": "TOP 8 FINAL: LESHAR"
+  },
+  {
+    "id": "top-8-final-noahtheprodigy",
+    "handle": "TOP 8 FINAL: NOAHTHEPRODIGY"
   },
   {
     "id": "torachin0630",
@@ -5944,8 +6948,16 @@
     "handle": "Toya Koyo"
   },
   {
+    "id": "tragicvibes",
+    "handle": "TRAGICVIBES"
+  },
+  {
     "id": "trashbox",
     "handle": "Trashbox"
+  },
+  {
+    "id": "travis-styles",
+    "handle": "Travis Styles"
   },
   {
     "id": "travo",
@@ -5976,6 +6988,10 @@
     "handle": "Tucker Ducker"
   },
   {
+    "id": "tunkiabc",
+    "handle": "TUNKIABC"
+  },
+  {
     "id": "turkiabc",
     "handle": "turkiabc"
   },
@@ -5984,8 +7000,20 @@
     "handle": "TWIN BROTHER"
   },
   {
+    "id": "twins-minds-oil-king",
+    "handle": "Twins Minds Oil King"
+  },
+  {
+    "id": "twislatif",
+    "handle": "TWISLATIF"
+  },
+  {
     "id": "tyorobuu",
     "handle": "TYOROBUU"
+  },
+  {
+    "id": "u",
+    "handle": "U"
   },
   {
     "id": "udon",
@@ -5994,6 +7022,10 @@
   {
     "id": "uemura",
     "handle": "Uemura"
+  },
+  {
+    "id": "ugand",
+    "handle": "UGAND"
   },
   {
     "id": "ugang",
@@ -6017,7 +7049,7 @@
   },
   {
     "id": "uma327",
-    "handle": "UMA327"
+    "handle": "Uma327"
   },
   {
     "id": "umemyon",
@@ -6030,6 +7062,10 @@
   {
     "id": "uncle-zangi",
     "handle": "Uncle Zangi"
+  },
+  {
+    "id": "unklewrech",
+    "handle": "UNKLEWRECH"
   },
   {
     "id": "unknown",
@@ -6117,6 +7153,10 @@
     "handle": "Vega007"
   },
   {
+    "id": "vegapatch",
+    "handle": "VegaPatch"
+  },
+  {
     "id": "vegeta",
     "handle": "Vegeta"
   },
@@ -6129,12 +7169,28 @@
     "handle": "Veggy"
   },
   {
+    "id": "venator",
+    "handle": "VENATOR"
+  },
+  {
+    "id": "vermi-cl",
+    "handle": "Vermi_CL"
+  },
+  {
+    "id": "vermillion",
+    "handle": "VERMILLION"
+  },
+  {
     "id": "vicinal-corgi",
     "handle": "Vicinal Corgi"
   },
   {
     "id": "victorgoldch",
     "handle": "VictorGoldch"
+  },
+  {
+    "id": "viscant",
+    "handle": "Viscant"
   },
   {
     "id": "viva-riam",
@@ -6155,6 +7211,10 @@
   {
     "id": "vxbao",
     "handle": "Vxbao"
+  },
+  {
+    "id": "wabichii",
+    "handle": "WABICHII"
   },
   {
     "id": "wabiichi",
@@ -6189,12 +7249,20 @@
     "handle": "Wessdance"
   },
   {
+    "id": "wfalcon",
+    "handle": "WFalcon"
+  },
+  {
     "id": "whitebl4ck",
     "handle": "WhiteBl4ck"
   },
   {
     "id": "whos-next",
     "handle": "Whos Next"
+  },
+  {
+    "id": "will-bartness",
+    "handle": "Will_Bartness"
   },
   {
     "id": "wing",
@@ -6221,6 +7289,14 @@
     "handle": "Wrestlingman"
   },
   {
+    "id": "wsym",
+    "handle": "WSYM"
+  },
+  {
+    "id": "wukrit",
+    "handle": "WUKRIT"
+  },
+  {
     "id": "xabien",
     "handle": "Xabien"
   },
@@ -6230,7 +7306,7 @@
   },
   {
     "id": "xerna",
-    "handle": "XERNA"
+    "handle": "Xerna"
   },
   {
     "id": "xerodgx",
@@ -6257,6 +7333,10 @@
   {
     "id": "xiaohi",
     "handle": "Xiaohi"
+  },
+  {
+    "id": "xiaohia",
+    "handle": "XIAOHIA"
   },
   {
     "id": "xiaokou",
@@ -6293,6 +7373,10 @@
   {
     "id": "xombat",
     "handle": "Xombat"
+  },
+  {
+    "id": "xopowo",
+    "handle": "Xopowo"
   },
   {
     "id": "xull",
@@ -6333,6 +7417,10 @@
   {
     "id": "yamaguchi",
     "handle": "Yamaguchi"
+  },
+  {
+    "id": "yamaguichi",
+    "handle": "YAMAGUICHI"
   },
   {
     "id": "yamasaki",
@@ -6395,6 +7483,14 @@
     "handle": "Yeiloud"
   },
   {
+    "id": "yesports-chris-wong",
+    "handle": "Yesports Chris Wong"
+  },
+  {
+    "id": "yesports-humanbomb",
+    "handle": "Yesports Humanbomb"
+  },
+  {
     "id": "yhc",
     "handle": "YHC"
   },
@@ -6426,6 +7522,10 @@
   {
     "id": "yokohama-taro",
     "handle": "Yokohama Taro"
+  },
+  {
+    "id": "yome",
+    "handle": "Yome"
   },
   {
     "id": "yomiazenon",
@@ -6488,6 +7588,10 @@
     "handle": "YoungDrFate"
   },
   {
+    "id": "younghou",
+    "handle": "Younghou"
+  },
+  {
     "id": "youshikibi",
     "handle": "Youshikibi"
   },
@@ -6526,6 +7630,14 @@
   {
     "id": "yukiya-omichi",
     "handle": "Yukiya Omichi"
+  },
+  {
+    "id": "yunjabes",
+    "handle": "Yunjabes"
+  },
+  {
+    "id": "yurei",
+    "handle": "Yurei"
   },
   {
     "id": "yuri",
@@ -6572,6 +7684,10 @@
     "handle": "Zach"
   },
   {
+    "id": "zack",
+    "handle": "Zack"
+  },
+  {
     "id": "zackbozz",
     "handle": "Zackbozz"
   },
@@ -6585,11 +7701,19 @@
   },
   {
     "id": "zailis",
-    "handle": "ZaiLis"
+    "handle": "Zailis"
+  },
+  {
+    "id": "zangetsu",
+    "handle": "ZANGETSU"
   },
   {
     "id": "zangief-bolado",
     "handle": "Zangief Bolado"
+  },
+  {
+    "id": "zangief-bolaod",
+    "handle": "ZANGIEF BOLAOD"
   },
   {
     "id": "zangioji",

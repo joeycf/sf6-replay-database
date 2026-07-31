@@ -1,19 +1,26 @@
 
 # SF6 pipeline report
 
-**19586 matches** parsed from 22304 uploads across 3 channels · 1653 players · ranked sides 20733/39172 (52.9%)
+**22714 matches** parsed from 32814 uploads across 6 channels · 1934 players · ranked sides 20735/45428 (45.6%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | highLevel | highLevel | 5722 | 5722 | 5707 | 99.7% | 11012 |
-| fgcPlace | fgcPlace | 9690 | 8698 | 8528 | 98.0% | 9721 |
-| sfReplays | sfReplays | 6892 | 5894 | 5351 | 90.8% | 0 |
+| fgcPlace | fgcPlace | 9691 | 8699 | 8529 | 98.0% | 9723 |
+| sfReplays | sfReplays | 6893 | 5895 | 5352 | 90.8% | 0 |
+| capcomFighters | capcomFighters | 7979 | 1585 | 1022 | 64.5% | 0 |
+| kingArena | kingArenaOnline / kingArenaTournament | 2339 | 2324 | 2009 | 86.4% | 0 |
+| superFighters | superFighters | 190 | 189 | 95 | 50.3% | 0 |
 
-Seasons: S1 5025 · S2 7088 · S3 7473
+kingArena classifier: online 1391 · tournament 733 · resolved by hand 38 · pending 0
 
-Rank distribution (side appearances): Legend 18353 · Master 2366 · Diamond 14
+Pending review: 0 (data/review-queue.json)
 
-Misses by reason: not-sf6 1990 · no-vs-title 513 · char-unresolved 118 · pre-launch 70 · bad-handle 27
+Seasons: S1 5370 · S2 7829 · S3 9515
+
+Rank distribution (side appearances): Legend 18355 · Master 2366 · Diamond 14
+
+Misses by reason: not-sf6 8400 · no-vs-title 1020 · char-unresolved 162 · shorts 138 · short-duration 101 · pre-launch 93 · bad-handle 27 · live-or-upcoming 3
 
 ## Sample misses (first 30 that are not shorts/live/not-sf6)
 
@@ -48,4 +55,4 @@ Misses by reason: not-sf6 1990 · no-vs-title 513 · char-unresolved 118 · pre-
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-07-31T10:03:34.085Z_
+_Generated 2026-07-31T13:48:02.909Z_

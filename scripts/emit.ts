@@ -106,7 +106,8 @@ function toReplay(v: MatchVideo, windows = patchWindows()): GenericReplay {
 }
 
 /** Manual corrections, applied last. Shared by parse.ts and the standalone
- *  entry so both paths see the same record set. */
+ *  entry so both paths see the same record set. `channel` is the
+ *  source-classification verdict (beats the KingArena title classifier). */
 export function applyOverrides(
   records: MatchVideo[],
   overrides: Record<string, VideoOverride>,
@@ -126,6 +127,7 @@ export function applyOverrides(
             ...v,
             ...(ov.season ? { season: ov.season } : {}),
             ...(ov.sides ? { sides: ov.sides } : {}),
+            ...(ov.channel ? { channel: ov.channel } : {}),
           }
         : v,
     );
@@ -156,7 +158,10 @@ export async function emitGeneric(
 
   const rosterIds = new Set(characters.map((c) => c.id));
   const playerIds = new Set(players.map((p) => p.id));
-  const sourceIds = new Set<string>(CHANNELS.map((c) => c.source));
+  // every token a channel can publish under — kingArena emits two
+  const sourceIds = new Set<string>(
+    CHANNELS.flatMap((c) => (c.eventSource ? [c.source, c.eventSource] : [c.source])),
+  );
   const seasonTokens = new Set(SEASONS.map((s) => seasonToken(s.season)));
   const patchTokens = new Set(PATCHES.map((p) => p.version));
 

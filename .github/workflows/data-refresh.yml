@@ -48,7 +48,10 @@ jobs:
           # content-derived (newest replay date, not build time), so a
           # no-new-video day leaves it byte-identical and the guard below still
           # skips the commit.
-          git add data/videos.json data/replays.json data/stats.json data/players.json data/patchGroups.json data/patchBoundaries.json data/summary.json data/seasonBoundaries.json data/report.md
+          # review-queue.json is parse-regenerated derived state (a new
+          # ambiguous KingArena upload should appear in the committed queue);
+          # content-only, no timestamp, so a quiet day leaves it byte-identical.
+          git add data/videos.json data/replays.json data/stats.json data/players.json data/patchGroups.json data/patchBoundaries.json data/summary.json data/seasonBoundaries.json data/review-queue.json data/report.md
           # report.md's "_Generated <timestamp>_" line changes every run; a diff
           # that is ONLY that line is not a data change — drop it so a no-change
           # day produces no commit (and no deploy). report.md still ships

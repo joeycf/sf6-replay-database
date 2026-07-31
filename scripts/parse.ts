@@ -3,9 +3,11 @@
 // the season windows, write the coverage report, then emit the generic schema
 // (scripts/emit.ts).
 //
-// Title contract (all three tracked channels share it):
-//   SF6 <delim> PLAYER_A (CharacterA) vs PLAYER_B (CharacterB) <delim> …
-// The paren often carries a LEADERBOARD POSITION rather than a bare character
+// Title contract (all six tracked channels share the core):
+//   PLAYER_A (CharacterA) vs PLAYER_B (CharacterB)
+// wrapped in channel branding ("SF6 <delim> … <delim>" on the original three,
+// "… - Grand Final - World Warrior 2026" on the tournament-era channels). The
+// paren often carries a LEADERBOARD POSITION rather than a bare character
 // ("#3 Ranked Guile"). That is a per-character world ranking, NOT a ladder
 // rank; it is stripped before matching and never becomes Side.rank.
 //
@@ -27,10 +29,12 @@ import { dueExpiries, formatExpiries } from './expiries';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
 import { buildAliasMatcher, extractRank, loadCharacters, stripLeaderboard } from './roster';
 import type {
+  ChannelConfig,
   MatchSide,
   MatchVideo,
   PlayerRecord,
   RawVideoRecord,
+  ReviewQueueItem,
   VideoOverride,
 } from '../types/index';
 
@@ -110,11 +114,83 @@ const slug = (handle: string): string =>
 const isUpper = (s: string) => s === s.toUpperCase() && s !== s.toLowerCase();
 
 // ── the is-SF6 predicate ─────────────────────────────────────────────────────
-// Two of the three channels carry a Street Fighter V back-catalogue (990 on
-// @TheFGCplace, 969 on @streetfighterreplays41). Every SF6 upload on all three
-// carries an explicit game marker in the title, so this is a title test, not a
-// tag test — the tags on these channels are SEO soup and name both games.
+// Two of the original channels carry a Street Fighter V back-catalogue (990 on
+// @TheFGCplace, 969 on @streetfighterreplays41). Every SF6 upload on those
+// three marks the game in the TITLE, so they gate on the title alone — their
+// descriptions and tags are SEO soup naming both games. The tournament-era
+// channels invert this: CapcomFighters writes the marker in the description on
+// 1,025/1,025 match uploads and in the title on 0, so ChannelConfig.sf6Signal
+// widens the gate to titleOrDescription per channel. Widening is safe there
+// because those channels post-date SF6 (kingArena/superFighters) or lose their
+// pre-SF6 history to the pre-launch date gate (capcomFighters).
 const SF6_RE = /\bSF6\b|STREET\s*FIGHTER\s*6|スト6/i;
+const isSf6 = (r: RawVideoRecord, cfg: ChannelConfig): boolean =>
+  SF6_RE.test(r.title) || (cfg.sf6Signal === 'titleOrDescription' && SF6_RE.test(r.description));
+
+// ── the KingArena source classifier ──────────────────────────────────────────
+// @TheKingArena publishes online high-level sets AND event footage on one
+// channel, so its videos split across two sources by title signals:
+//   - HIGH_LEVEL_RE, or NO event signal → kingArenaOnline (the channel's own
+//     labelling convention: online sets are either branded "High-Level" or
+//     carry no venue at all)
+//   - an event signal → kingArenaTournament
+//   - BOTH signals → data/review-queue.json ("Blink Respawn CPT … High-Level
+//     Match" — a human resolves via overrides.json channel/exclude; recon
+//     measured 38 of 2,156)
+// EVENT_RE is corpus-derived (every event/bracket word observed across the
+// 2,333-upload recon), not aspirational. A new tournament brand the list
+// doesn't know defaults to Online — wrong but visible (the video still ships,
+// the report's classifier line moves) and fixable by extending the list or by
+// a one-line override.
+const HIGH_LEVEL_RE = /high[\s-]*level/i;
+const EVENT_RE = new RegExp(
+  [
+    'capcom\\s*cup',
+    'capcom\\s*pro\\s*tour',
+    '\\bCPT\\b',
+    '\\bEVO\\b',
+    'evo\\s*japan',
+    'esports\\s*world\\s*cup',
+    '\\bEWC\\b',
+    'world\\s*warrior',
+    'battle\\s*arena',
+    '\\bBAM\\s*\\d',
+    'topanga',
+    'street\\s*fighter\\s*league',
+    '\\bSFL\\b',
+    'blink\\s*respawn',
+    'esports\\s*spotlight',
+    'league\\s*japan',
+    'lunes\\s*gramer',
+    'grand\\s*final',
+    'winners?\\s*(?:final|semi|quarter)',
+    'losers?\\s*(?:final|semi|quarter)',
+    'top\\s*(?:8|16|24|32|48|64|96)\\b',
+    'group\\s*stage',
+    'pools?\\b',
+    'qualifier',
+    'playoffs?',
+    'gamers8',
+    'red\\s*bull',
+    'kumite',
+    'dreamhack',
+    'combo\\s*breaker',
+    '\\bceo\\b',
+    'frosty',
+    'first\\s*attack',
+    'ultimate\\s*fighting\\s*arena',
+    '\\bUFA\\b',
+    'tournament',
+    'championship',
+    'invitational',
+    '\\bmasters\\b',
+    '\\bLCQ\\b',
+    'exhibition',
+    'showmatch',
+    'money\\s*match',
+  ].join('|'),
+  'i',
+);
 
 // ── title parsing ────────────────────────────────────────────────────────────
 const VS_RE = /(.+?)\(([^()]{1,60})\)\s*(?:vs\.?|versus)\s*(.+?)\(([^()]{1,60})\)/iu;
@@ -179,7 +255,7 @@ function parseDescSides(
 const characters = await loadCharacters();
 const matcher = buildAliasMatcher(characters);
 
-const SOURCE_OF = new Map(CHANNELS.map((c) => [c.id, c.source]));
+const CHANNEL_OF = new Map(CHANNELS.map((c) => [c.id, c]));
 
 const readJson = async <T>(p: string): Promise<T> => JSON.parse(await readFile(p, 'utf8')) as T;
 const raws: RawVideoRecord[] = [];
@@ -206,8 +282,13 @@ type MissReason =
   | 'char-unresolved'
   | 'bad-handle';
 const misses: { id: string; channel: string; reason: MissReason; title: string }[] = [];
-const miss = (r: RawVideoRecord, reason: MissReason) =>
+// misses stay reachable by id so the character-completion path below can build
+// a record from raw + a hand-authored overrides.json sides pair.
+const missedById = new Map<string, RawVideoRecord>();
+const miss = (r: RawVideoRecord, reason: MissReason) => {
   misses.push({ id: r.id, channel: r.channel, reason, title: r.title });
+  missedById.set(r.id, r);
+};
 
 interface Candidate {
   raw: RawVideoRecord;
@@ -219,7 +300,7 @@ interface Candidate {
 const candidates: Candidate[] = [];
 
 for (const r of raws) {
-  if (!SF6_RE.test(r.title)) {
+  if (!isSf6(r, CHANNEL_OF.get(r.channel)!)) {
     miss(r, 'not-sf6');
     continue;
   }
@@ -309,7 +390,51 @@ for (const [key, variants] of casing) {
 }
 const idOf = (handle: string): string => slug(bestSpelling.get(idKey(handle)) ?? handle);
 
-const videos: MatchVideo[] = candidates.map((c) => {
+const videos: MatchVideo[] = [];
+const reviewQueue: ReviewQueueItem[] = [];
+// per-channel classifier tally for the report (only eventSource channels)
+const classifierSplit = new Map<
+  string,
+  { online: number; event: number; pending: number; resolved: number }
+>();
+
+for (const c of candidates) {
+  const cfg = CHANNEL_OF.get(c.raw.channel)!;
+  let source = cfg.source;
+  if (cfg.eventSource) {
+    const tally = classifierSplit.get(cfg.id) ?? { online: 0, event: 0, pending: 0, resolved: 0 };
+    classifierSplit.set(cfg.id, tally);
+    const online = HIGH_LEVEL_RE.exec(c.raw.title);
+    const event = EVENT_RE.exec(c.raw.title);
+    const ov = overrides[c.raw.id];
+    const resolved = ov?.channel !== undefined || ov?.exclude === true;
+    if (online && event) {
+      if (!resolved) {
+        // both signals — a human decides. Pending items never reach
+        // videos.json/replays.json; they wait in data/review-queue.json and
+        // this branch re-queues them every run until a verdict lands.
+        tally.pending++;
+        reviewQueue.push({
+          id: c.raw.id,
+          kind: 'source-classification',
+          channel: c.raw.channel,
+          title: c.raw.title,
+          publishedAt: c.raw.publishedAt,
+          durationSec: c.raw.durationSec,
+          signals: { online: online[0], event: event[0] },
+        });
+        continue;
+      }
+      // verdict exists — applyOverrides applies it (the one application
+      // point for every override field); classifier stands down
+      tally.resolved++;
+    } else if (event) {
+      source = cfg.eventSource;
+      tally.event++;
+    } else {
+      tally.online++;
+    }
+  }
   const sides = c.chars.map((character, i) => {
     const handle = c.handles[i]!;
     const key = idKey(handle);
@@ -320,18 +445,47 @@ const videos: MatchVideo[] = candidates.map((c) => {
       ...(c.ranks[i] ? { rank: c.ranks[i] } : {}),
     } as MatchSide;
   }) as [MatchSide, MatchSide];
-  return {
+  videos.push({
     id: c.raw.id,
-    channel: SOURCE_OF.get(c.raw.channel)!,
+    channel: source,
     title: c.raw.title,
     publishedAt: c.raw.publishedAt,
     durationSec: c.raw.durationSec,
     ...(c.raw.viewCount !== undefined ? { viewCount: c.raw.viewCount } : {}),
     season: seasonForDate(c.raw.publishedAt),
     sides,
-  };
-});
+  });
+}
+
+// ── character-completion: hand-authored records for footage the title parser
+// missed (review-queue kind 2, empty at launch). An overrides.json entry with a
+// complete sides pair on a MISSED id is authoritative — the record is built
+// from raw + override with the parse gates bypassed by design (2XKO's
+// manual-videos semantics: "authoritative, never parsed, never a parse
+// failure"). Ids that parsed normally take their sides override through
+// applyOverrides instead, and ids absent from raw/ can't be completed at all —
+// a record needs the upload's own metadata.
+const completedIds = new Set<string>();
+for (const [id, ov] of Object.entries(overrides)) {
+  if (!ov.sides || ov.exclude) continue;
+  const r = missedById.get(id);
+  if (!r) continue;
+  completedIds.add(id);
+  videos.push({
+    id,
+    channel: ov.channel ?? CHANNEL_OF.get(r.channel)!.source,
+    title: r.title,
+    publishedAt: r.publishedAt,
+    durationSec: r.durationSec,
+    ...(r.viewCount !== undefined ? { viewCount: r.viewCount } : {}),
+    season: seasonForDate(r.publishedAt),
+    sides: ov.sides,
+  });
+}
+const reportedMisses = misses.filter((m) => !completedIds.has(m.id));
+
 videos.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt) || a.id.localeCompare(b.id));
+reviewQueue.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt) || a.id.localeCompare(b.id));
 
 const records = applyOverrides(videos, overrides);
 
@@ -349,15 +503,24 @@ await writeFile(
   JSON.stringify(SEASONS, null, 2) + '\n',
   'utf8',
 );
+// Derived state, regenerated wholesale every run: resolutions live solely in
+// overrides.json, so a resolved item simply stops being generated. Committed
+// (and in the cron's git add) so the pending set is visible history and the
+// /dev/source-review UI reads real substrate.
+await writeFile(
+  join(DATA, 'review-queue.json'),
+  JSON.stringify(reviewQueue, null, 2) + '\n',
+  'utf8',
+);
 
 // ── report ───────────────────────────────────────────────────────────────────
 const channelOf = new Map(raws.map((r) => [r.id, r.channel]));
-const byChannel = (id: string) => ({
-  raw: raws.filter((r) => r.channel === id).length,
-  sf6: raws.filter((r) => r.channel === id && SF6_RE.test(r.title)).length,
-  parsed: records.filter((v) => channelOf.get(v.id) === id).length,
+const byChannel = (cfg: ChannelConfig) => ({
+  raw: raws.filter((r) => r.channel === cfg.id).length,
+  sf6: raws.filter((r) => r.channel === cfg.id && isSf6(r, cfg)).length,
+  parsed: records.filter((v) => channelOf.get(v.id) === cfg.id).length,
   ranked: records
-    .filter((v) => channelOf.get(v.id) === id)
+    .filter((v) => channelOf.get(v.id) === cfg.id)
     .reduce((n, v) => n + v.sides.filter((s) => s.rank).length, 0),
 });
 const rankSides = records.reduce((n, v) => n + v.sides.filter((s) => s.rank).length, 0);
@@ -369,7 +532,7 @@ const seasonDist = records.reduce<Record<string, number>>((acc, v) => {
   acc[`S${v.season}`] = (acc[`S${v.season}`] ?? 0) + 1;
   return acc;
 }, {});
-const reasonCounts = misses.reduce<Record<string, number>>((acc, m) => {
+const reasonCounts = reportedMisses.reduce<Record<string, number>>((acc, m) => {
   acc[m.reason] = (acc[m.reason] ?? 0) + 1;
   return acc;
 }, {});
@@ -394,12 +557,21 @@ const report = [
   '| channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |',
   '| --- | --- | ---: | ---: | ---: | ---: | ---: |',
   ...CHANNELS.map((ch) => {
-    const s = byChannel(ch.id);
+    const s = byChannel(ch);
+    const src = ch.eventSource ? `${ch.source} / ${ch.eventSource}` : ch.source;
     return (
-      `| ${ch.id} | ${ch.source} | ${s.raw} | ${s.sf6} | ${s.parsed} | ` +
+      `| ${ch.id} | ${src} | ${s.raw} | ${s.sf6} | ${s.parsed} | ` +
       `${((s.parsed / Math.max(1, s.sf6)) * 100).toFixed(1)}% | ${s.ranked} |`
     );
   }),
+  '',
+  ...[...classifierSplit.entries()].map(
+    ([id, t]) =>
+      `${id} classifier: online ${t.online} · tournament ${t.event} · ` +
+      `resolved by hand ${t.resolved} · pending ${t.pending}`,
+  ),
+  '',
+  `Pending review: ${reviewQueue.length} (data/review-queue.json)`,
   '',
   `Seasons: ${Object.entries(seasonDist)
     .sort()
@@ -422,7 +594,7 @@ const report = [
   '',
   '## Sample misses (first 30 that are not shorts/live/not-sf6)',
   '',
-  ...misses
+  ...reportedMisses
     .filter((m) => !['shorts', 'live-or-upcoming', 'not-sf6'].includes(m.reason))
     .slice(0, 30)
     .map((m) => `- \`${m.id}\` [${m.channel}] ${m.reason}: ${m.title.slice(0, 110)}`),
@@ -441,7 +613,8 @@ if (due.length > 0) {
 }
 
 console.log(
-  `✔ Parsed ${records.length}/${raws.length} uploads → data/videos.json (misses: ${misses.length}; see data/report.md)`,
+  `✔ Parsed ${records.length}/${raws.length} uploads → data/videos.json ` +
+    `(misses: ${reportedMisses.length}; pending review: ${reviewQueue.length}; see data/report.md)`,
 );
 console.log(
   `  seasons ${Object.entries(seasonDist)

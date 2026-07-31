@@ -1,15 +1,24 @@
 // The tracked Street Fighter 6 replay channels — the bespoke half of the
 // pipeline's intake (PLAN §5). Selection criteria from the build recon
-// (2026-07, full history of all three channels, 22,210 uploads read): dense
-// daily uploads of full match VODs and structurally parseable
+// (2026-07, full history of all three channels, 22,210 uploads read) and the
+// tournament recon (2026-07-31, 13,247 uploads read across four candidate
+// channels): dense uploads of full match VODs and structurally parseable
 // "PLAYER (Character) vs PLAYER (Character)" titles.
 //
 // `id` is the intake key (raw/<id>.json + the report row); `source` is the
 // public Replay.source contract (mirrored in app.config.ts sourceChannels;
 // badge styling is index-based: 0 = filled primary, 1 = secondary outline,
-// 2+ = warning outline). They are 1:1 here — unlike Tekken, no SF6 source
-// aggregates several channels, because tournament footage is published INSIDE
-// these same channels rather than on a dedicated event-organizer channel.
+// 2+ = warning outline). The original three are 1:1; the tournament-era intake
+// breaks that — kingArena publishes BOTH online sets and event footage, so it
+// declares an `eventSource` and parse.ts classifies per video (conflicts go to
+// data/review-queue.json). The Online/Tournament grouping the site renders is
+// app.config.ts `sourceGroups` — purely presentational, never in data or URLs.
+//
+// ORDER IS THE DEDUPE PRECEDENCE: scripts/replay-dupes.ts breaks duplicate
+// clusters by this list (flatMapped over [source, eventSource]) — shipped
+// incumbents first, then the tournament channels in the user's priority order
+// (CapcomFighters > TheKingArena > superfighters-jkm). Reordering entries
+// changes which copy of a re-uploaded match survives.
 //
 // uploadsPlaylist is pinned (UU + channelId.slice(2)) rather than resolved
 // live: it saves a quota unit per channel per run, and the channel id is
@@ -55,4 +64,71 @@ export const CHANNELS: ChannelConfig[] = [
     channelId: 'UCZAqv0MYoVxGYuJRTWbIEFw',
     uploadsPlaylist: 'UUZAqv0MYoVxGYuJRTWbIEFw',
   },
+  {
+    // @CapcomFighters — Capcom's first-party esports channel (7,979 uploads
+    // back to 2012), the CPT/World Warrior/Capcom Cup archive. Recon
+    // (2026-07-31): 1,796 uploads post-launch, 1,025 of them single matches in
+    // clean "Dual Kevin (Rashid) vs. JAK (Juri) - Grand Final - …" form. The
+    // trap that hid them: the SF6 marker lives in the DESCRIPTION on every one
+    // of the 1,025 (and in the title on none), so the original title-only
+    // is-SF6 gate scored this channel 0 — hence sf6Signal. The pre-launch date
+    // gate keeps the channel's decade of SFV/SF4 CPT history out; the rest of
+    // the modern uploads are stream VODs, Top-8 compilations and #shorts,
+    // structurally excluded by the vs-title and shorts gates. No ladder ranks
+    // anywhere (offline footage) — sides ship rank-less, which rank? allows.
+    id: 'capcomFighters',
+    source: 'capcomFighters',
+    name: 'Capcom Fighters',
+    channelId: 'UCPGuorlvarThSlwJpyTHOmQ',
+    uploadsPlaylist: 'UUPGuorlvarThSlwJpyTHOmQ',
+    sf6Signal: 'titleOrDescription',
+  },
+  {
+    // @TheKingArena — 2,333 uploads since 2025-01, 95%+ SF6, 94% parseable.
+    // The complication: it publishes BOTH kinds of footage — online high-level
+    // sets in the original channels' style AND event footage (CPT, Esports
+    // World Cup, EVO, local weeklies). One physical channel, two sources:
+    // parse.ts classifies per video ("High-Level" or no event signal →
+    // kingArenaOnline; an event signal → kingArenaTournament; BOTH signals →
+    // review queue for a human verdict). Recon split: 1,373 / 745 / 38.
+    // Also the platform's flagship self-re-uploader: 152 of its videos are
+    // byte-identical re-posts of its own earlier uploads (identical title,
+    // second-exact duration, months apart) — data:replay-dupes exists largely
+    // because of this channel.
+    id: 'kingArena',
+    source: 'kingArenaOnline',
+    eventSource: 'kingArenaTournament',
+    name: 'King Arena',
+    channelId: 'UCcHkQjsuUAVYZD5IE-a8gaw',
+    uploadsPlaylist: 'UUcHkQjsuUAVYZD5IE-a8gaw',
+    sf6Signal: 'titleOrDescription',
+  },
+  {
+    // @superfighters-jkm — small (190 uploads since 2025-02) but pure event
+    // footage: EVO, BAM, Topanga, Blink Respawn, SF League Japan. 95 parseable
+    // matches. Its handful of no-signal titles are still tournament footage
+    // (verified by eye in the recon), so unlike kingArena it publishes under
+    // ONE source with no classifier. Lowest dedupe priority — it re-uploads
+    // matches the bigger channels also carry.
+    id: 'superFighters',
+    source: 'superFighters',
+    name: 'Super Fighters',
+    channelId: 'UCvOOnA96PF6Ac1Yx0kH4OxQ',
+    uploadsPlaylist: 'UUvOOnA96PF6Ac1Yx0kH4OxQ',
+    sf6Signal: 'titleOrDescription',
+  },
 ];
+
+// Evaluated and deliberately NOT tracked (tournament recon 2026-07-31):
+//
+// "Evo Events" (UCWI626ZNdqM5tOlctPUTW2g, @EvoEvents) — 2,745 uploads, 120
+// SF6-marked, and exactly 0 parseable: its SF6 output is stream VODs and Top-8
+// compilations whose titles and descriptions name the players but never the
+// characters ("Evo 2026: MenaRD vs Shigematsu | Street Fighter 6 | Grand
+// Final"; the compilation chapter lists are player-only too). A record needs a
+// character per side (charactersPerSide 1 — emit.ts hard-fails without one),
+// and that information exists only in the footage HUD. Tekken hit the same
+// wall with this exact channel and recorded the same verdict. NOT a dead end:
+// the review queue's 'character-completion' kind and the /dev/source-review UI
+// already speak the verdict shape a future visual-extraction pass (or a
+// hand-fill session) would produce — revisit when one exists.

@@ -73,6 +73,16 @@ const patchBoundaries = JSON.parse(
 const fmt = (n: number) => n.toLocaleString('en-US');
 const count = (pred: (v: MatchVideo) => boolean) => videos.filter(pred).length;
 
+// ── source groups (engine v0.5.5), restated from app/app.config.ts ───────────
+// The browser renders chips from the config while these lists drive the
+// Node-derived expectations — if either side drifts (a token un-grouped, a
+// channel added without a group), the chip-click and count assertions below
+// disagree and fail. The tournament-era tokens (2026-07-31 intake) are the
+// NEW_SOURCES set the dupe gate is scoped to.
+const ONLINE_SOURCES = ['highLevel', 'fgcPlace', 'sfReplays', 'kingArenaOnline'];
+const TOURNAMENT_SOURCES = ['capcomFighters', 'kingArenaTournament', 'superFighters'];
+const NEW_SOURCES = new Set(['kingArenaOnline', ...TOURNAMENT_SOURCES]);
+
 // The rank chips the facet actually renders (engine v0.5.0): the canonical
 // ascending ladder intersected with the ranks PRESENT in the data, displayed
 // highest-first. The engine deliberately stopped rendering the whole ladder —
@@ -225,6 +235,8 @@ function testCronGuard(): void {
     'patchGroups.json',
     'patchBoundaries.json',
     'seasonBoundaries.json',
+    // in the guard's git add since the tournament intake (parse-regenerated)
+    'review-queue.json',
     // the guard's `git add` names it, so the fixture must carry it too
     'summary.json',
   ]) {
@@ -251,7 +263,105 @@ function testCronGuard(): void {
   );
 }
 
+/** Node-side substrate gates: the review queue and the dupe audit, checked
+ *  against the committed artifacts before a browser ever launches — a positive
+ *  control (un-excluded duplicate, desynced queue) fails within seconds. */
+function testSubstrateGates(): void {
+  console.log('\n— review queue + dupe audit (substrate)');
+
+  // app.config must declare every token the pipeline can emit — the operative
+  // membership check is the group-chip click above; this catches a token
+  // dropped from sourceChannels (badge would fall back to the raw id)
+  const appConfig = readFileSync(join(ROOT, 'app/app.config.ts'), 'utf8');
+  for (const token of [...ONLINE_SOURCES, ...TOURNAMENT_SOURCES]) {
+    expect(appConfig.includes(`'${token}'`), `app.config declares source '${token}'`);
+  }
+
+  // review queue: schema, exclusion from both artifacts, report sync
+  const queue = JSON.parse(readFileSync(join(ROOT, 'data/review-queue.json'), 'utf8')) as {
+    id: string;
+    kind: string;
+    channel: string;
+    title: string;
+    publishedAt: string;
+    durationSec: number;
+  }[];
+  const KINDS = new Set(['source-classification', 'character-completion']);
+  expect(
+    queue.every(
+      (q) =>
+        typeof q.id === 'string' &&
+        q.id.length > 0 &&
+        KINDS.has(q.kind) &&
+        typeof q.title === 'string' &&
+        /^\d{4}-\d{2}-\d{2}T/.test(q.publishedAt) &&
+        q.durationSec > 0,
+    ),
+    `review-queue.json schema validates (${queue.length} pending)`,
+  );
+  const videoIds = new Set(allVideos.map((v) => v.id));
+  expect(
+    queue.every((q) => !videoIds.has(q.id)),
+    'pending review items never reach videos.json',
+  );
+  const emitted = JSON.parse(readFileSync(join(ROOT, 'data/replays.json'), 'utf8')) as {
+    id: string;
+  }[];
+  const emittedIds = new Set(emitted.map((r) => r.id));
+  expect(
+    queue.every((q) => !emittedIds.has(q.id)),
+    'pending review items never reach replays.json',
+  );
+  const reportMd = readFileSync(join(ROOT, 'data/report.md'), 'utf8');
+  const pending = /Pending review: (\d+)/.exec(reportMd);
+  expect(
+    pending !== null && Number(pending[1]) === queue.length,
+    `report.md pending count matches the queue (${queue.length})`,
+  );
+
+  // dupe gate: no unresolved tier-A pair (same players+characters signature,
+  // Δduration ≤ 1s) involving a tournament-era record. Scoped deliberately:
+  // the pre-existing Online corpus carries known legacy tier-A clusters,
+  // report-only by decision (npm run data:replay-dupes lists them) — resolving
+  // shipped-vs-shipped data is its own session. A pair with a NEW-source side
+  // shipping here means the dedupe pass missed it.
+  const sig = (v: MatchVideo) =>
+    v.sides
+      .map((s) => `${s.player}|${s.character}`)
+      .sort()
+      .join('~');
+  const bySig = new Map<string, MatchVideo[]>();
+  for (const v of videos) {
+    if (v.durationSec <= 0) continue;
+    const k = sig(v);
+    (bySig.get(k) ?? bySig.set(k, []).get(k)!).push(v);
+  }
+  const offenders: string[] = [];
+  for (const list of bySig.values()) {
+    if (list.length < 2) continue;
+    const s = [...list].sort((a, b) => a.durationSec - b.durationSec);
+    for (let i = 1; i < s.length; i++) {
+      const a = s[i - 1]!;
+      const b = s[i]!;
+      if (
+        b.durationSec - a.durationSec <= 1 &&
+        (NEW_SOURCES.has(a.channel) || NEW_SOURCES.has(b.channel))
+      ) {
+        offenders.push(`${a.id}(${a.channel}) ~ ${b.id}(${b.channel})`);
+      }
+    }
+  }
+  expect(
+    offenders.length === 0,
+    `no unresolved tier-A duplicate involves a tournament-era record` +
+      (offenders.length
+        ? ` — ${offenders.slice(0, 3).join(', ')}${offenders.length > 3 ? ' …' : ''}`
+        : ''),
+  );
+}
+
 async function main(): Promise<void> {
+  testSubstrateGates();
   const { at, close } = await serve();
   const browser: Browser = await chromium.launch({
     executablePath: '/usr/bin/google-chrome-stable',
@@ -372,11 +482,41 @@ async function main(): Promise<void> {
       count((v) => v.season === 1) + (patchCounts.get('2.02') ?? 0),
       'patch facet (era + foreign child, disjoint union)',
     ],
+    // The three PRE-EXISTING tokens resolving identically is the regression
+    // guard for sourceGroups: the grouping deliberately leaves the ?src= CSV
+    // contract and the filter predicate untouched (engine v0.5.5).
     ['/?src=highLevel', count((v) => v.channel === 'highLevel'), 'source facet'],
+    ['/?src=sfReplays', count((v) => v.channel === 'sfReplays'), 'source facet (pre-existing)'],
     [
       '/?src=fgcPlace,sfReplays',
       count((v) => ['fgcPlace', 'sfReplays'].includes(v.channel)),
       'source facet (multi-select OR)',
+    ],
+    // the four tournament-era tokens, each a working child deep link
+    [
+      '/?src=kingArenaOnline',
+      count((v) => v.channel === 'kingArenaOnline'),
+      'source facet (kingArenaOnline)',
+    ],
+    [
+      '/?src=capcomFighters',
+      count((v) => v.channel === 'capcomFighters'),
+      'source facet (capcomFighters)',
+    ],
+    [
+      '/?src=kingArenaTournament',
+      count((v) => v.channel === 'kingArenaTournament'),
+      'source facet (kingArenaTournament)',
+    ],
+    [
+      '/?src=superFighters',
+      count((v) => v.channel === 'superFighters'),
+      'source facet (superFighters)',
+    ],
+    [
+      `/?src=${TOURNAMENT_SOURCES.join(',')}`,
+      count((v) => TOURNAMENT_SOURCES.includes(v.channel)),
+      'source facet (Tournament group set)',
     ],
     ['/?p=daigo', count((v) => v.sides.some((s) => s.player === 'daigo')), 'player facet'],
     [
@@ -391,7 +531,50 @@ async function main(): Promise<void> {
     expect(got === expected, `${label}: ${url} → ${got} (want ${expected})`);
   }
 
-  // ── 2b. grouped patch facet — season parents WITH patch children ──────────
+  // ── 2a-bis. source groups (engine v0.5.5) ─────────────────────────────────
+  console.log('\n— source groups (Online / Tournament)');
+  const onlineCount = count((v) => ONLINE_SOURCES.includes(v.channel));
+  const tournamentCount = count((v) => TOURNAMENT_SOURCES.includes(v.channel));
+  // membership exhaustive: every emitted source belongs to exactly one group
+  expect(
+    onlineCount + tournamentCount === videos.length,
+    `groups partition the corpus (${onlineCount} + ${tournamentCount} = ${videos.length})`,
+  );
+  await gotoIdle(page, at('/'));
+  await page.waitForSelector('[data-replay-id]');
+  const srcBtns: string[] = (await page.evaluate(
+    // string-form: the pipeline tsconfig deliberately has no DOM lib
+    `Array.from(document.querySelectorAll('button')).map((b) => (b.textContent || '').trim())`,
+  )) as string[];
+  expect(
+    srcBtns.includes('Online') && srcBtns.includes('Tournament'),
+    'Online + Tournament group chips render',
+  );
+  // the card SourceBadge still shows the real channel — spans, not buttons —
+  // so the consolidation check is scoped to <button> text (2XKO a3 pattern)
+  const channelChipNames = [
+    'High Level',
+    'The FGC Place',
+    'SF Replays',
+    'King Arena',
+    'Capcom Fighters',
+    'King Arena Events',
+    'Super Fighters',
+  ];
+  expect(
+    channelChipNames.every((n) => !srcBtns.includes(n)),
+    'per-channel source chips are consolidated away',
+  );
+  // clicking the group chip writes the member ids as a ?src= CSV — assert the
+  // URL param set AND the filtered count against the restated membership
+  await page.locator('button:text-is("Online")').first().click();
+  await page.waitForFunction(`new URL(location.href).searchParams.get('src') !== null`);
+  const srcParam = await page.evaluate(`new URL(location.href).searchParams.get('src') || ''`);
+  expect(
+    String(srcParam).split(',').sort().join(',') === [...ONLINE_SOURCES].sort().join(','),
+    `Online chip writes the member CSV (got '${srcParam}')`,
+  );
+  expect((await resultCount(page)) === onlineCount, `Online group filters to ${onlineCount}`);
   console.log('\n— grouped patch facet');
   await gotoIdle(page, at('/'));
   await page.waitForSelector('[data-replay-id]');
