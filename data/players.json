@@ -889,10 +889,6 @@
     "handle": "caru"
   },
   {
-    "id": "cas",
-    "handle": "CAS"
-  },
-  {
     "id": "cash-eye",
     "handle": "CASH EYE"
   },
@@ -1070,10 +1066,6 @@
     "handle": "Cinnamonsun"
   },
   {
-    "id": "cipher",
-    "handle": "CIPHER"
-  },
-  {
     "id": "ckymousee",
     "handle": "ckymousee"
   },
@@ -1246,10 +1238,6 @@
     "handle": "Crybaby"
   },
   {
-    "id": "cuddlefiend",
-    "handle": "Cuddlefiend"
-  },
-  {
     "id": "cuffs",
     "handle": "CUFFS"
   },
@@ -1408,7 +1396,7 @@
   },
   {
     "id": "despairking",
-    "handle": "Despairking"
+    "handle": "DespairKing"
   },
   {
     "id": "destroygodz",
@@ -2170,10 +2158,6 @@
   {
     "id": "grand-final-menard",
     "handle": "GRAND FINAL: MenaRD"
-  },
-  {
-    "id": "grand-final-momochi",
-    "handle": "Grand Final: Momochi"
   },
   {
     "id": "grantodakai",
@@ -3551,10 +3535,6 @@
   {
     "id": "kokko-club",
     "handle": "KOKKO CLUB"
-  },
-  {
-    "id": "kolibri",
-    "handle": "Kolibri"
   },
   {
     "id": "kon-nvedtest",
@@ -5062,10 +5042,6 @@
     "handle": "Orarinn"
   },
   {
-    "id": "ortega",
-    "handle": "Ortega"
-  },
-  {
     "id": "osaku",
     "handle": "Osaku"
   },
@@ -5316,10 +5292,6 @@
   {
     "id": "pools-daigo",
     "handle": "Pools: Daigo"
-  },
-  {
-    "id": "pools-mono",
-    "handle": "Pools: Mono"
   },
   {
     "id": "poongko",
@@ -5610,10 +5582,6 @@
   {
     "id": "ricky-ortiz",
     "handle": "Ricky Ortiz"
-  },
-  {
-    "id": "riddle",
-    "handle": "Riddle"
   },
   {
     "id": "riddles",
@@ -6039,10 +6007,6 @@
   {
     "id": "sevens",
     "handle": "Sevens"
-  },
-  {
-    "id": "sf6-esports-spotlight-infexious",
-    "handle": "SF6 Esports Spotlight: Infexious"
   },
   {
     "id": "shadowmark",
@@ -6888,20 +6852,12 @@
     "handle": "TOP 8: BLAZ"
   },
   {
-    "id": "top-8-brandon",
-    "handle": "Top 8: BRANDON"
-  },
-  {
     "id": "top-8-final-angrybird",
     "handle": "TOP 8 FINAL: ANGRYBIRD"
   },
   {
     "id": "top-8-final-kakeru",
     "handle": "TOP 8 FINAL: KAKERU"
-  },
-  {
-    "id": "top-8-final-leshar",
-    "handle": "TOP 8 FINAL: LESHAR"
   },
   {
     "id": "top-8-final-noahtheprodigy",
