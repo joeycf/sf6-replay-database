@@ -100,6 +100,8 @@ export default defineAppConfig({
       viper: '#A8D8FF',
       alex: '#6FBF44',
       ingrid: '#FFE9A3',
+      // Year 4 pass
+      yasmine: '#F49BDF',
     },
     // Order matters: SourceBadge styles by index (0 = filled primary,
     // 1 = secondary outline, 2+ = warning outline). Ids mirror

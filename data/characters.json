@@ -430,6 +430,20 @@
     }
   },
   {
+    "id": "yasmine",
+    "name": "Yasmine",
+    "imgPortrait": "/img/characters/yasmine-portrait.webp",
+    "imgSplash": "/img/characters/yasmine-splash.webp",
+    "accent": "#F49BDF",
+    "extra": {
+      "aliases": [
+        "yasmine"
+      ],
+      "full name": "Yasmine",
+      "japanese": "ヤスミン"
+    }
+  },
+  {
     "id": "zangief",
     "name": "Zangief",
     "imgPortrait": "/img/characters/zangief-portrait.webp",

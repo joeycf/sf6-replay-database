@@ -18,7 +18,7 @@ this repo supplies **data**, **config**, and **a skin**.
 | `terms`                 | **unset**                          | SF6 genuinely says "characters" — the engine defaults are correct |
 | `characterRouteSegment` | **unset**                          | the roster lives at `/characters/*`                               |
 | `sourceGroups`          | Online / Tournament                | 7 tokens from 6 channels; kingArena splits per-video (classifier) |
-| `patchGroups`           | season parents + 17 patch children | see "Seasons, not Years" below                                    |
+| `patchGroups`           | season parents + 18 patch children | see "Seasons, not Years" below                                    |
 
 > Platform: [replaydatabase.com](https://replaydatabase.com) ·
 > [engine](https://github.com/joeycf/replay-engine) ·

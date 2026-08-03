@@ -91,6 +91,12 @@
   {
     "id": "S4",
     "label": "Season 4",
-    "note": "Yasmine"
+    "note": "Yasmine",
+    "children": [
+      {
+        "id": "2.0401",
+        "note": "Yasmine — all-character balance"
+      }
+    ]
   }
 ]

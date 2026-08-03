@@ -51,7 +51,11 @@ import type { Expiry } from '../types/index';
  * were playable when this repo was built.
  */
 export const UNRELEASED: { id: string; releases: string; note?: string }[] = [
-  { id: 'yasmine', releases: '2026-08-03', note: 'first Year 4 character' },
+  // Empty is the resting state: every character on Capcom's index is playable.
+  // Yasmine (2026-08-03, first Year 4 character) cleared on release day.
+  // Add the next pass character here as soon as Capcom pages it, with the
+  // announced date — that is what turns a future release into a due expiry
+  // rather than something a human has to remember.
 ];
 
 const today = (): string => new Date().toISOString().slice(0, 10);

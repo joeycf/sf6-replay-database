@@ -51,7 +51,11 @@ export const SEASONS: SeasonBoundary[] = [
   { season: 1, start: LAUNCH, end: '2024-05-22', confirmed: true, note: 'Launch' },
   { season: 2, start: '2024-05-22', end: '2025-06-03', confirmed: true, note: 'Akuma' },
   { season: 3, start: '2025-06-03', end: '2026-08-03', confirmed: true, note: 'Elena' },
-  { season: 4, start: '2026-08-03', end: null, confirmed: false, note: 'Yasmine' },
+  // Confirmed 2026-08-03: the Season 4 update landed on its announced date.
+  // Maintenance ran Aug 2 20:00 PDT → Aug 3 00:00 PDT (Aug 3 03:00–07:00 UTC),
+  // shipping Yasmine plus balance changes to all 30 prior characters. Capcom
+  // did not slip it, so the pre-declared boundary stands as authored.
+  { season: 4, start: '2026-08-03', end: null, confirmed: true, note: 'Yasmine' },
 ];
 
 const ISO_DAY = /^\d{4}-\d{2}-\d{2}$/;
@@ -167,6 +171,12 @@ export const PATCHES: PatchBoundary[] = [
     includes: ['Jul 2 update'],
     note: 'Ingrid',
   },
+  // Season 4's opener. `2.0401` is the wiki's gameversion string verbatim —
+  // NOT folded to 2.04 (which would denote a build that never shipped) and not
+  // invented: `npm run data:versions` named it from the SuperCombo Cargo API
+  // before this row existed. Its start EQUALS SEASONS[3].start, which is the
+  // "an era opens ON its first patch" invariant validatePatches() enforces.
+  { version: '2.0401', start: '2026-08-03', note: 'Yasmine — all-character balance' },
 ];
 
 /** X.YY or X.YYZZ. Length-independent, so a two-digit major still validates. */
