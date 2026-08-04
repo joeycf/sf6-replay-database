@@ -17,8 +17,13 @@
 // ORDER IS THE DEDUPE PRECEDENCE: scripts/replay-dupes.ts breaks duplicate
 // clusters by this list (flatMapped over [source, eventSource]) — shipped
 // incumbents first, then the tournament channels in the user's priority order
-// (CapcomFighters > TheKingArena > superfighters-jkm). Reordering entries
-// changes which copy of a re-uploaded match survives.
+// (CapcomFighters > Evo > TheKingArena > superfighters-jkm: first-party
+// archive, then the event's own uploads, then the re-uploaders). Reordering
+// entries changes which copy of a re-uploaded match survives.
+//
+// NOT the same order as app.config.ts sourceChannels, which is APPEND-ONLY
+// because badge styling is index-based — inserting there recolours shipped
+// badges. The two lists answer different questions and are allowed to differ.
 //
 // uploadsPlaylist is pinned (UU + channelId.slice(2)) rather than resolved
 // live: it saves a quota unit per channel per run, and the channel id is
@@ -84,6 +89,33 @@ export const CHANNELS: ChannelConfig[] = [
     sf6Signal: 'titleOrDescription',
   },
   {
+    // @EvoEvents — Evo's own channel, 2,748 uploads. The one channel here whose
+    // titles never name a character: "Evo 2026: MenaRD vs Shigematsu | Street
+    // Fighter 6 | Grand Final" gives players, game and round and nothing else,
+    // which is why it sat untracked until a way to read the footage existed.
+    // 81 of its uploads are single SF6 matches (Evo 2023 → 2026, 8 events);
+    // the rest are stream VODs, Top-8 compilations, best-ofs and intros, all
+    // excluded by the versus-shape gate.
+    //
+    // hence charactersFromFootage: a match-shaped upload here is not a parse
+    // failure, it is a character-completion item. SF6 prints the character name
+    // in the HUD's top corners in tournament mode, and scripts/spike/ reads it
+    // (81/81 exact against hand labels — see scripts/spike/README.md).
+    //
+    // Placed directly after CapcomFighters on purpose: this list is the dedupe
+    // precedence. Evo loses to Capcom's first-party CPT archive, but beats the
+    // re-uploaders below — for an Evo match, Evo's own upload is the rights
+    // holder's copy. Measured at intake: 3 actionable duplicates, all against
+    // kingArenaTournament, all now resolved in Evo's favour.
+    id: 'evoEvents',
+    source: 'evoEvents',
+    name: 'Evo',
+    channelId: 'UCWI626ZNdqM5tOlctPUTW2g',
+    uploadsPlaylist: 'UUWI626ZNdqM5tOlctPUTW2g',
+    sf6Signal: 'titleOrDescription',
+    charactersFromFootage: true,
+  },
+  {
     // @TheKingArena — 2,333 uploads since 2025-01, 95%+ SF6, 94% parseable.
     // The complication: it publishes BOTH kinds of footage — online high-level
     // sets in the original channels' style AND event footage (CPT, Esports
@@ -119,16 +151,12 @@ export const CHANNELS: ChannelConfig[] = [
   },
 ];
 
-// Evaluated and deliberately NOT tracked (tournament recon 2026-07-31):
+// @EvoEvents was evaluated and rejected in the 2026-07-31 tournament recon for
+// exactly one reason — 0 parseable, because no title names a character — and is
+// tracked from 2026-08-04 now that the footage can be read (see its entry
+// above). Tekken hit the same wall on the same channel and its verdict still
+// stands there; that repo needs the extractor ported before it can revisit.
 //
-// "Evo Events" (UCWI626ZNdqM5tOlctPUTW2g, @EvoEvents) — 2,745 uploads, 120
-// SF6-marked, and exactly 0 parseable: its SF6 output is stream VODs and Top-8
-// compilations whose titles and descriptions name the players but never the
-// characters ("Evo 2026: MenaRD vs Shigematsu | Street Fighter 6 | Grand
-// Final"; the compilation chapter lists are player-only too). A record needs a
-// character per side (charactersPerSide 1 — emit.ts hard-fails without one),
-// and that information exists only in the footage HUD. Tekken hit the same
-// wall with this exact channel and recorded the same verdict. NOT a dead end:
-// the review queue's 'character-completion' kind and the /dev/source-review UI
-// already speak the verdict shape a future visual-extraction pass (or a
-// hand-fill session) would produce — revisit when one exists.
+// No other candidate channel is pending. If one is ever added, the bar the
+// recon used was: dense uploads of full match VODs, and titles that are either
+// structurally parseable or resolvable from the footage.

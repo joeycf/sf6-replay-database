@@ -79,6 +79,7 @@ committed `/sf6/` base — but the committed default **is** production truth.
 | `npm run data:parse`        | parse → substrate + registry + report, then emit                          |
 | `npm run data:build`        | fetch + parse                                                             |
 | `npm run data:emit`         | re-derive the generic artifacts from the committed substrate (no network) |
+| `npm run data:extract`      | resolve queued character-completion items from the footage (LOCAL only)   |
 | `npm run data:characters`   | rescrape the roster + art (`--force` re-downloads)                        |
 | `npm run data:expiries`     | `--check` the self-expiring gates; exits 1 when something is due          |
 | `npm run data:versions`     | cross-check the patch table against the SuperCombo wiki (network)         |
@@ -228,9 +229,18 @@ items never reach the site — until a human verdict lands in `overrides.json`
 via the dev-only `/dev/source-review` page (`nuxt dev` only; 404 in builds).
 Tournament sides carry no ladder ranks, so overall rank coverage is lower than
 the Online corpus — honest nulls, `rank` is optional per side. @EvoEvents is
-not tracked yet: its characters exist only in the footage HUD, and
-`scripts/spike/` measures a visual extractor that reads them (see the note in
-`scripts/channels.ts` and `scripts/spike/README.md`).
+the odd one out: its titles name the players but never a character, so its
+records are completed from the footage HUD rather than parsed
+(`charactersFromFootage` in `scripts/channels.ts`; `npm run data:extract`;
+method and accuracy in `scripts/spike/README.md`).
+
+**A side lists every character it played.** `Side.characters` is a list, not a
+single value. SF6 is 1v1 and `charactersPerSide` stays 1, so an ordinary match
+names one per side — but a tournament SET is several games and players
+counter-pick between them (17 of the 81 Evo records). Those list every
+character that side used, in first-appearance order. The engine renders,
+filters and links them natively; the duo/synergy panels stay hidden, because
+that axis is about SIMULTANEOUS characters, which SF6 never has.
 
 **Curation — reading a character-completion item.** `/dev/source-review` shows
 one HUD strip per sampled moment of the VOD, oldest first; SF6 prints the

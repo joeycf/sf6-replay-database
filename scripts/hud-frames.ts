@@ -21,7 +21,7 @@ import { existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const CACHE = join(ROOT, 'cache', 'evo');
 const COOKIES = process.env.EVO_COOKIES ?? join(CACHE, 'cookies.txt');
 

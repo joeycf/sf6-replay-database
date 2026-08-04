@@ -27,8 +27,8 @@ import { join } from 'node:path';
 import sharp from 'sharp';
 import { createWorker, type Worker } from 'tesseract.js';
 
-import { buildAliasMatcher, loadCharacters } from '../roster';
-import { CACHE } from './frames';
+import { buildAliasMatcher, loadCharacters } from './roster';
+import { CACHE } from './hud-frames';
 
 export const REGIONS = {
   p1: [0.0016, 0.0167, 0.1, 0.0361],

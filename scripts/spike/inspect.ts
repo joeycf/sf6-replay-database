@@ -6,8 +6,8 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { CACHE } from './frames';
-import { loadRoster, makeWorker, readFrame, type Side } from './read-hud';
+import { CACHE } from '../hud-frames';
+import { loadRoster, makeWorker, readFrame, type Side } from '../hud-read';
 
 const [id, side] = process.argv.slice(2) as [string, Side];
 if (!id || (side !== 'p1' && side !== 'p2')) {

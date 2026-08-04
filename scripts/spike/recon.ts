@@ -15,7 +15,7 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { CACHE, grabFrames, stamp } from './frames';
+import { CACHE, grabFrames, stamp } from '../hud-frames';
 
 interface CorpusItem {
   id: string;

@@ -16,14 +16,21 @@ export type SourceId =
   | 'kingArenaOnline'
   | 'capcomFighters'
   | 'kingArenaTournament'
-  | 'superFighters';
+  | 'superFighters'
+  | 'evoEvents';
 
 /** Per-YouTube-channel intake key: names raw/<key>.json and the coverage
  *  report's rows. No longer 1:1 with SourceId ('kingArena' feeds two sources) —
  *  the separate type this repo kept "for a future aggregating source" is now
  *  load-bearing. */
 export type ChannelKey =
-  'highLevel' | 'fgcPlace' | 'sfReplays' | 'capcomFighters' | 'kingArena' | 'superFighters';
+  | 'highLevel'
+  | 'fgcPlace'
+  | 'sfReplays'
+  | 'capcomFighters'
+  | 'kingArena'
+  | 'superFighters'
+  | 'evoEvents';
 
 export interface ChannelConfig {
   /** Raw-dump key / report row (unique per YouTube channel). */
@@ -47,6 +54,11 @@ export interface ChannelConfig {
    *  1,025/1,025 CapcomFighters match uploads have it there and 0 in the
    *  title. Default: 'title'. */
   sf6Signal?: 'title' | 'titleOrDescription';
+  /** This channel's titles name the players but never the characters, so a
+   *  match-shaped upload is queued for character-completion instead of counted
+   *  as a parse miss. Only @EvoEvents sets it; without the flag every other
+   *  channel's genuine char-unresolved misses would flood the review queue. */
+  charactersFromFootage?: boolean;
 }
 
 /** One upload as fetched from the YouTube Data API (raw/<id>.json). */
@@ -149,6 +161,12 @@ export interface CharacterRecord {
  *  provenance keys ("//", dupeOf) are tolerated at the JSON boundary. */
 export type VideoOverride = Partial<Pick<MatchVideo, 'season' | 'sides' | 'channel'>> & {
   exclude?: boolean;
+  /** Who resolved a character-completion item. Absent on hand-authored entries
+   *  predating the extractor; 'extractor' marks a machine resolution, which
+   *  only happens at or above its auto-accept confidence. */
+  resolvedBy?: 'extractor' | 'human';
+  /** The extractor's confidence when it resolved this (0..1). */
+  confidence?: number;
 };
 
 /** One pending item in data/review-queue.json — parseable footage the pipeline
@@ -173,6 +191,11 @@ export interface ReviewQueueItem {
   durationSec: number;
   /** The conflicting title fragments that queued it (source-classification). */
   signals?: { online: string; event: string };
+  /** The handles the title DID state, canonicalised against players.json
+   *  (character-completion). Pre-fills the review form so a reviewer answers
+   *  only the characters, and — more importantly — stops a verdict minting a
+   *  second player page under a different spelling of an existing player. */
+  handles?: [string, string];
 }
 
 /** One SF6 balance season (scripts/seasons.ts is the authority; parse.ts

@@ -1026,25 +1026,6 @@
       }
     ]
   },
-  "4jTjMek39Bg": {
-    "//": "review verdict: hand-completed sides [/dev/source-review 2026-08-04]",
-    "sides": [
-      {
-        "player": "tantan-men",
-        "handle": "Tantan Men",
-        "characters": [
-          "jamie"
-        ]
-      },
-      {
-        "player": "craime",
-        "handle": "Craime",
-        "characters": [
-          "ryu"
-        ]
-      }
-    ]
-  },
   "5TQLd5j0RFY": {
     "//": "review verdict: hand-completed sides [/dev/source-review 2026-08-04]",
     "sides": [
@@ -2481,6 +2462,35 @@
         "handle": "Angrybird",
         "characters": [
           "ken"
+        ]
+      }
+    ]
+  },
+  "xuxBs-x_s7I": {
+    "//": "duplicate of KOoKSxj9DSU (highLevel) \u2014 \u0394dur 0s, differing titles [tier A, data:replay-dupes 2026-08-04]",
+    "dupeOf": "KOoKSxj9DSU",
+    "exclude": true
+  },
+  "3dOm9fQg9Bs": {
+    "//": "duplicate of jig0Efj7hGw (evoEvents) \u2014 \u0394dur 1s, differing titles [tier A, data:replay-dupes 2026-08-04]",
+    "dupeOf": "jig0Efj7hGw",
+    "exclude": true
+  },
+  "4jTjMek39Bg": {
+    "//": "review verdict: hand-completed sides [/dev/source-review 2026-08-04]",
+    "sides": [
+      {
+        "player": "tantan-men",
+        "handle": "Tantan Men",
+        "characters": [
+          "jamie"
+        ]
+      },
+      {
+        "player": "craime",
+        "handle": "Craime",
+        "characters": [
+          "ryu"
         ]
       }
     ]

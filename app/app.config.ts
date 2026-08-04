@@ -121,6 +121,7 @@ export default defineAppConfig({
       { id: 'capcomFighters', name: 'Capcom Fighters' },
       { id: 'kingArenaTournament', name: 'King Arena Events' },
       { id: 'superFighters', name: 'Super Fighters' },
+      { id: 'evoEvents', name: 'Evo' },
     ],
     // Filter chips consolidate to two groups (engine v0.5.5; the per-video
     // SourceBadge keeps the real channel name from sourceChannels above).
@@ -136,7 +137,7 @@ export default defineAppConfig({
       {
         id: 'tournament',
         name: 'Tournament',
-        sources: ['capcomFighters', 'kingArenaTournament', 'superFighters'],
+        sources: ['capcomFighters', 'kingArenaTournament', 'superFighters', 'evoEvents'],
       },
     ],
     // Season→patch hierarchy for the grouped patch facet (engine v0.6.0).

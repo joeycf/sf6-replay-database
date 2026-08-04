@@ -14,7 +14,7 @@
 import { existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { CACHE, grabFrames, pruneClips } from './frames';
+import { CACHE, grabFrames, pruneClips } from '../hud-frames';
 import {
   SIDES,
   foldSide,
@@ -25,7 +25,7 @@ import {
   samplePlan,
   type FrameRead,
   type SideResult,
-} from './read-hud';
+} from '../hud-read';
 
 const argv = process.argv.slice(2);
 const flag = (name: string): string | undefined => {

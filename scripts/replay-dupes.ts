@@ -89,7 +89,19 @@ const overrides = JSON.parse(readFileSync(join(ROOT, 'data', 'overrides.json'), 
 // decision, not work: it must NOT shield its record from dedupe, or a queue
 // verdict on a tournament newcomer would out-rank a shipped incumbent
 // (observed on the FUNDA winners-final pair, 2026-07-31).
-const protectedOverride = (id: string): boolean => overrides[id]?.sides !== undefined;
+// Sources whose records are BUILT from a sides override as the normal path
+// (charactersFromFootage channels — @EvoEvents states no character in any
+// title, so every one of its records comes from a completion verdict). For
+// those an override is not corrective work worth protecting, it is simply how
+// the record exists; treating it as protected would make the channel win every
+// duplicate pair and silently outrank the precedence declared in channels.ts.
+const FOOTAGE_SOURCES = new Set<string>(
+  CHANNELS.filter((c) => c.charactersFromFootage).flatMap((c) =>
+    c.eventSource ? [c.source, c.eventSource] : [c.source],
+  ),
+);
+const protectedOverride = (v: MatchVideo): boolean =>
+  overrides[v.id]?.sides !== undefined && !FOOTAGE_SOURCES.has(v.channel);
 const hasOverride = (id: string): boolean => overrides[id] != null;
 
 /** Side-agnostic players+characters key. Player ids are parse.ts-canonical.
@@ -150,8 +162,8 @@ function decide(
   b: MatchVideo,
 ): { keep: MatchVideo; drop: MatchVideo; rule: string } {
   const mk = (keep: MatchVideo, drop: MatchVideo, rule: string) => ({ keep, drop, rule });
-  const oa = protectedOverride(a.id);
-  const ob = protectedOverride(b.id);
+  const oa = protectedOverride(a);
+  const ob = protectedOverride(b);
   if (oa !== ob)
     return oa ? mk(a, b, 'hand-authored-override') : mk(b, a, 'hand-authored-override');
   const pa = PRIORITY.get(a.channel) ?? 99;

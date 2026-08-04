@@ -17,7 +17,7 @@ import { join } from 'node:path';
 import sharp from 'sharp';
 import { createWorker } from 'tesseract.js';
 
-import { CACHE } from './frames';
+import { CACHE } from '../hud-frames';
 
 // Normalized [x, y, w, h] — resolution-independent, same convention as
 // 2xko-replay-database/data/fuse-regions.json.

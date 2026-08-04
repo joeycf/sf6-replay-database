@@ -210,6 +210,52 @@ function cleanHandle(raw: string): string | null {
   return t;
 }
 
+// ── footage-title parsing (charactersFromFootage channels) ───────────────────
+// @EvoEvents states players, game and round but never a character, in three
+// grammars across 2023→2026, all delimited by "|":
+//   "Evo 2023: Street Fighter 6 Winners Semifinals | Kakeru vs AngryBird"
+//   "Evo 2025: Street Fighter 6 | Kakeru vs Fuudo | Winners Semifinals"
+//   "Evo 2026: Shigematsu vs MenaRD | Street Fighter 6 | Winners Final"
+// Rather than three regexes that rot when Evo reshuffles the segments again,
+// split on "|" and take the ONE segment carrying a versus — the players always
+// sit inside a single segment, the game name and round always in others.
+//
+// The versus shape alone excludes every stream VOD, bracket compilation,
+// best-of and intro on the channel, so NOT_A_MATCH stays narrow: it only needs
+// the non-matches that ALSO carry a versus. In particular it must never test
+// "Top \d+" — Evo writes the round as "Top 24" / "Losers Top 8", and filtering
+// on that eats six real single matches.
+const FOOTAGE_VS = /\s+(?:vs\.?|versus)\s+/i;
+const NOT_A_MATCH_RE =
+  /\bOG\s*Hunt\b|watch\s*party|\bbest\s*of\b|\bintro\b|dev\s*panel|road\s+to\s+evo|matches\s+you\s+missed|\brecap\b|highlights?/i;
+/** A bracket set runs 5–25 min. Longer versus-titled uploads are exhibitions
+ *  and showcases (a 62-minute Daigo vs MenaRD FT10) where a player can change
+ *  character freely between many games — a different problem, left alone. */
+const MAX_SET_SEC = 30 * 60;
+
+function footageTitle(title: string): [string, string] | null {
+  if (NOT_A_MATCH_RE.test(title)) return null;
+  const segs = title
+    .split('|')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (segs.length < 2) return null;
+  // the "Evo Japan 2026:" event prefix rides on whichever segment is first,
+  // which differs by grammar, so strip it wherever it appears
+  const noEvent = (s: string) => {
+    const i = s.indexOf(':');
+    return i === -1 ? s : s.slice(i + 1).trim();
+  };
+  const withVs = segs.filter((s) => FOOTAGE_VS.test(noEvent(s)));
+  if (withVs.length !== 1) return null;
+  const parts = noEvent(withVs[0]!).split(FOOTAGE_VS);
+  if (parts.length !== 2) return null;
+  const a = parts[0]!.trim();
+  const b = parts[1]!.trim();
+  if (!a || !b || a.length > 40 || b.length > 40) return null;
+  return [a, b];
+}
+
 interface TitleSides {
   handles: [string, string];
   parens: [string, string];
@@ -282,6 +328,11 @@ type MissReason =
   | 'char-unresolved'
   | 'bad-handle';
 const misses: { id: string; channel: string; reason: MissReason; title: string }[] = [];
+// match-shaped uploads on a charactersFromFootage channel, awaiting a character
+// verdict. Held aside rather than queued in place because the queue wants the
+// CANONICAL handle spelling, and that is only known once bestSpelling is built
+// from the whole parsed corpus below.
+const footagePending: { raw: RawVideoRecord; handles: [string, string] }[] = [];
 // misses stay reachable by id so the character-completion path below can build
 // a record from raw + a hand-authored overrides.json sides pair.
 const missedById = new Map<string, RawVideoRecord>();
@@ -322,6 +373,19 @@ for (const r of raws) {
   }
   const t = parseTitle(r.title);
   if (!t) {
+    // A channel whose titles never name a character (charactersFromFootage):
+    // a match-shaped upload is not a parse failure, it is a completion item.
+    // It still goes through miss() — that is what puts it in missedById, which
+    // is what lets an overrides.json sides entry build the record later — but
+    // it is filtered out of the reported misses below.
+    const cfg = CHANNEL_OF.get(r.channel)!;
+    if (cfg.charactersFromFootage && r.durationSec <= MAX_SET_SEC) {
+      const handles = footageTitle(r.title);
+      const ov = overrides[r.id];
+      if (handles && !ov?.sides && ov?.exclude !== true) {
+        footagePending.push({ raw: r, handles });
+      }
+    }
     miss(r, 'no-vs-title');
     continue;
   }
@@ -392,6 +456,26 @@ const idOf = (handle: string): string => slug(bestSpelling.get(idKey(handle)) ??
 
 const videos: MatchVideo[] = [];
 const reviewQueue: ReviewQueueItem[] = [];
+
+// Footage-completion items, now that canonical spellings exist. Pre-filling the
+// handle with the corpus's own spelling is what stops a verdict minting a second
+// player page for someone already in players.json — the review POST slugs
+// whatever the form contains and does not run parse.ts's identity merge.
+const footagePendingIds = new Set(footagePending.map((p) => p.raw.id));
+for (const { raw, handles } of footagePending) {
+  reviewQueue.push({
+    id: raw.id,
+    kind: 'character-completion',
+    channel: raw.channel,
+    title: raw.title,
+    publishedAt: raw.publishedAt,
+    durationSec: raw.durationSec,
+    handles: [
+      bestSpelling.get(idKey(handles[0])) ?? handles[0],
+      bestSpelling.get(idKey(handles[1])) ?? handles[1],
+    ],
+  });
+}
 // per-channel classifier tally for the report (only eventSource channels)
 const classifierSplit = new Map<
   string,
@@ -484,7 +568,12 @@ for (const [id, ov] of Object.entries(overrides)) {
     sides: ov.sides,
   });
 }
-const reportedMisses = misses.filter((m) => !completedIds.has(m.id));
+// A completed id is not a miss (the override built its record), and neither is
+// one sitting in the review queue awaiting a character verdict — that is
+// pending work, counted by "Pending review", not coverage the parser lost.
+const reportedMisses = misses.filter(
+  (m) => !completedIds.has(m.id) && !footagePendingIds.has(m.id),
+);
 
 videos.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt) || a.id.localeCompare(b.id));
 reviewQueue.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt) || a.id.localeCompare(b.id));

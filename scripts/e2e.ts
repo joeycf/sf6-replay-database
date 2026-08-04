@@ -80,7 +80,7 @@ const count = (pred: (v: MatchVideo) => boolean) => videos.filter(pred).length;
 // disagree and fail. The tournament-era tokens (2026-07-31 intake) are the
 // NEW_SOURCES set the dupe gate is scoped to.
 const ONLINE_SOURCES = ['highLevel', 'fgcPlace', 'sfReplays', 'kingArenaOnline'];
-const TOURNAMENT_SOURCES = ['capcomFighters', 'kingArenaTournament', 'superFighters'];
+const TOURNAMENT_SOURCES = ['capcomFighters', 'kingArenaTournament', 'superFighters', 'evoEvents'];
 const NEW_SOURCES = new Set(['kingArenaOnline', ...TOURNAMENT_SOURCES]);
 
 // The rank chips the facet actually renders (engine v0.5.0): the canonical

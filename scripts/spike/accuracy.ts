@@ -20,7 +20,7 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { CACHE } from './frames';
+import { CACHE } from '../hud-frames';
 import type { Extraction } from './extract-chars';
 
 interface Side {
