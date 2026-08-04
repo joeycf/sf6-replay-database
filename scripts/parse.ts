@@ -441,7 +441,9 @@ for (const c of candidates) {
     return {
       player: idOf(handle),
       handle: bestSpelling.get(key) ?? handle,
-      character,
+      // title-parsed channels state exactly one character per side; only the
+      // footage extractor ever produces a longer list
+      characters: [character],
       ...(c.ranks[i] ? { rank: c.ranks[i] } : {}),
     } as MatchSide;
   }) as [MatchSide, MatchSide];

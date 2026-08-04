@@ -65,14 +65,27 @@ export interface RawVideoRecord {
   tags?: string[];
 }
 
-/** One parsed side: exactly one pilot + one character (SF6 is 1v1). */
+/** One parsed side: one pilot, and every character they played.
+ *
+ *  SF6 is 1v1, so a single MATCH has one character per side and `characters`
+ *  holds exactly one — which is every record the six title-parsed channels
+ *  produce. A tournament SET is several games, and players counter-pick between
+ *  them: measured on @EvoEvents, 17 of 81 single-match VODs have a side that
+ *  changed character mid-set. Those record the ordered union of everyone that
+ *  side played, first appearance first, because that is what the footage
+ *  contains. WHICH game the switch happened in is deliberately not modelled.
+ *
+ *  This is NOT the tag-fighter axis: `charactersPerSide` stays 1 and the engine's
+ *  duo panels stay hidden, because it describes simultaneous characters, not a
+ *  sequential set history. The engine renders, filters and links a multi-entry
+ *  side natively (2XKO's duos already ship through the same contract). */
 export interface MatchSide {
   /** Player id (slug of handle). */
   player: string;
   /** Display handle, nicest casing seen (descriptions beat ALL-CAPS titles). */
   handle: string;
-  /** Roster character id (data/characters.json). */
-  character: string;
+  /** Roster character ids (data/characters.json), 1..N, first-appearance order. */
+  characters: string[];
   /** Ladder rank, normalized to a GameConfig.ranks entry. Absent when the
    *  source didn't state one — which is most of the corpus outside the
    *  High Level channel. Divisions collapse to their tier and Master

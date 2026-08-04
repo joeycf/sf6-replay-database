@@ -93,7 +93,7 @@ function toReplay(v: MatchVideo, windows = patchWindows()): GenericReplay {
     id: v.id,
     sides: v.sides.map((s) => ({
       player: s.player,
-      characters: [s.character],
+      characters: s.characters,
       ...(s.rank ? { rank: s.rank } : {}),
     })) as [GenericSide, GenericSide],
     date: v.publishedAt,
@@ -168,11 +168,18 @@ export async function emitGeneric(
   for (const r of replays) {
     if (r.sides.length !== 2) throw new Error(`emit: ${r.id} lost its two-sides invariant`);
     for (const s of r.sides) {
-      if (s.characters.length !== 1) {
-        throw new Error(`emit: ${r.id} side has ${s.characters.length} characters (SF6 is 1v1)`);
+      // A side must name at least one character — that is the gate's whole job,
+      // catching a record that reached emit without a resolved side. It is no
+      // longer capped at one: a tournament set where a player counter-picked
+      // lists every character they played (see MatchSide). SF6 is still 1v1;
+      // this is a sequential set history, not a tag team.
+      if (s.characters.length === 0) {
+        throw new Error(`emit: ${r.id} has a side with no character`);
       }
-      if (!rosterIds.has(s.characters[0]!)) {
-        throw new Error(`emit: ${r.id} references unknown character '${s.characters[0]}'`);
+      for (const c of s.characters) {
+        if (!rosterIds.has(c)) {
+          throw new Error(`emit: ${r.id} references unknown character '${c}'`);
+        }
       }
       if (!playerIds.has(s.player)) {
         throw new Error(`emit: ${r.id} references unknown player '${s.player}'`);
@@ -250,10 +257,18 @@ export async function emitGeneric(
   if (genericStats.totals.replays !== records.length) {
     throw new Error('emit: stats.totals.replays drifted from the record count');
   }
+  // characterUsage counts CHARACTER appearances per side, so the expected total
+  // is the sum of every side's list length — NOT records × 2. Those agree for
+  // any record whose sides name one character each (all six title-parsed
+  // channels), and diverge exactly when a set VOD records a counter-pick.
   const usageTotal = Object.values(pipelineStats.characterUsage).reduce((a, b) => a + b, 0);
-  if (usageTotal !== records.length * 2) {
+  const expectedUsage = records.reduce(
+    (n, r) => n + r.sides.reduce((m, s) => m + s.characters.length, 0),
+    0,
+  );
+  if (usageTotal !== expectedUsage) {
     throw new Error(
-      `emit: characterUsage sums to ${usageTotal}, expected ${records.length * 2} side appearances`,
+      `emit: characterUsage sums to ${usageTotal}, expected ${expectedUsage} character appearances`,
     );
   }
 

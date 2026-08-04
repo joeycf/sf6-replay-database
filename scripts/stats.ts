@@ -2,10 +2,14 @@
 // IDENTICAL numbers from the same substrate — the double-emit byte-identity
 // gate in scripts/e2e.ts depends on it.
 //
-// Semantics that matter: characterUsage counts SIDE APPEARANCES, so a Ryu
-// mirror adds 2. The same denominator drives the usage bars, the per-season
-// timeline, and the player tables, which is what makes those three views
-// agree.
+// Semantics that matter: characterUsage counts CHARACTER APPEARANCES PER SIDE,
+// so a Ryu mirror adds 2. For every title-parsed record that is the same thing
+// as counting sides, since each names one character. It diverges only for a
+// tournament SET whose side counter-picked: that side lists both characters and
+// contributes to both, because both were played. The same denominator drives
+// the usage bars, the per-season timeline and the player tables, which is what
+// makes those three views agree — emit.ts asserts the total against the summed
+// side lengths rather than records × 2.
 //
 // The duo-only keys (pairingUsage / playerPairings) are deliberately ABSENT:
 // SF6 is 1v1, and every engine duo panel self-hides on charactersPerSide === 1.
@@ -46,11 +50,15 @@ export function buildStats(records: MatchVideo[]): PipelineStats {
     bySeasonUsage[skey] ??= {};
 
     for (const s of v.sides) {
-      characterUsage[s.character] = (characterUsage[s.character] ?? 0) + 1;
-      bySeasonUsage[skey]![s.character] = (bySeasonUsage[skey]![s.character] ?? 0) + 1;
+      // every character a side played counts once — a set where a player
+      // counter-picked contributes to both characters' usage, which is what
+      // actually happened. Mirror matches still add 2, one per side.
       playerCharacters[s.player] ??= {};
-      playerCharacters[s.player]![s.character] =
-        (playerCharacters[s.player]![s.character] ?? 0) + 1;
+      for (const c of s.characters) {
+        characterUsage[c] = (characterUsage[c] ?? 0) + 1;
+        bySeasonUsage[skey]![c] = (bySeasonUsage[skey]![c] ?? 0) + 1;
+        playerCharacters[s.player]![c] = (playerCharacters[s.player]![c] ?? 0) + 1;
+      }
     }
   }
 

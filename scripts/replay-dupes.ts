@@ -92,10 +92,13 @@ const overrides = JSON.parse(readFileSync(join(ROOT, 'data', 'overrides.json'), 
 const protectedOverride = (id: string): boolean => overrides[id]?.sides !== undefined;
 const hasOverride = (id: string): boolean => overrides[id] != null;
 
-/** Side-agnostic players+characters key. Player ids are parse.ts-canonical. */
+/** Side-agnostic players+characters key. Player ids are parse.ts-canonical.
+ *  A side's characters are SORTED into the key, not left in first-appearance
+ *  order: two uploads of the same set can sample it differently and disagree
+ *  about which character showed up first, but they are still the same match. */
 function signature(v: MatchVideo): string {
   return v.sides
-    .map((s) => `${s.player}|${s.character}`)
+    .map((s) => `${s.player}|${[...s.characters].sort().join(',')}`)
     .sort()
     .join(' ~ ');
 }

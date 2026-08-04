@@ -325,9 +325,11 @@ function testSubstrateGates(): void {
   // report-only by decision (npm run data:replay-dupes lists them) — resolving
   // shipped-vs-shipped data is its own session. A pair with a NEW-source side
   // shipping here means the dedupe pass missed it.
+  // MUST stay identical in semantics to scripts/replay-dupes.ts `signature()` —
+  // if the two drift, this gate stops checking what the dupe scanner finds.
   const sig = (v: MatchVideo) =>
     v.sides
-      .map((s) => `${s.player}|${s.character}`)
+      .map((s) => `${s.player}|${[...s.characters].sort().join(',')}`)
       .sort()
       .join('~');
   const bySig = new Map<string, MatchVideo[]>();
@@ -418,9 +420,19 @@ async function main(): Promise<void> {
     `rank chips render highest-first (${rankChipsExpected.join(' → ')})`,
   );
 
-  // Cards represent each side with ONE CharacterBadge (aria-label = the
-  // character's name) — 2 per card for 1v1, where a tag fighter shows 4.
+  // A card renders one CharacterBadge per character per side (aria-label = the
+  // character's name). That is 2 for an ordinary 1v1 record, and more for a
+  // tournament SET where a side counter-picked — so the expectation is computed
+  // from the record actually on the card, per this suite's own rule that
+  // numbers come from the data and are never hardcoded. A tag fighter would
+  // show charactersPerSide × 2 simultaneously; SF6 never does.
   const rosterNames = characters.map((c) => c.name);
+  const firstCardId = await page.locator('[data-replay-id]').first().getAttribute('data-replay-id');
+  const firstRecord = allVideos.find((v) => v.id === firstCardId);
+  expect(firstRecord !== undefined, `first card's id ${firstCardId} is in the substrate`);
+  const expectedBadges = firstRecord
+    ? firstRecord.sides.reduce((n, s) => n + s.characters.length, 0)
+    : 2;
   const firstCardBadges = await page
     .locator('[data-replay-id]')
     .first()
@@ -432,8 +444,8 @@ async function main(): Promise<void> {
       rosterNames,
     );
   expect(
-    firstCardBadges === 2,
-    `card renders a SINGLE character badge per side (got ${firstCardBadges})`,
+    firstCardBadges === expectedBadges,
+    `card renders one character badge per character per side (expected ${expectedBadges}, got ${firstCardBadges})`,
   );
   expect(
     (await page.locator('[data-replay-id]').first().locator('img[src*="i.ytimg.com"]').count()) ===
@@ -453,22 +465,26 @@ async function main(): Promise<void> {
       count((v) => v.sides.some((s) => s.rank === 'Master')),
       'rank facet (Master)',
     ],
+    // These mirror the engine's own predicates in utils/filterReplays.ts, which
+    // are array-contains on both sides — so a set VOD where a player
+    // counter-picked matches on EITHER character they played. That is the
+    // honest reading: both matchups occurred.
     [
       `/?c=${topChar}`,
-      count((v) => v.sides.some((s) => s.character === topChar)),
+      count((v) => v.sides.some((s) => s.characters.includes(topChar))),
       'character facet',
     ],
     [
       '/?c=ryu,ken&side=1',
-      count((v) => ['ryu', 'ken'].every((c) => v.sides.some((s) => s.character === c))),
+      count((v) => ['ryu', 'ken'].every((c) => v.sides.some((s) => s.characters.includes(c)))),
       'c=a,b AND semantics; stray side=1 ignored (1v1)',
     ],
     [
       '/?mu=ryu:ken',
       count(
         (v) =>
-          (v.sides[0].character === 'ryu' && v.sides[1].character === 'ken') ||
-          (v.sides[0].character === 'ken' && v.sides[1].character === 'ryu'),
+          (v.sides[0].characters.includes('ryu') && v.sides[1].characters.includes('ken')) ||
+          (v.sides[0].characters.includes('ken') && v.sides[1].characters.includes('ryu')),
       ),
       'matchup facet (opposing sides)',
     ],
