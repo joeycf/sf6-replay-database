@@ -1,12 +1,12 @@
 {
   "totals": {
-    "replays": 22849,
+    "replays": 22847,
     "characters": 31,
     "players": 1930,
     "byPatch": {
       "S1": 5393,
       "S2": 7838,
-      "S3": 9584,
+      "S3": 9582,
       "S4": 34
     }
   },
@@ -15,8 +15,8 @@
     "akuma": 3791,
     "alex": 670,
     "bison": 2009,
-    "blanka": 1239,
-    "cammy": 1668,
+    "blanka": 1238,
+    "cammy": 1667,
     "chunli": 1377,
     "deejay": 1125,
     "dhalsim": 1485,
@@ -36,12 +36,12 @@
     "manon": 963,
     "marisa": 1107,
     "rashid": 1392,
-    "ryu": 2778,
+    "ryu": 2777,
     "sagat": 1685,
     "terry": 1360,
     "viper": 663,
     "yasmine": 32,
-    "zangief": 3943
+    "zangief": 3942
   },
   "byPatchUsage": {
     "S1": {
@@ -99,8 +99,8 @@
       "akuma": 1442,
       "alex": 668,
       "bison": 700,
-      "blanka": 494,
-      "cammy": 537,
+      "blanka": 493,
+      "cammy": 536,
       "chunli": 513,
       "deejay": 343,
       "dhalsim": 590,
@@ -120,11 +120,11 @@
       "manon": 318,
       "marisa": 342,
       "rashid": 371,
-      "ryu": 1441,
+      "ryu": 1440,
       "sagat": 1684,
       "terry": 752,
       "viper": 662,
-      "zangief": 1268
+      "zangief": 1267
     },
     "S4": {
       "aki": 2,
@@ -719,7 +719,7 @@
       "ken": 14,
       "kimberly": 6,
       "mai": 9,
-      "ryu": 279,
+      "ryu": 278,
       "sagat": 282,
       "terry": 48
     },
@@ -3336,7 +3336,7 @@
       "jamie": 1
     },
     "kobayan": {
-      "zangief": 1215
+      "zangief": 1214
     },
     "kog": {
       "lily": 2
@@ -3911,7 +3911,7 @@
       "akuma": 27,
       "alex": 24,
       "bison": 62,
-      "blanka": 311,
+      "blanka": 310,
       "cammy": 2,
       "deejay": 1,
       "jamie": 1,
@@ -4885,7 +4885,7 @@
     "phenom": {
       "akuma": 1,
       "bison": 2,
-      "cammy": 64,
+      "cammy": 63,
       "ken": 51,
       "luke": 4,
       "mai": 6,

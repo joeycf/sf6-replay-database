@@ -378646,31 +378646,6 @@
   ]
  },
  {
-  "id": "A1j4Wni_a1Q",
-  "channel": "kingArenaTournament",
-  "title": "EVO  2025 TOP8 | MENARD (Blanka) vs PHENOM (Cammy) - Street Fighter 6",
-  "publishedAt": "2025-08-04T04:13:54Z",
-  "durationSec": 570,
-  "viewCount": 925,
-  "season": 3,
-  "sides": [
-   {
-    "player": "menard",
-    "handle": "MenaRD",
-    "characters": [
-     "blanka"
-    ]
-   },
-   {
-    "player": "phenom",
-    "handle": "Phenom",
-    "characters": [
-     "cammy"
-    ]
-   }
-  ]
- },
- {
   "id": "tc63r5L5K3M",
   "channel": "evoEvents",
   "title": "Evo 2025: Street Fighter 6 | Kakeru vs Fuudo | Winners Semifinals",
@@ -422357,31 +422332,6 @@
     "handle": "Mister Crimson",
     "characters": [
      "dhalsim"
-    ]
-   }
-  ]
- },
- {
-  "id": "COQjhpvI5ek",
-  "channel": "kingArenaTournament",
-  "title": "🔥LOSERS FINAL - BLAZ (Ryu) vs KOBAYAN (Zangief) ▰ EVO France - Capcom Pro Tour 2025 | SF6 🔥",
-  "publishedAt": "2025-10-12T18:42:48Z",
-  "durationSec": 473,
-  "viewCount": 8246,
-  "season": 3,
-  "sides": [
-   {
-    "player": "blaz",
-    "handle": "Blaz",
-    "characters": [
-     "ryu"
-    ]
-   },
-   {
-    "player": "kobayan",
-    "handle": "Kobayan",
-    "characters": [
-     "zangief"
     ]
    }
   ]
