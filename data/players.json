@@ -3625,6 +3625,10 @@
     "handle": "Kujou"
   },
   {
+    "id": "kumagai",
+    "handle": "Kumagai"
+  },
+  {
     "id": "kung-fu-master",
     "handle": "Kung Fu Master"
   },
@@ -4045,6 +4049,10 @@
   {
     "id": "mangoman",
     "handle": "MANGOMAN"
+  },
+  {
+    "id": "manku",
+    "handle": "MANKU"
   },
   {
     "id": "manningfirework",
@@ -5152,6 +5160,10 @@
   {
     "id": "panyu",
     "handle": "Panyu"
+  },
+  {
+    "id": "papi",
+    "handle": "PAPI"
   },
   {
     "id": "papin",
@@ -6331,6 +6343,10 @@
     "handle": "Soony"
   },
   {
+    "id": "sorato",
+    "handle": "SORATO"
+  },
+  {
     "id": "soualiho",
     "handle": "Soualiho"
   },
@@ -6632,7 +6648,7 @@
   },
   {
     "id": "tantan-men",
-    "handle": "Tantan Men"
+    "handle": "Tantan men"
   },
   {
     "id": "tasei",
