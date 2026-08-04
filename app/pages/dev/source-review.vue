@@ -32,7 +32,16 @@
             <span class="text-text">{{ cursor + 1 }}</span> / {{ items.length }}
           </span>
           <span class="text-success">{{ resolvedCount }} resolved</span>
-          <span class="text-text-muted">keys: o online · t tournament · x exclude · ←/→</span>
+          <span
+            v-if="item.kind === 'character-completion'"
+            class="text-text-muted"
+            >keys: ⏎ save · x exclude · ←/→</span
+          >
+          <span
+            v-else
+            class="text-text-muted"
+            >keys: o online · t tournament · x exclude · ←/→</span
+          >
         </div>
 
         <!-- jump strip: one cell per item, colour = state -->
@@ -138,32 +147,115 @@
             v-else
             class="border-t border-white/[0.07] px-4 py-3"
           >
-            <div class="grid gap-3 sm:grid-cols-2">
-              <label
+            <!-- HUD bands: SF6 prints the CHARACTER name in the top corners in
+                 tournament mode, so one strip per sampled moment shows both
+                 sides — and shows a mid-set character change, which no single
+                 frame does. -->
+            <div v-if="item.frames.length">
+              <p class="font-mono text-label uppercase text-text-muted">
+                HUD — {{ item.frames.length }} sampled moments
+                <span class="ml-2 normal-case text-text-secondary"
+                  >left corner = side 1 · right corner = side 2</span
+                >
+              </p>
+              <!-- Boundary bleed: the one failure mode the bands cannot settle
+                   on their own. See README, "Curation". -->
+              <p class="mt-1 font-mono text-[11px] normal-case text-text-muted">
+                A character showing up <span class="text-text">only</span> in the first or last
+                strips, never beside a mid-set read, may be footage bleeding in from the adjacent
+                set — check it belongs to this match before recording it.
+              </p>
+              <div class="mt-2 flex flex-col gap-1">
+                <div
+                  v-for="f in item.frames"
+                  :key="f"
+                  class="flex items-center gap-2"
+                >
+                  <span class="w-10 shrink-0 text-right font-mono text-[10px] text-text-muted">{{
+                    fmtDur(Number(f))
+                  }}</span>
+                  <img
+                    :src="`/api/dev/review-frame?id=${item.id}&n=${f}&band=1`"
+                    :alt="`${item.id} @${f}s HUD`"
+                    loading="lazy"
+                    class="min-w-0 flex-1 border border-white/10"
+                  />
+                </div>
+              </div>
+              <p class="mt-2 font-mono text-[11px] text-text-muted">
+                no frames cached? run
+                <span class="text-text"
+                  >tsx scripts/spike/extract-chars.ts --ids {{ item.id }}</span
+                >
+              </p>
+            </div>
+            <p
+              v-else
+              class="font-mono text-[12px] text-warning"
+            >
+              No cached frames for this id — open the VOD on YouTube, or pull frames with
+              <span class="text-text">tsx scripts/spike/extract-chars.ts --ids {{ item.id }}</span>
+            </p>
+
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <div
                 v-for="i in [0, 1]"
                 :key="i"
                 class="font-mono text-[12px] text-text-secondary"
               >
-                side {{ i + 1 }} handle
-                <input
-                  v-model="handles[i]"
-                  type="text"
-                  class="mt-1 w-full border border-white/15 bg-transparent px-2 py-1 text-text"
-                />
-                <select
-                  v-model="chars[i]"
-                  class="mt-2 w-full border border-white/15 bg-surface px-2 py-1 text-text"
+                <label>
+                  side {{ i + 1 }} handle
+                  <input
+                    v-model="handles[i]"
+                    type="text"
+                    class="mt-1 w-full border border-white/15 bg-transparent px-2 py-1 text-text"
+                  />
+                </label>
+
+                <!-- Every character this side played, in the order they first
+                     appear in the bands above. A 1v1 match is the length-1
+                     case; a counter-pick adds a second. -->
+                <ul
+                  v-if="chars[i]!.length"
+                  class="mt-2 flex flex-wrap gap-1"
                 >
-                  <option value="">— character —</option>
+                  <li
+                    v-for="(c, n) in chars[i]"
+                    :key="c"
+                    class="flex items-center gap-1 border border-primary/40 bg-primary/10 px-1.5 py-0.5 text-primary"
+                  >
+                    <span class="text-text-muted">{{ n + 1 }}</span>
+                    {{ nameOf(c) }}
+                    <button
+                      type="button"
+                      class="cursor-pointer px-0.5 text-text-muted hover:text-warning"
+                      :aria-label="`remove ${nameOf(c)} from side ${i + 1}`"
+                      @click="chars[i]!.splice(n, 1)"
+                    >
+                      ×
+                    </button>
+                  </li>
+                </ul>
+
+                <select
+                  :value="''"
+                  class="mt-2 w-full border border-white/15 bg-surface px-2 py-1 text-text"
+                  :aria-label="`add a character to side ${i + 1}`"
+                  @change="addChar(i, $event)"
+                >
+                  <option value="">
+                    {{ chars[i]!.length ? '+ add character' : '— character —' }}
+                  </option>
                   <option
                     v-for="c in roster"
                     :key="c.id"
                     :value="c.id"
+                    :disabled="chars[i]!.includes(c.id)"
                   >
                     {{ c.name }}
                   </option>
                 </select>
-              </label>
+              </div>
             </div>
             <div class="mt-3 flex gap-2">
               <button
@@ -211,6 +303,10 @@ interface QueueItem {
   publishedAt: string;
   durationSec: number;
   signals?: { online: string; event: string };
+  /** handles the title stated (Evo names both players, neither character) */
+  handles?: [string, string];
+  /** cached HUD frame stems under cache/evo/frames/<id>/ */
+  frames: string[];
   saved: { verdict: 'exclude' | 'channel' | 'sides'; channel?: string } | null;
 }
 
@@ -241,16 +337,41 @@ const TOKENS: Record<string, { online: string; event: string }> = {
 const onlineToken = computed(() => TOKENS[item.value?.channel ?? '']?.online ?? '');
 const eventToken = computed(() => TOKENS[item.value?.channel ?? '']?.event ?? '');
 
-// character-completion form state, reset per item
+// character-completion form state, reset per item. Handles pre-fill from the
+// title when the source stated them; characters NEVER pre-fill — this page is
+// also the ground-truth labelling surface for the extraction spike, and a
+// suggested answer would contaminate the measurement it feeds.
+//
+// `chars` is one ORDERED LIST per side: a tournament set is several games and a
+// player may counter-pick between them, so a side records every character it
+// played, in first-appearance order. Add-order IS that order — a reviewer reads
+// the HUD bands top to bottom, which is chronological — so there is deliberately
+// no reorder control.
 const handles = ref<[string, string]>(['', '']);
-const chars = ref<[string, string]>(['', '']);
-watch(item, () => {
-  handles.value = ['', ''];
-  chars.value = ['', ''];
-});
-const sidesComplete = computed(
-  () => handles.value.every((h) => h.trim().length > 0) && chars.value.every((c) => c.length > 0),
+const chars = ref<[string[], string[]]>([[], []]);
+watch(
+  item,
+  () => {
+    handles.value = item.value?.handles ? [...item.value.handles] : ['', ''];
+    chars.value = [[], []];
+  },
+  { immediate: true },
 );
+const sidesComplete = computed(
+  () =>
+    handles.value.every((h) => h.trim().length > 0) && chars.value.every((list) => list.length > 0),
+);
+
+const nameOf = (id: string) => roster.value.find((c) => c.id === id)?.name ?? id;
+
+function addChar(side: number, e: Event): void {
+  const el = e.target as HTMLSelectElement;
+  const id = el.value;
+  el.value = ''; // the select is a picker, not a value holder
+  if (!id) return;
+  const list = chars.value[side];
+  if (list && !list.includes(id)) list.push(id);
+}
 
 const fmtDur = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
@@ -277,10 +398,22 @@ async function post(body: Record<string, unknown>): Promise<void> {
 const classify = (channel: string) => post({ verdict: 'channel', channel });
 const exclude = () => post({ verdict: 'exclude' });
 const completeSides = () =>
-  post({ verdict: 'sides', handles: [...handles.value], characters: [...chars.value] });
+  post({
+    verdict: 'sides',
+    handles: [...handles.value],
+    characters: [[...chars.value[0]], [...chars.value[1]]],
+  });
 
 function onKey(e: KeyboardEvent): void {
-  if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement) return;
+  const inField = e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement;
+  // Enter saves from anywhere including the selects — a labelling pass is two
+  // dropdowns and a commit, and reaching for the mouse each time is the whole
+  // cost of the session.
+  if (e.key === 'Enter' && item.value?.kind === 'character-completion') {
+    if (sidesComplete.value && !posting.value) void completeSides();
+    return;
+  }
+  if (inField) return;
   if (e.key === 'ArrowRight') cursor.value = Math.min(cursor.value + 1, items.value.length - 1);
   else if (e.key === 'ArrowLeft') cursor.value = Math.max(cursor.value - 1, 0);
   else if (item.value?.kind === 'source-classification') {

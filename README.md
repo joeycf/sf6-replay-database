@@ -227,9 +227,21 @@ title carrying **both** signals goes to `data/review-queue.json` — pending
 items never reach the site — until a human verdict lands in `overrides.json`
 via the dev-only `/dev/source-review` page (`nuxt dev` only; 404 in builds).
 Tournament sides carry no ladder ranks, so overall rank coverage is lower than
-the Online corpus — honest nulls, `rank` is optional per side. @EvoEvents was
-evaluated and deliberately NOT tracked (characters exist only in the footage
-HUD; see the note in `scripts/channels.ts`).
+the Online corpus — honest nulls, `rank` is optional per side. @EvoEvents is
+not tracked yet: its characters exist only in the footage HUD, and
+`scripts/spike/` measures a visual extractor that reads them (see the note in
+`scripts/channels.ts` and `scripts/spike/README.md`).
+
+**Curation — reading a character-completion item.** `/dev/source-review` shows
+one HUD strip per sampled moment of the VOD, oldest first; SF6 prints the
+character name in the top corners in tournament mode, so a side's characters
+read straight down the column. Record **every** character a side played, in the
+order they first appear — a tournament set is several games and players
+counter-pick between them (measured: 17 of 81 Evo VODs). One caveat the strips
+cannot settle by themselves: a character appearing **only** in the first or
+last strips, never beside a mid-set read, may be footage bleeding in from the
+adjacent set on the stream — verify it belongs to this match before recording
+it.
 
 **Duplicates.** Tournament footage overlaps — the same match gets captured by
 an online channel and uploaded by event channels, and @TheKingArena re-posts

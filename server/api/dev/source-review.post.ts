@@ -28,6 +28,20 @@ async function readJsonBody(event: unknown): Promise<unknown> {
   }
 }
 
+/** data/overrides.json stores non-ASCII escaped (`—`, `Δ` — the em
+ *  dashes and deltas that data:replay-dupes writes into its provenance notes),
+ *  but JSON.stringify emits those characters literally. Writing with plain
+ *  stringify therefore rewrites ~200 lines of a 193-entry file on every single
+ *  verdict, burying the one real change in reformat noise. Escape on the way
+ *  out so a review session's diff is exactly the verdicts it produced. */
+function serialize(value: unknown): string {
+  return (
+    JSON.stringify(value, null, 2).replace(/[\u0080-\uffff]/g, (c) => {
+      return '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0');
+    }) + '\n'
+  );
+}
+
 // Dev-only: persists ONE review verdict from /dev/source-review into
 // data/overrides.json — the only file this endpoint may touch. The id must be
 // in the CURRENT queue (data/review-queue.json; this tool adjudicates pending
@@ -111,19 +125,36 @@ export default defineEventHandler(async (event) => {
     }
     entry = { '//': note('review verdict: source classification'), channel };
   } else {
-    // sides — the character-completion verdict
+    // sides — the character-completion verdict.
+    //
+    // `characters` is ONE ORDERED LIST PER SIDE, not one character per side: a
+    // tournament set is several games and a player may counter-pick between
+    // them (measured on @EvoEvents, 16 of 81 VODs). The record holds the union
+    // of everyone a side actually played, in first-appearance order, because
+    // that is what the footage contains — "which game they switched in" is
+    // deliberately not modelled. A 1v1 match is simply the length-1 case.
     const handles = body?.handles;
     const characters = body?.characters;
     const pair = (x: unknown): x is [string, string] =>
       Array.isArray(x) && x.length === 2 && x.every((v) => typeof v === 'string' && v.trim());
-    if (!pair(handles) || !pair(characters)) {
+    const listPair = (x: unknown): x is [string[], string[]] =>
+      Array.isArray(x) &&
+      x.length === 2 &&
+      x.every(
+        (side) =>
+          Array.isArray(side) &&
+          side.length > 0 &&
+          side.every((v) => typeof v === 'string' && v.trim()),
+      );
+    if (!pair(handles) || !listPair(characters)) {
       throw createError({
         statusCode: 400,
-        statusMessage: 'expected handles: [string, string] and characters: [string, string]',
+        statusMessage:
+          'expected handles: [string, string] and characters: [string[], string[]] (each side at least one)',
       });
     }
     const roster = new Set(read<{ id: string }[]>('data/characters.json').map((c) => c.id));
-    const unknown = characters.filter((c) => !roster.has(c));
+    const unknown = characters.flat().filter((c) => !roster.has(c));
     if (unknown.length > 0) {
       throw createError({
         statusCode: 400,
@@ -152,7 +183,9 @@ export default defineEventHandler(async (event) => {
       sides: [0, 1].map((i) => ({
         player: slug(handles[i]!),
         handle: handles[i]!.trim(),
-        character: characters[i]!,
+        // dedupe but KEEP ORDER — a player who goes Ed → Elena → Ed played two
+        // characters, listed in the order they first appeared
+        characters: [...new Set(characters[i]!)],
       })),
       ...(channel ? { channel } : {}),
     };
@@ -162,7 +195,7 @@ export default defineEventHandler(async (event) => {
   const overrides = read<Record<string, Record<string, unknown>>>('data/overrides.json');
   // merge onto any existing entry (provenance keys survive); verdict keys win
   overrides[id] = { ...overrides[id], ...entry };
-  writeFileSync(ovPath, JSON.stringify(overrides, null, 2) + '\n', 'utf8');
+  writeFileSync(ovPath, serialize(overrides), 'utf8');
 
   return { ok: true, id, verdict };
 });

@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 // Dev-only: the review worklist behind /dev/source-review. Serves the pending
@@ -19,6 +19,10 @@ interface QueueItem {
   publishedAt: string;
   durationSec: number;
   signals?: { online: string; event: string };
+  /** Handles the title DID state, for footage where only the characters are
+   *  missing (Evo names both players and neither character). Pre-fills the
+   *  completion form so a reviewer answers two dropdowns, not four fields. */
+  handles?: [string, string];
 }
 
 export default defineEventHandler(() => {
@@ -37,6 +41,17 @@ export default defineEventHandler(() => {
     name: c.name,
   }));
 
+  // Cached HUD frames, if the extraction spike has pulled any for this id.
+  // Names only — the bytes come from the sibling review-frame endpoint.
+  const framesFor = (id: string): string[] => {
+    const dir = join(root, 'cache/evo/frames', id);
+    if (!existsSync(dir)) return [];
+    return readdirSync(dir)
+      .filter((f) => /^\d{6}\.png$/.test(f))
+      .sort()
+      .map((f) => f.replace('.png', ''));
+  };
+
   return {
     roster,
     items: queue.map((q) => {
@@ -47,10 +62,10 @@ export default defineEventHandler(() => {
           : ov.channel
             ? { verdict: 'channel' as const, channel: ov.channel }
             : ov.sides
-              ? { verdict: 'sides' as const }
+              ? { verdict: 'sides' as const, sides: ov.sides }
               : null
         : null;
-      return { ...q, saved };
+      return { ...q, saved, frames: framesFor(q.id) };
     }),
   };
 });
