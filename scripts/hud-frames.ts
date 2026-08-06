@@ -23,7 +23,16 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const CACHE = join(ROOT, 'cache', 'evo');
-const COOKIES = process.env.EVO_COOKIES ?? join(CACHE, 'cookies.txt');
+
+// The cookie file is a LIVE GOOGLE SESSION and lives in secrets/, not in the
+// cache. cache/evo/ is documented as regenerable scratch (spike/README.md) and
+// 2XKO's sibling purges its equivalent wholesale on --clean; a credential in a
+// directory whose contract is "safe to delete" is one `rm -rf cache/` from
+// being lost and one narrowed .gitignore from being committed. secrets/ is the
+// platform convention (2XKO's .gitignore + .vercelignore both cover it), and
+// .vercelignore matters independently: it REPLACES gitignore-based exclusion
+// for `vercel deploy` CLI uploads.
+const COOKIES = process.env.EVO_COOKIES ?? join(ROOT, 'secrets', 'yt-cookies.txt');
 
 // static ffmpeg TLS (see header)
 if (!process.env.SSL_CERT_FILE) process.env.SSL_CERT_FILE = '/etc/ssl/certs/ca-certificates.crt';
@@ -79,7 +88,8 @@ export async function grabFrame(id: string, sec: number): Promise<string | null>
       const err = String(r.stderr ?? '').slice(0, 400);
       if (/confirm you.re not a bot|sign in to confirm/i.test(err)) {
         console.error(
-          '\n✖ YouTube bot-check hit — the session cookies are stale.\n' +
+          '\n✖ YouTube bot-check hit — the session cookies are stale' +
+            `${existsSync(COOKIES) ? '' : ' (no cookie file found at all)'}.\n` +
             `  Re-export youtube.com cookies (Netscape format) over ${COOKIES}\n` +
             '  or point EVO_COOKIES at a fresh export, then re-run.',
         );
