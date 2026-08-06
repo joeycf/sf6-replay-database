@@ -2137,7 +2137,7 @@
   },
   {
     "id": "gorou",
-    "handle": "GOROU"
+    "handle": "Gorou"
   },
   {
     "id": "goto",
@@ -6815,6 +6815,10 @@
     "handle": "TM"
   },
   {
+    "id": "todo-se-decide-aqu-hibiki",
+    "handle": "TODO SE DECIDE AQUÍ! HIBIKI"
+  },
+  {
     "id": "tokai-teio",
     "handle": "Tokai Teio"
   },
@@ -7661,7 +7665,7 @@
   },
   {
     "id": "zabutonn",
-    "handle": "Zabutonn"
+    "handle": "zabutonn"
   },
   {
     "id": "zacfry3d",
