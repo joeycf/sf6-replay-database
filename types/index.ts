@@ -167,6 +167,12 @@ export type VideoOverride = Partial<Pick<MatchVideo, 'season' | 'sides' | 'chann
   resolvedBy?: 'extractor' | 'human';
   /** The extractor's confidence when it resolved this (0..1). */
   confidence?: number;
+  /** Signed vote margin from reading the HUD's player plates to decide which
+   *  side each handle sat on (scripts/hud-read.ts `resolveSide`). Recorded
+   *  because attribution is the half of a footage-read record that no
+   *  confidence number covers: the characters can be perfect while the players
+   *  are swapped. Positive = the title's first-named player was on the left. */
+  sideVotes?: number;
 };
 
 /** One pending item in data/review-queue.json — parseable footage the pipeline

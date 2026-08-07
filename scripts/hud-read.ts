@@ -38,17 +38,42 @@ export const REGIONS = {
 export type Side = keyof typeof REGIONS;
 export const SIDES: Side[] = ['p1', 'p2'];
 
+/** The two PLAYER plates in Evo's broadcast overlay ("VICTRIX MOMOCHI",
+ *  "MOUZ ENDINGWALKER"). Distinct from REGIONS above, which reads the GAME's
+ *  own character nameplates in the frame corners — the overlay strip sits
+ *  between them and carries the human.
+ *
+ *  Deliberately wide: the plate's left edge moves with the org tag's length, so
+ *  a tight box would clip the handle on exactly the sponsored players whose
+ *  names matter most. Surrounding noise (org tag, country code, round score) is
+ *  harmless because both candidates are scored against the same string. */
+export const HANDLE_REGIONS = {
+  p1: [0.1, 0.0, 0.3, 0.045],
+  p2: [0.6, 0.0, 0.3, 0.045],
+} as const;
+
 const THRESHOLDS = [170, 190, 210, 230];
+/** Fewer passes for the handle plates: flat UI chrome on a solid fill, not
+ *  glyphs over animated splash art. */
+const HANDLE_THRESHOLDS = [0, 150, 190];
 const UPSCALE = 4;
 
 /** Crop one nameplate and reduce it to black glyphs on white. The box stops
  *  short of the SF6 HUD's Capcom hexagon badge — a glyph-shaped "C" at a fixed
  *  offset that otherwise lands in every read as "C BLANKA" / "KEN C". */
-async function prep(file: string, region: readonly number[], threshold: number): Promise<Buffer> {
+async function prep(
+  file: string,
+  region: readonly number[],
+  threshold: number,
+  /** Player plates are toned differently from character nameplates: flat chrome
+   *  on a solid fill reads best WITHOUT the negate, and normalised rather than
+   *  thresholded on the first pass. Measured, not stylistic. */
+  plate = false,
+): Promise<Buffer> {
   const meta = await sharp(file).metadata();
   const W = meta.width ?? 1280;
   const H = meta.height ?? 720;
-  return sharp(file)
+  const base = sharp(file)
     .extract({
       left: Math.round(region[0]! * W),
       top: Math.round(region[1]! * H),
@@ -56,11 +81,9 @@ async function prep(file: string, region: readonly number[], threshold: number):
       height: Math.round(region[3]! * H),
     })
     .resize({ width: Math.round(region[2]! * W * UPSCALE), kernel: 'lanczos3' })
-    .greyscale()
-    .threshold(threshold)
-    .negate()
-    .png()
-    .toBuffer();
+    .greyscale();
+  const toned = threshold > 0 ? base.threshold(threshold) : base.normalise();
+  return (plate ? toned : toned.negate()).png().toBuffer();
 }
 
 // ── fuzzy alias matching ─────────────────────────────────────────────────────
@@ -249,6 +272,17 @@ const MIN_RUN = 2;
  *  that one was fixed at the reader (a missing alias), not the gate. */
 export const AUTO_ACCEPT = 0.9;
 
+/** Below this, re-sample the video densely and fold again before judging it.
+ *
+ *  A character that occupies a single sampled frame is dropped by MIN_RUN, and
+ *  nine samples is too few to tell a real brief appearance from noise — this
+ *  repo's own first pass lost a `cammy` and a `juri` exactly that way and
+ *  recovered both by re-sampling at ~20 frames. Sibling Tekken measured the
+ *  same rule recovering four videos, all to confidence 1.00, and the rule is
+ *  LABEL-BLIND: the videos it fires on are selected by confidence alone. */
+export const RESAMPLE_BELOW = 0.6;
+export const RESAMPLE_FRAMES = 21;
+
 /** Fold one side's frame reads (in timestamp order) into an ordered union.
  *
  *  CONTIGUITY, NOT SHARE. The obvious agreement metric — a character's share of
@@ -327,6 +361,80 @@ export function foldSide(reads: FrameRead[]): SideResult {
   };
 }
 
+// ── which player is on which side ────────────────────────────────────────────
+/** Score how well `text` contains `handle`; 0 is a clean hit, 99 is nothing.
+ *  Scored over the best WINDOW of the read, because the plate carries an org
+ *  tag and a country code around the handle. */
+export function scoreHandle(text: string, handle: string): number {
+  const t = text.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  const h = handle.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  if (!t || !h) return 99;
+  if (t.includes(h)) return 0;
+  let best = 99;
+  for (let i = 0; i <= Math.max(0, t.length - h.length); i++) {
+    for (const w of [h.length, h.length + 1, h.length + 2]) {
+      const d = osa(t.slice(i, i + w), h);
+      if (d < best) best = d;
+    }
+  }
+  return best;
+}
+
+export interface SideResolution {
+  /** true when candidates[0] is the player on the LEFT of the screen */
+  leftIsFirst: boolean;
+  votes: number;
+  decided: boolean;
+}
+
+/** Decide which of two known players occupies the LEFT of the screen.
+ *
+ *  WHY THIS EXISTS. `foldSide` reads characters by SCREEN position and the
+ *  queue supplies handles in TITLE order, and complete-characters.ts used to
+ *  glue those together positionally. Measured over this repo's own 81 labelled
+ *  VODs, Evo's title names the LEFT player second on 10 of 78 decidable records
+ *  (12.8%) — "Punk vs Big Bird" has Big Bird on the left. Every one of those
+ *  would have shipped with the right characters attached to the wrong players,
+ *  invisible to any confidence signal because the reads are perfect. The 81
+ *  records already committed are safe only because a human paired them.
+ *
+ *  Sibling Tekken measures the same defect at 37.7% and fixed it the same way.
+ *
+ *  Returns decided=false rather than guessing; the caller must treat that as
+ *  "not resolvable", never as a default. */
+export async function resolveSide(
+  worker: Worker,
+  frames: string[],
+  candidates: [string, string],
+): Promise<SideResolution> {
+  let votes = 0;
+  for (const f of frames) {
+    let first = 0;
+    let second = 0;
+    let read = false;
+    for (const th of HANDLE_THRESHOLDS) {
+      for (const side of SIDES) {
+        const png = await prep(f, HANDLE_REGIONS[side], th, true);
+        const { data } = await worker.recognize(png);
+        const text = data.text.replace(/\s+/g, ' ').trim();
+        if (!text) continue;
+        const self = side === 'p1' ? 0 : 1;
+        const other = side === 'p1' ? 1 : 0;
+        const dSelf = scoreHandle(text, candidates[self]!);
+        const dOther = scoreHandle(text, candidates[other]!);
+        // a plate matching neither candidate is chrome, not evidence
+        if (Math.min(dSelf, dOther) > 3) continue;
+        read = true;
+        first += dSelf;
+        second += dOther;
+      }
+    }
+    if (!read || first === second) continue;
+    votes += first < second ? 1 : -1;
+  }
+  return { leftIsFirst: votes > 0, votes, decided: votes !== 0 };
+}
+
 export async function makeWorker(): Promise<Worker> {
   // logger/errorHandler silence tesseract.js's progress chatter; debug_file
   // silences the engine's own per-call statistics dump ("SD= 0.00 / Bottom=…"),
@@ -342,6 +450,25 @@ export async function makeWorker(): Promise<Worker> {
   });
   await worker.setParameters({
     tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ.- ',
+    tessedit_pageseg_mode: '7' as never, // single text line
+    debug_file: '/dev/null',
+  });
+  return worker;
+}
+
+/** A SECOND worker, with NO character whitelist, for the player plates.
+ *
+ *  It cannot share the character worker: that one is whitelisted to letters,
+ *  which is right for a 31-name roster and wrong for handles — "Shadow 20z",
+ *  "MenaRD" and "Big Bird" would arrive mangled, and side resolution scores
+ *  candidates against exactly those strings. */
+export async function makeHandleWorker(): Promise<Worker> {
+  const worker = await createWorker('eng', undefined, {
+    logger: () => {},
+    errorHandler: () => {},
+    cachePath: CACHE,
+  });
+  await worker.setParameters({
     tessedit_pageseg_mode: '7' as never, // single text line
     debug_file: '/dev/null',
   });

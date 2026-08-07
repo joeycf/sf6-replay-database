@@ -6,6 +6,22 @@
 // in tournament mode and writes the same verdict shape a human would, tagged
 // `resolvedBy: 'extractor'` with its confidence.
 //
+// IT ALSO RESOLVES WHICH PLAYER IS ON WHICH SIDE, from the footage. The
+// characters are read by SCREEN position and the queue supplies handles in
+// TITLE order, and gluing those together positionally — which this file used to
+// do — is wrong on 10 of 78 labelled records here (12.8%): Evo's title names
+// the LEFT player second on "Punk vs Big Bird" and "Nemo vs Momochi". Those
+// records would carry the right characters attached to the wrong players, which
+// no confidence signal can catch because the reads are perfect. The 81 records
+// already committed are unaffected — a human paired every one. `resolveSide`
+// reads the overlay's handle plates instead: 78/78 on this corpus.
+//
+// An UNDECIDED side does not auto-accept, however clean the character reads
+// were: attribution the footage cannot support is a coin-flip dressed as a
+// verdict. And a side below RESAMPLE_BELOW is re-sampled at RESAMPLE_FRAMES
+// before being judged, because nine samples cannot tell a real brief appearance
+// from noise — the first corpus pass lost a `cammy` and a `juri` that way.
+//
 // AT OR ABOVE AUTO_ACCEPT it resolves; below, the item stays in the queue for
 // /dev/source-review. Measured 81/81 exact against hand labels on the Evo
 // corpus (scripts/spike/README.md) — but the threshold is a prudence margin for
@@ -19,18 +35,22 @@
 // Run: npm run data:extract -- [--limit N] [--ids a,b] [--dry] [--frames N]
 //      then `npm run data:parse` to fold the verdicts into the substrate.
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { grabFrames, pruneClips } from './hud-frames';
+import { CACHE, grabFrames, pruneClips } from './hud-frames';
 import {
   AUTO_ACCEPT,
+  RESAMPLE_BELOW,
+  RESAMPLE_FRAMES,
   SIDES,
   foldSide,
   loadRoster,
+  makeHandleWorker,
   makeWorker,
   readFrame,
+  resolveSide,
   samplePlan,
 } from './hud-read';
 import type { FrameRead, SideResult } from './hud-read';
@@ -68,32 +88,77 @@ if (!work.length) {
   process.exit(0);
 }
 
-console.log(`${work.length} item(s) · ${nFrames} frames each · auto-accept ≥ ${AUTO_ACCEPT}`);
+console.log(
+  `${work.length} item(s) · ${nFrames} frames each · auto-accept ≥ ${AUTO_ACCEPT} ` +
+    `· re-sample below ${RESAMPLE_BELOW}`,
+);
 
 const roster = await loadRoster();
 const worker = await makeWorker();
+const handleWorker = await makeHandleWorker();
 const overrides = read<Record<string, VideoOverride>>('data/overrides.json');
 
 let resolved = 0;
 let deferred = 0;
 
-for (const [i, item] of work.entries()) {
-  const frames = await grabFrames(item.id, samplePlan(item.durationSec, nFrames));
+/** Every cached frame for this id, in timestamp order. Reading the DIRECTORY
+ *  rather than the paths just downloaded is what makes the re-sample additive:
+ *  the second pass folds the original frames together with the new ones. */
+const framesOf = (id: string): string[] => {
+  const dir = join(CACHE, 'frames', id);
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.png'))
+    .sort()
+    .map((f) => join(dir, f));
+};
+
+async function readAll(frames: string[]): Promise<Record<string, FrameRead[]>> {
   const reads: Record<string, FrameRead[]> = { p1: [], p2: [] };
   for (const f of frames) {
     for (const side of SIDES) reads[side]!.push(await readFrame(worker, f, side, roster));
   }
+  return reads;
+}
+
+for (const [i, item] of work.entries()) {
+  await grabFrames(item.id, samplePlan(item.durationSec, nFrames));
+  let frames = framesOf(item.id);
+  let reads = await readAll(frames);
+  let p1 = foldSide(reads.p1!);
+  let p2 = foldSide(reads.p2!);
+  let resampled = false;
+
+  // A thin read is not a verdict — pull more frames before judging it.
+  if (Math.min(p1.confidence, p2.confidence) < RESAMPLE_BELOW) {
+    await grabFrames(item.id, samplePlan(item.durationSec, RESAMPLE_FRAMES));
+    frames = framesOf(item.id);
+    reads = await readAll(frames);
+    p1 = foldSide(reads.p1!);
+    p2 = foldSide(reads.p2!);
+    resampled = true;
+  }
+
+  // WHICH PLAYER IS ON WHICH SIDE — read, never assumed from the title. Evo's
+  // titles name the LEFT player second on 12.8% of this corpus.
+  const handles = (item.handles ?? ['', '']) as [string, string];
+  const side = await resolveSide(handleWorker, frames, handles);
   pruneClips(item.id);
 
-  const p1 = foldSide(reads.p1!);
-  const p2 = foldSide(reads.p2!);
   const confidence = Math.min(p1.confidence, p2.confidence);
-  const ok = p1.characters.length > 0 && p2.characters.length > 0 && confidence >= AUTO_ACCEPT;
+  // An undecided side must NOT auto-accept: if the footage cannot say which
+  // player is which, the attribution is a coin-flip dressed as a verdict.
+  const ok =
+    p1.characters.length > 0 &&
+    p2.characters.length > 0 &&
+    confidence >= AUTO_ACCEPT &&
+    side.decided;
 
   const show = (s: SideResult) => `${s.characters.join('+') || '—'} ${s.confidence.toFixed(2)}`;
   console.log(
-    `  [${i + 1}/${work.length}] ${item.id}  ${show(p1)}  vs  ${show(p2)}  → ` +
-      `${ok ? 'RESOLVE' : 'review'}`,
+    `  [${i + 1}/${work.length}] ${item.id}  ${show(p1)}  vs  ${show(p2)}  ` +
+      `side ${side.decided ? (side.leftIsFirst ? 'title-order' : 'REVERSED') : 'UNDECIDED'}` +
+      `${resampled ? ' (re-sampled)' : ''} → ${ok ? 'RESOLVE' : 'review'}`,
   );
 
   if (!ok) {
@@ -103,22 +168,25 @@ for (const [i, item] of work.entries()) {
   resolved++;
   // The handles come from the QUEUE, not from the extractor: the title already
   // stated them, and parse.ts canonicalised them against players.json so a
-  // verdict cannot mint a second page for an existing player.
-  const handles = item.handles ?? ['', ''];
+  // verdict cannot mint a second page for an existing player. What the footage
+  // decides is only WHICH of the two sits on which side.
+  const leftHandle = side.leftIsFirst ? handles[0] : handles[1];
+  const rightHandle = side.leftIsFirst ? handles[1] : handles[0];
   overrides[item.id] = {
     ...overrides[item.id],
     '//': `character-completion: read from footage [data:extract ${new Date().toISOString().slice(0, 10)}]`,
-    sides: [0, 1].map((n) => ({
-      player: slug(handles[n]!),
-      handle: handles[n]!.trim(),
-      characters: (n === 0 ? p1 : p2).characters,
-    })) as VideoOverride['sides'],
+    sides: [
+      { player: slug(leftHandle), handle: leftHandle.trim(), characters: p1.characters },
+      { player: slug(rightHandle), handle: rightHandle.trim(), characters: p2.characters },
+    ] as VideoOverride['sides'],
     resolvedBy: 'extractor',
     confidence,
+    sideVotes: side.votes,
   } as VideoOverride;
 }
 
 await worker.terminate();
+await handleWorker.terminate();
 
 if (!dry && resolved > 0) {
   writeFileSync(join(DATA, 'overrides.json'), serialize(overrides), 'utf8');
