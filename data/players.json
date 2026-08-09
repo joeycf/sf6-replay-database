@@ -2737,7 +2737,7 @@
   },
   {
     "id": "infexious",
-    "handle": "Infexious"
+    "handle": "infexious"
   },
   {
     "id": "infimum",
@@ -7494,6 +7494,10 @@
   {
     "id": "yhcmochi-torimesi",
     "handle": "Yhcmochi/Torimesi"
+  },
+  {
+    "id": "ymt",
+    "handle": "YMT"
   },
   {
     "id": "yofierce",
