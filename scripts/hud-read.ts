@@ -112,9 +112,18 @@ function osa(a: string, b: string): number {
   return prev[n]!;
 }
 
+export interface Alias {
+  /** alias (lowercased) */
+  alias: string;
+  /** character id */
+  id: string;
+  /** Largest edit budget at which this alias is still uniquely decodable —
+   *  floor((d(alias, nearest other character's alias) - 1) / 2). */
+  radius: number;
+}
+
 export interface Roster {
-  /** alias (lowercased) → character id */
-  aliases: { alias: string; id: string }[];
+  aliases: Alias[];
   exact: (text: string) => string | null;
   ids: Set<string>;
 }
@@ -122,9 +131,19 @@ export interface Roster {
 export async function loadRoster(): Promise<Roster> {
   const characters = await loadCharacters();
   const matcher = buildAliasMatcher(characters);
-  const aliases = characters.flatMap((c) =>
+  const flat = characters.flatMap((c) =>
     (c.extra?.aliases ?? [c.name.toLowerCase()]).map((alias) => ({ alias, id: c.id })),
   );
+  // Per-alias decoding radius, computed from the roster rather than assumed.
+  const aliases: Alias[] = flat.map(({ alias, id }) => {
+    let nearest = Infinity;
+    for (const o of flat) {
+      if (o.id === id) continue; // one character's own aliases cannot collide
+      const d = osa(alias, o.alias);
+      if (d < nearest) nearest = d;
+    }
+    return { alias, id, radius: Math.max(0, Math.floor((nearest - 1) / 2)) };
+  });
   return { aliases, exact: (t) => matcher.one(t), ids: new Set(characters.map((c) => c.id)) };
 }
 
@@ -135,8 +154,33 @@ export interface Match {
 }
 
 /** Resolve one OCR string to a roster id. Exact alias first (the existing
- *  longest-alias-first matcher), then edit distance with a length-scaled budget
- *  — a 2-letter read like "ED" gets no slack, "M. BISON" gets three. */
+ *  longest-alias-first matcher), then edit distance under a budget that is the
+ *  MINIMUM of two guards.
+ *
+ *  THE LENGTH SCALE ALONE IS UNSAFE, and the roster proves it. Length scaling
+ *  guards the noise-magnet problem this repo measured first — a 2-letter read
+ *  like "ED" gets no slack because at distance 1 literally any two-letter OCR
+ *  artefact matches it ("EB", "ET", "ER"…), and 3 of the 4 single-frame phantom
+ *  characters in the first corpus pass were `ed`. But length does not predict
+ *  collision: `aki`/`mai` and `ed`/`jp` sit at distance 2, and the old ladder
+ *  handed them budget 1, which is enough to flip one into the other.
+ *
+ *  So each alias also carries its own unique-decoding radius,
+ *  floor((d_nearest - 1) / 2), and the effective budget is min(length, radius).
+ *  Ported from tekken-replay-database, which derived it when its roster made
+ *  the same failure unmissable ("jin kazama"/"jun kazama", distance 1 at
+ *  length 10, where length scaling grants THREE). 2XKO's variant scales by
+ *  ALIAS length because it scores over a window; this repo scores whole-string,
+ *  so the scale stays on the OCR text and the ladder below is unchanged.
+ *
+ *  Measured on this roster (31 characters, 57 aliases): the radius binds below
+ *  the length budget on 48 of 57 aliases, but only `ed` and `jp` are forced
+ *  exact-only at character level — which is precisely what the hardcoded
+ *  `<= 2 ? 0` rung was already reaching for, now derived instead of asserted.
+ *  Re-decoding the shipped 81-record Evo corpus: 169 of 180 accepted members
+ *  matched exactly (unaffected by construction) and the 11 fuzzy members all
+ *  sit inside their character's radius, so the cap rejects nothing that
+ *  currently ships. */
 export function matchRead(raw: string, roster: Roster): Match | null {
   const text = raw
     .toLowerCase()
@@ -148,17 +192,15 @@ export function matchRead(raw: string, roster: Roster): Match | null {
   const hit = roster.exact(text);
   if (hit) return { id: hit, dist: 0 };
 
-  // Length-scaled edit budget — but a 2-character target gets NO slack. "Ed"
-  // and "JP" are the shortest names on the roster, and at distance 1 literally
-  // any two-letter OCR artefact matches one of them ("EB", "ET", "ER", "JR"…).
-  // Measured: 3 of the 4 single-frame phantom characters in the first corpus
-  // pass were `ed`, on videos whose real character was read 6-7 times. Short
-  // names are noise magnets, so they must be read exactly or not at all.
-  const budget = text.length <= 2 ? 0 : text.length <= 3 ? 1 : text.length <= 6 ? 2 : 3;
+  // The length half of the budget (unchanged). Short names are noise magnets,
+  // so they must be read exactly or not at all; the radius half is applied
+  // per-alias inside the loop.
+  const lengthBudget = text.length <= 2 ? 0 : text.length <= 3 ? 1 : text.length <= 6 ? 2 : 3;
   let best: Match | null = null;
   let runnerUp = Infinity;
-  for (const { alias, id } of roster.aliases) {
+  for (const { alias, id, radius } of roster.aliases) {
     const d = osa(text, alias);
+    if (d > Math.min(lengthBudget, radius)) continue;
     if (d < (best?.dist ?? Infinity)) {
       if (best && best.id !== id) runnerUp = best.dist;
       best = { id, dist: d };
@@ -166,7 +208,7 @@ export function matchRead(raw: string, roster: Roster): Match | null {
       runnerUp = d;
     }
   }
-  if (!best || best.dist > budget) return null;
+  if (!best) return null;
   // an ambiguous read (two roster names equally close) is worse than no read
   if (runnerUp === best.dist) return null;
   return best;

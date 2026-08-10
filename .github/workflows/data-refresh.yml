@@ -69,6 +69,18 @@ jobs:
           git commit -m "data: refresh $(date -u +%F) — ${N} replays"
           git push
 
+      # Deploy is Vercel's git integration off the push above — there is no
+      # deploy step here to run "after", so this polls until production serves
+      # the count we just committed. A build still in flight is a WARNING (it
+      # serves yesterday's payload, a handful of records behind); a served count
+      # outside the collapse guard's own band is a FAILURE. The guard in
+      # parse.ts protects the repository; this protects what visitors get.
+      #
+      # Deliberately BEFORE "Flag due expiries": that step is designed to go red,
+      # and a red step stops the ones after it.
+      - name: Post-deploy smoke check
+        run: npm run verify:deployed
+
       - name: Flag due expiries
         # Deliberately LAST and deliberately failing (scripts/expiries.ts).
         # The data has already been committed and pushed by the step above, so

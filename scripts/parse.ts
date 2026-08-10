@@ -622,7 +622,9 @@ const COLLAPSE_ABS = 20; // AND >20 records
     for (const ch of CHANNELS) {
       // A channel's committed records may carry more than one token (a source
       // plus an eventSource), so sum every token this channel can produce.
-      const tokens = [ch.source, (ch as { eventSource?: string }).eventSource].filter(Boolean) as string[];
+      const tokens = [ch.source, (ch as { eventSource?: string }).eventSource].filter(
+        Boolean,
+      ) as string[];
       const was = tokens.reduce((n, t) => n + (before.get(t) ?? 0), 0);
       if (was === 0) continue; // a new channel has no history to fall from
       const is = tokens.reduce((n, t) => n + (now.get(t) ?? 0), 0);
