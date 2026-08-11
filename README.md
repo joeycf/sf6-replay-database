@@ -84,6 +84,8 @@ committed `/sf6/` base — but the committed default **is** production truth.
 | `npm run data:expiries`     | `--check` the self-expiring gates; exits 1 when something is due          |
 | `npm run data:versions`     | cross-check the patch table against the SuperCombo wiki (network)         |
 | `npm run data:replay-dupes` | audit duplicate matches → paste-ready `overrides.json` fragment           |
+| `npm run data:mr-probe`     | read Master Rate off each record's HUD — the same-footage signal (LOCAL)  |
+| `npm run data:mr-verdicts`  | turn MR reads into per-record keep/drop for the dupe clusters             |
 | `npm run test:e2e`          | the full audit suite against `.vercel/output/static`                      |
 | `npm run typecheck`         | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators |
 
@@ -262,6 +264,33 @@ chosen by channel priority (the `CHANNELS` order — shipped incumbents first,
 then CapcomFighters > KingArena > SuperFighters). Legacy duplicate pairs
 entirely inside the pre-tournament corpus are report-only. The e2e fails on
 any unresolved tier-A pair involving a tournament-era record.
+
+**Duration is not evidence of same footage. MR is.** Duration-exactness is
+strong on the tournament corpus and weak on the legacy one: legacy uploads are
+whole-session compilations — median 626s, against 2-4 minutes for a single
+first-to-2 — so two different sessions between the same players on the same
+characters land within a second of each other routinely. And because
+`signature()` sorts the sides (deliberately, to catch re-uploads with the player
+names swapped) it also groups games where the sides swapped between rounds of
+one set.
+
+`npm run data:mr-probe` closes that gap, the way 2XKO's copy of this scanner
+uses a thumbnail hash. It reads each record's **Master Rate** off the HUD. MR is
+re-scored after every ranked match, so it is a property of the FOOTAGE and
+survives re-encoding, re-titling and channel branding: same session, same MR.
+`npm run data:mr-verdicts` turns those reads into per-record keep/drop.
+
+Measured across the whole legacy tier-A set (2026-08-10): the scanner proposed
+dropping **196** records; MR showed **118 of them were different matches**, and
+only **50** were genuine duplicates. In one 3-way cluster the scanner proposed
+keeping the odd match out and dropping the real duplicate pair. **Never apply
+`--include-legacy` on duration alone** — the scanner now says so at runtime.
+
+The gate is asymmetric on purpose: a record is dropped only on positive evidence
+that another is the same session. A false "different" leaves a duplicate in the
+archive; a false "same" deletes a match that exists nowhere else. Unread means
+keep, and the cluster goes to a human — the `decided` rule from the engine's
+extraction contract, applied to dedupe.
 
 **Is-SF6.** Two of the original three carry a Street Fighter V back-catalogue,
 so every record passes a title-marker test (`SF6` / `STREET FIGHTER 6` /

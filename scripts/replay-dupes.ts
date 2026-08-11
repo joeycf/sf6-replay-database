@@ -43,6 +43,24 @@
 // and never proposed unless --include-legacy: resolving shipped-vs-shipped
 // duplicates is its own session with its own eyeballing.
 //
+// ⚠ AND --include-legacy IS NOT SAFE ON ITS OWN. Measured 2026-08-10 across the
+// whole legacy tier-A set: of the 196 records this scanner proposed dropping,
+// MR read off the footage showed **118 were different matches** and only 50 were
+// genuine duplicates. Duration is too weak here. These uploads are whole-session
+// compilations (median 626s, against 2-4 minutes for a single first-to-2), so
+// two different sessions between the same players on the same characters land
+// within a second of each other routinely — and because signature() sorts the
+// sides deliberately, to catch re-uploads with the player names swapped, it also
+// groups games where the sides swapped between rounds of one set. In cluster 001
+// this scanner proposed keeping the odd match out and dropping the real
+// duplicate pair.
+//
+// Corroborate before acting: `npm run data:mr-probe` reads each record's Master
+// Rate — re-scored after every ranked match, so it is a property of the FOOTAGE
+// and survives re-encoding, re-titling and channel branding — and
+// `npm run data:mr-verdicts` turns those reads into per-record keep/drop. Drop
+// only on positive evidence of sameness; unread means keep.
+//
 // Usage: npm run data:replay-dupes [-- --min-tier A|B] [--include-legacy]
 //                                  [--emit-overrides] [--json]
 
@@ -266,6 +284,27 @@ const summary = [
   ),
   `proposed exclusions (tier ${ACTIONABLE.join('+')}, non-legacy${includeLegacy ? ' + legacy' : ''}): ${actionable.length}`,
 ];
+
+// The header explains why; this makes sure nobody has to have read it. Measured
+// once, on the full legacy tier-A set: 118 of 196 duration-only proposals were
+// different matches, not duplicates.
+if (includeLegacy) {
+  const legacyProposed = actionable.filter((r) => r.scope === 'legacy').length;
+  if (legacyProposed > 0) {
+    summary.push(
+      '',
+      `⚠ ${legacyProposed} of those are LEGACY pairs, proposed on duration alone.`,
+      '  Duration is not evidence of same footage here: these uploads are session',
+      '  compilations, so two different sessions between the same players land',
+      '  within a second of each other routinely. Measured on this exact set,',
+      '  118 of 196 such proposals were DIFFERENT MATCHES.',
+      '',
+      '  Corroborate before pasting anything:',
+      '    npm run data:mr-probe      # read Master Rate off the footage',
+      '    npm run data:mr-verdicts   # per-record keep/drop from those reads',
+    );
+  }
+}
 
 const md = [
   '# replay-dupes report',

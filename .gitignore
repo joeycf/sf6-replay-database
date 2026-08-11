@@ -17,3 +17,7 @@ secrets/
 
 # Local agent config
 .claude/
+
+# tesseract.js drops its language model in the working directory on first run
+# (scripts/hud-read.ts, scripts/mr-probe.ts). 5 MB of regenerable binary.
+*.traineddata
