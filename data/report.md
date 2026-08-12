@@ -1,27 +1,27 @@
 
 # SF6 pipeline report
 
-**22913 matches** parsed from 35745 uploads across 7 channels · 1935 players · ranked sides 20923/45826 (45.7%)
+**22934 matches** parsed from 35769 uploads across 7 channels · 1936 players · ranked sides 20945/45868 (45.7%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5770 | 5770 | 5755 | 99.7% | 11097 |
-| fgcPlace | fgcPlace | 9761 | 8769 | 8584 | 97.9% | 9826 |
-| sfReplays | sfReplays | 6957 | 5959 | 5377 | 90.2% | 0 |
-| capcomFighters | capcomFighters | 7984 | 1590 | 1022 | 64.3% | 0 |
-| evoEvents | evoEvents | 2751 | 151 | 81 | 53.6% | 0 |
-| kingArena | kingArenaOnline / kingArenaTournament | 2384 | 2369 | 2026 | 85.5% | 0 |
+| highLevel | highLevel | 5773 | 5773 | 5758 | 99.7% | 11103 |
+| fgcPlace | fgcPlace | 9769 | 8777 | 8592 | 97.9% | 9842 |
+| sfReplays | sfReplays | 6963 | 5965 | 5383 | 90.2% | 0 |
+| capcomFighters | capcomFighters | 7987 | 1593 | 1025 | 64.3% | 0 |
+| evoEvents | evoEvents | 2752 | 152 | 81 | 53.3% | 0 |
+| kingArena | kingArenaOnline / kingArenaTournament | 2387 | 2372 | 2027 | 85.5% | 0 |
 | superFighters | superFighters | 138 | 137 | 68 | 49.6% | 0 |
 
-kingArena classifier: online 1399 · tournament 746 · resolved by hand 38 · pending 0
+kingArena classifier: online 1399 · tournament 747 · resolved by hand 38 · pending 0
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 5374 · S2 7820 · S3 9565 · S4 154
+Seasons: S1 5374 · S2 7820 · S3 9565 · S4 175
 
-Rank distribution (side appearances): Legend 18531 · Master 2378 · Diamond 14
+Rank distribution (side appearances): Legend 18551 · Master 2380 · Diamond 14
 
-Misses by reason: not-sf6 11000 · no-vs-title 1083 · char-unresolved 163 · shorts 140 · short-duration 111 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
+Misses by reason: not-sf6 11000 · no-vs-title 1086 · char-unresolved 163 · shorts 140 · short-duration 111 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
 
 ## Sample misses (first 30 that are not shorts/live/not-sf6)
 
@@ -56,4 +56,4 @@ Misses by reason: not-sf6 11000 · no-vs-title 1083 · char-unresolved 163 · sh
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-08-11T08:20:18.852Z_
+_Generated 2026-08-12T08:45:37.438Z_
