@@ -6278,6 +6278,10 @@
     "handle": "Sleepz"
   },
   {
+    "id": "slice",
+    "handle": "SLICE"
+  },
+  {
     "id": "slime",
     "handle": "Slime"
   },
