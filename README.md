@@ -68,7 +68,7 @@ npm run generate            # → .vercel/output/static/sf6
 
 `ENGINE_PATH=../replay-engine` in `.env` develops against a local engine
 checkout; leave it unset (as every deploy does) to resolve the pinned
-`github:joeycf/replay-engine#v0.6.3` tag. `NUXT_APP_BASE_URL` overrides the
+`github:joeycf/replay-engine#v0.7.0` tag. `NUXT_APP_BASE_URL` overrides the
 committed `/sf6/` base — but the committed default **is** production truth.
 
 ## Scripts
