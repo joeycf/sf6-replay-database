@@ -330,6 +330,20 @@
 // pending items never reach the site). Verdicts POST to /api/dev/source-review
 // which validates and writes ONLY data/overrides.json; the queue self-clears
 // on the next `npm run data:parse`. 2XKO's fuse-review is the shape contract.
+
+// Declares this tool on the /dev index (engine app/pages/dev/index.vue). Every
+// value MUST stay a plain quoted literal — the build extracts them from the AST
+// and a variable or backtick string drops the key silently.
+definePageMeta({
+  devTool: {
+    title: 'Source review',
+    category: 'Curation',
+    description:
+      'Adjudicate the review queue — source classification and character completion, from sampled HUD frames.',
+    writes: 'data/overrides.json',
+  },
+});
+
 if (!import.meta.dev) {
   throw createError({ statusCode: 404, statusMessage: 'Not Found' });
 }
