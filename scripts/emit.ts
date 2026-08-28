@@ -158,6 +158,28 @@ export async function emitGeneric(
 
   const rosterIds = new Set(characters.map((c) => c.id));
   const playerIds = new Set(players.map((p) => p.id));
+
+  /**
+   * THE REGISTRY'S OWN INVARIANTS, which no game on this platform asserted until
+   * a `""` player id shipped in tokon-replay-database: its slug strips to
+   * [a-z0-9], so a handle written entirely in another script reduced to nothing,
+   * and every downstream check passed because the empty id WAS in the registry.
+   * Uniqueness has never been checked for players either — patchGroups ids are,
+   * sitemap locs are — and identity resolution is exactly the kind of change
+   * that could break it.
+   */
+  for (const p of players) {
+    if (!p.id) throw new Error(`emit: player '${p.handle}' has an empty id`);
+  }
+  {
+    const ids = new Set(players.map((p) => p.id));
+    if (ids.size !== players.length) {
+      const seenIds = new Set<string>();
+      const dupe = players.find((p) => seenIds.size === seenIds.add(p.id).size);
+      throw new Error(`emit: duplicate player id '${dupe?.id}' in the registry`);
+    }
+  }
+
   // every token a channel can publish under — kingArena emits two
   const sourceIds = new Set<string>(
     CHANNELS.flatMap((c) => (c.eventSource ? [c.source, c.eventSource] : [c.source])),
