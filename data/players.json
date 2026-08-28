@@ -2253,7 +2253,7 @@
   },
   {
     "id": "h1ghscor3",
-    "handle": "H1Ghscor3"
+    "handle": "H1ghscor3"
   },
   {
     "id": "h1scor3",
@@ -4640,6 +4640,10 @@
   {
     "id": "nao",
     "handle": "NAO"
+  },
+  {
+    "id": "nao999",
+    "handle": "Nao999"
   },
   {
     "id": "nao999q",
