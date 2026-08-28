@@ -162,5 +162,22 @@ export default defineAppConfig({
       backgroundColor: '#141009',
     },
     ogImage: '/og-default.png',
+    // ComboForge cross-link on character pages (engine v0.11.0). Their
+    // character ids carry the FULL name, so eight of the roster need an
+    // explicit suffix; the other 23 derive. Built and gated with the engine's
+    // `npm run verify:comboforge`.
+    comboforge: {
+      gameId: 'sf6',
+      characters: {
+        aki: 'a-k-i',
+        bison: 'm-bison',
+        chunli: 'chun-li',
+        deejay: 'dee-jay',
+        honda: 'e-honda',
+        mai: 'mai-shiranui',
+        terry: 'terry-bogard',
+        viper: 'c-viper',
+      },
+    },
   } satisfies GameConfig,
 });

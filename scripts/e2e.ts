@@ -782,6 +782,19 @@ async function main(): Promise<void> {
     rawCharHtml.includes(`${fmt(stats.characterUsage.ryu!)} appearances`),
     'PRERENDERED title carries the data-derived count (registries provided at build)',
   );
+  // ComboForge cross-link (engine v0.11.0). Their character ids are not ours —
+  // ryu derives, aki does NOT ('sf6-a-k-i') — so the override is pinned here as
+  // well as gated in the engine, the same way the BMC URL is pinned downstream.
+  expect(
+    rawCharHtml.includes('https://comboforge.gg/browse?gameId=sf6&amp;characterId=sf6-ryu'),
+    'ComboForge band deep-links Ryu',
+  );
+  expect(
+    readFileSync(join(OUT, BASE, 'characters/aki/index.html'), 'utf8').includes(
+      'characterId=sf6-a-k-i',
+    ),
+    'ComboForge band uses the A.K.I. id override, not the derived one',
+  );
   const samplePlayer = players.find((p) => p.featured)?.id ?? players[0]!.id;
   await gotoIdle(page, at(`/players/${samplePlayer}`));
   expect(
