@@ -26,6 +26,7 @@ import { fileURLToPath } from 'node:url';
 import { applyOverrides, emitGeneric } from './emit';
 import { CHANNELS } from './channels';
 import { dueExpiries, formatExpiries } from './expiries';
+import { formatStaleRefusal, staleEvidence } from './freshness';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
 import { buildAliasMatcher, extractRank, loadCharacters, stripLeaderboard } from './roster';
 import type {
@@ -304,15 +305,55 @@ const matcher = buildAliasMatcher(characters);
 const CHANNEL_OF = new Map(CHANNELS.map((c) => [c.id, c]));
 
 const readJson = async <T>(p: string): Promise<T> => JSON.parse(await readFile(p, 'utf8')) as T;
+
+/** The committed catalogue, read once, as the stale-raw guard's baseline.
+ *  Absent is a legitimate first run; anything else — a truncated file, a bad
+ *  merge — must NOT be read as an empty corpus, because that hands every guard
+ *  below a baseline of zero and makes total loss the one case that passes. */
+const committed: MatchVideo[] = await readJson<MatchVideo[]>(join(DATA, 'videos.json'))
+  .then((v) => {
+    if (!Array.isArray(v)) throw new Error('data/videos.json is not an array');
+    return v;
+  })
+  .catch((e: NodeJS.ErrnoException) => {
+    if (e.code === 'ENOENT') return [] as MatchVideo[];
+    console.error(
+      `✖ data/videos.json is unreadable (${e.message}) — refusing to treat it as empty.`,
+    );
+    process.exit(1);
+  });
+
+const ALLOW_STALE = process.argv.includes('--allow-stale');
 const raws: RawVideoRecord[] = [];
 for (const ch of CHANNELS) {
   const path = join(ROOT, 'raw', `${ch.id}.json`);
+  let dump: RawVideoRecord[];
   try {
-    raws.push(...(await readJson<RawVideoRecord[]>(path)));
+    dump = await readJson<RawVideoRecord[]>(path);
   } catch {
-    console.error(`✖ ${path} missing/unreadable — run \`npm run data:fetch\` first.`);
+    console.error(`✖ ${path} missing/unreadable — run \`npm run data:catchup\` first.`);
     process.exit(1);
   }
+  // ── the stale-raw guard (scripts/freshness.ts) ────────────────────────────
+  // Per intake, and it reads only publishedAt on both sides. See that file for
+  // why neither a wall-clock window nor an mtime survives contact with a repo
+  // whose cron rewrites data/ daily and whose raw/ a human refetches by hand.
+  const stale = staleEvidence(ch.id, dump, committed);
+  if (stale) {
+    if (!ALLOW_STALE) {
+      console.error(formatStaleRefusal(ch.id, stale));
+      process.exit(1);
+    }
+    // --allow-stale says why it is proceeding. A silent override is how a run
+    // that meant to accept a prune becomes indistinguishable from one that
+    // forgot to fetch.
+    console.warn(
+      `⚠ --allow-stale: parsing raw/${ch.id}.json anyway. Its newest upload is ` +
+        `${stale.newestInDump}, but ${stale.committedId} is committed at ${stale.committedAt}. ` +
+        `That record and any like it will be dropped.`,
+    );
+  }
+  raws.push(...dump);
 }
 const overrides = await readJson<Record<string, VideoOverride>>(join(DATA, 'overrides.json')).catch(
   () => ({}) as Record<string, VideoOverride>,
@@ -606,7 +647,8 @@ const COLLAPSE_ABS = 20; // AND >20 records
   const allowed = new Set(
     allowIdx === -1 ? [] : (process.argv[allowIdx + 1] ?? '').split(',').map((x) => x.trim()),
   );
-  const committed = await readJson<typeof records>(join(DATA, 'videos.json')).catch(() => []);
+  // The same `committed` the stale-raw guard used — read once at the top, where
+  // an unreadable file is refused rather than silently becoming an empty corpus.
   if (committed.length > 0) {
     const tally = (rs: typeof records): Map<string, number> => {
       const m = new Map<string, number>();

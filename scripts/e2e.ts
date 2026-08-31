@@ -17,7 +17,14 @@ import { dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium, type Browser, type Page } from 'playwright-core';
 import RANKS from '../data/ranks.json';
-import type { CharacterRecord, MatchVideo, PlayerRecord, VideoOverride } from '../types/index';
+import { staleEvidence, tokensOf } from './freshness';
+import type {
+  CharacterRecord,
+  MatchVideo,
+  PlayerRecord,
+  RawVideoRecord,
+  VideoOverride,
+} from '../types/index';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, '.vercel/output/static');
@@ -362,8 +369,95 @@ function testSubstrateGates(): void {
   );
 }
 
+/** POSITIVE CONTROLS for the stale-raw guard.
+ *
+ *  A gate that cannot fail is indistinguishable from a gate that passes, and
+ *  this one guards against silence: its failure mode is a parse that succeeds
+ *  while dropping records. Two earlier versions of it next door were silent on
+ *  exactly the failure they were built for, so the predicate is driven here
+ *  DIRECTLY, with hand-built arrays, rather than inferred from a pipeline run.
+ *
+ *  The negatives matter as much as the positive. A guard that fires on a
+ *  legitimate prune, or on age alone, is one people learn to pass. */
+function testStaleGuard(): void {
+  console.log('\n— stale-raw guard (positive controls)');
+
+  const at = (iso: string) => `2026-08-${iso}T00:00:00Z`;
+  const upload = (id: string, day: string): RawVideoRecord =>
+    ({
+      id,
+      channel: 'highLevel',
+      title: id,
+      description: '',
+      publishedAt: at(day),
+      durationSec: 300,
+      liveBroadcastContent: 'none',
+    }) as RawVideoRecord;
+  const record = (id: string, day: string): MatchVideo =>
+    ({
+      id,
+      channel: 'highLevel',
+      title: id,
+      publishedAt: at(day),
+      durationSec: 300,
+      season: 4,
+      sides: [
+        { player: 'a', handle: 'A', characters: ['ryu'] },
+        { player: 'b', handle: 'B', characters: ['ken'] },
+      ],
+    }) as MatchVideo;
+
+  const dump = [upload('v1', '10'), upload('v2', '11')];
+  const committedFresh = [record('v1', '10'), record('v2', '11')];
+
+  // 1. STALE — the corpus holds an upload published after the dump was taken.
+  //    This is the 325-record shape this repo shipped without a guard until now.
+  expect(
+    staleEvidence('highLevel', dump, [...committedFresh, record('v3', '30')]) !== null,
+    'refuses a dump the committed corpus proves it predates',
+  );
+
+  // 2. FRESH — equal newest. A re-parse after an overrides change must pass.
+  expect(
+    staleEvidence('highLevel', dump, committedFresh) === null,
+    'passes when the dump reaches the newest committed record',
+  );
+
+  // 3. AGE ALONE MUST NOT FIRE. Nothing here reads a clock or a filesystem, so a
+  //    dump from years ago is fresh if its contents are. This is the property
+  //    mtime could not hold: cp, git checkout and a fresh clone all forge mtime.
+  expect(
+    staleEvidence('highLevel', [upload('v1', '10')], [record('v1', '10')]) === null,
+    'stays quiet on an old dump whose channel has published nothing since',
+  );
+
+  // 4. A DELETION MUST STAY LEGAL. Committed holds a record the dump no longer
+  //    does, but the dump's newest is unchanged — that is the prune this
+  //    pipeline exists to publish, not staleness.
+  expect(
+    staleEvidence('highLevel', dump, [...committedFresh, record('gone', '10')]) === null,
+    'stays quiet when an upload was deleted rather than never fetched',
+  );
+
+  // 5. SCOPED PER INTAKE. A stale kingArena dump says nothing about highLevel,
+  //    and kingArena publishes under TWO tokens — so a guard that matched one
+  //    token would read the other channel's records as its own.
+  expect(
+    staleEvidence('highLevel', dump, [
+      ...committedFresh,
+      { ...record('ka', '30'), channel: 'kingArenaTournament' } as MatchVideo,
+    ]) === null,
+    "ignores another intake's records when judging this one",
+  );
+  expect(
+    tokensOf('kingArena').length === 2 && tokensOf('highLevel').length === 1,
+    'an intake is judged against every source token it can publish under',
+  );
+}
+
 async function main(): Promise<void> {
   testSubstrateGates();
+  testStaleGuard();
   const { at, close } = await serve();
   const browser: Browser = await chromium.launch({
     executablePath: '/usr/bin/google-chrome-stable',

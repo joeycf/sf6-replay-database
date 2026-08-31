@@ -18,6 +18,7 @@
     "data:fetch": "tsx --env-file-if-exists=.env scripts/fetch.ts",
     "data:parse": "tsx scripts/parse.ts",
     "data:build": "npm run data:fetch && npm run data:parse",
+    "data:catchup": "tsx --env-file-if-exists=.env scripts/catchup.ts",
     "verify:deployed": "tsx scripts/verify-deployed.ts",
     "data:emit": "tsx scripts/emit.ts",
     "data:extract": "tsx scripts/complete-characters.ts",
