@@ -26,6 +26,7 @@ import { fileURLToPath } from 'node:url';
 import { applyOverrides, emitGeneric } from './emit';
 import { CHANNELS, stripTheaterSponsor } from './channels';
 import { dueExpiries, formatExpiries } from './expiries';
+import { crossCheck, formatCrossCheck, type WitnessFile } from './crosscheck';
 import { formatStaleRefusal, staleEvidence } from './freshness';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
 import { idKey, resolveKey, slug } from './players';
@@ -1170,6 +1171,45 @@ const reasonCounts = reportedMisses.reduce<Record<string, number>>((acc, m) => {
 // refresh entirely, which is worse than the misfiling it warns about. The
 // workflow's final step turns the run red AFTER the data is committed and
 // pushed. Do not "fix" this by making it throw.
+// ── the second witness (scripts/crosscheck.ts) ──────────────────────────────
+// Reads raw/replayTheater.witness.json — every entry the pull saw, INCLUDING the
+// untagged online rows the intake deliberately ignores — and compares the
+// catalogue's claim to ours on the videos both sides hold. It writes no field
+// and gates nothing.
+//
+// WHY THE DISAGREEMENTS DO NOT GO IN data/review-queue.json, which is where the
+// plan for this work said to put them: in this repo that queue means WITHHELD.
+// scripts/e2e.ts asserts `queue.every((q) => !videoIds.has(q.id))` — "pending
+// review items never reach videos.json" — and a cross-check disagreement is a
+// record we have ALREADY published from a tracked channel and are not proposing
+// to unpublish. Filing it there would either break that gate or silently pull a
+// good record off the site over a third party's say-so, and RT does not outrank
+// a confident parse. So it gets its own artifact: published, contested, both
+// claims recorded. Tōkon draws the same line between its review queue and its
+// bench queue, and for the same reason.
+//
+// There is no /dev form for these yet. The report block below and the committed
+// artifact are the working surface; with seven rows platform-wide that is the
+// right amount of machinery, and the count is what would justify more.
+const witness = await readJson<WitnessFile>(join(ROOT, 'raw', 'replayTheater.witness.json')).catch(
+  () => null,
+);
+const byAliasForWitness = new Map<string, string>();
+for (const c of characters) {
+  byAliasForWitness.set(c.name.trim().toLowerCase(), c.id);
+  for (const a of c.extra?.aliases ?? []) byAliasForWitness.set(a.trim().toLowerCase(), c.id);
+}
+const witnessResult = witness
+  ? crossCheck(witness, records, byAliasForWitness, resolveKey, stripTheaterSponsor)
+  : null;
+if (witnessResult) {
+  await writeFile(
+    join(DATA, 'theater-disagreements.json'),
+    JSON.stringify(witnessResult.disagreements, null, 2) + '\n',
+    'utf8',
+  );
+}
+
 const due = dueExpiries();
 const actionRequired =
   due.length > 0 ? ['## ⚠ ACTION REQUIRED', '', formatExpiries(due), '', '---', ''].join('\n') : '';
@@ -1325,6 +1365,7 @@ const report = [
       .join(' · ') || 'none'
   }`,
   '',
+  ...(witnessResult ? formatCrossCheck(witnessResult, witness?.mode) : []),
   '## Sample misses (first 30 that are not shorts/live/not-sf6)',
   '',
   ...reportedMisses

@@ -38,6 +38,38 @@ Rank distribution (side appearances): Legend 18879 · Master 2407 · Diamond 14
 
 Misses by reason: not-sf6 11010 · no-vs-title 1160 · shorts 171 · char-unresolved 165 · short-duration 117 · pre-launch 93 · bad-handle 27 · live-or-upcoming 7
 
+## Replay Theater cross-check
+
+An independent reading of **10242** of our own records, from the catalogue's
+UNTAGGED entries — online replays it indexes that we also parse from a tracked
+channel. Neither side saw the other, so this is the only accuracy number here the
+pipeline did not produce about itself. It changes nothing: a disagreement is
+recorded in data/theater-disagreements.json with both claims, never written into
+a record. The catalogue does not outrank a confident parse and never outranks a
+human override.
+
+_Measured this run against a full pull. 3968 catalogue entr(ies) point at videos_
+_we do not hold; 0 are VODs the catalogue segments, which the intake owns._
+
+| field | population | agree | partial | disagree | cannot witness |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| players (both handles) | 10242 | 10234 (99.92%) | 8 | 0 | — |
+| characters (per side) | 20484 | 20477 (99.97%) | 0 | 7 (0.03%) | 0 |
+
+Side order differed on **6** record(s); the comparison realigns on the
+handles before reading characters, so a swapped pair is not counted twice as a
+character disagreement.
+
+**7 disagreement(s)** — both claims, ours first:
+
+- `b01K6Wa4frw` side 1 characters: **guile** vs catalogue **alex** — SF6 🤜 HOTDOG (#6 Ranked Ingrid) vs RAINPRO (#2 Ranked Guile) 🤛 SF6 H
+- `RL9SGBeZOKY` side 1 characters: **jp** vs catalogue **sagat** — SF6 🤜 Tokido (#5 Ranked JP) vs DingChunQiu (#4 Ranked JP) 🤛 SF6 High
+- `bzZHNuTILXg` side 1 characters: **sagat** vs catalogue **zangief** — SF6 ▰ DAIGO (#1 Ranked Akuma) vs NARUO (Sagat) ft. KOBAYAN (Zangief) ▰
+- `iEnFA_Wffco` side 1 characters: **chunli** vs catalogue **zangief** — SF6 ▰ NARUO (Sagat) vs MOKE (Chun-Li) ▰ High Level Gameplay
+- `z7HBGS7BnEQ` side 1 characters: **mai** vs catalogue **chunli** — SF6 🔥 RYUKICHI (Ken) vs MOKE (Mai) 🔥 Street Fighter 6 High Level Gam
+- `SPfYssZSehc` side 1 characters: **marisa** vs catalogue **zangief** — SF6 🔥 Angrybird (Ken) vs Itazan (Marisa) 🔥 Street Fighter 6
+- `Tax1cqHXuWo` side 1 characters: **juri** vs catalogue **cammy** — SF6 🔥 Daigo (Ken) vs Mago (Juri) 🔥 Street Fighter 6
+
 ## Sample misses (first 30 that are not shorts/live/not-sf6)
 
 - `_IJvF_UGlJM` [highLevel] char-unresolved: SF6 ▰ LESHAR (#1 Ranked Akuma) vs BAROU BOGARD (BLAZ?) (Terry) ▰ High Level Gameplay
@@ -71,4 +103,4 @@ Misses by reason: not-sf6 11010 · no-vs-title 1160 · shorts 171 · char-unreso
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-08-31T13:49:22.991Z_
+_Generated 2026-08-31T14:31:07.259Z_

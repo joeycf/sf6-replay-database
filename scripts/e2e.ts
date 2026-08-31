@@ -262,6 +262,9 @@ function testCronGuard(): void {
     // so an unstaged cursor resets to 0 every morning and turns every cron run
     // into a bounded sweep that never goes quiet.
     'theater-cursor.json',
+    // the cross-check's output. Unlike review-queue.json these rows ARE
+    // published — see the gate below — so the file is history, not a holding pen.
+    'theater-disagreements.json',
   ]) {
     write(`data/${f}`, '[]\n');
   }
@@ -327,6 +330,30 @@ function testSubstrateGates(): void {
     queue.every((q) => !videoIds.has(q.id)),
     'pending review items never reach videos.json',
   );
+  // THE MIRROR OF THE RULE ABOVE, and the reason the cross-check does not write
+  // into review-queue.json. A queued item is WITHHELD; a cross-check
+  // disagreement is a record we have already published and are not proposing to
+  // unpublish on a third party's say-so. If one of these ever failed to appear
+  // in videos.json it would mean the catalogue had been allowed to remove a
+  // record, which is the one thing this intake must never do.
+  const contested = JSON.parse(
+    readFileSync(join(ROOT, 'data/theater-disagreements.json'), 'utf8'),
+  ) as { videoId: string; field: string; ours: string[]; theirs: string[] }[];
+  expect(
+    contested.every((d) => videoIds.has(d.videoId)),
+    `every cross-check disagreement is still published (${contested.length})`,
+  );
+  expect(
+    contested.every(
+      (d) =>
+        typeof d.videoId === 'string' &&
+        ['players', 'characters'].includes(d.field) &&
+        Array.isArray(d.ours) &&
+        Array.isArray(d.theirs),
+    ),
+    'theater-disagreements.json schema validates',
+  );
+
   const emitted = JSON.parse(readFileSync(join(ROOT, 'data/replays.json'), 'utf8')) as {
     id: string;
   }[];
