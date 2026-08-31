@@ -60,6 +60,8 @@ export interface GenericReplay {
   title: string;
   views?: number;
   durationSec?: number;
+  videoId?: string;
+  startSeconds?: number;
 }
 
 /**
@@ -102,6 +104,14 @@ function toReplay(v: MatchVideo, windows = patchWindows()): GenericReplay {
     title: v.title,
     ...(v.viewCount !== undefined ? { views: v.viewCount } : {}),
     ...(v.durationSec ? { durationSec: v.durationSec } : {}),
+    // GUARDED INDEPENDENTLY, and here that is not tidiness. startSeconds 0 is
+    // falsy, and 25 of this catalogue's records sit at offset 0 — one per VOD
+    // that holds a single set, the shape least likely to be spot-checked. Under
+    // a single combined spread every one of them would lose `videoId` too, and
+    // the engine resolves `videoId ?? id`, so each would render a thumbnail and
+    // an embed for the literal string "abc@0": a 404 and a dead player.
+    ...(v.videoId ? { videoId: v.videoId } : {}),
+    ...(v.startSeconds ? { startSeconds: v.startSeconds } : {}),
   };
 }
 

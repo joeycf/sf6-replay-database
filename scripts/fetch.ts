@@ -9,12 +9,15 @@
 // YouTube channel can hydrate arbitrary video ids without importing this file —
 // which reads the key and runs its fetch loop at the top level, and so would
 // exit the importing process on a missing key and then fetch seven channels.
+//
+// FETCHED_CHANNELS, not CHANNELS: an index intake has no uploads playlist to
+// page, and its dump is built by scripts/fetch-theater.ts instead.
 
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { CHANNELS } from './channels';
+import { FETCHED_CHANNELS } from './channels';
 import { fetchVideoMeta, listUploadIds, requireApiKey } from './youtube';
 import type { ChannelConfig, RawVideoRecord } from '../types/index';
 
@@ -26,7 +29,7 @@ requireApiKey('data:fetch');
 
 async function fetchChannel(ch: ChannelConfig): Promise<RawVideoRecord[]> {
   // 1) every videoId from the uploads playlist (50/page)
-  const ids = await listUploadIds(ch.uploadsPlaylist);
+  const ids = await listUploadIds(ch.uploadsPlaylist!);
 
   // 2) hydrate in chunks of 50 (title/description/duration/views)
   let chunk = 0;
@@ -53,8 +56,8 @@ async function fetchChannel(ch: ChannelConfig): Promise<RawVideoRecord[]> {
 
 // ── main ─────────────────────────────────────────────────────────────────────
 await mkdir(RAW_DIR, { recursive: true });
-console.log(`Fetching ${CHANNELS.length} channels…`);
-for (const ch of CHANNELS) {
+console.log(`Fetching ${FETCHED_CHANNELS.length} channels…`);
+for (const ch of FETCHED_CHANNELS) {
   const t0 = Date.now();
   const records = await fetchChannel(ch);
   records.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));

@@ -17,7 +17,8 @@ export type SourceId =
   | 'capcomFighters'
   | 'kingArenaTournament'
   | 'superFighters'
-  | 'evoEvents';
+  | 'evoEvents'
+  | 'replayTheater';
 
 /** Per-YouTube-channel intake key: names raw/<key>.json and the coverage
  *  report's rows. No longer 1:1 with SourceId ('kingArena' feeds two sources) —
@@ -30,7 +31,8 @@ export type ChannelKey =
   | 'capcomFighters'
   | 'kingArena'
   | 'superFighters'
-  | 'evoEvents';
+  | 'evoEvents'
+  | 'replayTheater';
 
 export interface ChannelConfig {
   /** Raw-dump key / report row (unique per YouTube channel). */
@@ -44,10 +46,11 @@ export interface ChannelConfig {
   eventSource?: SourceId;
   /** Display name (mirrors app/app.config.ts sourceChannels[].name). */
   name: string;
-  /** YouTube channel id. */
-  channelId: string;
-  /** The channel's uploads playlist (UU + channelId.slice(2), pinned). */
-  uploadsPlaylist: string;
+  /** YouTube channel id. Absent on an INDEX intake: there is no channel. */
+  channelId?: string;
+  /** The channel's uploads playlist (UU + channelId.slice(2), pinned). Absent on
+   *  an INDEX intake, which is why scripts/fetch.ts iterates FETCHED_CHANNELS. */
+  uploadsPlaylist?: string;
   /** Where the is-SF6 game marker may appear. The original three stay 'title'
    *  (their descriptions are SEO soup naming both SF5 and SF6); the
    *  tournament-era channels write the marker in descriptions — measured
@@ -59,7 +62,53 @@ export interface ChannelConfig {
    *  as a parse miss. Only @EvoEvents sets it; without the flag every other
    *  channel's genuine char-unresolved misses would flood the review queue. */
   charactersFromFootage?: boolean;
+  /** This intake is a third-party INDEX, not a YouTube channel. Its dump is
+   *  built by scripts/fetch-theater.ts, its records are not built by a title
+   *  parse, and data:fetch skips it. Mutually exclusive with channelId. */
+  index?: ChannelIndex;
+  /**
+   * LOCAL-FIRST: deliberately not part of the daily cron.
+   *
+   * raw/ is gitignored and the cron fetches remotely into a fresh checkout, so
+   * a source only ever fetched by hand has no dump there. Without this flag
+   * parse would exit (missing dump) or, worse, drop every one of its records.
+   * So when the dump is ABSENT its committed records are CARRIED; when it is
+   * PRESENT they are rebuilt.
+   *
+   * The carry needs a count pin, because data/videos.json is both its source
+   * and its target — one bad run would poison the next run's baseline silently.
+   * It lives in data/source-pins.json rather than a constant here, because a
+   * local-first source GROWS and hand-editing a number every refresh is
+   * friction that teaches people to skip the check.
+   */
+  localFirst?: boolean;
 }
+
+/**
+ * An INDEX source: a third-party catalogue that points AT video rather than
+ * hosting it. Its entries are (videoId, startSeconds) pairs plus players,
+ * characters and an event tag, so a record here is a SEGMENT of a longform VOD
+ * and several records share one video. There is no channel, no uploads
+ * playlist, and no title to gate.
+ */
+export interface ChannelIndex {
+  /** Catalogue endpoint, paged with &page=N. */
+  endpoint: string;
+  /** The index's own token for this game, used as the ?game= query. */
+  slug: string;
+  /** What an ENTRY calls this game. Checked per entry — a query filter is one
+   *  someone else answers, and a mistagged submission arrives looking exactly
+   *  like a real one. */
+  gameLabel: string;
+  /** Entries per page. Theirs, not ours — the API ignores per_page/limit. */
+  pageSize: number;
+  /** Milliseconds between requests: politeness, not rate-limit avoidance. */
+  pacingMs: number;
+}
+
+/** data/source-pins.json — the carry pin for every localFirst intake, keyed by
+ *  ChannelKey. Written by a rebuild, hard-asserted by every carry. */
+export type SourcePins = Partial<Record<ChannelKey, number>>;
 
 /** One upload as fetched from the YouTube Data API (raw/<id>.json). */
 export interface RawVideoRecord {
@@ -129,7 +178,47 @@ export interface MatchVideo {
    *  would be a second copy of a date lookup that can never disagree with the
    *  first, and `data/videos.json` would have to be rebuilt to change it. */
   season: number;
+  /** The YouTube id, when `id` is not it. A record is not required to be a whole
+   *  video: an INDEX intake publishes many records per VOD, so their ids are
+   *  `${videoId}@${startSeconds}` and the YouTube id lives here. Every
+   *  YouTube-shaped URL the engine builds resolves `videoId ?? id`. */
+  videoId?: string;
+  /** Where this record's footage starts inside `videoId`, in seconds. Absent
+   *  (or 0) means the whole video. */
+  startSeconds?: number;
   sides: [MatchSide, MatchSide];
+}
+
+/**
+ * One record in raw/replayTheater.json — an index entry already joined to its
+ * VOD's YouTube metadata. Extends RawVideoRecord so the dump reads like any
+ * other, but the fields below are what the record is actually BUILT from:
+ * nothing here is recovered by parsing the title, which the fetcher synthesized
+ * from these same fields.
+ */
+export interface TheaterRawRecord extends RawVideoRecord {
+  /** `${videoId}@${startSeconds}` — the record id, not a YouTube id. */
+  id: string;
+  /** The catalogue's own entry id. Provenance, and the fetch resume key. */
+  theaterId: number;
+  /** The YouTube id this segment lives inside. */
+  videoId: string;
+  /** Offset into videoId, in seconds. */
+  startSeconds: number;
+  /** The catalogue's event tag. Non-empty by construction — an untagged entry
+   *  is online ranked play and never reaches the dump. */
+  tag: string;
+  /** The VOD's own uploader, for the report. The source VODs belong to
+   *  seventeen different organisers, so this is per record, not per intake. */
+  uploader: string;
+  /** [side0, side1] handles, exactly as the catalogue spells them — sponsor
+   *  prefixes intact, for the parser to strip. */
+  players: [string, string];
+  /** [side0, side1] character names, exactly as the catalogue spells them. SF6
+   *  is 1v1 so a side is normally one long, but the catalogue carries four
+   *  columns and a tournament set can counter-pick — MatchSide.characters is
+   *  already an ordered union, so a longer side needs no schema change. */
+  characters: [string[], string[]];
 }
 
 /** data/players.json entry (mirrors the engine's Player). */

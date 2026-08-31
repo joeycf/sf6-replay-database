@@ -17,7 +17,7 @@ this repo supplies **data**, **config**, and **a skin**.
 | `filters.rank`          | `true` + a 9-rung ladder           | SF6 has a League ladder, and the descriptions state it            |
 | `terms`                 | **unset**                          | SF6 genuinely says "characters" — the engine defaults are correct |
 | `characterRouteSegment` | **unset**                          | the roster lives at `/characters/*`                               |
-| `sourceGroups`          | Online / Tournament                | 7 tokens from 6 channels; kingArena splits per-video (classifier) |
+| `sourceGroups`          | Online / Tournament                | 9 tokens from 7 intakes; kingArena splits per-video (classifier)  |
 | `patchGroups`           | season parents + 18 patch children | see "Seasons, not Years" below                                    |
 
 > Platform: [replaydatabase.com](https://replaydatabase.com) ·
@@ -31,9 +31,15 @@ this repo supplies **data**, **config**, and **a skin**.
 ```
 YouTube Data API v3
    │  scripts/fetch.ts      ──→ raw/<channel>.json           (gitignored, ~34 MB)
+   │  scripts/youtube.ts       (the shared API client)
+   │
+replaytheater.app/api/matches
+   │  scripts/fetch-theater.ts ──→ raw/replayTheater.json   (LOCAL-FIRST, by hand)
    ▼
 scripts/parse.ts            ──→ data/videos.json             (substrate, committed)
    ├ scripts/channels.ts       (intake config)
+   ├ scripts/freshness.ts      (the stale-raw guard's predicate)
+   ├ scripts/players.ts        (identity keys + the curated merge table)
    ├ scripts/roster.ts         (alias matcher + rank extraction)
    ├ scripts/seasons.ts        (the season + patch boundary authority)
    ├ scripts/expiries.ts       (the self-expiring gates)
@@ -78,12 +84,15 @@ committed `/sf6/` base — but the committed default **is** production truth.
 | `npm run data:fetch`        | every upload from the 6 tracked channels → `raw/`                         |
 | `npm run data:parse`        | parse → substrate + registry + report, then emit                          |
 | `npm run data:build`        | fetch + parse                                                             |
+| `npm run data:catchup`      | **fetch then parse, always together** — the maintenance ritual            |
+| `npm run data:theater`      | pull the Replay Theater index → `raw/replayTheater.json` (LOCAL, by hand) |
 | `npm run data:emit`         | re-derive the generic artifacts from the committed substrate (no network) |
 | `npm run data:extract`      | resolve queued character-completion items from the footage (LOCAL only)   |
 | `npm run data:characters`   | rescrape the roster + art (`--force` re-downloads)                        |
 | `npm run data:expiries`     | `--check` the self-expiring gates; exits 1 when something is due          |
 | `npm run data:versions`     | cross-check the patch table against the SuperCombo wiki (network)         |
 | `npm run data:replay-dupes` | audit duplicate matches → paste-ready `overrides.json` fragment           |
+| `npm run data:player-dupes` | audit player identities `idKey` cannot merge → paste-ready fragment       |
 | `npm run data:mr-probe`     | read Master Rate off each record's HUD — the same-footage signal (LOCAL)  |
 | `npm run data:mr-verdicts`  | turn MR reads into per-record keep/drop for the dupe clusters             |
 | `npm run test:e2e`          | the full audit suite against `.vercel/output/static`                      |
@@ -137,6 +146,35 @@ both are recorded in the owning row's `includes` so they are declared rather
 than silently absorbed. `npm run data:versions` diffs the table against the
 wiki's Cargo API and is the only check that can catch an invented-but-
 well-formed token — the offline validators cannot.
+
+## Never `data:parse` alone
+
+`raw/` is gitignored, so the daily cron never writes it: the cron fetches and
+parses remotely and commits the result. A local `raw/` is therefore routinely
+**older** than the committed `data/`, and a bare `npm run data:parse` publishes
+whatever that stale dump can reproduce and drops the rest, quietly, exit 0.
+
+Measured here on 2026-08-30, before the guard existed: a three-week-old `raw/`
+parsed **22,909** records over a committed **23,234** and reported success. The
+channel-collapse guard cannot catch it — it needs >20 records **and** >10% from
+one channel, and the worst-hit channel lost 1.5%.
+
+Two halves now stop it:
+
+- **`scripts/freshness.ts`** refuses the run. The test reads only data: if the
+  committed corpus holds a record for an intake **newer than the newest upload
+  anywhere in its dump**, that record cannot have come from this dump. Both
+  sides are YouTube publish timestamps carried inside the files, so `cp`, a
+  fresh clone and a `git checkout` cannot forge them — which mtime can, and
+  which is why two clock-based versions of this guard leaked next door. It fires
+  at any age, never fires on age alone, and a deleted upload stays a legal prune.
+- **`npm run data:catchup`** removes the reason to type `data:parse` alone:
+  fetch then parse, always together, then a summary of what still needs a person.
+
+`--allow-stale` still exists, prints exactly what it is dropping, and is for a
+deliberate one-time prune. The index intake is exempt from the guard — its dump
+is absent by design on every cron run, and its protection is the exact count in
+`data/source-pins.json`, which is stronger.
 
 ## The self-expiring gates
 
@@ -218,12 +256,13 @@ to the era boundary.
 
 ## The parser
 
-**Sources.** Six channels (`scripts/channels.ts`) emitting seven
-`Replay.source` tokens, consolidated to **Online / Tournament** filter chips
-via `sourceGroups` (engine v0.5.5 — the per-video badge keeps the real channel,
-and every per-channel `?src=` deep link still works). The original three plus
-`kingArenaOnline` are Online; `capcomFighters`, `kingArenaTournament` and
-`superFighters` are Tournament. @TheKingArena is one physical channel emitting
+**Sources.** Six YouTube channels and one third-party INDEX
+(`scripts/channels.ts`) emitting nine `Replay.source` tokens, consolidated to
+**Online / Tournament** filter chips via `sourceGroups` (engine v0.5.5 — the
+per-video badge keeps the real channel, and every per-channel `?src=` deep link
+still works). The original three plus `kingArenaOnline` are Online;
+`capcomFighters`, `kingArenaTournament`, `superFighters`, `evoEvents` and
+`replayTheater` are Tournament. @TheKingArena is one physical channel emitting
 under **two** tokens: `parse.ts` classifies each video by title signals
 ("High-Level" or no event signal → online; an event signal → tournament), and a
 title carrying **both** signals goes to `data/review-queue.json` — pending
@@ -235,6 +274,42 @@ the odd one out: its titles name the players but never a character, so its
 records are completed from the footage HUD rather than parsed
 (`charactersFromFootage` in `scripts/channels.ts`; `npm run data:extract`;
 method and accuracy in `scripts/spike/README.md`).
+
+**The index source.** `replayTheater` is not a channel. replaytheater.app is a
+fan-curated catalogue that hosts no video: an entry is a `(videoId,
+startSeconds)` pair plus players, characters and an event tag. So its records are
+**segments** — 1,044 of the 1,065 share a VOD with another — and their ids are
+`${videoId}@${startSeconds}`, never a YouTube id. The engine has treated
+`Replay.id` as opaque and resolved `videoId ?? id` since v0.10.0, so a card, a
+thumbnail, a `?v=` deep link and an embed at the right offset all work with no
+app change.
+
+Three things follow from it being someone else's data:
+
+- **LOCAL-FIRST.** `npm run data:theater` is run by hand, never by the cron — a
+  third party's uptime should not become a cron dependency. On every run without
+  a dump (which is every cron run) `parse.ts` **carries** the committed records
+  forward, and `data/source-pins.json` asserts the exact count so the carry
+  cannot silently drift. Carrying and rebuilding produce byte-identical output.
+- **Ignore-if-known runs first**, keyed on the VIDEO id. If this repo has already
+  ruled on a video in any capacity — parsed it, excluded it, deduped it — the
+  catalogue entry is ignored rather than merged. It cost 91 of 1,156 on the first
+  ingest, mostly Capcom Fighters uploads this repo already carries.
+- **Characters resolve on an EXACT alias only**, never through the prose matcher,
+  and an unresolved token goes to residue rather than being guessed. Third-party
+  curation is weaker provenance than a title parse, so it takes the stricter
+  gate. Measured on the first ingest: zero residue.
+
+It publishes **no duration** — the catalogue records an offset, not a length, and
+the gap to the next set includes the downtime between them. `durationSec: 0` is
+the unknown sentinel, `emit` omits the field, and `data:replay-dupes` reports
+those records in a separate pass because its duration signal is unavailable for
+them.
+
+**It is not current.** The catalogue's tagged SF6 data stops at 2026-04-13:
+79.9% of the intake is Season 1 and none of it is Season 4, so a current-patch
+filter excludes all of it. The untagged half is live, so unlike Tekken's this is
+not a closed set.
 
 **A side lists every character it played.** `Side.characters` is a list, not a
 single value. SF6 is 1v1 and `charactersPerSide` stays 1, so an ordinary match
@@ -343,8 +418,8 @@ route it uses guard on `import.meta.dev` and 404 otherwise,
 to them (the nav entry is compiled out of production builds). They read and write
 the committed JSON directly — there is no database.
 
-| page                 | what it's for                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------ |
+| page                 | what it's for                                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `/dev/source-review` | Adjudicate `data/review-queue.json` — source classification and character completion, from sampled HUD frames → `data/overrides.json` |
 
 ## Vercel

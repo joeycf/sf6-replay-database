@@ -149,7 +149,88 @@ export const CHANNELS: ChannelConfig[] = [
     uploadsPlaylist: 'UUvOOnA96PF6Ac1Yx0kH4OxQ',
     sf6Signal: 'titleOrDescription',
   },
+  {
+    /**
+     * THE FIRST INDEX SOURCE IN THIS REPO. replaytheater.app is a fan-curated
+     * match catalogue: it hosts no video, it points AT video with a start
+     * offset. An entry is a (videoId, startSeconds) pair plus players,
+     * characters and an event tag, so a record here is a SEGMENT — 1,065 tagged
+     * SF6 matches cut from 86 longform VODs, a median of 15 per video — which is
+     * why these records are keyed `${videoId}@${start}` and not by video id.
+     *
+     * IT MINTS A SOURCE rather than reusing one, and that is this repo's model
+     * asserting itself over the sibling it is ported from. Tekken folds its
+     * catalogue into an aggregate `tournament` token because it has one. This
+     * repo does not: its Tournament GROUP is four separate sources, each a real
+     * channel, and the group lives only in app.config.ts. There is nothing here
+     * for a catalogue to join, so it gets its own token and its own badge.
+     *
+     * WHAT IT ADDS. Segmenting longform tournament streams is work this repo has
+     * no way to do — capcomFighters parses 62.9% of its SF6 uploads and evoEvents
+     * 52.9%, and what both lose is the multi-match stream. This is that
+     * segmentation, already done by hand, for 77 brackets across seventeen
+     * organiser channels none of which this repo tracks. Measured against those
+     * uploaders' own chapter markers: 925 of 928 chapters that name a matchup
+     * agree on both handles, and 906 of 986 offsets are exact to the second.
+     *
+     * WHAT IT IS NOT. Current. The catalogue's tagged SF6 data stops at
+     * 2026-04-13, so 79.9% of it is Season 1 and none of it is Season 4 — under
+     * a current-patch filter the whole intake is invisible, and that is a fact
+     * about the footage rather than a defect. Its UNTAGGED half is live to
+     * today, so unlike Tekken's this is not a closed set: `data:theater` is
+     * worth re-running on a human cadence.
+     *
+     * LAST IN THE ARRAY, deliberately. Array order is the dedupe precedence (see
+     * this file's header), and lowest is right for a source that re-indexes
+     * other people's uploads: where it and a channel describe the same match,
+     * the channel's own upload should win.
+     *
+     * NO channelId, NO uploadsPlaylist, NO sf6Signal: there is no channel and no
+     * title to gate. The game is checked per ENTRY against `gameLabel`, because
+     * ?game= is a filter the catalogue answers and not one we control.
+     */
+    id: 'replayTheater',
+    source: 'replayTheater',
+    name: 'Tournament VODs',
+    index: {
+      endpoint: 'https://replaytheater.app/api/matches',
+      slug: 'sf6',
+      gameLabel: 'Street Fighter 6',
+      pageSize: 50,
+      pacingMs: 1200,
+    },
+    localFirst: true,
+  },
 ];
+
+/** The channels data:fetch pages. An index intake has no uploads playlist, and
+ *  its dump is built by scripts/fetch-theater.ts on a human's cadence. */
+export const FETCHED_CHANNELS = CHANNELS.filter((c) => !c.index);
+
+/**
+ * Sponsor/team prefix on a catalogue handle: "OEG | Slate", "NP | Senshi".
+ * STRIPPED, never split — "|" is not a duo delimiter here, and treating it as
+ * one would mint a player called "OEG" with a page of its own.
+ *
+ * APPLIED REPEATEDLY, not once. The catalogue carries doubly-prefixed handles,
+ * and a single .replace() leaves the inner one in place — which mints a player
+ * whose name still contains a sponsor tag, a worse outcome than not stripping
+ * at all. Loop until stable.
+ *
+ * This is the ONLY prefix stripping this repo does, and it applies to the
+ * catalogue alone. The channels state handles without org tags (see
+ * scripts/players.ts), so nothing like Tekken's stripOrgPrefix is ported: it
+ * would fragment real players here rather than merge sponsored ones.
+ */
+const THEATER_SPONSOR = /^[^|]{1,12}\s*\|\s*/;
+export const stripTheaterSponsor = (handle: string): string => {
+  let prev = handle;
+  for (;;) {
+    const next = prev.replace(THEATER_SPONSOR, '');
+    if (next === prev) return prev.trim();
+    prev = next;
+  }
+};
 
 // @EvoEvents was evaluated and rejected in the 2026-07-31 tournament recon for
 // exactly one reason — 0 parseable, because no title names a character — and is

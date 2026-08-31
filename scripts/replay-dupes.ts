@@ -349,8 +349,82 @@ const md = [
   '',
 ].join('\n');
 
+/**
+ * ── THIRD PASS: NO-DURATION RECORDS, REPORTED AND NEVER ADJUDICATED ──────────
+ *
+ * Everything above gates on `durationSec > 0`, because duration is the
+ * INDEPENDENT signal: two different matches between the same players on the same
+ * characters rarely land within a second of each other. An INDEX source
+ * publishes no per-match duration — the catalogue records a (videoId,
+ * startSeconds) pair and says nothing about length, and the gap to the next set
+ * includes the downtime between them — so every one of its records is invisible
+ * to both passes. Invisible in the worst way: they are tournament sets, the
+ * exact population that overlaps the tournament channels this repo already
+ * carries.
+ *
+ * Duration is replaced by the only other independent signal available: the
+ * PUBLISH DAY. Two sources covering one bracket upload it the same day; a rematch
+ * weeks later does not. That is weaker, and the difference is the whole reason
+ * this section exists separately.
+ *
+ * IT PROPOSES NOTHING AND PRINTS NO OVERRIDES FRAGMENT, which is what separates
+ * it from the two passes above. A drop needs the independent signal; a shared
+ * publish day is corroboration, not proof. This names what the audit CANNOT
+ * decide, so that "0 candidates" upstairs keeps meaning what it says.
+ */
+const noDuration = videos.filter((v) => (v.durationSec ?? 0) <= 0);
+const noDurationRows: { a: MatchVideo; b: MatchVideo }[] = [];
+{
+  const withDuration = videos.filter((v) => (v.durationSec ?? 0) > 0);
+  const bySig = new Map<string, MatchVideo[]>();
+  for (const v of withDuration) {
+    const sig = signature(v);
+    (bySig.get(sig) ?? bySig.set(sig, []).get(sig)!).push(v);
+  }
+  const seenSig = new Map<string, MatchVideo[]>();
+  for (const v of noDuration) {
+    const sig = signature(v);
+    (seenSig.get(sig) ?? seenSig.set(sig, []).get(sig)!).push(v);
+    for (const other of bySig.get(sig) ?? []) {
+      if (other.publishedAt.slice(0, 10) === v.publishedAt.slice(0, 10)) {
+        noDurationRows.push({ a: v, b: other });
+      }
+    }
+  }
+  // Two no-duration records with one signature cannot be told apart by any
+  // signal this script has. Named rather than silently paired off.
+  for (const [, list] of seenSig) {
+    if (list.length < 2) continue;
+    for (let i = 1; i < list.length; i++) noDurationRows.push({ a: list[0]!, b: list[i]! });
+  }
+}
+
+const noDurationMd = [
+  '',
+  '## Records with no duration — reported, never adjudicated',
+  '',
+  `${noDuration.length} record(s) publish no per-match duration, so both passes above are`,
+  'blind to them. Matched here on signature + shared publish DAY, which is',
+  'corroboration and not proof. **Nothing below is proposed for exclusion.**',
+  '',
+  ...(noDurationRows.length === 0
+    ? ['_No signature+day coincidence found._', '']
+    : [
+        '| signature match | no-duration record | counterpart | day |',
+        '| --- | --- | --- | --- |',
+        ...noDurationRows
+          .slice(0, 50)
+          .map(
+            (r) =>
+              `| ${signature(r.a)} | \`${r.a.id}\` (${r.a.channel}) | \`${r.b.id}\` (${r.b.channel}) | ${r.a.publishedAt.slice(0, 10)} |`,
+          ),
+        '',
+        ...(noDurationRows.length > 50 ? [`… ${noDurationRows.length - 50} more`, ''] : []),
+      ]),
+].join('\n');
+
 mkdirSync(CACHE, { recursive: true });
-writeFileSync(join(CACHE, 'replay-dupes.md'), md, 'utf8');
+writeFileSync(join(CACHE, 'replay-dupes.md'), md + noDurationMd, 'utf8');
 writeFileSync(
   join(CACHE, 'replay-dupes.json'),
   JSON.stringify(
@@ -377,6 +451,10 @@ writeFileSync(
 );
 
 console.log(summary.join('\n'));
+console.log(
+  `\nno-duration records: ${noDuration.length} (excluded from both passes; ` +
+    `${noDurationRows.length} signature+day coincidence(s), reported only)`,
+);
 console.log(`\nreport → cache/dupes/replay-dupes.md (+ .json)`);
 if (flag('--json')) console.log(JSON.stringify({ proposed: actionable.length }));
 if (flag('--emit-overrides')) {

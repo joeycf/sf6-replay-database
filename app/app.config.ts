@@ -122,6 +122,14 @@ export default defineAppConfig({
       { id: 'kingArenaTournament', name: 'King Arena Events' },
       { id: 'superFighters', name: 'Super Fighters' },
       { id: 'evoEvents', name: 'Evo' },
+      // Appended at index 8 — same warning outline as the tournament tokens
+      // above, and the label disambiguates. Named for what the footage IS, not
+      // for the catalogue that indexed it: these are tournament sets cut out of
+      // event organisers' own longform uploads (FrDonn, Tampa Never Sleeps,
+      // ScytheLDN and fourteen others), and each record carries its VOD's
+      // uploader nowhere — the event tag rides in the title instead, which is
+      // the engine's search haystack.
+      { id: 'replayTheater', name: 'Tournament VODs' },
     ],
     // Filter chips consolidate to two groups (engine v0.5.5; the per-video
     // SourceBadge keeps the real channel name from sourceChannels above).
@@ -137,7 +145,13 @@ export default defineAppConfig({
       {
         id: 'tournament',
         name: 'Tournament',
-        sources: ['capcomFighters', 'kingArenaTournament', 'superFighters', 'evoEvents'],
+        sources: [
+          'capcomFighters',
+          'kingArenaTournament',
+          'superFighters',
+          'evoEvents',
+          'replayTheater',
+        ],
       },
     ],
     // Season→patch hierarchy for the grouped patch facet (engine v0.6.0).

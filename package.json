@@ -17,6 +17,7 @@
     "format:check": "prettier --check .",
     "data:fetch": "tsx --env-file-if-exists=.env scripts/fetch.ts",
     "data:parse": "tsx scripts/parse.ts",
+    "data:theater": "tsx --env-file-if-exists=.env scripts/fetch-theater.ts",
     "data:build": "npm run data:fetch && npm run data:parse",
     "data:catchup": "tsx --env-file-if-exists=.env scripts/catchup.ts",
     "verify:deployed": "tsx scripts/verify-deployed.ts",
