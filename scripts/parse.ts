@@ -28,6 +28,7 @@ import { CHANNELS } from './channels';
 import { dueExpiries, formatExpiries } from './expiries';
 import { formatStaleRefusal, staleEvidence } from './freshness';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
+import { idKey, resolveKey, slug } from './players';
 import { buildAliasMatcher, extractRank, loadCharacters, stripLeaderboard } from './roster';
 import type {
   ChannelConfig,
@@ -90,28 +91,10 @@ const FEATURED = new Set([
 ]);
 
 // ── handle identity ──────────────────────────────────────────────────────────
-// SF6's channels do NOT prefix handles with esports org tags — verified across
-// all 20,000+ parseable titles: not one known FGC org (FLY, PXG, RB, MOUZ,
-// FALCONS, ZETA, CAG, …) appears in handle position. The frequent leading
-// tokens are all integral parts of names: "Oil King", "Big Bird", "Problem X",
-// "Ending Walker", "YHC Mochi", "SNB Johnny", "801 Strider", "PR Balrog".
-// Tekken's stripOrgPrefix is therefore deliberately ABSENT here — porting it
-// would fragment real players rather than merge sponsored ones.
-//
-// What DOES fragment this corpus is punctuation and spacing: the same player
-// is written "Ending Walker" (333 sides) and "EndingWalker" (296), "Problem X"
-// (434) and "ProblemX" (230), "MenaRD" and "Mena RD", "Big Bird" and "BIGBIRD".
-// Identity is therefore keyed on the handle with ALL non-alphanumerics removed,
-// while the public id keeps the readable hyphenated form of whichever spelling
-// the sources use most. Two spellings of one player collapse to one page; two
-// genuinely different players cannot collide, because differing alphanumerics
-// produce differing keys.
-const idKey = (handle: string): string => handle.toLowerCase().replace(/[^a-z0-9]+/g, '');
-const slug = (handle: string): string =>
-  handle
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+// The primitives and the curated merge table live in scripts/players.ts, so the
+// audit (npm run data:player-dupes) can reach them — this file cannot be
+// imported. `resolveKey` is `idKey` plus HANDLE_ALIASES, which is empty today:
+// nothing in this corpus has yet needed a merge idKey could not already make.
 const isUpper = (s: string) => s === s.toUpperCase() && s !== s.toLowerCase();
 
 // ── the is-SF6 predicate ─────────────────────────────────────────────────────
@@ -468,12 +451,12 @@ for (const r of raws) {
   candidates.push({ raw: r, handles: t.handles, chars: [charA, charB], ranks, descHandles });
 }
 
-// ── player registry: one identity per idKey, best spelling wins the id ───────
+// ── player registry: one identity per key, best spelling wins the id ────────
 // Description mixed-case outweighs ALL-CAPS titles 1000×; frequency is the
 // tiebreak. The winning spelling supplies BOTH the display handle and the
 // hyphenated public id, so /players/ending-walker beats /players/endingwalker
 // purely because the sources write it that way more often.
-const casing = new Map<string, Map<string, number>>(); // idKey → spelling → weight
+const casing = new Map<string, Map<string, number>>(); // identity key → spelling → weight
 function noteHandle(key: string, variant: string, weight: number) {
   const m = casing.get(key) ?? new Map<string, number>();
   m.set(variant, (m.get(variant) ?? 0) + weight);
@@ -483,17 +466,17 @@ function noteHandle(key: string, variant: string, weight: number) {
 for (const c of candidates) {
   for (let i = 0; i < 2; i++) {
     const handle = c.handles[i]!;
-    noteHandle(idKey(handle), handle, 1);
+    noteHandle(resolveKey(handle), handle, 1);
     const dh = c.descHandles[i];
-    if (dh && !isUpper(dh)) noteHandle(idKey(handle), dh, 1000); // desc casing wins
+    if (dh && !isUpper(dh)) noteHandle(resolveKey(handle), dh, 1000); // desc casing wins
   }
 }
 
-const bestSpelling = new Map<string, string>(); // idKey → chosen handle
+const bestSpelling = new Map<string, string>(); // identity key → chosen handle
 for (const [key, variants] of casing) {
   bestSpelling.set(key, [...variants.entries()].sort((a, b) => b[1] - a[1])[0]![0]);
 }
-const idOf = (handle: string): string => slug(bestSpelling.get(idKey(handle)) ?? handle);
+const idOf = (handle: string): string => slug(bestSpelling.get(resolveKey(handle)) ?? handle);
 
 const videos: MatchVideo[] = [];
 const reviewQueue: ReviewQueueItem[] = [];
@@ -512,8 +495,8 @@ for (const { raw, handles } of footagePending) {
     publishedAt: raw.publishedAt,
     durationSec: raw.durationSec,
     handles: [
-      bestSpelling.get(idKey(handles[0])) ?? handles[0],
-      bestSpelling.get(idKey(handles[1])) ?? handles[1],
+      bestSpelling.get(resolveKey(handles[0])) ?? handles[0],
+      bestSpelling.get(resolveKey(handles[1])) ?? handles[1],
     ],
   });
 }
@@ -562,7 +545,7 @@ for (const c of candidates) {
   }
   const sides = c.chars.map((character, i) => {
     const handle = c.handles[i]!;
-    const key = idKey(handle);
+    const key = resolveKey(handle);
     return {
       player: idOf(handle),
       handle: bestSpelling.get(key) ?? handle,

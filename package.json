@@ -24,6 +24,7 @@
     "data:extract": "tsx scripts/complete-characters.ts",
     "data:characters": "tsx scripts/characters.ts",
     "data:expiries": "tsx scripts/expiries.ts --check",
+    "data:player-dupes": "tsx scripts/player-dupes.ts",
     "data:replay-dupes": "tsx scripts/replay-dupes.ts",
     "data:mr-probe": "tsx scripts/mr-probe.ts",
     "data:mr-verdicts": "tsx scripts/mr-verdicts.ts",
