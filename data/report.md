@@ -1,18 +1,18 @@
 
 # SF6 pipeline report
 
-**24309 matches** parsed from 36208 uploads across 7 channels, plus 1065 from 1 index · 2338 players · ranked sides 21290/48618 (43.8%)
+**24318 matches** parsed from 36217 uploads across 7 channels, plus 1065 from 1 index · 2338 players · ranked sides 21300/48636 (43.8%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5825 | 5825 | 5810 | 99.7% | 11206 |
-| fgcPlace | fgcPlace | 9898 | 8906 | 8721 | 97.9% | 10084 |
-| sfReplays | sfReplays | 7075 | 6076 | 5494 | 90.4% | 0 |
+| highLevel | highLevel | 5827 | 5827 | 5812 | 99.7% | 11210 |
+| fgcPlace | fgcPlace | 9901 | 8909 | 8724 | 97.9% | 10090 |
+| sfReplays | sfReplays | 7079 | 6080 | 5498 | 90.4% | 0 |
 | capcomFighters | capcomFighters | 8040 | 1646 | 1035 | 62.9% | 0 |
 | evoEvents | evoEvents | 2762 | 153 | 81 | 52.9% | 0 |
 | kingArena | kingArenaOnline / kingArenaTournament | 2460 | 2445 | 2034 | 83.2% | 0 |
 | superFighters | superFighters | 148 | 147 | 69 | 46.9% | 0 |
-| replayTheater _(index)_ | replayTheater | 1156 | 1156 | 1065 | 92.1% | 0 |
+| replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Local-first intakes
 
@@ -22,21 +22,18 @@ run without a dump — which is every cron run.
 
 | intake | records | pin | this run |
 | --- | ---: | ---: | --- |
-| `replayTheater` | 1065 | 1065 | rebuilt from a local dump |
+| `replayTheater` | 1065 | 1065 | carried (no dump) |
 
-Entries **collapsed as double-submitted**: **35** of 1191 tagged — 35× `ACS vs TOBLS 10v10  ||  Team Battle 10vs10 ACS vs TOBLS`. The same match submitted twice under two tag spellings; one copy kept, chosen on the tag so the survivor does not depend on submission order.
-
-Entries **skipped as already-known**: **91** of 1156. An id this repo has already ruled on, in any capacity, does not re-enter through a side door. By arm: raw/capcomFighters.json 83 · raw/evoEvents.json 8.
-
-_Character strings resolving to no roster id: **0**._
+_Carried from the committed catalogue, so the intake counts below were not_
+_measured this run. Re-run `npm run data:theater` to refresh them._
 
 kingArena classifier: online 1403 · tournament 750 · resolved by hand 38 · pending 0
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8025 · S3 9574 · S4 485
+Seasons: S1 6225 · S2 8025 · S3 9574 · S4 494
 
-Rank distribution (side appearances): Legend 18869 · Master 2407 · Diamond 14
+Rank distribution (side appearances): Legend 18879 · Master 2407 · Diamond 14
 
 Misses by reason: not-sf6 11010 · no-vs-title 1160 · shorts 171 · char-unresolved 165 · short-duration 117 · pre-launch 93 · bad-handle 27 · live-or-upcoming 7
 
@@ -73,4 +70,4 @@ Misses by reason: not-sf6 11010 · no-vs-title 1160 · shorts 171 · char-unreso
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-08-31T01:52:24.754Z_
+_Generated 2026-08-31T15:14:00.445Z_

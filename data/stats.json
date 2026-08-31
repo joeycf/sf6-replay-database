@@ -1,47 +1,47 @@
 {
   "totals": {
-    "replays": 24309,
+    "replays": 24318,
     "characters": 31,
     "players": 2338,
     "byPatch": {
       "S1": 6225,
       "S2": 8025,
       "S3": 9574,
-      "S4": 485
+      "S4": 494
     }
   },
   "characterUsage": {
     "aki": 1224,
-    "akuma": 3884,
-    "alex": 709,
-    "bison": 2028,
-    "blanka": 1345,
+    "akuma": 3885,
+    "alex": 713,
+    "bison": 2029,
+    "blanka": 1346,
     "cammy": 1929,
     "chunli": 1435,
     "deejay": 1232,
-    "dhalsim": 1588,
+    "dhalsim": 1590,
     "ed": 1837,
     "elena": 585,
-    "guile": 1894,
+    "guile": 1895,
     "honda": 966,
     "ingrid": 365,
     "jamie": 909,
     "jp": 2047,
     "juri": 1318,
-    "ken": 3631,
+    "ken": 3632,
     "kimberly": 673,
     "lily": 653,
     "luke": 1855,
     "mai": 1811,
-    "manon": 1095,
+    "manon": 1096,
     "marisa": 1239,
     "rashid": 1476,
     "ryu": 2908,
-    "sagat": 1734,
+    "sagat": 1736,
     "terry": 1403,
-    "viper": 695,
+    "viper": 698,
     "yasmine": 159,
-    "zangief": 4031
+    "zangief": 4032
   },
   "byPatchUsage": {
     "S1": {
@@ -128,36 +128,36 @@
     },
     "S4": {
       "aki": 17,
-      "akuma": 76,
-      "alex": 42,
-      "bison": 9,
-      "blanka": 18,
+      "akuma": 77,
+      "alex": 46,
+      "bison": 10,
+      "blanka": 19,
       "cammy": 19,
       "chunli": 23,
       "deejay": 12,
-      "dhalsim": 29,
+      "dhalsim": 31,
       "ed": 9,
       "elena": 22,
-      "guile": 28,
+      "guile": 29,
       "honda": 21,
       "ingrid": 7,
       "jamie": 26,
       "jp": 18,
       "juri": 12,
-      "ken": 51,
+      "ken": 52,
       "kimberly": 13,
       "lily": 13,
       "luke": 43,
       "mai": 26,
-      "manon": 12,
+      "manon": 13,
       "marisa": 13,
       "rashid": 13,
       "ryu": 87,
-      "sagat": 52,
+      "sagat": 54,
       "terry": 25,
-      "viper": 33,
+      "viper": 36,
       "yasmine": 159,
-      "zangief": 42
+      "zangief": 43
     }
   },
   "playerCharacters": {
@@ -388,7 +388,7 @@
       "elena": 10,
       "ken": 2,
       "mai": 4,
-      "manon": 361,
+      "manon": 362,
       "terry": 42
     },
     "akutakawa": {
@@ -776,7 +776,7 @@
       "ryu": 11,
       "sagat": 12,
       "terry": 9,
-      "viper": 20
+      "viper": 21
     },
     "big-mo": {
       "blanka": 1
@@ -889,7 +889,7 @@
       "akuma": 352,
       "jamie": 2,
       "luke": 197,
-      "sagat": 552
+      "sagat": 554
     },
     "bongi": {
       "blanka": 7
@@ -1351,7 +1351,7 @@
     },
     "cosa": {
       "akuma": 13,
-      "ken": 30,
+      "ken": 31,
       "ryu": 28,
       "terry": 2
     },
@@ -1509,7 +1509,7 @@
       "chunli": 5
     },
     "daigo": {
-      "akuma": 1181,
+      "akuma": 1182,
       "ed": 1,
       "guile": 1,
       "honda": 1,
@@ -2302,7 +2302,7 @@
       "deejay": 146,
       "dhalsim": 19,
       "ed": 319,
-      "viper": 3
+      "viper": 4
     },
     "g8s-gachikun": {
       "rashid": 3
@@ -2795,7 +2795,7 @@
       "elena": 1
     },
     "higuchi": {
-      "guile": 603,
+      "guile": 604,
       "ingrid": 4,
       "mai": 3,
       "sagat": 2,
@@ -3801,7 +3801,7 @@
       "jp": 3
     },
     "kido": {
-      "alex": 42,
+      "alex": 45,
       "ingrid": 2
     },
     "kidosan": {
@@ -3921,7 +3921,7 @@
       "terry": 2
     },
     "kobayan": {
-      "zangief": 1226
+      "zangief": 1227
     },
     "koeliga": {
       "deejay": 1
@@ -4152,7 +4152,7 @@
     },
     "latif": {
       "bison": 13,
-      "viper": 47
+      "viper": 48
     },
     "lattice": {
       "blanka": 1
@@ -5850,7 +5850,7 @@
       "honda": 31
     },
     "problem-x": {
-      "alex": 137,
+      "alex": 138,
       "bison": 262,
       "blanka": 108,
       "elena": 7,
@@ -7205,7 +7205,7 @@
       "mai": 3
     },
     "takagi": {
-      "blanka": 31
+      "blanka": 32
     },
     "takamura": {
       "akuma": 4,
@@ -7539,7 +7539,7 @@
       "cammy": 1
     },
     "torimeshi": {
-      "dhalsim": 477,
+      "dhalsim": 478,
       "honda": 4
     },
     "torimesi": {
@@ -8146,7 +8146,7 @@
       "dhalsim": 4
     },
     "yhc-mochi": {
-      "dhalsim": 462
+      "dhalsim": 463
     },
     "yhcmochi-torimesi": {
       "dhalsim": 1
@@ -8381,7 +8381,7 @@
       "mai": 1
     },
     "zengo": {
-      "bison": 2
+      "bison": 3
     },
     "zenith": {
       "aki": 1
