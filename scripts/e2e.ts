@@ -253,10 +253,15 @@ function testCronGuard(): void {
     'review-queue.json',
     // the guard's `git add` names it, so the fixture must carry it too
     'summary.json',
-    // the local-first carry pin. Rewritten only by a rebuild, but absent from
+    // the carry pin. Rewritten by every rebuilding run — which is now most of
+    // them — and absent from
     // the `git add` list a run that DID rewrite it would throw the change away
     // silently — so the workflow names it and this fixture proves it does.
     'source-pins.json',
+    // the index cursor. raw/ is gitignored and CI starts from a fresh checkout,
+    // so an unstaged cursor resets to 0 every morning and turns every cron run
+    // into a bounded sweep that never goes quiet.
+    'theater-cursor.json',
   ]) {
     write(`data/${f}`, '[]\n');
   }
@@ -469,7 +474,7 @@ function testSegmentGates(): void {
     string,
     number
   >;
-  for (const ch of CHANNELS.filter((c) => c.localFirst)) {
+  for (const ch of CHANNELS.filter((c) => c.cronFetchedWithCarry)) {
     const n = videos.filter((v) => v.channel === ch.source).length;
     expect(
       pins[ch.id] === n,

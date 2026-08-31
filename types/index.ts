@@ -67,7 +67,14 @@ export interface ChannelConfig {
    *  parse, and data:fetch skips it. Mutually exclusive with channelId. */
   index?: ChannelIndex;
   /**
-   * LOCAL-FIRST: deliberately not part of the daily cron.
+   * CRON-FETCHED, WITH A CARRY FALLBACK.
+   *
+   * This flag used to be called `localFirst` and meant the opposite: the intake
+   * was deliberately kept OUT of the daily cron, because a third party's uptime
+   * should not become a cron dependency on day one of an integration. It is in
+   * the cron now (2026-08-31), so the name was changed rather than left to lie —
+   * a flag whose name states a policy the code no longer follows is worse than
+   * no flag.
    *
    * raw/ is gitignored and the cron fetches remotely into a fresh checkout, so
    * a source only ever fetched by hand has no dump there. Without this flag
@@ -78,10 +85,10 @@ export interface ChannelConfig {
    * The carry needs a count pin, because data/videos.json is both its source
    * and its target — one bad run would poison the next run's baseline silently.
    * It lives in data/source-pins.json rather than a constant here, because a
-   * local-first source GROWS and hand-editing a number every refresh is
+   * cron-fetched source GROWS and hand-editing a number every refresh is
    * friction that teaches people to skip the check.
    */
-  localFirst?: boolean;
+  cronFetchedWithCarry?: boolean;
 }
 
 /**
@@ -106,7 +113,7 @@ export interface ChannelIndex {
   pacingMs: number;
 }
 
-/** data/source-pins.json — the carry pin for every localFirst intake, keyed by
+/** data/source-pins.json — the carry pin for every cronFetchedWithCarry intake, keyed by
  *  ChannelKey. Written by a rebuild, hard-asserted by every carry. */
 export type SourcePins = Partial<Record<ChannelKey, number>>;
 

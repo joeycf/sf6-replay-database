@@ -2,14 +2,34 @@
 // tournament matches, join each to the YouTube metadata of the VOD it points
 // into, and dump the result to raw/replayTheater.json.
 //
-// Run: npm run data:theater
+// Run: npm run data:theater   (and now: every morning, from the cron)
 //
-// WHY THIS IS A SEPARATE COMMAND, and not part of data:fetch. data:fetch runs in
-// the daily cron. A third party's uptime and goodwill should not become a cron
-// dependency on day one of an integration, and committed records survive source
-// loss anyway. So this is LOCAL-FIRST: run by hand, on a cadence a human
-// chooses, and parse.ts carries the committed records forward on every run that
-// finds no dump — which is every cron run.
+// THE POSTURE CHANGED ON 2026-08-31, and the old one is worth stating because
+// this comment used to argue the opposite. It said: "a third party's uptime and
+// goodwill should not become a cron dependency on day one of an integration",
+// and it was right — on day one. Four games have since been ingested, the trust
+// re-measured on every pull (99.7% handle agreement against the uploaders' own
+// chapter markers here, 925 of 928), and the catalogue's operator is a
+// collaborator rather than a stranger. replaytheater.app/robots.txt read
+// 2026-08-31 is `User-agent: * / Disallow:`; requests carry a contactable
+// user-agent and the catalogue's own pacing.
+//
+// WHAT MAKES IT SAFE IS NOT THE RELATIONSHIP, THOUGH — it is two rules that hold
+// even when the goodwill does not:
+//
+//   1. ADD-ONLY. This intake can only ADD records. A committed record is carried
+//      regardless of what the catalogue says today; entries that vanish are
+//      COUNTED in report.md, never removed, and the pin only grows.
+//   2. THE CRON NEVER DEPENDS ON THIS SUCCEEDING. The step runs LAST and is
+//      allowed to fail. On any failure — network, non-200, malformed page, a
+//      uniqueness assert — there is simply no dump, parse.ts carries exactly as
+//      it does today, and the cron stays green. A bad day upstream costs that
+//      day's new entries and nothing else.
+//
+// AND WHAT MAKES IT AFFORDABLE is the cursor below. A full pull is 311 pages for
+// this game alone and 619 across the four; sending that every morning to a
+// fellow fan project is not a design. The catalogue orders newest-first, so the
+// cursor reads ~3 pages a day instead — 12 requests across the platform.
 //
 // WHAT IT IS NOT. Replay Theater hosts no video. It is an index: a match is a
 // (videoId, startSeconds) pair plus players, characters and an event tag. So a
@@ -17,7 +37,7 @@
 // its id is `${videoId}@${startSeconds}`, never a YouTube id.
 
 import { existsSync } from 'node:fs';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -34,6 +54,20 @@ const OUT = join(RAW_DIR, 'replayTheater.json');
 // records alone cannot reconstruct, because the collapsed entries are gone by
 // then. Absent on a carrying run, which report.md says rather than printing 0.
 const STATS = join(RAW_DIR, '.replayTheater.stats.json');
+/** EVERY entry the cursor saw this run, tagged and untagged, in the catalogue's
+ *  own shape. Kept OUT of raw/replayTheater.json on purpose: that file is the
+ *  INTAKE and parse.ts builds a record from every row in it, so an untagged row
+ *  landing there would publish online ranked play as a tournament match. This
+ *  file is the WITNESS — the cross-check reads it and builds nothing. */
+const WITNESS = join(RAW_DIR, 'replayTheater.witness.json');
+/** The cursor's committed state: the highest catalogue entry id ever seen, so a
+ *  run knows where "already seen" starts without re-reading 311 pages. Written
+ *  by parse.ts (every data/ write is parse's), read here. */
+const CURSOR = join(ROOT, 'data', 'theater-cursor.json');
+/** Resume cache for a --fresh full sweep only. The cursor replaced it for the
+ *  daily path: two resume mechanisms disagreeing is worse than one, and this one
+ *  skipped pages 2..N on any re-pull because it recorded page NUMBERS against a
+ *  catalogue that grows at the front. Deleted on every successful run. */
 const PARTIAL = join(RAW_DIR, '.replayTheater.partial.json');
 
 const CH = CHANNELS.find((c) => c.id === 'replayTheater');
@@ -43,6 +77,23 @@ const INDEX = CH.index;
 // ── flags ───────────────────────────────────────────────────────────────────
 const argv = process.argv.slice(2);
 const FRESH = argv.includes('--fresh');
+/** THE DAILY PATH. Page from the front and stop once the catalogue stops
+ *  offering anything newer than the cursor. `--full` forces the old whole-
+ *  catalogue sweep, which is what --fresh has always meant and what a periodic
+ *  reconciliation still wants. */
+const FULL = argv.includes('--full') || FRESH;
+const CURSOR_MODE = !FULL;
+/** Two clean pages, not one. The catalogue orders `upload_date DESC, id ASC`, so
+ *  a day's submissions can straddle a page boundary and a single clean page is
+ *  not proof there is nothing behind it. */
+const CLEAN_PAGES_TO_STOP = 2;
+/** A hard ceiling on the daily path, so a catalogue-side reordering can never
+ *  turn the cron into a 311-page sweep. Measured 2026-08-31: the newest 200
+ *  submissions sit within page 5 here (page 10 for 2XKO, the worst of the four),
+ *  and a mean day is 10.7 entries — a fifth of ONE page. Ten is ~25x headroom.
+ *  Hitting it is reported, not silent: under add-only nothing is lost, only
+ *  late, and `npm run data:theater -- --full` reconciles. */
+const CURSOR_MAX_PAGES = 10;
 const opt = (flag: string): string | undefined => {
   const i = argv.indexOf(flag);
   return i === -1 ? undefined : argv[i + 1];
@@ -200,6 +251,20 @@ const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 // ── the pull ────────────────────────────────────────────────────────────────
 await mkdir(RAW_DIR, { recursive: true });
 
+// CLEAR THE PREVIOUS RUN'S SELF-REPORT BEFORE FETCHING ANYTHING. parse.ts reads
+// .replayTheater.stats.json to learn what this pull did — its mode, its page
+// count, and the cursor it reached — and a file left over from yesterday would
+// answer those questions about the wrong run. Specifically: a pull that dies on
+// the first request writes nothing, so parse would find yesterday's stats,
+// report "the pull found no new entries" instead of "no pull this run", and
+// re-advance the cursor off a number this run never observed.
+//
+// Invisible in CI, where a fresh checkout has no raw/ at all — which is exactly
+// why it has to be done here rather than trusted to the environment. Found by
+// running the dead-host control locally on 2026-08-31.
+await rm(STATS, { force: true });
+await rm(WITNESS, { force: true });
+
 interface PartialCache {
   pages: number[];
   entries: TheaterEntry[];
@@ -207,29 +272,72 @@ interface PartialCache {
 
 const byTheaterId = new Map<number, TheaterEntry>();
 const seenPages = new Set<number>();
-if (!FRESH && existsSync(PARTIAL)) {
+if (FULL && !FRESH && existsSync(PARTIAL)) {
   const cache = JSON.parse(await readFile(PARTIAL, 'utf8')) as PartialCache;
   for (const p of cache.pages ?? []) seenPages.add(p);
   for (const e of cache.entries ?? []) if (e.id !== undefined) byTheaterId.set(e.id, e);
   console.log(`  resuming: ${seenPages.size} page(s), ${byTheaterId.size} entr(ies) cached`);
 }
 
+// THE CURSOR. The catalogue orders `upload_date DESC, id ASC` — verified across
+// page boundaries on 2026-08-31 (page 1 ends 2026-08-25/487156, page 2 begins
+// 2026-08-25/487157) — and entry ids increase with submission. So "have I seen
+// everything new?" is answerable from the front of the feed alone, and the
+// answer is: keep paging until CLEAN_PAGES_TO_STOP consecutive pages offer no
+// id above the cursor.
+//
+// WHY NOT `?since=` OR A REAL CURSOR: there isn't one. Probed 2026-08-31 —
+// `since`, `limit`, `per_page`, `sort`, `order` and `after_id` are all accepted
+// and silently IGNORED (byte-identical responses). Only `game` and `page` are
+// honoured, and `game` is validated (any unrecognised slug returns "Invalid
+// game" rather than falling through to the unfiltered catalogue, which is worth
+// knowing: the per-entry game gate below is a second line, not the only one).
+//
+// WHAT THE CURSOR CANNOT SEE, stated rather than hidden: the ordering key is the
+// VIDEO's upload date, not the submission's. Someone submitting a 2024 VOD today
+// lands deep in the feed, behind the bound, and this run will not reach it.
+// Under add-only that is late, never lost — the entry keeps its id, a --full
+// sweep collects it, and nothing that is already committed is affected.
+const cursorFile = await readFile(CURSOR, 'utf8')
+  .then((t) => JSON.parse(t) as Record<string, number>)
+  .catch(() => ({}) as Record<string, number>);
+const cursorAt = cursorFile[CH.id] ?? 0;
+
 console.log(`\n▶ Pulling the Replay Theater index (${INDEX.endpoint}, game=${INDEX.slug})…`);
 const first = await getPage(1);
 const total = Number(first.total_count ?? 0);
-const pages = Math.min(Math.ceil(total / INDEX.pageSize), MAX_PAGES);
-console.log(`  catalogue reports ${total} match(es) → ${pages} page(s) of ${INDEX.pageSize}`);
+const fullPages = Math.ceil(total / INDEX.pageSize);
+const pages = Math.min(CURSOR_MODE ? CURSOR_MAX_PAGES : fullPages, MAX_PAGES);
+console.log(
+  CURSOR_MODE
+    ? `  catalogue reports ${total} match(es) (${fullPages} page(s) of ${INDEX.pageSize}); cursor at entry id ${cursorAt || '—'}, reading at most ${pages}`
+    : `  catalogue reports ${total} match(es) → ${pages} page(s) of ${INDEX.pageSize}`,
+);
 for (const e of first.matches ?? []) if (e.id !== undefined) byTheaterId.set(e.id, e);
 seenPages.add(1);
 
+let cleanRun = (first.matches ?? []).some((e) => (e.id ?? 0) > cursorAt) ? 0 : 1;
+let pagesRead = 1;
+let stoppedEarly = false;
 for (let page = 2; page <= pages; page++) {
+  if (CURSOR_MODE && cleanRun >= CLEAN_PAGES_TO_STOP) {
+    stoppedEarly = true;
+    break;
+  }
   if (seenPages.has(page)) continue;
   await sleep(INDEX.pacingMs);
   const body = await getPage(page);
   const rows = body.matches ?? [];
   for (const e of rows) if (e.id !== undefined) byTheaterId.set(e.id, e);
   seenPages.add(page);
-  if (page % 10 === 0) {
+  pagesRead++;
+  cleanRun = rows.some((e) => (e.id ?? 0) > cursorAt) ? 0 : cleanRun + 1;
+  // An empty page is the end of the catalogue, not a clean page to count.
+  if (rows.length === 0) {
+    stoppedEarly = true;
+    break;
+  }
+  if (!CURSOR_MODE && page % 10 === 0) {
     console.log(`  page ${page}/${pages} — ${byTheaterId.size} entr(ies)`);
     await writeFile(
       PARTIAL,
@@ -238,8 +346,22 @@ for (let page = 2; page <= pages; page++) {
     );
   }
 }
+if (CURSOR_MODE && cleanRun >= CLEAN_PAGES_TO_STOP) stoppedEarly = true;
+const hitBound = CURSOR_MODE && !stoppedEarly && pagesRead >= pages;
 const catalogue = [...byTheaterId.values()];
-console.log(`  pulled ${catalogue.length} unique entr(ies)`);
+const maxEntryId = catalogue.reduce((m, e) => Math.max(m, e.id ?? 0), cursorAt);
+console.log(
+  CURSOR_MODE
+    ? `  read ${pagesRead} page(s), ${catalogue.length} entr(ies); ${catalogue.filter((e) => (e.id ?? 0) > cursorAt).length} newer than the cursor → new cursor ${maxEntryId}`
+    : `  pulled ${catalogue.length} unique entr(ies)`,
+);
+if (hitBound) {
+  console.log(
+    `  ⚠ the cursor hit its ${CURSOR_MAX_PAGES}-page bound without going quiet — entries may be\n` +
+      `    unreached this run. Nothing is lost (add-only); run \`npm run data:theater -- --full\`\n` +
+      `    to reconcile.`,
+  );
+}
 
 // ── the game gate, PER ENTRY ────────────────────────────────────────────────
 // `?game=sf6` is a query someone else answers, and an index is a strictly weaker
@@ -432,11 +554,82 @@ records.sort(
     a.id.localeCompare(b.id),
 );
 
+// ── the floor, on a FULL sweep only ─────────────────────────────────────────
+// A cursor run's dump is a DELTA and is legitimately tiny, so "materially
+// smaller than the pin" means nothing there — parse.ts merges it, and add-only
+// does the protecting. A FULL sweep is different: it claims to be the whole
+// catalogue, so a collapse in it is a claim that most of the catalogue is gone.
+//
+// The shape this guards against is not hypothetical. `records` is filtered by
+// the per-entry game gate, and the gate compares against a string the catalogue
+// controls: the day "Street Fighter 6" is renamed upstream, `rightGame` is 0,
+// `records` is 0, and the old code wrote `[]` over a good dump without comment.
+// Downstream that reads as n → 0 and trips the collapse guard, so the cron goes
+// red for a reason nothing names. Refuse here, where the cause is visible.
+if (FULL) {
+  const pins = await readFile(join(ROOT, 'data', 'source-pins.json'), 'utf8')
+    .then((t) => JSON.parse(t) as Record<string, number>)
+    .catch(() => ({}) as Record<string, number>);
+  const pinned = pins[CH.id] ?? 0;
+  if (pinned > 0 && records.length < pinned * 0.9) {
+    console.error(
+      [
+        `\n✖ A full sweep produced ${records.length} record(s) against a committed pin of ${pinned}.`,
+        `  That is a claim that ${pinned - records.length} tournament matches left the catalogue at once.`,
+        ``,
+        `  The likeliest cause is not deletion. Every entry is checked against`,
+        `  gameLabel ${JSON.stringify(INDEX.gameLabel)}, and ${wrongGame.length} of ${catalogue.length} entr(ies) failed that check`,
+        `  this run — if the catalogue renamed the game, every row fails and this`,
+        `  file would be overwritten with almost nothing.`,
+        ``,
+        `  Refusing to write. The committed records are untouched and the cron`,
+        `  carries them exactly as it does on a day this never ran.`,
+        `  If the drop is real: npm run data:theater -- --full --allow-shrink`,
+      ].join('\n'),
+    );
+    if (!argv.includes('--allow-shrink')) process.exit(1);
+  }
+}
+
 await writeFile(OUT, JSON.stringify(records, null, 1) + '\n', 'utf8');
+
+// ── the witness ─────────────────────────────────────────────────────────────
+// EVERY entry the run saw, tagged and untagged, in the catalogue's own shape.
+// The untagged remainder is online ranked play and is out of INGESTION scope by
+// design — but it is not out of scope as EVIDENCE: measured 2026-08-31, 10,231
+// of those rows point at a video this repo has already published from a tracked
+// channel, which makes them an independent second reading of our own title
+// parser on 44% of the corpus. Written separately from the intake dump so an
+// untagged row can never be built into a record: parse.ts builds one record per
+// row of raw/replayTheater.json, and nothing but tagged rows goes in there.
+await writeFile(
+  WITNESS,
+  JSON.stringify(
+    {
+      mode: CURSOR_MODE ? 'cursor' : 'full',
+      maxEntryId,
+      pagesRead,
+      hitBound,
+      entries: catalogue,
+    },
+    null,
+    1,
+  ) + '\n',
+  'utf8',
+);
+
 await writeFile(
   STATS,
   JSON.stringify(
     {
+      // THE MODE IS LOAD-BEARING, not a diagnostic. parse.ts reads it to decide
+      // whether this dump is the whole catalogue or a delta, which decides
+      // whether "committed but absent from the dump" means "vanished upstream"
+      // or "simply not in the pages we read".
+      mode: CURSOR_MODE ? 'cursor' : 'full',
+      maxEntryId,
+      pagesRead,
+      hitBound,
       catalogue: catalogue.length,
       rightGame: rightGame.length,
       tagged: tagged.length,
@@ -450,7 +643,19 @@ await writeFile(
   ) + '\n',
   'utf8',
 );
-console.log(`\n  → wrote raw/replayTheater.json (${records.length} record(s))`);
+
+// The resume cache existed to make a 311-page sweep restartable, and it recorded
+// page NUMBERS against a catalogue that grows at the FRONT — so a second local
+// run refetched page 1 and skipped 2..N as "seen", making anything past the
+// first 50 new entries permanently invisible until someone remembered --fresh.
+// The cursor is the resume mechanism now. Leaving both would be two that
+// disagree, so a successful run clears it.
+if (existsSync(PARTIAL)) await rm(PARTIAL, { force: true });
+
+console.log(
+  `\n  → wrote raw/replayTheater.json (${records.length} record(s)${CURSOR_MODE ? ', a delta' : ''})`,
+);
+console.log(`  → wrote raw/replayTheater.witness.json (${catalogue.length} catalogue entr(ies))`);
 
 // ── reconnaissance ──────────────────────────────────────────────────────────
 console.log(`\n${'█'.repeat(72)}`);

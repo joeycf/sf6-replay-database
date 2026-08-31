@@ -14,15 +14,16 @@
 | superFighters | superFighters | 148 | 147 | 69 | 46.9% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
-### Local-first intakes
+### Index intakes
 
-Deliberately outside the daily cron: a third party's uptime is not a cron
-dependency. Refreshed by hand, and carried from the committed catalogue on every
-run without a dump — which is every cron run.
+Fetched by the daily cron since 2026-08-31, and ADD-ONLY: a committed record is
+carried whether or not the catalogue still lists it, so this count can only rise.
+The cron does not depend on the pull succeeding — on any failure there is no dump,
+the committed records are carried, and the run stays green.
 
-| intake | records | pin | this run |
-| --- | ---: | ---: | --- |
-| `replayTheater` | 1065 | 1065 | carried (no dump) |
+| intake | records | pin | this run | pages | new | not in this pull |
+| --- | ---: | ---: | --- | ---: | ---: | ---: |
+| `replayTheater` | 1065 | 1065 | rebuilt from a full sweep | 311 | 1065 | 0 |
 
 _Carried from the committed catalogue, so the intake counts below were not_
 _measured this run. Re-run `npm run data:theater` to refresh them._
@@ -70,4 +71,4 @@ Misses by reason: not-sf6 11010 · no-vs-title 1160 · shorts 171 · char-unreso
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-08-31T15:14:00.445Z_
+_Generated 2026-08-31T13:49:22.991Z_

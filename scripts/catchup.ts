@@ -25,9 +25,9 @@
  * decision, because the extractor's own threshold is a prudence margin for
  * footage nobody has looked at, not a filter for known errors.
  *
- * It also does not run `data:theater`. That intake is local-first and
- * deliberately outside any cadence — a third party's uptime should not become a
- * dependency of the routine that keeps this corpus current.
+ * It also does not run `data:theater`. That intake is fetched by the daily cron
+ * now, on its own cursor, and is add-only — so catching up on it is never
+ * urgent and never this command's job. Run it directly if you want it sooner.
  */
 
 import { spawnSync } from 'node:child_process';

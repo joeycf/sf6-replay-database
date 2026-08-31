@@ -199,7 +199,7 @@ export const CHANNELS: ChannelConfig[] = [
       pageSize: 50,
       pacingMs: 1200,
     },
-    localFirst: true,
+    cronFetchedWithCarry: true,
   },
 ];
 

@@ -31,10 +31,39 @@ jobs:
 
       # fetch + parse + emit (character art is NOT part of the daily run —
       # scripts/characters.ts only runs when the roster changes)
-      - name: Rebuild data
-        run: npm run data:build
+      - name: Fetch channel uploads
+        run: npm run data:fetch
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
+
+      # THE INDEX PULL, AND IT IS ALLOWED TO FAIL.
+      #
+      # This is the second half of "the cron never depends on Replay Theater
+      # succeeding", and it is deliberately a step of its own rather than a link
+      # in `data:build`'s && chain — a chain would take the whole refresh down
+      # with it, which is exactly the dependency the split exists to avoid.
+      #
+      # continue-on-error marks the run yellow and moves on. scripts/parse.ts
+      # then finds no dump, carries the committed records, and everything else
+      # about the day proceeds normally. The cost of a bad morning upstream is
+      # that morning's new entries; nothing already committed is at risk,
+      # because this intake is add-only.
+      #
+      # LAST OF THE FETCHES, so a failure here cannot cost the channel dumps
+      # that were already fetched above. It reads a bounded cursor (~3 pages,
+      # 10 max) rather than the 311-page catalogue — see scripts/fetch-theater.ts.
+      #
+      # YT_API_KEY is repeated on purpose: `env:` is per step, and
+      # requireApiKey() runs at module load, so without it this exits 1 before it
+      # has read anything.
+      - name: Fetch the tournament index (Replay Theater)
+        continue-on-error: true
+        run: npm run data:theater
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+
+      - name: Parse and emit
+        run: npm run data:parse
 
       - name: Commit if changed
         run: |
@@ -51,7 +80,12 @@ jobs:
           # review-queue.json is parse-regenerated derived state (a new
           # ambiguous KingArena upload should appear in the committed queue);
           # content-only, no timestamp, so a quiet day leaves it byte-identical.
-          git add data/videos.json data/replays.json data/stats.json data/players.json data/patchGroups.json data/patchBoundaries.json data/summary.json data/seasonBoundaries.json data/review-queue.json data/source-pins.json data/report.md
+          # theater-cursor.json is where the index pull remembers how far it has
+          # read. raw/ is gitignored and CI starts from a fresh checkout, so if
+          # this is not committed the cursor resets to 0 every morning and every
+          # run becomes a bounded sweep that never goes quiet. Content-only (one
+          # integer, no timestamp) so a quiet day leaves it byte-identical.
+          git add data/videos.json data/replays.json data/stats.json data/players.json data/patchGroups.json data/patchBoundaries.json data/summary.json data/seasonBoundaries.json data/review-queue.json data/source-pins.json data/theater-cursor.json data/report.md
           # report.md's "_Generated <timestamp>_" line changes every run; a diff
           # that is ONLY that line is not a data change — drop it so a no-change
           # day produces no commit (and no deploy). report.md still ships
