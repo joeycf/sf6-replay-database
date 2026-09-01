@@ -610,7 +610,18 @@ await writeFile(
       maxEntryId,
       pagesRead,
       hitBound,
-      entries: catalogue,
+      // BEHIND THE PER-ENTRY GAME GATE, not the raw catalogue. The gate is this
+      // intake's only real defence against a response that is not what was asked
+      // for, and the witness has to sit behind it too — it feeds a comparison
+      // whose whole claim is that it is reading THIS game.
+      //
+      // Not hypothetical. On 2026-08-31 a `--full` sweep in tokon-replay-database
+      // resumed from a partial cache left over from an era when this endpoint
+      // returned everything, and wrote 15,286 Street Fighter 6 rows into a
+      // 266-entry Tokon witness. The intake was untouched — the gate did its job
+      // there — but the witness was 98% another game, and nothing downstream
+      // would have said so.
+      entries: rightGame,
     },
     null,
     1,
