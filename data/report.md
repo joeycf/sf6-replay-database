@@ -48,7 +48,7 @@ recorded in data/theater-disagreements.json with both claims, never written into
 a record. The catalogue does not outrank a confident parse and never outranks a
 human override.
 
-_Measured on the last full sweep, at catalogue entry 488158. 3968 catalogue video(s) point at videos_
+_Measured on the last full sweep, at catalogue entry 488158. 3968 catalogue video(s) are ones_
 _we do not hold; 0 are VODs the catalogue segments, which the intake owns._
 
 | field | population | agree | partial | disagree | cannot witness |
@@ -103,4 +103,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-01T19:22:36.047Z_
+_Generated 2026-09-01T19:28:06.523Z_

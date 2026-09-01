@@ -34,7 +34,8 @@ YouTube Data API v3
    │  scripts/youtube.ts       (the shared API client)
    │
 replaytheater.app/api/matches
-   │  scripts/fetch-theater.ts ──→ raw/replayTheater.json   (LOCAL-FIRST, by hand)
+   │  scripts/fetch-theater.ts ──→ raw/replayTheater.json   (daily, on a cursor)
+   │                          └─→ raw/replayTheater.witness.json  (cross-check)
    ▼
 scripts/parse.ts            ──→ data/videos.json             (substrate, committed)
    ├ scripts/channels.ts       (intake config)
@@ -79,24 +80,25 @@ committed `/sf6/` base — but the committed default **is** production truth.
 
 ## Scripts
 
-| script                      | what                                                                      |
-| --------------------------- | ------------------------------------------------------------------------- |
-| `npm run data:fetch`        | every upload from the 6 tracked channels → `raw/`                         |
-| `npm run data:parse`        | parse → substrate + registry + report, then emit                          |
-| `npm run data:build`        | fetch + parse                                                             |
-| `npm run data:catchup`      | **fetch then parse, always together** — the maintenance ritual            |
-| `npm run data:theater`      | pull the Replay Theater index → `raw/replayTheater.json` (LOCAL, by hand) |
-| `npm run data:emit`         | re-derive the generic artifacts from the committed substrate (no network) |
-| `npm run data:extract`      | resolve queued character-completion items from the footage (LOCAL only)   |
-| `npm run data:characters`   | rescrape the roster + art (`--force` re-downloads)                        |
-| `npm run data:expiries`     | `--check` the self-expiring gates; exits 1 when something is due          |
-| `npm run data:versions`     | cross-check the patch table against the SuperCombo wiki (network)         |
-| `npm run data:replay-dupes` | audit duplicate matches → paste-ready `overrides.json` fragment           |
-| `npm run data:player-dupes` | audit player identities `idKey` cannot merge → paste-ready fragment       |
-| `npm run data:mr-probe`     | read Master Rate off each record's HUD — the same-footage signal (LOCAL)  |
-| `npm run data:mr-verdicts`  | turn MR reads into per-record keep/drop for the dupe clusters             |
-| `npm run test:e2e`          | the full audit suite against `.vercel/output/static`                      |
-| `npm run typecheck`         | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators |
+| script                           | what                                                                          |
+| -------------------------------- | ----------------------------------------------------------------------------- |
+| `npm run data:fetch`             | every upload from the 6 tracked channels → `raw/`                             |
+| `npm run data:parse`             | parse → substrate + registry + report, then emit                              |
+| `npm run data:build`             | fetch + parse                                                                 |
+| `npm run data:catchup`           | **fetch then parse, always together** — the maintenance ritual                |
+| `npm run data:theater`           | pull the index → `raw/replayTheater.json` + the witness (runs in the cron)    |
+| `npm run data:theater -- --full` | the whole catalogue (311 pages) — reconciles, and re-measures the cross-check |
+| `npm run data:emit`              | re-derive the generic artifacts from the committed substrate (no network)     |
+| `npm run data:extract`           | resolve queued character-completion items from the footage (LOCAL only)       |
+| `npm run data:characters`        | rescrape the roster + art (`--force` re-downloads)                            |
+| `npm run data:expiries`          | `--check` the self-expiring gates; exits 1 when something is due              |
+| `npm run data:versions`          | cross-check the patch table against the SuperCombo wiki (network)             |
+| `npm run data:replay-dupes`      | audit duplicate matches → paste-ready `overrides.json` fragment               |
+| `npm run data:player-dupes`      | audit player identities `idKey` cannot merge → paste-ready fragment           |
+| `npm run data:mr-probe`          | read Master Rate off each record's HUD — the same-footage signal (LOCAL)      |
+| `npm run data:mr-verdicts`       | turn MR reads into per-record keep/drop for the dupe clusters                 |
+| `npm run test:e2e`               | the full audit suite against `.vercel/output/static`                          |
+| `npm run typecheck`              | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators     |
 
 ## Seasons, not Years
 
@@ -172,9 +174,11 @@ Two halves now stop it:
   fetch then parse, always together, then a summary of what still needs a person.
 
 `--allow-stale` still exists, prints exactly what it is dropping, and is for a
-deliberate one-time prune. The index intake is exempt from the guard — its dump
-is absent by design on every cron run, and its protection is the exact count in
-`data/source-pins.json`, which is stronger.
+deliberate one-time prune. The index intake is exempt from the guard — whether a
+catalogue entry is missing is governed by a third party rather than by when we
+last fetched, and an event withdrawn upstream would read as staleness and refuse
+every run thereafter. Its protection is `data/source-pins.json`, which is
+stronger: a count that can only grow.
 
 ## The self-expiring gates
 
@@ -286,11 +290,20 @@ app change.
 
 Three things follow from it being someone else's data:
 
-- **LOCAL-FIRST.** `npm run data:theater` is run by hand, never by the cron — a
-  third party's uptime should not become a cron dependency. On every run without
-  a dump (which is every cron run) `parse.ts` **carries** the committed records
-  forward, and `data/source-pins.json` asserts the exact count so the carry
-  cannot silently drift. Carrying and rebuilding produce byte-identical output.
+- **IN THE CRON SINCE 2026-08-31, AND ADD-ONLY.** `npm run data:theater` runs
+  every morning as its own step, last of the fetches, with `continue-on-error`.
+  It reads a stop-at-known-ids cursor — about three pages against a 311-page
+  catalogue — and its state lives in `data/theater-cursor.json`. A record it has
+  once produced is carried whether or not the catalogue still lists it, so
+  `data/source-pins.json` can only grow; entries that vanish are counted in
+  `data/report.md`, never removed.
+
+  **The cron does not depend on the pull succeeding.** On any failure there is no
+  dump, `parse.ts` **carries** the committed records exactly as it did when this
+  was a manual command, and the run stays green. A bad morning upstream costs
+  that morning's new entries and nothing else. Carrying and rebuilding produce
+  byte-identical output.
+
 - **Ignore-if-known runs first**, keyed on the VIDEO id. If this repo has already
   ruled on a video in any capacity — parsed it, excluded it, deduped it — the
   catalogue entry is ignored rather than merged. It cost 91 of 1,156 on the first

@@ -7,9 +7,10 @@
 // that, and what it was worst at was tournament sets, which is the whole reason
 // the index intake exists.
 //
-// But out of ingestion scope is not out of scope as EVIDENCE. Measured
-// 2026-08-31: 10,231 of those untagged rows point at a video THIS REPO HAS
-// ALREADY PUBLISHED from a tracked channel — 44% of the corpus. Each one is an
+// But out of ingestion scope is not out of scope as EVIDENCE. Measured on the
+// 2026-08-31 full sweep — 15,506 entries, 1,191 tagged, 14,315 untagged —
+// 10,242 of those untagged rows point at a video THIS REPO HAS ALREADY PUBLISHED
+// from a tracked channel, 44% of the corpus. Each one is an
 // independent human reading of the same match: a stranger typed the two handles
 // and the two characters into a form, and our parser read them out of the
 // uploader's title. Neither saw the other.
@@ -18,20 +19,28 @@
 // parsers against something that is not us. Every other number in report.md is
 // the pipeline grading its own homework.
 //
-// IT PRODUCES NO FIELD AND OVERWRITES NOTHING. A disagreement is routed to the
-// review queue with both claims side by side; it never edits a record, never
-// outranks a confident parse, and never outranks a human override. RT is a
-// witness, not an authority — the same posture the intake already takes when it
-// resolves characters on an exact alias only and drops the rest to residue.
+// IT PRODUCES NO FIELD AND OVERWRITES NOTHING. A disagreement is written to
+// data/theater-disagreements.json with both claims side by side; it never edits
+// a record, never outranks a confident parse, and never outranks a human
+// override. RT is a witness, not an authority — the same posture the intake
+// already takes when it resolves characters on an exact alias only and drops the
+// rest to residue.
+//
+// NOT data/review-queue.json, deliberately. In this repo that queue means
+// WITHHELD — scripts/e2e.ts asserts its items never reach videos.json — and a
+// contested row is a record we have already published and are not proposing to
+// unpublish on a third party's say-so.
 //
 // THE THIRD OUTCOME IS THE POINT. agree / disagree is not enough, because a
 // witness that CANNOT REPRESENT the answer is not disagreeing with it. The
 // catalogue's schema is lossier than ours in ways that differ per game — it caps
 // a 2XKO side at two champions and cannot express a within-set counter-pick, and
-// its Tekken vocabulary has no Armor King at all (318 rows where it writes
-// "King" for both) — so scoring those as disagreements would route hundreds of
-// CORRECT records to review on day one, and, worse, would make agreement
-// unreachable for exactly the rows a resolver would want to fix. Anything the
+// its Tekken vocabulary has no Armor King at all — so scoring those as
+// disagreements would contest hundreds of CORRECT records on day one, and, worse,
+// would make agreement unreachable for exactly the rows a resolver would want to
+// fix. (The Tekken figures live in that repo, which derives its own blind spots
+// and can recompute them; quoting them here would be a number this file cannot
+// check.) Anything the
 // catalogue could not have said is counted as `cannotWitness` and reported
 // separately.
 //
@@ -74,7 +83,7 @@ export interface WitnessFile {
 }
 
 /** One row the cross-check could not settle, carrying BOTH claims. This is what
- *  reaches the review queue — never a rewritten record. */
+ *  reaches data/theater-disagreements.json — never a rewritten record. */
 export interface Disagreement {
   videoId: string;
   field: 'players' | 'characters';
@@ -91,7 +100,8 @@ export interface CrossCheckResult {
    *  excluded: those are the intake's own territory and there is no 1:1 claim to
    *  compare against. */
   compared: number;
-  /** Catalogue entries that pointed at a video we do not hold. Not a failure —
+  /** Catalogue VIDEOS we do not hold as a whole-video record. Counted once per
+   *  video, not per entry. Not a failure —
    *  it is most of the catalogue — but the denominator of "reach". */
   unmatched: number;
   /** Videos we hold that the catalogue indexes as several segments. */
@@ -321,7 +331,7 @@ export function formatCrossCheck(a: WitnessArtifact): string[] {
     'a record. The catalogue does not outrank a confident parse and never outranks a',
     'human override.',
     '',
-    `_Measured on the last full sweep, at catalogue entry ${m.atEntryId}. ${m.unmatched} catalogue video(s) point at videos_`,
+    `_Measured on the last full sweep, at catalogue entry ${m.atEntryId}. ${m.unmatched} catalogue video(s) are ones_`,
     `_we do not hold; ${m.segmented} are VODs the catalogue segments, which the intake owns._`,
     '',
     '| field | population | agree | partial | disagree | cannot witness |',

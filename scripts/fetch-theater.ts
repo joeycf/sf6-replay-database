@@ -666,7 +666,9 @@ if (existsSync(PARTIAL)) await rm(PARTIAL, { force: true });
 console.log(
   `\n  → wrote raw/replayTheater.json (${records.length} record(s)${CURSOR_MODE ? ', a delta' : ''})`,
 );
-console.log(`  → wrote raw/replayTheater.witness.json (${catalogue.length} catalogue entr(ies))`);
+console.log(
+  `  → wrote raw/replayTheater.witness.json (${rightGame.length} of ${catalogue.length} catalogue entr(ies), this game)`,
+);
 
 // ── reconnaissance ──────────────────────────────────────────────────────────
 console.log(`\n${'█'.repeat(72)}`);

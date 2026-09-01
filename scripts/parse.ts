@@ -348,7 +348,10 @@ for (const ch of CHANNELS) {
     // present-but-empty file, so before this the empty case fell straight
     // through to a rebuild, produced 0 records, and tripped the collapse guard
     // at n → 0 — a red cron for a reason nothing in the failure names. The
-    // fetcher now refuses to write an empty dump over a good one, but the file
+    // fetcher refuses to write a COLLAPSED dump on a --full sweep (its pin
+    // floor), but on the cursor path an empty dump is the EXPECTED shape of a
+    // quiet morning — tagged entries are 7.7% of this catalogue — so the empty
+    // case is ordinary here rather than exceptional. And the file
     // is a third party's output landing in a directory we do not control, and
     // "the cron never depends on this succeeding" has to hold for the shapes we
     // did not anticipate too. Tokon has always treated empty as a carry; this is
@@ -1190,7 +1193,8 @@ const reasonCounts = reportedMisses.reduce<Record<string, number>>((acc, m) => {
 // bench queue, and for the same reason.
 //
 // There is no /dev form for these yet. The report block below and the committed
-// artifact are the working surface; with seven rows platform-wide that is the
+// artifact are the working surface; with seven rows here on the 2026-08-31
+// sweep that is the
 // right amount of machinery, and the count is what would justify more.
 const witness = await readJson<WitnessFile>(join(ROOT, 'raw', 'replayTheater.witness.json')).catch(
   () => null,
@@ -1362,10 +1366,14 @@ const report = [
                 : '_Collapse count unavailable: raw/.replayTheater.stats.json is missing._',
               '',
               theaterSkippedKnown.length > 0
-                ? `Entries **skipped as already-known**: **${theaterSkippedKnown.length}** of ${
-                    theaterSkippedKnown.length +
-                    records.filter((v) => v.channel === 'replayTheater').length
-                  }. An id this repo has already ruled on, in any capacity, does not re-enter through a side door. ` +
+                ? // The denominator is the DUMP — the entries this pull actually
+                  // considered — not the published count. The published set
+                  // includes add-only survivors this pull never saw, so counting
+                  // against it would shrink the ratio every time the intake grew.
+                  // The skipped entries are IN the dump, so they are not added to
+                  // it: 1,156 considered, 91 skipped, 1,065 built. 2xko already
+                  // counts it this way.
+                  `Entries **skipped as already-known**: **${theaterSkippedKnown.length}** of ${theaterRaw.length}. An id this repo has already ruled on, in any capacity, does not re-enter through a side door. ` +
                   `By arm: ${Object.entries(
                     theaterSkippedKnown.reduce<Record<string, number>>((acc, r) => {
                       acc[r.where] = (acc[r.where] ?? 0) + 1;
