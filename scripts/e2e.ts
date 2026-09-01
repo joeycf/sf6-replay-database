@@ -287,6 +287,33 @@ function testCronGuard(): void {
     sh('git show --stat --name-only HEAD').includes('data/report.md'),
     'case B: report.md ships with the real change',
   );
+
+  // case C: only the cursor moved → must NOT commit, and the worktree file must
+  // be put back. The catalogue takes new entries daily whether or not any of
+  // OURS change, so without this the cron commits and deploys every morning
+  // forever — which is the rule case A exists to protect, defeated through a
+  // different door. Written as an emptiness test on the remaining staged names:
+  // filtering the cursor out of a `git diff --quiet -- <paths>` can leave an
+  // EMPTY pathspec, and an empty pathspec means "everything".
+  write('data/theater-cursor.json', '{"replayTheater":488500}\n');
+  const c = runGuard();
+  expect(c.includes('No data changes'), 'case C: a cursor-only advance does not commit');
+  expect(sh('git rev-list --count HEAD').trim() === '2', 'case C: still two commits');
+  expect(
+    readFileSync(join(dir, 'data/theater-cursor.json'), 'utf8').includes('[]'),
+    'case C: the worktree cursor is restored, not left advanced',
+  );
+
+  // case D: a real change AND the cursor → commits, cursor rides along.
+  write('data/theater-cursor.json', '{"replayTheater":488600}\n');
+  write('data/replays.json', '[{"id":"x"},{"id":"y"}]\n');
+  write('data/report.md', '# r\n\n19496 matches\n\n_Generated 2026-01-04T00:00:00.000Z_\n');
+  runGuard();
+  expect(sh('git rev-list --count HEAD').trim() === '3', 'case D: real change + cursor commits');
+  expect(
+    sh('git show --stat --name-only HEAD').includes('data/theater-cursor.json'),
+    'case D: the cursor rides along with a real change',
+  );
 }
 
 /** Node-side substrate gates: the review queue and the dupe audit, checked
@@ -336,9 +363,52 @@ function testSubstrateGates(): void {
   // unpublish on a third party's say-so. If one of these ever failed to appear
   // in videos.json it would mean the catalogue had been allowed to remove a
   // record, which is the one thing this intake must never do.
-  const contested = JSON.parse(
+  //
+  // THE FILE IS AN OBJECT, not a bare list: it also carries the MEASUREMENT, so
+  // report.md can be rendered from what is committed rather than from this
+  // morning's cursor window. A cursor pull's window is a few hundred catalogue
+  // rows and differs every day, so rendering it made report.md change on every
+  // run whether or not a record had — which retires the cron's
+  // no-change-no-commit rule from the other side. Only a full sweep writes here.
+  const witnessFile = JSON.parse(
     readFileSync(join(ROOT, 'data/theater-disagreements.json'), 'utf8'),
-  ) as { videoId: string; field: string; ours: string[]; theirs: string[] }[];
+  ) as {
+    measured?: {
+      atEntryId: number;
+      compared: number;
+      unmatched: number;
+      segmented: number;
+      players: { both: number; one: number; neither: number; flipped: number };
+      characters: {
+        sides: number;
+        agree: number;
+        subset: number;
+        disagree: number;
+        cannotWitness: number;
+      };
+    };
+    disagreements: { videoId: string; field: string; ours: string[]; theirs: string[] }[];
+  };
+  const contested = witnessFile.disagreements ?? [];
+  const m = witnessFile.measured;
+  // The measurement has to add up, or the block is decorative. Every side is
+  // exactly one of agree / subset / disagree / cannotWitness.
+  expect(
+    !m ||
+      (m.characters.agree +
+        m.characters.subset +
+        m.characters.disagree +
+        m.characters.cannotWitness ===
+        m.characters.sides &&
+        m.players.both + m.players.one + m.players.neither === m.compared &&
+        m.characters.sides === m.compared * 2),
+    `cross-check measurement is internally consistent${m ? ` (${m.compared} compared)` : ' (none yet)'}`,
+  );
+  // Every contested row must be one the measurement actually counted.
+  expect(
+    !m || contested.length <= m.characters.disagree + m.players.neither,
+    'contested rows are a subset of what was measured',
+  );
   expect(
     contested.every((d) => videoIds.has(d.videoId)),
     `every cross-check disagreement is still published (${contested.length})`,

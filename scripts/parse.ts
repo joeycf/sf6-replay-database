@@ -19,6 +19,7 @@
 //
 // Run: npm run data:parse   (pure: no network, no API key)
 
+import { existsSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,7 +27,7 @@ import { fileURLToPath } from 'node:url';
 import { applyOverrides, emitGeneric } from './emit';
 import { CHANNELS, stripTheaterSponsor } from './channels';
 import { dueExpiries, formatExpiries } from './expiries';
-import { crossCheck, formatCrossCheck, type WitnessFile } from './crosscheck';
+import { crossCheck, formatCrossCheck, type WitnessArtifact, type WitnessFile } from './crosscheck';
 import { formatStaleRefusal, staleEvidence } from './freshness';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
 import { idKey, resolveKey, slug } from './players';
@@ -1202,11 +1203,41 @@ for (const c of characters) {
 const witnessResult = witness
   ? crossCheck(witness, records, byAliasForWitness, resolveKey, stripTheaterSponsor)
   : null;
-if (witnessResult) {
-  await writeFile(
-    join(DATA, 'theater-disagreements.json'),
-    JSON.stringify(witnessResult.disagreements, null, 2) + '\n',
-    'utf8',
+const witnessPath = join(DATA, 'theater-disagreements.json');
+let witnessArtifact = await readJson<WitnessArtifact>(witnessPath).catch(
+  () => ({ disagreements: [] }) as WitnessArtifact,
+);
+// ONLY A FULL SWEEP WRITES. A cursor pull sees a few hundred catalogue rows —
+// whatever is at the front of the feed this morning — so its reading is a
+// different WINDOW, not a different corpus, and letting it overwrite would throw
+// away the full sweep's rows on the first quiet morning and then flap them back
+// the next. The console still prints what the cursor saw; the artifact and
+// report.md keep the last real measurement until the next sweep replaces it.
+if (witnessResult && witness?.mode === 'full') {
+  witnessArtifact = {
+    measured: {
+      atEntryId: theaterStats?.maxEntryId ?? 0,
+      compared: witnessResult.compared,
+      unmatched: witnessResult.unmatched,
+      segmented: witnessResult.segmented,
+      players: witnessResult.players,
+      characters: witnessResult.characters,
+    },
+    disagreements: witnessResult.disagreements,
+  };
+  await writeFile(witnessPath, JSON.stringify(witnessArtifact, null, 2) + '\n', 'utf8');
+} else if (!existsSync(witnessPath)) {
+  // The cron NAMES this path in its `git add`, and `git add` on a path that does
+  // not exist fails under `set -e` and aborts the commit step. Seeded when
+  // absent, never rewritten when present.
+  await writeFile(witnessPath, JSON.stringify({ disagreements: [] }, null, 2) + '\n', 'utf8');
+}
+if (witnessResult && witness?.mode !== 'full') {
+  const c = witnessResult.characters;
+  console.log(
+    `  cross-check (cursor window, not committed): ${witnessResult.compared} record(s), ` +
+      `${witnessResult.players.both} both-handles, ${c.agree}/${c.sides} character sides agree, ` +
+      `${witnessResult.disagreements.length} disagreement(s)`,
   );
 }
 
@@ -1263,7 +1294,7 @@ const report = [
               ? 'carried (pull found no new tournament entries)'
               : 'carried (no pull this run)'
             : theaterStats?.mode === 'cursor'
-              ? `cursor delta${theaterStats.hitBound ? ' (hit page bound)' : ''}`
+              ? 'rebuilt from a cursor delta'
               : 'rebuilt from a full sweep';
           // On a rebuild the pin is rewritten from this same count below, so read
           // the count rather than the stale in-memory value loaded before it.
@@ -1278,9 +1309,28 @@ const report = [
           // it means nothing. So the full number is reported and the cursor
           // number is withheld rather than dressed up.
           const gone = carried || theaterStats?.mode !== 'full' ? '—' : String(survivors.length);
-          return `| \`${ch.id}\` | ${n} | ${pin} | ${mode} | ${carried ? '—' : (theaterStats?.pagesRead ?? '—')} | ${carried ? '—' : built} | ${gone} |`;
+          // PER-RUN COLUMNS ARE WITHHELD ON A CURSOR MORNING, for the same reason
+          // the cross-check block is rendered from the committed artifact: the
+          // page count and the built count describe this morning's WINDOW, not
+          // the corpus, and printing them made report.md differ every day whether
+          // or not a record had changed — which quietly retires the cron's
+          // no-change-no-commit rule and deploys the site daily forever.
+          const full = !carried && theaterStats?.mode === 'full';
+          return `| \`${ch.id}\` | ${n} | ${pin} | ${mode} | ${full ? (theaterStats?.pagesRead ?? '—') : '—'} | ${full ? built : '—'} | ${gone} |`;
         }),
         '',
+        // NOT per-run noise: normally absent, and present only on a morning the
+        // cursor could not go quiet inside its page bound. That is a real event
+        // and deserves to reach the commit, the same way an ACTION REQUIRED block
+        // does — the guard's rule is that a diff which is ONLY the timestamp is
+        // not a change, not that report.md may never change.
+        ...(theaterStats?.hitBound
+          ? [
+              `_⚠ The cursor hit its page bound this run — entries may be unreached._`,
+              '_Nothing is lost (add-only); `npm run data:theater -- --full` reconciles._',
+              '',
+            ]
+          : []),
         // A CARRY measures none of this — the dump it would have measured is
         // absent by design. Saying so beats printing 0, which reads as "checked,
         // found nothing" when the truth is "not checked this run".
@@ -1365,7 +1415,7 @@ const report = [
       .join(' · ') || 'none'
   }`,
   '',
-  ...(witnessResult ? formatCrossCheck(witnessResult, witness?.mode) : []),
+  ...formatCrossCheck(witnessArtifact),
   '## Sample misses (first 30 that are not shorts/live/not-sf6)',
   '',
   ...reportedMisses
