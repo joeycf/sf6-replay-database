@@ -1,17 +1,17 @@
 
 # SF6 pipeline report
 
-**24318 matches** parsed from 36217 uploads across 7 channels, plus 1065 from 1 index · 2338 players · ranked sides 21300/48636 (43.8%)
+**24339 matches** parsed from 36241 uploads across 7 channels, plus 1065 from 1 index · 2338 players · ranked sides 21325/48678 (43.8%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5827 | 5827 | 5812 | 99.7% | 11210 |
-| fgcPlace | fgcPlace | 9901 | 8909 | 8724 | 97.9% | 10090 |
-| sfReplays | sfReplays | 7079 | 6080 | 5498 | 90.4% | 0 |
+| highLevel | highLevel | 5829 | 5829 | 5814 | 99.7% | 11214 |
+| fgcPlace | fgcPlace | 9912 | 8920 | 8735 | 97.9% | 10111 |
+| sfReplays | sfReplays | 7086 | 6087 | 5505 | 90.4% | 0 |
 | capcomFighters | capcomFighters | 8040 | 1646 | 1035 | 62.9% | 0 |
-| evoEvents | evoEvents | 2762 | 153 | 81 | 52.9% | 0 |
+| evoEvents | evoEvents | 2764 | 154 | 81 | 52.6% | 0 |
 | kingArena | kingArenaOnline / kingArenaTournament | 2460 | 2445 | 2034 | 83.2% | 0 |
-| superFighters | superFighters | 148 | 147 | 69 | 46.9% | 0 |
+| superFighters | superFighters | 150 | 149 | 70 | 47.0% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Index intakes
@@ -23,20 +23,21 @@ the committed records are carried, and the run stays green.
 
 | intake | records | pin | this run | pages | new | not in this pull |
 | --- | ---: | ---: | --- | ---: | ---: | ---: |
-| `replayTheater` | 1065 | 1065 | rebuilt from a full sweep | 311 | 1065 | 0 |
+| `replayTheater` | 1065 | 1065 | carried (pull found no new tournament entries) | — | — | — |
 
-_Carried from the committed catalogue, so the intake counts below were not_
-_measured this run. Re-run `npm run data:theater` to refresh them._
+_The pull ran and found no new tournament entries, so the committed_
+_catalogue was carried unchanged. The cursor still advanced — a quiet_
+_day is the ordinary case here, not a failed one._
 
 kingArena classifier: online 1403 · tournament 750 · resolved by hand 38 · pending 0
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8025 · S3 9574 · S4 494
+Seasons: S1 6225 · S2 8025 · S3 9574 · S4 515
 
-Rank distribution (side appearances): Legend 18879 · Master 2407 · Diamond 14
+Rank distribution (side appearances): Legend 18904 · Master 2407 · Diamond 14
 
-Misses by reason: not-sf6 11010 · no-vs-title 1160 · shorts 171 · char-unresolved 165 · short-duration 117 · pre-launch 93 · bad-handle 27 · live-or-upcoming 7
+Misses by reason: not-sf6 11011 · no-vs-title 1162 · shorts 172 · char-unresolved 165 · short-duration 117 · pre-launch 93 · bad-handle 27 · live-or-upcoming 6
 
 ## Replay Theater cross-check
 
@@ -103,4 +104,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-01T19:28:06.523Z_
+_Generated 2026-09-02T02:12:55.326Z_
