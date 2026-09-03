@@ -290,7 +290,7 @@ app change.
 
 Three things follow from it being someone else's data:
 
-- **IN THE CRON SINCE 2026-08-31, AND ADD-ONLY.** `npm run data:theater` runs
+- **IN THE CRON SINCE 2026-09-02, AND ADD-ONLY.** `npm run data:theater` runs
   every morning as its own step, last of the fetches, with `continue-on-error`.
   It reads a stop-at-known-ids cursor — about three pages against a 311-page
   catalogue — and its state lives in `data/theater-cursor.json`. A record it has
@@ -488,8 +488,9 @@ not misattributed. `npm run test:e2e` now gates the wiring, and the shell's
 `.github/workflows/data-refresh.yml` runs at **07:17 UTC** (the third stagger
 slot, after 2XKO's 06:17 and Tekken's 06:47) and on `workflow_dispatch`. It
 needs `YT_API_KEY` in the repo's Actions secrets. A diff that is only
-`report.md`'s `_Generated_` timestamp does not commit, so a no-change day
-produces no deploy.
+`report.md`'s `_Generated_` timestamp, or only the Replay Theater cursor, does
+not commit. In practice every morning commits anyway: `data:fetch` refreshes
+view counts into `videos.json`, so the suppression is a floor, not the norm.
 
 ## Things worth knowing
 

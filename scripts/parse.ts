@@ -1031,8 +1031,8 @@ const players: PlayerRecord[] = [...seen.entries()]
 // THE ONLY-GROWS ASSERT IS NEW, and it is the replacement for a guarantee this
 // move removes rather than a belt on top of one. Until now every cron run was a
 // carry, so the pin was ASSERTED daily at exact equality — the strongest check
-// this intake had. From today most runs rebuild, and a rebuilding run does not
-// assert the pin at all; it overwrites it. The only remaining check would have
+// this intake had. From 2026-09-02 a run that finds new tagged entries rebuilds,
+// and a rebuilding run does not assert the pin at all; it overwrites it. The only remaining check would have
 // been the collapse guard, and the collapse guard is measurably silent on the
 // loss that actually happens here: the largest source VOD holds 57 records
 // (5.4%), which clears the >20 absolute arm but not the >10% one, so it passes.
@@ -1100,6 +1100,13 @@ if (rebuiltThisRun.length > 0) {
 // morning re-read the same pages forever and the cursor could only ever move on
 // the days a tournament happened to be added. The pull happening is what moves
 // the cursor; whether it produced records is a different question.
+// WHETHER THE CURSOR MOVED is a fact the report states, so it is measured
+// rather than assumed: on 2026-09-02 2XKO's cursor stayed at 488405 while its
+// report said it "still advanced".
+const cursorMoved =
+  !!theaterStats &&
+  typeof theaterStats.maxEntryId === 'number' &&
+  theaterStats.maxEntryId > (theaterCursor.replayTheater ?? 0);
 if (theaterStats && typeof theaterStats.maxEntryId === 'number') {
   const nextCursor: Record<string, number> = { ...theaterCursor };
   for (const ch of CHANNELS.filter((c) => c.index && c.cronFetchedWithCarry)) {
@@ -1289,7 +1296,7 @@ const report = [
     ? [
         '### Index intakes',
         '',
-        'Fetched by the daily cron since 2026-08-31, and ADD-ONLY: a committed record is',
+        'Fetched by the daily cron since 2026-09-02, and ADD-ONLY: a committed record is',
         'carried whether or not the catalogue still lists it, so this count can only rise.',
         'The cron does not depend on the pull succeeding — on any failure there is no dump,',
         'the committed records are carried, and the run stays green.',
@@ -1349,8 +1356,16 @@ const report = [
               ...(theaterStats
                 ? [
                     '_The pull ran and found no new tournament entries, so the committed_',
-                    '_catalogue was carried unchanged. The cursor still advanced — a quiet_',
-                    '_day is the ordinary case here, not a failed one._',
+                    '_catalogue was carried unchanged._',
+                    ...(cursorMoved
+                      ? [
+                          '_The cursor still advanced — a quiet day is the ordinary case here,_',
+                          '_not a failed one._',
+                        ]
+                      : [
+                          '_The cursor did not move: the catalogue has taken no new SF6 entry_',
+                          '_since the last pull — quieter still, and equally ordinary._',
+                        ]),
                   ]
                 : [
                     '_No pull produced a dump this run, so the committed catalogue was carried_',
@@ -1389,7 +1404,7 @@ const report = [
                     .sort((a, b) => b[1] - a[1])
                     .map(([w, n]) => `${w} ${n}`)
                     .join(' · ')}.`
-                : '_Entries skipped as already-known: **0**. The catalogue indexes no video this repo has fetched, published or ruled on._',
+                : `_Entries skipped as already-known: **0** of ${theaterRaw.length} in this pull — none was a video this repo has already fetched, published or ruled on. A statement about this pull's tagged rows, not the catalogue: the cross-check below measures the catalogue-wide overlap._`,
               '',
               ...(theaterResidue.length > 0
                 ? [
