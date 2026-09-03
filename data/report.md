@@ -1,22 +1,22 @@
 
 # SF6 pipeline report
 
-**24343 matches** parsed from 36248 uploads across 7 channels, plus 1065 from 1 index · 2337 players · ranked sides 21331/48686 (43.8%)
+**24368 matches** parsed from 36275 uploads across 7 channels, plus 1065 from 1 index · 2339 players · ranked sides 21345/48736 (43.8%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5829 | 5829 | 5814 | 99.7% | 11214 |
-| fgcPlace | fgcPlace | 9915 | 8923 | 8738 | 97.9% | 10117 |
-| sfReplays | sfReplays | 7088 | 6089 | 5507 | 90.4% | 0 |
-| capcomFighters | capcomFighters | 8041 | 1647 | 1035 | 62.8% | 0 |
+| highLevel | highLevel | 5832 | 5832 | 5817 | 99.7% | 11220 |
+| fgcPlace | fgcPlace | 9919 | 8927 | 8742 | 97.9% | 10125 |
+| sfReplays | sfReplays | 7091 | 6092 | 5510 | 90.4% | 0 |
+| capcomFighters | capcomFighters | 8043 | 1649 | 1035 | 62.8% | 0 |
 | evoEvents | evoEvents | 2764 | 154 | 81 | 52.6% | 0 |
-| kingArena | kingArenaOnline / kingArenaTournament | 2460 | 2445 | 2034 | 83.2% | 0 |
+| kingArena | kingArenaOnline / kingArenaTournament | 2475 | 2460 | 2049 | 83.3% | 0 |
 | superFighters | superFighters | 151 | 150 | 69 | 46.0% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Index intakes
 
-Fetched by the daily cron since 2026-08-31, and ADD-ONLY: a committed record is
+Fetched by the daily cron since 2026-09-02, and ADD-ONLY: a committed record is
 carried whether or not the catalogue still lists it, so this count can only rise.
 The cron does not depend on the pull succeeding — on any failure there is no dump,
 the committed records are carried, and the run stays green.
@@ -26,18 +26,19 @@ the committed records are carried, and the run stays green.
 | `replayTheater` | 1065 | 1065 | carried (pull found no new tournament entries) | — | — | — |
 
 _The pull ran and found no new tournament entries, so the committed_
-_catalogue was carried unchanged. The cursor still advanced — a quiet_
-_day is the ordinary case here, not a failed one._
+_catalogue was carried unchanged._
+_The cursor still advanced — a quiet day is the ordinary case here,_
+_not a failed one._
 
-kingArena classifier: online 1403 · tournament 750 · resolved by hand 38 · pending 0
+kingArena classifier: online 1403 · tournament 765 · resolved by hand 38 · pending 0
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8025 · S3 9574 · S4 519
+Seasons: S1 6225 · S2 8025 · S3 9574 · S4 544
 
-Rank distribution (side appearances): Legend 18910 · Master 2407 · Diamond 14
+Rank distribution (side appearances): Legend 18924 · Master 2407 · Diamond 14
 
-Misses by reason: not-sf6 11011 · no-vs-title 1163 · shorts 172 · char-unresolved 165 · short-duration 118 · pre-launch 93 · bad-handle 27 · live-or-upcoming 7
+Misses by reason: not-sf6 11011 · no-vs-title 1164 · shorts 174 · char-unresolved 165 · short-duration 118 · pre-launch 93 · bad-handle 27 · live-or-upcoming 6
 
 ## Replay Theater cross-check
 
@@ -104,4 +105,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-02T12:11:12.169Z_
+_Generated 2026-09-03T01:48:51.476Z_
