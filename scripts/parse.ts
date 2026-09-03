@@ -1273,10 +1273,16 @@ const report = [
     const carried = carriedWithFallback.includes(ch.id);
     const mark = ch.index ? (carried ? ' _(carried)_' : ' _(index)_') : '';
     if (carried) return `| ${ch.id}${mark} | ${src} | — | — | ${s.parsed} | — | ${s.ranked} |`;
-    return (
-      `| ${ch.id}${mark} | ${src} | ${s.raw} | ${s.sf6} | ${s.parsed} | ` +
-      `${((s.parsed / Math.max(1, s.sf6)) * 100).toFixed(1)}% | ${s.ranked} |`
-    );
+    // A SHARE IS ONLY MEANINGFUL WHEN `parsed` CAME OUT OF `uploads`. On a
+    // cursor morning the index dump is a delta of a few entries while `parsed`
+    // counts the whole merged intake, so the division reads several hundred
+    // per cent — not wrong so much as meaningless. Tōkon withholds it the same
+    // way; SF6 had not yet hit the path when the first cron morning showed it.
+    const share =
+      ch.index && theaterStats?.mode === 'cursor'
+        ? '—'
+        : `${((s.parsed / Math.max(1, s.sf6)) * 100).toFixed(1)}%`;
+    return `| ${ch.id}${mark} | ${src} | ${s.raw} | ${s.sf6} | ${s.parsed} | ${share} | ${s.ranked} |`;
   }),
   '',
   ...(CHANNELS.some((c) => c.cronFetchedWithCarry)
