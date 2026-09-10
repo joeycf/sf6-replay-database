@@ -51,11 +51,23 @@ import type { Expiry } from '../types/index';
  * were playable when this repo was built.
  */
 export const UNRELEASED: { id: string; releases: string; note?: string }[] = [
-  // Empty is the resting state: every character on Capcom's index is playable.
+  // Year 4 character #2. Capcom paged him ahead of release exactly as the header
+  // describes, so the index reads 32 while 31 are playable. WITHOUT THIS ROW THE
+  // SCRAPER ADDS HIM FIVE WEEKS EARLY. Window from Capcom's own top page
+  // ("[t]DLC_schedule_character2_year4": "<span>Arjun Update</span>Autumn 2026");
+  // the exact day is the announced 13 October. The note stays SHORT because
+  // characters.ts prints it inline on every run's "skipping" line.
+  { id: 'arjun', releases: '2026-10-13', note: 'Year 4 #2, paged since Sep 2026' },
   // Yasmine (2026-08-03, first Year 4 character) cleared on release day.
-  // Add the next pass character here as soon as Capcom pages it, with the
-  // announced date — that is what turns a future release into a due expiry
-  // rather than something a human has to remember.
+  //
+  // WHAT "PAGED" MEANS HERE, AND THE TRAP UNDER IT. Add the next pass character as soon as
+  // Capcom pages them — but HTTP STATUS IS NOT THE PAGED SIGNAL ON THIS SITE. /6/character/tifa
+  // and /6/character/bosch both return 200 today with NO og:title and NO namespace key; so does
+  // /6/character/notarealcharacter. They are soft-404s from the Next.js catch-all. The signal is
+  // the "character/<slug>" key in props.pageProps.__namespaces, which is what discoverSlugs()
+  // reads. Tifa (Early 2027) and Bosch (Spring 2027) are named on the Year 4 pass
+  // ("[t]DLC_character_txt_year4": "- 4 additional characters (Yasmine, Arjun, Tifa, Bosch)")
+  // but are NOT paged, so they are not yet gate-eligible and must not be pre-seeded here.
 ];
 
 const today = (): string => new Date().toISOString().slice(0, 10);

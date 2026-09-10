@@ -43,23 +43,14 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 import { UNRELEASED, dueExpiries, formatExpiries } from './expiries';
+// Discovery lives in sf6-site.ts so this script and scripts/roster-check.ts
+// enumerate the roster identically. See that file's header.
+import { SITE, SLUG_TO_ID, UA, discoverSlugs, fetchText } from './sf6-site';
 import type { CharacterRecord } from '../types/index';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const IMG_DIR = join(ROOT, 'public', 'img', 'characters');
-const SITE = 'https://www.streetfighter.com/6';
-const UA =
-  'Mozilla/5.0 (X11; Linux x86_64) sf6-replay-database roster scraper (fan project; contact via GitHub joeycf/sf6-replay-database)';
 const FORCE = process.argv.includes('--force');
-
-/** Capcom's slugs are JP-canonical where the western name differs. Everything
- *  not listed maps to itself. */
-const SLUG_TO_ID: Record<string, string> = {
-  gouki_akuma: 'akuma',
-  vega_mbison: 'bison',
-  cviper: 'viper',
-  ehonda: 'honda',
-};
 
 /** Community shorthand, punctuation variants, and the official-name forms the
  *  channels actually write. Merged with the scraped short + full names. */
@@ -68,7 +59,7 @@ const CURATED_ALIASES: Record<string, string[]> = {
   honda: ['e.honda', 'e. honda', 'ehonda', 'honda', 'edmond honda'],
   deejay: ['dee jay', 'dee-jay', 'deejay', 'd.jay'],
   akuma: ['akuma', 'gouki'],
-  bison: ['m.bison', 'm. bison', 'mbison', 'bison'],
+  bison: ['m.bison', 'm. bison', 'mbison', 'bison', 'vega'],
   viper: ['c.viper', 'c. viper', 'cviper', 'crimson viper', 'viper'],
   aki: ['a.k.i.', 'a.k.i', 'aki'],
   mai: ['mai', 'mai shiranui', 'shiranui'],
@@ -77,49 +68,26 @@ const CURATED_ALIASES: Record<string, string[]> = {
   ken: ['ken', 'ken masters'],
   zangief: ['zangief', 'gief'],
 };
-// Deliberately NOT aliased: 'vega' → bison. Vega-the-claw is not in SF6, so the
-// JP naming would be unambiguous in principle, but no English-language channel
-// in the tracked corpus writes "Vega" for Bison, and the alias would misfire on
-// any stray mention. Add it only if the report shows it costing matches.
+// 'vega' → bison IS aliased, and the reason is the FOOTAGE, not the titles.
+// This comment used to say the opposite, on the grounds that no English-language
+// channel writes "Vega" for Bison. That reasoning was about TITLES and it still
+// holds for titles — but a7ead97 added Evo character extraction, which reads the
+// character name off the HUD, and Evo Japan runs a Japanese-UI HUD that prints
+// ベガ/VEGA. Verified there to reclassify nothing: every "vega" in the tracked
+// corpus is the player KINGS VEGA in handle position, or pre-launch SFV.
+//
+// THE BUG THIS COMMENT IS THE FIX FOR: a7ead97 added the alias to
+// data/characters.json — a BUILD OUTPUT — and never back-ported it here, so every
+// run of this script silently deleted it again and broke Evo Japan extraction.
+// Nothing caught that, because the deletion looks like a normal regeneration diff.
+// An alias belongs in this table and nowhere else.
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-async function fetchText(url: string): Promise<string> {
-  const res = await fetch(url, { headers: { 'user-agent': UA } });
-  if (!res.ok) throw new Error(`GET ${url} → HTTP ${res.status}`);
-  return res.text();
-}
 
 async function fetchBuffer(url: string): Promise<Buffer> {
   const res = await fetch(url, { headers: { 'user-agent': UA } });
   if (!res.ok) throw new Error(`GET ${url} → HTTP ${res.status}`);
   return Buffer.from(await res.arrayBuffer());
-}
-
-interface NextNamespaces {
-  props: { pageProps: { __namespaces: Record<string, Record<string, string>> } };
-}
-
-/** Every character slug the official site knows about. */
-async function discoverSlugs(): Promise<string[]> {
-  const html = await fetchText(`${SITE}/character/ryu`);
-  const m = /<script id="__NEXT_DATA__" type="application\/json">(.*?)<\/script>/s.exec(html);
-  if (!m) {
-    throw new Error(
-      `no __NEXT_DATA__ block on the character page — the official site changed shape. ` +
-        'Re-derive the scrape target before trusting any roster output.',
-    );
-  }
-  const data = JSON.parse(m[1]!) as NextNamespaces;
-  const ns = data.props?.pageProps?.__namespaces;
-  if (!ns) throw new Error('__NEXT_DATA__ has no props.pageProps.__namespaces — markup drift');
-
-  const slugs = Object.keys(ns)
-    .filter((k) => k.startsWith('character/'))
-    .map((k) => k.slice('character/'.length))
-    .sort();
-  if (slugs.length === 0) throw new Error('no character/* namespaces found — markup drift');
-  return slugs;
 }
 
 /** The character name from a page's server-rendered og:title. */

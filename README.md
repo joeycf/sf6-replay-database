@@ -93,6 +93,7 @@ committed `/sf6/` base — but the committed default **is** production truth.
 | `npm run data:characters`        | rescrape the roster + art (`--force` re-downloads)                            |
 | `npm run data:expiries`          | `--check` the self-expiring gates; exits 1 when something is due              |
 | `npm run data:versions`          | cross-check the patch table against the SuperCombo wiki (network)             |
+| `npm run data:roster-check`      | cross-check the roster against Capcom's index (network, manual)               |
 | `npm run data:replay-dupes`      | audit duplicate matches → paste-ready `overrides.json` fragment               |
 | `npm run data:player-dupes`      | audit player identities `idKey` cannot merge → paste-ready fragment           |
 | `npm run data:mr-probe`          | read Master Rate off each record's HUD — the same-footage signal (LOCAL)      |

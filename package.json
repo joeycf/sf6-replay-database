@@ -24,6 +24,7 @@
     "data:emit": "tsx scripts/emit.ts",
     "data:extract": "tsx scripts/complete-characters.ts",
     "data:characters": "tsx scripts/characters.ts",
+    "data:roster-check": "tsx scripts/roster-check.ts",
     "data:expiries": "tsx scripts/expiries.ts --check",
     "data:player-dupes": "tsx scripts/player-dupes.ts",
     "data:replay-dupes": "tsx scripts/replay-dupes.ts",
