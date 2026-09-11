@@ -930,6 +930,74 @@ async function main(): Promise<void> {
     channelChipNames.every((n) => !srcBtns.includes(n)),
     'per-channel source chips are consolidated away',
   );
+
+  // ── the badge names the EVENT, not the catalogue (engine v0.13.0) ─────────
+  // The index intake is one token covering seventeen organisers, so its
+  // configured name can only ever say "a catalogue filed this". Every record
+  // it emits carries the catalogue's own event tag, and the badge prints that.
+  {
+    const labelledAll = JSON.parse(readFileSync(join(ROOT, 'data/replays.json'), 'utf8')) as {
+      id: string;
+      source: string;
+      title: string;
+      event?: string;
+      channelName?: string;
+    }[];
+    const theater = labelledAll.filter((r) => r.source === 'replayTheater');
+    const labelled = theater.filter((r) => r.event);
+    expect(
+      labelled.length === theater.length,
+      `every index-sourced record carries an event (${labelled.length}/${theater.length})`,
+    );
+    expect(
+      labelledAll.every((r) => r.source === 'replayTheater' || (!r.event && !r.channelName)),
+      'no channel-sourced record carries a label',
+    );
+    expect(
+      labelledAll.every((r) => (r.event ?? 'x').trim() !== ''),
+      'no emitted event is empty or blank — an empty label renders a chip with no text',
+    );
+    // The tag rides in the synthesized title too (that is what makes an event
+    // searchable), so the two must agree or one of them is stale.
+    const disagree = labelled.filter((r) => !r.title.endsWith(`▰ ${r.event}`));
+    expect(
+      disagree.length === 0,
+      `every event matches its title's trailing slot${disagree.length ? ` (${disagree[0]!.id})` : ''}`,
+    );
+    const longest = labelled.reduce((n, r) => Math.max(n, r.event!.length), 0);
+    expect(longest <= 60, `longest event label is ${longest} chars (cap 60)`);
+
+    // …and it reaches a card. This also pins the badge's TAG NAME, which the
+    // consolidation check above relies on to tell a filter chip from a badge.
+    await gotoIdle(page, at('/?src=replayTheater'));
+    await page.waitForSelector('[data-replay-id]');
+    const badges = (await page.evaluate(
+      `Array.from(document.querySelectorAll('[data-replay-id]')).slice(0, 12).map((c) => {
+        const b = c.querySelector('span.cut-bl-md');
+        return { id: c.getAttribute('data-replay-id'), tag: b ? b.tagName : 'NONE', text: b ? (b.textContent || '').trim() : '' };
+      })`,
+    )) as { id: string; tag: string; text: string }[];
+    const byId = new Map(labelledAll.map((r) => [r.id, r]));
+    expect(badges.length > 0, 'the index-source filter renders cards');
+    expect(
+      badges.every((b) => b.tag === 'SPAN'),
+      `every card badge is a <span> (saw ${[...new Set(badges.map((b) => b.tag))].join(', ')})`,
+    );
+    const wrong = badges.filter((b) => b.text !== (byId.get(b.id)?.event ?? ''));
+    expect(
+      wrong.length === 0,
+      `every card badge prints its record's event${wrong.length ? ` — ${wrong[0]!.id} showed "${wrong[0]!.text}"` : ''}`,
+    );
+    expect(
+      !badges.some((b) => b.text === 'Tournament VODs'),
+      'no card falls back to the source name',
+    );
+    // Put the page back where this block found it: the chip-click case below
+    // asserts on the ?src= the Online chip WRITES, and it reads as a broken
+    // group toggle if it starts from a page that already carries a filter.
+    await gotoIdle(page, at('/'));
+    await page.waitForSelector('[data-replay-id]');
+  }
   // clicking the group chip writes the member ids as a ?src= CSV — assert the
   // URL param set AND the filtered count against the restated membership
   await page.locator('button:text-is("Online")').first().click();

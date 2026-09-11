@@ -62,6 +62,10 @@ export interface GenericReplay {
   durationSec?: number;
   videoId?: string;
   startSeconds?: number;
+  /** What the badge prints instead of the source's configured name (engine
+   *  v0.13.0): the event first, then the uploader, then neither. */
+  event?: string;
+  channelName?: string;
 }
 
 /**
@@ -112,6 +116,11 @@ function toReplay(v: MatchVideo, windows = patchWindows()): GenericReplay {
     // an embed for the literal string "abc@0": a 404 and a dead player.
     ...(v.videoId ? { videoId: v.videoId } : {}),
     ...(v.startSeconds ? { startSeconds: v.startSeconds } : {}),
+    // Pass-through, not a decision. Whether a label is meaningful is a question
+    // only the builder that read it can answer, and the theater builder is the
+    // only one that sets either field.
+    ...(v.event ? { event: v.event } : {}),
+    ...(v.channelName ? { channelName: v.channelName } : {}),
   };
 }
 

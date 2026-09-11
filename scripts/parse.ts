@@ -805,6 +805,14 @@ function buildTheaterRecords(ch: ChannelConfig, dump: TheaterRawRecord[]): Match
       season: seasonForDate(r.publishedAt),
       videoId: r.videoId,
       startSeconds: r.startSeconds,
+      // What the badge prints (engine v0.13.0). The tag is why this intake is
+      // worth having: "CEOtaku 2024 Pools" is what the footage IS, and the
+      // source token can only name the catalogue that filed it. `uploader` is
+      // the fallback for a future untagged entry — this intake admits none.
+      ...((tag, up) => (tag ? { event: tag } : up ? { channelName: up } : {}))(
+        (r.tag ?? '').trim(),
+        (r.uploader ?? '').trim(),
+      ),
       sides: [sides[0]!, sides[1]!] as [MatchSide, MatchSide],
     });
   }
