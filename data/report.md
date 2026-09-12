@@ -1,14 +1,14 @@
 
 # SF6 pipeline report
 
-**24549 matches** parsed from 36490 uploads across 7 channels, plus 1065 from 1 index · 2329 players · ranked sides 21486/49098 (43.8%)
+**24572 matches** parsed from 36518 uploads across 7 channels, plus 1065 from 1 index · 2330 players · ranked sides 21490/49144 (43.7%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | highLevel | highLevel | 5842 | 5842 | 5827 | 99.7% | 11240 |
-| fgcPlace | fgcPlace | 9982 | 8990 | 8805 | 97.9% | 10246 |
-| sfReplays | sfReplays | 7140 | 6141 | 5558 | 90.5% | 0 |
-| capcomFighters | capcomFighters | 8142 | 1748 | 1113 | 63.7% | 0 |
+| fgcPlace | fgcPlace | 9984 | 8992 | 8807 | 97.9% | 10250 |
+| sfReplays | sfReplays | 7143 | 6144 | 5561 | 90.5% | 0 |
+| capcomFighters | capcomFighters | 8165 | 1771 | 1131 | 63.9% | 0 |
 | evoEvents | evoEvents | 2767 | 154 | 81 | 52.6% | 0 |
 | kingArena | kingArenaOnline / kingArenaTournament | 2455 | 2440 | 2030 | 83.2% | 0 |
 | superFighters | superFighters | 162 | 161 | 70 | 43.5% | 0 |
@@ -27,18 +27,18 @@ the committed records are carried, and the run stays green.
 
 _The pull ran and found no new tournament entries, so the committed_
 _catalogue was carried unchanged._
-_The cursor did not move: the catalogue has taken no new SF6 entry_
-_since the last pull — quieter still, and equally ordinary._
+_The cursor still advanced — a quiet day is the ordinary case here,_
+_not a failed one._
 
 kingArena classifier: online 1410 · tournament 739 · resolved by hand 38 · pending 0
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8026 · S3 9562 · S4 736
+Seasons: S1 6225 · S2 8026 · S3 9562 · S4 759
 
-Rank distribution (side appearances): Legend 19063 · Master 2409 · Diamond 14
+Rank distribution (side appearances): Legend 19067 · Master 2409 · Diamond 14
 
-Misses by reason: not-sf6 11014 · no-vs-title 1173 · shorts 196 · char-unresolved 165 · short-duration 119 · pre-launch 93 · bad-handle 27 · live-or-upcoming 3
+Misses by reason: not-sf6 11014 · no-vs-title 1173 · shorts 201 · char-unresolved 165 · short-duration 119 · pre-launch 93 · bad-handle 27 · live-or-upcoming 3
 
 ## Replay Theater cross-check
 
@@ -105,4 +105,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-12T02:32:38.902Z_
+_Generated 2026-09-12T11:40:47.061Z_
