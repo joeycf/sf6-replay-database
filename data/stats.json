@@ -1,13 +1,13 @@
 {
   "totals": {
-    "replays": 24540,
+    "replays": 24539,
     "characters": 31,
     "players": 2342,
     "byPatch": {
       "S1": 6225,
       "S2": 8025,
       "S3": 9563,
-      "S4": 727
+      "S4": 726
     }
   },
   "characterUsage": {
@@ -31,13 +31,13 @@
     "ken": 3652,
     "kimberly": 682,
     "lily": 656,
-    "luke": 1881,
+    "luke": 1880,
     "mai": 1835,
     "manon": 1098,
     "marisa": 1243,
     "rashid": 1475,
     "ryu": 2952,
-    "sagat": 1759,
+    "sagat": 1758,
     "terry": 1411,
     "viper": 724,
     "yasmine": 177,
@@ -147,13 +147,13 @@
       "ken": 72,
       "kimberly": 22,
       "lily": 16,
-      "luke": 69,
+      "luke": 68,
       "mai": 50,
       "manon": 15,
       "marisa": 17,
       "rashid": 14,
       "ryu": 131,
-      "sagat": 77,
+      "sagat": 76,
       "terry": 35,
       "viper": 62,
       "yasmine": 177,
@@ -2014,7 +2014,7 @@
     },
     "enzo": {
       "bison": 3,
-      "sagat": 40,
+      "sagat": 39,
       "yasmine": 1
     },
     "enzo-the-hokage": {
@@ -5346,7 +5346,7 @@
       "bison": 31,
       "cammy": 10,
       "guile": 1,
-      "luke": 149,
+      "luke": 148,
       "ryu": 3
     },
     "noahthprodigy": {

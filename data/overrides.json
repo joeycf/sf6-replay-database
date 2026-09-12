@@ -2774,5 +2774,10 @@
     "//": "duplicate of eZt7dSj1xd0 (fgcPlace) — MR 1952/2134 matches eZt7dSj1xd0 [tier A legacy, data:mr-verdicts 2026-08-11]",
     "dupeOf": "eZt7dSj1xd0",
     "exclude": true
+  },
+  "Pf_Dkgj1A3U": {
+    "//": "duplicate of ZsJab5_KErA (capcomFighters) — Δdur 0s, differing titles [tier A, data:replay-dupes 2026-09-12]. KEEP SIDE FLIPPED from the tool proposal: precedence ranks incumbents above event channels, but here the incumbent IS the re-upload — sfReplays posted this 2026-09-08, 2.5 months after Capcom Fighters published the match on 2026-06-23. Keeping it would file a June World Warrior Grand Final as a Season 4 ranked match and lose the event title.",
+    "dupeOf": "ZsJab5_KErA",
+    "exclude": true
   }
 }
