@@ -341,6 +341,7 @@ definePageMeta({
     description:
       'Adjudicate the review queue — source classification and character completion, from sampled HUD frames.',
     writes: 'data/overrides.json',
+    queue: '/api/dev/source-review',
   },
 });
 
@@ -376,9 +377,12 @@ interface QueueItem {
 const { data, error } = useAsyncData(
   'source-review',
   () =>
-    $fetch<{ roster: { id: string; name: string }[]; items: QueueItem[] }>(
-      '/api/dev/source-review',
-    ),
+    $fetch<{
+      roster: { id: string; name: string }[];
+      counts: { total: number; pending: number; done: number; unreadable: number };
+      items: QueueItem[];
+      resolved: QueueItem[];
+    }>('/api/dev/source-review'),
   { server: false },
 );
 
