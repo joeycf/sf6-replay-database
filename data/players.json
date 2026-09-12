@@ -4132,6 +4132,10 @@
     "handle": "Kimchi Slapper"
   },
   {
+    "id": "kimichi-slapper",
+    "handle": "KIMICHI SLAPPER"
+  },
+  {
     "id": "kimochi",
     "handle": "Kimochi"
   },
@@ -6500,6 +6504,10 @@
     "handle": "purido"
   },
   {
+    "id": "puru",
+    "handle": "Puru"
+  },
+  {
     "id": "putoo",
     "handle": "PUTOO"
   },
@@ -7773,6 +7781,10 @@
   {
     "id": "street-fighter-6-kakeru",
     "handle": "STREET FIGHTER 6: KAKERU"
+  },
+  {
+    "id": "street-fighter-league-japan-2026-2bassa",
+    "handle": "Street Fighter League Japan 2026: 2BASSA"
   },
   {
     "id": "strider",
