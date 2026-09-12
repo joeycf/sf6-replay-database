@@ -187,9 +187,20 @@ const VS_RE = /(.+?)\(([^()]{1,60})\)\s*(?:vs\.?|versus)\s*(.+?)\(([^()]{1,60})\
 // (▰ = High Level, 🤜🤛 = The FGC Place, 🔥 = SF Replays)
 const SEG_RE = /[▰🔥⚡•▶►|🤜🤛]+/u;
 
+// An event/round label sits in handle position on the tournament channels —
+// "TOP 8 FINAL: KAKERU", "SF6 EVO 2025 - Pools: Daigo", "#1 Ranked: YAS". The
+// spaced-dash split below already drops the event name; the colon segment is
+// the other half of the same shape, and without it the label fuses onto the
+// handle and forks a real player ("kakeru" and "top-8-final-kakeru" both).
+// Whitespace after the colon is required, which is what keeps "Raine :p" — the
+// one handle in this corpus where the colon is part of the name, not a
+// delimiter — intact.
+const LABEL_RE = /[:：]\s+/u;
+
 function cleanHandle(raw: string): string | null {
   let t = raw.split(SEG_RE).pop() ?? '';
   t = t.split(/\s[-–—]\s/).pop() ?? '';
+  t = t.split(LABEL_RE).pop() ?? '';
   t = t
     .replace(/^[\s,.:;–—-]+/u, '')
     .replace(/[\s,.:;–—-]+$/u, '')

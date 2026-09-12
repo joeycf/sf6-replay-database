@@ -304942,8 +304942,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "el-1-ranked-match-kakeru",
-    "handle": "EL#1 Ranked Match: KAKERU",
+    "player": "kakeru",
+    "handle": "Kakeru",
     "characters": [
      "mai"
     ]
@@ -305098,8 +305098,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "1-ranked-yas",
-    "handle": "#1 Ranked: YAS",
+    "player": "yas",
+    "handle": "Yas",
     "characters": [
      "ryu"
     ]
@@ -310382,8 +310382,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "street-fighter-6-kakeru",
-    "handle": "STREET FIGHTER 6: KAKERU",
+    "player": "kakeru",
+    "handle": "Kakeru",
     "characters": [
      "jp"
     ]
@@ -311527,6 +311527,31 @@
      "jp"
     ],
     "rank": "Legend"
+   }
+  ]
+ },
+ {
+  "id": "6pWRuqaN5I0",
+  "channel": "kingArenaOnline",
+  "title": "🔥 Epic High-Level SF6 Gameplay: JHONTAKEUCHI (Rashid) vs CABA (Guile) 🔥",
+  "publishedAt": "2025-02-19T17:00:13Z",
+  "durationSec": 1366,
+  "viewCount": 256,
+  "season": 2,
+  "sides": [
+   {
+    "player": "jhon-takeuchi",
+    "handle": "JHON TAKEUCHI",
+    "characters": [
+     "rashid"
+    ]
+   },
+   {
+    "player": "caba",
+    "handle": "Caba",
+    "characters": [
+     "guile"
+    ]
    }
   ]
  },
@@ -316019,8 +316044,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "street-fighter-6-kakeru",
-    "handle": "STREET FIGHTER 6: KAKERU",
+    "player": "kakeru",
+    "handle": "Kakeru",
     "characters": [
      "jp"
     ]
@@ -343181,8 +343206,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "top-8-final-noahtheprodigy",
-    "handle": "TOP 8 FINAL: NOAHTHEPRODIGY",
+    "player": "noahtheprodigy",
+    "handle": "NoahTheProdigy",
     "characters": [
      "luke"
     ]
@@ -343726,8 +343751,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "top-8-blaz",
-    "handle": "TOP 8: BLAZ",
+    "player": "blaz",
+    "handle": "Blaz",
     "characters": [
      "ryu"
     ]
@@ -344482,8 +344507,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "top-8-final-noahtheprodigy",
-    "handle": "TOP 8 FINAL: NOAHTHEPRODIGY",
+    "player": "noahtheprodigy",
+    "handle": "NoahTheProdigy",
     "characters": [
      "luke"
     ]
@@ -344507,8 +344532,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "top-8-final-kakeru",
-    "handle": "TOP 8 FINAL: KAKERU",
+    "player": "kakeru",
+    "handle": "Kakeru",
     "characters": [
      "jp"
     ]
@@ -345710,8 +345735,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "top-8-final-angrybird",
-    "handle": "TOP 8 FINAL: ANGRYBIRD",
+    "player": "angrybird",
+    "handle": "Angrybird",
     "characters": [
      "akuma"
     ]
@@ -345735,8 +345760,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "losers-final-leshar",
-    "handle": "LOSERS FINAL: LESHAR",
+    "player": "leshar",
+    "handle": "LeShar",
     "characters": [
      "ed"
     ]
@@ -345760,8 +345785,8 @@
   "season": 2,
   "sides": [
    {
-    "player": "grand-final-kakeru",
-    "handle": "GRAND FINAL: KAKERU",
+    "player": "kakeru",
+    "handle": "Kakeru",
     "characters": [
      "jp"
     ]
@@ -405472,31 +405497,6 @@
   ]
  },
  {
-  "id": "hxKQy3yEyOM",
-  "channel": "superFighters",
-  "title": "SF6 EVO 2025 - Pools: AngryBird (Akuma) vs Filipino Man (Chun-Li)",
-  "publishedAt": "2025-08-03T04:12:46Z",
-  "durationSec": 293,
-  "viewCount": 768,
-  "season": 3,
-  "sides": [
-   {
-    "player": "pools-angrybird",
-    "handle": "Pools: AngryBird",
-    "characters": [
-     "akuma"
-    ]
-   },
-   {
-    "player": "filipinoman",
-    "handle": "Filipinoman",
-    "characters": [
-     "chunli"
-    ]
-   }
-  ]
- },
- {
   "id": "fDRJCilx3Pk",
   "channel": "fgcPlace",
   "title": "SF6 ▰ HIKARU (#1 Ranked A.K.I.) vs COSA (#6 Ranked Ken) ▰ High Level Gameplay",
@@ -405713,8 +405713,8 @@
   "season": 3,
   "sides": [
    {
-    "player": "pools-daigo",
-    "handle": "Pools: Daigo",
+    "player": "daigo",
+    "handle": "Daigo",
     "characters": [
      "akuma"
     ]
@@ -406729,8 +406729,8 @@
   "season": 3,
   "sides": [
    {
-    "player": "grand-final-menard",
-    "handle": "GRAND FINAL: MenaRD",
+    "player": "menard",
+    "handle": "MenaRD",
     "characters": [
      "blanka"
     ]
@@ -410221,8 +410221,8 @@
   "season": 3,
   "sides": [
    {
-    "player": "round-3-pools-nuckledu",
-    "handle": "Round 3 Pools: NuckleDu",
+    "player": "nuckledu",
+    "handle": "NuckleDu",
     "characters": [
      "guile"
     ]
@@ -410246,8 +410246,8 @@
   "season": 3,
   "sides": [
    {
-    "player": "round-3-pools-caba",
-    "handle": "Round 3 Pools: Caba",
+    "player": "caba",
+    "handle": "Caba",
     "characters": [
      "guile"
     ]
@@ -637189,8 +637189,8 @@
     ]
    },
    {
-    "player": "kimichi-slapper",
-    "handle": "KIMICHI SLAPPER",
+    "player": "kimchi-slapper",
+    "handle": "Kimchi Slapper",
     "characters": [
      "ed"
     ]
@@ -637207,8 +637207,8 @@
   "season": 4,
   "sides": [
    {
-    "player": "street-fighter-league-japan-2026-2bassa",
-    "handle": "Street Fighter League Japan 2026: 2BASSA",
+    "player": "2bassa",
+    "handle": "2Bassa",
     "characters": [
      "juri"
     ]

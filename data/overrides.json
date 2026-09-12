@@ -2779,5 +2779,10 @@
     "//": "duplicate of ZsJab5_KErA (capcomFighters) — Δdur 0s, differing titles [tier A, data:replay-dupes 2026-09-12]. KEEP SIDE FLIPPED from the tool proposal: precedence ranks incumbents above event channels, but here the incumbent IS the re-upload — sfReplays posted this 2026-09-08, 2.5 months after Capcom Fighters published the match on 2026-06-23. Keeping it would file a June World Warrior Grand Final as a Season 4 ranked match and lose the event title.",
     "dupeOf": "ZsJab5_KErA",
     "exclude": true
+  },
+  "hxKQy3yEyOM": {
+    "//": "duplicate of rBq8Emcq74w (kingArenaTournament) — Δdur 1s, differing titles [tier A, data:replay-dupes 2026-09-12]. Surfaced by the cleanHandle label split: while this record parsed as \"Pools: AngryBird\" the pair could not match. Tool proposal KEPT, unlike Pf_Dkgj1A3U above — the flip there turned on a re-upload 2.5 months late that misfiled the season, and nothing like that is true here: both went up during EVO 2025 ten hours apart and both title the event correctly. kingArenaTournament posted first and holds more views; the only thing this drops is the round word \"Pools\" from the title.",
+    "dupeOf": "rBq8Emcq74w",
+    "exclude": true
   }
 }

@@ -2,27 +2,27 @@
   "totals": {
     "replays": 24549,
     "characters": 31,
-    "players": 2345,
+    "players": 2329,
     "byPatch": {
       "S1": 6225,
-      "S2": 8025,
-      "S3": 9563,
+      "S2": 8026,
+      "S3": 9562,
       "S4": 736
     }
   },
   "characterUsage": {
     "aki": 1237,
-    "akuma": 3916,
+    "akuma": 3915,
     "alex": 753,
     "bison": 2054,
     "blanka": 1345,
     "cammy": 1948,
-    "chunli": 1446,
+    "chunli": 1445,
     "deejay": 1238,
     "dhalsim": 1608,
     "ed": 1839,
     "elena": 595,
-    "guile": 1912,
+    "guile": 1913,
     "honda": 974,
     "ingrid": 373,
     "jamie": 923,
@@ -35,7 +35,7 @@
     "mai": 1836,
     "manon": 1098,
     "marisa": 1243,
-    "rashid": 1475,
+    "rashid": 1476,
     "ryu": 2953,
     "sagat": 1759,
     "terry": 1411,
@@ -77,7 +77,7 @@
       "deejay": 341,
       "dhalsim": 505,
       "ed": 753,
-      "guile": 649,
+      "guile": 650,
       "honda": 306,
       "jamie": 254,
       "jp": 421,
@@ -89,19 +89,19 @@
       "mai": 750,
       "manon": 359,
       "marisa": 235,
-      "rashid": 500,
+      "rashid": 501,
       "ryu": 958,
       "terry": 624,
       "zangief": 1584
     },
     "S3": {
       "aki": 352,
-      "akuma": 1437,
+      "akuma": 1436,
       "alex": 667,
       "bison": 697,
       "blanka": 486,
       "cammy": 535,
-      "chunli": 510,
+      "chunli": 509,
       "deejay": 342,
       "dhalsim": 590,
       "ed": 713,
@@ -173,15 +173,12 @@
     "1-ranked-kinchoru": {
       "terry": 1
     },
-    "1-ranked-yas": {
-      "ryu": 1
-    },
     "1strank": {
       "lily": 1
     },
     "2bassa": {
       "cammy": 10,
-      "juri": 55,
+      "juri": 56,
       "mai": 6,
       "ryu": 1
     },
@@ -500,7 +497,7 @@
       "akuma": 1
     },
     "angrybird": {
-      "akuma": 240,
+      "akuma": 241,
       "cammy": 10,
       "ken": 264,
       "luke": 1,
@@ -843,7 +840,7 @@
       "kimberly": 6,
       "luke": 3,
       "mai": 9,
-      "ryu": 283,
+      "ryu": 284,
       "sagat": 289,
       "terry": 48
     },
@@ -1035,7 +1032,7 @@
     },
     "caba": {
       "akuma": 1,
-      "guile": 157,
+      "guile": 159,
       "juri": 3,
       "kimberly": 1,
       "ryu": 4,
@@ -1516,7 +1513,7 @@
       "chunli": 5
     },
     "daigo": {
-      "akuma": 1207,
+      "akuma": 1208,
       "ed": 1,
       "guile": 1,
       "honda": 1,
@@ -1913,9 +1910,6 @@
     "eitino": {
       "dhalsim": 1
     },
-    "el-1-ranked-match-kakeru": {
-      "mai": 1
-    },
     "el-doylero": {
       "ken": 5
     },
@@ -2174,7 +2168,7 @@
       "honda": 2
     },
     "filipinoman": {
-      "chunli": 4
+      "chunli": 3
     },
     "final-atsushi": {
       "bison": 1
@@ -2496,12 +2490,6 @@
     },
     "gr-pc": {
       "rashid": 1
-    },
-    "grand-final-kakeru": {
-      "jp": 1
-    },
-    "grand-final-menard": {
-      "blanka": 1
     },
     "grantodakai": {
       "bison": 1,
@@ -3330,7 +3318,7 @@
     },
     "jhon-takeuchi": {
       "jamie": 3,
-      "rashid": 2
+      "rashid": 3
     },
     "jieba": {
       "cammy": 10
@@ -3577,10 +3565,10 @@
       "honda": 1,
       "ingrid": 35,
       "jamie": 9,
-      "jp": 508,
+      "jp": 512,
       "ken": 4,
       "kimberly": 4,
-      "mai": 45,
+      "mai": 46,
       "manon": 1,
       "ryu": 21,
       "sagat": 41,
@@ -3840,10 +3828,7 @@
       "honda": 5
     },
     "kimchi-slapper": {
-      "ed": 1
-    },
-    "kimichi-slapper": {
-      "ed": 1
+      "ed": 2
     },
     "kimochi": {
       "terry": 1
@@ -4203,7 +4188,7 @@
       "akuma": 171,
       "alex": 41,
       "chunli": 47,
-      "ed": 341,
+      "ed": 342,
       "elena": 20,
       "guile": 1,
       "jp": 1,
@@ -4331,9 +4316,6 @@
     },
     "lord-venom": {
       "jp": 4
-    },
-    "losers-final-leshar": {
-      "ed": 1
     },
     "low-trunks": {
       "juri": 1
@@ -4637,7 +4619,7 @@
       "akuma": 27,
       "alex": 25,
       "bison": 62,
-      "blanka": 306,
+      "blanka": 307,
       "cammy": 2,
       "deejay": 1,
       "jamie": 1,
@@ -5349,7 +5331,7 @@
       "bison": 31,
       "cammy": 10,
       "guile": 1,
-      "luke": 148,
+      "luke": 150,
       "ryu": 3
     },
     "noahthprodigy": {
@@ -5447,7 +5429,7 @@
       "akuma": 4,
       "cammy": 39,
       "deejay": 83,
-      "guile": 292,
+      "guile": 293,
       "luke": 2,
       "mai": 110
     },
@@ -5830,12 +5812,6 @@
     },
     "pontio": {
       "honda": 2
-    },
-    "pools-angrybird": {
-      "akuma": 1
-    },
-    "pools-daigo": {
-      "akuma": 1
     },
     "poongko": {
       "akuma": 1,
@@ -6261,12 +6237,6 @@
     "roozu": {
       "kimberly": 4,
       "lily": 1
-    },
-    "round-3-pools-caba": {
-      "guile": 1
-    },
-    "round-3-pools-nuckledu": {
-      "guile": 1
     },
     "rounded-n": {
       "juri": 3
@@ -7072,12 +7042,6 @@
       "ryu": 1,
       "sagat": 2
     },
-    "street-fighter-6-kakeru": {
-      "jp": 2
-    },
-    "street-fighter-league-japan-2026-2bassa": {
-      "juri": 1
-    },
     "strider": {
       "bison": 1
     },
@@ -7547,18 +7511,6 @@
     },
     "top-16-noahtheprodigy": {
       "luke": 1
-    },
-    "top-8-blaz": {
-      "ryu": 1
-    },
-    "top-8-final-angrybird": {
-      "akuma": 1
-    },
-    "top-8-final-kakeru": {
-      "jp": 1
-    },
-    "top-8-final-noahtheprodigy": {
-      "luke": 2
     },
     "torachin0630": {
       "cammy": 1
@@ -8137,7 +8089,7 @@
     },
     "yas": {
       "ken": 1,
-      "ryu": 765,
+      "ryu": 766,
       "yasmine": 2
     },
     "yasha": {

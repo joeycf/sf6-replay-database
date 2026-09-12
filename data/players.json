@@ -8,10 +8,6 @@
     "handle": "#1 RANKED KINCHORU"
   },
   {
-    "id": "1-ranked-yas",
-    "handle": "#1 Ranked: YAS"
-  },
-  {
     "id": "1strank",
     "handle": "1strank"
   },
@@ -1972,10 +1968,6 @@
     "handle": "Eitino"
   },
   {
-    "id": "el-1-ranked-match-kakeru",
-    "handle": "EL#1 Ranked Match: KAKERU"
-  },
-  {
     "id": "el-doylero",
     "handle": "El Doylero"
   },
@@ -2646,14 +2638,6 @@
   {
     "id": "gr-pc",
     "handle": "GR_PC"
-  },
-  {
-    "id": "grand-final-kakeru",
-    "handle": "GRAND FINAL: KAKERU"
-  },
-  {
-    "id": "grand-final-menard",
-    "handle": "GRAND FINAL: MenaRD"
   },
   {
     "id": "grantodakai",
@@ -4132,10 +4116,6 @@
     "handle": "Kimchi Slapper"
   },
   {
-    "id": "kimichi-slapper",
-    "handle": "KIMICHI SLAPPER"
-  },
-  {
     "id": "kimochi",
     "handle": "Kimochi"
   },
@@ -4712,10 +4692,6 @@
   {
     "id": "lord-venom",
     "handle": "Lord Venom"
-  },
-  {
-    "id": "losers-final-leshar",
-    "handle": "LOSERS FINAL: LESHAR"
   },
   {
     "id": "low-trunks",
@@ -6394,14 +6370,6 @@
     "handle": "Pontio"
   },
   {
-    "id": "pools-angrybird",
-    "handle": "Pools: AngryBird"
-  },
-  {
-    "id": "pools-daigo",
-    "handle": "Pools: Daigo"
-  },
-  {
     "id": "poongko",
     "handle": "Poongko"
   },
@@ -6846,14 +6814,6 @@
   {
     "id": "roozu",
     "handle": "Roozu"
-  },
-  {
-    "id": "round-3-pools-caba",
-    "handle": "Round 3 Pools: Caba"
-  },
-  {
-    "id": "round-3-pools-nuckledu",
-    "handle": "Round 3 Pools: NuckleDu"
   },
   {
     "id": "rounded-n",
@@ -7779,14 +7739,6 @@
     "handle": "Stormkubo"
   },
   {
-    "id": "street-fighter-6-kakeru",
-    "handle": "STREET FIGHTER 6: KAKERU"
-  },
-  {
-    "id": "street-fighter-league-japan-2026-2bassa",
-    "handle": "Street Fighter League Japan 2026: 2BASSA"
-  },
-  {
     "id": "strider",
     "handle": "STRIDER"
   },
@@ -8358,22 +8310,6 @@
   {
     "id": "top-16-noahtheprodigy",
     "handle": "TOP 16- NOAHTHEPRODIGY"
-  },
-  {
-    "id": "top-8-blaz",
-    "handle": "TOP 8: BLAZ"
-  },
-  {
-    "id": "top-8-final-angrybird",
-    "handle": "TOP 8 FINAL: ANGRYBIRD"
-  },
-  {
-    "id": "top-8-final-kakeru",
-    "handle": "TOP 8 FINAL: KAKERU"
-  },
-  {
-    "id": "top-8-final-noahtheprodigy",
-    "handle": "TOP 8 FINAL: NOAHTHEPRODIGY"
   },
   {
     "id": "torachin0630",

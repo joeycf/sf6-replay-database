@@ -46,11 +46,17 @@ export const slug = (handle: string): string =>
  * person's page to hold matches they did not play, and the page looks entirely
  * normal afterwards. Every row here is a human verdict.
  *
- * Key is the DROPPED spelling's idKey; value is the surviving handle. Empty is
- * the correct resting state — this corpus has needed no merge idKey could not
- * already make.
+ * Key is the DROPPED spelling's idKey; value is the surviving handle. Near-empty
+ * is the correct resting state: idKey reaches almost everything on its own, and
+ * one row here has earned its place in the corpus's life so far.
  */
-export const HANDLE_ALIASES = new Map<string, string>([]);
+export const HANDLE_ALIASES = new Map<string, string>([
+  // Two distinct sfReplays uploads two years apart (2024-09-16, 2026-09-11),
+  // both Snake Eyez (Zangief) vs this player on Ed, the handle retyped as
+  // "KIMICHI SLAPPER" the second time. Same person, not a duplicate record —
+  // the replays are real and both stay. Confirmed by hand 2026-09-12.
+  ['kimichislapper', 'Kimchi Slapper'],
+]);
 
 /**
  * DECLARED DISTINCT: pairs the audit keeps proposing that a human has ruled are
