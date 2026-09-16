@@ -1,17 +1,17 @@
 
 # SF6 pipeline report
 
-**24595 matches** parsed from 36551 uploads across 7 channels, plus 1065 from 1 index · 2330 players · ranked sides 21538/49190 (43.8%)
+**24609 matches** parsed from 36570 uploads across 7 channels, plus 1065 from 1 index · 2333 players · ranked sides 21554/49218 (43.8%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5844 | 5844 | 5829 | 99.7% | 11244 |
-| fgcPlace | fgcPlace | 10006 | 9014 | 8829 | 97.9% | 10294 |
-| sfReplays | sfReplays | 7160 | 6161 | 5578 | 90.5% | 0 |
+| highLevel | highLevel | 5845 | 5845 | 5830 | 99.7% | 11246 |
+| fgcPlace | fgcPlace | 10013 | 9021 | 8836 | 97.9% | 10308 |
+| sfReplays | sfReplays | 7166 | 6167 | 5584 | 90.5% | 0 |
 | capcomFighters | capcomFighters | 8179 | 1785 | 1132 | 63.4% | 0 |
-| evoEvents | evoEvents | 2769 | 154 | 81 | 52.6% | 0 |
+| evoEvents | evoEvents | 2770 | 154 | 81 | 52.6% | 0 |
 | kingArena | kingArenaOnline / kingArenaTournament | 2455 | 2440 | 2030 | 83.2% | 0 |
-| superFighters | superFighters | 138 | 137 | 51 | 37.2% | 0 |
+| superFighters | superFighters | 142 | 141 | 51 | 36.2% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Index intakes
@@ -34,11 +34,11 @@ kingArena classifier: online 1410 · tournament 739 · resolved by hand 38 · pe
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8023 · S3 9546 · S4 801
+Seasons: S1 6225 · S2 8023 · S3 9546 · S4 815
 
-Rank distribution (side appearances): Legend 19115 · Master 2409 · Diamond 14
+Rank distribution (side appearances): Legend 19131 · Master 2409 · Diamond 14
 
-Misses by reason: not-sf6 11016 · no-vs-title 1169 · shorts 214 · char-unresolved 164 · short-duration 121 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
+Misses by reason: not-sf6 11017 · no-vs-title 1173 · shorts 214 · char-unresolved 164 · short-duration 121 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
 
 ## Replay Theater cross-check
 
@@ -105,4 +105,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-15T12:44:15.731Z_
+_Generated 2026-09-16T12:40:27.377Z_
