@@ -27,8 +27,8 @@ the committed records are carried, and the run stays green.
 
 _The pull ran and found no new tournament entries, so the committed_
 _catalogue was carried unchanged._
-_The cursor did not move: the catalogue has taken no new SF6 entry_
-_since the last pull — quieter still, and equally ordinary._
+_The cursor still advanced — a quiet day is the ordinary case here,_
+_not a failed one._
 
 
 Pending review: 0 (data/review-queue.json)
@@ -104,4 +104,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-24T12:07:35.898Z_
+_Generated 2026-09-24T12:47:44.555Z_
