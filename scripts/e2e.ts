@@ -619,6 +619,37 @@ function testSegmentGates(): void {
   // change away silently. Checked by name, not by count.
   const wf = readFileSync(join(ROOT, '.github/workflows/data-refresh.yml'), 'utf8');
   expect(wf.includes('data/source-pins.json'), 'the refresh workflow stages data/source-pins.json');
+
+  // ── FROZEN CHANNELS ────────────────────────────────────────────────────────
+  // A frozen channel's pin lives in scripts/channels.ts rather than
+  // source-pins.json, because nothing upstream can add to it any more: the only
+  // way the count moves is a human editing it. parse asserts this before every
+  // write; this asserts it against the file that shipped.
+  for (const ch of CHANNELS.filter((c) => c.frozen)) {
+    const tokens = [ch.source, ch.eventSource].filter(Boolean);
+    const mine = videos.filter((v) => tokens.includes(v.channel));
+    expect(
+      mine.length === ch.frozen!.records,
+      `${ch.id} is frozen at its committed count (${ch.frozen!.records} vs ${mine.length})`,
+    );
+    if (ch.frozen!.unplayable) {
+      // Every record, not most: the channel is gone, so a record without the
+      // mark is one the next prune or UI change would silently miss.
+      const unmarked = mine.filter((v) => !v.unplayable).length;
+      expect(unmarked === 0, `every ${ch.id} record is marked unplayable (${unmarked} unmarked)`);
+    }
+  }
+
+  // THE MARK IS SUBSTRATE-ONLY. emit.ts asserts this while building; this
+  // asserts it on the file that shipped, because the two can only disagree if
+  // somebody edited data/replays.json by hand — which is exactly the case no
+  // build-time check can see.
+  const emittedNow = JSON.parse(readFileSync(join(ROOT, 'data/replays.json'), 'utf8')) as Record<
+    string,
+    unknown
+  >[];
+  const leaked = emittedNow.filter((r) => 'unplayable' in r).length;
+  expect(leaked === 0, `no emitted replay carries the substrate-only unplayable key (${leaked})`);
 }
 
 /** POSITIVE CONTROLS for the stale-raw guard.

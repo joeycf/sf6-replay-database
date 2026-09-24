@@ -67,6 +67,43 @@ export interface ChannelConfig {
    *  parse, and data:fetch skips it. Mutually exclusive with channelId. */
   index?: ChannelIndex;
   /**
+   * A CHANNEL THAT IS NOT COMING BACK.
+   *
+   * Step 7 of the platform checklist says freeze rather than prune a channel
+   * that stopped publishing: its committed records are still real, so they are
+   * CARRIED byte-stable and `records` is hard-asserted every run. data/videos.json
+   * is both the source and the target of that carry, so a wrong pin poisons the
+   * next run's reference permanently and silently. Editing the pin IS the
+   * deliberate-prune mechanism, and it shows up in review.
+   *
+   * WHAT STEP 7 DOES NOT COVER, AND THIS CHANNEL IS: an account that was
+   * DELETED, taking its catalogue with it. A channel that merely stopped
+   * publishing still serves every URL we hold. This one does not — so the
+   * records are carried AND marked, per record, through `unplayable` below.
+   * The mark is what makes a future change of mind cheap: pruning becomes a
+   * filter, surfacing it becomes an engine field, and neither needs this
+   * investigation done again.
+   *
+   * The siblings (ggst, avatar) ship a `-1` sentinel here and a seeding ritual
+   * behind `data:fetch --include-frozen`, because they froze a channel whose
+   * record count nobody had measured yet. There is nothing to seed here: the
+   * count is already in the committed file. Set it from there, and the assert
+   * defends it from that moment on.
+   */
+  frozen?: {
+    since: string;
+    reason: string;
+    /** Hard-asserted against the committed count before any write. */
+    records: number;
+    /** Set only when the FOOTAGE is gone, not just the uploads. Carried onto
+     *  every one of the channel's records at parse time (never emitted). */
+    unplayable?: {
+      /** The day the deadness was measured — not inferred from a sample. */
+      measured: string;
+      evidence: string;
+    };
+  };
+  /**
    * CRON-FETCHED, WITH A CARRY FALLBACK.
    *
    * This flag used to be called `localFirst` and meant the opposite: the intake
@@ -202,6 +239,24 @@ export interface MatchVideo {
   event?: string;
   channelName?: string;
   sides: [MatchSide, MatchSide];
+  /**
+   * THE FOOTAGE IS GONE, THE RECORD IS NOT (2026-09-24).
+   *
+   * Set on every record of a channel whose `frozen.unplayable` is declared, and
+   * re-derived from that config on every run rather than stored once — a carried
+   * record keeps whatever fields it has, but a rebuilt one does not, so a mark
+   * that had to survive a rebuild would rot the first time the freeze was lifted.
+   *
+   * SUBSTRATE-ONLY. scripts/emit.ts projects field by field, so this never
+   * reaches data/replays.json, and emit asserts that rather than trusting it —
+   * publishing it would need an engine field (`Replay` has no unavailability
+   * concept) and is therefore a deliberate act, not a leak.
+   *
+   * These records still COUNT: they are in the stat unit, the player pages and
+   * the patch windows, because the match was played and parsed. What is gone is
+   * the video.
+   */
+  unplayable?: { since: string; reason: 'channel-deleted'; measured: string };
 }
 
 /**

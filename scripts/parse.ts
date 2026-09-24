@@ -40,6 +40,7 @@ import type {
   PlayerRecord,
   RawVideoRecord,
   ReviewQueueItem,
+  SourceId,
   SourcePins,
   TheaterRawRecord,
   VideoOverride,
@@ -323,6 +324,13 @@ const committed: MatchVideo[] = await readJson<MatchVideo[]>(join(DATA, 'videos.
   });
 
 const ALLOW_STALE = process.argv.includes('--allow-stale');
+
+/** Per-token counts for a frozen channel, asserted beside the total. Only a
+ *  channel publishing under more than one SourceId needs a row here; the total
+ *  in scripts/channels.ts `frozen.records` is the check for every other. */
+const FROZEN_TOKEN_PINS: Partial<Record<ChannelKey, Record<string, number>>> = {
+  kingArena: { kingArenaOnline: 1269, kingArenaTournament: 761 },
+};
 const raws: RawVideoRecord[] = [];
 /** The index intake's dump, when this run has one. Kept OUT of `raws` because
  *  its records are not built by a title parse — see buildTheaterRecords. */
@@ -351,6 +359,12 @@ for (const ch of CHANNELS) {
       carriedWithFallback.push(ch.id);
       continue;
     }
+    // A FROZEN CHANNEL HAS NO DUMP BY DESIGN — data:fetch skips it. Its records
+    // are carried from the committed file against the pin in scripts/channels.ts
+    // (see the frozen block there and the assert further down). Without this
+    // branch a freeze would hit the exit below, which is how the cron behaved
+    // for the six days after King Arena's account was deleted.
+    if (ch.frozen) continue;
     console.error(`✖ ${path} missing/unreadable — run \`npm run data:catchup\` first.`);
     process.exit(1);
   }
@@ -385,6 +399,10 @@ for (const ch of CHANNELS) {
     theaterRaw = dump as TheaterRawRecord[];
     continue;
   }
+  // A frozen channel reaches here only with a dump present, which can only be a
+  // leftover from before the freeze — its freshness says nothing about a channel
+  // nobody fetches. Skipped, and the records are carried below regardless.
+  if (ch.frozen) continue;
   // ── the stale-raw guard (scripts/freshness.ts) ────────────────────────────
   // Per intake, and it reads only publishedAt on both sides. See that file for
   // why neither a wall-clock window nor an mtime survives contact with a repo
@@ -896,6 +914,40 @@ for (const [, rs] of theaterBuilt) {
   }
 }
 
+// ── frozen channels: carry the committed records, and mark them ─────────────
+// The pin is asserted below, before anything is written. Two things about this
+// carry are specific to how sf6 is shaped:
+//
+//  · IT SUMS BOTH TOKENS. kingArena is the one channel publishing under two
+//    SourceIds (source + eventSource, classified per video), and sf6 records
+//    carry the resolved SOURCE rather than an intake key — so filtering on
+//    `ch.source` alone would carry 1,269 of its 2,030 records and silently drop
+//    the 761 filed as tournament footage. The collapse guard already sums both
+//    (see its tally below); this matches it.
+//
+//  · THE MARK IS DERIVED HERE, NOT STORED ONCE. A carried record keeps whatever
+//    fields it already had, but every record-BUILDING path in this file writes a
+//    literal, so a mark written once into data/videos.json would evaporate the
+//    first time the channel was rebuilt. Deriving it from the config each run
+//    means it is correct by construction and disappears by itself if the freeze
+//    is ever lifted. It never reaches data/replays.json — scripts/emit.ts
+//    projects field by field and asserts that.
+const frozenCarried = new Map<ChannelKey, number>();
+for (const ch of CHANNELS) {
+  if (!ch.frozen) continue;
+  const tokens = [ch.source, ch.eventSource].filter(Boolean) as SourceId[];
+  const mine = committed.filter((v) => tokens.includes(v.channel));
+  const mark = ch.frozen.unplayable
+    ? ({
+        since: ch.frozen.since,
+        reason: 'channel-deleted' as const,
+        measured: ch.frozen.unplayable.measured,
+      } satisfies NonNullable<MatchVideo['unplayable']>)
+    : undefined;
+  for (const v of mine) videos.push(mark ? { ...v, unplayable: mark } : { ...v });
+  frozenCarried.set(ch.id, mine.length);
+}
+
 videos.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt) || a.id.localeCompare(b.id));
 reviewQueue.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt) || a.id.localeCompare(b.id));
 
@@ -937,6 +989,47 @@ const theaterStats = await readJson<{
 const theaterCursor = await readJson<Record<string, number>>(
   join(DATA, 'theater-cursor.json'),
 ).catch(() => ({}) as Record<string, number>);
+// ── the freeze pin, asserted before any write ───────────────────────────────
+// Same reasoning as the carry pin below, one step stricter: a frozen channel's
+// count can only change if a human edited the pin, because nothing upstream can
+// add to it any more. Editing it IS the deliberate-prune mechanism; a mismatch
+// nobody edited means the archive moved on its own.
+//
+// BOTH TOKENS ARE ASSERTED SEPARATELY as well as the total. kingArena publishes
+// under two SourceIds, and a per-token drift — 100 records sliding from the
+// online token to the tournament one — sums to a correct total and would sail
+// past a total-only check.
+for (const ch of CHANNELS) {
+  if (!ch.frozen) continue;
+  const tokens = [ch.source, ch.eventSource].filter(Boolean) as SourceId[];
+  const got = records.filter((v) => tokens.includes(v.channel)).length;
+  const want = ch.frozen.records;
+  if (got !== want) {
+    console.error(
+      `✖ ${ch.id} is frozen at ${want} record(s) but the committed file carried ${got}.\n` +
+        `  Editing frozen.records in scripts/channels.ts IS the deliberate-prune mechanism,\n` +
+        `  so a mismatch nobody edited means data/videos.json changed underneath the freeze.\n` +
+        `  Nothing written.`,
+    );
+    process.exit(1);
+  }
+  const split = tokens.map((t) => `${t} ${records.filter((v) => v.channel === t).length}`);
+  const expected = FROZEN_TOKEN_PINS[ch.id];
+  if (expected) {
+    for (const [token, n] of Object.entries(expected)) {
+      const have = records.filter((v) => v.channel === token).length;
+      if (have !== n) {
+        console.error(
+          `✖ ${ch.id} is frozen with ${n} ${token} record(s) but carried ${have}. The total\n` +
+            `  (${got}) is correct, which is exactly how a per-token drift hides. Nothing written.`,
+        );
+        process.exit(1);
+      }
+    }
+  }
+  console.log(`  ${ch.id}: frozen since ${ch.frozen.since}, ${got} carried (${split.join(', ')})`);
+}
+
 for (const key of carriedWithFallback) {
   const cfg = CHANNEL_OF.get(key)!;
   const got = records.filter((v) => v.channel === cfg.source).length;
@@ -1167,8 +1260,14 @@ await writeFile(
 // read 0 on the very run that rebuilt it, and the table would stop summing to
 // the headline. Counted explicitly instead, off the record's own source token.
 const channelOf = new Map(raws.map((r) => [r.id, r.channel]));
+// `channelOf` is built from raws, so it is empty for any intake with no dump this
+// run — an index intake (documented above) and now a FROZEN one, whose records
+// would otherwise report `parsed: 0` while sitting right there in the file. Both
+// fall back to the token, and a frozen channel can hold two of them.
 const isFrom = (v: MatchVideo, cfg: ChannelConfig) =>
-  cfg.index ? v.channel === cfg.source : channelOf.get(v.id) === cfg.id;
+  cfg.index || cfg.frozen
+    ? v.channel === cfg.source || (!!cfg.eventSource && v.channel === cfg.eventSource)
+    : channelOf.get(v.id) === cfg.id;
 const byChannel = (cfg: ChannelConfig) => ({
   raw: cfg.index ? theaterRaw.length : raws.filter((r) => r.channel === cfg.id).length,
   sf6: cfg.index
@@ -1297,8 +1396,22 @@ const report = [
     // A CARRIED intake has no dump at all this run, by design. A bare
     // "0 | 0 | 1065 | 0.0%" row would read as a channel that died.
     const carried = carriedWithFallback.includes(ch.id);
-    const mark = ch.index ? (carried ? ' _(carried)_' : ' _(index)_') : '';
-    if (carried) return `| ${ch.id}${mark} | ${src} | — | — | ${s.parsed} | — | ${s.ranked} |`;
+    // A FROZEN channel is the same shape of row for a different reason: there is
+    // no dump because nobody fetches it any more. It says so, and it says the
+    // footage is gone where that is true, because a reader looking at 2,030
+    // records with no uploads column deserves to know which kind of silence
+    // this is.
+    const mark = ch.frozen
+      ? ch.frozen.unplayable
+        ? ' _(frozen — channel deleted, footage gone)_'
+        : ' _(frozen)_'
+      : ch.index
+        ? carried
+          ? ' _(carried)_'
+          : ' _(index)_'
+        : '';
+    if (carried || ch.frozen)
+      return `| ${ch.id}${mark} | ${src} | — | — | ${s.parsed} | — | ${s.ranked} |`;
     // A SHARE IS ONLY MEANINGFUL WHEN `parsed` CAME OUT OF `uploads`. On a
     // cursor morning the index dump is a delta of a few entries while `parsed`
     // counts the whole merged intake, so the division reads several hundred

@@ -134,6 +134,45 @@ export const CHANNELS: ChannelConfig[] = [
     channelId: 'UCcHkQjsuUAVYZD5IE-a8gaw',
     uploadsPlaylist: 'UUcHkQjsuUAVYZD5IE-a8gaw',
     sf6Signal: 'titleOrDescription',
+    // THE CHANNEL WAS DELETED BETWEEN 2026-09-10 AND 2026-09-18, and it took
+    // every video with it. This is not the dormancy checklist step 7 describes:
+    // a dormant channel still serves its URLs. Measured 2026-09-24, in one pass:
+    // the uploads playlist 404s, channels.list returns 0 items for the id, the
+    // RSS feed 404s, and 0 of all 2,030 video ids resolve through videos.list
+    // (41 quota units — every id, not a sample, because 8% of this archive was
+    // resting on the answer).
+    //
+    // Its last upload was 2026-09-10, so this was a live source days before it
+    // vanished, and the 404 on its playlist is what has been killing the daily
+    // cron since 09-18: scripts/fetch.ts had no per-channel error handling, so
+    // one dead channel took down the other seven.
+    //
+    // The records stay. They were parsed from real matches and they still carry
+    // the players, the characters and the patch — what is gone is the footage,
+    // which is why they keep counting in the stats and why every one of them is
+    // marked `unplayable` at parse time instead.
+    //
+    // THE ENTRY DOES NOT MOVE. ggst and avatar drop a frozen channel to the
+    // bottom of the block on the grounds that a static corpus can never win a
+    // future cross-post. Here array order is also the duplicate precedence that
+    // scripts/replay-dupes.ts reads (`channel-priority`), and this channel is
+    // the platform's heaviest re-uploader: moving it would change which copy of
+    // an already-committed pair future runs propose keeping. The real hazard —
+    // a dead copy out-ranking a live one — is fixed in decide() instead.
+    frozen: {
+      since: '2026-09-18',
+      reason:
+        'the channel was DELETED, not paused — playlist, channel and every video are gone (see above)',
+      // From the committed file on 2026-09-24: 1,269 kingArenaOnline + 761
+      // kingArenaTournament. Both tokens are asserted separately as well as the
+      // total, because a per-token drift hides inside a correct sum.
+      records: 2030,
+      unplayable: {
+        measured: '2026-09-24',
+        evidence:
+          'uploads playlist 404 · channels.list 0 items · RSS 404 · 0 of 2,030 videos resolve',
+      },
+    },
   },
   {
     // @superfighters-jkm — small (190 uploads since 2025-02) but pure event
@@ -204,8 +243,18 @@ export const CHANNELS: ChannelConfig[] = [
 ];
 
 /** The channels data:fetch pages. An index intake has no uploads playlist, and
- *  its dump is built by scripts/fetch-theater.ts on a human's cadence. */
-export const FETCHED_CHANNELS = CHANNELS.filter((c) => !c.index);
+ *  its dump is built by scripts/fetch-theater.ts on a human's cadence. A FROZEN
+ *  channel is skipped too: its records are carried against a pin, so paging it
+ *  would spend quota to build a dump nothing reads — and in the case that
+ *  introduced this filter, to ask a deleted account for a playlist that 404s.
+ *
+ *  Both stay in CHANNELS: the collapse guard, the report table, the dedupe
+ *  precedence and the emitted source tokens all still see them. Only the fetch
+ *  skips them. */
+export const FETCHED_CHANNELS = CHANNELS.filter((c) => !c.index && !c.frozen);
+
+/** Frozen channels, for the fetch's skip line and parse's carry. */
+export const FROZEN_CHANNELS = CHANNELS.filter((c) => c.frozen);
 
 /**
  * Sponsor/team prefix on a catalogue handle: "OEG | Slate", "NP | Senshi".

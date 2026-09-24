@@ -1,47 +1,47 @@
 {
   "totals": {
-    "replays": 24627,
+    "replays": 24740,
     "characters": 31,
-    "players": 2335,
+    "players": 2341,
     "byPatch": {
       "S1": 6225,
       "S2": 8022,
       "S3": 9541,
-      "S4": 839
+      "S4": 952
     }
   },
   "characterUsage": {
-    "aki": 1244,
-    "akuma": 3918,
-    "alex": 768,
-    "bison": 2058,
-    "blanka": 1341,
-    "cammy": 1953,
-    "chunli": 1449,
-    "deejay": 1240,
-    "dhalsim": 1614,
-    "ed": 1839,
-    "elena": 596,
-    "guile": 1921,
-    "honda": 978,
-    "ingrid": 380,
-    "jamie": 931,
-    "jp": 2048,
-    "juri": 1323,
-    "ken": 3655,
-    "kimberly": 688,
+    "aki": 1252,
+    "akuma": 3945,
+    "alex": 777,
+    "bison": 2059,
+    "blanka": 1344,
+    "cammy": 1954,
+    "chunli": 1453,
+    "deejay": 1243,
+    "dhalsim": 1620,
+    "ed": 1842,
+    "elena": 604,
+    "guile": 1935,
+    "honda": 982,
+    "ingrid": 385,
+    "jamie": 951,
+    "jp": 2051,
+    "juri": 1329,
+    "ken": 3663,
+    "kimberly": 691,
     "lily": 658,
-    "luke": 1892,
-    "mai": 1840,
-    "manon": 1097,
-    "marisa": 1247,
-    "rashid": 1476,
-    "ryu": 2966,
-    "sagat": 1772,
-    "terry": 1413,
-    "viper": 736,
-    "yasmine": 187,
-    "zangief": 4066
+    "luke": 1905,
+    "mai": 1842,
+    "manon": 1100,
+    "marisa": 1252,
+    "rashid": 1484,
+    "ryu": 2984,
+    "sagat": 1786,
+    "terry": 1416,
+    "viper": 743,
+    "yasmine": 192,
+    "zangief": 4078
   },
   "byPatchUsage": {
     "S1": {
@@ -127,37 +127,37 @@
       "zangief": 1267
     },
     "S4": {
-      "aki": 37,
-      "akuma": 119,
-      "alex": 101,
-      "bison": 42,
-      "blanka": 25,
-      "cammy": 45,
-      "chunli": 39,
-      "deejay": 21,
-      "dhalsim": 57,
-      "ed": 17,
-      "elena": 33,
-      "guile": 57,
-      "honda": 33,
-      "ingrid": 22,
-      "jamie": 48,
-      "jp": 27,
-      "juri": 17,
-      "ken": 76,
-      "kimberly": 29,
+      "aki": 45,
+      "akuma": 146,
+      "alex": 110,
+      "bison": 43,
+      "blanka": 28,
+      "cammy": 46,
+      "chunli": 43,
+      "deejay": 24,
+      "dhalsim": 63,
+      "ed": 20,
+      "elena": 41,
+      "guile": 71,
+      "honda": 37,
+      "ingrid": 27,
+      "jamie": 68,
+      "jp": 30,
+      "juri": 23,
+      "ken": 84,
+      "kimberly": 32,
       "lily": 18,
-      "luke": 81,
-      "mai": 59,
-      "manon": 16,
-      "marisa": 21,
-      "rashid": 17,
-      "ryu": 151,
-      "sagat": 91,
-      "terry": 39,
-      "viper": 75,
-      "yasmine": 187,
-      "zangief": 78
+      "luke": 94,
+      "mai": 61,
+      "manon": 19,
+      "marisa": 26,
+      "rashid": 25,
+      "ryu": 169,
+      "sagat": 105,
+      "terry": 42,
+      "viper": 82,
+      "yasmine": 192,
+      "zangief": 90
     }
   },
   "playerCharacters": {
@@ -178,7 +178,7 @@
     },
     "2bassa": {
       "cammy": 12,
-      "juri": 57,
+      "juri": 60,
       "mai": 6,
       "ryu": 1
     },
@@ -266,7 +266,7 @@
     "acqua": {
       "alex": 1,
       "bison": 1,
-      "blanka": 22,
+      "blanka": 24,
       "jp": 23,
       "mai": 3,
       "yasmine": 1
@@ -394,7 +394,7 @@
       "elena": 13,
       "ken": 2,
       "mai": 4,
-      "manon": 362,
+      "manon": 363,
       "terry": 42
     },
     "akutakawa": {
@@ -500,13 +500,13 @@
       "akuma": 1
     },
     "angrybird": {
-      "akuma": 242,
+      "akuma": 243,
       "cammy": 10,
       "ken": 264,
       "luke": 1,
       "marisa": 1,
       "rashid": 17,
-      "ryu": 56,
+      "ryu": 58,
       "terry": 1,
       "viper": 2,
       "zangief": 1
@@ -669,7 +669,7 @@
     },
     "babaaaa": {
       "luke": 7,
-      "manon": 74
+      "manon": 75
     },
     "babaaaaa": {
       "luke": 1,
@@ -783,7 +783,7 @@
       "ryu": 11,
       "sagat": 12,
       "terry": 9,
-      "viper": 33
+      "viper": 34
     },
     "big-mo": {
       "blanka": 1
@@ -838,13 +838,13 @@
       "blanka": 24,
       "ed": 27,
       "ingrid": 1,
-      "jamie": 119,
+      "jamie": 138,
       "ken": 14,
       "kimberly": 6,
-      "luke": 4,
+      "luke": 5,
       "mai": 9,
-      "ryu": 285,
-      "sagat": 289,
+      "ryu": 290,
+      "sagat": 294,
       "terry": 48
     },
     "blaz11": {
@@ -896,7 +896,7 @@
       "akuma": 352,
       "jamie": 2,
       "luke": 199,
-      "sagat": 574
+      "sagat": 581
     },
     "bongi": {
       "blanka": 7
@@ -965,7 +965,7 @@
       "mai": 2
     },
     "broski": {
-      "aki": 208,
+      "aki": 211,
       "alex": 7,
       "bison": 2,
       "dhalsim": 2,
@@ -997,7 +997,7 @@
       "mai": 2
     },
     "bryan-job": {
-      "alex": 1,
+      "alex": 2,
       "deejay": 5
     },
     "bryzee": {
@@ -1035,7 +1035,7 @@
     },
     "caba": {
       "akuma": 1,
-      "guile": 156,
+      "guile": 157,
       "juri": 3,
       "kimberly": 1,
       "ryu": 4,
@@ -1239,14 +1239,14 @@
       "elena": 2,
       "ingrid": 4,
       "jamie": 6,
-      "luke": 473,
+      "luke": 477,
       "mai": 54,
       "sagat": 5,
       "terry": 61,
       "viper": 9
     },
     "chriscch": {
-      "ed": 28,
+      "ed": 29,
       "ken": 15,
       "luke": 7,
       "terry": 5
@@ -1410,7 +1410,7 @@
       "ed": 1,
       "jp": 6,
       "ken": 7,
-      "ryu": 98,
+      "ryu": 99,
       "sagat": 3
     },
     "crank": {
@@ -1513,7 +1513,7 @@
       "chunli": 5
     },
     "daigo": {
-      "akuma": 1211,
+      "akuma": 1234,
       "ed": 1,
       "guile": 1,
       "honda": 1,
@@ -1615,7 +1615,7 @@
     },
     "dcq": {
       "bison": 129,
-      "jp": 57,
+      "jp": 59,
       "luke": 1,
       "mai": 1,
       "ryu": 3,
@@ -1656,7 +1656,7 @@
       "juri": 2
     },
     "densetsusp": {
-      "juri": 12
+      "juri": 13
     },
     "despairking": {
       "juri": 6,
@@ -1734,7 +1734,7 @@
       "chunli": 2
     },
     "dodogamaru": {
-      "chunli": 15
+      "chunli": 16
     },
     "dogura": {
       "aki": 2,
@@ -1759,6 +1759,7 @@
       "akuma": 2,
       "deejay": 2,
       "elena": 6,
+      "jamie": 1,
       "kimberly": 2,
       "luke": 2
     },
@@ -1991,8 +1992,8 @@
       "marisa": 1,
       "ryu": 353,
       "sagat": 2,
-      "terry": 8,
-      "zangief": 12
+      "terry": 10,
+      "zangief": 14
     },
     "ending-walker-xuses": {
       "ken": 1
@@ -2019,6 +2020,9 @@
       "marisa": 3
     },
     "ermac": {
+      "jp": 1
+    },
+    "erua": {
       "jp": 1
     },
     "espy": {
@@ -2300,7 +2304,7 @@
       "deejay": 146,
       "dhalsim": 19,
       "ed": 316,
-      "viper": 12
+      "viper": 15
     },
     "g8s-gachikun": {
       "rashid": 3
@@ -2310,7 +2314,7 @@
     },
     "gachikun": {
       "manon": 21,
-      "rashid": 363
+      "rashid": 368
     },
     "gagachan": {
       "deejay": 1
@@ -2410,7 +2414,7 @@
       "honda": 1
     },
     "gjijiig": {
-      "marisa": 8
+      "marisa": 9
     },
     "gjijjig": {
       "marisa": 1
@@ -2596,7 +2600,7 @@
     },
     "haitani": {
       "blanka": 2,
-      "chunli": 283,
+      "chunli": 285,
       "juri": 1,
       "ken": 1,
       "kimberly": 1,
@@ -2626,7 +2630,7 @@
       "zangief": 1
     },
     "hamad": {
-      "honda": 90,
+      "honda": 91,
       "ryu": 2,
       "sagat": 2
     },
@@ -2787,7 +2791,7 @@
       "elena": 1
     },
     "higuchi": {
-      "guile": 611,
+      "guile": 616,
       "ingrid": 4,
       "mai": 3,
       "sagat": 2,
@@ -2803,7 +2807,7 @@
       "aki": 1
     },
     "hikaru": {
-      "aki": 551,
+      "aki": 556,
       "blanka": 24,
       "ed": 1,
       "elena": 6,
@@ -2811,6 +2815,7 @@
       "ingrid": 2,
       "mai": 10,
       "manon": 10,
+      "rashid": 1,
       "viper": 3,
       "yasmine": 2
     },
@@ -2828,12 +2833,12 @@
     },
     "hinao": {
       "akuma": 35,
-      "ed": 1,
+      "ed": 2,
       "ingrid": 53,
       "ken": 1,
       "luke": 140,
-      "ryu": 132,
-      "sagat": 93,
+      "ryu": 135,
+      "sagat": 95,
       "terry": 10
     },
     "hint": {
@@ -3073,7 +3078,7 @@
       "guile": 2
     },
     "imstmail": {
-      "kimberly": 2
+      "kimberly": 3
     },
     "inaba": {
       "alex": 5,
@@ -3159,7 +3164,7 @@
       "bison": 1,
       "honda": 1,
       "marisa": 257,
-      "zangief": 924
+      "zangief": 928
     },
     "itazan-kichipa": {
       "zangief": 1
@@ -3321,8 +3326,11 @@
       "honda": 2
     },
     "jhon-takeuchi": {
-      "jamie": 3,
+      "jamie": 2,
       "rashid": 3
+    },
+    "jhontakeuchi": {
+      "jamie": 1
     },
     "jieba": {
       "cammy": 11
@@ -3484,10 +3492,10 @@
       "ryu": 2
     },
     "junior": {
-      "alex": 8,
+      "alex": 10,
       "marisa": 1,
       "sagat": 1,
-      "zangief": 301
+      "zangief": 305
     },
     "juniorleo": {
       "cammy": 5
@@ -3586,6 +3594,9 @@
     "kakokyu": {
       "aki": 1
     },
+    "kakuon": {
+      "bison": 1
+    },
     "kakutasu3": {
       "blanka": 1
     },
@@ -3645,7 +3656,7 @@
       "jamie": 1
     },
     "karura": {
-      "marisa": 70
+      "marisa": 74
     },
     "karyu": {
       "deejay": 1
@@ -3663,7 +3674,7 @@
       "marisa": 1
     },
     "kawano": {
-      "akuma": 146,
+      "akuma": 147,
       "ingrid": 21,
       "jamie": 1,
       "luke": 39,
@@ -3711,7 +3722,7 @@
       "ryu": 17,
       "sagat": 22,
       "terry": 2,
-      "viper": 269,
+      "viper": 271,
       "yasmine": 20,
       "zangief": 2
     },
@@ -3802,7 +3813,7 @@
       "jp": 3
     },
     "kido": {
-      "alex": 65,
+      "alex": 67,
       "ingrid": 2
     },
     "kidosan": {
@@ -3923,7 +3934,7 @@
       "terry": 2
     },
     "kobayan": {
-      "zangief": 1237
+      "zangief": 1238
     },
     "koeliga": {
       "deejay": 1
@@ -4040,7 +4051,7 @@
       "ingrid": 5
     },
     "kurapop": {
-      "ingrid": 5
+      "ingrid": 7
     },
     "kurita-oyakata": {
       "manon": 1
@@ -4193,8 +4204,8 @@
       "akuma": 172,
       "alex": 41,
       "chunli": 47,
-      "ed": 343,
-      "elena": 20,
+      "ed": 344,
+      "elena": 23,
       "guile": 1,
       "jp": 1,
       "juri": 1,
@@ -4215,7 +4226,7 @@
       "dhalsim": 2
     },
     "levihakai": {
-      "elena": 11
+      "elena": 12
     },
     "lexx": {
       "bison": 7,
@@ -4433,6 +4444,9 @@
     "maeushiro": {
       "bison": 1
     },
+    "maga": {
+      "yasmine": 1
+    },
     "magbuddy": {
       "bison": 1
     },
@@ -4447,7 +4461,7 @@
       "honda": 1,
       "juri": 351,
       "luke": 1,
-      "mai": 33,
+      "mai": 34,
       "ryu": 16,
       "sagat": 6,
       "terry": 20
@@ -4625,7 +4639,7 @@
     },
     "menard": {
       "akuma": 27,
-      "alex": 25,
+      "alex": 26,
       "bison": 62,
       "blanka": 302,
       "cammy": 2,
@@ -4762,7 +4776,7 @@
       "akuma": 3,
       "blanka": 1,
       "chunli": 1,
-      "dhalsim": 132,
+      "dhalsim": 133,
       "viper": 30,
       "zangief": 1
     },
@@ -5091,7 +5105,7 @@
       "ryu": 1
     },
     "naooonn": {
-      "akuma": 85,
+      "akuma": 86,
       "deejay": 1,
       "ken": 2,
       "luke": 20,
@@ -5107,7 +5121,7 @@
       "ken": 1
     },
     "napuru": {
-      "ingrid": 10,
+      "ingrid": 12,
       "ken": 1,
       "sagat": 9
     },
@@ -5119,7 +5133,8 @@
     },
     "narikun": {
       "bison": 1,
-      "kimberly": 34
+      "kimberly": 34,
+      "yasmine": 1
     },
     "narou": {
       "jamie": 1
@@ -5221,7 +5236,7 @@
     "nemo": {
       "aki": 28,
       "akuma": 3,
-      "alex": 40,
+      "alex": 41,
       "bison": 166,
       "blanka": 62,
       "ed": 1,
@@ -5260,7 +5275,7 @@
       "zangief": 1
     },
     "nerotheboxer": {
-      "deejay": 5
+      "deejay": 6
     },
     "nezu": {
       "manon": 1
@@ -5297,7 +5312,7 @@
       "kimberly": 1
     },
     "niruhiru": {
-      "guile": 2
+      "guile": 3
     },
     "nishikin": {
       "blanka": 320
@@ -5316,7 +5331,7 @@
       "bison": 1,
       "cammy": 14,
       "ken": 11,
-      "luke": 150,
+      "luke": 153,
       "ryu": 9,
       "sagat": 29
     },
@@ -5345,7 +5360,7 @@
       "bison": 31,
       "cammy": 10,
       "guile": 1,
-      "luke": 154,
+      "luke": 155,
       "ryu": 3
     },
     "noahthprodigy": {
@@ -5443,7 +5458,7 @@
       "akuma": 4,
       "cammy": 39,
       "deejay": 83,
-      "guile": 293,
+      "guile": 295,
       "luke": 2,
       "mai": 111
     },
@@ -5572,7 +5587,7 @@
       "bison": 1,
       "ed": 1,
       "ingrid": 3,
-      "ken": 224,
+      "ken": 228,
       "mai": 58
     },
     "orarin1": {
@@ -5779,7 +5794,7 @@
       "jp": 2
     },
     "pipokun": {
-      "kimberly": 13
+      "kimberly": 14
     },
     "pippin": {
       "dhalsim": 1
@@ -5856,13 +5871,13 @@
       "honda": 31
     },
     "problem-x": {
-      "alex": 147,
+      "alex": 148,
       "bison": 261,
       "blanka": 108,
       "elena": 7,
       "guile": 8,
       "honda": 14,
-      "ingrid": 15,
+      "ingrid": 16,
       "jp": 2,
       "kimberly": 1,
       "lily": 38,
@@ -5909,7 +5924,7 @@
     },
     "psycho": {
       "juri": 1,
-      "kimberly": 54
+      "kimberly": 55
     },
     "pugera": {
       "alex": 14,
@@ -6037,7 +6052,7 @@
     },
     "rainpro": {
       "bison": 12,
-      "guile": 109,
+      "guile": 114,
       "luke": 1,
       "ryu": 1
     },
@@ -6073,10 +6088,10 @@
       "manon": 1
     },
     "randumb": {
-      "manon": 105
+      "manon": 106
     },
     "rangasamy": {
-      "honda": 85
+      "honda": 86
     },
     "rangsamy": {
       "honda": 1
@@ -6163,7 +6178,7 @@
       "jp": 10
     },
     "rh": {
-      "honda": 26
+      "honda": 28
     },
     "ribeiro": {
       "sagat": 1
@@ -6309,10 +6324,10 @@
     },
     "ryukichi": {
       "akuma": 5,
-      "cammy": 4,
+      "cammy": 5,
       "ed": 15,
       "guile": 2,
-      "ken": 230,
+      "ken": 232,
       "mai": 115,
       "ryu": 11,
       "sagat": 6,
@@ -6383,7 +6398,7 @@
       "akuma": 29,
       "chunli": 74,
       "ed": 1,
-      "elena": 36,
+      "elena": 38,
       "ingrid": 8,
       "jp": 1,
       "rashid": 4,
@@ -6484,8 +6499,8 @@
     "satoru": {
       "ed": 2,
       "marisa": 1,
-      "rashid": 66,
-      "terry": 3
+      "rashid": 67,
+      "terry": 4
     },
     "satoshi": {
       "marisa": 1
@@ -6569,13 +6584,13 @@
       "ingrid": 1
     },
     "seichi": {
-      "elena": 25
+      "elena": 26
     },
     "seichi-p": {
       "elena": 2
     },
     "seiya": {
-      "chunli": 74
+      "chunli": 75
     },
     "sekiganryu": {
       "ryu": 57
@@ -6692,7 +6707,8 @@
       "ed": 8,
       "elena": 1,
       "kimberly": 55,
-      "mai": 8
+      "mai": 8,
+      "yasmine": 1
     },
     "shinjuku": {
       "elena": 7
@@ -6701,7 +6717,7 @@
       "bison": 1
     },
     "shinto": {
-      "alex": 7
+      "alex": 8
     },
     "shinya": {
       "marisa": 1
@@ -6713,7 +6729,7 @@
       "manon": 2
     },
     "shion": {
-      "ken": 32,
+      "ken": 33,
       "ryu": 1
     },
     "shiranui": {
@@ -6747,7 +6763,7 @@
       "guile": 1
     },
     "shota-imai": {
-      "elena": 19
+      "elena": 20
     },
     "shote": {
       "jp": 1
@@ -6777,10 +6793,10 @@
       "jamie": 2,
       "jp": 1,
       "ken": 4,
-      "luke": 1,
+      "luke": 5,
       "mai": 4,
       "marisa": 112,
-      "ryu": 257,
+      "ryu": 264,
       "zangief": 2
     },
     "shuu": {
@@ -6896,7 +6912,7 @@
       "terry": 4,
       "viper": 12,
       "yasmine": 3,
-      "zangief": 457
+      "zangief": 458
     },
     "snakeules": {
       "ryu": 3
@@ -7133,7 +7149,7 @@
     },
     "surini": {
       "kimberly": 52,
-      "yasmine": 2
+      "yasmine": 4
     },
     "surplus": {
       "viper": 1
@@ -7190,7 +7206,7 @@
       "mai": 6,
       "manon": 26,
       "terry": 3,
-      "viper": 43,
+      "viper": 44,
       "yasmine": 11
     },
     "taco": {
@@ -7538,7 +7554,7 @@
       "cammy": 1
     },
     "torimeshi": {
-      "dhalsim": 485,
+      "dhalsim": 487,
       "honda": 4
     },
     "torimesi": {
@@ -7600,6 +7616,9 @@
     },
     "tsumugiz": {
       "jamie": 6
+    },
+    "tsunehero": {
+      "rashid": 1
     },
     "tsuoka": {
       "guile": 1
@@ -7668,7 +7687,7 @@
     },
     "uma": {
       "ingrid": 2,
-      "juri": 20,
+      "juri": 21,
       "mai": 1,
       "terry": 3,
       "viper": 1,
@@ -7811,6 +7830,9 @@
     "vermillion": {
       "luke": 1
     },
+    "vicg": {
+      "ken": 1
+    },
     "vicinal-corgi": {
       "cammy": 2,
       "luke": 2,
@@ -7852,7 +7874,7 @@
       "jamie": 1,
       "jp": 14,
       "ken": 1,
-      "mai": 25,
+      "mai": 26,
       "terry": 4,
       "viper": 3
     },
@@ -8147,7 +8169,7 @@
       "dhalsim": 4
     },
     "yhc-mochi": {
-      "dhalsim": 474
+      "dhalsim": 477
     },
     "yhcmochi-torimesi": {
       "dhalsim": 1
@@ -8210,7 +8232,7 @@
       "viper": 4
     },
     "yossan": {
-      "juri": 46
+      "juri": 47
     },
     "you": {
       "bison": 1
@@ -8288,6 +8310,7 @@
       "sagat": 2
     },
     "yuto": {
+      "akuma": 1,
       "cammy": 3,
       "jp": 1,
       "mai": 15
@@ -8317,7 +8340,7 @@
       "deejay": 10
     },
     "zabutonn": {
-      "deejay": 68
+      "deejay": 70
     },
     "zacfry3d": {
       "viper": 1
@@ -8389,7 +8412,7 @@
       "aki": 1
     },
     "zeno": {
-      "blanka": 6,
+      "blanka": 7,
       "marisa": 2
     },
     "zensei": {

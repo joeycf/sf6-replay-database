@@ -101,7 +101,7 @@
   },
   {
     "id": "abi",
-    "handle": "ABI"
+    "handle": "Abi"
   },
   {
     "id": "abomition",
@@ -317,7 +317,7 @@
   },
   {
     "id": "alexrd",
-    "handle": "AlexRD"
+    "handle": "ALEXRD"
   },
   {
     "id": "alisa",
@@ -2089,6 +2089,10 @@
     "handle": "Ermac"
   },
   {
+    "id": "erua",
+    "handle": "ERUA"
+  },
+  {
     "id": "espy",
     "handle": "ESPY"
   },
@@ -3281,7 +3285,7 @@
   },
   {
     "id": "imstmail",
-    "handle": "iMstMail"
+    "handle": "IMstMaiL"
   },
   {
     "id": "inaba",
@@ -3581,6 +3585,10 @@
     "handle": "JHON TAKEUCHI"
   },
   {
+    "id": "jhontakeuchi",
+    "handle": "jhontakeuchi"
+  },
+  {
     "id": "jieba",
     "handle": "Jieba"
   },
@@ -3852,6 +3860,10 @@
   {
     "id": "kakokyu",
     "handle": "Kakokyu"
+  },
+  {
+    "id": "kakuon",
+    "handle": "KAKUON"
   },
   {
     "id": "kakutasu3",
@@ -4828,6 +4840,10 @@
   {
     "id": "maeushiro",
     "handle": "Maeushiro"
+  },
+  {
+    "id": "maga",
+    "handle": "MAGA"
   },
   {
     "id": "magbuddy",
@@ -8412,6 +8428,10 @@
     "handle": "Tsumugiz"
   },
   {
+    "id": "tsunehero",
+    "handle": "⚔️ TsuneHero"
+  },
+  {
     "id": "tsuoka",
     "handle": "Tsuoka"
   },
@@ -8655,6 +8675,10 @@
   {
     "id": "vermillion",
     "handle": "VERMILLION"
+  },
+  {
+    "id": "vicg",
+    "handle": "VICG"
   },
   {
     "id": "vicinal-corgi",

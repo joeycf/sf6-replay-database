@@ -171,6 +171,48 @@ export async function emitGeneric(
 
   // ── contract assertions: every one a throw. A silent schema drift here
   // ships a site that renders wrong numbers, which is worse than no site.
+  // THE SUBSTRATE-ONLY KEYS STAY SUBSTRATE-ONLY, AND THAT IS NOW A RULE.
+  // toReplay() projects field by field at both levels, so `season`,
+  // `sides[].handle` and `unplayable` are dropped by construction — which is a
+  // property of how the function happens to be written, and nothing has been
+  // watching it. `unplayable` is the one that would matter: publishing it would
+  // put a field in the public contract that the engine's Replay type has no
+  // concept of, and it would arrive silently, on 2,030 records, the first time
+  // somebody refactored this projection into a spread.
+  const PUBLIC_KEYS = new Set([
+    'id',
+    'sides',
+    'date',
+    'patch',
+    'source',
+    'title',
+    'views',
+    'durationSec',
+    'videoId',
+    'startSeconds',
+    'event',
+    'channelName',
+  ]);
+  const PUBLIC_SIDE_KEYS = new Set(['player', 'characters', 'rank']);
+  for (const r of replays) {
+    const stray = Object.keys(r).filter((k) => !PUBLIC_KEYS.has(k));
+    if (stray.length) {
+      throw new Error(
+        `emit: ${r.id} carries substrate-only key(s) in the public contract: ${stray.join(', ')}. ` +
+          `data/replays.json is the published shape; add the key to the engine's Replay type ` +
+          `deliberately, or keep the projection field-by-field.`,
+      );
+    }
+    for (const side of r.sides) {
+      const straySide = Object.keys(side).filter((k) => !PUBLIC_SIDE_KEYS.has(k));
+      if (straySide.length) {
+        throw new Error(
+          `emit: ${r.id} side carries substrate-only key(s): ${straySide.join(', ')}.`,
+        );
+      }
+    }
+  }
+
   if (replays.length !== records.length) {
     throw new Error(`emit: replay count ${replays.length} !== record count ${records.length}`);
   }

@@ -184,6 +184,18 @@ function decide(
   const ob = protectedOverride(b);
   if (oa !== ob)
     return oa ? mk(a, b, 'hand-authored-override') : mk(b, a, 'hand-authored-override');
+  // A PLAYABLE COPY BEATS AN UNPLAYABLE ONE, ABOVE CHANNEL PRIORITY.
+  //
+  // Added 2026-09-24 with the King Arena freeze. Its channel was deleted and
+  // every one of its 2,030 videos is gone, but it sits fifth of eight in
+  // channels.ts — so `channel-priority` below would keep the DEAD copy of a
+  // cross-posted match and propose excluding the live one, which is the exact
+  // inverse of what this tool is for. Precedence answers "whose copy is
+  // canonical"; it has nothing to say about a copy that cannot be watched.
+  const ua = !!a.unplayable;
+  const ub = !!b.unplayable;
+  if (ua !== ub)
+    return ub ? mk(a, b, 'playable-over-unplayable') : mk(b, a, 'playable-over-unplayable');
   const pa = PRIORITY.get(a.channel) ?? 99;
   const pb = PRIORITY.get(b.channel) ?? 99;
   if (pa !== pb) return pa < pb ? mk(a, b, 'channel-priority') : mk(b, a, 'channel-priority');
