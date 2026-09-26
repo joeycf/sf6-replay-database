@@ -1,17 +1,17 @@
 
 # SF6 pipeline report
 
-**24754 matches** parsed from 34274 uploads across 7 channels, plus 1065 from 1 index · 2342 players · ranked sides 21711/49508 (43.9%)
+**24768 matches** parsed from 34290 uploads across 7 channels, plus 1065 from 1 index · 2343 players · ranked sides 21727/49536 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5864 | 5864 | 5849 | 99.7% | 11284 |
-| fgcPlace | fgcPlace | 10076 | 9084 | 8899 | 98.0% | 10427 |
-| sfReplays | sfReplays | 7220 | 6221 | 5638 | 90.6% | 0 |
-| capcomFighters | capcomFighters | 8191 | 1797 | 1143 | 63.6% | 0 |
+| highLevel | highLevel | 5866 | 5866 | 5851 | 99.7% | 11288 |
+| fgcPlace | fgcPlace | 10082 | 9090 | 8905 | 98.0% | 10439 |
+| sfReplays | sfReplays | 7226 | 6227 | 5644 | 90.6% | 0 |
+| capcomFighters | capcomFighters | 8192 | 1798 | 1143 | 63.6% | 0 |
 | evoEvents | evoEvents | 2772 | 155 | 81 | 52.3% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
-| superFighters | superFighters | 151 | 150 | 49 | 32.7% | 0 |
+| superFighters | superFighters | 152 | 151 | 49 | 32.5% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Index intakes
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9541 · S4 966
+Seasons: S1 6225 · S2 8022 · S3 9541 · S4 980
 
-Rank distribution (side appearances): Legend 19280 · Master 2417 · Diamond 14
+Rank distribution (side appearances): Legend 19294 · Master 2419 · Diamond 14
 
-Misses by reason: not-sf6 11003 · no-vs-title 997 · shorts 214 · char-unresolved 122 · short-duration 99 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
+Misses by reason: not-sf6 11003 · no-vs-title 998 · shorts 214 · char-unresolved 122 · short-duration 99 · pre-launch 93 · bad-handle 27 · live-or-upcoming 2
 
 ## Replay Theater cross-check
 
@@ -104,4 +104,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-25T12:49:40.407Z_
+_Generated 2026-09-26T12:17:52.332Z_
