@@ -56,8 +56,8 @@
    `@layer theme` defaults in every build mode. Engine utilities reference
    var(--color-*) at use time, so overrides flow through.
 
-   Per-character accents are NOT here — the engine injects --accent-<id> from
-   GameConfig.accents (app/plugins/accents.ts), sourced from the same
+   Per-character accents are NOT here — the engine emits --accent-<id> from
+   GameConfig.accents (modules/accents-css.ts), sourced from the same
    design/handoff/tokens.css --char-* block scripts/characters.ts reads. */
 :root {
   /* ---- Surfaces — asphalt & concrete (warm cast) -------------------------- */
