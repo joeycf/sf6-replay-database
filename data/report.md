@@ -1,17 +1,17 @@
 
 # SF6 pipeline report
 
-**24830 matches** parsed from 34361 uploads across 7 channels, plus 1065 from 1 index · 2343 players · ranked sides 21797/49660 (43.9%)
+**24850 matches** parsed from 34387 uploads across 7 channels, plus 1065 from 1 index · 2343 players · ranked sides 21815/49700 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5875 | 5875 | 5860 | 99.7% | 11306 |
-| fgcPlace | fgcPlace | 10111 | 9119 | 8934 | 98.0% | 10491 |
-| sfReplays | sfReplays | 7249 | 6250 | 5667 | 90.7% | 0 |
-| capcomFighters | capcomFighters | 8197 | 1803 | 1143 | 63.4% | 0 |
-| evoEvents | evoEvents | 2774 | 155 | 81 | 52.3% | 0 |
+| highLevel | highLevel | 5877 | 5877 | 5862 | 99.7% | 11310 |
+| fgcPlace | fgcPlace | 10118 | 9126 | 8941 | 98.0% | 10505 |
+| sfReplays | sfReplays | 7256 | 6257 | 5674 | 90.7% | 0 |
+| capcomFighters | capcomFighters | 8198 | 1804 | 1143 | 63.4% | 0 |
+| evoEvents | evoEvents | 2775 | 155 | 81 | 52.3% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
-| superFighters | superFighters | 155 | 154 | 50 | 32.5% | 0 |
+| superFighters | superFighters | 163 | 162 | 54 | 33.3% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Index intakes
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9541 · S4 1042
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1058
 
-Rank distribution (side appearances): Legend 19363 · Master 2420 · Diamond 14
+Rank distribution (side appearances): Legend 19381 · Master 2420 · Diamond 14
 
-Misses by reason: not-sf6 11005 · no-vs-title 1002 · shorts 214 · char-unresolved 122 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 4
+Misses by reason: not-sf6 11006 · no-vs-title 1007 · shorts 214 · char-unresolved 122 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 4
 
 ## Replay Theater cross-check
 
@@ -104,4 +104,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-09-30T13:44:45.831Z_
+_Generated 2026-10-01T14:36:01.490Z_
