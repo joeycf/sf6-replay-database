@@ -1366,6 +1366,35 @@ async function main(): Promise<void> {
     `player page renders (${samplePlayer})`,
   );
 
+  // ── tournament placements (engine v0.17.0; scripts/tournaments.ts) ────────
+  // A title makes a player featured, and the page that shows it must carry the
+  // Liquipedia credit — CC BY-SA 3.0 is a condition of using the table at all.
+  // Node-side, on the PRERENDERED HTML: the credit has to reach crawlers too.
+  const titled = players.filter((x) => (x.extra?.titles?.length ?? 0) > 0);
+  if (existsSync(join(ROOT, 'data/tournaments.json')) && titled.length) {
+    const unfeatured = titled.filter((x) => x.featured !== true).map((x) => x.id);
+    expect(
+      unfeatured.length === 0,
+      `every tournament-placed player is featured (${titled.length})` +
+        (unfeatured.length ? ` — not: ${unfeatured.join(', ')}` : ''),
+    );
+    const t = titled[0]!;
+    const titledPage = join(OUT, BASE, `players/${t.id}/index.html`);
+    if (existsSync(titledPage)) {
+      const html = readFileSync(titledPage, 'utf8');
+      expect(
+        html.includes('data-testid="player-titles"') && html.includes('Liquipedia'),
+        `/players/${t.id} renders its placements with the Liquipedia credit`,
+      );
+    } else {
+      expect(false, `/players/${t.id} prerendered (missing from the build)`);
+    }
+  } else {
+    console.log(
+      '  – skipped: tournament placement assertions (no data/tournaments.json or nobody titled yet)',
+    );
+  }
+
   // ── 6. theme, on the BUILT output ─────────────────────────────────────────
   console.log('\n— theme (built bundle)');
   await gotoIdle(page, at('/'));

@@ -1,0 +1,5932 @@
+{
+  "source": {
+    "name": "Liquipedia Fighting Games Wiki",
+    "url": "https://liquipedia.net/fighters/Street_Fighter_6/Tournaments",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "game": "sf6",
+    "tiers": [
+      1,
+      2
+    ]
+  },
+  "generatedAt": "2026-10-01",
+  "events": [
+    {
+      "name": "Capcom Cup 13",
+      "page": "Capcom_Cup/13",
+      "url": "https://liquipedia.net/fighters/Capcom_Cup/13",
+      "date": "2027-03-27",
+      "tier": 1,
+      "entrants": 48,
+      "prize": null,
+      "location": "Tokyo",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Street Fighter League Pro-JP 2026",
+      "page": "Street_Fighter_League/Japan/2026",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Japan/2026",
+      "date": "2027-02-27",
+      "tier": 1,
+      "entrants": 48,
+      "prize": null,
+      "location": "Tokyo",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Japan Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Asia/Japan/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Asia/Japan/Regional_Final",
+      "date": "2026-12-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: US Midwest Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/North_America/US-Canada_Midwest/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/North_America/US-Canada_Midwest/Regional_Final",
+      "date": "2026-12-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: US-Canada East Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/North_America/US-Canada_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/North_America/US-Canada_East/Regional_Final",
+      "date": "2026-12-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Asia Southeast Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Asia/Southeast/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Asia/Southeast/Regional_Final",
+      "date": "2026-11-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Chile Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/South_America/Chile/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/South_America/Chile/Regional_Final",
+      "date": "2026-11-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Germany Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Europe/Germany/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Europe/Germany/Regional_Final",
+      "date": "2026-11-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: US-Canada West Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/North_America/US-Canada_West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/North_America/US-Canada_West/Regional_Final",
+      "date": "2026-11-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Street Fighter League Pro-Americas 2026",
+      "page": "Street_Fighter_League/Americas/2026",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Americas/2026",
+      "date": "2026-11-26",
+      "tier": 1,
+      "entrants": 24,
+      "prize": null,
+      "location": "United States",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Asia East Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Asia/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Asia/East/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Asia South Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Asia/South/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Asia/South/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Brazil Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/South_America/Brazil/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/South_America/Brazil/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": null,
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Central America East Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Central_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Central_America/East/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Central America West Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Central_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Central_America/West/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Europe North-East Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Europe/North-East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Europe/North-East/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Europe West Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Europe/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Europe/West/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Mexico Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Mexico/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Mexico/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Oceania Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Oceania/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Oceania/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: South Africa Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/South_Africa/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/South_Africa/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: South America East Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/South_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/South_America/East/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: South America West Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/South_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/South_America/West/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: South Korea Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Asia/South_Korea/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Asia/South_Korea/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: Spain-Portugal Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2026 World Warrior: UK-Ireland Regional Final",
+      "page": "Capcom_Pro_Tour/2026/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2026/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "date": "2026-10-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Evolution Championship Series: France 2026",
+      "page": "Evolution_Championship_Series/2026/France/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/France/SF6",
+      "date": "2026-10-26",
+      "tier": 1,
+      "entrants": 1071,
+      "prize": "$56,836.91",
+      "location": "Nice",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Street Fighter League Pro-EMEAA 2026",
+      "page": "Street_Fighter_League/EMEAA/2026",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/EMEAA/2026",
+      "date": "2026-10-26",
+      "tier": 1,
+      "entrants": 24,
+      "prize": "$100,000",
+      "location": "Los Angeles",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Ultimate Fighting Arena 2026",
+      "page": "Ultimate_Fighting_Arena/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2026/SF6",
+      "date": "2026-09-26",
+      "tier": 1,
+      "entrants": 512,
+      "prize": "$10,847.01",
+      "location": "Paris",
+      "winner": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Higuchi",
+        "page": "Higuchi",
+        "flag": "Japan",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "CEO 2026",
+      "page": "Community_Effort_Orlando/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2026/SF6",
+      "date": "2026-08-26",
+      "tier": 1,
+      "entrants": 1110,
+      "prize": "$16,300",
+      "location": "Orlando, FL",
+      "winner": {
+        "name": "Tokido",
+        "page": "Tokido",
+        "flag": "Japan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Booce_Lee",
+        "page": "Booce",
+        "flag": "United States",
+        "character": "Terry"
+      }
+    },
+    {
+      "name": "Esports World Cup 2026",
+      "page": "Esports_World_Cup/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Esports_World_Cup/2026/SF6",
+      "date": "2026-08-26",
+      "tier": 1,
+      "entrants": 32,
+      "prize": "$1,000,000",
+      "location": "Paris",
+      "winner": {
+        "name": "Craime",
+        "page": "Craime",
+        "flag": "Chile",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "Hibiki",
+        "page": "Hibiki",
+        "flag": "Japan",
+        "character": "Lily"
+      }
+    },
+    {
+      "name": "GRAPHT CUP 2026",
+      "page": "GRAPHT_CUP/2026",
+      "url": "https://liquipedia.net/fighters/GRAPHT_CUP/2026",
+      "date": "2026-08-26",
+      "tier": 2,
+      "entrants": 6,
+      "prize": "$7,287.43",
+      "location": "Tokyo",
+      "winner": {
+        "name": "orarin",
+        "page": "Orarin",
+        "flag": "Japan",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Akutagawa",
+        "page": "Akutagawa",
+        "flag": "Japan",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "Komitê Arena 2026",
+      "page": "Komitê_Arena/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Komit%C3%AA_Arena/2026/SF6",
+      "date": "2026-08-26",
+      "tier": 2,
+      "entrants": 116,
+      "prize": null,
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "Brayan_Job",
+        "page": "Brayan_Job",
+        "flag": "Brazil",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "NotPedro",
+        "page": "NotPedro",
+        "flag": "Brazil",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Topanga Championship 7",
+      "page": "Topanga_Championship/7",
+      "url": "https://liquipedia.net/fighters/Topanga_Championship/7",
+      "date": "2026-08-26",
+      "tier": 1,
+      "entrants": 36,
+      "prize": "$94,354.43",
+      "location": "Tokyo",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Higuchi",
+        "page": "Higuchi",
+        "flag": "Japan",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "Battle Arena Melbourne 16",
+      "page": "Battle_Arena_Melbourne/16/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/16/SF6",
+      "date": "2026-07-26",
+      "tier": 1,
+      "entrants": 230,
+      "prize": "$6,754.21",
+      "location": "Melbourne",
+      "winner": {
+        "name": "Hinao",
+        "page": "Hinao",
+        "flag": "Japan",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "cosa",
+        "page": "Kabe",
+        "flag": "Japan",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "Esports World Cup 2026 Last Chance Qualifier",
+      "page": "Esports_World_Cup/2026/SF6/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Esports_World_Cup/2026/SF6/Last_Chance_Qualifier",
+      "date": "2026-07-26",
+      "tier": 1,
+      "entrants": 269,
+      "prize": "$50,000",
+      "location": "Paris",
+      "winner": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Hibiki",
+        "page": "Hibiki",
+        "flag": "Japan",
+        "character": "Lily"
+      }
+    },
+    {
+      "name": "S Factor X3",
+      "page": "S_Factor/13/SF6",
+      "url": "https://liquipedia.net/fighters/S_Factor/13/SF6",
+      "date": "2026-07-26",
+      "tier": 2,
+      "entrants": 335,
+      "prize": null,
+      "location": "Puebla",
+      "winner": {
+        "name": "LUGABO",
+        "page": "LuGabo",
+        "flag": "Mexico",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "MJ_Gama",
+        "page": "Gama",
+        "flag": "Mexico",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "VSFighting XIV",
+      "page": "VSFighting/2026/SF6",
+      "url": "https://liquipedia.net/fighters/VSFighting/2026/SF6",
+      "date": "2026-07-26",
+      "tier": 2,
+      "entrants": 255,
+      "prize": "$3,396.47",
+      "location": "Birmingham",
+      "winner": {
+        "name": "MysticSmash",
+        "page": "Mystic_(Callum_White)",
+        "flag": "United Kingdom",
+        "character": "Elena"
+      },
+      "runnerUp": {
+        "name": "broski",
+        "page": "Broski",
+        "flag": "United Kingdom",
+        "character": "A.K.I."
+      }
+    },
+    {
+      "name": "Blink Respawn 2026",
+      "page": "Blink_Respawn/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Blink_Respawn/2026/SF6",
+      "date": "2026-06-26",
+      "tier": 1,
+      "entrants": 316,
+      "prize": "$11,200",
+      "location": "Santo Domingo",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Evolution Championship Series 2026",
+      "page": "Evolution_Championship_Series/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/SF6",
+      "date": "2026-06-26",
+      "tier": 1,
+      "entrants": 2416,
+      "prize": "$100,000",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Shigematsu",
+        "page": "Shigematsu",
+        "flag": "Japan",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "The MIXUP 2026",
+      "page": "The_MIXUP/2026/SF6",
+      "url": "https://liquipedia.net/fighters/The_MIXUP/2026/SF6",
+      "date": "2026-06-26",
+      "tier": 2,
+      "entrants": 167,
+      "prize": "$1,933.09",
+      "location": "Lyon",
+      "winner": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "C. Viper"
+      },
+      "runnerUp": {
+        "name": "Beslem",
+        "page": "Beslem",
+        "flag": "France",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "Brussels Challenge Major Edition 2026",
+      "page": "Brussels_Challenge/2026/Major_Edition/SF6",
+      "url": "https://liquipedia.net/fighters/Brussels_Challenge/2026/Major_Edition/SF6",
+      "date": "2026-05-26",
+      "tier": 2,
+      "entrants": 129,
+      "prize": "$1,521.15",
+      "location": "Brussels",
+      "winner": {
+        "name": "Takamura",
+        "page": "Takamura",
+        "flag": "Belgium",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "C. Viper"
+      }
+    },
+    {
+      "name": "Combo Breaker 2026",
+      "page": "Combo_Breaker/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Combo_Breaker/2026/SF6",
+      "date": "2026-05-26",
+      "tier": 1,
+      "entrants": 1452,
+      "prize": "$19,720",
+      "location": "Schaumburg, IL",
+      "winner": {
+        "name": "Xiaohai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Hinao",
+        "page": "Hinao",
+        "flag": "Japan",
+        "character": "Sagat"
+      }
+    },
+    {
+      "name": "DreamHack Atlanta 2026",
+      "page": "DreamHack/2026/Atlanta/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2026/Atlanta/SF6",
+      "date": "2026-05-26",
+      "tier": 1,
+      "entrants": 123,
+      "prize": "$50,000",
+      "location": "Atlanta, GA",
+      "winner": {
+        "name": "Kobayan",
+        "page": "Kobayan",
+        "flag": "Japan",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "Evolution Championship Series: Japan 2026",
+      "page": "Evolution_Championship_Series/2026/Japan/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/Japan/SF6",
+      "date": "2026-05-26",
+      "tier": 1,
+      "entrants": 7169,
+      "prize": "$45,641.19",
+      "location": "Tokyo",
+      "winner": {
+        "name": "Yamaguchi",
+        "page": "Yamaguchi",
+        "flag": "Japan",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Saudi eLeague Fighting: Season 5 Championship",
+      "page": "Saudi_eLeague/Season_5/Championship/SF6",
+      "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_5/Championship/SF6",
+      "date": "2026-05-26",
+      "tier": 2,
+      "entrants": 37,
+      "prize": "$15,905.40",
+      "location": "Riyadh",
+      "winner": {
+        "name": "MEA_MB",
+        "page": null,
+        "flag": "Saudi Arabia",
+        "character": null
+      },
+      "runnerUp": {
+        "name": "Deadeye",
+        "page": null,
+        "flag": "Saudi Arabia",
+        "character": null
+      }
+    },
+    {
+      "name": "Topanga Championship 7 Open Qualifier Finals",
+      "page": "Topanga_Championship/7/Open_Qualifier",
+      "url": "https://liquipedia.net/fighters/Topanga_Championship/7/Open_Qualifier",
+      "date": "2026-05-26",
+      "tier": 2,
+      "entrants": 16,
+      "prize": null,
+      "location": "Online",
+      "winner": {
+        "name": "Akira",
+        "page": "Akira",
+        "flag": "Japan",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Kazunoko",
+        "page": "Kazunoko",
+        "flag": "Japan",
+        "character": "C. Viper"
+      }
+    },
+    {
+      "name": "LVL UP EXPO 2026",
+      "page": "LVL_UP_EXPO/2026/SF6",
+      "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2026/SF6",
+      "date": "2026-04-26",
+      "tier": 2,
+      "entrants": 128,
+      "prize": "$5,000",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "NYChrisG",
+        "page": "NYChrisG",
+        "flag": "United States",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "Capcom Cup 12",
+      "page": "Capcom_Cup/12",
+      "url": "https://liquipedia.net/fighters/Capcom_Cup/12",
+      "date": "2026-03-26",
+      "tier": 1,
+      "entrants": 48,
+      "prize": "$1,282,000",
+      "location": "Tokyo",
+      "winner": {
+        "name": "Sahara",
+        "page": "Sahara",
+        "flag": "Japan",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "Kilzyou",
+        "page": "Kilzyou",
+        "flag": "France",
+        "character": "Mai"
+      }
+    },
+    {
+      "name": "DreamHack Birmingham 2026",
+      "page": "DreamHack/2026/Birmingham/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2026/Birmingham/SF6",
+      "date": "2026-03-26",
+      "tier": 1,
+      "entrants": 125,
+      "prize": "$50,000",
+      "location": "Birmingham",
+      "winner": {
+        "name": "gachikun",
+        "page": "Gachikun",
+        "flag": "Japan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Micky",
+        "page": "Micky",
+        "flag": "Hong Kong",
+        "character": "Mai"
+      }
+    },
+    {
+      "name": "Street Fighter League World Championship 2025",
+      "page": "Street_Fighter_League/World_Championship/2025",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/World_Championship/2025",
+      "date": "2026-03-26",
+      "tier": 1,
+      "entrants": 12,
+      "prize": "$200,000",
+      "location": "Tokyo",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Texas Showdown 2026",
+      "page": "Texas_Showdown/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Texas_Showdown/2026/SF6",
+      "date": "2026-03-26",
+      "tier": 2,
+      "entrants": 277,
+      "prize": "$4,155",
+      "location": "Houston, TX",
+      "winner": {
+        "name": "Stealth",
+        "page": "Stealth",
+        "flag": "United States",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Dudesickle06",
+        "page": null,
+        "flag": "United States",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "VOLTAGECUP 2026",
+      "page": "VOLTAGECUP/2026",
+      "url": "https://liquipedia.net/fighters/VOLTAGECUP/2026",
+      "date": "2026-03-26",
+      "tier": 2,
+      "entrants": 368,
+      "prize": "$18,716.42",
+      "location": "Hiroshima",
+      "winner": {
+        "name": "kincho",
+        "page": "Kintyo",
+        "flag": "Japan",
+        "character": "Terry"
+      },
+      "runnerUp": {
+        "name": "YHC-mochi",
+        "page": "YHC-Mochi",
+        "flag": "Japan",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Japan Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/Japan/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Japan/Regional_Final",
+      "date": "2026-02-26",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Tokyo",
+      "winner": {
+        "name": "kincho",
+        "page": "Kintyo",
+        "flag": "Japan",
+        "character": "Terry"
+      },
+      "runnerUp": {
+        "name": "Torimeshi",
+        "page": "Torimeshi",
+        "flag": "Japan",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "Frosty Faustings XVIII",
+      "page": "Frosty_Faustings/2026/SF6",
+      "url": "https://liquipedia.net/fighters/Frosty_Faustings/2026/SF6",
+      "date": "2026-02-26",
+      "tier": 2,
+      "entrants": 656,
+      "prize": "$6,666.75",
+      "location": "Lombard, IL",
+      "winner": {
+        "name": "Bloo",
+        "page": "Bloo_(Bryan_Aburto)",
+        "flag": "United States",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "GENESIS X3",
+      "page": "GENESIS/X3/SF6",
+      "url": "https://liquipedia.net/fighters/GENESIS/X3/SF6",
+      "date": "2026-02-26",
+      "tier": 2,
+      "entrants": 171,
+      "prize": "$1,710",
+      "location": "San Jose, CA",
+      "winner": {
+        "name": "GO1",
+        "page": "GO1",
+        "flag": "Japan",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "GTW 2026 New Year Championship",
+      "page": "GTW/2026/New_Year_Championship/SF6",
+      "url": "https://liquipedia.net/fighters/GTW/2026/New_Year_Championship/SF6",
+      "date": "2026-02-26",
+      "tier": 2,
+      "entrants": 16,
+      "prize": "$7,638.04",
+      "location": "Shanghai, China",
+      "winner": {
+        "name": "Blaz",
+        "page": "Blaz",
+        "flag": "Chile",
+        "character": "Sagat"
+      },
+      "runnerUp": {
+        "name": "Xiaohai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "Mai"
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-JP 2025",
+      "page": "Street_Fighter_League/Japan/2025",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Japan/2025",
+      "date": "2026-01-26",
+      "tier": 1,
+      "entrants": 48,
+      "prize": "$96,933.64",
+      "location": "Japan",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2025 World Warrior: Asia Southeast Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/Southeast/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Southeast/Regional_Final",
+      "date": "2025-12-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Bravery",
+        "page": "Bravery",
+        "flag": "Singapore",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Brandon",
+        "page": "Brandon",
+        "flag": "Singapore",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: China Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/China/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/China/Regional_Final",
+      "date": "2025-12-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Guangzhou",
+      "winner": {
+        "name": "Jiewa",
+        "page": "Jiewa",
+        "flag": "China",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Zhen",
+        "page": "Rou",
+        "flag": "China",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "GTW 2026 New Year Launch Tournament",
+      "page": "GTW/2026/New_Year_Launch_Tournament/Main_Event",
+      "url": "https://liquipedia.net/fighters/GTW/2026/New_Year_Launch_Tournament/Main_Event",
+      "date": "2025-12-25",
+      "tier": 2,
+      "entrants": 16,
+      "prize": "$14,227.78",
+      "location": "Shanghai",
+      "winner": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "Xiaozhai",
+        "page": "Xiaozhai",
+        "flag": "China",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-US 2025",
+      "page": "Street_Fighter_League/United_States/2025",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/United_States/2025",
+      "date": "2025-12-25",
+      "tier": 1,
+      "entrants": 28,
+      "prize": "$100,000",
+      "location": "United States",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Astral Finish 2025",
+      "page": "Astral_Finish/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Astral_Finish/2025/SF6",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 100,
+      "prize": "$1,228.25",
+      "location": "Zapopan",
+      "winner": {
+        "name": "Uriel Velorio",
+        "page": "Uriel_Velorio",
+        "flag": "Mexico",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "MJ_Gama",
+        "page": "Gama",
+        "flag": "Mexico",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "Battle Coliseum 2025",
+      "page": "Battle_Coliseum/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Coliseum/2025/SF6",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 177,
+      "prize": "$1,002.43",
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "Kyuki",
+        "page": "Kyuki",
+        "flag": "Brazil",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Zangief_bolado",
+        "page": "Zangief_bolado",
+        "flag": "Brazil",
+        "character": "Zangief"
+      }
+    },
+    {
+      "name": "BeePro Cup 2025",
+      "page": "BeePro_Cup/2025/SF6",
+      "url": "https://liquipedia.net/fighters/BeePro_Cup/2025/SF6",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 448,
+      "prize": "$1,913.66",
+      "location": "Taipei City",
+      "winner": {
+        "name": "Oil King",
+        "page": "Oil_King",
+        "flag": "Taiwan",
+        "character": "Terry"
+      },
+      "runnerUp": {
+        "name": "Tw_aze",
+        "page": "Aze",
+        "flag": "Taiwan",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Asia East Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/East/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "HotDog29",
+        "page": "HotDog29",
+        "flag": "Hong Kong",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "Oil King",
+        "page": "Oil_King",
+        "flag": "Taiwan",
+        "character": "Terry"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Asia South Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/South/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/South/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "lllRaihanlll",
+        "page": "Raihan",
+        "flag": "Bangladesh",
+        "character": "Elena"
+      },
+      "runnerUp": {
+        "name": "Si Anik",
+        "page": "Si_Anik",
+        "flag": "Bangladesh",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Brazil Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/South_America/Brazil/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/Brazil/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": null,
+      "location": "Online",
+      "winner": {
+        "name": "NotPedro",
+        "page": "NotPedro",
+        "flag": "Brazil",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Kyuki",
+        "page": "Kyuki",
+        "flag": "Brazil",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Central America East Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Central_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Central_America/East/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Bryan-D",
+        "page": "Bryan-D",
+        "flag": "Dominican Republic",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Europe North-East Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Europe/North-East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/North-East/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$7,050",
+      "location": "Online",
+      "winner": {
+        "name": "Juicyjoe",
+        "page": "Juicyjoe",
+        "flag": "Sweden",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Phenom",
+        "page": "Phenom",
+        "flag": "Norway",
+        "character": "Mai"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Europe West Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Europe/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/West/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,950",
+      "location": "Online",
+      "winner": {
+        "name": "Xerna",
+        "page": "Xerna",
+        "flag": "Netherlands",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Takamura",
+        "page": "Takamura",
+        "flag": "Belgium",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: France-Monaco Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Europe/France-Monaco/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/France-Monaco/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Kilzyou",
+        "page": "Kilzyou",
+        "flag": "France",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Kusanagi",
+        "page": "Kusanagi_(French_Player)",
+        "flag": "France",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Germany Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Europe/Germany/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/Germany/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$7,163",
+      "location": "Online",
+      "winner": {
+        "name": "YONANGEL",
+        "page": "YONANGEL",
+        "flag": "Germany",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Railgun",
+        "page": "Railgun",
+        "flag": "Germany",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Mexico Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Mexico/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Mexico/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "LUGABO",
+        "page": "LuGabo",
+        "flag": "Mexico",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "MJ_Gama",
+        "page": "Gama",
+        "flag": "Mexico",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Middle East Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/Middle_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Middle_East/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "BigBird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Hamood",
+        "page": "Hamood",
+        "flag": "United Arab Emirates",
+        "character": "Mai"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Oceania Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Oceania/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Oceania/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Travis Styles",
+        "page": "Travis_Styles",
+        "flag": "Australia",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "FREESER",
+        "page": "FREESER",
+        "flag": "Australia",
+        "character": "E. Honda"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: South Africa Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/South_Africa/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_Africa/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "JabhiM",
+        "page": "JabhiM",
+        "flag": "South Africa",
+        "character": "Terry"
+      },
+      "runnerUp": {
+        "name": "Hurricane",
+        "page": "Hurricane",
+        "flag": "Cameroon",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: South America East Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/South_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/East/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "shaka22",
+        "page": "Shaka22",
+        "flag": "Argentina",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "Craime",
+        "page": "Craime",
+        "flag": "Chile",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: South America West Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/South_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/West/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Tashi",
+        "page": "Tashi",
+        "flag": "Venezuela",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "DARLAN",
+        "page": "DARLAN",
+        "flag": "Peru",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: South Korea Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Asia/South_Korea/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/South_Korea/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "DakCorgi",
+        "page": "DakCorgi",
+        "flag": "South Korea",
+        "character": "C. Viper"
+      },
+      "runnerUp": {
+        "name": "SURINI",
+        "page": "SURINI",
+        "flag": "South Korea",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: Spain-Portugal Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Deiver",
+        "page": "Deiver",
+        "flag": "Chile",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "tomoeCunha",
+        "page": "TomoeCunha",
+        "flag": "Portugal",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: UK-Ireland Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,975",
+      "location": "Online",
+      "winner": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "Problem X",
+        "page": "Problem_X",
+        "flag": "United Kingdom",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: US Midwest Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_Midwest/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_Midwest/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "JAK",
+        "page": "Justakid",
+        "flag": "United States",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Joey",
+        "page": "Joey",
+        "flag": "United States",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: US-Canada East Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_East/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,950",
+      "location": "Online",
+      "winner": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Booce_Lee",
+        "page": "Booce",
+        "flag": "United States",
+        "character": "Terry"
+      }
+    },
+    {
+      "name": "CPT 2025 World Warrior: US-Canada West Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_West/Regional_Final",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "ChrisT",
+        "page": "Chris_Tatarian",
+        "flag": "United States",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "DreamHack Atlanta 2025",
+      "page": "DreamHack/2025/Atlanta/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2025/Atlanta/SF6",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 203,
+      "prize": "$8,000",
+      "location": "Atlanta, GA",
+      "winner": {
+        "name": "Shine",
+        "page": "Shine_(Sean_Simpson)",
+        "flag": "United States",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "Bloo",
+        "page": "Bloo_(Bryan_Aburto)",
+        "flag": "United States",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "FightClub Championship VI Chengdu",
+      "page": "FightClub_Championship/6/Chengdu",
+      "url": "https://liquipedia.net/fighters/FightClub_Championship/6/Chengdu",
+      "date": "2025-11-25",
+      "tier": 1,
+      "entrants": 566,
+      "prize": "$9,975.55",
+      "location": "Chengdu",
+      "winner": {
+        "name": "Hinao",
+        "page": "Hinao",
+        "flag": "Japan",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Jojotaro",
+        "page": "Jojotaro",
+        "flag": "Japan",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "Saudi eLeague Fighting: Season 4 Championship",
+      "page": "Saudi_eLeague/Season_4/Championship/SF6",
+      "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_4/Championship/SF6",
+      "date": "2025-11-25",
+      "tier": 2,
+      "entrants": 34,
+      "prize": "$7,999.20",
+      "location": "Riyadh",
+      "winner": {
+        "name": "Taloobreaker",
+        "page": "Taloobreaker",
+        "flag": "Saudi Arabia",
+        "character": null
+      },
+      "runnerUp": {
+        "name": "White-AshX",
+        "page": "WhiteAshX",
+        "flag": "Qatar",
+        "character": null
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-EU 2025",
+      "page": "Street_Fighter_League/Europe/2025",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Europe/2025",
+      "date": "2025-11-25",
+      "tier": 1,
+      "entrants": 24,
+      "prize": "$100,000",
+      "location": "Europe",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2025 World Warrior: Central America West Regional Final",
+      "page": "Capcom_Pro_Tour/2025/World_Warrior/Central_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Central_America/West/Regional_Final",
+      "date": "2025-10-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Panama City",
+      "winner": {
+        "name": "ARMAKOF",
+        "page": "ARMA",
+        "flag": "Panama",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "DestroyGodz",
+        "page": "DestroyGodz",
+        "flag": "Panama",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Evolution Championship Series: France 2025",
+      "page": "Evolution_Championship_Series/2025/France/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/France/SF6",
+      "date": "2025-10-25",
+      "tier": 1,
+      "entrants": 1664,
+      "prize": "$26,722.31",
+      "location": "Nice",
+      "winner": {
+        "name": "Leshar",
+        "page": "Leshar",
+        "flag": "South Korea",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "Blaz",
+        "page": "Blaz",
+        "flag": "Chile",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "First Attack 2025",
+      "page": "First_Attack/2025/SF6",
+      "url": "https://liquipedia.net/fighters/First_Attack/2025/SF6",
+      "date": "2025-10-25",
+      "tier": 2,
+      "entrants": 102,
+      "prize": "$1,020",
+      "location": "San Juan",
+      "winner": {
+        "name": "NYChrisG",
+        "page": "NYChrisG",
+        "flag": "United States",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Craime",
+        "page": "Craime",
+        "flag": "Chile",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "DNECUP 2025",
+      "page": "DNECUP/2025",
+      "url": "https://liquipedia.net/fighters/DNECUP/2025",
+      "date": "2025-09-25",
+      "tier": 2,
+      "entrants": 256,
+      "prize": "$6,760.18",
+      "location": "Tokushima",
+      "winner": {
+        "name": "orarin",
+        "page": "Orarin",
+        "flag": "Japan",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Kintyo",
+        "page": "Kintyo",
+        "flag": "Japan",
+        "character": "Terry"
+      }
+    },
+    {
+      "name": "GRAPHT CUP 2025",
+      "page": "GRAPHT_CUP/2025",
+      "url": "https://liquipedia.net/fighters/GRAPHT_CUP/2025",
+      "date": "2025-09-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$7,688.65",
+      "location": "Osaka",
+      "winner": {
+        "name": "Harumi",
+        "page": "Harumi",
+        "flag": "Japan",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "tako",
+        "page": "Tako956402",
+        "flag": "Japan",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "Ultimate Fighting Arena 2025",
+      "page": "Ultimate_Fighting_Arena/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2025/SF6",
+      "date": "2025-09-25",
+      "tier": 1,
+      "entrants": 393,
+      "prize": "$10,942.33",
+      "location": "Paris",
+      "winner": {
+        "name": "Sahara",
+        "page": "Sahara",
+        "flag": "Japan",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "kingsvega",
+        "page": "Kingsvega",
+        "flag": "Japan",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "Comitê Arena 2025",
+      "page": "Comitê_Arena/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2025/SF6",
+      "date": "2025-08-25",
+      "tier": 2,
+      "entrants": 189,
+      "prize": null,
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "Brayan_Job",
+        "page": "Brayan_Job",
+        "flag": "Brazil",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "NotPedro",
+        "page": "NotPedro",
+        "flag": "Brazil",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Esports World Cup 2025",
+      "page": "Esports_World_Cup/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Esports_World_Cup/2025/SF6",
+      "date": "2025-08-25",
+      "tier": 1,
+      "entrants": 48,
+      "prize": "$1,000,000",
+      "location": "Riyadh",
+      "winner": {
+        "name": "Xiaohai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "Blaz",
+        "page": "Blaz",
+        "flag": "Chile",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "Esports World Cup 2025 Last Chance Qualifier",
+      "page": "Esports_World_Cup/2025/SF6/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Esports_World_Cup/2025/SF6/Last_Chance_Qualifier",
+      "date": "2025-08-25",
+      "tier": 1,
+      "entrants": 250,
+      "prize": "$50,000",
+      "location": "Riyadh",
+      "winner": {
+        "name": "Hurricane",
+        "page": "Hurricane",
+        "flag": "Cameroon",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Hikaru",
+        "page": "Hikaru",
+        "flag": "Japan",
+        "character": "A.K.I."
+      }
+    },
+    {
+      "name": "Evolution Championship Series 2025",
+      "page": "Evolution_Championship_Series/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/SF6",
+      "date": "2025-08-25",
+      "tier": 1,
+      "entrants": 4242,
+      "prize": "$42,420",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "Saudi eLeague Fighting: Season 3 Championship",
+      "page": "Saudi_eLeague/Season_3/Championship/SF6",
+      "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_3/Championship/SF6",
+      "date": "2025-08-25",
+      "tier": 2,
+      "entrants": 35,
+      "prize": "$7,994.11",
+      "location": "Riyadh",
+      "winner": {
+        "name": "Latif",
+        "page": "Latif",
+        "flag": "Saudi Arabia",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "Kusanagi",
+        "page": "Kusanagi_(French_Player)",
+        "flag": "France",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "VSFighting XIII",
+      "page": "VSFighting/2025/SF6",
+      "url": "https://liquipedia.net/fighters/VSFighting/2025/SF6",
+      "date": "2025-08-25",
+      "tier": 2,
+      "entrants": 250,
+      "prize": "$3,389.88",
+      "location": "Birmingham",
+      "winner": {
+        "name": "Shakz",
+        "page": "Shakz",
+        "flag": "United Kingdom",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Imstilldadaddy",
+        "page": "Imstilldadaddy",
+        "flag": "United Kingdom",
+        "character": "Mai"
+      }
+    },
+    {
+      "name": "Blink Respawn 2025",
+      "page": "Blink_Respawn/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Blink_Respawn/2025/SF6",
+      "date": "2025-07-25",
+      "tier": 1,
+      "entrants": 271,
+      "prize": "$16,700",
+      "location": "Santo Domingo",
+      "winner": {
+        "name": "Fuudo",
+        "page": "Fuudo",
+        "flag": "Japan",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Momochi",
+        "page": "Momochi",
+        "flag": "Japan",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "GCC League 2025",
+      "page": "GCC_League/2025",
+      "url": "https://liquipedia.net/fighters/GCC_League/2025",
+      "date": "2025-07-25",
+      "tier": 2,
+      "entrants": 12,
+      "prize": null,
+      "location": "Riyadh",
+      "winner": {
+        "name": "Latif",
+        "page": "Latif",
+        "flag": "Saudi Arabia",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "GTR",
+        "page": "GTR",
+        "flag": "United Arab Emirates",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "Get On My Level: Forever",
+      "page": "Get_On_My_Level/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Get_On_My_Level/2025/SF6",
+      "date": "2025-07-25",
+      "tier": 2,
+      "entrants": 221,
+      "prize": "$1,623.87",
+      "location": "Toronto, ON",
+      "winner": {
+        "name": "Riddles",
+        "page": "Riddles",
+        "flag": "Canada",
+        "character": "Terry"
+      },
+      "runnerUp": {
+        "name": "Slice",
+        "page": "Slice",
+        "flag": "Canada",
+        "character": "E. Honda"
+      }
+    },
+    {
+      "name": "S Factor 12",
+      "page": "S_Factor/12/SF6",
+      "url": "https://liquipedia.net/fighters/S_Factor/12/SF6",
+      "date": "2025-07-25",
+      "tier": 2,
+      "entrants": 215,
+      "prize": "$2,697.03",
+      "location": "Puebla",
+      "winner": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "LUGABO",
+        "page": "LuGabo",
+        "flag": "Mexico",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "The MIXUP 2025",
+      "page": "The_MIXUP/2025/SF6",
+      "url": "https://liquipedia.net/fighters/The_MIXUP/2025/SF6",
+      "date": "2025-07-25",
+      "tier": 2,
+      "entrants": 144,
+      "prize": "$1,696.21",
+      "location": "Lyon",
+      "winner": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Problem X",
+        "page": "Problem_X",
+        "flag": "United Kingdom",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "Topanga Championship 6",
+      "page": "Topanga_Championship/6",
+      "url": "https://liquipedia.net/fighters/Topanga_Championship/6",
+      "date": "2025-07-25",
+      "tier": 1,
+      "entrants": 29,
+      "prize": "$27,138.69",
+      "location": "Tokyo",
+      "winner": {
+        "name": "Fuudo",
+        "page": "Fuudo",
+        "flag": "Japan",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Torimeshi",
+        "page": "Torimeshi",
+        "flag": "Japan",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "Battle Arena Melbourne 15",
+      "page": "Battle_Arena_Melbourne/15/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/15/SF6",
+      "date": "2025-06-25",
+      "tier": 2,
+      "entrants": 164,
+      "prize": "$1,054.68",
+      "location": "Melbourne",
+      "winner": {
+        "name": "NARIKUN",
+        "page": "Narikun",
+        "flag": "Japan",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "Sahara",
+        "page": "Sahara",
+        "flag": "Japan",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "CEO 2025",
+      "page": "Community_Effort_Orlando/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2025/SF6",
+      "date": "2025-06-25",
+      "tier": 1,
+      "entrants": 837,
+      "prize": "$13,570",
+      "location": "Orlando, FL",
+      "winner": {
+        "name": "Leshar",
+        "page": "Leshar",
+        "flag": "South Korea",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "NL",
+        "page": "NL",
+        "flag": "South Korea",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "Asian Champions League 2025",
+      "page": "Asian_Champions_League/2025",
+      "url": "https://liquipedia.net/fighters/Asian_Champions_League/2025",
+      "date": "2025-05-25",
+      "tier": 1,
+      "entrants": 772,
+      "prize": "$30,000",
+      "location": "Shanghai",
+      "winner": {
+        "name": "Tokido",
+        "page": "Tokido",
+        "flag": "Japan",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Higuchi",
+        "page": "Higuchi",
+        "flag": "Japan",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "Brussels Challenge Major Edition 2025",
+      "page": "Brussels_Challenge/2025/Major_Edition/SF6",
+      "url": "https://liquipedia.net/fighters/Brussels_Challenge/2025/Major_Edition/SF6",
+      "date": "2025-05-25",
+      "tier": 2,
+      "entrants": 152,
+      "prize": "$1,696.80",
+      "location": "Brussels",
+      "winner": {
+        "name": "Bonchan",
+        "page": "Bonchan",
+        "flag": "Japan",
+        "character": "Akuma"
+      },
+      "runnerUp": {
+        "name": "GO1",
+        "page": "GO1",
+        "flag": "Japan",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "Combo Breaker 2025",
+      "page": "Combo_Breaker/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Combo_Breaker/2025/SF6",
+      "date": "2025-05-25",
+      "tier": 1,
+      "entrants": 1324,
+      "prize": "$18,440",
+      "location": "Schaumburg, IL",
+      "winner": {
+        "name": "Leshar",
+        "page": "Leshar",
+        "flag": "South Korea",
+        "character": "Mai"
+      },
+      "runnerUp": {
+        "name": "Itabashi Zangief",
+        "page": "Itabashi_Zangief",
+        "flag": "Japan",
+        "character": "Zangief"
+      }
+    },
+    {
+      "name": "Evolution Championship Series: Japan 2025",
+      "page": "Evolution_Championship_Series/2025/Japan/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/Japan/SF6",
+      "date": "2025-05-25",
+      "tier": 1,
+      "entrants": 6661,
+      "prize": "$24,075.25",
+      "location": "Tokyo",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Ryukichi",
+        "page": "Ryukichi",
+        "flag": "Japan",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Topanga Championship 6 Open Qualifier Finals",
+      "page": "Topanga_Championship/6/Open_Qualifier",
+      "url": "https://liquipedia.net/fighters/Topanga_Championship/6/Open_Qualifier",
+      "date": "2025-05-25",
+      "tier": 2,
+      "entrants": 16,
+      "prize": null,
+      "location": "Online",
+      "winner": {
+        "name": "Jr.",
+        "page": "Jr.",
+        "flag": "Japan",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "Owaechan",
+        "page": "Owaechan",
+        "flag": "Japan",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "LVL UP EXPO 2025",
+      "page": "LVL_UP_EXPO/2025/SF6",
+      "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2025/SF6",
+      "date": "2025-04-25",
+      "tier": 2,
+      "entrants": 140,
+      "prize": "$10,000",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "iDom",
+        "page": "IDom",
+        "flag": "United States",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2025",
+      "page": "Red_Bull_Kumite/2025",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025",
+      "date": "2025-04-25",
+      "tier": 1,
+      "entrants": 16,
+      "prize": "$54,797.52",
+      "location": "Paris",
+      "winner": {
+        "name": "Big Bird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2025 Last Chance Qualifier",
+      "page": "Red_Bull_Kumite/2025/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025/Last_Chance_Qualifier",
+      "date": "2025-04-25",
+      "tier": 2,
+      "entrants": 256,
+      "prize": null,
+      "location": "Paris",
+      "winner": {
+        "name": "Akainu",
+        "page": "Akainu",
+        "flag": "France",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "s4ltyKiD",
+        "page": "S4ltyKiD",
+        "flag": "Belgium",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2025 Play-In",
+      "page": "Red_Bull_Kumite/2025/Play-In",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025/Play-In",
+      "date": "2025-04-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": null,
+      "location": "Paris",
+      "winner": {
+        "name": "Higuchi",
+        "page": "Higuchi",
+        "flag": "Japan",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Takamura",
+        "page": "Takamura",
+        "flag": "Belgium",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Saudi eLeague Fighting: Season 3 Major",
+      "page": "Saudi_eLeague/Season_3/Major/SF6",
+      "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_3/Major/SF6",
+      "date": "2025-04-25",
+      "tier": 2,
+      "entrants": 59,
+      "prize": "$5,325.84",
+      "location": "Riyadh",
+      "winner": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "Kusanagi",
+        "page": "Kusanagi_(French_Player)",
+        "flag": "France",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "Capcom Cup 11",
+      "page": "Capcom_Cup/11",
+      "url": "https://liquipedia.net/fighters/Capcom_Cup/11",
+      "date": "2025-03-25",
+      "tier": 1,
+      "entrants": 48,
+      "prize": "$1,282,000",
+      "location": "Tokyo",
+      "winner": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Blaz",
+        "page": "Blaz",
+        "flag": "Chile",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "Street Fighter League World Championship 2024",
+      "page": "Street_Fighter_League/World_Championship/2024",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/World_Championship/2024",
+      "date": "2025-03-25",
+      "tier": 1,
+      "entrants": 12,
+      "prize": "$150,000",
+      "location": "Tokyo",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Texas Showdown 2025",
+      "page": "Texas_Showdown/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Texas_Showdown/2025/SF6",
+      "date": "2025-03-25",
+      "tier": 2,
+      "entrants": 285,
+      "prize": "$4,275",
+      "location": "Houston, TX",
+      "winner": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Hamad",
+        "page": "Hamad",
+        "flag": "United States",
+        "character": "E. Honda"
+      }
+    },
+    {
+      "name": "GENESIS X2",
+      "page": "GENESIS/X2/SF6",
+      "url": "https://liquipedia.net/fighters/GENESIS/X2/SF6",
+      "date": "2025-02-25",
+      "tier": 2,
+      "entrants": 195,
+      "prize": "$6,950",
+      "location": "San Jose, CA",
+      "winner": {
+        "name": "iDom",
+        "page": "IDom",
+        "flag": "United States",
+        "character": "Manon"
+      },
+      "runnerUp": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-JP 2024",
+      "page": "Street_Fighter_League/Japan/2024",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Japan/2024",
+      "date": "2025-02-25",
+      "tier": 1,
+      "entrants": 48,
+      "prize": "$52,696.24",
+      "location": "Japan",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Street Fighter League Pro-US 2024",
+      "page": "Street_Fighter_League/United_States/2024",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/United_States/2024",
+      "date": "2025-02-25",
+      "tier": 1,
+      "entrants": 24,
+      "prize": "$75,000",
+      "location": "United States",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2024 World Warrior: Asia East Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/East/Regional_Final",
+      "date": "2025-01-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "HotDog29",
+        "page": "HotDog29",
+        "flag": "Hong Kong",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "micky",
+        "page": "Micky",
+        "flag": "Hong Kong",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: France-Monaco Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Europe/France-Monaco/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/France-Monaco/Regional_Final",
+      "date": "2025-01-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "Alphen",
+        "page": "Alphen",
+        "flag": "France",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Japan Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/Japan/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Japan/Regional_Final",
+      "date": "2025-01-25",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Tokyo",
+      "winner": {
+        "name": "Fuudo",
+        "page": "Fuudo",
+        "flag": "Japan",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "Momochi",
+        "page": "Momochi",
+        "flag": "Japan",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "FightClub Century Battle 3",
+      "page": "FightClub_Century_Battle/3",
+      "url": "https://liquipedia.net/fighters/FightClub_Century_Battle/3",
+      "date": "2025-01-25",
+      "tier": 2,
+      "entrants": 10,
+      "prize": "$26,030.61",
+      "location": "Chengdu",
+      "winner": {
+        "name": "Qiuqiu",
+        "page": "Qiuqiu",
+        "flag": "China",
+        "character": "E. Honda"
+      },
+      "runnerUp": {
+        "name": "Zhen",
+        "page": "Rou",
+        "flag": "China",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "Frosty Faustings XVII",
+      "page": "Frosty_Faustings/2025/SF6",
+      "url": "https://liquipedia.net/fighters/Frosty_Faustings/2025/SF6",
+      "date": "2025-01-25",
+      "tier": 2,
+      "entrants": 701,
+      "prize": "$7,010",
+      "location": "Lombard, IL",
+      "winner": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Rashid"
+      }
+    },
+    {
+      "name": "GTW 2024 Finals",
+      "page": "GTW/2024/Finals/Main_Event",
+      "url": "https://liquipedia.net/fighters/GTW/2024/Finals/Main_Event",
+      "date": "2025-01-25",
+      "tier": 2,
+      "entrants": 16,
+      "prize": "$7,364.27",
+      "location": "Shanghai, China",
+      "winner": {
+        "name": "Xiaohai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "Zhen",
+        "page": "Rou",
+        "flag": "China",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "BeePro Cup 2024",
+      "page": "BeePro_Cup/2024/SF6",
+      "url": "https://liquipedia.net/fighters/BeePro_Cup/2024/SF6",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 445,
+      "prize": "$1,827.96",
+      "location": "Taipei City",
+      "winner": {
+        "name": "Oil King",
+        "page": "Oil_King",
+        "flag": "Taiwan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "GutsBoom",
+        "page": "GutsBoom",
+        "flag": "Taiwan",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CEOtaku 2024",
+      "page": "CEOtaku/2024/SF6",
+      "url": "https://liquipedia.net/fighters/CEOtaku/2024/SF6",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 221,
+      "prize": "$2,210",
+      "location": "Orlando, FL",
+      "winner": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Asia South Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/South/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/South/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Si Anik",
+        "page": "Si_Anik",
+        "flag": "Bangladesh",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Baadshah_Miya",
+        "page": "Baadshah_Miya",
+        "flag": "Bangladesh",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Brazil Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/South_America/Brazil/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/Brazil/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": null,
+      "location": "Online",
+      "winner": {
+        "name": "Zangief_bolado",
+        "page": "Zangief_bolado",
+        "flag": "Brazil",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "NotPedro",
+        "page": "NotPedro",
+        "flag": "Brazil",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: China Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/China/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/China/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Shanghai",
+      "winner": {
+        "name": "Vxbao",
+        "page": "Vxbao",
+        "flag": "China",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Europe North-East Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Europe/North-East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/North-East/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$7,050",
+      "location": "Online",
+      "winner": {
+        "name": "Juicyjoe",
+        "page": "Juicyjoe",
+        "flag": "Sweden",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Rikemansbarnet",
+        "page": "Rikemansbarnet",
+        "flag": "Sweden",
+        "character": "E. Honda"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Europe West Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Europe/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/West/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,951",
+      "location": "Online",
+      "winner": {
+        "name": "s4ltyKiD",
+        "page": "S4ltyKiD",
+        "flag": "Belgium",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "Garnet",
+        "page": "Garnet",
+        "flag": "Italy",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Germany Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Europe/Germany/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/Germany/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$7,060",
+      "location": "Online",
+      "winner": {
+        "name": "GGHalibel",
+        "page": "GGHalibel",
+        "flag": "Germany",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "semy28",
+        "page": "Semy28",
+        "flag": "Germany",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Mexico Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Mexico/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Mexico/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Uriel Velorio",
+        "page": "Uriel_Velorio",
+        "flag": "Mexico",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "LUGABO",
+        "page": "LuGabo",
+        "flag": "Mexico",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Middle East Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/Middle_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Middle_East/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Abood bboy",
+        "page": "Abood_bboy",
+        "flag": "United Arab Emirates",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: US-Canada Midwest Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_Midwest/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_Midwest/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "JAK",
+        "page": "Justakid",
+        "flag": "United States",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Darkdes",
+        "page": "Darkdes",
+        "flag": "United States",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: US-Canada West Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_West/Regional_Final",
+      "date": "2024-12-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$7,069.69",
+      "location": "Online",
+      "winner": {
+        "name": "JB",
+        "page": "JB",
+        "flag": "United States",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Snake Eyez",
+        "page": "Snake_Eyez",
+        "flag": "United States",
+        "character": "Zangief"
+      }
+    },
+    {
+      "name": "Kings of the World",
+      "page": "Kings_of_the_World/2024",
+      "url": "https://liquipedia.net/fighters/Kings_of_the_World/2024",
+      "date": "2024-12-24",
+      "tier": 1,
+      "entrants": 200,
+      "prize": "$5,200",
+      "location": "London",
+      "winner": {
+        "name": "Armperor",
+        "page": "Armperor",
+        "flag": "South Korea",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Kilzyou",
+        "page": "Kilzyou",
+        "flag": "France",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "2Game Pro Tour LATAM Finals",
+      "page": "2Game_Pro_Tour_LATAM/Finals/SF6",
+      "url": "https://liquipedia.net/fighters/2Game_Pro_Tour_LATAM/Finals/SF6",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$2,000",
+      "location": "Santiago",
+      "winner": {
+        "name": "Blaz",
+        "page": "Blaz",
+        "flag": "Chile",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "Zangief_bolado",
+        "page": "Zangief_bolado",
+        "flag": "Brazil",
+        "character": "Zangief"
+      }
+    },
+    {
+      "name": "Astral Finish 2024",
+      "page": "Astral_Finish/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Astral_Finish/2024/SF6",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 91,
+      "prize": "$1,161.89",
+      "location": "Zapopan",
+      "winner": {
+        "name": "LUGABO",
+        "page": "LuGabo",
+        "flag": "Mexico",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "MJ_Gama",
+        "page": "Gama",
+        "flag": "Mexico",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "Battle Coliseum 2024",
+      "page": "Battle_Coliseum/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Coliseum/2024/SF6",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 129,
+      "prize": "$667.59",
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "Brolynho",
+        "page": "Brolynho",
+        "flag": "Brazil",
+        "character": "Jamie"
+      },
+      "runnerUp": {
+        "name": "NotPedro",
+        "page": "NotPedro",
+        "flag": "Brazil",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Blink Respawn 2024",
+      "page": "Blink_Respawn/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Blink_Respawn/2024/SF6",
+      "date": "2024-11-24",
+      "tier": 1,
+      "entrants": 162,
+      "prize": "$6,000",
+      "location": "Santo Domingo",
+      "winner": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Rashid"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Asia Southeast Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/Southeast/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Southeast/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Singapore",
+      "winner": {
+        "name": "Xian",
+        "page": "Xian",
+        "flag": "Singapore",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "MindRPG",
+        "page": "MindRPG",
+        "flag": "Thailand",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Central America East Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Central_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Central_America/East/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Crossover",
+        "page": "Crossover",
+        "flag": "Dominican Republic",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Central America West Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Central_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Central_America/West/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "GranTODAKAI.EX",
+        "page": "TODAKAI",
+        "flag": "Panama",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "ARMA",
+        "page": "ARMA",
+        "flag": "Panama",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Oceania Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Oceania/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Oceania/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Sole",
+        "page": "Sole",
+        "flag": "Kuwait",
+        "character": "A.K.I."
+      },
+      "runnerUp": {
+        "name": "FREESER",
+        "page": "FREESER",
+        "flag": "Australia",
+        "character": "E. Honda"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: South Africa Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/South_Africa/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_Africa/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "JabhiM",
+        "page": "JabhiM",
+        "flag": "South Africa",
+        "character": "Terry"
+      },
+      "runnerUp": {
+        "name": "MarkTheShark",
+        "page": "MarkTheShark",
+        "flag": "South Africa",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: South America East Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/South_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/East/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Salvatore",
+        "page": "Salvatore",
+        "flag": "Venezuela",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Dookie",
+        "page": "Dookie",
+        "flag": "Argentina",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: South America West Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/South_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/West/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "Limestone",
+        "page": "Limestone",
+        "flag": "Colombia",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Anunnaki",
+        "page": "Anunnaki",
+        "flag": "Peru",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: South Korea Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Asia/South_Korea/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/South_Korea/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "NL",
+        "page": "NL",
+        "flag": "South Korea",
+        "character": "Akuma"
+      },
+      "runnerUp": {
+        "name": "Armperor",
+        "page": "Armperor",
+        "flag": "South Korea",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: Spain-Portugal Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Barcelona",
+      "winner": {
+        "name": "Deiver",
+        "page": "Deiver",
+        "flag": "Chile",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "Samoel",
+        "page": "Samoel",
+        "flag": "Spain",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: UK-Ireland Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,955",
+      "location": "Online",
+      "winner": {
+        "name": "broski",
+        "page": "Broski",
+        "flag": "United Kingdom",
+        "character": "A.K.I."
+      },
+      "runnerUp": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "CPT 2024 World Warrior: US-Canada East Regional Final",
+      "page": "Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_East/Regional_Final",
+      "date": "2024-11-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$6,800",
+      "location": "Online",
+      "winner": {
+        "name": "iDom",
+        "page": "IDom",
+        "flag": "United States",
+        "character": "Manon"
+      },
+      "runnerUp": {
+        "name": "KAMI",
+        "page": "Kami",
+        "flag": "United States",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "CPT 2024: Japan Super Premier",
+      "page": "Capcom_Pro_Tour/2024/Super_Premier/Japan",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/Super_Premier/Japan",
+      "date": "2024-11-24",
+      "tier": 1,
+      "entrants": 1248,
+      "prize": null,
+      "location": "Tokyo",
+      "winner": {
+        "name": "Tokido",
+        "page": "Tokido",
+        "flag": "Japan",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Leshar",
+        "page": "Leshar",
+        "flag": "South Korea",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-EU 2024",
+      "page": "Street_Fighter_League/Europe/2024",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Europe/2024",
+      "date": "2024-11-24",
+      "tier": 1,
+      "entrants": 24,
+      "prize": "$78,348.21",
+      "location": "Europe",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Battle Arena Tokushima 2024",
+      "page": "Battle_Arena_Tokushima/2024",
+      "url": "https://liquipedia.net/fighters/Battle_Arena_Tokushima/2024",
+      "date": "2024-10-24",
+      "tier": 2,
+      "entrants": 128,
+      "prize": "$6,723.82",
+      "location": "Tokushima",
+      "winner": {
+        "name": "Shimiso",
+        "page": null,
+        "flag": "Japan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Jaccy",
+        "page": "Jaccy",
+        "flag": "Japan",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2024: Singapore Super Premier",
+      "page": "Capcom_Pro_Tour/2024/Super_Premier/Singapore",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/Super_Premier/Singapore",
+      "date": "2024-10-24",
+      "tier": 1,
+      "entrants": 385,
+      "prize": "$18,400",
+      "location": "Singapore",
+      "winner": {
+        "name": "Shuto",
+        "page": "Shuto",
+        "flag": "Japan",
+        "character": "Akuma"
+      },
+      "runnerUp": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "DreamHack Atlanta 2024",
+      "page": "DreamHack/2024/Atlanta/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2024/Atlanta/SF6",
+      "date": "2024-10-24",
+      "tier": 2,
+      "entrants": 206,
+      "prize": "$10,000",
+      "location": "Atlanta, GA",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "East Coast Throwdown 2024",
+      "page": "East_Coast_Throwdown/2024/SF6",
+      "url": "https://liquipedia.net/fighters/East_Coast_Throwdown/2024/SF6",
+      "date": "2024-10-24",
+      "tier": 1,
+      "entrants": 621,
+      "prize": "$11,410",
+      "location": "Hartford, CT",
+      "winner": {
+        "name": "Itabashi Zangief",
+        "page": "Itabashi_Zangief",
+        "flag": "Japan",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "iDom",
+        "page": "IDom",
+        "flag": "United States",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "Thaiger Uppercut 2024",
+      "page": "Thaiger_Uppercut/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Thaiger_Uppercut/2024/SF6",
+      "date": "2024-10-24",
+      "tier": 2,
+      "entrants": 123,
+      "prize": "$1,201.99",
+      "location": "Bangkok",
+      "winner": {
+        "name": "jojotaro",
+        "page": "Jojotaro",
+        "flag": "Japan",
+        "character": "Akuma"
+      },
+      "runnerUp": {
+        "name": "b3lLz",
+        "page": "B3lLz",
+        "flag": "Thailand",
+        "character": "Lily"
+      }
+    },
+    {
+      "name": "Ultimate Fighting Arena 2024",
+      "page": "Ultimate_Fighting_Arena/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2024/SF6",
+      "date": "2024-09-24",
+      "tier": 1,
+      "entrants": 450,
+      "prize": "$11,084.63",
+      "location": "Aubervilliers",
+      "winner": {
+        "name": "Kusanagi",
+        "page": "Kusanagi_(French_Player)",
+        "flag": "France",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "xiaohai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Comitê Arena 2024",
+      "page": "Comitê_Arena/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2024/SF6",
+      "date": "2024-08-24",
+      "tier": 2,
+      "entrants": 177,
+      "prize": "$967.76",
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "Brayan_Job",
+        "page": "Brayan_Job",
+        "flag": "Brazil",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Dragon_Legend",
+        "page": "Dragon_Legend",
+        "flag": "Brazil",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "Cream City Convergence 2024",
+      "page": "Cream_City_Convergence/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Cream_City_Convergence/2024/SF6",
+      "date": "2024-08-24",
+      "tier": 1,
+      "entrants": 303,
+      "prize": "$8,230",
+      "location": "Milwaukee, WI",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Rashid"
+      }
+    },
+    {
+      "name": "eSports Summer Fun 2024",
+      "page": "ESports_Summer_Fun/2024",
+      "url": "https://liquipedia.net/fighters/ESports_Summer_Fun/2024",
+      "date": "2024-08-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$5,643.47",
+      "location": "Hong Kong",
+      "winner": {
+        "name": "Xian",
+        "page": "Xian",
+        "flag": "Singapore",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "RB",
+        "page": "RB",
+        "flag": "Taiwan",
+        "character": "Zangief"
+      }
+    },
+    {
+      "name": "Esports World Cup 2024",
+      "page": "Esports_World_Cup/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Esports_World_Cup/2024/SF6",
+      "date": "2024-08-24",
+      "tier": 1,
+      "entrants": 32,
+      "prize": "$1,000,000",
+      "location": "Riyadh",
+      "winner": {
+        "name": "Xiao Hai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "M. Bison"
+      },
+      "runnerUp": {
+        "name": "Kawano",
+        "page": "Kawano",
+        "flag": "Japan",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "Esports World Cup 2024 Last Chance Qualifier",
+      "page": "Esports_World_Cup/2024/SF6/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Esports_World_Cup/2024/SF6/Last_Chance_Qualifier",
+      "date": "2024-08-24",
+      "tier": 1,
+      "entrants": 146,
+      "prize": null,
+      "location": "Riyadh",
+      "winner": {
+        "name": "Leshar",
+        "page": "Leshar",
+        "flag": "South Korea",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "pugera",
+        "page": "Pugera",
+        "flag": "Japan",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "VSFighting XII",
+      "page": "VSFighting/2024/SF6",
+      "url": "https://liquipedia.net/fighters/VSFighting/2024/SF6",
+      "date": "2024-08-24",
+      "tier": 2,
+      "entrants": 292,
+      "prize": "$3,779.96",
+      "location": "Birmingham",
+      "winner": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "Hurricane",
+        "page": "Hurricane",
+        "flag": "Cameroon",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Evolution Championship Series 2024",
+      "page": "Evolution_Championship_Series/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2024/SF6",
+      "date": "2024-07-24",
+      "tier": 1,
+      "entrants": 5279,
+      "prize": "$52,790",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Big Bird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Rashid"
+      }
+    },
+    {
+      "name": "FightClub Championship V",
+      "page": "FightClub_Championship/5/SF6",
+      "url": "https://liquipedia.net/fighters/FightClub_Championship/5/SF6",
+      "date": "2024-07-24",
+      "tier": 2,
+      "entrants": 245,
+      "prize": "$3,116.77",
+      "location": "Shenzhen",
+      "winner": {
+        "name": "Plaster King",
+        "page": "Plaster_King",
+        "flag": "China",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "HotDog29",
+        "page": "HotDog29",
+        "flag": "Hong Kong",
+        "character": "M. Bison"
+      }
+    },
+    {
+      "name": "S Factor 11",
+      "page": "S_Factor/11/SF6",
+      "url": "https://liquipedia.net/fighters/S_Factor/11/SF6",
+      "date": "2024-07-24",
+      "tier": 2,
+      "entrants": 186,
+      "prize": "$564.92",
+      "location": "Mexico City",
+      "winner": {
+        "name": "Uriel Velorio",
+        "page": "Uriel_Velorio",
+        "flag": "Mexico",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "KUSANAGI",
+        "page": "Kusanagi_(Mexican_Player)",
+        "flag": "Mexico",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "The MIXUP 2024",
+      "page": "The_MIXUP/2024/SF6",
+      "url": "https://liquipedia.net/fighters/The_MIXUP/2024/SF6",
+      "date": "2024-07-24",
+      "tier": 1,
+      "entrants": 181,
+      "prize": "$1,970.24",
+      "location": "Lyon",
+      "winner": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Topanga Championship 5",
+      "page": "Topanga_Championship/5",
+      "url": "https://liquipedia.net/fighters/Topanga_Championship/5",
+      "date": "2024-07-24",
+      "tier": 1,
+      "entrants": 27,
+      "prize": "$25,265.45",
+      "location": "Japan",
+      "winner": {
+        "name": "Kobayan",
+        "page": "Kobayan",
+        "flag": "Japan",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "Akuma"
+      }
+    },
+    {
+      "name": "World Cyber Games 2024 Rivals",
+      "page": "World_Cyber_Games/2024/Rivals",
+      "url": "https://liquipedia.net/fighters/World_Cyber_Games/2024/Rivals",
+      "date": "2024-07-24",
+      "tier": 2,
+      "entrants": 9,
+      "prize": "$7,259.21",
+      "location": "Seoul",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Battle Arena Melbourne 14",
+      "page": "Battle_Arena_Melbourne/14/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/14/SF6",
+      "date": "2024-06-24",
+      "tier": 2,
+      "entrants": 221,
+      "prize": "$1,474.73",
+      "location": "Melbourne",
+      "winner": {
+        "name": "Tokido",
+        "page": "Tokido",
+        "flag": "Japan",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Tachikawa",
+        "page": "Tachikawa",
+        "flag": "Japan",
+        "character": "Ed"
+      }
+    },
+    {
+      "name": "CEO 2024",
+      "page": "Community_Effort_Orlando/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2024/SF6",
+      "date": "2024-06-24",
+      "tier": 1,
+      "entrants": 616,
+      "prize": "$6,160",
+      "location": "Daytona Beach, FL",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "DreamHack Dallas 2024",
+      "page": "DreamHack/2024/Dallas/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2024/Dallas/SF6",
+      "date": "2024-06-24",
+      "tier": 1,
+      "entrants": 391,
+      "prize": "$50,000",
+      "location": "Dallas, TX",
+      "winner": {
+        "name": "gachikun",
+        "page": "Gachikun",
+        "flag": "Japan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Problem X",
+        "page": "Problem_X",
+        "flag": "United Kingdom",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "DreamHack Summer 2024",
+      "page": "DreamHack/2024/Summer/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2024/Summer/SF6",
+      "date": "2024-06-24",
+      "tier": 1,
+      "entrants": 151,
+      "prize": "$50,000",
+      "location": "Jönköping",
+      "winner": {
+        "name": "Big Bird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Bonchan",
+        "page": "Bonchan",
+        "flag": "Japan",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Topanga Championship 5 Open Qualifier Finals",
+      "page": "Topanga_Championship/5/Open_Qualifier",
+      "url": "https://liquipedia.net/fighters/Topanga_Championship/5/Open_Qualifier",
+      "date": "2024-06-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": null,
+      "location": "Online",
+      "winner": {
+        "name": "Kobayan",
+        "page": "Kobayan",
+        "flag": "Japan",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "cosa",
+        "page": "Kabe",
+        "flag": "Japan",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Brussels Challenge Major Edition 2024",
+      "page": "Brussels_Challenge/2024/Major_Edition/SF6",
+      "url": "https://liquipedia.net/fighters/Brussels_Challenge/2024/Major_Edition/SF6",
+      "date": "2024-05-24",
+      "tier": 2,
+      "entrants": 124,
+      "prize": "$1,337.59",
+      "location": "Brussels",
+      "winner": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "Problem X",
+        "page": "Problem_X",
+        "flag": "United Kingdom",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "Combo Breaker 2024",
+      "page": "Combo_Breaker/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Combo_Breaker/2024/SF6",
+      "date": "2024-05-24",
+      "tier": 1,
+      "entrants": 1438,
+      "prize": "$14,380",
+      "location": "Schaumburg, IL",
+      "winner": {
+        "name": "ElChakotay",
+        "page": "ElChakotay",
+        "flag": "United States",
+        "character": "Lily"
+      },
+      "runnerUp": {
+        "name": "NoahTheProdigy",
+        "page": "NoahTheProdigy",
+        "flag": "United States",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Fight Club Arena 2024",
+      "page": "Fight_Club_Arena/2024",
+      "url": "https://liquipedia.net/fighters/Fight_Club_Arena/2024",
+      "date": "2024-05-24",
+      "tier": 2,
+      "entrants": 55,
+      "prize": "$1,380.83",
+      "location": "Shenzhen",
+      "winner": {
+        "name": "Zhen",
+        "page": "Rou",
+        "flag": "China",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Chris Wong",
+        "page": "Chris_Wong",
+        "flag": "Hong Kong",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Evolution Championship Series: Japan 2024",
+      "page": "Evolution_Championship_Series/2024/Japan/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2024/Japan/SF6",
+      "date": "2024-04-24",
+      "tier": 1,
+      "entrants": 4908,
+      "prize": "$12,642.70",
+      "location": "Tokyo",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "LVL UP EXPO 2024",
+      "page": "LVL_UP_EXPO/2024/SF6",
+      "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2024/SF6",
+      "date": "2024-04-24",
+      "tier": 2,
+      "entrants": 117,
+      "prize": "$10,000",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "JB",
+        "page": "JB",
+        "flag": "United States",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "NYChrisG",
+        "page": "NYChrisG",
+        "flag": "United States",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "Texas Showdown 2024",
+      "page": "Texas_Showdown/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Texas_Showdown/2024/SF6",
+      "date": "2024-04-24",
+      "tier": 2,
+      "entrants": 282,
+      "prize": "$4,230",
+      "location": "Houston, TX",
+      "winner": {
+        "name": "Brian_F",
+        "page": "Brian_F",
+        "flag": "United States",
+        "character": "Ed"
+      },
+      "runnerUp": {
+        "name": "SICKLE",
+        "page": null,
+        "flag": "United States",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "Beast Cup -Tokyo-",
+      "page": "Beast_Cup/2024/Tokyo",
+      "url": "https://liquipedia.net/fighters/Beast_Cup/2024/Tokyo",
+      "date": "2024-03-24",
+      "tier": 2,
+      "entrants": 550,
+      "prize": null,
+      "location": "Tokyo",
+      "winner": {
+        "name": "Higuchi",
+        "page": "Higuchi",
+        "flag": "Japan",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "moke",
+        "page": "Moke",
+        "flag": "Japan",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2024",
+      "page": "Red_Bull_Kumite/2024/New_York",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York",
+      "date": "2024-03-24",
+      "tier": 1,
+      "entrants": 16,
+      "prize": "$50,000",
+      "location": "Brooklyn, NY",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2024 Last Chance Qualifier",
+      "page": "Red_Bull_Kumite/2024/New_York/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York/Last_Chance_Qualifier",
+      "date": "2024-03-24",
+      "tier": 2,
+      "entrants": 256,
+      "prize": null,
+      "location": "Brooklyn, NY",
+      "winner": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Uriel Velorio",
+        "page": "Uriel_Velorio",
+        "flag": "Mexico",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2024 Play-In",
+      "page": "Red_Bull_Kumite/2024/New_York/Play-In",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York/Play-In",
+      "date": "2024-03-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": null,
+      "location": "Brooklyn, NY",
+      "winner": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Shine",
+        "page": "Shine_(Sean_Simpson)",
+        "flag": "United States",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "TNS 9: CEO Never Sleeps",
+      "page": "Tampa_Never_Sleeps/9/SF6",
+      "url": "https://liquipedia.net/fighters/Tampa_Never_Sleeps/9/SF6",
+      "date": "2024-03-24",
+      "tier": 2,
+      "entrants": 216,
+      "prize": "$3,160",
+      "location": "Orlando, FL",
+      "winner": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Capcom Cup X",
+      "page": "Capcom_Cup/10",
+      "url": "https://liquipedia.net/fighters/Capcom_Cup/10",
+      "date": "2024-02-24",
+      "tier": 1,
+      "entrants": 48,
+      "prize": "$1,734,000",
+      "location": "Los Angeles, CA",
+      "winner": {
+        "name": "UMA",
+        "page": "Kagami",
+        "flag": "Taiwan",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Chris Wong",
+        "page": "Chris_Wong",
+        "flag": "Hong Kong",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "Capcom Cup X Last Chance Qualifier",
+      "page": "Capcom_Cup/10/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Capcom_Cup/10/Last_Chance_Qualifier",
+      "date": "2024-02-24",
+      "tier": 1,
+      "entrants": 323,
+      "prize": null,
+      "location": "Los Angeles, CA",
+      "winner": {
+        "name": "Problem X",
+        "page": "Problem_X",
+        "flag": "United Kingdom",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-EU 2023",
+      "page": "Street_Fighter_League/Europe/2023",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Europe/2023",
+      "date": "2024-02-24",
+      "tier": 1,
+      "entrants": 24,
+      "prize": "$81,098.18",
+      "location": "London",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Street Fighter League World Championship 2023",
+      "page": "Street_Fighter_League/World_Championship/2023",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/World_Championship/2023",
+      "date": "2024-02-24",
+      "tier": 1,
+      "entrants": 12,
+      "prize": "$150,000",
+      "location": "Los Angeles, CA",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2023 Online Event: Japan",
+      "page": "Capcom_Pro_Tour/2023/Online/Asia/Japan",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/Japan",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 925,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Kawano",
+        "page": "Kawano",
+        "flag": "Japan",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Otani",
+        "page": "Otani",
+        "flag": "Japan",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: North America East",
+      "page": "Capcom_Pro_Tour/2023/Online/North_America/East",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/East",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 642,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "BananaKen",
+        "page": "BananaKen",
+        "flag": "Puerto Rico",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: North America Midwest",
+      "page": "Capcom_Pro_Tour/2023/Online/North_America/Midwest",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/Midwest",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 584,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Sayff",
+        "page": "Sayff",
+        "flag": "Canada",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "JOE UMEROGAN",
+        "page": "JOE_UMEROGAN",
+        "flag": "Canada",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: UK-Ireland Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/UK-Ireland/Regional_Final",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "London",
+      "winner": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ryu"
+      },
+      "runnerUp": {
+        "name": "Problem X",
+        "page": "Problem_X",
+        "flag": "United Kingdom",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "Douyu SF6 Master Open",
+      "page": "Douyu_SF6_Master_Open",
+      "url": "https://liquipedia.net/fighters/Douyu_SF6_Master_Open",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 32,
+      "prize": "$13,093.97",
+      "location": "Wuhan, China",
+      "winner": {
+        "name": "Vxbao",
+        "page": "Vxbao",
+        "flag": "China",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Bravery",
+        "page": "Bravery",
+        "flag": "Singapore",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Frosty Faustings XVI",
+      "page": "Frosty_Faustings/2024/SF6",
+      "url": "https://liquipedia.net/fighters/Frosty_Faustings/2024/SF6",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 728,
+      "prize": "$8,480",
+      "location": "Chicago, IL",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "GTW 2023 Finals",
+      "page": "GTW/2023/Finals/SF6/Main_Event",
+      "url": "https://liquipedia.net/fighters/GTW/2023/Finals/SF6/Main_Event",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 16,
+      "prize": "$7,313.02",
+      "location": "Shanghai, China",
+      "winner": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Kagami",
+        "page": "Kagami",
+        "flag": "Taiwan",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "Keio Cup",
+      "page": "Keio_Cup/2024",
+      "url": "https://liquipedia.net/fighters/Keio_Cup/2024",
+      "date": "2024-01-24",
+      "tier": 2,
+      "entrants": 16,
+      "prize": "$4,048.99",
+      "location": "Tokyo",
+      "winner": {
+        "name": "Gachikun",
+        "page": "Gachikun",
+        "flag": "Japan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Moke",
+        "page": "Moke",
+        "flag": "Japan",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "Street Fighter League Pro-JP 2023",
+      "page": "Street_Fighter_League/Japan/2023",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/Japan/2023",
+      "date": "2024-01-24",
+      "tier": 1,
+      "entrants": 36,
+      "prize": "$55,223.81",
+      "location": "Japan",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "Street Fighter League Pro-US 2023",
+      "page": "Street_Fighter_League/United_States/2023",
+      "url": "https://liquipedia.net/fighters/Street_Fighter_League/United_States/2023",
+      "date": "2024-01-24",
+      "tier": 1,
+      "entrants": 24,
+      "prize": "$75,000",
+      "location": "United States",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "CPT 2023 Online Event: France-Spain-Portugal",
+      "page": "Capcom_Pro_Tour/2023/Online/EMEA/France-Spain-Portugal",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/France-Spain-Portugal",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 238,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "Lionheart",
+        "page": "Lionheart_(French_Player)",
+        "flag": "France",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: UK-Ireland",
+      "page": "Capcom_Pro_Tour/2023/Online/EMEA/UK-Ireland",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/UK-Ireland",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 168,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Rainpro",
+        "page": "Rainpro",
+        "flag": "Hong Kong",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: China Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/China/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/China/Regional_Final",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Chengdu, China",
+      "winner": {
+        "name": "DespairKing",
+        "page": "DespairKing",
+        "flag": "China",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Vxbao",
+        "page": "Vxbao",
+        "flag": "China",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Spain-Portugal Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/Spain-Portugal/Regional_Final",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$12,313.26",
+      "location": "Barcelona",
+      "winner": {
+        "name": "Samoel",
+        "page": "Samoel",
+        "flag": "Spain",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "VegaPatch",
+        "page": "VegaPatch",
+        "flag": "Spain",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "DreamHack Atlanta 2023",
+      "page": "DreamHack/2023/Atlanta/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2023/Atlanta/SF6",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 258,
+      "prize": "$5,000",
+      "location": "Atlanta, GA",
+      "winner": {
+        "name": "JB",
+        "page": "JB",
+        "flag": "United States",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "Esports Shanghai Masters 2023",
+      "page": "Esports_Shanghai_Masters/2023",
+      "url": "https://liquipedia.net/fighters/Esports_Shanghai_Masters/2023",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 4,
+      "prize": null,
+      "location": "Shanghai",
+      "winner": {
+        "name": "Xiaohai",
+        "page": "Xiao_Hai",
+        "flag": "China",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "FAV CUP 2023",
+      "page": "FAV_CUP/2023/3v3",
+      "url": "https://liquipedia.net/fighters/FAV_CUP/2023/3v3",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 18,
+      "prize": null,
+      "location": "Tokorozawa",
+      "winner": null,
+      "runnerUp": null
+    },
+    {
+      "name": "FAV CUP 2023",
+      "page": "FAV_CUP/2023/Singles",
+      "url": "https://liquipedia.net/fighters/FAV_CUP/2023/Singles",
+      "date": "2023-12-23",
+      "tier": 1,
+      "entrants": 8,
+      "prize": "$7,068.84",
+      "location": "Tokorozawa",
+      "winner": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Tokido",
+        "page": "Tokido",
+        "flag": "Japan",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "FAV CUP 2023 Open Qualifier",
+      "page": "FAV_CUP/2023/Singles/Open_Qualifier",
+      "url": "https://liquipedia.net/fighters/FAV_CUP/2023/Singles/Open_Qualifier",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 285,
+      "prize": null,
+      "location": "Tokorozawa",
+      "winner": {
+        "name": "moke",
+        "page": "Moke",
+        "flag": "Japan",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "gachikun",
+        "page": "Gachikun",
+        "flag": "Japan",
+        "character": "Rashid"
+      }
+    },
+    {
+      "name": "GES Asia Fighter's Week 2023",
+      "page": "GES_Asia_Fighter's_Week/2023/SF6",
+      "url": "https://liquipedia.net/fighters/GES_Asia_Fighter's_Week/2023/SF6",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 4,
+      "prize": "$15,389.94",
+      "location": "Gwangju",
+      "winner": {
+        "name": "Gachikun",
+        "page": "Gachikun",
+        "flag": "Japan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "M.Lizard",
+        "page": "M.Lizard",
+        "flag": "South Korea",
+        "character": "Marisa"
+      }
+    },
+    {
+      "name": "Global Esports Games 2023 - Riyadh",
+      "page": "Global_Esports_Games/2023/Riyadh",
+      "url": "https://liquipedia.net/fighters/Global_Esports_Games/2023/Riyadh",
+      "date": "2023-12-23",
+      "tier": 2,
+      "entrants": 33,
+      "prize": null,
+      "location": "Riyadh",
+      "winner": {
+        "name": "Bryan-D",
+        "page": "Bryan-D",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "IamChuan",
+        "page": "Chuan",
+        "flag": "Malaysia",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "Astral Finish Festival 2023",
+      "page": "Astral_Finish_Festival/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Astral_Finish_Festival/2023/SF6",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 104,
+      "prize": "$1,485.90",
+      "location": "Zapopan",
+      "winner": {
+        "name": "LuGabo",
+        "page": "LuGabo",
+        "flag": "Mexico",
+        "character": "Kimberly"
+      },
+      "runnerUp": {
+        "name": "Uriel Velorio",
+        "page": "Uriel_Velorio",
+        "flag": "Mexico",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Battle Coliseum 2023",
+      "page": "Battle_Coliseum/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Coliseum/2023/SF6",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 210,
+      "prize": "$1,285.08",
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "JUNINHO-RAS",
+        "page": "JUNINHO-RAS",
+        "flag": "Brazil",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "RonaldinhoBR",
+        "page": "RonaldinhoBR",
+        "flag": "Brazil",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "Blink Respawn 2023",
+      "page": "Blink_Respawn/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Blink_Respawn/2023/SF6",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 143,
+      "prize": "$5,000",
+      "location": "Santo Domingo",
+      "winner": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Asia",
+      "page": "Capcom_Pro_Tour/2023/Online/Asia/China",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/China",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 127,
+      "prize": "$5,000",
+      "location": "Shanghai",
+      "winner": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Vxbao",
+        "page": "Vxbao",
+        "flag": "China",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Asia Southeast",
+      "page": "Capcom_Pro_Tour/2023/Online/Asia/Southeast",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/Southeast",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 118,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Xian",
+        "page": "Xian",
+        "flag": "Singapore",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Bravery",
+        "page": "Bravery",
+        "flag": "Singapore",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Europe West",
+      "page": "Capcom_Pro_Tour/2023/Online/EMEA/West",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/West",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 158,
+      "prize": "$5,000",
+      "location": null,
+      "winner": {
+        "name": "Garnet",
+        "page": "Garnet",
+        "flag": "Italy",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": ".exe",
+        "page": ".exe",
+        "flag": "Germany",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Middle East",
+      "page": "Capcom_Pro_Tour/2023/Online/EMEA/Middle_East",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/Middle_East",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 126,
+      "prize": "$5,000",
+      "location": null,
+      "winner": {
+        "name": "Big Bird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Marisa"
+      },
+      "runnerUp": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Asia East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": null,
+      "winner": {
+        "name": "Kagami",
+        "page": "Kagami",
+        "flag": "Taiwan",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Chris Wong",
+        "page": "Chris_Wong",
+        "flag": "Hong Kong",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Asia South Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/South/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/South/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": null,
+      "winner": {
+        "name": "Si Anik",
+        "page": "Si_Anik",
+        "flag": "Bangladesh",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Shadoken",
+        "page": "Shadoken",
+        "flag": "India",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Asia Southeast Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/Southeast/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Southeast/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": null,
+      "winner": {
+        "name": "Xian",
+        "page": "Xian",
+        "flag": "Singapore",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Bravery",
+        "page": "Bravery",
+        "flag": "Singapore",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Brazil Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/South_America/Brazil/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/Brazil/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$23.94",
+      "location": "Online",
+      "winner": {
+        "name": "JUNINHO-RAS",
+        "page": "JUNINHO-RAS",
+        "flag": "Brazil",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Brayan_Job",
+        "page": "Brayan_Job",
+        "flag": "Brazil",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Canada East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Toronto",
+      "winner": {
+        "name": "JOE UMEROGAN",
+        "page": "JOE_UMEROGAN",
+        "flag": "Canada",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "FluxWaveZ",
+        "page": "FluxWaveZ",
+        "flag": "Canada",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Canada West Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_West/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "Mikex",
+        "page": "Mikex",
+        "flag": "Canada",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Nate Banks",
+        "page": null,
+        "flag": "Canada",
+        "character": "Marisa"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Central America East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Central_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Central_America/East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "Crossover",
+        "page": "Crossover",
+        "flag": "Dominican Republic",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Bryan-D",
+        "page": "Bryan-D",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Central America West Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Central_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Central_America/West/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "DestroyGodz",
+        "page": "DestroyGodz",
+        "flag": "Panama",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "TODAKAI",
+        "page": "TODAKAI",
+        "flag": "Panama",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Europe North-East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Europe/North-East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/North-East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": null,
+      "winner": {
+        "name": "Phenom",
+        "page": "Phenom",
+        "flag": "Norway",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Myrken",
+        "page": "Myrken",
+        "flag": "Poland",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Europe West Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Europe/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/West/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": null,
+      "winner": {
+        "name": "Takamura",
+        "page": "Takamura",
+        "flag": "Belgium",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Libbro",
+        "page": null,
+        "flag": "Italy",
+        "character": "Marisa"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: France Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Europe/France/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/France/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "Valmaster",
+        "page": "Valmaster",
+        "flag": "France",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Germany Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Europe/Germany/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/Germany/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "GGHalibel",
+        "page": "GGHalibel",
+        "flag": "Germany",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "RANDUMB",
+        "page": "RANDUMB",
+        "flag": "Germany",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Japan Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/Japan/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Japan/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Japan",
+      "winner": {
+        "name": "Fuudo",
+        "page": "Fuudo",
+        "flag": "Japan",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Yamaguchi",
+        "page": "Yamaguchi",
+        "flag": "Japan",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Mexico Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Mexico/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Mexico/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "SolVNG",
+        "page": "SolVNG",
+        "flag": "Mexico",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Uriel Velorio",
+        "page": "Uriel_Velorio",
+        "flag": "Mexico",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Middle East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/Middle_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Middle_East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "BigBird",
+        "page": "Big_Bird",
+        "flag": "Algeria",
+        "character": "Marisa"
+      },
+      "runnerUp": {
+        "name": "Fandroid",
+        "page": "Fandroid",
+        "flag": "Kuwait",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: Oceania Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Oceania/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Oceania/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "ROF",
+        "page": "ROF",
+        "flag": "Australia",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Travis Styles",
+        "page": "Travis_Styles",
+        "flag": "Australia",
+        "character": "Chun-Li"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: South Africa Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/South_Africa/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_Africa/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "JabhiM",
+        "page": "JabhiM",
+        "flag": "South Africa",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Ren",
+        "page": "Ren_(South_African_Player)",
+        "flag": "South Africa",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: South America East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/South_America/East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": null,
+      "winner": {
+        "name": "shaka22",
+        "page": "Shaka22",
+        "flag": "Argentina",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "Leeito94",
+        "page": null,
+        "flag": "Argentina",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: South America West Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/South_America/West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/West/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "NeroTheBoxer",
+        "page": "NeroTheBoxer",
+        "flag": "Peru",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "WFALCON",
+        "page": "WFALCON",
+        "flag": "Peru",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: South Korea Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/Asia/South_Korea/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/South_Korea/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "Leshar",
+        "page": "Leshar",
+        "flag": "South Korea",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Armperor",
+        "page": "Armperor",
+        "flag": "South Korea",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: US East Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/North_America/US_East/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_East/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: US Midwest Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/North_America/US_Midwest/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_Midwest/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "Dual Kevin",
+        "page": "Dual_Kevin",
+        "flag": "United States",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "FlashMetroid",
+        "page": "Flash",
+        "flag": "United States",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "CPT 2023 World Warrior: US West Regional Final",
+      "page": "Capcom_Pro_Tour/2023/World_Warrior/North_America/US_West/Regional_Final",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_West/Regional_Final",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 8,
+      "prize": "$9,050",
+      "location": "Online",
+      "winner": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Chris T",
+        "page": "Chris_Tatarian",
+        "flag": "United States",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2023: France Offline",
+      "page": "Capcom_Pro_Tour/2023/France_Offline",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/France_Offline",
+      "date": "2023-11-23",
+      "tier": 1,
+      "entrants": 412,
+      "prize": "$37,000",
+      "location": "Paris",
+      "winner": {
+        "name": "Chris Wong",
+        "page": "Chris_Wong",
+        "flag": "Hong Kong",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "Thaiger Uppercut 2023",
+      "page": "Thaiger_Uppercut/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Thaiger_Uppercut/2023/SF6",
+      "date": "2023-11-23",
+      "tier": 2,
+      "entrants": 135,
+      "prize": "$1,685.96",
+      "location": "Bangkok",
+      "winner": {
+        "name": "ZJZ",
+        "page": "ZJZ",
+        "flag": "Taiwan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Seo",
+        "page": "Seo",
+        "flag": "Singapore",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "Ultimate Fighting Arena 2023",
+      "page": "Ultimate_Fighting_Arena/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2023/SF6",
+      "date": "2023-11-23",
+      "tier": 1,
+      "entrants": 540,
+      "prize": "$7,664.48",
+      "location": "Paris",
+      "winner": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Central America East",
+      "page": "Capcom_Pro_Tour/2023/Online/Central_America/East",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Central_America/East",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 129,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Bryan-D",
+        "page": "Bryan-D",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Europe North-East",
+      "page": "Capcom_Pro_Tour/2023/Online/EMEA/North-East",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/North-East",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 83,
+      "prize": "$5,000",
+      "location": null,
+      "winner": {
+        "name": "Phenom",
+        "page": "Phenom",
+        "flag": "Norway",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Juicyjoe",
+        "page": "Juicyjoe",
+        "flag": "Sweden",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: South Africa",
+      "page": "Capcom_Pro_Tour/2023/Online/EMEA/South_Africa",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/South_Africa",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 76,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "JabhiM",
+        "page": "JabhiM",
+        "flag": "South Africa",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "MarkTheShark9200",
+        "page": "MarkTheShark",
+        "flag": "South Africa",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "CPT 2023: Singapore Offline",
+      "page": "Capcom_Pro_Tour/2023/Singapore_Offline",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Singapore_Offline",
+      "date": "2023-10-23",
+      "tier": 1,
+      "entrants": 369,
+      "prize": "$37,000",
+      "location": "Singapore",
+      "winner": {
+        "name": "gachikun",
+        "page": "Gachikun",
+        "flag": "Japan",
+        "character": "Rashid"
+      },
+      "runnerUp": {
+        "name": "Chris Wong",
+        "page": "Chris_Wong",
+        "flag": "Hong Kong",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "East Coast Throwdown 2023",
+      "page": "East_Coast_Throwdown/2023/SF6",
+      "url": "https://liquipedia.net/fighters/East_Coast_Throwdown/2023/SF6",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 493,
+      "prize": "$5,362.66",
+      "location": "Stamford, CT",
+      "winner": {
+        "name": "Shine",
+        "page": "Shine_(Sean_Simpson)",
+        "flag": "United States",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Naji",
+        "page": "Naji",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "EGX Arena 2023",
+      "page": "EGX/2023/SF6",
+      "url": "https://liquipedia.net/fighters/EGX/2023/SF6",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 74,
+      "prize": "$6,078.99",
+      "location": "London",
+      "winner": {
+        "name": "Hurricane",
+        "page": "Hurricane",
+        "flag": "Cameroon",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Rainpro",
+        "page": "Rainpro",
+        "flag": "Hong Kong",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "First Attack 2023",
+      "page": "First_Attack/2023/SF6",
+      "url": "https://liquipedia.net/fighters/First_Attack/2023/SF6",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 163,
+      "prize": "$4,930",
+      "location": "San Juan",
+      "winner": {
+        "name": "Ajax Fidelity",
+        "page": "Ajax_Fidelity",
+        "flag": "Puerto Rico",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Justakid",
+        "page": "Justakid",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "REV Major 2023",
+      "page": "REV_Major/2023/SF6",
+      "url": "https://liquipedia.net/fighters/REV_Major/2023/SF6",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 91,
+      "prize": "$1,604.80",
+      "location": "Metro Manila",
+      "winner": {
+        "name": "ITK",
+        "page": "ITK",
+        "flag": "Japan",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "Seo",
+        "page": "Seo",
+        "flag": "Singapore",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Thunderstruck 2023",
+      "page": "Thunderstruck/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Thunderstruck/2023/SF6",
+      "date": "2023-10-23",
+      "tier": 2,
+      "entrants": 128,
+      "prize": "$1,069.47",
+      "location": "San Nicolás de los Garza",
+      "winner": {
+        "name": "KUSANAGI",
+        "page": "Kusanagi_(Mexican_Player)",
+        "flag": "Mexico",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Maximof",
+        "page": "Maximof",
+        "flag": "Mexico",
+        "character": "Dee Jay"
+      }
+    },
+    {
+      "name": "CEOtaku 2023",
+      "page": "CEOtaku/2023/SF6",
+      "url": "https://liquipedia.net/fighters/CEOtaku/2023/SF6",
+      "date": "2023-09-23",
+      "tier": 2,
+      "entrants": 505,
+      "prize": "$5,050",
+      "location": "Orlando, FL",
+      "winner": {
+        "name": "NuckleDu",
+        "page": "NuckleDu",
+        "flag": "United States",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Asia East",
+      "page": "Capcom_Pro_Tour/2023/Online/Asia/East",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/East",
+      "date": "2023-09-23",
+      "tier": 2,
+      "entrants": 94,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "NL",
+        "page": "NL",
+        "flag": "South Korea",
+        "character": "Luke"
+      },
+      "runnerUp": {
+        "name": "Chris Wong",
+        "page": "Chris_Wong",
+        "flag": "Hong Kong",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Brazil",
+      "page": "Capcom_Pro_Tour/2023/Online/Latin_America/Brazil",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Latin_America/Brazil",
+      "date": "2023-09-23",
+      "tier": 2,
+      "entrants": 300,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "NamikazeExTM",
+        "page": "NamikazeExTM",
+        "flag": "Brazil",
+        "character": "Dee Jay"
+      },
+      "runnerUp": {
+        "name": "Keoma",
+        "page": "Keoma",
+        "flag": "Brazil",
+        "character": "Manon"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: South America West",
+      "page": "Capcom_Pro_Tour/2023/Online/South_America/West",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/South_America/West",
+      "date": "2023-09-23",
+      "tier": 2,
+      "entrants": 331,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Dookie",
+        "page": "Dookie",
+        "flag": "Argentina",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "shaka22",
+        "page": "Shaka22",
+        "flag": "Argentina",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "CNE Gaming Garage",
+      "page": "CNE_Gaming_Garage/2023/SF6",
+      "url": "https://liquipedia.net/fighters/CNE_Gaming_Garage/2023/SF6",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 125,
+      "prize": "$6,276.65",
+      "location": "Toronto, ON",
+      "winner": {
+        "name": "Sayff",
+        "page": "Sayff",
+        "flag": "Canada",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "FluxWaveZ",
+        "page": "FluxWaveZ",
+        "flag": "Canada",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "Comitê Arena 2023",
+      "page": "Comitê_Arena/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2023/SF6",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 216,
+      "prize": "$1,847.33",
+      "location": "São Paulo, SP",
+      "winner": {
+        "name": "DARK",
+        "page": "DARK",
+        "flag": "Brazil",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Mimam",
+        "page": "Mimam",
+        "flag": "Brazil",
+        "character": "Dhalsim"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Central America West",
+      "page": "Capcom_Pro_Tour/2023/Online/Central_America/West",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Central_America/West",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 177,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "KUSANAGI",
+        "page": "Kusanagi_(Mexican_Player)",
+        "flag": "Mexico",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "TODAKAI",
+        "page": "TODAKAI",
+        "flag": "Panama",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: North America West",
+      "page": "Capcom_Pro_Tour/2023/Online/North_America/West",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/West",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 628,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Snake Eyez",
+        "page": "Snake_Eyez",
+        "flag": "United States",
+        "character": "Zangief"
+      },
+      "runnerUp": {
+        "name": "Reynald",
+        "page": "Reynald",
+        "flag": "United States",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "CPT 2023 Online Event: Oceania",
+      "page": "Capcom_Pro_Tour/2023/Online/Oceania",
+      "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Oceania",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 147,
+      "prize": "$5,000",
+      "location": "Online",
+      "winner": {
+        "name": "Travis Styles",
+        "page": "Travis_Styles",
+        "flag": "Australia",
+        "character": "Chun-Li"
+      },
+      "runnerUp": {
+        "name": "Krown",
+        "page": null,
+        "flag": "Australia",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "Evolution Championship Series 2023",
+      "page": "Evolution_Championship_Series/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2023/SF6",
+      "date": "2023-08-23",
+      "tier": 1,
+      "entrants": 7083,
+      "prize": "$70,600",
+      "location": "Las Vegas, NV",
+      "winner": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      }
+    },
+    {
+      "name": "Gamers8 2023",
+      "page": "Gamers8/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Gamers8/2023/SF6",
+      "date": "2023-08-23",
+      "tier": 1,
+      "entrants": 32,
+      "prize": "$1,000,000",
+      "location": "Riyadh",
+      "winner": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Heat Wave 2023",
+      "page": "Heat_Wave/2023",
+      "url": "https://liquipedia.net/fighters/Heat_Wave/2023",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 58,
+      "prize": "$18,200.90",
+      "location": "New York City, NY",
+      "winner": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "og_killakam",
+        "page": null,
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "VSFighting XI",
+      "page": "VSFighting/2023/SF6",
+      "url": "https://liquipedia.net/fighters/VSFighting/2023/SF6",
+      "date": "2023-08-23",
+      "tier": 2,
+      "entrants": 496,
+      "prize": "$6,319.76",
+      "location": "Birmingham",
+      "winner": {
+        "name": "Rikemansbarnet",
+        "page": "Rikemansbarnet",
+        "flag": "Sweden",
+        "character": "Juri"
+      },
+      "runnerUp": {
+        "name": "Hurricane",
+        "page": "Hurricane",
+        "flag": "Cameroon",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Brussels Challenge Major Edition 2023",
+      "page": "Brussels_Challenge/2023/Major_Edition/SF6",
+      "url": "https://liquipedia.net/fighters/Brussels_Challenge/2023/Major_Edition/SF6",
+      "date": "2023-07-23",
+      "tier": 2,
+      "entrants": 321,
+      "prize": "$3,603.93",
+      "location": "Brussels",
+      "winner": {
+        "name": "Kayne",
+        "page": "Kayne",
+        "flag": "France",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "Akainu",
+        "page": "Akainu",
+        "flag": "France",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "Defend the North 2023",
+      "page": "Defend_the_North/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Defend_the_North/2023/SF6",
+      "date": "2023-07-23",
+      "tier": 2,
+      "entrants": 325,
+      "prize": "$5,000",
+      "location": "New York City, NY",
+      "winner": {
+        "name": "Caba",
+        "page": "Caba",
+        "flag": "Dominican Republic",
+        "character": "Guile"
+      },
+      "runnerUp": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Luke"
+      }
+    },
+    {
+      "name": "FightClub Championship IV",
+      "page": "FightClub_Championship/4",
+      "url": "https://liquipedia.net/fighters/FightClub_Championship/4",
+      "date": "2023-07-23",
+      "tier": 2,
+      "entrants": 137,
+      "prize": "$4,451.99",
+      "location": "Shenzhen",
+      "winner": {
+        "name": "Vxbao",
+        "page": "Vxbao",
+        "flag": "China",
+        "character": "Ken"
+      },
+      "runnerUp": {
+        "name": "DCQ",
+        "page": "DingChunQiu",
+        "flag": "China",
+        "character": "JP"
+      }
+    },
+    {
+      "name": "Get On My Level 2023",
+      "page": "Get_On_My_Level/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Get_On_My_Level/2023/SF6",
+      "date": "2023-07-23",
+      "tier": 2,
+      "entrants": 302,
+      "prize": "$2,283.29",
+      "location": "Toronto",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Sayff",
+        "page": "Sayff",
+        "flag": "Canada",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2023",
+      "page": "Red_Bull_Kumite/2023/South_Africa",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa",
+      "date": "2023-07-23",
+      "tier": 1,
+      "entrants": 16,
+      "prize": "$50,000",
+      "location": "Pretoria",
+      "winner": {
+        "name": "Big Bird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Marisa"
+      },
+      "runnerUp": {
+        "name": "Akainu",
+        "page": "Akainu",
+        "flag": "France",
+        "character": "Guile"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2023 Last Chance Qualifier",
+      "page": "Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier",
+      "date": "2023-07-23",
+      "tier": 2,
+      "entrants": 128,
+      "prize": null,
+      "location": "Pretoria",
+      "winner": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "EndingWalker",
+        "page": "EndingWalker",
+        "flag": "United Kingdom",
+        "character": "E. Honda"
+      }
+    },
+    {
+      "name": "Smash Factor X",
+      "page": "Smash_Factor/10/SF6",
+      "url": "https://liquipedia.net/fighters/Smash_Factor/10/SF6",
+      "date": "2023-07-23",
+      "tier": 2,
+      "entrants": 121,
+      "prize": "$1,087.91",
+      "location": "Mexico City",
+      "winner": {
+        "name": "SonicFox",
+        "page": "SonicFox",
+        "flag": "United States",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "KUSANAGI",
+        "page": "Kusanagi_(Mexican_Player)",
+        "flag": "Mexico",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Battle Arena Melbourne 13",
+      "page": "Battle_Arena_Melbourne/13/SF6",
+      "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/13/SF6",
+      "date": "2023-06-23",
+      "tier": 2,
+      "entrants": 229,
+      "prize": "$1,542.71",
+      "location": "Melbourne",
+      "winner": {
+        "name": "ROF",
+        "page": "ROF",
+        "flag": "Australia",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Krown",
+        "page": null,
+        "flag": "Australia",
+        "character": "Ryu"
+      }
+    },
+    {
+      "name": "CEO 2023",
+      "page": "Community_Effort_Orlando/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2023/SF6",
+      "date": "2023-06-23",
+      "tier": 1,
+      "entrants": 1082,
+      "prize": "$10,820",
+      "location": "Daytona Beach, FL",
+      "winner": {
+        "name": "MenaRD",
+        "page": "MenaRD",
+        "flag": "Dominican Republic",
+        "character": "Blanka"
+      },
+      "runnerUp": {
+        "name": "Nephew",
+        "page": "Nephew",
+        "flag": "United States",
+        "character": "Juri"
+      }
+    },
+    {
+      "name": "DreamHack Dallas 2023",
+      "page": "DreamHack/2023/Dallas/SF6",
+      "url": "https://liquipedia.net/fighters/DreamHack/2023/Dallas/SF6",
+      "date": "2023-06-23",
+      "tier": 2,
+      "entrants": 221,
+      "prize": "$10,000",
+      "location": "Dallas, TX",
+      "winner": {
+        "name": "Punk",
+        "page": "Punk",
+        "flag": "United States",
+        "character": "Cammy"
+      },
+      "runnerUp": {
+        "name": "Shine",
+        "page": "Shine_(Sean_Simpson)",
+        "flag": "United States",
+        "character": "Kimberly"
+      }
+    },
+    {
+      "name": "Headstomper 2023",
+      "page": "Headstomper/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Headstomper/2023/SF6",
+      "date": "2023-06-23",
+      "tier": 2,
+      "entrants": 225,
+      "prize": "$2,415.64",
+      "location": "Malmö",
+      "winner": {
+        "name": "Mister Crimson",
+        "page": "Mister_Crimson",
+        "flag": "France",
+        "character": "Dhalsim"
+      },
+      "runnerUp": {
+        "name": "Popibluebeast",
+        "page": "Popi",
+        "flag": "Argentina",
+        "character": "Cammy"
+      }
+    },
+    {
+      "name": "Red Bull Kumite 2023 LCQ Japan Qualifier",
+      "page": "Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier/Japan_Qualifier",
+      "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier/Japan_Qualifier",
+      "date": "2023-06-23",
+      "tier": 2,
+      "entrants": 194,
+      "prize": null,
+      "location": "Online",
+      "winner": {
+        "name": "Kakeru",
+        "page": "Kakeru",
+        "flag": "Japan",
+        "character": "JP"
+      },
+      "runnerUp": {
+        "name": "Alice",
+        "page": "Ryukichi",
+        "flag": "Japan",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Slash N Dash Emirates Showdown",
+      "page": "Slash_N_Dash_Emirates_Showdown/2023/SF6",
+      "url": "https://liquipedia.net/fighters/Slash_N_Dash_Emirates_Showdown/2023/SF6",
+      "date": "2023-06-23",
+      "tier": 2,
+      "entrants": 54,
+      "prize": "$2,500",
+      "location": "Dubai",
+      "winner": {
+        "name": "Big Bird",
+        "page": "Big_Bird",
+        "flag": "United Arab Emirates",
+        "character": "Marisa"
+      },
+      "runnerUp": {
+        "name": "AngryBird",
+        "page": "AngryBird",
+        "flag": "United Arab Emirates",
+        "character": "Ken"
+      }
+    },
+    {
+      "name": "Twitch Rivals - Street Fighter 6 Legacy Showdown",
+      "page": "Twitch_Rivals/Street_Fighter_6_Legacy_Showdown",
+      "url": "https://liquipedia.net/fighters/Twitch_Rivals/Street_Fighter_6_Legacy_Showdown",
+      "date": "2023-06-23",
+      "tier": 2,
+      "entrants": 40,
+      "prize": "$50,500",
+      "location": "Online",
+      "winner": null,
+      "runnerUp": null
+    }
+  ]
+}

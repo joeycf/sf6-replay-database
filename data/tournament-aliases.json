@@ -1,0 +1,7 @@
+{
+  "//": "Liquipedia entrant name or page (as it appears in data/tournaments.json) → id in data/players.json, or null to ignore that name. Only for names scripts/tournaments.ts will not decide on its own: a fighter's name, under three alphanumerics, or two registry candidates. Validated by `tsx scripts/tournaments.ts --check` (inside npm run typecheck); the worklist is `npm run data:tournaments -- --match`. Itabashi Zangief → itazan: the registry also holds a 6-appearance `itabashi-zangief` spelling of the same person; the titles belong on the 1,196-appearance id. Merge the spellings in HANDLE_ALIASES when convenient.",
+  "aliases": {
+    "Itabashi Zangief": "itazan",
+    "Zangief_bolado": "zangief-bolado"
+  }
+}

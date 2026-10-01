@@ -80,26 +80,27 @@ committed `/sf6/` base — but the committed default **is** production truth.
 
 ## Scripts
 
-| script                           | what                                                                          |
-| -------------------------------- | ----------------------------------------------------------------------------- |
-| `npm run data:fetch`             | every upload from the 6 tracked channels → `raw/`                             |
-| `npm run data:parse`             | parse → substrate + registry + report, then emit                              |
-| `npm run data:build`             | fetch + parse                                                                 |
-| `npm run data:catchup`           | **fetch then parse, always together** — the maintenance ritual                |
-| `npm run data:theater`           | pull the index → `raw/replayTheater.json` + the witness (runs in the cron)    |
-| `npm run data:theater -- --full` | the whole catalogue (311 pages) — reconciles, and re-measures the cross-check |
-| `npm run data:emit`              | re-derive the generic artifacts from the committed substrate (no network)     |
-| `npm run data:extract`           | resolve queued character-completion items from the footage (LOCAL only)       |
-| `npm run data:characters`        | rescrape the roster + art (`--force` re-downloads)                            |
-| `npm run data:expiries`          | `--check` the self-expiring gates; exits 1 when something is due              |
-| `npm run data:versions`          | cross-check the patch table against the SuperCombo wiki (network)             |
-| `npm run data:roster-check`      | cross-check the roster against Capcom's index (network, manual)               |
-| `npm run data:replay-dupes`      | audit duplicate matches → paste-ready `overrides.json` fragment               |
-| `npm run data:player-dupes`      | audit player identities `idKey` cannot merge → paste-ready fragment           |
-| `npm run data:mr-probe`          | read Master Rate off each record's HUD — the same-footage signal (LOCAL)      |
-| `npm run data:mr-verdicts`       | turn MR reads into per-record keep/drop for the dupe clusters                 |
-| `npm run test:e2e`               | the full audit suite against `.vercel/output/static`                          |
-| `npm run typecheck`              | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators     |
+| script                           | what                                                                                                       |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `npm run data:fetch`             | every upload from the 6 tracked channels → `raw/`                                                          |
+| `npm run data:parse`             | parse → substrate + registry + report, then emit                                                           |
+| `npm run data:build`             | fetch + parse                                                                                              |
+| `npm run data:catchup`           | **fetch then parse, always together** — the maintenance ritual                                             |
+| `npm run data:theater`           | pull the index → `raw/replayTheater.json` + the witness (runs in the cron)                                 |
+| `npm run data:theater -- --full` | the whole catalogue (311 pages) — reconciles, and re-measures the cross-check                              |
+| `npm run data:emit`              | re-derive the generic artifacts from the committed substrate (no network)                                  |
+| `npm run data:extract`           | resolve queued character-completion items from the footage (LOCAL only)                                    |
+| `npm run data:characters`        | rescrape the roster + art (`--force` re-downloads)                                                         |
+| `npm run data:expiries`          | `--check` the self-expiring gates; exits 1 when something is due                                           |
+| `npm run data:versions`          | cross-check the patch table against the SuperCombo wiki (network)                                          |
+| `npm run data:roster-check`      | cross-check the roster against Capcom's index (network, manual)                                            |
+| `npm run data:tournaments`       | Liquipedia's Tier 1–2 winners/runners-up → `data/tournaments.json` (network, manual; `--match`, `--check`) |
+| `npm run data:replay-dupes`      | audit duplicate matches → paste-ready `overrides.json` fragment                                            |
+| `npm run data:player-dupes`      | audit player identities `idKey` cannot merge → paste-ready fragment                                        |
+| `npm run data:mr-probe`          | read Master Rate off each record's HUD — the same-footage signal (LOCAL)                                   |
+| `npm run data:mr-verdicts`       | turn MR reads into per-record keep/drop for the dupe clusters                                              |
+| `npm run test:e2e`               | the full audit suite against `.vercel/output/static`                                                       |
+| `npm run typecheck`              | app track (`vue-tsc`) + pipeline track (`tsc`) + the era/patch validators                                  |
 
 ## Seasons, not Years
 
@@ -492,6 +493,36 @@ needs `YT_API_KEY` in the repo's Actions secrets. A diff that is only
 `report.md`'s `_Generated_` timestamp, or only the Replay Theater cursor, does
 not commit. In practice every morning commits anyway: `data:fetch` refreshes
 view counts into `videos.json`, so the suppression is a floor, not the norm.
+
+## Featured players come from tournament results
+
+A player is **featured** when they won or placed second at a Liquipedia Tier 1 or
+Tier 2 Street Fighter 6 event, when they are in the hand-curated `FEATURED` set
+in `scripts/parse.ts`, or when they rank in the top 2% of the unflagged players
+by appearances (engine v0.17.0; the old rule, "25+ replays", made 230 people
+"featured" here). The placements are `data/tournaments.json`, pulled by
+`npm run data:tournaments` — **manual, network, never in the cron** — through
+Liquipedia's MediaWiki API (its HTML pages are bot-walled and off limits by its
+terms; the API wants gzip, a contact User-Agent and one `parse` call per 30 s,
+which is why two tiers take 35 s). The daily parse re-matches the file against
+the registry it just built and stamps `featured: true` + `extra.titles` on every
+hit, so a champion with no replay yet costs nothing today and is featured the
+morning their first video is ingested. The flag is a union: a curated id stays
+featured whether or not it holds a title.
+
+The matcher compares names through `resolveKey` (`scripts/players.ts`), the same
+identity key both id-minting paths in `parse.ts` go through, so "EndingWalker"
+on Liquipedia finds `ending-walker` here. It never guesses between people. A
+name that is also a fighter (`Ken`, `Luke`), has under three alphanumerics
+(`JP`), or resolves to two registry ids is reported in `data/report.md` and
+`npm run data:tournaments -- --match`, and a human closes it in
+`data/tournament-aliases.json` (an id, or `null` to ignore).
+`tsx scripts/tournaments.ts --check` validates both files inside
+`npm run typecheck`.
+
+Liquipedia's content is **CC BY-SA 3.0**: the credit is in the file's `source`
+block and the engine renders it beside every title on the player page.
+Pacing across all eight games is `../sync-tournaments.sh`.
 
 ## Things worth knowing
 

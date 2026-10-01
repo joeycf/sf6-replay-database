@@ -28,7 +28,7 @@ const appRoutes = [
 ];
 
 export default defineNuxtConfig({
-  extends: [process.env.ENGINE_PATH || ['github:joeycf/replay-engine#v0.16.0', { install: true }]],
+  extends: [process.env.ENGINE_PATH || ['github:joeycf/replay-engine#v0.17.0', { install: true }]],
 
   compatibilityDate: '2025-07-01',
 

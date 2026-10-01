@@ -32,6 +32,13 @@ import { formatStaleRefusal, staleEvidence } from './freshness';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
 import { idKey, resolveKey, slug } from './players';
 import { buildAliasMatcher, extractRank, loadCharacters, stripLeaderboard } from './roster';
+import {
+  applyTournamentTitles,
+  describeOutcome,
+  matchTournaments,
+  readAliases,
+  readTournaments,
+} from './tournaments';
 import type {
   ChannelConfig,
   ChannelKey,
@@ -1136,6 +1143,29 @@ const players: PlayerRecord[] = [...seen.entries()]
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([id, handle]) => ({ id, handle, ...(FEATURED.has(id) ? { featured: true } : {}) }));
 
+// ── tournament placements → featured + extra.titles ─────────────────────────
+// data/tournaments.json is Liquipedia's Tier 1–2 winners and runners-up,
+// fetched by hand (scripts/tournaments.ts — NETWORK, MANUAL, NEVER IN THE
+// CRON). The match runs HERE, against the registry this run just built and
+// before anything is written, so a champion with no replay yet costs nothing
+// today and is featured the morning their first video is ingested. FEATURED
+// above is a UNION with this: applyTournamentTitles only ever sets the flag.
+// Names are compared through `resolveKey`, the identity key both id-minting
+// paths (idOf) go through — never `slug`, because the public id is the slug of
+// whichever SPELLING the corpus favours ("Ending Walker" / "EndingWalker" are
+// one key and one id). Names the matcher will not decide on its own (a
+// fighter's name, under three alphanumerics, two candidates) are reported for
+// data/tournament-aliases.json, never guessed: a wrong person featured is
+// worse than a right one missed.
+const tournaments = matchTournaments(
+  players,
+  readTournaments(),
+  readAliases().aliases,
+  resolveKey,
+  (h) => matcher.find(h).length > 0,
+);
+const titled = applyTournamentTitles(new Map(players.map((p) => [p.id, p] as const)), tournaments);
+
 // ── the carry pin, rewritten by a rebuild — AND IT ONLY GROWS ───────────────
 // From the FINAL count — exclusions and all — so the number the next carrying
 // run checks against is the number actually published.
@@ -1577,6 +1607,16 @@ const report = [
   }`,
   '',
   ...formatCrossCheck(witnessArtifact),
+  // ── tournament placements (Liquipedia, CC BY-SA 3.0) ─────────────────────
+  '## Tournament placements — Liquipedia Tier 1–2, CC BY-SA 3.0',
+  '',
+  ...(tournaments.events
+    ? describeOutcome(tournaments, players.length)
+    : [
+        'No data/tournaments.json — run `npm run data:tournaments` (manual, network) to pull ' +
+          "Liquipedia's winner and runner-up tables.",
+        '',
+      ]),
   '## Sample misses (first 30 that are not shorts/live/not-sf6)',
   '',
   ...reportedMisses
@@ -1605,7 +1645,7 @@ console.log(
   `  seasons ${Object.entries(seasonDist)
     .sort()
     .map(([k, n]) => `${k}:${n}`)
-    .join(' ')} · ranked sides ${rankSides} · players ${players.length}`,
+    .join(' ')} · ranked sides ${rankSides} · players ${players.length} · ${titled} titled`,
 );
 
 // ── emit the generic schema (same code path as `npm run data:emit`) ──────────
