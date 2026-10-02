@@ -1,17 +1,17 @@
 
 # SF6 pipeline report
 
-**24850 matches** parsed from 34387 uploads across 7 channels, plus 1065 from 1 index · 2343 players · ranked sides 21815/49700 (43.9%)
+**24862 matches** parsed from 34400 uploads across 7 channels, plus 1065 from 1 index · 2344 players · ranked sides 21828/49724 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | highLevel | highLevel | 5877 | 5877 | 5862 | 99.7% | 11310 |
-| fgcPlace | fgcPlace | 10118 | 9126 | 8941 | 98.0% | 10505 |
-| sfReplays | sfReplays | 7256 | 6257 | 5674 | 90.7% | 0 |
+| fgcPlace | fgcPlace | 10125 | 9133 | 8948 | 98.0% | 10518 |
+| sfReplays | sfReplays | 7261 | 6262 | 5679 | 90.7% | 0 |
 | capcomFighters | capcomFighters | 8198 | 1804 | 1143 | 63.4% | 0 |
 | evoEvents | evoEvents | 2775 | 155 | 81 | 52.3% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
-| superFighters | superFighters | 163 | 162 | 54 | 33.3% | 0 |
+| superFighters | superFighters | 164 | 163 | 54 | 33.1% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
 
 ### Index intakes
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1058
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1070
 
-Rank distribution (side appearances): Legend 19381 · Master 2420 · Diamond 14
+Rank distribution (side appearances): Legend 19394 · Master 2420 · Diamond 14
 
-Misses by reason: not-sf6 11006 · no-vs-title 1007 · shorts 214 · char-unresolved 122 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 4
+Misses by reason: not-sf6 11006 · no-vs-title 1009 · shorts 214 · char-unresolved 122 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 3
 
 ## Replay Theater cross-check
 
@@ -70,6 +70,30 @@ character disagreement.
 - `z7HBGS7BnEQ` side 1 characters: **mai** vs catalogue **chunli** — SF6 🔥 RYUKICHI (Ken) vs MOKE (Mai) 🔥 Street Fighter 6 High Level Gam
 - `SPfYssZSehc` side 1 characters: **marisa** vs catalogue **zangief** — SF6 🔥 Angrybird (Ken) vs Itazan (Marisa) 🔥 Street Fighter 6
 - `Tax1cqHXuWo` side 1 characters: **juri** vs catalogue **cammy** — SF6 🔥 Daigo (Ken) vs Mago (Juri) 🔥 Street Fighter 6
+
+## Tournament placements — Liquipedia Tier 1–2, CC BY-SA 3.0
+
+246 events with placements read; 179 of 2344 registry players carry a title (232 wins). 26 placed names are not in the registry yet — they are featured the day a replay of theirs is ingested, unless listed below as needing a human.
+
+**Titled:** `menard` 11W/3R · `punk` 7W/7R · `ending-walker` 5W/5R · `big-bird` 7W/1R · `dual-kevin` 4W/4R · `kakeru` 5W/3R · `kusanagi` 3W/5R · `nephew` 3W/5R · `noahtheprodigy` 4W/4R · `angrybird` 4W/3R · `caba` 5W/2R · `dingchunqiu` 3W/4R · `mister-crimson` 5W/2R · `nuckledu` 5W/2R · `xiaohai` 5W/2R · `chris-wong` 1W/5R · `gachikun` 5W/1R · `leshar` 5W/1R · `lugabo` 4W/2R · `problem-x` 1W/5R · `uriel-velorio` 3W/3R · `blaz` 2W/3R · `higuchi` 2W/3R · `hurricane` 2W/3R · `notpedro` 1W/4R · `tokido` 4W/1R · `vxbao` 3W/2R · `bravery` 1W/3R · `brayan-job` 3W/1R · `bryan-d` 1W/3R · `fuudo` 4W/0R · `gama` 0W/4R · `idom` 2W/2R · `jabhim` 4W/0R · `shine` 2W/2R · `takamura` 2W/2R · `xian` 4W/0R · `zhen` 1W/3R · `akainu` 1W/2R · `armperor` 1W/2R · `craime` 1W/2R · `hinao` 2W/1R · `hotdog29` 2W/1R · `juicyjoe` 2W/1R · `justakid` 2W/1R · `kilzyou` 1W/2R · `kintyo` 2W/1R · `kobayan` 3W/0R · `moke` 1W/2R · `nychrisg` 1W/2R · `oil-king` 2W/1R · `phenom` 2W/1R · `sahara` 2W/1R · `sayff` 2W/1R · `shaka22` 2W/1R · `si-anik` 2W/1R · `travis-styles` 2W/1R · `uma` 2W/1R · `zangief-bolado` 1W/2R · `arma` 1W/1R · `bloo` 1W/1R · `bonchan` 1W/1R · `booce` 0W/2R · `broski` 1W/1R · `chris-tatarian` 1W/1R · `cosa` 0W/2R · `crossover` 1W/1R · `deiver` 2W/0R · `destroygodz` 1W/1R · `dookie` 1W/1R · `fluxwavez` 0W/2R · `freeser` 0W/2R · `garnet` 1W/1R · `gghalibel` 2W/0R · `go1` 1W/1R · `hibiki` 0W/2R · `itazan` 1W/1R · `joe-umerogan` 1W/1R · `jojotaro` 1W/1R · `juninho-ras` 2W/0R · `kawano` 1W/1R · `krown` 0W/2R · `kyuki` 1W/1R · `latif` 2W/0R · `marktheshark` 0W/2R · `micky` 0W/2R · `momochi` 0W/2R · `orarin` 2W/0R · `rainpro` 1W/1R · `rikemansbarnet` 1W/1R · `rof` 2W/0R · `ryukichi` 0W/2R · `s4ltykid` 1W/1R · `samoel` 1W/1R · `seo` 0W/2R · `snake-eyez` 1W/1R · `torimeshi` 0W/2R · `yamaguchi` 1W/1R · `abood-bboy` 0W/1R · `ajax-fidelity` 1W/0R · `akira` 1W/0R · `akutagawa` 0W/1R · `alphen` 0W/1R · `anunnaki` 0W/1R · `b3llz` 0W/1R · `baadshah-miya` 0W/1R · `bananaken` 0W/1R · `beslem` 0W/1R · `brandon` 0W/1R · `brian-f` 1W/0R · `brolynho` 1W/0R · `dakcorgi` 1W/0R · `despairking` 1W/0R · `dragon-legend` 0W/1R · `elchakotay` 1W/0R · `exe` 0W/1R · `fandroid` 0W/1R · `flashmetroid` 0W/1R · `gtr` 0W/1R · `gutsboom` 0W/1R · `hamad` 0W/1R · `hamood` 0W/1R · `harumi` 1W/0R · `hikaru` 0W/1R · `iamchuan` 0W/1R · `imstilldadaddy` 0W/1R · `jaccy` 0W/1R · `jiewa` 1W/0R · `joey` 0W/1R · `kami` 0W/1R · `kayne` 1W/0R · `kazunoko` 0W/1R · `keoma` 0W/1R · `kingsvega` 0W/1R · `libbro` 0W/1R · `limestone` 1W/0R · `lionheart` 0W/1R · `mikex` 1W/0R · `mimam` 0W/1R · `mindrpg` 0W/1R · `mysticsmash` 1W/0R · `naji` 0W/1R · `namikazeextm` 1W/0R · `narikun` 1W/0R · `nerotheboxer` 1W/0R · `otani` 0W/1R · `owaechan` 0W/1R · `popi` 0W/1R · `pugera` 0W/1R · `qiuqiu` 1W/0R · `raihan` 1W/0R · `railgun` 0W/1R · `randumb` 0W/1R · `ren` 0W/1R · `reynald` 0W/1R · `riddles` 1W/0R · `ronaldinhobr` 0W/1R · `salvatore` 1W/0R · `semy28` 0W/1R · `shakz` 1W/0R · `shigematsu` 0W/1R · `shuto` 1W/0R · `slice` 0W/1R · `sole` 1W/0R · `solvng` 1W/0R · `sonicfox` 1W/0R · `stealth` 1W/0R · `surini` 0W/1R · `tachikawa` 0W/1R · `tako956402` 0W/1R · `tomoecunha` 0W/1R · `valmaster` 1W/0R · `vegapatch` 0W/1R · `wfalcon` 0W/1R · `xerna` 1W/0R · `xiaozhai` 0W/1R · `yhc-mochi` 0W/1R · `yonangel` 1W/0R · `zjz` 1W/0R
+
+**Need a human** (data/tournament-aliases.json — an id, or `null` to ignore):
+
+- `JB` (page JB) — too-short: under three alphanumerics — add an alias row to confirm; 3 title(s), latest CPT 2024 World Warrior: US-Canada West Regional Final
+- `Jr.` (page Jr.) — too-short: under three alphanumerics — add an alias row to confirm; 1 title(s), latest Topanga Championship 6 Open Qualifier Finals
+- `NL` (page NL) — too-short: under three alphanumerics — add an alias row to confirm; 3 title(s), latest CEO 2025
+
+**Weak matches** (short display-name key — confirm or `null` them):
+
+- `Bloo` → `bloo` via name
+- `cosa` → `cosa` via name
+- `Krown` → `krown` via name
+- `Libbro` → `libbro` via name
+- `Ren` → `ren` via name
+- `UMA` → `uma` via name
+- `Zhen` → `zhen` via name
+
+**Waiting for footage** (23): DARK, Darkdes, DARLAN, Deadeye ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, Dudesickle06 ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, GranTODAKAI.EX, ITK, Leeito94 ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, M.Lizard, Maximof, MEA_MB ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, Myrken, Nate Banks ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, og_killakam ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, Plaster King, RB, Shadoken, Shimiso ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, SICKLE ⁽ⁿᵒ ᵖᵃᵍᵉ⁾, Taloobreaker, Tashi, Tw_aze, White-AshX
 
 ## Sample misses (first 30 that are not shorts/live/not-sf6)
 
@@ -104,4 +128,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-10-01T14:36:01.490Z_
+_Generated 2026-10-02T13:55:31.908Z_

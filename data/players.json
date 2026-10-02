@@ -109,7 +109,18 @@
   },
   {
     "id": "abood-bboy",
-    "handle": "Abood bboy"
+    "handle": "Abood bboy",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Middle East Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Middle_East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "abuyoshi",
@@ -205,11 +216,45 @@
   },
   {
     "id": "ajax-fidelity",
-    "handle": "Ajax Fidelity"
+    "handle": "Ajax Fidelity",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "First Attack 2023",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/First_Attack/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "akainu",
-    "handle": "Akainu"
+    "handle": "Akainu",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Red Bull Kumite 2025 Last Chance Qualifier",
+          "place": 1,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025/Last_Chance_Qualifier"
+        },
+        {
+          "event": "Brussels Challenge Major Edition 2023",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2023/Major_Edition/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2023",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa"
+        }
+      ]
+    }
   },
   {
     "id": "akajoness",
@@ -245,7 +290,18 @@
   },
   {
     "id": "akira",
-    "handle": "Akira"
+    "handle": "Akira",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Topanga Championship 7 Open Qualifier Finals",
+          "place": 1,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/7/Open_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "akiramezzo",
@@ -269,7 +325,18 @@
   },
   {
     "id": "akutagawa",
-    "handle": "Akutagawa"
+    "handle": "Akutagawa",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GRAPHT CUP 2026",
+          "place": 2,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/GRAPHT_CUP/2026"
+        }
+      ]
+    }
   },
   {
     "id": "akutakawa",
@@ -333,7 +400,18 @@
   },
   {
     "id": "alphen",
-    "handle": "Alphen"
+    "handle": "Alphen",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: France-Monaco Regional Final",
+          "place": 2,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/France-Monaco/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "alywgpd",
@@ -398,7 +476,53 @@
   {
     "id": "angrybird",
     "handle": "Angrybird",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Middle East Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Middle_East/Regional_Final"
+        },
+        {
+          "event": "The MIXUP 2024",
+          "place": 1,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/The_MIXUP/2024/SF6"
+        },
+        {
+          "event": "FAV CUP 2023",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/FAV_CUP/2023/Singles"
+        },
+        {
+          "event": "CPT 2023 Online Event: Middle East",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/Middle_East"
+        },
+        {
+          "event": "Evolution Championship Series 2023",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2023/SF6"
+        },
+        {
+          "event": "Gamers8 2023",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Gamers8/2023/SF6"
+        },
+        {
+          "event": "Slash N Dash Emirates Showdown",
+          "place": 2,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Slash_N_Dash_Emirates_Showdown/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "anna",
@@ -410,7 +534,18 @@
   },
   {
     "id": "anunnaki",
-    "handle": "Anunnaki"
+    "handle": "Anunnaki",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: South America West Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "anzunyan",
@@ -478,11 +613,51 @@
   },
   {
     "id": "arma",
-    "handle": "Arma"
+    "handle": "Arma",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Central America West Regional Final",
+          "place": 1,
+          "date": "2025-10-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Central_America/West/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Central America West Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Central_America/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "armperor",
-    "handle": "Armperor"
+    "handle": "Armperor",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Kings of the World",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Kings_of_the_World/2024"
+        },
+        {
+          "event": "CPT 2024 World Warrior: South Korea Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/South_Korea/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: South Korea Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/South_Korea/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "arthuro-ray",
@@ -590,11 +765,33 @@
   },
   {
     "id": "b3llz",
-    "handle": "b3lLz"
+    "handle": "b3lLz",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Thaiger Uppercut 2024",
+          "place": 2,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/Thaiger_Uppercut/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "baadshah-miya",
-    "handle": "Baadshah Miya"
+    "handle": "Baadshah Miya",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Asia South Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/South/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "babaaaa",
@@ -626,7 +823,18 @@
   },
   {
     "id": "bananaken",
-    "handle": "BananaKen"
+    "handle": "BananaKen",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: North America East",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/East"
+        }
+      ]
+    }
   },
   {
     "id": "bananauyuu",
@@ -710,7 +918,18 @@
   },
   {
     "id": "beslem",
-    "handle": "Beslem"
+    "handle": "Beslem",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "The MIXUP 2026",
+          "place": 2,
+          "date": "2026-06-26",
+          "url": "https://liquipedia.net/fighters/The_MIXUP/2026/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "besulemu",
@@ -727,7 +946,59 @@
   {
     "id": "big-bird",
     "handle": "Big Bird",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Middle East Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Middle_East/Regional_Final"
+        },
+        {
+          "event": "Red Bull Kumite 2025",
+          "place": 1,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025"
+        },
+        {
+          "event": "Evolution Championship Series 2024",
+          "place": 2,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2024/SF6"
+        },
+        {
+          "event": "DreamHack Summer 2024",
+          "place": 1,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/DreamHack/2024/Summer/SF6"
+        },
+        {
+          "event": "CPT 2023 Online Event: Middle East",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/Middle_East"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Middle East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Middle_East/Regional_Final"
+        },
+        {
+          "event": "Red Bull Kumite 2023",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa"
+        },
+        {
+          "event": "Slash N Dash Emirates Showdown",
+          "place": 1,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Slash_N_Dash_Emirates_Showdown/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "big-mo",
@@ -792,7 +1063,41 @@
   {
     "id": "blaz",
     "handle": "Blaz",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GTW 2026 New Year Championship",
+          "place": 1,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/GTW/2026/New_Year_Championship/SF6"
+        },
+        {
+          "event": "Evolution Championship Series: France 2025",
+          "place": 2,
+          "date": "2025-10-25",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/France/SF6"
+        },
+        {
+          "event": "Esports World Cup 2025",
+          "place": 2,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2025/SF6"
+        },
+        {
+          "event": "Capcom Cup 11",
+          "place": 2,
+          "date": "2025-03-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/11"
+        },
+        {
+          "event": "2Game Pro Tour LATAM Finals",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/2Game_Pro_Tour_LATAM/Finals/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "blaz11",
@@ -812,7 +1117,24 @@
   },
   {
     "id": "bloo",
-    "handle": "Bloo"
+    "handle": "Bloo",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Frosty Faustings XVIII",
+          "place": 1,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/Frosty_Faustings/2026/SF6"
+        },
+        {
+          "event": "DreamHack Atlanta 2025",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/DreamHack/2025/Atlanta/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "bloodsong",
@@ -853,7 +1175,23 @@
   {
     "id": "bonchan",
     "handle": "Bonchan",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Brussels Challenge Major Edition 2025",
+          "place": 1,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2025/Major_Edition/SF6"
+        },
+        {
+          "event": "DreamHack Summer 2024",
+          "place": 2,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/DreamHack/2024/Summer/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "bongi",
@@ -861,7 +1199,24 @@
   },
   {
     "id": "booce",
-    "handle": "Booce"
+    "handle": "Booce",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CEO 2026",
+          "place": 2,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2026/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: US-Canada East Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "booce-lee",
@@ -885,7 +1240,18 @@
   },
   {
     "id": "brandon",
-    "handle": "Brandon"
+    "handle": "Brandon",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Asia Southeast Regional Final",
+          "place": 2,
+          "date": "2025-12-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Southeast/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "brandongouki",
@@ -893,11 +1259,69 @@
   },
   {
     "id": "bravery",
-    "handle": "Bravery"
+    "handle": "Bravery",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Asia Southeast Regional Final",
+          "place": 1,
+          "date": "2025-12-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Southeast/Regional_Final"
+        },
+        {
+          "event": "Douyu SF6 Master Open",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Douyu_SF6_Master_Open"
+        },
+        {
+          "event": "CPT 2023 Online Event: Asia Southeast",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/Southeast"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Asia Southeast Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Southeast/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "brayan-job",
-    "handle": "Brayan_Job"
+    "handle": "Brayan_Job",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Komitê Arena 2026",
+          "place": 1,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Komit%C3%AA_Arena/2026/SF6"
+        },
+        {
+          "event": "Comitê Arena 2025",
+          "place": 1,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2025/SF6"
+        },
+        {
+          "event": "Comitê Arena 2024",
+          "place": 1,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2024/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Brazil Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/Brazil/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "breeze",
@@ -905,7 +1329,18 @@
   },
   {
     "id": "brian-f",
-    "handle": "Brian F"
+    "handle": "Brian F",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Texas Showdown 2024",
+          "place": 1,
+          "date": "2024-04-24",
+          "url": "https://liquipedia.net/fighters/Texas_Showdown/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "brito",
@@ -925,12 +1360,39 @@
   },
   {
     "id": "brolynho",
-    "handle": "Brolynho"
+    "handle": "Brolynho",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Coliseum 2024",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Battle_Coliseum/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "broski",
     "handle": "Broski",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "VSFighting XIV",
+          "place": 2,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/VSFighting/2026/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: UK-Ireland Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/UK-Ireland/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "brothermen",
@@ -950,7 +1412,36 @@
   },
   {
     "id": "bryan-d",
-    "handle": "Bryan-D"
+    "handle": "Bryan-D",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Central America East Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Central_America/East/Regional_Final"
+        },
+        {
+          "event": "Global Esports Games 2023 - Riyadh",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Global_Esports_Games/2023/Riyadh"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Central America East Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Central_America/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: Central America East",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Central_America/East"
+        }
+      ]
+    }
   },
   {
     "id": "bryan-job",
@@ -1002,7 +1493,54 @@
   },
   {
     "id": "caba",
-    "handle": "Caba"
+    "handle": "Caba",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Frosty Faustings XVIII",
+          "place": 2,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/Frosty_Faustings/2026/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Central America East Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Central_America/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Central America East Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Central_America/East/Regional_Final"
+        },
+        {
+          "event": "Blink Respawn 2023",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2023/SF6"
+        },
+        {
+          "event": "CPT 2023 Online Event: Central America East",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Central_America/East"
+        },
+        {
+          "event": "Heat Wave 2023",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Heat_Wave/2023"
+        },
+        {
+          "event": "Defend the North 2023",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Defend_the_North/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "cabroweno",
@@ -1218,7 +1756,24 @@
   },
   {
     "id": "chris-tatarian",
-    "handle": "Chris Tatarian"
+    "handle": "Chris Tatarian",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: US-Canada West Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_West/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: US West Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "chris-tattarian",
@@ -1231,7 +1786,47 @@
   {
     "id": "chris-wong",
     "handle": "Chris Wong",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Fight Club Arena 2024",
+          "place": 2,
+          "date": "2024-05-24",
+          "url": "https://liquipedia.net/fighters/Fight_Club_Arena/2024"
+        },
+        {
+          "event": "Capcom Cup X",
+          "place": 2,
+          "date": "2024-02-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/10"
+        },
+        {
+          "event": "CPT 2023: France Offline",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/France_Offline"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Asia East Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023: Singapore Offline",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Singapore_Offline"
+        },
+        {
+          "event": "CPT 2023 Online Event: Asia East",
+          "place": 2,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/East"
+        }
+      ]
+    }
   },
   {
     "id": "chriscch",
@@ -1363,7 +1958,24 @@
   },
   {
     "id": "cosa",
-    "handle": "Cosa"
+    "handle": "Cosa",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Arena Melbourne 16",
+          "place": 2,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/16/SF6"
+        },
+        {
+          "event": "Topanga Championship 5 Open Qualifier Finals",
+          "place": 2,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/5/Open_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "cosazeku",
@@ -1415,7 +2027,30 @@
   },
   {
     "id": "craime",
-    "handle": "Craime"
+    "handle": "Craime",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Esports World Cup 2026",
+          "place": 1,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2026/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: South America East Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/East/Regional_Final"
+        },
+        {
+          "event": "First Attack 2025",
+          "place": 2,
+          "date": "2025-10-25",
+          "url": "https://liquipedia.net/fighters/First_Attack/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "crank",
@@ -1455,7 +2090,24 @@
   },
   {
     "id": "crossover",
-    "handle": "Crossover"
+    "handle": "Crossover",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Central America East Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Central_America/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Central America East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Central_America/East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "crossoverrd",
@@ -1564,7 +2216,18 @@
   },
   {
     "id": "dakcorgi",
-    "handle": "DakCorgi"
+    "handle": "DakCorgi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: South Korea Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/South_Korea/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "dakou",
@@ -1676,7 +2339,24 @@
   },
   {
     "id": "deiver",
-    "handle": "Deiver"
+    "handle": "Deiver",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Spain-Portugal Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/Spain-Portugal/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Spain-Portugal Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/Spain-Portugal/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "delish",
@@ -1696,11 +2376,39 @@
   },
   {
     "id": "despairking",
-    "handle": "DespairKing"
+    "handle": "DespairKing",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: China Regional Final",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/China/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "destroygodz",
-    "handle": "DestroyGodz"
+    "handle": "DestroyGodz",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Central America West Regional Final",
+          "place": 2,
+          "date": "2025-10-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Central_America/West/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Central America West Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Central_America/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "devdev",
@@ -1744,7 +2452,54 @@
   },
   {
     "id": "dingchunqiu",
-    "handle": "DingChunQiu"
+    "handle": "DingChunQiu",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GTW 2026 New Year Launch Tournament",
+          "place": 1,
+          "date": "2025-12-25",
+          "url": "https://liquipedia.net/fighters/GTW/2026/New_Year_Launch_Tournament/Main_Event"
+        },
+        {
+          "event": "CPT 2024 World Warrior: China Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/China/Regional_Final"
+        },
+        {
+          "event": "CEO 2024",
+          "place": 2,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2024/SF6"
+        },
+        {
+          "event": "GTW 2023 Finals",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/GTW/2023/Finals/SF6/Main_Event"
+        },
+        {
+          "event": "Esports Shanghai Masters 2023",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Esports_Shanghai_Masters/2023"
+        },
+        {
+          "event": "CPT 2023 Online Event: Asia",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/China"
+        },
+        {
+          "event": "FightClub Championship IV",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/FightClub_Championship/4"
+        }
+      ]
+    }
   },
   {
     "id": "dino",
@@ -1797,7 +2552,24 @@
   },
   {
     "id": "dookie",
-    "handle": "Dookie"
+    "handle": "Dookie",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: South America East Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: South America West",
+          "place": 1,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/South_America/West"
+        }
+      ]
+    }
   },
   {
     "id": "dosuko",
@@ -1829,7 +2601,18 @@
   },
   {
     "id": "dragon-legend",
-    "handle": "DRAGON LEGEND"
+    "handle": "DRAGON LEGEND",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Comitê Arena 2024",
+          "place": 2,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "drdannypham",
@@ -1889,7 +2672,60 @@
   },
   {
     "id": "dual-kevin",
-    "handle": "Dual Kevin"
+    "handle": "Dual Kevin",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Esports World Cup 2026 Last Chance Qualifier",
+          "place": 1,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2026/SF6/Last_Chance_Qualifier"
+        },
+        {
+          "event": "S Factor 12",
+          "place": 1,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/S_Factor/12/SF6"
+        },
+        {
+          "event": "Frosty Faustings XVII",
+          "place": 2,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Frosty_Faustings/2025/SF6"
+        },
+        {
+          "event": "Blink Respawn 2024",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2024/SF6"
+        },
+        {
+          "event": "Cream City Convergence 2024",
+          "place": 2,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Cream_City_Convergence/2024/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2024 Last Chance Qualifier",
+          "place": 1,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York/Last_Chance_Qualifier"
+        },
+        {
+          "event": "Frosty Faustings XVI",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Frosty_Faustings/2024/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: US Midwest Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_Midwest/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "duckrobin",
@@ -1977,7 +2813,18 @@
   },
   {
     "id": "elchakotay",
-    "handle": "ElChakotay"
+    "handle": "ElChakotay",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Combo Breaker 2024",
+          "place": 1,
+          "date": "2024-05-24",
+          "url": "https://liquipedia.net/fighters/Combo_Breaker/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "elder-tong",
@@ -2054,7 +2901,71 @@
   {
     "id": "ending-walker",
     "handle": "Ending Walker",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: UK-Ireland Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/UK-Ireland/Regional_Final"
+        },
+        {
+          "event": "Saudi eLeague Fighting: Season 3 Major",
+          "place": 1,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_3/Major/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2025",
+          "place": 2,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025"
+        },
+        {
+          "event": "CPT 2024 World Warrior: UK-Ireland Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/UK-Ireland/Regional_Final"
+        },
+        {
+          "event": "VSFighting XII",
+          "place": 1,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/VSFighting/2024/SF6"
+        },
+        {
+          "event": "Brussels Challenge Major Edition 2024",
+          "place": 1,
+          "date": "2024-05-24",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2024/Major_Edition/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: UK-Ireland Regional Final",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/UK-Ireland/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: UK-Ireland",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/UK-Ireland"
+        },
+        {
+          "event": "Ultimate Fighting Arena 2023",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2023/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2023 Last Chance Qualifier",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "ending-walker-xuses",
@@ -2138,7 +3049,18 @@
   },
   {
     "id": "exe",
-    "handle": "EXE"
+    "handle": "EXE",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: Europe West",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/West"
+        }
+      ]
+    }
   },
   {
     "id": "eyoko",
@@ -2182,7 +3104,18 @@
   },
   {
     "id": "fandroid",
-    "handle": "Fandroid"
+    "handle": "Fandroid",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Middle East Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Middle_East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "fang",
@@ -2298,7 +3231,18 @@
   },
   {
     "id": "flashmetroid",
-    "handle": "FlashMetroid"
+    "handle": "FlashMetroid",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: US Midwest Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_Midwest/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "flashnoa",
@@ -2306,7 +3250,24 @@
   },
   {
     "id": "fluxwavez",
-    "handle": "FluxWaveZ"
+    "handle": "FluxWaveZ",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Canada East Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_East/Regional_Final"
+        },
+        {
+          "event": "CNE Gaming Garage",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/CNE_Gaming_Garage/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "fluzii",
@@ -2346,7 +3307,24 @@
   },
   {
     "id": "freeser",
-    "handle": "Freeser"
+    "handle": "Freeser",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Oceania Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Oceania/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Oceania Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Oceania/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "freeter",
@@ -2423,7 +3401,35 @@
   {
     "id": "fuudo",
     "handle": "Fuudo",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Blink Respawn 2025",
+          "place": 1,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2025/SF6"
+        },
+        {
+          "event": "Topanga Championship 6",
+          "place": 1,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Japan Regional Final",
+          "place": 1,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Japan/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Japan Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Japan/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "g8s-gachikun",
@@ -2436,7 +3442,47 @@
   {
     "id": "gachikun",
     "handle": "Gachikun",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "DreamHack Birmingham 2026",
+          "place": 1,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/DreamHack/2026/Birmingham/SF6"
+        },
+        {
+          "event": "DreamHack Dallas 2024",
+          "place": 1,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/DreamHack/2024/Dallas/SF6"
+        },
+        {
+          "event": "Keio Cup",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Keio_Cup/2024"
+        },
+        {
+          "event": "GES Asia Fighter's Week 2023",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/GES_Asia_Fighter's_Week/2023/SF6"
+        },
+        {
+          "event": "FAV CUP 2023 Open Qualifier",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/FAV_CUP/2023/Singles/Open_Qualifier"
+        },
+        {
+          "event": "CPT 2023: Singapore Offline",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Singapore_Offline"
+        }
+      ]
+    }
   },
   {
     "id": "gagachan",
@@ -2456,7 +3502,36 @@
   },
   {
     "id": "gama",
-    "handle": "GAMA"
+    "handle": "GAMA",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "S Factor X3",
+          "place": 2,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/S_Factor/13/SF6"
+        },
+        {
+          "event": "Astral Finish 2025",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Astral_Finish/2025/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Mexico Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Mexico/Regional_Final"
+        },
+        {
+          "event": "Astral Finish 2024",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Astral_Finish/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "gamein",
@@ -2496,7 +3571,24 @@
   },
   {
     "id": "garnet",
-    "handle": "Garnet"
+    "handle": "Garnet",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Europe West Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/West/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: Europe West",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/West"
+        }
+      ]
+    }
   },
   {
     "id": "gasman",
@@ -2536,7 +3628,24 @@
   },
   {
     "id": "gghalibel",
-    "handle": "GGhalibel"
+    "handle": "GGhalibel",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Germany Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/Germany/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Germany Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/Germany/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "ghostchips",
@@ -2569,7 +3678,23 @@
   {
     "id": "go1",
     "handle": "Go1",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GENESIS X3",
+          "place": 1,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/GENESIS/X3/SF6"
+        },
+        {
+          "event": "Brussels Challenge Major Edition 2025",
+          "place": 2,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2025/Major_Edition/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "goal",
@@ -2693,7 +3818,18 @@
   },
   {
     "id": "gtr",
-    "handle": "Gtr"
+    "handle": "Gtr",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GCC League 2025",
+          "place": 2,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/GCC_League/2025"
+        }
+      ]
+    }
   },
   {
     "id": "gumius",
@@ -2717,7 +3853,18 @@
   },
   {
     "id": "gutsboom",
-    "handle": "GutsBoom"
+    "handle": "GutsBoom",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "BeePro Cup 2024",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/BeePro_Cup/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "guttermagic",
@@ -2798,7 +3945,18 @@
   },
   {
     "id": "hamad",
-    "handle": "Hamad"
+    "handle": "Hamad",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Texas Showdown 2025",
+          "place": 2,
+          "date": "2025-03-25",
+          "url": "https://liquipedia.net/fighters/Texas_Showdown/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "hameko",
@@ -2810,7 +3968,18 @@
   },
   {
     "id": "hamood",
-    "handle": "Hamood"
+    "handle": "Hamood",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Middle East Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Middle_East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "hand-me-downs",
@@ -2854,7 +4023,18 @@
   },
   {
     "id": "harumi",
-    "handle": "Harumi"
+    "handle": "Harumi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GRAPHT CUP 2025",
+          "place": 1,
+          "date": "2025-09-25",
+          "url": "https://liquipedia.net/fighters/GRAPHT_CUP/2025"
+        }
+      ]
+    }
   },
   {
     "id": "harumy",
@@ -2954,7 +4134,24 @@
   },
   {
     "id": "hibiki",
-    "handle": "Hibiki"
+    "handle": "Hibiki",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Esports World Cup 2026",
+          "place": 2,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2026/SF6"
+        },
+        {
+          "event": "Esports World Cup 2026 Last Chance Qualifier",
+          "place": 2,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2026/SF6/Last_Chance_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "hibikithebeast",
@@ -2987,7 +4184,41 @@
   {
     "id": "higuchi",
     "handle": "Higuchi",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Ultimate Fighting Arena 2026",
+          "place": 2,
+          "date": "2026-09-26",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2026/SF6"
+        },
+        {
+          "event": "Topanga Championship 7",
+          "place": 2,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/7"
+        },
+        {
+          "event": "Asian Champions League 2025",
+          "place": 2,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Asian_Champions_League/2025"
+        },
+        {
+          "event": "Red Bull Kumite 2025 Play-In",
+          "place": 1,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025/Play-In"
+        },
+        {
+          "event": "Beast Cup -Tokyo-",
+          "place": 1,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Beast_Cup/2024/Tokyo"
+        }
+      ]
+    }
   },
   {
     "id": "higuchi-kazunoko",
@@ -3003,7 +4234,18 @@
   },
   {
     "id": "hikaru",
-    "handle": "Hikaru"
+    "handle": "Hikaru",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Esports World Cup 2025 Last Chance Qualifier",
+          "place": 2,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2025/SF6/Last_Chance_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "hikaru-shiftne",
@@ -3019,7 +4261,30 @@
   },
   {
     "id": "hinao",
-    "handle": "Hinao"
+    "handle": "Hinao",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Arena Melbourne 16",
+          "place": 1,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/16/SF6"
+        },
+        {
+          "event": "Combo Breaker 2026",
+          "place": 2,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Combo_Breaker/2026/SF6"
+        },
+        {
+          "event": "FightClub Championship VI Chengdu",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/FightClub_Championship/6/Chengdu"
+        }
+      ]
+    }
   },
   {
     "id": "hint",
@@ -3120,7 +4385,29 @@
   {
     "id": "hotdog29",
     "handle": "HotDog29",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Asia East Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Asia East Regional Final",
+          "place": 1,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/East/Regional_Final"
+        },
+        {
+          "event": "FightClub Championship V",
+          "place": 2,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/FightClub_Championship/5/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "houka",
@@ -3164,7 +4451,42 @@
   },
   {
     "id": "hurricane",
-    "handle": "Hurricane"
+    "handle": "Hurricane",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: South Africa Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_Africa/Regional_Final"
+        },
+        {
+          "event": "Esports World Cup 2025 Last Chance Qualifier",
+          "place": 1,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2025/SF6/Last_Chance_Qualifier"
+        },
+        {
+          "event": "VSFighting XII",
+          "place": 2,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/VSFighting/2024/SF6"
+        },
+        {
+          "event": "EGX Arena 2023",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/EGX/2023/SF6"
+        },
+        {
+          "event": "VSFighting XI",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/VSFighting/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "hydramine",
@@ -3192,7 +4514,18 @@
   },
   {
     "id": "iamchuan",
-    "handle": "IamChuan"
+    "handle": "IamChuan",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Global Esports Games 2023 - Riyadh",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Global_Esports_Games/2023/Riyadh"
+        }
+      ]
+    }
   },
   {
     "id": "ian",
@@ -3237,7 +4570,35 @@
   {
     "id": "idom",
     "handle": "iDom",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "LVL UP EXPO 2025",
+          "place": 2,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2025/SF6"
+        },
+        {
+          "event": "GENESIS X2",
+          "place": 1,
+          "date": "2025-02-25",
+          "url": "https://liquipedia.net/fighters/GENESIS/X2/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: US-Canada East Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_East/Regional_Final"
+        },
+        {
+          "event": "East Coast Throwdown 2024",
+          "place": 2,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/East_Coast_Throwdown/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "ihelani",
@@ -3281,7 +4642,18 @@
   },
   {
     "id": "imstilldadaddy",
-    "handle": "Imstilldadaddy"
+    "handle": "Imstilldadaddy",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "VSFighting XIII",
+          "place": 2,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/VSFighting/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "imstilldaddy",
@@ -3382,7 +4754,23 @@
   {
     "id": "itazan",
     "handle": "Itazan",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Combo Breaker 2025",
+          "place": 2,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Combo_Breaker/2025/SF6"
+        },
+        {
+          "event": "East Coast Throwdown 2024",
+          "place": 1,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/East_Coast_Throwdown/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "itazan-kichipa",
@@ -3458,7 +4846,36 @@
   },
   {
     "id": "jabhim",
-    "handle": "JabhiM"
+    "handle": "JabhiM",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: South Africa Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_Africa/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: South Africa Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_Africa/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: South Africa Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_Africa/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: South Africa",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/South_Africa"
+        }
+      ]
+    }
   },
   {
     "id": "jac",
@@ -3466,7 +4883,18 @@
   },
   {
     "id": "jaccy",
-    "handle": "Jaccy"
+    "handle": "Jaccy",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Arena Tokushima 2024",
+          "place": 2,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Tokushima/2024"
+        }
+      ]
+    }
   },
   {
     "id": "jack",
@@ -3598,7 +5026,18 @@
   },
   {
     "id": "jiewa",
-    "handle": "Jiewa"
+    "handle": "Jiewa",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: China Regional Final",
+          "place": 1,
+          "date": "2025-12-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/China/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "jig-kishiri",
@@ -3642,7 +5081,24 @@
   },
   {
     "id": "joe-umerogan",
-    "handle": "Joe Umerogan"
+    "handle": "Joe Umerogan",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: North America Midwest",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/Midwest"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Canada East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "joefgc",
@@ -3650,7 +5106,18 @@
   },
   {
     "id": "joey",
-    "handle": "Joey"
+    "handle": "Joey",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: US Midwest Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_Midwest/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "joeyangho",
@@ -3690,7 +5157,24 @@
   },
   {
     "id": "jojotaro",
-    "handle": "Jojotaro"
+    "handle": "Jojotaro",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "FightClub Championship VI Chengdu",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/FightClub_Championship/6/Chengdu"
+        },
+        {
+          "event": "Thaiger Uppercut 2024",
+          "place": 1,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/Thaiger_Uppercut/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "joka",
@@ -3750,7 +5234,30 @@
   },
   {
     "id": "juicyjoe",
-    "handle": "Juicyjoe"
+    "handle": "Juicyjoe",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Europe North-East Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/North-East/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Europe North-East Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/North-East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: Europe North-East",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/North-East"
+        }
+      ]
+    }
   },
   {
     "id": "julio-fuentes",
@@ -3778,7 +5285,24 @@
   },
   {
     "id": "juninho-ras",
-    "handle": "Juninho-Ras"
+    "handle": "Juninho-Ras",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Coliseum 2023",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Battle_Coliseum/2023/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Brazil Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/Brazil/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "junior",
@@ -3794,7 +5318,30 @@
   },
   {
     "id": "justakid",
-    "handle": "Justakid"
+    "handle": "Justakid",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: US Midwest Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_Midwest/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: US-Canada Midwest Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_Midwest/Regional_Final"
+        },
+        {
+          "event": "First Attack 2023",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/First_Attack/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "justfog",
@@ -3855,7 +5402,59 @@
   {
     "id": "kakeru",
     "handle": "Kakeru",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Evolution Championship Series 2025",
+          "place": 2,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/SF6"
+        },
+        {
+          "event": "Capcom Cup 11",
+          "place": 1,
+          "date": "2025-03-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/11"
+        },
+        {
+          "event": "Topanga Championship 5",
+          "place": 2,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/5"
+        },
+        {
+          "event": "Evolution Championship Series: Japan 2024",
+          "place": 2,
+          "date": "2024-04-24",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2024/Japan/SF6"
+        },
+        {
+          "event": "Blink Respawn 2023",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2023/SF6"
+        },
+        {
+          "event": "Gamers8 2023",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Gamers8/2023/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2023 Last Chance Qualifier",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier"
+        },
+        {
+          "event": "Red Bull Kumite 2023 LCQ Japan Qualifier",
+          "place": 1,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier/Japan_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "kakeru-tokido",
@@ -3879,7 +5478,18 @@
   },
   {
     "id": "kami",
-    "handle": "Kami"
+    "handle": "Kami",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: US-Canada East Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "kamiki",
@@ -3972,7 +5582,23 @@
   {
     "id": "kawano",
     "handle": "Kawano",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Esports World Cup 2024",
+          "place": 2,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2024/SF6"
+        },
+        {
+          "event": "CPT 2023 Online Event: Japan",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/Japan"
+        }
+      ]
+    }
   },
   {
     "id": "kawona",
@@ -3980,7 +5606,18 @@
   },
   {
     "id": "kayne",
-    "handle": "Kayne"
+    "handle": "Kayne",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Brussels Challenge Major Edition 2023",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2023/Major_Edition/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "kaz",
@@ -4005,7 +5642,17 @@
   {
     "id": "kazunoko",
     "handle": "Kazunoko",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Topanga Championship 7 Open Qualifier Finals",
+          "place": 2,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/7/Open_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "kbutsu",
@@ -4061,7 +5708,18 @@
   },
   {
     "id": "keoma",
-    "handle": "Keoma"
+    "handle": "Keoma",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: Brazil",
+          "place": 2,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Latin_America/Brazil"
+        }
+      ]
+    }
   },
   {
     "id": "kerplunk",
@@ -4117,7 +5775,30 @@
   },
   {
     "id": "kilzyou",
-    "handle": "Kilzyou"
+    "handle": "Kilzyou",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Capcom Cup 12",
+          "place": 2,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/12"
+        },
+        {
+          "event": "CPT 2025 World Warrior: France-Monaco Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/France-Monaco/Regional_Final"
+        },
+        {
+          "event": "Kings of the World",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Kings_of_the_World/2024"
+        }
+      ]
+    }
   },
   {
     "id": "kim23",
@@ -4161,11 +5842,45 @@
   },
   {
     "id": "kingsvega",
-    "handle": "KingsVega"
+    "handle": "KingsVega",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Ultimate Fighting Arena 2025",
+          "place": 2,
+          "date": "2025-09-25",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "kintyo",
-    "handle": "Kintyo"
+    "handle": "Kintyo",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "VOLTAGECUP 2026",
+          "place": 1,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/VOLTAGECUP/2026"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Japan Regional Final",
+          "place": 1,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Japan/Regional_Final"
+        },
+        {
+          "event": "DNECUP 2025",
+          "place": 2,
+          "date": "2025-09-25",
+          "url": "https://liquipedia.net/fighters/DNECUP/2025"
+        }
+      ]
+    }
   },
   {
     "id": "kintyo-ru",
@@ -4234,7 +5949,29 @@
   {
     "id": "kobayan",
     "handle": "Kobayan",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "DreamHack Atlanta 2026",
+          "place": 1,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/DreamHack/2026/Atlanta/SF6"
+        },
+        {
+          "event": "Topanga Championship 5",
+          "place": 1,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/5"
+        },
+        {
+          "event": "Topanga Championship 5 Open Qualifier Finals",
+          "place": 1,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/5/Open_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "koeliga",
@@ -4346,7 +6083,24 @@
   },
   {
     "id": "krown",
-    "handle": "Krown"
+    "handle": "Krown",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: Oceania",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Oceania"
+        },
+        {
+          "event": "Battle Arena Melbourne 13",
+          "place": 2,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/13/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "kubo",
@@ -4426,7 +6180,60 @@
   },
   {
     "id": "kusanagi",
-    "handle": "Kusanagi"
+    "handle": "Kusanagi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: France-Monaco Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/France-Monaco/Regional_Final"
+        },
+        {
+          "event": "Saudi eLeague Fighting: Season 3 Championship",
+          "place": 2,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_3/Championship/SF6"
+        },
+        {
+          "event": "Saudi eLeague Fighting: Season 3 Major",
+          "place": 2,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_3/Major/SF6"
+        },
+        {
+          "event": "Ultimate Fighting Arena 2024",
+          "place": 1,
+          "date": "2024-09-24",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2024/SF6"
+        },
+        {
+          "event": "S Factor 11",
+          "place": 2,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/S_Factor/11/SF6"
+        },
+        {
+          "event": "Thunderstruck 2023",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Thunderstruck/2023/SF6"
+        },
+        {
+          "event": "CPT 2023 Online Event: Central America West",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Central_America/West"
+        },
+        {
+          "event": "Smash Factor X",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Smash_Factor/10/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "kusanagui",
@@ -4470,7 +6277,24 @@
   },
   {
     "id": "kyuki",
-    "handle": "Kyuki"
+    "handle": "Kyuki",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Coliseum 2025",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Battle_Coliseum/2025/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Brazil Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/Brazil/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "kzo",
@@ -4518,7 +6342,24 @@
   },
   {
     "id": "latif",
-    "handle": "Latif"
+    "handle": "Latif",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Saudi eLeague Fighting: Season 3 Championship",
+          "place": 1,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Saudi_eLeague/Season_3/Championship/SF6"
+        },
+        {
+          "event": "GCC League 2025",
+          "place": 1,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/GCC_League/2025"
+        }
+      ]
+    }
   },
   {
     "id": "lattice",
@@ -4563,7 +6404,47 @@
   {
     "id": "leshar",
     "handle": "LeShar",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Evolution Championship Series: France 2025",
+          "place": 1,
+          "date": "2025-10-25",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/France/SF6"
+        },
+        {
+          "event": "CEO 2025",
+          "place": 1,
+          "date": "2025-06-25",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2025/SF6"
+        },
+        {
+          "event": "Combo Breaker 2025",
+          "place": 1,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Combo_Breaker/2025/SF6"
+        },
+        {
+          "event": "CPT 2024: Japan Super Premier",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/Super_Premier/Japan"
+        },
+        {
+          "event": "Esports World Cup 2024 Last Chance Qualifier",
+          "place": 1,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2024/SF6/Last_Chance_Qualifier"
+        },
+        {
+          "event": "CPT 2023 World Warrior: South Korea Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/South_Korea/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "lesher",
@@ -4595,7 +6476,18 @@
   },
   {
     "id": "libbro",
-    "handle": "Libbro"
+    "handle": "Libbro",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Europe West Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "like-the-sea",
@@ -4615,7 +6507,18 @@
   },
   {
     "id": "limestone",
-    "handle": "LIMESTONE"
+    "handle": "LIMESTONE",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: South America West Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "linkealo",
@@ -4647,7 +6550,18 @@
   },
   {
     "id": "lionheart",
-    "handle": "Lionheart"
+    "handle": "Lionheart",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: France-Spain-Portugal",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/France-Spain-Portugal"
+        }
+      ]
+    }
   },
   {
     "id": "liquid",
@@ -4763,7 +6677,48 @@
   },
   {
     "id": "lugabo",
-    "handle": "Lugabo"
+    "handle": "Lugabo",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "S Factor X3",
+          "place": 1,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/S_Factor/13/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Mexico Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Mexico/Regional_Final"
+        },
+        {
+          "event": "S Factor 12",
+          "place": 2,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/S_Factor/12/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Mexico Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Mexico/Regional_Final"
+        },
+        {
+          "event": "Astral Finish 2024",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Astral_Finish/2024/SF6"
+        },
+        {
+          "event": "Astral Finish Festival 2023",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Astral_Finish_Festival/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "luiman",
@@ -4948,7 +6903,24 @@
   },
   {
     "id": "marktheshark",
-    "handle": "MarkTheShark"
+    "handle": "MarkTheShark",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: South Africa Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_Africa/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: South Africa",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/South_Africa"
+        }
+      ]
+    }
   },
   {
     "id": "marktheshark9200",
@@ -5081,7 +7053,95 @@
   {
     "id": "menard",
     "handle": "MenaRD",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Topanga Championship 7",
+          "place": 1,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/7"
+        },
+        {
+          "event": "Blink Respawn 2026",
+          "place": 1,
+          "date": "2026-06-26",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2026/SF6"
+        },
+        {
+          "event": "Evolution Championship Series 2026",
+          "place": 1,
+          "date": "2026-06-26",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/SF6"
+        },
+        {
+          "event": "Evolution Championship Series 2025",
+          "place": 1,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/SF6"
+        },
+        {
+          "event": "Evolution Championship Series: Japan 2025",
+          "place": 1,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/Japan/SF6"
+        },
+        {
+          "event": "Cream City Convergence 2024",
+          "place": 1,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Cream_City_Convergence/2024/SF6"
+        },
+        {
+          "event": "Evolution Championship Series: Japan 2024",
+          "place": 1,
+          "date": "2024-04-24",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2024/Japan/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2024",
+          "place": 1,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York"
+        },
+        {
+          "event": "CPT 2023 World Warrior: US East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023: France Offline",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/France_Offline"
+        },
+        {
+          "event": "Evolution Championship Series 2023",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2023/SF6"
+        },
+        {
+          "event": "Get On My Level 2023",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Get_On_My_Level/2023/SF6"
+        },
+        {
+          "event": "Defend the North 2023",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Defend_the_North/2023/SF6"
+        },
+        {
+          "event": "CEO 2023",
+          "place": 1,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "mentako",
@@ -5137,7 +7197,24 @@
   },
   {
     "id": "micky",
-    "handle": "Micky"
+    "handle": "Micky",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "DreamHack Birmingham 2026",
+          "place": 2,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/DreamHack/2026/Birmingham/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Asia East Regional Final",
+          "place": 2,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "mid9poppy",
@@ -5157,7 +7234,18 @@
   },
   {
     "id": "mikex",
-    "handle": "Mikex"
+    "handle": "Mikex",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Canada West Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/Canada_West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "miliq",
@@ -5169,7 +7257,18 @@
   },
   {
     "id": "mimam",
-    "handle": "Mimam"
+    "handle": "Mimam",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Comitê Arena 2023",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "mimic",
@@ -5181,7 +7280,18 @@
   },
   {
     "id": "mindrpg",
-    "handle": "MindRPG"
+    "handle": "MindRPG",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Asia Southeast Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Southeast/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "minibomba",
@@ -5222,7 +7332,53 @@
   {
     "id": "mister-crimson",
     "handle": "Mister Crimson",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "The MIXUP 2026",
+          "place": 1,
+          "date": "2026-06-26",
+          "url": "https://liquipedia.net/fighters/The_MIXUP/2026/SF6"
+        },
+        {
+          "event": "Brussels Challenge Major Edition 2026",
+          "place": 2,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2026/Major_Edition/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: France-Monaco Regional Final",
+          "place": 1,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/France-Monaco/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: France-Spain-Portugal",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/France-Spain-Portugal"
+        },
+        {
+          "event": "Ultimate Fighting Arena 2023",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2023/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: France Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/France/Regional_Final"
+        },
+        {
+          "event": "Headstomper 2023",
+          "place": 1,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Headstomper/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "mister-crimson-3-ranked",
@@ -5335,7 +7491,29 @@
   {
     "id": "moke",
     "handle": "Moke",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Beast Cup -Tokyo-",
+          "place": 2,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Beast_Cup/2024/Tokyo"
+        },
+        {
+          "event": "Keio Cup",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Keio_Cup/2024"
+        },
+        {
+          "event": "FAV CUP 2023 Open Qualifier",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/FAV_CUP/2023/Singles/Open_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "molina",
@@ -5351,7 +7529,24 @@
   },
   {
     "id": "momochi",
-    "handle": "Momochi"
+    "handle": "Momochi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Blink Respawn 2025",
+          "place": 2,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2025/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Japan Regional Final",
+          "place": 2,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Japan/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "momoi",
@@ -5531,7 +7726,18 @@
   },
   {
     "id": "mysticsmash",
-    "handle": "MysticSmash"
+    "handle": "MysticSmash",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "VSFighting XIV",
+          "place": 1,
+          "date": "2026-07-26",
+          "url": "https://liquipedia.net/fighters/VSFighting/2026/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "n",
@@ -5559,7 +7765,18 @@
   },
   {
     "id": "naji",
-    "handle": "Naji"
+    "handle": "Naji",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "East Coast Throwdown 2023",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/East_Coast_Throwdown/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "nameless",
@@ -5571,7 +7788,18 @@
   },
   {
     "id": "namikazeextm",
-    "handle": "NamikazeExTM"
+    "handle": "NamikazeExTM",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: Brazil",
+          "place": 1,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Latin_America/Brazil"
+        }
+      ]
+    }
   },
   {
     "id": "nao",
@@ -5627,7 +7855,18 @@
   },
   {
     "id": "narikun",
-    "handle": "Narikun"
+    "handle": "Narikun",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Arena Melbourne 15",
+          "place": 1,
+          "date": "2025-06-25",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/15/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "narou",
@@ -5745,7 +7984,59 @@
   {
     "id": "nephew",
     "handle": "Nephew",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "DreamHack Atlanta 2026",
+          "place": 2,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/DreamHack/2026/Atlanta/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: US-Canada West Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_West/Regional_Final"
+        },
+        {
+          "event": "The MIXUP 2025",
+          "place": 1,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/The_MIXUP/2025/SF6"
+        },
+        {
+          "event": "GENESIS X2",
+          "place": 2,
+          "date": "2025-02-25",
+          "url": "https://liquipedia.net/fighters/GENESIS/X2/SF6"
+        },
+        {
+          "event": "CPT 2024: Singapore Super Premier",
+          "place": 2,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/Super_Premier/Singapore"
+        },
+        {
+          "event": "Red Bull Kumite 2024 Play-In",
+          "place": 1,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York/Play-In"
+        },
+        {
+          "event": "CPT 2023 World Warrior: US West Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_West/Regional_Final"
+        },
+        {
+          "event": "CEO 2023",
+          "place": 2,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "nephren",
@@ -5757,7 +8048,18 @@
   },
   {
     "id": "nerotheboxer",
-    "handle": "NEROTHEBOXER"
+    "handle": "NEROTHEBOXER",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: South America West Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "nezu",
@@ -5849,7 +8151,60 @@
   },
   {
     "id": "noahtheprodigy",
-    "handle": "NoahTheProdigy"
+    "handle": "NoahTheProdigy",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Ultimate Fighting Arena 2026",
+          "place": 1,
+          "date": "2026-09-26",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2026/SF6"
+        },
+        {
+          "event": "Blink Respawn 2026",
+          "place": 2,
+          "date": "2026-06-26",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2026/SF6"
+        },
+        {
+          "event": "Texas Showdown 2025",
+          "place": 1,
+          "date": "2025-03-25",
+          "url": "https://liquipedia.net/fighters/Texas_Showdown/2025/SF6"
+        },
+        {
+          "event": "Frosty Faustings XVII",
+          "place": 1,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/Frosty_Faustings/2025/SF6"
+        },
+        {
+          "event": "Blink Respawn 2024",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Blink_Respawn/2024/SF6"
+        },
+        {
+          "event": "DreamHack Atlanta 2024",
+          "place": 2,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/DreamHack/2024/Atlanta/SF6"
+        },
+        {
+          "event": "The MIXUP 2024",
+          "place": 2,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/The_MIXUP/2024/SF6"
+        },
+        {
+          "event": "Combo Breaker 2024",
+          "place": 2,
+          "date": "2024-05-24",
+          "url": "https://liquipedia.net/fighters/Combo_Breaker/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "noahthprodigy",
@@ -5913,7 +8268,42 @@
   },
   {
     "id": "notpedro",
-    "handle": "NotPedro"
+    "handle": "NotPedro",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Komitê Arena 2026",
+          "place": 2,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Komit%C3%AA_Arena/2026/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Brazil Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/Brazil/Regional_Final"
+        },
+        {
+          "event": "Comitê Arena 2025",
+          "place": 2,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Comit%C3%AA_Arena/2025/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Brazil Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/Brazil/Regional_Final"
+        },
+        {
+          "event": "Battle Coliseum 2024",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Battle_Coliseum/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "nouhiro",
@@ -5958,7 +8348,53 @@
   {
     "id": "nuckledu",
     "handle": "NuckleDu",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: US-Canada East Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/North_America/US-Canada_East/Regional_Final"
+        },
+        {
+          "event": "CEOtaku 2024",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/CEOtaku/2024/SF6"
+        },
+        {
+          "event": "TNS 9: CEO Never Sleeps",
+          "place": 1,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Tampa_Never_Sleeps/9/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2024",
+          "place": 2,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York"
+        },
+        {
+          "event": "CPT 2023 Online Event: North America East",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/East"
+        },
+        {
+          "event": "CPT 2023 World Warrior: US East Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/North_America/US_East/Regional_Final"
+        },
+        {
+          "event": "CEOtaku 2023",
+          "place": 1,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/CEOtaku/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "numanzoh",
@@ -6006,7 +8442,30 @@
   },
   {
     "id": "nychrisg",
-    "handle": "NYChrisG"
+    "handle": "NYChrisG",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "LVL UP EXPO 2026",
+          "place": 2,
+          "date": "2026-04-26",
+          "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2026/SF6"
+        },
+        {
+          "event": "First Attack 2025",
+          "place": 1,
+          "date": "2025-10-25",
+          "url": "https://liquipedia.net/fighters/First_Attack/2025/SF6"
+        },
+        {
+          "event": "LVL UP EXPO 2024",
+          "place": 2,
+          "date": "2024-04-24",
+          "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "nymelia",
@@ -6039,7 +8498,29 @@
   {
     "id": "oil-king",
     "handle": "Oil King",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "BeePro Cup 2025",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/BeePro_Cup/2025/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Asia East Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/East/Regional_Final"
+        },
+        {
+          "event": "BeePro Cup 2024",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/BeePro_Cup/2024/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "older-brother",
@@ -6099,7 +8580,24 @@
   },
   {
     "id": "orarin",
-    "handle": "Orarin"
+    "handle": "Orarin",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GRAPHT CUP 2026",
+          "place": 1,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/GRAPHT_CUP/2026"
+        },
+        {
+          "event": "DNECUP 2025",
+          "place": 1,
+          "date": "2025-09-25",
+          "url": "https://liquipedia.net/fighters/DNECUP/2025"
+        }
+      ]
+    }
   },
   {
     "id": "orarin1",
@@ -6143,7 +8641,18 @@
   },
   {
     "id": "otani",
-    "handle": "Otani"
+    "handle": "Otani",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: Japan",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/Japan"
+        }
+      ]
+    }
   },
   {
     "id": "otanibc",
@@ -6163,7 +8672,18 @@
   },
   {
     "id": "owaechan",
-    "handle": "Owaechan"
+    "handle": "Owaechan",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Topanga Championship 6 Open Qualifier Finals",
+          "place": 2,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/6/Open_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "oweachan",
@@ -6319,7 +8839,30 @@
   },
   {
     "id": "phenom",
-    "handle": "Phenom"
+    "handle": "Phenom",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Europe North-East Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/North-East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Europe North-East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/North-East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: Europe North-East",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/North-East"
+        }
+      ]
+    }
   },
   {
     "id": "phenomthemoose",
@@ -6411,7 +8954,18 @@
   },
   {
     "id": "popi",
-    "handle": "Popi"
+    "handle": "Popi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Headstomper 2023",
+          "place": 2,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Headstomper/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "popibluebeast",
@@ -6440,7 +8994,47 @@
   {
     "id": "problem-x",
     "handle": "Problem X",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: UK-Ireland Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/UK-Ireland/Regional_Final"
+        },
+        {
+          "event": "The MIXUP 2025",
+          "place": 2,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/The_MIXUP/2025/SF6"
+        },
+        {
+          "event": "DreamHack Dallas 2024",
+          "place": 2,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/DreamHack/2024/Dallas/SF6"
+        },
+        {
+          "event": "Brussels Challenge Major Edition 2024",
+          "place": 2,
+          "date": "2024-05-24",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2024/Major_Edition/SF6"
+        },
+        {
+          "event": "Capcom Cup X Last Chance Qualifier",
+          "place": 1,
+          "date": "2024-02-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/10/Last_Chance_Qualifier"
+        },
+        {
+          "event": "CPT 2023 World Warrior: UK-Ireland Regional Final",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/UK-Ireland/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "problem-x-zhen",
@@ -6484,7 +9078,18 @@
   },
   {
     "id": "pugera",
-    "handle": "Pugera"
+    "handle": "Pugera",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Esports World Cup 2024 Last Chance Qualifier",
+          "place": 2,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2024/SF6/Last_Chance_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "pulgaa",
@@ -6493,7 +9098,95 @@
   {
     "id": "punk",
     "handle": "Punk",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Evolution Championship Series: Japan 2026",
+          "place": 2,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/Japan/SF6"
+        },
+        {
+          "event": "LVL UP EXPO 2026",
+          "place": 1,
+          "date": "2026-04-26",
+          "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2026/SF6"
+        },
+        {
+          "event": "GENESIS X3",
+          "place": 2,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/GENESIS/X3/SF6"
+        },
+        {
+          "event": "LVL UP EXPO 2025",
+          "place": 1,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/LVL_UP_EXPO/2025/SF6"
+        },
+        {
+          "event": "CEOtaku 2024",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/CEOtaku/2024/SF6"
+        },
+        {
+          "event": "DreamHack Atlanta 2024",
+          "place": 1,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/DreamHack/2024/Atlanta/SF6"
+        },
+        {
+          "event": "Evolution Championship Series 2024",
+          "place": 1,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2024/SF6"
+        },
+        {
+          "event": "CEO 2024",
+          "place": 1,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2024/SF6"
+        },
+        {
+          "event": "TNS 9: CEO Never Sleeps",
+          "place": 2,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Tampa_Never_Sleeps/9/SF6"
+        },
+        {
+          "event": "Capcom Cup X Last Chance Qualifier",
+          "place": 2,
+          "date": "2024-02-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/10/Last_Chance_Qualifier"
+        },
+        {
+          "event": "Frosty Faustings XVI",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Frosty_Faustings/2024/SF6"
+        },
+        {
+          "event": "DreamHack Atlanta 2023",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/DreamHack/2023/Atlanta/SF6"
+        },
+        {
+          "event": "CEOtaku 2023",
+          "place": 2,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/CEOtaku/2023/SF6"
+        },
+        {
+          "event": "DreamHack Dallas 2023",
+          "place": 1,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/DreamHack/2023/Dallas/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "punkdagod",
@@ -6521,7 +9214,18 @@
   },
   {
     "id": "qiuqiu",
-    "handle": "Qiuqiu"
+    "handle": "Qiuqiu",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "FightClub Century Battle 3",
+          "place": 1,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/FightClub_Century_Battle/3"
+        }
+      ]
+    }
   },
   {
     "id": "qu1rky",
@@ -6569,11 +9273,33 @@
   },
   {
     "id": "raihan",
-    "handle": "Raihan"
+    "handle": "Raihan",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Asia South Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/South/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "railgun",
-    "handle": "RAILGUN"
+    "handle": "RAILGUN",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Germany Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/Germany/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "rain",
@@ -6585,7 +9311,24 @@
   },
   {
     "id": "rainpro",
-    "handle": "Rainpro"
+    "handle": "Rainpro",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: UK-Ireland",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/EMEA/UK-Ireland"
+        },
+        {
+          "event": "EGX Arena 2023",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/EGX/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "ralnpro",
@@ -6629,7 +9372,18 @@
   },
   {
     "id": "randumb",
-    "handle": "Randumb"
+    "handle": "Randumb",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Germany Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/Germany/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "rangasamy",
@@ -6713,7 +9467,18 @@
   },
   {
     "id": "ren",
-    "handle": "REN"
+    "handle": "REN",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: South Africa Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_Africa/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "rena-chan",
@@ -6741,7 +9506,18 @@
   },
   {
     "id": "reynald",
-    "handle": "Reynald"
+    "handle": "Reynald",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: North America West",
+          "place": 2,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/West"
+        }
+      ]
+    }
   },
   {
     "id": "rh",
@@ -6757,7 +9533,18 @@
   },
   {
     "id": "riddles",
-    "handle": "Riddles"
+    "handle": "Riddles",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Get On My Level: Forever",
+          "place": 1,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/Get_On_My_Level/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "riddlesmk",
@@ -6769,7 +9556,24 @@
   },
   {
     "id": "rikemansbarnet",
-    "handle": "Rikemansbarnet"
+    "handle": "Rikemansbarnet",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Europe North-East Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/North-East/Regional_Final"
+        },
+        {
+          "event": "VSFighting XI",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/VSFighting/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "rillo",
@@ -6817,7 +9621,24 @@
   },
   {
     "id": "rof",
-    "handle": "ROF"
+    "handle": "ROF",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Oceania Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Oceania/Regional_Final"
+        },
+        {
+          "event": "Battle Arena Melbourne 13",
+          "place": 1,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/13/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "rogerfgc",
@@ -6837,7 +9658,18 @@
   },
   {
     "id": "ronaldinhobr",
-    "handle": "RonaldinhoBR"
+    "handle": "RonaldinhoBR",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Coliseum 2023",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Battle_Coliseum/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "ronan-healy",
@@ -6929,7 +9761,24 @@
   },
   {
     "id": "ryukichi",
-    "handle": "Ryukichi"
+    "handle": "Ryukichi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Evolution Championship Series: Japan 2025",
+          "place": 2,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2025/Japan/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2023 LCQ Japan Qualifier",
+          "place": 2,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2023/South_Africa/Last_Chance_Qualifier/Japan_Qualifier"
+        }
+      ]
+    }
   },
   {
     "id": "ryupoyo",
@@ -6953,7 +9802,24 @@
   },
   {
     "id": "s4ltykid",
-    "handle": "S4ltyKid"
+    "handle": "S4ltyKid",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Red Bull Kumite 2025 Last Chance Qualifier",
+          "place": 2,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025/Last_Chance_Qualifier"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Europe West Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "sabanoritchi",
@@ -6965,7 +9831,30 @@
   },
   {
     "id": "sahara",
-    "handle": "Sahara"
+    "handle": "Sahara",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Capcom Cup 12",
+          "place": 1,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/12"
+        },
+        {
+          "event": "Ultimate Fighting Arena 2025",
+          "place": 1,
+          "date": "2025-09-25",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2025/SF6"
+        },
+        {
+          "event": "Battle Arena Melbourne 15",
+          "place": 2,
+          "date": "2025-06-25",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/15/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "sahuayac",
@@ -7026,7 +9915,18 @@
   },
   {
     "id": "salvatore",
-    "handle": "Salvatore"
+    "handle": "Salvatore",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: South America East Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "samaro",
@@ -7034,7 +9934,24 @@
   },
   {
     "id": "samoel",
-    "handle": "Samoel"
+    "handle": "Samoel",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Spain-Portugal Regional Final",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/Spain-Portugal/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Spain-Portugal Regional Final",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/Spain-Portugal/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "samurai",
@@ -7130,7 +10047,30 @@
   },
   {
     "id": "sayff",
-    "handle": "Sayff"
+    "handle": "Sayff",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 Online Event: North America Midwest",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/Midwest"
+        },
+        {
+          "event": "CNE Gaming Garage",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/CNE_Gaming_Garage/2023/SF6"
+        },
+        {
+          "event": "Get On My Level 2023",
+          "place": 2,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Get_On_My_Level/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "scarlet",
@@ -7246,7 +10186,18 @@
   },
   {
     "id": "semy28",
-    "handle": "Semy28"
+    "handle": "Semy28",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Germany Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Europe/Germany/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "senor-power",
@@ -7258,7 +10209,24 @@
   },
   {
     "id": "seo",
-    "handle": "Seo"
+    "handle": "Seo",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Thaiger Uppercut 2023",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Thaiger_Uppercut/2023/SF6"
+        },
+        {
+          "event": "REV Major 2023",
+          "place": 2,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/REV_Major/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "sevelei",
@@ -7290,7 +10258,30 @@
   },
   {
     "id": "shaka22",
-    "handle": "Shaka22"
+    "handle": "Shaka22",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: South America East Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/South_America/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: South America East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/East/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: South America West",
+          "place": 2,
+          "date": "2023-09-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/South_America/West"
+        }
+      ]
+    }
   },
   {
     "id": "shakure12",
@@ -7298,7 +10289,18 @@
   },
   {
     "id": "shakz",
-    "handle": "Shakz"
+    "handle": "Shakz",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "VSFighting XIII",
+          "place": 1,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/VSFighting/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "shamangod",
@@ -7342,7 +10344,18 @@
   },
   {
     "id": "shigematsu",
-    "handle": "SHIGEMATSU"
+    "handle": "SHIGEMATSU",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Evolution Championship Series 2026",
+          "place": 2,
+          "date": "2026-06-26",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "shihan",
@@ -7358,7 +10371,36 @@
   },
   {
     "id": "shine",
-    "handle": "Shine"
+    "handle": "Shine",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "DreamHack Atlanta 2025",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/DreamHack/2025/Atlanta/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2024 Play-In",
+          "place": 2,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York/Play-In"
+        },
+        {
+          "event": "East Coast Throwdown 2023",
+          "place": 1,
+          "date": "2023-10-23",
+          "url": "https://liquipedia.net/fighters/East_Coast_Throwdown/2023/SF6"
+        },
+        {
+          "event": "DreamHack Dallas 2023",
+          "place": 2,
+          "date": "2023-06-23",
+          "url": "https://liquipedia.net/fighters/DreamHack/2023/Dallas/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "shinjuku",
@@ -7451,7 +10493,17 @@
   {
     "id": "shuto",
     "handle": "Shuto",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024: Singapore Super Premier",
+          "place": 1,
+          "date": "2024-10-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/Super_Premier/Singapore"
+        }
+      ]
+    }
   },
   {
     "id": "shuu",
@@ -7475,7 +10527,30 @@
   },
   {
     "id": "si-anik",
-    "handle": "Si Anik"
+    "handle": "Si Anik",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Asia South Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/South/Regional_Final"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Asia South Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/South/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Asia South Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/South/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "sifu",
@@ -7559,7 +10634,18 @@
   },
   {
     "id": "slice",
-    "handle": "SLICE"
+    "handle": "SLICE",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Get On My Level: Forever",
+          "place": 2,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/Get_On_My_Level/2025/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "slime",
@@ -7584,7 +10670,23 @@
   {
     "id": "snake-eyez",
     "handle": "Snake Eyez",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: US-Canada West Regional Final",
+          "place": 2,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/North_America/US-Canada_West/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: North America West",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/North_America/West"
+        }
+      ]
+    }
   },
   {
     "id": "snakeules",
@@ -7632,7 +10734,18 @@
   },
   {
     "id": "sole",
-    "handle": "Sole"
+    "handle": "Sole",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Oceania Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Oceania/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "solemn-swift",
@@ -7652,7 +10765,18 @@
   },
   {
     "id": "solvng",
-    "handle": "SolVNG"
+    "handle": "SolVNG",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Mexico Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Mexico/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "somniac",
@@ -7668,7 +10792,18 @@
   },
   {
     "id": "sonicfox",
-    "handle": "SonicFox"
+    "handle": "SonicFox",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Smash Factor X",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/Smash_Factor/10/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "soony",
@@ -7764,7 +10899,18 @@
   },
   {
     "id": "stealth",
-    "handle": "Stealth"
+    "handle": "Stealth",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Texas Showdown 2026",
+          "place": 1,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/Texas_Showdown/2026/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "stealthtx",
@@ -7876,7 +11022,18 @@
   },
   {
     "id": "surini",
-    "handle": "Surini"
+    "handle": "Surini",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: South Korea Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/South_Korea/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "surplus",
@@ -7936,7 +11093,18 @@
   },
   {
     "id": "tachikawa",
-    "handle": "Tachikawa"
+    "handle": "Tachikawa",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Arena Melbourne 14",
+          "place": 2,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/14/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "taco",
@@ -7968,7 +11136,36 @@
   },
   {
     "id": "takamura",
-    "handle": "Takamura"
+    "handle": "Takamura",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Brussels Challenge Major Edition 2026",
+          "place": 1,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Brussels_Challenge/2026/Major_Edition/SF6"
+        },
+        {
+          "event": "CPT 2025 World Warrior: Europe West Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/West/Regional_Final"
+        },
+        {
+          "event": "Red Bull Kumite 2025 Play-In",
+          "place": 2,
+          "date": "2025-04-25",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2025/Play-In"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Europe West Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "takashi",
@@ -8024,7 +11221,18 @@
   },
   {
     "id": "tako956402",
-    "handle": "tako956402"
+    "handle": "tako956402",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GRAPHT CUP 2025",
+          "place": 2,
+          "date": "2025-09-25",
+          "url": "https://liquipedia.net/fighters/GRAPHT_CUP/2025"
+        }
+      ]
+    }
   },
   {
     "id": "takumin",
@@ -8041,6 +11249,10 @@
   {
     "id": "tampa-bison",
     "handle": "Tampa Bison"
+  },
+  {
+    "id": "tamsui",
+    "handle": "TAMSUI"
   },
   {
     "id": "tananegitaberu",
@@ -8289,7 +11501,41 @@
   {
     "id": "tokido",
     "handle": "Tokido",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CEO 2026",
+          "place": 1,
+          "date": "2026-08-26",
+          "url": "https://liquipedia.net/fighters/Community_Effort_Orlando/2026/SF6"
+        },
+        {
+          "event": "Asian Champions League 2025",
+          "place": 1,
+          "date": "2025-05-25",
+          "url": "https://liquipedia.net/fighters/Asian_Champions_League/2025"
+        },
+        {
+          "event": "CPT 2024: Japan Super Premier",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/Super_Premier/Japan"
+        },
+        {
+          "event": "Battle Arena Melbourne 14",
+          "place": 1,
+          "date": "2024-06-24",
+          "url": "https://liquipedia.net/fighters/Battle_Arena_Melbourne/14/SF6"
+        },
+        {
+          "event": "FAV CUP 2023",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/FAV_CUP/2023/Singles"
+        }
+      ]
+    }
   },
   {
     "id": "tokido-naumanzoh",
@@ -8309,7 +11555,18 @@
   },
   {
     "id": "tomoecunha",
-    "handle": "Tomoecunha"
+    "handle": "Tomoecunha",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Spain-Portugal Regional Final",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/Spain-Portugal/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "tomorock",
@@ -8365,7 +11622,24 @@
   },
   {
     "id": "torimeshi",
-    "handle": "Torimeshi"
+    "handle": "Torimeshi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Japan Regional Final",
+          "place": 2,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/Japan/Regional_Final"
+        },
+        {
+          "event": "Topanga Championship 6",
+          "place": 2,
+          "date": "2025-07-25",
+          "url": "https://liquipedia.net/fighters/Topanga_Championship/6"
+        }
+      ]
+    }
   },
   {
     "id": "torimesi",
@@ -8413,7 +11687,30 @@
   },
   {
     "id": "travis-styles",
-    "handle": "Travis Styles"
+    "handle": "Travis Styles",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Oceania Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Oceania/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Oceania Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Oceania/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: Oceania",
+          "place": 1,
+          "date": "2023-08-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Oceania"
+        }
+      ]
+    }
   },
   {
     "id": "travo",
@@ -8521,7 +11818,30 @@
   },
   {
     "id": "uma",
-    "handle": "Uma"
+    "handle": "Uma",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Capcom Cup X",
+          "place": 1,
+          "date": "2024-02-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Cup/10"
+        },
+        {
+          "event": "GTW 2023 Finals",
+          "place": 2,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/GTW/2023/Finals/SF6/Main_Event"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Asia East Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/East/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "uma-kagami",
@@ -8581,7 +11901,48 @@
   },
   {
     "id": "uriel-velorio",
-    "handle": "Uriel Velorio"
+    "handle": "Uriel Velorio",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Astral Finish 2025",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Astral_Finish/2025/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Mexico Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Mexico/Regional_Final"
+        },
+        {
+          "event": "S Factor 11",
+          "place": 1,
+          "date": "2024-07-24",
+          "url": "https://liquipedia.net/fighters/S_Factor/11/SF6"
+        },
+        {
+          "event": "Red Bull Kumite 2024 Last Chance Qualifier",
+          "place": 2,
+          "date": "2024-03-24",
+          "url": "https://liquipedia.net/fighters/Red_Bull_Kumite/2024/New_York/Last_Chance_Qualifier"
+        },
+        {
+          "event": "Astral Finish Festival 2023",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Astral_Finish_Festival/2023/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Mexico Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Mexico/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "uriuri",
@@ -8630,7 +11991,17 @@
   {
     "id": "valmaster",
     "handle": "Valmaster",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: France Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/France/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "vanao",
@@ -8654,7 +12025,18 @@
   },
   {
     "id": "vegapatch",
-    "handle": "VegaPatch"
+    "handle": "VegaPatch",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: Spain-Portugal Regional Final",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Europe/Spain-Portugal/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "vegeta",
@@ -8726,7 +12108,42 @@
   },
   {
     "id": "vxbao",
-    "handle": "Vxbao"
+    "handle": "Vxbao",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: China Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/China/Regional_Final"
+        },
+        {
+          "event": "Douyu SF6 Master Open",
+          "place": 1,
+          "date": "2024-01-24",
+          "url": "https://liquipedia.net/fighters/Douyu_SF6_Master_Open"
+        },
+        {
+          "event": "CPT 2023 World Warrior: China Regional Final",
+          "place": 2,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/China/Regional_Final"
+        },
+        {
+          "event": "CPT 2023 Online Event: Asia",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/China"
+        },
+        {
+          "event": "FightClub Championship IV",
+          "place": 1,
+          "date": "2023-07-23",
+          "url": "https://liquipedia.net/fighters/FightClub_Championship/4"
+        }
+      ]
+    }
   },
   {
     "id": "wabichii",
@@ -8778,7 +12195,18 @@
   },
   {
     "id": "wfalcon",
-    "handle": "WFalcon"
+    "handle": "WFalcon",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2023 World Warrior: South America West Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/South_America/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "whitebl4ck",
@@ -8850,7 +12278,18 @@
   },
   {
     "id": "xerna",
-    "handle": "Xerna"
+    "handle": "Xerna",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Europe West Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/West/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "xerodgx",
@@ -8863,7 +12302,35 @@
   {
     "id": "xian",
     "handle": "Xian",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2024 World Warrior: Asia Southeast Regional Final",
+          "place": 1,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/Asia/Southeast/Regional_Final"
+        },
+        {
+          "event": "eSports Summer Fun 2024",
+          "place": 1,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/ESports_Summer_Fun/2024"
+        },
+        {
+          "event": "CPT 2023 Online Event: Asia Southeast",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/Online/Asia/Southeast"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Asia Southeast Regional Final",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Southeast/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "xiao-ming",
@@ -8872,7 +12339,53 @@
   {
     "id": "xiaohai",
     "handle": "Xiaohai",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Combo Breaker 2026",
+          "place": 1,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Combo_Breaker/2026/SF6"
+        },
+        {
+          "event": "GTW 2026 New Year Championship",
+          "place": 2,
+          "date": "2026-02-26",
+          "url": "https://liquipedia.net/fighters/GTW/2026/New_Year_Championship/SF6"
+        },
+        {
+          "event": "Esports World Cup 2025",
+          "place": 1,
+          "date": "2025-08-25",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2025/SF6"
+        },
+        {
+          "event": "GTW 2024 Finals",
+          "place": 1,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/GTW/2024/Finals/Main_Event"
+        },
+        {
+          "event": "Ultimate Fighting Arena 2024",
+          "place": 2,
+          "date": "2024-09-24",
+          "url": "https://liquipedia.net/fighters/Ultimate_Fighting_Arena/2024/SF6"
+        },
+        {
+          "event": "Esports World Cup 2024",
+          "place": 1,
+          "date": "2024-08-24",
+          "url": "https://liquipedia.net/fighters/Esports_World_Cup/2024/SF6"
+        },
+        {
+          "event": "Esports Shanghai Masters 2023",
+          "place": 1,
+          "date": "2023-12-23",
+          "url": "https://liquipedia.net/fighters/Esports_Shanghai_Masters/2023"
+        }
+      ]
+    }
   },
   {
     "id": "xiaohei",
@@ -8904,7 +12417,18 @@
   },
   {
     "id": "xiaozhai",
-    "handle": "XiaoZhai"
+    "handle": "XiaoZhai",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "GTW 2026 New Year Launch Tournament",
+          "place": 2,
+          "date": "2025-12-25",
+          "url": "https://liquipedia.net/fighters/GTW/2026/New_Year_Launch_Tournament/Main_Event"
+        }
+      ]
+    }
   },
   {
     "id": "xing",
@@ -8972,7 +12496,24 @@
   },
   {
     "id": "yamaguchi",
-    "handle": "Yamaguchi"
+    "handle": "Yamaguchi",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Evolution Championship Series: Japan 2026",
+          "place": 1,
+          "date": "2026-05-26",
+          "url": "https://liquipedia.net/fighters/Evolution_Championship_Series/2026/Japan/SF6"
+        },
+        {
+          "event": "CPT 2023 World Warrior: Japan Regional Final",
+          "place": 2,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2023/World_Warrior/Asia/Japan/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "yamaguichi",
@@ -9061,7 +12602,17 @@
   {
     "id": "yhc-mochi",
     "handle": "YHC-Mochi",
-    "featured": true
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "VOLTAGECUP 2026",
+          "place": 2,
+          "date": "2026-03-26",
+          "url": "https://liquipedia.net/fighters/VOLTAGECUP/2026"
+        }
+      ]
+    }
   },
   {
     "id": "yhcmochi-torimesi",
@@ -9109,7 +12660,18 @@
   },
   {
     "id": "yonangel",
-    "handle": "Yonangel"
+    "handle": "Yonangel",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: Germany Regional Final",
+          "place": 1,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Europe/Germany/Regional_Final"
+        }
+      ]
+    }
   },
   {
     "id": "yonjuroku",
@@ -9313,7 +12875,30 @@
   },
   {
     "id": "zangief-bolado",
-    "handle": "Zangief Bolado"
+    "handle": "Zangief Bolado",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Battle Coliseum 2025",
+          "place": 2,
+          "date": "2025-11-25",
+          "url": "https://liquipedia.net/fighters/Battle_Coliseum/2025/SF6"
+        },
+        {
+          "event": "CPT 2024 World Warrior: Brazil Regional Final",
+          "place": 1,
+          "date": "2024-12-24",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2024/World_Warrior/South_America/Brazil/Regional_Final"
+        },
+        {
+          "event": "2Game Pro Tour LATAM Finals",
+          "place": 2,
+          "date": "2024-11-24",
+          "url": "https://liquipedia.net/fighters/2Game_Pro_Tour_LATAM/Finals/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "zangief-bolaod",
@@ -9369,7 +12954,36 @@
   },
   {
     "id": "zhen",
-    "handle": "Zhen"
+    "handle": "Zhen",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "CPT 2025 World Warrior: China Regional Final",
+          "place": 2,
+          "date": "2025-12-25",
+          "url": "https://liquipedia.net/fighters/Capcom_Pro_Tour/2025/World_Warrior/Asia/China/Regional_Final"
+        },
+        {
+          "event": "FightClub Century Battle 3",
+          "place": 2,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/FightClub_Century_Battle/3"
+        },
+        {
+          "event": "GTW 2024 Finals",
+          "place": 2,
+          "date": "2025-01-25",
+          "url": "https://liquipedia.net/fighters/GTW/2024/Finals/Main_Event"
+        },
+        {
+          "event": "Fight Club Arena 2024",
+          "place": 1,
+          "date": "2024-05-24",
+          "url": "https://liquipedia.net/fighters/Fight_Club_Arena/2024"
+        }
+      ]
+    }
   },
   {
     "id": "zhenox",
@@ -9381,7 +12995,18 @@
   },
   {
     "id": "zjz",
-    "handle": "Zjz"
+    "handle": "Zjz",
+    "featured": true,
+    "extra": {
+      "titles": [
+        {
+          "event": "Thaiger Uppercut 2023",
+          "place": 1,
+          "date": "2023-11-23",
+          "url": "https://liquipedia.net/fighters/Thaiger_Uppercut/2023/SF6"
+        }
+      ]
+    }
   },
   {
     "id": "zngief-bolado",
