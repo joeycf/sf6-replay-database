@@ -170,6 +170,33 @@ export interface RawVideoRecord {
   tags?: string[];
 }
 
+/**
+ * raw/<channel>.departed.json — written by scripts/fetch.ts beside every dump
+ * it writes, read by the stale-raw guard (scripts/freshness.ts).
+ *
+ * The guard proves a dump stale by finding a committed record NEWER than
+ * anything in it. A record that LEFT YouTube looks exactly like that when it
+ * was the channel's newest upload and nothing has been posted since, and data
+ * alone cannot tell the two apart. So the fetch, which has the network, asks
+ * YouTube about every such record and writes down the ones that are gone.
+ *
+ * BOUND TO ITS DUMP. `newestInDump` is the newest publishedAt in the dump this
+ * file was written beside, and the guard honours the file only while that still
+ * matches. A dump copied without its file, or replaced by a later fetch,
+ * leaves the guard as strict as it ever was.
+ */
+export interface DepartedEvidence {
+  channel: ChannelKey;
+  newestInDump: string;
+  /** When the fetch asked YouTube. */
+  checkedAt: string;
+  /** Committed ids newer than the dump that YouTube no longer serves as
+   *  public: deleted, private or unlisted (unlisted uploads leave the uploads
+   *  playlist). A newer record that is still PUBLIC is never listed — a live
+   *  upload missing from the walk is a stale view, and the guard should fire. */
+  ids: string[];
+}
+
 /** One parsed side: one pilot, and every character they played.
  *
  *  SF6 is 1v1, so a single MATCH has one character per side and `characters`

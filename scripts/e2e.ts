@@ -18,10 +18,12 @@ import { fileURLToPath } from 'node:url';
 import { chromium, type Browser, type Page } from 'playwright-core';
 import RANKS from '../data/ranks.json';
 import { CHANNELS } from './channels';
-import { staleEvidence, tokensOf } from './freshness';
+import { aheadOfDump, staleEvidence, tokensOf } from './freshness';
 import { newerThanCursor } from './theater-delta';
 import type {
+  ChannelKey,
   CharacterRecord,
+  DepartedEvidence,
   MatchVideo,
   PlayerRecord,
   RawVideoRecord,
@@ -720,6 +722,41 @@ function testStaleGuard(): void {
   expect(
     staleEvidence('highLevel', dump, [...committedFresh, record('gone', '10')]) === null,
     'stays quiet when an upload was deleted rather than never fetched',
+  );
+
+  // 4b. …BUT ONLY WHILE SOMETHING NEWER IS STILL IN THE DUMP. Delete the
+  //     channel's NEWEST upload and post nothing after it, and a fresh dump
+  //     fails case 1's test (Strive, 2026-10-02). The fetch confirms that
+  //     departure with YouTube and writes it beside the dump; bound to THIS
+  //     dump it is a prune, and bound to anything else it is ignored.
+  const ahead = [...committedFresh, record('v3', '30')];
+  const departed = (newestInDump: string, channel: ChannelKey = 'highLevel'): DepartedEvidence => ({
+    channel,
+    newestInDump,
+    checkedAt: at('31'),
+    ids: ['v3'],
+  });
+  expect(
+    staleEvidence('highLevel', dump, ahead, departed(at('11'))) === null,
+    'prunes a newest upload the fetch confirmed gone, when the file is bound to this dump',
+  );
+  expect(
+    staleEvidence('highLevel', dump, ahead, departed(at('10'))) !== null,
+    'ignores a departure file bound to a different dump (newestInDump differs)',
+  );
+  expect(
+    staleEvidence('highLevel', dump, ahead, departed(at('11'), 'kingArena')) !== null,
+    'ignores a departure file written for another intake',
+  );
+  expect(
+    staleEvidence('highLevel', dump, [...ahead, record('v4', '30')], departed(at('11'))) !== null,
+    'still refuses when a newer committed record is not in the departure ids (still public)',
+  );
+  expect(
+    aheadOfDump('highLevel', dump, ahead)
+      .map((v) => v.id)
+      .join() === 'v3',
+    'the fetch asks YouTube about exactly the records the guard would judge',
   );
 
   // 5. SCOPED PER INTAKE. A stale kingArena dump says nothing about highLevel,

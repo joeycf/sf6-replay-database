@@ -28,7 +28,7 @@ import { applyOverrides, emitGeneric } from './emit';
 import { CHANNELS, stripTheaterSponsor } from './channels';
 import { dueExpiries, formatExpiries } from './expiries';
 import { crossCheck, formatCrossCheck, type WitnessArtifact, type WitnessFile } from './crosscheck';
-import { formatStaleRefusal, staleEvidence } from './freshness';
+import { boundDepartures, formatStaleRefusal, staleEvidence } from './freshness';
 import { LAUNCH, SEASONS, seasonForDate, validateSeasons } from './seasons';
 import { idKey, resolveKey, slug } from './players';
 import { buildAliasMatcher, extractRank, loadCharacters, stripLeaderboard } from './roster';
@@ -42,6 +42,7 @@ import {
 import type {
   ChannelConfig,
   ChannelKey,
+  DepartedEvidence,
   MatchSide,
   MatchVideo,
   PlayerRecord,
@@ -414,7 +415,27 @@ for (const ch of CHANNELS) {
   // Per intake, and it reads only publishedAt on both sides. See that file for
   // why neither a wall-clock window nor an mtime survives contact with a repo
   // whose cron rewrites data/ daily and whose raw/ a human refetches by hand.
-  const stale = staleEvidence(ch.id, dump, committed);
+  //
+  // The fetch's departure evidence rides in beside the dump. Unreadable is
+  // treated as absent, which leaves the guard strict.
+  const departed = await readJson<DepartedEvidence>(
+    join(ROOT, 'raw', `${ch.id}.departed.json`),
+  ).catch((e: NodeJS.ErrnoException) => {
+    if (e.code !== 'ENOENT')
+      console.warn(
+        `  ⚠ raw/${ch.id}.departed.json will not parse; ignored, so the stale-raw guard stays strict`,
+      );
+    return null;
+  });
+  const gone = boundDepartures(ch.id, dump, departed);
+  if (departed && gone.size) {
+    console.log(
+      `  ↘ raw/${ch.id}.json: ${gone.size} committed upload(s) newer than the dump left YouTube ` +
+        `(confirmed by data:fetch at ${departed.checkedAt}). Pruned, not read as staleness: ` +
+        [...gone].join(', '),
+    );
+  }
+  const stale = staleEvidence(ch.id, dump, committed, departed);
   if (stale) {
     if (!ALLOW_STALE) {
       console.error(formatStaleRefusal(ch.id, stale));
