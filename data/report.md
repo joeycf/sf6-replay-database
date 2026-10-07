@@ -1,13 +1,13 @@
 
 # SF6 pipeline report
 
-**24924 matches** parsed from 34465 uploads across 7 channels, plus 1065 from 1 index · 2349 players · ranked sides 21890/49848 (43.9%)
+**24934 matches** parsed from 34475 uploads across 7 channels, plus 1065 from 1 index · 2350 players · ranked sides 21900/49868 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5884 | 5884 | 5869 | 99.7% | 11324 |
-| fgcPlace | fgcPlace | 10153 | 9161 | 8976 | 98.0% | 10566 |
-| sfReplays | sfReplays | 7285 | 6286 | 5702 | 90.7% | 0 |
+| highLevel | highLevel | 5885 | 5885 | 5870 | 99.7% | 11326 |
+| fgcPlace | fgcPlace | 10157 | 9165 | 8980 | 98.0% | 10574 |
+| sfReplays | sfReplays | 7290 | 6291 | 5707 | 90.7% | 0 |
 | capcomFighters | capcomFighters | 8198 | 1804 | 1143 | 63.4% | 0 |
 | evoEvents | evoEvents | 2777 | 155 | 81 | 52.3% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
@@ -33,9 +33,9 @@ _not a failed one._
 
 Pending review: 0 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1132
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1142
 
-Rank distribution (side appearances): Legend 19455 · Master 2421 · Diamond 14
+Rank distribution (side appearances): Legend 19464 · Master 2422 · Diamond 14
 
 Misses by reason: not-sf6 11008 · no-vs-title 1010 · shorts 214 · char-unresolved 123 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 2
 
@@ -73,7 +73,7 @@ character disagreement.
 
 ## Tournament placements — Liquipedia Tier 1–2, CC BY-SA 3.0
 
-246 events with placements read; 179 of 2349 registry players carry a title (232 wins). 26 placed names are not in the registry yet — they are featured the day a replay of theirs is ingested, unless listed below as needing a human.
+246 events with placements read; 179 of 2350 registry players carry a title (232 wins). 26 placed names are not in the registry yet — they are featured the day a replay of theirs is ingested, unless listed below as needing a human.
 
 **Titled:** `menard` 11W/3R · `punk` 7W/7R · `ending-walker` 5W/5R · `big-bird` 7W/1R · `dual-kevin` 4W/4R · `kakeru` 5W/3R · `kusanagi` 3W/5R · `nephew` 3W/5R · `noahtheprodigy` 4W/4R · `angrybird` 4W/3R · `caba` 5W/2R · `dingchunqiu` 3W/4R · `mister-crimson` 5W/2R · `nuckledu` 5W/2R · `xiaohai` 5W/2R · `chris-wong` 1W/5R · `gachikun` 5W/1R · `leshar` 5W/1R · `lugabo` 4W/2R · `problem-x` 1W/5R · `uriel-velorio` 3W/3R · `blaz` 2W/3R · `higuchi` 2W/3R · `hurricane` 2W/3R · `notpedro` 1W/4R · `tokido` 4W/1R · `vxbao` 3W/2R · `bravery` 1W/3R · `brayan-job` 3W/1R · `bryan-d` 1W/3R · `fuudo` 4W/0R · `gama` 0W/4R · `idom` 2W/2R · `jabhim` 4W/0R · `shine` 2W/2R · `takamura` 2W/2R · `xian` 4W/0R · `zhen` 1W/3R · `akainu` 1W/2R · `armperor` 1W/2R · `craime` 1W/2R · `hinao` 2W/1R · `hotdog29` 2W/1R · `juicyjoe` 2W/1R · `justakid` 2W/1R · `kilzyou` 1W/2R · `kintyo` 2W/1R · `kobayan` 3W/0R · `moke` 1W/2R · `nychrisg` 1W/2R · `oil-king` 2W/1R · `phenom` 2W/1R · `sahara` 2W/1R · `sayff` 2W/1R · `shaka22` 2W/1R · `si-anik` 2W/1R · `travis-styles` 2W/1R · `uma` 2W/1R · `zangief-bolado` 1W/2R · `arma` 1W/1R · `bloo` 1W/1R · `bonchan` 1W/1R · `booce` 0W/2R · `broski` 1W/1R · `chris-tatarian` 1W/1R · `cosa` 0W/2R · `crossover` 1W/1R · `deiver` 2W/0R · `destroygodz` 1W/1R · `dookie` 1W/1R · `fluxwavez` 0W/2R · `freeser` 0W/2R · `garnet` 1W/1R · `gghalibel` 2W/0R · `go1` 1W/1R · `hibiki` 0W/2R · `itazan` 1W/1R · `joe-umerogan` 1W/1R · `jojotaro` 1W/1R · `juninho-ras` 2W/0R · `kawano` 1W/1R · `krown` 0W/2R · `kyuki` 1W/1R · `latif` 2W/0R · `marktheshark` 0W/2R · `micky` 0W/2R · `momochi` 0W/2R · `orarin` 2W/0R · `rainpro` 1W/1R · `rikemansbarnet` 1W/1R · `rof` 2W/0R · `ryukichi` 0W/2R · `s4ltykid` 1W/1R · `samoel` 1W/1R · `seo` 0W/2R · `snake-eyez` 1W/1R · `torimeshi` 0W/2R · `yamaguchi` 1W/1R · `abood-bboy` 0W/1R · `ajax-fidelity` 1W/0R · `akira` 1W/0R · `akutagawa` 0W/1R · `alphen` 0W/1R · `anunnaki` 0W/1R · `b3llz` 0W/1R · `baadshah-miya` 0W/1R · `bananaken` 0W/1R · `beslem` 0W/1R · `brandon` 0W/1R · `brian-f` 1W/0R · `brolynho` 1W/0R · `dakcorgi` 1W/0R · `despairking` 1W/0R · `dragon-legend` 0W/1R · `elchakotay` 1W/0R · `exe` 0W/1R · `fandroid` 0W/1R · `flashmetroid` 0W/1R · `gtr` 0W/1R · `gutsboom` 0W/1R · `hamad` 0W/1R · `hamood` 0W/1R · `harumi` 1W/0R · `hikaru` 0W/1R · `iamchuan` 0W/1R · `imstilldadaddy` 0W/1R · `jaccy` 0W/1R · `jiewa` 1W/0R · `joey` 0W/1R · `kami` 0W/1R · `kayne` 1W/0R · `kazunoko` 0W/1R · `keoma` 0W/1R · `kingsvega` 0W/1R · `libbro` 0W/1R · `limestone` 1W/0R · `lionheart` 0W/1R · `mikex` 1W/0R · `mimam` 0W/1R · `mindrpg` 0W/1R · `mysticsmash` 1W/0R · `naji` 0W/1R · `namikazeextm` 1W/0R · `narikun` 1W/0R · `nerotheboxer` 1W/0R · `otani` 0W/1R · `owaechan` 0W/1R · `popi` 0W/1R · `pugera` 0W/1R · `qiuqiu` 1W/0R · `raihan` 1W/0R · `railgun` 0W/1R · `randumb` 0W/1R · `ren` 0W/1R · `reynald` 0W/1R · `riddles` 1W/0R · `ronaldinhobr` 0W/1R · `salvatore` 1W/0R · `semy28` 0W/1R · `shakz` 1W/0R · `shigematsu` 0W/1R · `shuto` 1W/0R · `slice` 0W/1R · `sole` 1W/0R · `solvng` 1W/0R · `sonicfox` 1W/0R · `stealth` 1W/0R · `surini` 0W/1R · `tachikawa` 0W/1R · `tako956402` 0W/1R · `tomoecunha` 0W/1R · `valmaster` 1W/0R · `vegapatch` 0W/1R · `wfalcon` 0W/1R · `xerna` 1W/0R · `xiaozhai` 0W/1R · `yhc-mochi` 0W/1R · `yonangel` 1W/0R · `zjz` 1W/0R
 
@@ -128,4 +128,4 @@ character disagreement.
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 - `sg3bURkZTnI` [fgcPlace] no-vs-title: SF6 ▰ BONCHAN (#1 Ranked Sagat) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-10-06T14:15:07.424Z_
+_Generated 2026-10-07T14:33:23.748Z_
