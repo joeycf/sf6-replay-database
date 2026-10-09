@@ -8798,10 +8798,6 @@
     "handle": "Pc6Akira"
   },
   {
-    "id": "pc6kira",
-    "handle": "PC6KIRA"
-  },
-  {
     "id": "peace",
     "handle": "PEACE"
   },
@@ -10253,8 +10249,24 @@
     "handle": "SF6 AKIRA"
   },
   {
+    "id": "sf6-big-bird",
+    "handle": "SF6 BIG BIRD"
+  },
+  {
+    "id": "sf6-cosa",
+    "handle": "SF6 COSA"
+  },
+  {
     "id": "sf6-hibiki",
     "handle": "SF6 HIBIKI"
+  },
+  {
+    "id": "sf6-higuchi",
+    "handle": "SF6 HIGUCHI"
+  },
+  {
+    "id": "sf6-hinao",
+    "handle": "SF6 HINAO"
   },
   {
     "id": "sf6-kazunoko",
@@ -10263,6 +10275,22 @@
   {
     "id": "sf6-menard",
     "handle": "SF6 MENARD"
+  },
+  {
+    "id": "sf6-ryukichi",
+    "handle": "SF6 RYUKICHI"
+  },
+  {
+    "id": "sf6-tsunehero",
+    "handle": "SF6 TsuneHero"
+  },
+  {
+    "id": "sf6-yamaguchi",
+    "handle": "SF6 YAMAGUCHI"
+  },
+  {
+    "id": "sf6-zhen",
+    "handle": "SF6 ZHEN"
   },
   {
     "id": "shadowmark",
@@ -11025,10 +11053,6 @@
     "handle": "Suntsun"
   },
   {
-    "id": "supa",
-    "handle": "SUPA"
-  },
-  {
     "id": "superarsjet",
     "handle": "SuperArsJet"
   },
@@ -11230,10 +11254,6 @@
   {
     "id": "takepiano",
     "handle": "TAKEPIANO"
-  },
-  {
-    "id": "takera",
-    "handle": "TAKERA"
   },
   {
     "id": "takesato",
@@ -11761,10 +11781,6 @@
     "handle": "Tsumugiz"
   },
   {
-    "id": "tsunehero",
-    "handle": "⚔️ TsuneHero"
-  },
-  {
     "id": "tsuoka",
     "handle": "Tsuoka"
   },
@@ -12204,10 +12220,6 @@
   {
     "id": "weegeplus1",
     "handle": "WEEGEplus1"
-  },
-  {
-    "id": "weeping-cherry",
-    "handle": "Weeping Cherry"
   },
   {
     "id": "wemai",
