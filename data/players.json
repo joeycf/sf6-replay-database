@@ -8798,6 +8798,10 @@
     "handle": "Pc6Akira"
   },
   {
+    "id": "pc6kira",
+    "handle": "PC6KIRA"
+  },
+  {
     "id": "peace",
     "handle": "PEACE"
   },
@@ -11053,6 +11057,10 @@
     "handle": "Suntsun"
   },
   {
+    "id": "supa",
+    "handle": "SUPA"
+  },
+  {
     "id": "superarsjet",
     "handle": "SuperArsJet"
   },
@@ -11254,6 +11262,10 @@
   {
     "id": "takepiano",
     "handle": "TAKEPIANO"
+  },
+  {
+    "id": "takera",
+    "handle": "TAKERA"
   },
   {
     "id": "takesato",
@@ -12220,6 +12232,10 @@
   {
     "id": "weegeplus1",
     "handle": "WEEGEplus1"
+  },
+  {
+    "id": "weeping-cherry",
+    "handle": "Weeping Cherry"
   },
   {
     "id": "wemai",
