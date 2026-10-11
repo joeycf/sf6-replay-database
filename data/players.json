@@ -1571,6 +1571,10 @@
     "handle": "CANAN"
   },
   {
+    "id": "candy",
+    "handle": "CANDY"
+  },
+  {
     "id": "canontree",
     "handle": "CanonTree"
   },
@@ -10261,6 +10265,10 @@
     "handle": "SF6 COSA"
   },
   {
+    "id": "sf6-craime",
+    "handle": "SF6 Craime"
+  },
+  {
     "id": "sf6-hibiki",
     "handle": "SF6 HIBIKI"
   },
@@ -10271,6 +10279,10 @@
   {
     "id": "sf6-hinao",
     "handle": "SF6 HINAO"
+  },
+  {
+    "id": "sf6-jr",
+    "handle": "SF6 JR"
   },
   {
     "id": "sf6-kazunoko",
@@ -10285,8 +10297,16 @@
     "handle": "SF6 RYUKICHI"
   },
   {
+    "id": "sf6-tokido",
+    "handle": "SF6 Tokido"
+  },
+  {
     "id": "sf6-tsunehero",
     "handle": "SF6 TsuneHero"
+  },
+  {
+    "id": "sf6-wabiichi",
+    "handle": "SF6 Wabiichi"
   },
   {
     "id": "sf6-yamaguchi",
@@ -12141,6 +12161,10 @@
   {
     "id": "vinyl-sx",
     "handle": "Vinyl SX"
+  },
+  {
+    "id": "viperwhatsapp",
+    "handle": "VIPERWHATSAPP"
   },
   {
     "id": "viscant",

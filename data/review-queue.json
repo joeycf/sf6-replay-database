@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": "X3Owx4gRrC4",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: AngryBird vs Dogura | Street Fighter 6 | Top 24 Losers Round 1",
+    "publishedAt": "2026-10-10T21:13:37Z",
+    "durationSec": 437,
+    "handles": [
+      "Angrybird",
+      "Dogura"
+    ]
+  },
+  {
+    "id": "o51f3ZkJnII",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Lexx vs Tokido | Street Fighter 6 | Top 24 Losers Round 1",
+    "publishedAt": "2026-10-10T21:13:44Z",
+    "durationSec": 289,
+    "handles": [
+      "Lexx",
+      "Tokido"
+    ]
+  },
+  {
+    "id": "I0ItYuER0bo",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Lexx vs Leshar | Street Fighter 6 | Top 24 Losers Round 2",
+    "publishedAt": "2026-10-10T21:23:29Z",
+    "durationSec": 566,
+    "handles": [
+      "Lexx",
+      "LeShar"
+    ]
+  },
+  {
+    "id": "_hG_I0nZ2XY",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Blaz vs Dogura | Street Fighter 6 | Top 24 Losers Round 3",
+    "publishedAt": "2026-10-10T21:32:31Z",
+    "durationSec": 406,
+    "handles": [
+      "Blaz",
+      "Dogura"
+    ]
+  }
+]
