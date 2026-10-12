@@ -10269,6 +10269,10 @@
     "handle": "SF6 Craime"
   },
   {
+    "id": "sf6-crossover",
+    "handle": "SF6 Crossover"
+  },
+  {
     "id": "sf6-hibiki",
     "handle": "SF6 HIBIKI"
   },
@@ -10293,8 +10297,16 @@
     "handle": "SF6 MENARD"
   },
   {
+    "id": "sf6-problem-x",
+    "handle": "SF6 Problem X"
+  },
+  {
     "id": "sf6-ryukichi",
     "handle": "SF6 RYUKICHI"
+  },
+  {
+    "id": "sf6-tachikawa",
+    "handle": "SF6 Tachikawa"
   },
   {
     "id": "sf6-tokido",

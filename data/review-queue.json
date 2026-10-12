@@ -46,5 +46,65 @@
       "Blaz",
       "Dogura"
     ]
+  },
+  {
+    "id": "o4ljiqc0ZL0",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Hinao Vs Lexx | Street Fighter 6 | Top 8 Losers Round 1",
+    "publishedAt": "2026-10-11T18:20:17Z",
+    "durationSec": 721,
+    "handles": [
+      "Hinao",
+      "Lexx"
+    ]
+  },
+  {
+    "id": "sMNp5iOGhlE",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Punk vs Dual Kevin | Street Fighter 6 | Winners Finals",
+    "publishedAt": "2026-10-11T19:10:04Z",
+    "durationSec": 815,
+    "handles": [
+      "Punk",
+      "Dual Kevin"
+    ]
+  },
+  {
+    "id": "oY9tKr-7-Pk",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Problem X Vs Kobayan | Street Fighter 6 | Top 8 Losers Quarterfinals",
+    "publishedAt": "2026-10-11T19:11:17Z",
+    "durationSec": 1008,
+    "handles": [
+      "Problem X",
+      "Kobayan"
+    ]
+  },
+  {
+    "id": "J7bmZBBbTqo",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Kobayan Vs Tachikawa | Street Fighter 6 Losers Semifinals",
+    "publishedAt": "2026-10-11T19:48:00Z",
+    "durationSec": 1005,
+    "handles": [
+      "Kobayan",
+      "Tachikawa"
+    ]
+  },
+  {
+    "id": "J_D_je4G0Pw",
+    "kind": "character-completion",
+    "channel": "evoEvents",
+    "title": "Evo France 2026: Punk vs Tachikawa | Street Fighter 6 | Losers Finals",
+    "publishedAt": "2026-10-11T20:00:55Z",
+    "durationSec": 986,
+    "handles": [
+      "Punk",
+      "Tachikawa"
+    ]
   }
 ]
