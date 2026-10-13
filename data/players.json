@@ -10261,6 +10261,10 @@
     "handle": "SF6 BIG BIRD"
   },
   {
+    "id": "sf6-blaz",
+    "handle": "SF6 BLAZ"
+  },
+  {
     "id": "sf6-cosa",
     "handle": "SF6 COSA"
   },
@@ -10291,6 +10295,10 @@
   {
     "id": "sf6-kazunoko",
     "handle": "SF6 KAZUNOKO"
+  },
+  {
+    "id": "sf6-leshar",
+    "handle": "SF6 Leshar"
   },
   {
     "id": "sf6-menard",
