@@ -7,13 +7,13 @@
 
 # SF6 pipeline report
 
-**25013 matches** parsed from 34609 uploads across 7 channels, plus 1065 from 1 index · 2369 players · ranked sides 21951/50026 (43.9%)
+**25013 matches** parsed from 34619 uploads across 7 channels, plus 1065 from 1 index · 2369 players · ranked sides 21951/50026 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5895 | 5895 | 5879 | 99.7% | 11344 |
-| fgcPlace | fgcPlace | 10177 | 9185 | 8997 | 98.0% | 10607 |
-| sfReplays | sfReplays | 7326 | 6327 | 5741 | 90.7% | 0 |
+| highLevel | highLevel | 5897 | 5897 | 5879 | 99.7% | 11344 |
+| fgcPlace | fgcPlace | 10180 | 9188 | 8997 | 97.9% | 10607 |
+| sfReplays | sfReplays | 7331 | 6332 | 5741 | 90.7% | 0 |
 | capcomFighters | capcomFighters | 8204 | 1810 | 1144 | 63.2% | 0 |
 | evoEvents | evoEvents | 2827 | 168 | 81 | 48.2% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
@@ -43,7 +43,7 @@ Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1221
 
 Rank distribution (side appearances): Legend 19512 · Master 2425 · Diamond 14
 
-Misses by reason: not-sf6 11045 · no-vs-title 1009 · shorts 219 · char-unresolved 129 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
+Misses by reason: not-sf6 11045 · no-vs-title 1009 · shorts 219 · char-unresolved 139 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
 
 ## Replay Theater cross-check
 
@@ -103,6 +103,8 @@ character disagreement.
 
 ## Sample misses (first 30 that are not shorts/live/not-sf6)
 
+- `3M-41IthVd0` [highLevel] char-unresolved: SF6 ▰ PUGERA (Arjun) vs 2BASSA (Mai) ▰ High Level Gameplay
+- `dwDRhWSy6ZA` [highLevel] char-unresolved: SF6 ▰ KAZUNOKO (Arjun) vs SHINTO (Alex) ▰ Street Fighter 6 Gameplay
 - `5uo7eMkNTGA` [highLevel] char-unresolved: SF6 ▰ PROBLEM X (Arjun) vs ENDINGWALKER (Ryu) ▰ Street Fighter 6 Gameplay
 - `_IJvF_UGlJM` [highLevel] char-unresolved: SF6 ▰ LESHAR (#1 Ranked Akuma) vs BAROU BOGARD (BLAZ?) (Terry) ▰ High Level Gameplay
 - `5Ur7wSD7zcA` [highLevel] char-unresolved: SF6 ▰ AKUTAGAWA (#1 Ranked Manon / Terry) vs KAZUNOKO (#1 Ranked C.Viper) ▰ High Level Gameplay
@@ -119,6 +121,9 @@ character disagreement.
 - `cdaJjRoR-Mc` [highLevel] bad-handle: SF6 ▰ NARUO (#1 Ranked Jamie) vs ネコと和解せよ (A.K.I.) ▰ High Level Gameplay
 - `QqyUfr1Pfqs` [highLevel] char-unresolved: SF6 ▰ XIAOHAI (M.Bison) vs MENARD (Blanka/Luke) ▰ High Level Gameplay
 - `CzqtVUFUCK0` [highLevel] char-unresolved: SF6 ▰ PUNK (M.Bison) vs PR BALROG (Blanka/Juri) ▰ High Level Gameplay
+- `MANgFXZt_8o` [fgcPlace] char-unresolved: SF6 🤜 ITAZAN (Arjun) vs TRADZ BARUJI (Cammy) 🤛 SF6 High Level Gameplay
+- `URKjH400JKk` [fgcPlace] char-unresolved: SF6 🤜 PROBLEM X (Arjun) vs ENDING WALKER (Ed) 🤛 SF6 High Level Gameplay
+- `h6W7ybxc7M0` [fgcPlace] char-unresolved: SF6 🤜 KINCHO (Arjun) vs MINIMUM (A.K.I.) 🤛 SF6 High Level Gameplay
 - `_dtsbwKHBLg` [fgcPlace] char-unresolved: SF6 🤜 PROBLEM X (Arjun) vs ENDING WALKER (Ryu) 🤛 SF6 High Level Gameplay
 - `wFk65xsHlGc` [fgcPlace] char-unresolved: SF6 🤜 KINCHO (Arjun) vs ZABUTONN (Arjun) 🤛 SF6 DLC: ARJUN DAY 1
 - `CHfMBGKlGGs` [fgcPlace] no-vs-title: SF6 🤜 NEMO (Arjun) 🤛 SF6 DLC: ARJUN DAY 1
@@ -128,10 +133,5 @@ character disagreement.
 - `xhYXVRy-ii0` [fgcPlace] char-unresolved: SF6 🤜 SHUTO (#9 Ranked M. Bison / Ryu) vs KAWANO (#5 Ranked Akuma) 🤛 SF6 High Level Gameplay
 - `NgOIwfkqkl4` [fgcPlace] char-unresolved: SF6 🤜 KAZUNOKO (Jamie / C. Viper) vs YANGMIAN (#7 Ranked Terry) 🤛 SF6 High Level Gameplay
 - `AZeJuZnh0_Q` [fgcPlace] no-vs-title: SF6 🤜 KAKERU (JP) 🤛 SF6 High Level Gameplay with Input History + Frame Data
-- `HAv03DZyYvE` [fgcPlace] no-vs-title: SF6 🤜 KOBAYAN (#5 Ranked Zangief)  🤛 SF6 High Level Gameplay with Input History + Frame Data
-- `wOZOal6KlmE` [fgcPlace] char-unresolved: SF6 🤜 Bonchan (#1 Ranked Sagat) vs NL (Ryu / Akuma) 🤛 SF6 High Level Gameplay
-- `2KBYuKyoeTI` [fgcPlace] char-unresolved: SF6 🤜 Tokido (JP) vs Hinao (Terry / Ryu) 🤛 Street Fighter 6 High Level Gameplay
-- `1W90e_ae6VM` [fgcPlace] no-vs-title: SF6 ▰ LATIF (C. Viper) ▰ Street Fighter 6 High Level Gameplay
-- `W2OVkfTiT1c` [fgcPlace] no-vs-title: SF6 ▰ HIKARU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 
-_Generated 2026-10-13T15:05:29.051Z_
+_Generated 2026-10-14T12:56:31.598Z_
