@@ -15,6 +15,7 @@ import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
 import { dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parse as parseDevalue } from 'devalue';
 import { chromium, type Browser, type Page } from 'playwright-core';
 import RANKS from '../data/ranks.json';
 import { CHANNELS } from './channels';
@@ -212,6 +213,91 @@ async function resultCount(page: Page): Promise<number> {
 const gotoIdle = async (page: Page, url: string) => {
   await page.goto(url, { waitUntil: 'networkidle' });
 };
+
+// ── the inline Nuxt payload, read the way the client reads it ────────────────
+// For the whale check in §8, which since engine v0.18.0 has to ask the payload
+// what it carries instead of grepping the page for a field name. devalue is
+// the format Nuxt wrote it in. It is not declared in package.json: it resolves
+// to nuxt's own dependency, the copy that serialized the payload and that the
+// client parses it with. The reviver names are Nuxt's, restated from
+// nuxt/dist/app/plugins/revive-payload.client.js, and each unwraps to the plain
+// value, because the question is what the page carries, not how Vue wraps it
+// (the two Empty* types only ever wrap a falsy value, which is their reducer's
+// condition, so identity cannot hide a record behind them). A type missing
+// from this list makes devalue throw, and that comes back as the reason rather
+// than being swallowed: a payload this suite cannot read must never pass as
+// one that carries nothing.
+const PAYLOAD_REVIVERS = Object.fromEntries(
+  [
+    'NuxtError',
+    'EmptyShallowRef',
+    'EmptyRef',
+    'ShallowRef',
+    'ShallowReactive',
+    'Ref',
+    'Reactive',
+    'Island',
+  ].map((type) => [type, (v: unknown) => v]),
+);
+
+// The newest-replays list the Browse page prerenders, restated from
+// replay-engine lib/replay-index.ts (RECENT_LIMIT, v0.18.0: one infinite-scroll
+// page). Raise it in the engine and §8 fails until this follows, deliberately.
+const RECENT_LIMIT = 36;
+
+/** The page's one inline Nuxt payload plus the HTML around it, or the reason
+ *  there is no readable one. */
+function inlinePayload(
+  html: string,
+): { payload: { data: Record<string, unknown> }; rest: string } | string {
+  const scripts = [
+    ...html.matchAll(/<script\b([^>]*\bdata-nuxt-data\b[^>]*)>([\s\S]*?)<\/script>/g),
+  ];
+  if (scripts.length !== 1) return `${scripts.length} inline payload scripts, expected 1`;
+  const m = scripts[0]!;
+  // Payload extraction keeps this script but moves `data` out of it into
+  // _payload.json, leaving data-src pointing there. Read as-is, the page would
+  // look empty.
+  if (/\bdata-src=/.test(m[1]!)) return 'payload extracted to _payload.json (data-src)';
+  let payload: { data?: unknown } | null;
+  try {
+    payload = parseDevalue(m[2]!, PAYLOAD_REVIVERS) as { data?: unknown } | null;
+  } catch (err) {
+    return `payload unreadable: ${(err as Error).message}`;
+  }
+  if (typeof payload?.data !== 'object' || payload.data === null) {
+    return 'payload carries no data object';
+  }
+  return {
+    payload: payload as { data: Record<string, unknown> },
+    rest: html.slice(0, m.index) + html.slice(m.index + m[0].length),
+  };
+}
+
+/** Every distinct object reachable from `root` that has a `sides` key: a
+ *  Replay or a RecentReplay, under whatever key and at whatever depth, and
+ *  whatever shape the value takes. `sides` is the field the pre-v0.18.0 grep
+ *  keyed on, for the same reason: every record has one and nothing else in a
+ *  payload does. */
+function replayRecordsIn(root: unknown): Set<object> {
+  const found = new Set<object>();
+  const seen = new Set<object>();
+  const stack: unknown[] = [root];
+  while (stack.length) {
+    const x = stack.pop();
+    if (typeof x !== 'object' || x === null || seen.has(x)) continue;
+    seen.add(x);
+    if (Object.hasOwn(x, 'sides')) found.add(x);
+    const next =
+      x instanceof Map
+        ? [...x.keys(), ...x.values()]
+        : x instanceof Set
+          ? [...x]
+          : Object.values(x);
+    for (const v of next) stack.push(v);
+  }
+  return found;
+}
 
 /** The commit-guard block lifted out of the real workflow YAML and proven in a
  *  scratch git repo — the guard is shell, so only shell can test it. */
@@ -1556,7 +1642,7 @@ async function main(): Promise<void> {
     `summary identity agrees with the rendered GameConfig (game=${summary.game}, name=${summary.name})`,
   );
 
-  // ── 8. payload measurement (reported, not asserted) ───────────────────────
+  // ── 8. payload: measured, and the whale kept out of the page ──────────────
   console.log('\n— payload');
   const fresh = await (
     await browser.newContext({ viewport: { width: 1440, height: 960 } })
@@ -1586,22 +1672,85 @@ async function main(): Promise<void> {
   console.log(`    first load — replays.json ×${whale.length}      ${mb(sum(whale))} MB`);
   console.log(`    first load — TOTAL               ${mb(sum(freshTransfers))} MB`);
   expect(sum(whale) > 0, 'browse fetches replays.json client-side (server:false)');
-  // Engine-side finding, recorded rather than worked around: useReplays() is a
-  // keyed useAsyncData, but every component that calls it re-triggers the fetch
-  // on mount, so the whale is pulled once PER CONSUMER. On SF6 that is 5 × 6 MB
-  // on a single browse load. It affects every game on the platform, so the fix
-  // belongs in the engine (memoize the fetch / supply getCachedData), not here.
-  // This assertion documents the current number so the day it improves, it fails
-  // and someone updates it deliberately.
+  // Engine-side finding, recorded rather than worked around, and since fixed
+  // there: useReplays() once re-triggered the fetch in every component that
+  // called it, pulling the whale once PER CONSUMER (5 × 6 MB on one SF6 browse
+  // load). Engine v0.6.1 shares one fetch (dedupe 'defer' + getCachedData in
+  // useEngineData.ts), so the count is only logged now; a ⚠ means it regressed.
   console.log(
     whale.length > 1
       ? `    ⚠ replays.json fetched ${whale.length}× on one load — engine useReplays() dedupe gap`
       : '    replays.json fetched once',
   );
-  expect(
-    !readFileSync(join(OUT, BASE, 'index.html'), 'utf8').includes('"sides"'),
-    'the whale is NOT inlined into the prerendered HTML',
-  );
+  // The whale stays out of the page, and the recent list is the one designed
+  // exception (engine v0.18.0). Until v0.18.0 this was a grep: no `"sides"`
+  // anywhere in the prerendered Browse HTML, since every replay record carries
+  // that field and nothing else on the page did. v0.18.0 (replay-engine
+  // STACK.md §27) prerenders the newest RECENT_LIMIT replays there as text for
+  // crawlers: useRecentReplays(), payload key 'recent', slim RecentReplay
+  // records that DO carry `sides`. From the v0.18.0 pin (2026-10-02) the grep
+  // failed a build doing exactly what it was designed to, so what it always
+  // meant (is the ARCHIVE in the page?) is now asked of the payload instead:
+  //   1. the payload must be inline and readable. FAIL CLOSED: turn payload
+  //      extraction on and `data` moves out to _payload.json, where a check of
+  //      the inline script would find nothing and pass on a page it never read;
+  //   2. useReplays()' own key ('replays', server:false) carries nothing; no
+  //      replay record sits anywhere else in the payload (a useFetch of
+  //      replays.json would land under a hashed key, which the old grep caught
+  //      and a 'replays'-only check would not); 'recent' stays within
+  //      RECENT_LIMIT; and no `"sides"` appears in the HTML around the payload.
+  //      That is the old grep's whole reach, minus the designed list;
+  //   3. 'recent' is non-empty, the content half of failing closed: if `data`
+  //      were ever emptied out of the inline script by a route the data-src
+  //      test does not know, 2 would pass on nothing. It is part of the same
+  //      expect, so moving the list to the client can't leave a vacuous ✓;
+  //   4. the rendered list holds at most RECENT_LIMIT entries, and the page is
+  //      under a tenth of replays.json: a whale rendered as markup, or in any
+  //      shape the payload walk can't see, is megabytes (61.5 KB against 6 MB
+  //      when this was written).
+  // Each arm was shown to fire on a doctored copy of this page (2026-10-04): the
+  // whale under 'replays', under a hashed key and in state; 37 recent records;
+  // a record outside the payload; no payload, an extracted one, an emptied one,
+  // and one carrying a reviver type this suite does not know.
+  const browseHtml = readFileSync(join(OUT, BASE, 'index.html'), 'utf8');
+  const browse = inlinePayload(browseHtml);
+  if (typeof browse === 'string') {
+    expect(
+      false,
+      `the whale is NOT inlined into the prerendered HTML (no payload read: ${browse})`,
+    );
+  } else {
+    const { payload, rest } = browse;
+    const recent = Array.isArray(payload.data.recent) ? (payload.data.recent as object[]) : [];
+    const designed = new Set(recent);
+    const elsewhere = [...replayRecordsIn(payload)].filter((r) => !designed.has(r)).length;
+    const replays = payload.data.replays;
+    const replaysEmpty = replays == null || (Array.isArray(replays) && replays.length === 0);
+    const sidesAround = (rest.match(/"sides"/g) ?? []).length;
+    const listed = (
+      rest.match(/<ol\b[^>]*data-testid="recent-replays"[\s\S]*?<\/ol>/)?.[0].match(/<li\b/g) ?? []
+    ).length;
+    const pageBytes = Buffer.byteLength(browseHtml);
+    expect(
+      replaysEmpty &&
+        elsewhere === 0 &&
+        recent.length > 0 &&
+        recent.length <= RECENT_LIMIT &&
+        sidesAround === 0 &&
+        listed <= RECENT_LIMIT &&
+        pageBytes * 10 < replaysBytes,
+      'the whale is NOT inlined into the prerendered HTML' +
+        ` ('replays' ${replaysEmpty ? 'empty' : 'NOT empty'},` +
+        ` 'recent' ${recent.length}/${RECENT_LIMIT},` +
+        ` ${elsewhere} replay records elsewhere,` +
+        ` ${sidesAround} "sides" outside the payload,` +
+        ` ${listed} rendered, page ${mb(pageBytes)} of ${mb(replaysBytes)} MB)`,
+    );
+    expect(
+      recent.length > 0,
+      `the Browse payload carries the designed 'recent' list (${recent.length} records)`,
+    );
+  }
   await fresh.close();
 
   // ── 9. emit determinism ───────────────────────────────────────────────────
