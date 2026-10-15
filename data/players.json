@@ -1001,6 +1001,10 @@
     }
   },
   {
+    "id": "big-chron",
+    "handle": "BIG CHRON"
+  },
+  {
     "id": "big-mo",
     "handle": "BIG MO"
   },
@@ -4501,6 +4505,10 @@
     }
   },
   {
+    "id": "hustle",
+    "handle": "HUSTLE"
+  },
+  {
     "id": "hydramine",
     "handle": "Hydramine"
   },
@@ -7308,6 +7316,10 @@
   {
     "id": "minibomba",
     "handle": "MINIBOMBA"
+  },
+  {
+    "id": "minimum",
+    "handle": "Minimum"
   },
   {
     "id": "minney",
@@ -11065,6 +11077,10 @@
     "handle": "Sugi"
   },
   {
+    "id": "suisenri",
+    "handle": "SUISENRI"
+  },
+  {
     "id": "suleymon",
     "handle": "Suleymon"
   },
@@ -11776,6 +11792,10 @@
   {
     "id": "toya-koyo",
     "handle": "Toya Koyo"
+  },
+  {
+    "id": "tradz-baruji",
+    "handle": "Tradz Baruji"
   },
   {
     "id": "tragicvibes",
@@ -13007,6 +13027,10 @@
   {
     "id": "zangioji",
     "handle": "Zangioji"
+  },
+  {
+    "id": "zangitaro",
+    "handle": "ZANGITARO"
   },
   {
     "id": "zangya",
