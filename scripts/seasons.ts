@@ -177,6 +177,12 @@ export const PATCHES: PatchBoundary[] = [
   // before this row existed. Its start EQUALS SEASONS[3].start, which is the
   // "an era opens ON its first patch" invariant validatePatches() enforces.
   { version: '2.0401', start: '2026-08-03', note: 'Yasmine — all-character balance' },
+  // Arjun's update. `2.05` and its date are the wiki's verbatim, named by
+  // `npm run data:versions` before this row existed. Capcom announced Arjun for
+  // 13 October and the wiki dates the build 12 October; the table follows the
+  // wiki, as every row here does, so data:versions stays the check on it, and a
+  // replay uploaded on the 12th files under 2.05. Not a season opener.
+  { version: '2.05', start: '2026-10-12', note: 'Arjun' },
 ];
 
 /** X.YY or X.YYZZ. Length-independent, so a two-digit major still validates. */

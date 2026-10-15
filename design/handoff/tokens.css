@@ -56,7 +56,7 @@
      "Sedgwick Ave Display" — loaded but deliberately not tokenized,
      so it cannot leak into component styles. */
 
-  /* ---- Per-character accents (30) ---------------------------
+  /* ---- Per-character accents (32) ---------------------------
      Method (also how Year-4 gets added — e.g. Yasmine, Aug 3):
      1. ANCHOR  on the canonical costume/effect color.
      2. NORMALIZE in OKLCH to L 0.65–0.93, C 0.09–0.19 —
@@ -103,6 +103,7 @@
   --char-ingrid:   #FFE9A3; /* solar pale gold · 14.65 */
   /* Year 4 */
   --char-yasmine:  #F49BDF; /* eagle orchid — hair + Bayani swash · 8.91 */
+  --char-arjun:    #FC854F; /* splash rust — his pigment-splatter orange · 7.23 */
 }
 
 /* ------------------------------------------------------------

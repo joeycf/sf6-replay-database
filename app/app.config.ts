@@ -102,6 +102,7 @@ export default defineAppConfig({
       ingrid: '#FFE9A3',
       // Year 4 pass
       yasmine: '#F49BDF',
+      arjun: '#FC854F',
     },
     // Order matters: SourceBadge styles by index (0 = filled primary,
     // 1 = secondary outline, 2+ = warning outline). Ids mirror

@@ -173,9 +173,9 @@ if (skipped.length > 0) {
   // the site's index must say so out loud every single run.
   console.log(`  skipping ${skipped.length} unreleased: ${skipped.join(', ')}`);
 }
-if (slugs.length < 31) {
+if (slugs.length < 32) {
   throw new Error(
-    `roster discovery looks broken: only ${slugs.length} released ids (expected ≥ 31). ` +
+    `roster discovery looks broken: only ${slugs.length} released ids (expected ≥ 32). ` +
       'Check the official site before committing anything.',
   );
 }

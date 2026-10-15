@@ -45,6 +45,20 @@
     }
   },
   {
+    "id": "arjun",
+    "name": "Arjun",
+    "imgPortrait": "/img/characters/arjun-portrait.webp",
+    "imgSplash": "/img/characters/arjun-splash.webp",
+    "accent": "#FC854F",
+    "extra": {
+      "aliases": [
+        "arjun"
+      ],
+      "full name": "Arjun",
+      "japanese": "アルジュン"
+    }
+  },
+  {
     "id": "bison",
     "name": "M. Bison",
     "imgPortrait": "/img/characters/bison-portrait.webp",

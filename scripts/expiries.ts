@@ -51,14 +51,8 @@ import type { Expiry } from '../types/index';
  * were playable when this repo was built.
  */
 export const UNRELEASED: { id: string; releases: string; note?: string }[] = [
-  // Year 4 character #2. Capcom paged him ahead of release exactly as the header
-  // describes, so the index reads 32 while 31 are playable. WITHOUT THIS ROW THE
-  // SCRAPER ADDS HIM FIVE WEEKS EARLY. Window from Capcom's own top page
-  // ("[t]DLC_schedule_character2_year4": "<span>Arjun Update</span>Autumn 2026");
-  // the exact day is the announced 13 October. The note stays SHORT because
-  // characters.ts prints it inline on every run's "skipping" line.
-  { id: 'arjun', releases: '2026-10-13', note: 'Year 4 #2, paged since Sep 2026' },
-  // Yasmine (2026-08-03, first Year 4 character) cleared on release day.
+  // Yasmine (2026-08-03, first Year 4 character) and Arjun (2026-10-13, second) each
+  // cleared on release day. Empty is this table's resting state.
   //
   // WHAT "PAGED" MEANS HERE, AND THE TRAP UNDER IT. Add the next pass character as soon as
   // Capcom pages them — but HTTP STATUS IS NOT THE PAGED SIGNAL ON THIS SITE. /6/character/tifa
