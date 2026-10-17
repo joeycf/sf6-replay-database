@@ -337,20 +337,104 @@ function testTheaterDelta(): void {
   );
 }
 
+/**
+ * THE COMMIT STEP'S SHELL, READ OUT OF THE WORKFLOW. Indentation-driven, not
+ * YAML-parsed: the body is every line indented ≥10 spaces after
+ * `git config user.name`, BOUNDED at the first non-blank line indented less —
+ * the next step's `- name:`, or a comment above it. It used to run to the end
+ * of the file, which meant an `env:` or `with:` on any LATER step was swept
+ * into the shell that runs below, and nothing named why; the bound is the fix,
+ * and the control in the cron-guard test is what keeps it one.
+ */
+function commitStepBody(lines: string[]): string {
+  const start = lines.findIndex((l) => l.includes('git config user.name'));
+  if (start === -1) return '';
+  const stop = lines.findIndex(
+    (l, i) => i > start && l.trim() !== '' && !l.startsWith('          '),
+  );
+  return lines
+    .slice(start, stop === -1 ? undefined : stop)
+    .filter((l) => l.startsWith('          '))
+    .map((l) => l.slice(10))
+    .filter((l) => l.trim() !== 'git push') // scratch repo has no remote
+    .join('\n');
+}
+
 function testCronGuard(): void {
   console.log('\n— cron commit guard (extracted from the real workflow)');
   const wf = readFileSync(join(ROOT, '.github/workflows/data-refresh.yml'), 'utf8').split('\n');
-  const start = wf.findIndex((l) => l.includes('git config user.name'));
-  expect(start > 0, 'workflow contains the commit guard block');
-  const guard = wf
-    .slice(start)
-    .filter((l) => l.startsWith('          '))
-    .map((l) => l.slice(10))
-    .filter((l) => l.trim() !== 'git push')
-    .join('\n');
+  expect(
+    wf.some((l) => l.includes('git config user.name')),
+    'workflow contains the commit guard block',
+  );
+  // Indentation-driven, not YAML-parsed (keep the run: body at exactly 10
+  // spaces), and bounded at the next step — see commitStepBody.
+  const guard = commitStepBody(wf);
   expect(
     guard.includes('git restore --staged --worktree data/report.md'),
     'guard drops a timestamp-only report.md',
+  );
+  // Positive control for the bound: a later step with its own 10-space body
+  // must not leak into the guard.
+  const bounded = commitStepBody([
+    '      - name: Commit if changed',
+    '        run: |',
+    '          git config user.name "x"',
+    '          git add data/a.json',
+    '      # a comment between steps',
+    '      - name: A later step',
+    '        env:',
+    '          NOT_MINE: 1',
+    '        run: |',
+    '          echo not mine',
+  ]);
+  expect(
+    bounded.includes('git add data/a.json') &&
+      !bounded.includes('NOT_MINE') &&
+      !bounded.includes('not mine'),
+    'the commit-step extractor stops at the next step (a later env:/run: is not swept into the guard)',
+  );
+  // ── the two workflows agree ─────────────────────────────────────────────────
+  // pending-work.yml fires on data-refresh.yml's EXACT `name:` (workflow_run
+  // filters are globs over names), reads only, takes no secret, and is the only
+  // home of the steps that mean "a person has work". Each line is a control:
+  // rename either workflow, paste a TASK step back into the data run, or move
+  // the smoke check off the end, and this goes red.
+  const dr = wf.join('\n');
+  const pw = readFileSync(join(ROOT, '.github/workflows/pending-work.yml'), 'utf8');
+  const drName = /^name:[ \t]*(.+?)[ \t]*$/m.exec(dr)?.[1] ?? '';
+  expect(
+    drName === 'Daily data refresh',
+    `data-refresh.yml is named "Daily data refresh" (read "${drName}")`,
+  );
+  expect(
+    new RegExp(`^\\s*workflows:\\s*\\[\\s*["']${drName}["']\\s*\\]`, 'm').test(pw) &&
+      /^\s*types:\s*\[\s*completed\s*\]/m.test(pw),
+    'pending-work.yml fires on workflow_run of that exact name, type completed',
+  );
+  expect(
+    /^permissions:\n {2}contents: read$/m.test(pw) && !/secrets\./.test(pw),
+    'pending-work.yml reads only and takes no secret',
+  );
+  const TASK_STEPS = [
+    'Flag due expiries',
+    'Flag stale redirects',
+    'Flag retired ids with no redirect',
+    'Validate the patch table',
+  ];
+  expect(
+    TASK_STEPS.every((s) => !dr.includes(`- name: ${s}`)),
+    'no "a person has work" step is left in the data run',
+  );
+  expect(
+    pw.includes('- name: Flag due expiries') &&
+      pw.includes('- name: Platform freshness schedule is alive'),
+    "pending-work.yml carries the chores and the platform check's survival",
+  );
+  const stepNames = [...dr.matchAll(/^ {6}- name: (.+)$/gm)].map((m) => m[1]!);
+  expect(
+    stepNames.at(-1)?.startsWith('Post-deploy smoke check') === true,
+    "the smoke check is the data run's last step",
   );
 
   const dir = mkdtempSync(join(tmpdir(), 'sf6-cron-'));
@@ -1625,6 +1709,7 @@ async function main(): Promise<void> {
     players: number;
     characters: number;
     updated: string;
+    engine?: string;
   };
   const newestReplay = videos.reduce((max, v) => (v.publishedAt > max ? v.publishedAt : max), '');
   expect(
@@ -1640,6 +1725,23 @@ async function main(): Promise<void> {
   expect(
     manifest.name === `${summary.name} Replay Database` && summary.game === 'sf6',
     `summary identity agrees with the rendered GameConfig (game=${summary.game}, name=${summary.name})`,
+  );
+
+  // ── the deploy fingerprint (checklist 10i) ────────────────────────────────
+  // summary.json carries the engine tag emit read out of nuxt.config.ts, and
+  // verify:deployed compares the served tag with the pin. Both halves here: the
+  // pin is a concrete tag, and the shipped summary says exactly that tag.
+  const ENGINE_PIN =
+    /github:joeycf\/replay-engine#(v\d+\.\d+\.\d+)/.exec(
+      readFileSync(join(ROOT, 'nuxt.config.ts'), 'utf8'),
+    )?.[1] ?? '';
+  expect(
+    /^v\d+\.\d+\.\d+$/.test(ENGINE_PIN),
+    `nuxt.config.ts pins a concrete engine tag (read "${ENGINE_PIN}")`,
+  );
+  expect(
+    summary.engine === ENGINE_PIN,
+    `summary.engine is the pinned tag ${ENGINE_PIN} (summary says ${JSON.stringify(summary.engine)}) — checklist 10i`,
   );
 
   // ── 8. payload: measured, and the whale kept out of the page ──────────────

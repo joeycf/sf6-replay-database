@@ -193,20 +193,21 @@ the data say so.
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `scripts/characters.ts` (manual roster run) | **`exit 1`** — blocks roster work, which is exactly the work that is due                                   |
 | `scripts/parse.ts` (daily cron path)        | **never exits** — prints a FAILURE banner and writes `## ⚠ ACTION REQUIRED` at the top of `data/report.md` |
-| `.github/workflows/data-refresh.yml`        | a **final step, after commit and push**, that exits 1 so the run goes red                                  |
+| `.github/workflows/data-refresh.yml`        | the **"Pending work" workflow**, after every completed data run, that exits 1 so that run goes red         |
 
 **A hard exit in `parse.ts` would stop the daily refresh entirely**, which is
 strictly worse than the misfiling it warns about: the data stays overwhelmingly
 correct, only the newest replays risk landing in the wrong season, and halting
 ingestion fixes nothing while losing everything. So the daily path stays soft
-and the _workflow_ goes red **after** the data is safely pushed.
+and the _Pending work_ run goes red **after** the data run completes; the data
+run itself stays green unless the archive is wrong.
 
 > **The red workflow and the `exit 1` are the design, not a bug.** Clear them by
 > doing the work below — never by deleting the check.
 
 ## New-character runbook
 
-Fires when `data:characters` or the daily workflow starts complaining.
+Fires when `data:characters` or the "Pending work" workflow starts complaining.
 
 1. Get the accent from Claude Design — **do not invent one**. It must clear
    4.5:1 on `--color-surface` and sit ≥8–12° of hue off its roster neighbours.

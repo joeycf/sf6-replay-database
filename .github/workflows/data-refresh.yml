@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   refresh:
+    name: Refresh the archive — red means the live archive is stale or wrong
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,10 +63,10 @@ jobs:
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
 
-      - name: Parse and emit
+      - name: Parse and emit — red means a wrong archive was refused, nothing committed
         run: npm run data:parse
 
-      - name: Commit if changed
+      - name: Commit if changed — red means nothing was published
         run: |
           git config user.name "sf6-data-refresh[bot]"
           git config user.email "data-refresh@users.noreply.github.com"
@@ -126,16 +127,8 @@ jobs:
       # outside the collapse guard's own band is a FAILURE. The guard in
       # parse.ts protects the repository; this protects what visitors get.
       #
-      # Deliberately BEFORE "Flag due expiries": that step is designed to go red,
-      # and a red step stops the ones after it.
-      - name: Post-deploy smoke check
+      # The last step. A red anywhere in this workflow now means ONE thing: the
+      # archive is stale or wrong, or visitors are served the wrong one. Steps
+      # that mean "a person has work" live in pending-work.yml.
+      - name: Post-deploy smoke check — red means visitors get the wrong archive
         run: npm run verify:deployed
-
-      - name: Flag due expiries
-        # Deliberately LAST and deliberately failing (scripts/expiries.ts).
-        # The data has already been committed and pushed by the step above, so
-        # a red run never costs a refresh — it only makes the pending work
-        # impossible to miss. Two things can trip it, both on 2026-08-03:
-        # Yasmine becoming playable, and the Season 4 boundary going unconfirmed.
-        # Clear it by doing the work, NOT by deleting this step.
-        run: npx tsx scripts/expiries.ts --check

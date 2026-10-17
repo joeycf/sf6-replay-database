@@ -18,16 +18,16 @@
 //                                                 banner and writes an
 //                                                 "## ⚠ ACTION REQUIRED" block
 //                                                 at the top of data/report.md
-//   .github/workflows/…    (daily cron)         → a FINAL step, AFTER commit and
-//                                                 push, that exits 1
+//   .github/workflows/pending-work.yml          → runs after every completed
+//                                                 data run and exits 1
 //
 // A hard exit in parse.ts would fail `npm run data:build` and stop the daily
 // refresh entirely. That is strictly worse than the misfiling it warns about:
 // the data stays overwhelmingly correct, only the newest replays risk landing
 // in the wrong season, and halting ingestion fixes nothing while losing
-// everything. So the daily path stays soft and the WORKFLOW goes red after the
-// data is safely pushed — refresh keeps running, the run is visibly red, and
-// the standard Actions failure mail arrives.
+// everything. So the daily path stays soft and the "Pending work" run goes red
+// after the data run completes — refresh keeps running, the data run stays
+// green unless the archive itself is wrong, and the failure mail names the chore.
 //
 // A red workflow and the exit(1) in the roster script are therefore the DESIGN,
 // not a bug. Clear them by doing the work — add the character, confirm or
@@ -117,9 +117,9 @@ export function formatExpiries(due: Expiry[]): string {
   return due.map((e) => `- **${e.id}** (${e.kind}, due ${e.date})\n  ${e.action}`).join('\n\n');
 }
 
-// Standalone `--check`: the workflow's final step. Exits 1 when anything is
-// due, which is what turns the cron run red — deliberately, and only after the
-// data has already been committed and pushed by the preceding step.
+// Standalone `--check`: the "Pending work" workflow's step. Exits 1 when
+// anything is due, which is what turns that run red — deliberately, after the
+// data run has completed, and never inside it.
 const isMain = !!process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop()!);
 if (isMain && process.argv.includes('--check')) {
   const due = dueExpiries();

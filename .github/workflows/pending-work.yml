@@ -1,0 +1,95 @@
+name: Pending work
+
+# THE OTHER MEANING OF RED. "Daily data refresh" goes red when the archive is
+# stale or wrong. THIS workflow goes red when a person has work: a gated
+# character's window has opened, a season is unconfirmed, a patch table has
+# been quiet too long. The two used to share one job, and on 2026-10-12 Tekken's
+# data run stopped at "Refuse redirect drift", so the due expiry behind it never
+# ran — while from 10-07 Tōkon was red BY DESIGN next to the one run that was
+# holding data. One job, two meanings, and the by-design red had normalised
+# red. Now each workflow has one.
+#
+# It runs after EVERY completed "Daily data refresh", whatever that run
+# concluded: a held data run is exactly the morning a due expiry must still be
+# reported. Under workflow_run GITHUB_SHA is the last commit on the default
+# branch when the data run completed, so a plain checkout already sees the data
+# commit; `ref: main` makes a RE-RUN see the newest main too, which is how
+# "do the work, push, re-run" turns this green.
+#
+# Nothing here writes, nothing here needs a secret, nothing here reaches
+# YouTube or the vendor (the vendor-facing checkers are manual by design).
+on:
+  workflow_run:
+    # The exact `name:` on line 1 of data-refresh.yml. workflow_run matches by
+    # workflow NAME, as a glob; this string has no glob characters.
+    workflows: ['Daily data refresh']
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Its own group: every data-refresh.yml on the platform uses `data-refresh`,
+  # and a shared group would queue behind or cancel against the data run.
+  group: pending-work
+  cancel-in-progress: false
+
+jobs:
+  pending:
+    name: Pending work — red means a person has a chore; the data is fine
+    runs-on: ubuntu-latest
+    steps:
+      # What the data run did, so this log reads on its own. "n/a" when
+      # dispatched by hand.
+      - name: Data run context
+        run: echo "Daily data refresh → ${ github.event.workflow_run.conclusion || 'n/a (dispatched by hand)' } ${ github.event.workflow_run.html_url }"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          # matches engines.node (the platform's Node policy — STACK.md §1)
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Flag due expiries
+        # Deliberately failing (scripts/expiries.ts).
+        # The data has already been committed and pushed by the data run that
+        # triggered this workflow, so a red run never costs a refresh — it only
+        # makes the pending work impossible to miss. What can trip it: a row
+        # added to UNRELEASED coming due, and the SEASONS arm (an unconfirmed
+        # boundary).
+        # Clear it by doing the work, NOT by deleting this step.
+        run: npx tsx scripts/expiries.ts --check
+
+      # THE PLATFORM CHECK'S OWN SURVIVAL. replay-engine's "Platform freshness"
+      # is a scheduled workflow in a public repo, and GitHub disables those after
+      # 60 days without repository activity (a word the docs do not define).
+      # This workflow is workflow_run-triggered, which that rule never touches,
+      # so it is the right place to notice. Re-enable: Actions → Platform
+      # freshness → "Enable workflow" (or PUT …/actions/workflows/
+      # platform-freshness.yml/enable with a token that has actions: write).
+      - name: Platform freshness schedule is alive
+        if: always()
+        env:
+          GH_TOKEN: ${ github.token }
+          WORKFLOW_API: https://api.github.com/repos/joeycf/replay-engine/actions/workflows/platform-freshness.yml
+        run: |
+          # The API pretty-prints one key per line, so the state is read with sed and
+          # nothing this step needs is beyond curl and the shell. An unreadable answer
+          # (401/403 on another repo's endpoint, or a 404 before the workflow exists)
+          # has no "state" line; retry once without the token, then treat it as not alive.
+          read_state() { curl -sS -H "Accept: application/vnd.github+json" "$@" "$WORKFLOW_API" | sed -n 's/^ *"state": *"\([a-z_]*\)".*/\1/p' | head -1; }
+          state=$(read_state -H "Authorization: Bearer $GH_TOKEN")
+          [ -n "$state" ] || state=$(read_state)
+          [ -n "$state" ] || state=unreadable
+          if [ "$state" != "active" ]; then
+            echo "::error title=Platform freshness::replay-engine's Platform freshness schedule is '$state' — re-enable it in its Actions tab (public repos disable schedules after 60 idle days)."
+            exit 1
+          fi
+          echo "✓ Platform freshness schedule is active"

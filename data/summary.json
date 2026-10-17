@@ -4,5 +4,6 @@
   "replays": 25067,
   "players": 2376,
   "characters": 32,
-  "updated": "2026-10-17"
+  "updated": "2026-10-17",
+  "engine": "v0.18.1"
 }
