@@ -3407,6 +3407,10 @@
     "handle": "Funtao"
   },
   {
+    "id": "furemi",
+    "handle": "Furemi"
+  },
+  {
     "id": "futago",
     "handle": "FUTAGO"
   },
@@ -5038,7 +5042,7 @@
   },
   {
     "id": "jhontakeuchi",
-    "handle": "jhontakeuchi"
+    "handle": "JHONTAKEUCHI"
   },
   {
     "id": "jieba",
@@ -9930,6 +9934,10 @@
     "handle": "SAKONOKO"
   },
   {
+    "id": "sakuma",
+    "handle": "SAKUMA"
+  },
+  {
     "id": "sakurajump",
     "handle": "Sakurajump"
   },
@@ -10573,6 +10581,10 @@
   {
     "id": "shokuba",
     "handle": "Shokuba"
+  },
+  {
+    "id": "shomin",
+    "handle": "SHOMIN"
   },
   {
     "id": "shooting",
