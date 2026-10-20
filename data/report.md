@@ -1,13 +1,13 @@
 
 # SF6 pipeline report
 
-**25092 matches** parsed from 34689 uploads across 7 channels, plus 1065 from 1 index · 2383 players · ranked sides 22010/50184 (43.9%)
+**25104 matches** parsed from 34701 uploads across 7 channels, plus 1065 from 1 index · 2383 players · ranked sides 22024/50208 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5910 | 5910 | 5895 | 99.7% | 11374 |
-| fgcPlace | fgcPlace | 10196 | 9204 | 9018 | 98.0% | 10636 |
-| sfReplays | sfReplays | 7363 | 6364 | 5779 | 90.8% | 0 |
+| highLevel | highLevel | 5911 | 5911 | 5896 | 99.7% | 11376 |
+| fgcPlace | fgcPlace | 10202 | 9210 | 9024 | 98.0% | 10648 |
+| sfReplays | sfReplays | 7368 | 6369 | 5784 | 90.8% | 0 |
 | capcomFighters | capcomFighters | 8207 | 1813 | 1144 | 63.1% | 0 |
 | evoEvents | evoEvents | 2830 | 168 | 81 | 48.2% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
@@ -33,9 +33,9 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1300
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1312
 
-Rank distribution (side appearances): Legend 19565 · Master 2431 · Diamond 14
+Rank distribution (side appearances): Legend 19579 · Master 2431 · Diamond 14
 
 Misses by reason: not-sf6 11048 · no-vs-title 1010 · shorts 219 · char-unresolved 125 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 2
 
@@ -128,4 +128,4 @@ character disagreement.
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-10-19T14:44:14.516Z_
+_Generated 2026-10-20T12:46:31.711Z_
