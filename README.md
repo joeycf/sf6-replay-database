@@ -23,8 +23,13 @@ this repo supplies **data**, **config**, and **a skin**.
 > Platform: [replaydatabase.com](https://replaydatabase.com) ·
 > [engine](https://github.com/joeycf/replay-engine) ·
 > [shell](https://github.com/joeycf/replay-database-shell) ·
+> [2XKO](https://github.com/joeycf/2xko-replay-database) ·
 > [Tekken](https://github.com/joeycf/tekken-replay-database) ·
-> [2XKO](https://github.com/joeycf/2xko-replay-database)
+> [Tōkon](https://github.com/joeycf/tokon-replay-database) ·
+> [CotW](https://github.com/joeycf/ffcotw-replay-database) ·
+> [Strive](https://github.com/joeycf/ggst-replay-database) ·
+> [Granblue Rising](https://github.com/joeycf/gbvsr-replay-database) ·
+> [Avatar](https://github.com/joeycf/avatar-replay-database)
 
 ## Architecture
 

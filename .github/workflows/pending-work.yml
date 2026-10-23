@@ -39,17 +39,18 @@ jobs:
   pending:
     name: Pending work — red means a person has a chore; the data is fine
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       # What the data run did, so this log reads on its own. "n/a" when
       # dispatched by hand.
       - name: Data run context
         run: echo "Daily data refresh → ${{ github.event.workflow_run.conclusion || 'n/a (dispatched by hand)' }} ${{ github.event.workflow_run.html_url }}"
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           # matches engines.node (the platform's Node policy — STACK.md §1)
           node-version: 24
