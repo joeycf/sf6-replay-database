@@ -728,6 +728,10 @@
     "handle": "AutoMattock"
   },
   {
+    "id": "awakening",
+    "handle": "AWAKENING"
+  },
+  {
     "id": "awildllama",
     "handle": "AwildLLAMA"
   },
@@ -9046,6 +9050,10 @@
   {
     "id": "popolinlin",
     "handle": "Popolinlin"
+  },
+  {
+    "id": "potize",
+    "handle": "POTIZE"
   },
   {
     "id": "power",
