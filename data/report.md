@@ -1,14 +1,14 @@
 
 # SF6 pipeline report
 
-**25254 matches** parsed from 34879 uploads across 7 channels, plus 1065 from 1 index · 2391 players · ranked sides 22177/50508 (43.9%)
+**25288 matches** parsed from 34915 uploads across 7 channels, plus 1065 from 1 index · 2391 players · ranked sides 22195/50576 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5924 | 5924 | 5909 | 99.7% | 11402 |
-| fgcPlace | fgcPlace | 10266 | 9274 | 9088 | 98.0% | 10775 |
-| sfReplays | sfReplays | 7421 | 6422 | 5837 | 90.9% | 0 |
-| capcomFighters | capcomFighters | 8253 | 1859 | 1164 | 62.6% | 0 |
+| highLevel | highLevel | 5926 | 5926 | 5911 | 99.7% | 11406 |
+| fgcPlace | fgcPlace | 10273 | 9281 | 9095 | 98.0% | 10789 |
+| sfReplays | sfReplays | 7427 | 6428 | 5843 | 90.9% | 0 |
+| capcomFighters | capcomFighters | 8274 | 1880 | 1183 | 62.9% | 0 |
 | evoEvents | evoEvents | 2832 | 169 | 81 | 47.9% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
 | superFighters | superFighters | 183 | 182 | 80 | 44.0% | 0 |
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1462
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1496
 
-Rank distribution (side appearances): Legend 19727 · Master 2436 · Diamond 14
+Rank distribution (side appearances): Legend 19745 · Master 2436 · Diamond 14
 
-Misses by reason: not-sf6 11049 · no-vs-title 1019 · shorts 239 · char-unresolved 125 · short-duration 100 · pre-launch 93 · bad-handle 27
+Misses by reason: not-sf6 11049 · no-vs-title 1020 · shorts 239 · char-unresolved 125 · short-duration 100 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
 
 ## Replay Theater cross-check
 
@@ -128,4 +128,4 @@ character disagreement.
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-10-29T14:22:54.930Z_
+_Generated 2026-10-30T14:20:54.871Z_
