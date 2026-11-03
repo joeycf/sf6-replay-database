@@ -2832,6 +2832,10 @@
     "handle": "El Doylero"
   },
   {
+    "id": "el-fuerte",
+    "handle": "EL FUERTE"
+  },
+  {
     "id": "elchacotay",
     "handle": "ELCHACOTAY"
   },
@@ -5953,6 +5957,10 @@
   {
     "id": "kissa",
     "handle": "kissa"
+  },
+  {
+    "id": "kitalpha",
+    "handle": "KITALPHA"
   },
   {
     "id": "kitsune",
