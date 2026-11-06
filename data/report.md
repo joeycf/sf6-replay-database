@@ -1,15 +1,15 @@
 
 # SF6 pipeline report
 
-**25389 matches** parsed from 35021 uploads across 7 channels, plus 1065 from 1 index · 2399 players · ranked sides 22282/50778 (43.9%)
+**25401 matches** parsed from 35042 uploads across 7 channels, plus 1065 from 1 index · 2399 players · ranked sides 22294/50802 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5933 | 5933 | 5918 | 99.7% | 11420 |
-| fgcPlace | fgcPlace | 10314 | 9322 | 9136 | 98.0% | 10862 |
-| sfReplays | sfReplays | 7462 | 6463 | 5878 | 90.9% | 0 |
-| capcomFighters | capcomFighters | 8295 | 1901 | 1201 | 63.2% | 0 |
-| evoEvents | evoEvents | 2834 | 171 | 81 | 47.4% | 0 |
+| highLevel | highLevel | 5934 | 5934 | 5919 | 99.7% | 11422 |
+| fgcPlace | fgcPlace | 10321 | 9329 | 9142 | 98.0% | 10872 |
+| sfReplays | sfReplays | 7467 | 6468 | 5883 | 91.0% | 0 |
+| capcomFighters | capcomFighters | 8302 | 1908 | 1201 | 62.9% | 0 |
+| evoEvents | evoEvents | 2835 | 172 | 81 | 47.1% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
 | superFighters | superFighters | 183 | 182 | 80 | 44.0% | 0 |
 | replayTheater _(carried)_ | replayTheater | — | — | 1065 | — | 0 |
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1597
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1609
 
-Rank distribution (side appearances): Legend 19828 · Master 2440 · Diamond 14
+Rank distribution (side appearances): Legend 19840 · Master 2440 · Diamond 14
 
-Misses by reason: not-sf6 11049 · no-vs-title 1021 · shorts 240 · char-unresolved 125 · short-duration 102 · pre-launch 93 · bad-handle 27 · live-or-upcoming 2
+Misses by reason: not-sf6 11049 · no-vs-title 1022 · shorts 244 · char-unresolved 126 · short-duration 103 · pre-launch 93 · bad-handle 27 · live-or-upcoming 4
 
 ## Replay Theater cross-check
 
@@ -112,6 +112,7 @@ character disagreement.
 - `cdaJjRoR-Mc` [highLevel] bad-handle: SF6 ▰ NARUO (#1 Ranked Jamie) vs ネコと和解せよ (A.K.I.) ▰ High Level Gameplay
 - `QqyUfr1Pfqs` [highLevel] char-unresolved: SF6 ▰ XIAOHAI (M.Bison) vs MENARD (Blanka/Luke) ▰ High Level Gameplay
 - `CzqtVUFUCK0` [highLevel] char-unresolved: SF6 ▰ PUNK (M.Bison) vs PR BALROG (Blanka/Juri) ▰ High Level Gameplay
+- `NqwvQcPtFHA` [fgcPlace] char-unresolved: SF6 🤜 SUISENRI (#3 Ranked Yasmine) vs CHRIS WONG (#4 Ranked ) 🤛 SF6 High Level Gameplay
 - `CHfMBGKlGGs` [fgcPlace] no-vs-title: SF6 🤜 NEMO (Arjun) 🤛 SF6 DLC: ARJUN DAY 1
 - `eMLvLdMIkcs` [fgcPlace] no-vs-title: SF6 🤜 KAKERU (Ingrid) 🤛 Street Fighter 6 DLC: Ingrid Day 1 gameplay
 - `ii9OdjTfwgg` [fgcPlace] char-unresolved: SF6 🤜 LESHAR (#1 Ranked Akuma) vs ARMPEROR (#2 Ranked Ken / Ryu) 🤛 SF6 High Level Gameplay
@@ -126,6 +127,5 @@ character disagreement.
 - `W2OVkfTiT1c` [fgcPlace] no-vs-title: SF6 ▰ HIKARU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `XVbwDKpGMoU` [fgcPlace] no-vs-title: SF6 ▰ PUNK (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
-- `-C8xn378TZw` [fgcPlace] no-vs-title: SF6 ▰ TOKIDO (JP) vs High Ranked Players ▰ Street Fighter 6 High Level Gameplay
 
-_Generated 2026-11-05T15:30:21.489Z_
+_Generated 2026-11-06T15:03:58.359Z_
