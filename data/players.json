@@ -6602,7 +6602,7 @@
   },
   {
     "id": "linkexelo",
-    "handle": "LINKEXELO"
+    "handle": "Linkexelo"
   },
   {
     "id": "linknova",
@@ -11428,6 +11428,10 @@
     "handle": "Taketake-Piano"
   },
   {
+    "id": "taki",
+    "handle": "Taki"
+  },
+  {
     "id": "tako",
     "handle": "Tako"
   },
@@ -11661,6 +11665,10 @@
   {
     "id": "thunderkilam",
     "handle": "Thunderkilam"
+  },
+  {
+    "id": "tiburons",
+    "handle": "TIBURONS"
   },
   {
     "id": "tiger",
