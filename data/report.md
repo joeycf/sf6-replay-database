@@ -1,13 +1,13 @@
 
 # SF6 pipeline report
 
-**25445 matches** parsed from 35097 uploads across 7 channels, plus 1065 from 1 index · 2405 players · ranked sides 22341/50890 (43.9%)
+**25458 matches** parsed from 35110 uploads across 7 channels, plus 1065 from 1 index · 2405 players · ranked sides 22355/50916 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5937 | 5937 | 5922 | 99.7% | 11428 |
-| fgcPlace | fgcPlace | 10343 | 9351 | 9164 | 98.0% | 10913 |
-| sfReplays | sfReplays | 7486 | 6487 | 5902 | 91.0% | 0 |
+| highLevel | highLevel | 5938 | 5938 | 5923 | 99.7% | 11430 |
+| fgcPlace | fgcPlace | 10349 | 9357 | 9170 | 98.0% | 10925 |
+| sfReplays | sfReplays | 7492 | 6493 | 5908 | 91.0% | 0 |
 | capcomFighters | capcomFighters | 8313 | 1919 | 1201 | 62.6% | 0 |
 | evoEvents | evoEvents | 2835 | 172 | 81 | 47.1% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1653
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1666
 
-Rank distribution (side appearances): Legend 19884 · Master 2443 · Diamond 14
+Rank distribution (side appearances): Legend 19897 · Master 2444 · Diamond 14
 
-Misses by reason: not-sf6 11049 · no-vs-title 1025 · shorts 255 · char-unresolved 126 · short-duration 103 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
+Misses by reason: not-sf6 11049 · no-vs-title 1026 · shorts 255 · char-unresolved 126 · short-duration 103 · pre-launch 93 · bad-handle 27
 
 ## Replay Theater cross-check
 
@@ -128,4 +128,4 @@ character disagreement.
 - `XVbwDKpGMoU` [fgcPlace] no-vs-title: SF6 ▰ PUNK (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 
-_Generated 2026-11-09T17:32:59.641Z_
+_Generated 2026-11-10T15:38:20.416Z_
