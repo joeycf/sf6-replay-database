@@ -3570,6 +3570,10 @@
     }
   },
   {
+    "id": "game-is-game",
+    "handle": "GAME IS GAME"
+  },
+  {
     "id": "gamein",
     "handle": "GameIn"
   },
@@ -7240,6 +7244,10 @@
     }
   },
   {
+    "id": "menatko",
+    "handle": "MENATKO"
+  },
+  {
     "id": "mentako",
     "handle": "MENTAKO"
   },
@@ -8758,6 +8766,10 @@
   {
     "id": "osugi-bent",
     "handle": "osugi bent"
+  },
+  {
+    "id": "oswald",
+    "handle": "OSWALD"
   },
   {
     "id": "otaku",
