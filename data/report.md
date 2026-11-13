@@ -1,14 +1,14 @@
 
 # SF6 pipeline report
 
-**25504 matches** parsed from 35160 uploads across 7 channels, plus 1065 from 1 index · 2409 players · ranked sides 22385/51008 (43.9%)
+**25539 matches** parsed from 35195 uploads across 7 channels, plus 1065 from 1 index · 2409 players · ranked sides 22401/51078 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5940 | 5940 | 5925 | 99.7% | 11434 |
-| fgcPlace | fgcPlace | 10363 | 9371 | 9184 | 98.0% | 10951 |
-| sfReplays | sfReplays | 7503 | 6504 | 5919 | 91.0% | 0 |
-| capcomFighters | capcomFighters | 8335 | 1941 | 1220 | 62.9% | 0 |
+| highLevel | highLevel | 5941 | 5941 | 5926 | 99.7% | 11436 |
+| fgcPlace | fgcPlace | 10370 | 9378 | 9191 | 98.0% | 10965 |
+| sfReplays | sfReplays | 7509 | 6510 | 5925 | 91.0% | 0 |
+| capcomFighters | capcomFighters | 8356 | 1962 | 1241 | 63.3% | 0 |
 | evoEvents | evoEvents | 2835 | 172 | 81 | 47.1% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
 | superFighters | superFighters | 184 | 183 | 80 | 43.7% | 0 |
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1712
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1747
 
-Rank distribution (side appearances): Legend 19925 · Master 2446 · Diamond 14
+Rank distribution (side appearances): Legend 19941 · Master 2446 · Diamond 14
 
-Misses by reason: not-sf6 11049 · no-vs-title 1027 · shorts 255 · char-unresolved 126 · short-duration 103 · pre-launch 93 · bad-handle 27 · live-or-upcoming 3
+Misses by reason: not-sf6 11049 · no-vs-title 1028 · shorts 255 · char-unresolved 126 · short-duration 103 · pre-launch 93 · bad-handle 27 · live-or-upcoming 2
 
 ## Replay Theater cross-check
 
@@ -128,4 +128,4 @@ character disagreement.
 - `XVbwDKpGMoU` [fgcPlace] no-vs-title: SF6 ▰ PUNK (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 
-_Generated 2026-11-12T16:04:14.203Z_
+_Generated 2026-11-13T15:29:40.871Z_
