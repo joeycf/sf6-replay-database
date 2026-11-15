@@ -1,13 +1,13 @@
 
 # SF6 pipeline report
 
-**25569 matches** parsed from 35228 uploads across 7 channels, plus 1065 from 1 index · 2411 players · ranked sides 22413/51138 (43.8%)
+**25583 matches** parsed from 35242 uploads across 7 channels, plus 1065 from 1 index · 2411 players · ranked sides 22429/51166 (43.8%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5941 | 5941 | 5926 | 99.7% | 11436 |
-| fgcPlace | fgcPlace | 10377 | 9385 | 9198 | 98.0% | 10977 |
-| sfReplays | sfReplays | 7515 | 6516 | 5931 | 91.0% | 0 |
+| highLevel | highLevel | 5943 | 5943 | 5928 | 99.7% | 11440 |
+| fgcPlace | fgcPlace | 10383 | 9391 | 9204 | 98.0% | 10989 |
+| sfReplays | sfReplays | 7521 | 6522 | 5937 | 91.0% | 0 |
 | capcomFighters | capcomFighters | 8374 | 1980 | 1258 | 63.5% | 0 |
 | evoEvents | evoEvents | 2836 | 172 | 81 | 47.1% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1777
+Seasons: S1 6225 · S2 8022 · S3 9545 · S4 1791
 
-Rank distribution (side appearances): Legend 19953 · Master 2446 · Diamond 14
+Rank distribution (side appearances): Legend 19969 · Master 2446 · Diamond 14
 
-Misses by reason: not-sf6 11050 · no-vs-title 1028 · shorts 255 · char-unresolved 126 · short-duration 104 · pre-launch 93 · bad-handle 27 · live-or-upcoming 3
+Misses by reason: not-sf6 11050 · no-vs-title 1029 · shorts 255 · char-unresolved 126 · short-duration 104 · pre-launch 93 · bad-handle 27 · live-or-upcoming 2
 
 ## Replay Theater cross-check
 
@@ -128,4 +128,4 @@ character disagreement.
 - `XVbwDKpGMoU` [fgcPlace] no-vs-title: SF6 ▰ PUNK (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 
-_Generated 2026-11-14T14:12:38.654Z_
+_Generated 2026-11-15T14:48:32.005Z_
