@@ -1,9 +1,9 @@
 {
   "game": "sf6",
   "name": "Street Fighter 6",
-  "replays": 25650,
-  "players": 2419,
+  "replays": 25661,
+  "players": 2420,
   "characters": 32,
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "engine": "v0.18.1"
 }
