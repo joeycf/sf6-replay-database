@@ -1775,6 +1775,10 @@
     "handle": "CHOCO"
   },
   {
+    "id": "cholin",
+    "handle": "CHOLIN"
+  },
+  {
     "id": "choppa",
     "handle": "Choppa"
   },
@@ -8054,7 +8058,7 @@
   },
   {
     "id": "natsu",
-    "handle": "NATSU"
+    "handle": "Natsu"
   },
   {
     "id": "natsunashi",
@@ -10443,6 +10447,10 @@
   {
     "id": "sf6-crossover",
     "handle": "SF6 Crossover"
+  },
+  {
+    "id": "sf6-enzo",
+    "handle": "SF6 ENZO"
   },
   {
     "id": "sf6-hibiki",
