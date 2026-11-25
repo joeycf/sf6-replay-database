@@ -9121,6 +9121,10 @@
     "handle": "Ponichi"
   },
   {
+    "id": "ponponpongi",
+    "handle": "Ponponpongi"
+  },
+  {
     "id": "pontio",
     "handle": "Pontio"
   },
@@ -10435,6 +10439,10 @@
   {
     "id": "sf6-bloo",
     "handle": "SF6 BLOO"
+  },
+  {
+    "id": "sf6-booce-lee",
+    "handle": "SF6 BOOCE LEE"
   },
   {
     "id": "sf6-cosa",
@@ -13188,6 +13196,10 @@
   {
     "id": "zangetsu",
     "handle": "ZANGETSU"
+  },
+  {
+    "id": "zangi-uncle",
+    "handle": "ZANGI UNCLE"
   },
   {
     "id": "zangief-bolado",
