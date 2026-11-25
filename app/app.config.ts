@@ -49,8 +49,8 @@ export default defineAppConfig({
     //   /sf6-insights/:path* → https://sf6-replay-database.vercel.app/_vercel/insights/:path*
     // — the two ship together or every beacon 404s. Same-origin on purpose:
     // the child's endpoints send no CORS headers, so an absolute URL here
-    // would die at preflight. speedInsights is deliberately left at the engine
-    // default (single-project on Hobby — it must reach the enabled project).
+    // would die at preflight. speedInsights is unset, so Speed
+    // Insights is off (opt-in since engine v0.19.0).
     observability: { insights: '/sf6-insights' },
     charactersPerSide: 1,
     filters: {

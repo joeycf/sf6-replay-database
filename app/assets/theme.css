@@ -22,7 +22,9 @@
    condensed display block (evokes "SF6 College" without imitating it);
    Public Sans = the utilitarian grotesque UI face, deliberately distinct from
    Barlow / Archivo / Space Grotesk; JetBrains Mono = data/mono, the platform
-   habit. font-display: swap ships inside the fontsource CSS.
+   habit. font-display: swap ships inside the fontsource CSS. JetBrains Mono comes from the engine's variable face (tailwind/theme-default.css,
+   weights 100-800); importing @fontsource's static copies as well made browsers
+   download both (removed for engine v0.19.0).
 
    NOT imported: @fontsource/sedgwick-ave-display. The handoff loads it as a
    "wordmark layer only" face and deliberately does not tokenize it, but the
@@ -42,9 +44,6 @@
 @import '@fontsource/public-sans/500';
 @import '@fontsource/public-sans/600';
 @import '@fontsource/public-sans/700';
-@import '@fontsource/jetbrains-mono/400';
-@import '@fontsource/jetbrains-mono/500';
-@import '@fontsource/jetbrains-mono/700';
 
 /* :root, NOT @theme — deliberately. This file is a plain app stylesheet: it
    never enters the engine's Tailwind root compile, so an `@theme` block here
