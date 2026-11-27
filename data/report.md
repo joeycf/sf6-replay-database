@@ -1,13 +1,13 @@
 
 # SF6 pipeline report
 
-**25735 matches** parsed from 35396 uploads across 7 channels, plus 1065 from 1 index · 2428 players · ranked sides 22584/51470 (43.9%)
+**25750 matches** parsed from 35411 uploads across 7 channels, plus 1065 from 1 index · 2428 players · ranked sides 22602/51500 (43.9%)
 
 | channel | source | uploads | is-SF6 | parsed | of SF6 | ranked sides |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| highLevel | highLevel | 5951 | 5951 | 5936 | 99.7% | 11456 |
-| fgcPlace | fgcPlace | 10456 | 9464 | 9277 | 98.0% | 11128 |
-| sfReplays | sfReplays | 7586 | 6587 | 6003 | 91.1% | 0 |
+| highLevel | highLevel | 5953 | 5953 | 5938 | 99.7% | 11460 |
+| fgcPlace | fgcPlace | 10463 | 9471 | 9284 | 98.0% | 11142 |
+| sfReplays | sfReplays | 7592 | 6593 | 6009 | 91.1% | 0 |
 | capcomFighters | capcomFighters | 8374 | 1980 | 1258 | 63.5% | 0 |
 | evoEvents | evoEvents | 2838 | 172 | 81 | 47.1% | 0 |
 | kingArena _(frozen — channel deleted, footage gone)_ | kingArenaOnline / kingArenaTournament | — | — | 2030 | — | 0 |
@@ -33,11 +33,11 @@ _not a failed one._
 
 Pending review: 9 (data/review-queue.json)
 
-Seasons: S1 6225 · S2 8022 · S3 9546 · S4 1942
+Seasons: S1 6225 · S2 8022 · S3 9546 · S4 1957
 
-Rank distribution (side appearances): Legend 20119 · Master 2451 · Diamond 14
+Rank distribution (side appearances): Legend 20136 · Master 2452 · Diamond 14
 
-Misses by reason: not-sf6 11052 · no-vs-title 1030 · shorts 255 · char-unresolved 126 · short-duration 104 · pre-launch 93 · bad-handle 27 · live-or-upcoming 1
+Misses by reason: not-sf6 11052 · no-vs-title 1031 · shorts 255 · char-unresolved 126 · short-duration 104 · pre-launch 93 · bad-handle 27
 
 ## Replay Theater cross-check
 
@@ -128,4 +128,4 @@ character disagreement.
 - `XVbwDKpGMoU` [fgcPlace] no-vs-title: SF6 ▰ PUNK (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 - `OietG9sXcAc` [fgcPlace] no-vs-title: SF6 ▰ KAKERU (C. Viper) ▰ Street Fighter 6 C. Viper Day One
 
-_Generated 2026-11-26T17:46:35.517Z_
+_Generated 2026-11-27T17:30:51.285Z_
